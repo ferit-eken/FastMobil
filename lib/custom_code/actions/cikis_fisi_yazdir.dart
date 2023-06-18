@@ -82,7 +82,10 @@ Future<String> cikisFisiYazdir(
     bluetooth.printLeftRight("Indirim:", indirim.toString(), 1);
     bluetooth.printLeftRight("Tutar:", tutar.toString(), 1);
     bluetooth.printLeftRight("Ek Hizmetler:", ekhizmetbedeli.toString(), 1);
-    bluetooth.printLeftRight("Odenecek:", odenecekTutar.toString(), 2);
+    bluetooth.printCustom("------------------------", 2, 1,
+        charset: "ISO-8859-9");
+
+    bluetooth.print3Column("Toplam:", odenecekTutar.toString(), "", 2);
     bluetooth.printNewLine();
     bluetooth.printCustom(aciklama, 1, 1, charset: "ISO-8859-9");
     bluetooth.printNewLine();

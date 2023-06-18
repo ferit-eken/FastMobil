@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
+import '/custom_code/actions/index.dart' as actions;
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -748,6 +749,30 @@ class _GirisWidgetState extends State<GirisWidget> {
                                 if (PtsGroup.aracGirisCall.succeeded(
                                   (_model.apiResultork?.jsonBody ?? ''),
                                 )) {
+                                  await actions.girisFisiYazdir(
+                                    valueOrDefault<String>(
+                                      getJsonField(
+                                        FFAppState().Otopark,
+                                        r'''$.OtoparkAdi''',
+                                      ).toString(),
+                                      'OTOPARK ISLETMESI',
+                                    ),
+                                    _model.txtPlakaController.text,
+                                    getCurrentTimestamp,
+                                    valueOrDefault<String>(
+                                      getJsonField(
+                                        FFAppState().Kapi,
+                                        r'''$.KapiAdi''',
+                                      ).toString(),
+                                      'Kapı',
+                                    ),
+                                    _model.txtAractipiValue!,
+                                    getJsonField(
+                                      FFAppState().UserInfo,
+                                      r'''$.Username''',
+                                    ).toString(),
+                                    '# Mali Degeri Yoktur #',
+                                  );
                                   context.safePop();
                                 } else {
                                   await showDialog(

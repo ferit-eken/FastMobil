@@ -198,7 +198,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
             Visibility(
               visible: !valueOrDefault<bool>(
                 _model.resultYazicidurum,
-                true,
+                false,
               ),
               child: Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),

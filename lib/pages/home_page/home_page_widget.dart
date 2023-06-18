@@ -733,7 +733,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                         'ATMACA GİRİŞ',
                                         'OTOMOBİL',
                                         'Ferit EKEN',
-                                        'Çıkış yapmak istediğinizde telefonunuzdan fiş üzerindeki barkodu okutup aracınız isteyebilirsiniz.',
+                                        'Çıkış yapmak istediğinizde',
                                       );
                                     },
                                     child: Column(

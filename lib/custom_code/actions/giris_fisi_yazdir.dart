@@ -38,7 +38,7 @@ Future girisFisiYazdir(String otoparkadi, String plaka, DateTime giriszaman,
   bluetooth.printNewLine();
 
   bluetooth.printNewLine();
-  bluetooth.printQRcode(plaka, 400, 400, 1);
+  bluetooth.printQRcode(plaka, 300, 300, 1);
   bluetooth.printNewLine();
   bluetooth.printNewLine();
   bluetooth.printNewLine();

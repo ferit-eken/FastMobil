@@ -17,15 +17,15 @@ Future<String> cikisFisiYazdir(
   String kapiadi,
   String aracTipi,
   String username,
-  String? cikiszaman,
-  String? gecensure,
-  double? parkUcreti,
-  double? indirim,
-  double? tutar,
-  double? ekhizmetbedeli,
-  double? odenecekTutar,
-  String? aciklama,
-  String? parkkonumu,
+  String cikiszaman,
+  String gecensure,
+  double parkUcreti,
+  double indirim,
+  double tutar,
+  double ekhizmetbedeli,
+  double odenecekTutar,
+  String aciklama,
+  String parkkonumu,
 ) async {
   // Add your function code here!
   // bluetooth printer out
@@ -56,11 +56,11 @@ Future<String> cikisFisiYazdir(
   if (connected == true) {
     bluetooth.printNewLine();
     bluetooth.printCustom(otoparkadi, 2, 1, charset: "ISO-8859-9");
-    bluetooth.printCustom(kapiadi, 2, 1, charset: "ISO-8859-9");
+    bluetooth.printCustom(kapiadi, 1, 1, charset: "ISO-8859-9");
 
     bluetooth.printNewLine();
-
-    bluetooth.printLeftRight("Plaka :", plaka, 1);
+    bluetooth.printCustom(plaka, 2, 1, charset: "ISO-8859-9");
+    bluetooth.printNewLine();
     bluetooth.printLeftRight("Arac Tipi :", aracTipi, 1);
 
     bluetooth.printLeftRight("Giris:", giriszaman, 1);
@@ -82,45 +82,13 @@ Future<String> cikisFisiYazdir(
     bluetooth.printLeftRight("Indirim:", indirim.toString(), 1);
     bluetooth.printLeftRight("Tutar:", tutar.toString(), 1);
     bluetooth.printLeftRight("Ek Hizmetler:", ekhizmetbedeli.toString(), 1);
-    bluetooth.printLeftRight("Odenecek Tutar:", odenecekTutar.toString(), 2);
-
+    bluetooth.printLeftRight("Odenecek:", odenecekTutar.toString(), 2);
+    bluetooth.printNewLine();
     bluetooth.printCustom(aciklama, 1, 1, charset: "ISO-8859-9");
     bluetooth.printNewLine();
     bluetooth.printNewLine();
     bluetooth.printNewLine();
     bluetooth.printNewLine();
-    //  bluetooth.printLeftRight("LEFT1", "RIGHT", 0);
-    //  bluetooth.printLeftRight("LEFT2", "RIGHT", 1);
-    // bluetooth.printLeftRight("LEFT3", "RIGHT", 1, format: "%-15s %15s %n");
-    // bluetooth.printNewLine();
-    // bluetooth.printLeftRight("LEFT4", "RIGHT", 2);
-    // bluetooth.printLeftRight("LEFT5", "RIGHT", 3);
-    // bluetooth.printLeftRight("LEFT6", "RIGHT", 4);
-    // bluetooth.printNewLine();
-    // bluetooth.print3Column("Col1", "Col2", "Col3", 1);
-    // bluetooth.print3Column("Col1", "Col2", "Col3", 1,
-    //    format: "%-10s %10s %10s %n");
-    //bluetooth.printNewLine();
-    //bluetooth.print4Column("Col1", "Col2", "Col3", "Col4", 1);
-    //bluetooth.print4Column("Col1", "Col2", "Col3", "Col4", 1,
-    //     format: "%-8s %7s %7s %7s %n");
-    // bluetooth.printNewLine();
-    //String testString = " Görüşürüz";
-    //bluetooth.printCustom(testString, 1, 1, charset: "windows-1250");
-    //bluetooth.printLeftRight("Številka:", "18000001", 1, charset: "windows-1250");
-    //bluetooth.printCustom("Body left", 1, 0);
-    //bluetooth.printCustom("Body right", 0, 2);
-    // bluetooth.printNewLine();
-    //bluetooth.printCustom("Thank You", 2, 1);
-    //bluetooth.printNewLine();
-    //bluetooth.printQRcode("Insert Your Own Text to Generate", 200, 200, 1);
-    // bluetooth.printNewLine();
-    //  bluetooth.printNewLine();
-    //bluetooth.printNewLine();
-    //bluetooth.printNewLine();
-    // bluetooth.printNewLine();
-    // bluetooth.printNewLine();
-    //bluetooth.paperCut();
 
     return "FIS YAZDIRILDI";
   }

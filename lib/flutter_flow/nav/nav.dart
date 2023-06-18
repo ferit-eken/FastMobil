@@ -206,6 +206,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'aracistekListe',
           path: '/aracistekListe',
           builder: (context, params) => AracistekListeWidget(),
+        ),
+        FFRoute(
+          name: 'PrinterList',
+          path: '/printerList',
+          builder: (context, params) => PrinterListWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

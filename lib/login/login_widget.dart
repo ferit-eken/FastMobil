@@ -123,8 +123,7 @@ class _LoginWidgetState extends State<LoginWidget>
                   ),
                 ),
                 Padding(
-                  padding:
-                      EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(15.0, 2.0, 15.0, 6.0),
                   child: Container(
                     width: double.infinity,
                     constraints: BoxConstraints(
@@ -161,7 +160,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 12.0, 0.0, 24.0),
+                                      0.0, 12.0, 0.0, 12.0),
                                   child: Text(
                                     'Sisteme erişmek için giriş yapınız',
                                     textAlign: TextAlign.center,
@@ -171,7 +170,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 16.0),
+                                      0.0, 0.0, 0.0, 10.0),
                                   child: Container(
                                     width: double.infinity,
                                     child: TextFormField(
@@ -234,7 +233,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 16.0),
+                                      0.0, 0.0, 0.0, 10.0),
                                   child: Container(
                                     width: double.infinity,
                                     child: TextFormField(
@@ -297,7 +296,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 16.0),
+                                      0.0, 0.0, 0.0, 10.0),
                                   child: Container(
                                     width: double.infinity,
                                     child: TextFormField(
@@ -376,7 +375,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 16.0),
+                                      0.0, 0.0, 0.0, 10.0),
                                   child: FFButtonWidget(
                                     onPressed: () async {
                                       _model.apiResultwz0 =
@@ -466,7 +465,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 16.0),
+                                      0.0, 0.0, 0.0, 10.0),
                                   child: FFButtonWidget(
                                     onPressed: () {
                                       print('Button pressed ...');
@@ -505,16 +504,16 @@ class _LoginWidgetState extends State<LoginWidget>
                                 // You will have to add an action on this rich text to go to your login page.
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 12.0, 0.0, 12.0),
+                                      0.0, 12.0, 0.0, 2.0),
                                   child: RichText(
                                     text: TextSpan(
                                       children: [
                                         TextSpan(
-                                          text: 'Don\'t have an account?  ',
+                                          text: 'Yeni Hesap ',
                                           style: TextStyle(),
                                         ),
                                         TextSpan(
-                                          text: 'Sign Up here',
+                                          text: 'Oluştur',
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(

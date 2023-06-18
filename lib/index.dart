@@ -33,3 +33,4 @@ export '/pages/gun_sonu_rapor/gun_sonu_rapor_widget.dart'
 export '/pages/otoparkdurum/otoparkdurum_widget.dart' show OtoparkdurumWidget;
 export '/pages/aracistek_liste/aracistek_liste_widget.dart'
     show AracistekListeWidget;
+export '/settings/printer_list/printer_list_widget.dart' show PrinterListWidget;

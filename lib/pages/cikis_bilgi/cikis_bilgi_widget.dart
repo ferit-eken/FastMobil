@@ -559,9 +559,9 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                                                                         PtsGroup
                                                                             .aracSorguCall
                                                                             .kalan(
-                                                                          columnAracSorguResponse
-                                                                              .jsonBody,
-                                                                        ),
+                                                                              columnAracSorguResponse.jsonBody,
+                                                                            )
+                                                                            .toDouble(),
                                                                         0.0,
                                                                       ),
                                                                       baslik:
@@ -728,9 +728,9 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                                                                         PtsGroup
                                                                             .aracSorguCall
                                                                             .kalan(
-                                                                          columnAracSorguResponse
-                                                                              .jsonBody,
-                                                                        ),
+                                                                              columnAracSorguResponse.jsonBody,
+                                                                            )
+                                                                            .toDouble(),
                                                                         0.0,
                                                                       ),
                                                                       baslik:
@@ -1043,7 +1043,13 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                                                                     .UserInfo,
                                                                 r'''$.Username''',
                                                               ).toString(),
-                                                              'Simdi',
+                                                              PtsGroup
+                                                                  .aracSorguCall
+                                                                  .cikisTarih(
+                                                                    columnAracSorguResponse
+                                                                        .jsonBody,
+                                                                  )
+                                                                  .toString(),
                                                               PtsGroup
                                                                   .aracSorguCall
                                                                   .gecenSure(

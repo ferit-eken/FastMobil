@@ -309,6 +309,10 @@ class AracSorguCall {
         response,
         r'''$.data.Kalan''',
       );
+  dynamic cikisTarih(dynamic response) => getJsonField(
+        response,
+        r'''$.data.CikisTarih''',
+      );
 }
 
 class TahsilatCall {

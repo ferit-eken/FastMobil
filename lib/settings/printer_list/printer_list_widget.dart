@@ -13,7 +13,7 @@ export 'printer_list_model.dart';
 class PrinterListWidget extends StatefulWidget {
   const PrinterListWidget({
     Key? key,
-    required this.yaziciListe,
+    this.yaziciListe,
   }) : super(key: key);
 
   final List<dynamic>? yaziciListe;
@@ -86,7 +86,7 @@ class _PrinterListWidgetState extends State<PrinterListWidget>
                   padding: EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 8.0, 0.0),
                   child: Builder(
                     builder: (context) {
-                      final liste = widget.yaziciListe!.toList();
+                      final liste = widget.yaziciListe?.toList() ?? [];
                       return ListView.builder(
                         padding: EdgeInsets.zero,
                         scrollDirection: Axis.vertical,

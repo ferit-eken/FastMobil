@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/pages/tahsilat_form/tahsilat_form_widget.dart';
 import '/settings/menus/hasar_formu/hasar_formu_widget.dart';
+import '/custom_code/actions/index.dart' as actions;
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -22,6 +23,8 @@ class CikisBilgiModel extends FlutterFlowModel {
   double? resulttahsilatformkredi;
   // Stores action output result for [Backend Call - API (Tahsilat)] action in Column widget.
   ApiCallResponse? apiResultkrediislem;
+  // Stores action output result for [Custom Action - cikisFisiYazdir] action in Column widget.
+  String? resultcikisfis;
   // Stores action output result for [Backend Call - API (HesapKapat)] action in Column widget.
   ApiCallResponse? apiResultgef;
 

@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/pages/tahsilat_form/tahsilat_form_widget.dart';
 import '/settings/menus/hasar_formu/hasar_formu_widget.dart';
+import '/custom_code/actions/index.dart' as actions;
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -999,29 +1000,117 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                                                                 0xFF182C03),
                                                           ),
                                                         ),
-                                                        child: Column(
-                                                          mainAxisSize:
-                                                              MainAxisSize.max,
-                                                          mainAxisAlignment:
-                                                              MainAxisAlignment
-                                                                  .center,
-                                                          children: [
-                                                            Icon(
-                                                              Icons.print,
-                                                              color: Color(
-                                                                  0xFF182C03),
-                                                              size: 32.0,
-                                                            ),
-                                                            Text(
-                                                              'Bilgi Fişi',
-                                                              textAlign:
-                                                                  TextAlign
-                                                                      .center,
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .bodyMedium,
-                                                            ),
-                                                          ],
+                                                        child: InkWell(
+                                                          splashColor: Colors
+                                                              .transparent,
+                                                          focusColor: Colors
+                                                              .transparent,
+                                                          hoverColor: Colors
+                                                              .transparent,
+                                                          highlightColor: Colors
+                                                              .transparent,
+                                                          onTap: () async {
+                                                            _model.resultcikisfis =
+                                                                await actions
+                                                                    .cikisFisiYazdir(
+                                                              getJsonField(
+                                                                FFAppState()
+                                                                    .Otopark,
+                                                                r'''$.OtoparkAdi''',
+                                                              ).toString(),
+                                                              PtsGroup
+                                                                  .aracSorguCall
+                                                                  .plaka(
+                                                                    columnAracSorguResponse
+                                                                        .jsonBody,
+                                                                  )
+                                                                  .toString(),
+                                                              PtsGroup
+                                                                  .aracSorguCall
+                                                                  .girisTarih(
+                                                                    columnAracSorguResponse
+                                                                        .jsonBody,
+                                                                  )
+                                                                  .toString(),
+                                                              getJsonField(
+                                                                FFAppState()
+                                                                    .Kapi,
+                                                                r'''$.KapiAdi''',
+                                                              ).toString(),
+                                                              'OTOMOBIL',
+                                                              getJsonField(
+                                                                FFAppState()
+                                                                    .UserInfo,
+                                                                r'''$.Username''',
+                                                              ).toString(),
+                                                              'Simdi',
+                                                              PtsGroup
+                                                                  .aracSorguCall
+                                                                  .gecenSure(
+                                                                    columnAracSorguResponse
+                                                                        .jsonBody,
+                                                                  )
+                                                                  .toString(),
+                                                              PtsGroup
+                                                                  .aracSorguCall
+                                                                  .ucret(
+                                                                    columnAracSorguResponse
+                                                                        .jsonBody,
+                                                                  )
+                                                                  .toDouble(),
+                                                              PtsGroup
+                                                                  .aracSorguCall
+                                                                  .indirim(
+                                                                    columnAracSorguResponse
+                                                                        .jsonBody,
+                                                                  )
+                                                                  .toDouble(),
+                                                              PtsGroup
+                                                                  .aracSorguCall
+                                                                  .tutar(
+                                                                    columnAracSorguResponse
+                                                                        .jsonBody,
+                                                                  )
+                                                                  .toDouble(),
+                                                              0.0,
+                                                              PtsGroup
+                                                                  .aracSorguCall
+                                                                  .tutar(
+                                                                    columnAracSorguResponse
+                                                                        .jsonBody,
+                                                                  )
+                                                                  .toDouble(),
+                                                              '* Iyi Gunler Dileriz *',
+                                                              'PP4',
+                                                            );
+
+                                                            setState(() {});
+                                                          },
+                                                          child: Column(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .max,
+                                                            mainAxisAlignment:
+                                                                MainAxisAlignment
+                                                                    .center,
+                                                            children: [
+                                                              Icon(
+                                                                Icons.print,
+                                                                color: Color(
+                                                                    0xFF182C03),
+                                                                size: 32.0,
+                                                              ),
+                                                              Text(
+                                                                'Bilgi Fişi',
+                                                                textAlign:
+                                                                    TextAlign
+                                                                        .center,
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium,
+                                                              ),
+                                                            ],
+                                                          ),
                                                         ),
                                                       ),
                                                       Container(

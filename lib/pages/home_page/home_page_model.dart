@@ -22,6 +22,8 @@ class HomePageModel extends FlutterFlowModel {
   ApiCallResponse? apiResultKapi;
   // Stores action output result for [Backend Call - API (GetALL)] action in HomePage widget.
   ApiCallResponse? apiResultAracTipleri;
+  // Stores action output result for [Custom Action - girisFisiYazdir] action in Column widget.
+  String? resultfisyazdir;
 
   /// Initialization and disposal methods.
 

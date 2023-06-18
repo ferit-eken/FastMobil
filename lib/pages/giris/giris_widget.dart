@@ -6,7 +6,9 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/custom_code/actions/index.dart' as actions;
+import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'giris_model.dart';
@@ -149,7 +151,13 @@ class _GirisWidgetState extends State<GirisWidget> {
                                       width: 75.0,
                                       child: TextFormField(
                                         controller: _model.txtPlakaController,
-                                        autofocus: true,
+                                        onChanged: (_) => EasyDebounce.debounce(
+                                          '_model.txtPlakaController',
+                                          Duration(milliseconds: 2000),
+                                          () => setState(() {}),
+                                        ),
+                                        textCapitalization:
+                                            TextCapitalization.sentences,
                                         obscureText: false,
                                         decoration: InputDecoration(
                                           labelText: 'Plaka Giriniz',
@@ -200,12 +208,32 @@ class _GirisWidgetState extends State<GirisWidget> {
                                             borderRadius:
                                                 BorderRadius.circular(8.0),
                                           ),
+                                          suffixIcon: _model.txtPlakaController!
+                                                  .text.isNotEmpty
+                                              ? InkWell(
+                                                  onTap: () async {
+                                                    _model.txtPlakaController
+                                                        ?.clear();
+                                                    setState(() {});
+                                                  },
+                                                  child: Icon(
+                                                    Icons.clear,
+                                                    color: Color(0xFF020000),
+                                                    size: 16.0,
+                                                  ),
+                                                )
+                                              : null,
                                         ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium,
+                                        cursorColor: Color(0xFF92F45C),
                                         validator: _model
                                             .txtPlakaControllerValidator
                                             .asValidator(context),
+                                        inputFormatters: [
+                                          FilteringTextInputFormatter.allow(
+                                              RegExp('[a-zA-Z]'))
+                                        ],
                                       ),
                                     ),
                                   ),

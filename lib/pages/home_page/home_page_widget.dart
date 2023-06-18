@@ -188,10 +188,33 @@ class _HomePageWidgetState extends State<HomePageWidget> {
               ),
               child: Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
-                child: Icon(
-                  Icons.print_sharp,
-                  color: Color(0xFF275F08),
-                  size: 32.0,
+                child: InkWell(
+                  splashColor: Colors.transparent,
+                  focusColor: Colors.transparent,
+                  hoverColor: Colors.transparent,
+                  highlightColor: Colors.transparent,
+                  onTap: () async {
+                    _model.resultyazicilisteCopy =
+                        await actions.getYaziciListe();
+
+                    context.pushNamed(
+                      'PrinterList',
+                      queryParameters: {
+                        'yaziciListe': serializeParam(
+                          _model.resultyaziciliste,
+                          ParamType.JSON,
+                          true,
+                        ),
+                      }.withoutNulls,
+                    );
+
+                    setState(() {});
+                  },
+                  child: Icon(
+                    Icons.print_sharp,
+                    color: Color(0xFF275F08),
+                    size: 32.0,
+                  ),
                 ),
               ),
             ),

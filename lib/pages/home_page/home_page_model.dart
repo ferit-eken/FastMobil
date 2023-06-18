@@ -26,6 +26,8 @@ class HomePageModel extends FlutterFlowModel {
   bool? resultYazicidurum;
   // Stores action output result for [Custom Action - girisFisiYazdir] action in Column widget.
   String? resultfisyazdir;
+  // Stores action output result for [Custom Action - getYaziciListe] action in prn_connected widget.
+  List<dynamic>? resultyazicilisteCopy;
   // Stores action output result for [Custom Action - getYaziciListe] action in prn_disconnected widget.
   List<dynamic>? resultyaziciliste;
 

@@ -2,7 +2,6 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/custom_code/actions/index.dart' as actions;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -12,7 +11,12 @@ import 'printer_list_model.dart';
 export 'printer_list_model.dart';
 
 class PrinterListWidget extends StatefulWidget {
-  const PrinterListWidget({Key? key}) : super(key: key);
+  const PrinterListWidget({
+    Key? key,
+    required this.yaziciListe,
+  }) : super(key: key);
+
+  final List<dynamic>? yaziciListe;
 
   @override
   _PrinterListWidgetState createState() => _PrinterListWidgetState();
@@ -28,11 +32,6 @@ class _PrinterListWidgetState extends State<PrinterListWidget>
   void initState() {
     super.initState();
     _model = createModel(context, () => PrinterListModel());
-
-    // On page load action.
-    SchedulerBinding.instance.addPostFrameCallback((_) async {
-      _model.resultyaziciliste = await actions.getYaziciListe();
-    });
   }
 
   @override
@@ -87,17 +86,13 @@ class _PrinterListWidgetState extends State<PrinterListWidget>
                   padding: EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 8.0, 0.0),
                   child: Builder(
                     builder: (context) {
-                      final yaziciListe = _model.resultyaziciliste
-                              ?.map((e) => e)
-                              .toList()
-                              ?.toList() ??
-                          [];
+                      final liste = widget.yaziciListe!.toList();
                       return ListView.builder(
                         padding: EdgeInsets.zero,
                         scrollDirection: Axis.vertical,
-                        itemCount: yaziciListe.length,
-                        itemBuilder: (context, yaziciListeIndex) {
-                          final yaziciListeItem = yaziciListe[yaziciListeIndex];
+                        itemCount: liste.length,
+                        itemBuilder: (context, listeIndex) {
+                          final listeItem = liste[listeIndex];
                           return Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 1.0),
@@ -139,7 +134,7 @@ class _PrinterListWidgetState extends State<PrinterListWidget>
                                                     12.0, 0.0, 0.0, 0.0),
                                             child: Text(
                                               getJsonField(
-                                                yaziciListeItem,
+                                                listeItem,
                                                 r'''$.name''',
                                               ).toString(),
                                               style:
@@ -160,7 +155,7 @@ class _PrinterListWidgetState extends State<PrinterListWidget>
                                                           12.0, 0.0, 0.0, 0.0),
                                                   child: Text(
                                                     getJsonField(
-                                                      yaziciListeItem,
+                                                      listeItem,
                                                       r'''$.address''',
                                                     ).toString(),
                                                     style: FlutterFlowTheme.of(
@@ -174,7 +169,7 @@ class _PrinterListWidgetState extends State<PrinterListWidget>
                                                           4.0, 0.0, 0.0, 0.0),
                                                   child: Text(
                                                     getJsonField(
-                                                      yaziciListeItem,
+                                                      listeItem,
                                                       r'''$.type''',
                                                     ).toString(),
                                                     style: FlutterFlowTheme.of(

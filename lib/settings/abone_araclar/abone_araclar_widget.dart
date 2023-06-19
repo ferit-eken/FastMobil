@@ -72,7 +72,16 @@ class _AboneAraclarWidgetState extends State<AboneAraclarWidget>
             'Araç Listesi',
             style: FlutterFlowTheme.of(context).headlineSmall,
           ),
-          actions: [],
+          actions: [
+            Padding(
+              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
+              child: Icon(
+                Icons.add_circle_outline_sharp,
+                color: Color(0xFF020000),
+                size: 35.0,
+              ),
+            ),
+          ],
           centerTitle: true,
           elevation: 2.0,
         ),
@@ -103,6 +112,72 @@ class _AboneAraclarWidgetState extends State<AboneAraclarWidget>
                                   fontFamily: 'Readex Pro',
                                   color: Color(0xFF020000),
                                 ),
+                      ),
+                      Padding(
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 2.0, 0.0),
+                        child: FlutterFlowIconButton(
+                          borderColor: Colors.transparent,
+                          borderRadius: 30.0,
+                          borderWidth: 1.0,
+                          buttonSize: 60.0,
+                          icon: Icon(
+                            Icons.add_circle_outline_rounded,
+                            color: Color(0xFF182C03),
+                            size: 30.0,
+                          ),
+                          onPressed: () async {
+                            _model.apiresultgetKod =
+                                await SettingsGroup.getIDCall.call(
+                              db: FFAppState().veritabani,
+                              tablename: 'Cari',
+                              keyField: 'Kod',
+                              command: 'GETID',
+                            );
+                            if (SettingsGroup.getIDCall.successed(
+                              (_model.apiresultgetKod?.jsonBody ?? ''),
+                            )) {
+                              context.pushNamed(
+                                'AboneDetay',
+                                queryParameters: {
+                                  'kod': serializeParam(
+                                    SettingsGroup.getIDCall
+                                        .data(
+                                          (_model.apiresultgetKod?.jsonBody ??
+                                              ''),
+                                        )
+                                        .toString(),
+                                    ParamType.String,
+                                  ),
+                                }.withoutNulls,
+                              );
+                            } else {
+                              await showDialog(
+                                context: context,
+                                builder: (alertDialogContext) {
+                                  return AlertDialog(
+                                    title: Text('Hata'),
+                                    content: Text(SettingsGroup.getIDCall
+                                        .message(
+                                          (_model.apiresultgetKod?.jsonBody ??
+                                              ''),
+                                        )
+                                        .toString()),
+                                    actions: [
+                                      TextButton(
+                                        onPressed: () =>
+                                            Navigator.pop(alertDialogContext),
+                                        child: Text('Ok'),
+                                      ),
+                                    ],
+                                  );
+                                },
+                              );
+                            }
+
+                            setState(() {});
+                          },
+                        ),
                       ),
                     ],
                   ),
@@ -242,28 +317,62 @@ class _AboneAraclarWidgetState extends State<AboneAraclarWidget>
                                             ],
                                           ),
                                         ),
-                                        Card(
-                                          clipBehavior:
-                                              Clip.antiAliasWithSaveLayer,
-                                          color: FlutterFlowTheme.of(context)
-                                              .primaryBackground,
-                                          elevation: 1.0,
-                                          shape: RoundedRectangleBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(40.0),
+                                        FlutterFlowIconButton(
+                                          borderColor: Color(0xDBEB1313),
+                                          borderRadius: 20.0,
+                                          borderWidth: 1.0,
+                                          buttonSize: 40.0,
+                                          fillColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .warning,
+                                          icon: Icon(
+                                            Icons.delete_outline,
+                                            color: Color(0xFFC20707),
+                                            size: 24.0,
                                           ),
-                                          child: Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    4.0, 4.0, 4.0, 4.0),
-                                            child: Icon(
-                                              Icons
-                                                  .keyboard_arrow_right_rounded,
+                                          onPressed: () {
+                                            print('btn_delete pressed ...');
+                                          },
+                                        ),
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  10.0, 0.0, 0.0, 0.0),
+                                          child: FlutterFlowIconButton(
+                                            borderColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .primary,
+                                            borderRadius: 20.0,
+                                            borderWidth: 1.0,
+                                            buttonSize: 40.0,
+                                            fillColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .primaryBackground,
+                                            icon: Icon(
+                                              Icons.arrow_forward_ios,
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .secondaryText,
+                                                      .primaryText,
                                               size: 24.0,
                                             ),
+                                            onPressed: () async {
+                                              context.pushNamed(
+                                                'AboneAracDetay',
+                                                queryParameters: {
+                                                  'arac': serializeParam(
+                                                    aracListeItem,
+                                                    ParamType.JSON,
+                                                  ),
+                                                  'cariKod': serializeParam(
+                                                    getJsonField(
+                                                      aracListeItem,
+                                                      r'''$.CariKod''',
+                                                    ).toString(),
+                                                    ParamType.String,
+                                                  ),
+                                                }.withoutNulls,
+                                              );
+                                            },
                                           ),
                                         ),
                                       ],

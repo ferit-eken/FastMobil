@@ -873,7 +873,7 @@ class _AboneDetayWidgetState extends State<AboneDetayWidget> {
                                               Icon(
                                                 Icons.delete_outlined,
                                                 color: Color(0xDBEB1313),
-                                                size: 30.0,
+                                                size: 35.0,
                                               ),
                                               Text(
                                                 'Abone Sil',
@@ -883,67 +883,6 @@ class _AboneDetayWidgetState extends State<AboneDetayWidget> {
                                                         .bodyMedium,
                                               ),
                                             ],
-                                          ),
-                                        ),
-                                        Container(
-                                          width: 100.0,
-                                          height: 100.0,
-                                          decoration: BoxDecoration(
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondaryBackground,
-                                            boxShadow: [
-                                              BoxShadow(
-                                                blurRadius: 4.0,
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryText,
-                                                offset: Offset(0.0, 2.0),
-                                              )
-                                            ],
-                                            borderRadius:
-                                                BorderRadius.circular(8.0),
-                                            border: Border.all(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .warning,
-                                              width: 2.0,
-                                            ),
-                                          ),
-                                          child: InkWell(
-                                            splashColor: Colors.transparent,
-                                            focusColor: Colors.transparent,
-                                            hoverColor: Colors.transparent,
-                                            highlightColor: Colors.transparent,
-                                            onTap: () async {
-                                              context.pushNamed(
-                                                'AboneAraclar',
-                                                queryParameters: {
-                                                  'cari': serializeParam(
-                                                    widget.cari,
-                                                    ParamType.JSON,
-                                                  ),
-                                                }.withoutNulls,
-                                              );
-                                            },
-                                            child: Column(
-                                              mainAxisSize: MainAxisSize.max,
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.center,
-                                              children: [
-                                                Icon(
-                                                  Icons.electric_car_outlined,
-                                                  color: Color(0xFF275F08),
-                                                  size: 30.0,
-                                                ),
-                                                Text(
-                                                  'Araç Listesi',
-                                                  textAlign: TextAlign.center,
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyMedium,
-                                                ),
-                                              ],
-                                            ),
                                           ),
                                         ),
                                       ],

@@ -229,6 +229,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => AboneAraclarWidget(
             cari: params.getParam('cari', ParamType.JSON),
           ),
+        ),
+        FFRoute(
+          name: 'AboneAracDetay',
+          path: '/aboneAracDetay',
+          builder: (context, params) => AboneAracDetayWidget(
+            arac: params.getParam('arac', ParamType.JSON),
+            cariKod: params.getParam('cariKod', ParamType.String),
+          ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

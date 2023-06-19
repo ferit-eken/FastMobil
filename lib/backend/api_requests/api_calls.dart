@@ -513,6 +513,7 @@ class CariGroup {
   static String baseUrl = 'http://188.132.151.170/api/api';
   static Map<String, String> headers = {};
   static CariKayitCall cariKayitCall = CariKayitCall();
+  static CariAracKayitCall cariAracKayitCall = CariAracKayitCall();
 }
 
 class CariKayitCall {
@@ -570,6 +571,72 @@ class CariKayitCall {
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'CariKayit',
+      apiUrl: '${CariGroup.baseUrl}/values/${db}',
+      callType: ApiCallType.POST,
+      headers: {
+        ...CariGroup.headers,
+      },
+      params: {},
+      body: body,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+    );
+  }
+
+  dynamic successed(dynamic response) => getJsonField(
+        response,
+        r'''$.Successed''',
+      );
+  dynamic message(dynamic response) => getJsonField(
+        response,
+        r'''$.Message''',
+      );
+  dynamic data(dynamic response) => getJsonField(
+        response,
+        r'''$.data''',
+      );
+}
+
+class CariAracKayitCall {
+  Future<ApiCallResponse> call({
+    String? db = '',
+    String? cariKod = '',
+    String? adSoyad = '',
+    String? telefon = '',
+    String? plaka = '',
+    String? kullanimTipi = '',
+    int? isActive,
+    String? command = '',
+    int? id,
+    String? aracTipId = '',
+  }) {
+    final body = '''
+{
+  "tablename": "CariAraclar",
+  "KeyField": "Id",
+  "keyvalue": ${id},
+  "Command": "${command}",
+  "data": {
+    "CariKod": "${cariKod}",
+    "FirmaAdi": "",
+    "AdSoyad": "${adSoyad}",
+    "Telefon": "${telefon}",
+    "Plaka": "${plaka}",
+    "AracMarkaId": 1,
+    "AracModelId": 1,
+    "AracTipId": ${aracTipId},
+    "KullanimTipi": "${kullanimTipi}",
+    "AracRenkId": 1,
+    "EtiketID": "-",
+    "Yetkiler": "-",
+    "isActive": ${isActive}
+  }
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'CariAracKayit',
       apiUrl: '${CariGroup.baseUrl}/values/${db}',
       callType: ApiCallType.POST,
       headers: {

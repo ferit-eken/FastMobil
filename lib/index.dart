@@ -37,3 +37,5 @@ export '/settings/printer_list/printer_list_widget.dart' show PrinterListWidget;
 export '/settings/abone_detay/abone_detay_widget.dart' show AboneDetayWidget;
 export '/settings/abone_araclar/abone_araclar_widget.dart'
     show AboneAraclarWidget;
+export '/settings/abone_arac_detay/abone_arac_detay_widget.dart'
+    show AboneAracDetayWidget;

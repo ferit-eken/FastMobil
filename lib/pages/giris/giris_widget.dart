@@ -354,377 +354,340 @@ class _GirisWidgetState extends State<GirisWidget> {
                           ],
                         ),
                       ),
-                      Flexible(
-                        child: Container(
-                          width: 383.0,
-                          height: 200.0,
-                          child: Stack(
-                            children: [
-                              Align(
-                                alignment: AlignmentDirectional(0.0, 0.0),
-                                child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(8.0),
-                                  child: Image.asset(
-                                    'assets/images/hasartespit.png',
-                                    width: 390.0,
-                                    height: 200.0,
-                                    fit: BoxFit.fitHeight,
-                                  ),
+                      Container(
+                        width: 383.0,
+                        height: 200.0,
+                        child: Stack(
+                          children: [
+                            Align(
+                              alignment: AlignmentDirectional(0.0, 0.0),
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(8.0),
+                                child: Image.asset(
+                                  'assets/images/hasartespit.png',
+                                  width: 390.0,
+                                  height: 200.0,
+                                  fit: BoxFit.contain,
                                 ),
                               ),
-                              Align(
-                                alignment: AlignmentDirectional(-0.59, -0.77),
-                                child: Theme(
-                                  data: ThemeData(
-                                    checkboxTheme: CheckboxThemeData(
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius:
-                                            BorderRadius.circular(4.0),
-                                      ),
+                            ),
+                            Align(
+                              alignment: AlignmentDirectional(-0.59, -0.77),
+                              child: Theme(
+                                data: ThemeData(
+                                  checkboxTheme: CheckboxThemeData(
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(4.0),
                                     ),
-                                    unselectedWidgetColor:
-                                        FlutterFlowTheme.of(context)
-                                            .secondaryText,
                                   ),
-                                  child: Checkbox(
-                                    value: _model.ch4Value ??= false,
-                                    onChanged: (newValue) async {
-                                      setState(
-                                          () => _model.ch4Value = newValue!);
-                                    },
-                                    activeColor:
-                                        FlutterFlowTheme.of(context).primary,
-                                    checkColor:
-                                        FlutterFlowTheme.of(context).info,
-                                  ),
+                                  unselectedWidgetColor:
+                                      FlutterFlowTheme.of(context)
+                                          .secondaryText,
+                                ),
+                                child: Checkbox(
+                                  value: _model.ch4Value ??= false,
+                                  onChanged: (newValue) async {
+                                    setState(() => _model.ch4Value = newValue!);
+                                  },
+                                  activeColor:
+                                      FlutterFlowTheme.of(context).primary,
+                                  checkColor: FlutterFlowTheme.of(context).info,
                                 ),
                               ),
-                              Align(
-                                alignment: AlignmentDirectional(-0.17, -0.79),
-                                child: Theme(
-                                  data: ThemeData(
-                                    checkboxTheme: CheckboxThemeData(
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius:
-                                            BorderRadius.circular(4.0),
-                                      ),
+                            ),
+                            Align(
+                              alignment: AlignmentDirectional(-0.17, -0.79),
+                              child: Theme(
+                                data: ThemeData(
+                                  checkboxTheme: CheckboxThemeData(
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(4.0),
                                     ),
-                                    unselectedWidgetColor:
-                                        FlutterFlowTheme.of(context)
-                                            .secondaryText,
                                   ),
-                                  child: Checkbox(
-                                    value: _model.ch3Value ??= false,
-                                    onChanged: (newValue) async {
-                                      setState(
-                                          () => _model.ch3Value = newValue!);
-                                    },
-                                    activeColor:
-                                        FlutterFlowTheme.of(context).primary,
-                                    checkColor:
-                                        FlutterFlowTheme.of(context).info,
-                                  ),
+                                  unselectedWidgetColor:
+                                      FlutterFlowTheme.of(context)
+                                          .secondaryText,
+                                ),
+                                child: Checkbox(
+                                  value: _model.ch3Value ??= false,
+                                  onChanged: (newValue) async {
+                                    setState(() => _model.ch3Value = newValue!);
+                                  },
+                                  activeColor:
+                                      FlutterFlowTheme.of(context).primary,
+                                  checkColor: FlutterFlowTheme.of(context).info,
                                 ),
                               ),
-                              Align(
-                                alignment: AlignmentDirectional(0.08, -0.77),
-                                child: Theme(
-                                  data: ThemeData(
-                                    checkboxTheme: CheckboxThemeData(
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius:
-                                            BorderRadius.circular(4.0),
-                                      ),
+                            ),
+                            Align(
+                              alignment: AlignmentDirectional(0.08, -0.77),
+                              child: Theme(
+                                data: ThemeData(
+                                  checkboxTheme: CheckboxThemeData(
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(4.0),
                                     ),
-                                    unselectedWidgetColor:
-                                        FlutterFlowTheme.of(context)
-                                            .secondaryText,
                                   ),
-                                  child: Checkbox(
-                                    value: _model.ch2Value ??= false,
-                                    onChanged: (newValue) async {
-                                      setState(
-                                          () => _model.ch2Value = newValue!);
-                                    },
-                                    activeColor:
-                                        FlutterFlowTheme.of(context).primary,
-                                    checkColor:
-                                        FlutterFlowTheme.of(context).info,
-                                  ),
+                                  unselectedWidgetColor:
+                                      FlutterFlowTheme.of(context)
+                                          .secondaryText,
+                                ),
+                                child: Checkbox(
+                                  value: _model.ch2Value ??= false,
+                                  onChanged: (newValue) async {
+                                    setState(() => _model.ch2Value = newValue!);
+                                  },
+                                  activeColor:
+                                      FlutterFlowTheme.of(context).primary,
+                                  checkColor: FlutterFlowTheme.of(context).info,
                                 ),
                               ),
-                              Align(
-                                alignment: AlignmentDirectional(0.51, -0.7),
-                                child: Theme(
-                                  data: ThemeData(
-                                    checkboxTheme: CheckboxThemeData(
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius:
-                                            BorderRadius.circular(4.0),
-                                      ),
+                            ),
+                            Align(
+                              alignment: AlignmentDirectional(0.51, -0.7),
+                              child: Theme(
+                                data: ThemeData(
+                                  checkboxTheme: CheckboxThemeData(
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(4.0),
                                     ),
-                                    unselectedWidgetColor:
-                                        FlutterFlowTheme.of(context)
-                                            .secondaryText,
                                   ),
-                                  child: Checkbox(
-                                    value: _model.ch1Value ??= false,
-                                    onChanged: (newValue) async {
-                                      setState(
-                                          () => _model.ch1Value = newValue!);
-                                    },
-                                    activeColor:
-                                        FlutterFlowTheme.of(context).primary,
-                                    checkColor:
-                                        FlutterFlowTheme.of(context).info,
-                                  ),
+                                  unselectedWidgetColor:
+                                      FlutterFlowTheme.of(context)
+                                          .secondaryText,
+                                ),
+                                child: Checkbox(
+                                  value: _model.ch1Value ??= false,
+                                  onChanged: (newValue) async {
+                                    setState(() => _model.ch1Value = newValue!);
+                                  },
+                                  activeColor:
+                                      FlutterFlowTheme.of(context).primary,
+                                  checkColor: FlutterFlowTheme.of(context).info,
                                 ),
                               ),
-                              Align(
-                                alignment: AlignmentDirectional(-0.82, 0.02),
-                                child: Theme(
-                                  data: ThemeData(
-                                    checkboxTheme: CheckboxThemeData(
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius:
-                                            BorderRadius.circular(4.0),
-                                      ),
+                            ),
+                            Align(
+                              alignment: AlignmentDirectional(-0.82, 0.02),
+                              child: Theme(
+                                data: ThemeData(
+                                  checkboxTheme: CheckboxThemeData(
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(4.0),
                                     ),
-                                    unselectedWidgetColor:
-                                        FlutterFlowTheme.of(context)
-                                            .secondaryText,
                                   ),
-                                  child: Checkbox(
-                                    value: _model.ch5Value ??= false,
-                                    onChanged: (newValue) async {
-                                      setState(
-                                          () => _model.ch5Value = newValue!);
-                                    },
-                                    activeColor:
-                                        FlutterFlowTheme.of(context).primary,
-                                    checkColor:
-                                        FlutterFlowTheme.of(context).info,
-                                  ),
+                                  unselectedWidgetColor:
+                                      FlutterFlowTheme.of(context)
+                                          .secondaryText,
+                                ),
+                                child: Checkbox(
+                                  value: _model.ch5Value ??= false,
+                                  onChanged: (newValue) async {
+                                    setState(() => _model.ch5Value = newValue!);
+                                  },
+                                  activeColor:
+                                      FlutterFlowTheme.of(context).primary,
+                                  checkColor: FlutterFlowTheme.of(context).info,
                                 ),
                               ),
-                              Align(
-                                alignment: AlignmentDirectional(-0.56, 0.01),
-                                child: Theme(
-                                  data: ThemeData(
-                                    checkboxTheme: CheckboxThemeData(
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius:
-                                            BorderRadius.circular(4.0),
-                                      ),
+                            ),
+                            Align(
+                              alignment: AlignmentDirectional(-0.56, 0.01),
+                              child: Theme(
+                                data: ThemeData(
+                                  checkboxTheme: CheckboxThemeData(
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(4.0),
                                     ),
-                                    unselectedWidgetColor:
-                                        FlutterFlowTheme.of(context)
-                                            .secondaryText,
                                   ),
-                                  child: Checkbox(
-                                    value: _model.ch6Value ??= false,
-                                    onChanged: (newValue) async {
-                                      setState(
-                                          () => _model.ch6Value = newValue!);
-                                    },
-                                    activeColor:
-                                        FlutterFlowTheme.of(context).primary,
-                                    checkColor:
-                                        FlutterFlowTheme.of(context).info,
-                                  ),
+                                  unselectedWidgetColor:
+                                      FlutterFlowTheme.of(context)
+                                          .secondaryText,
+                                ),
+                                child: Checkbox(
+                                  value: _model.ch6Value ??= false,
+                                  onChanged: (newValue) async {
+                                    setState(() => _model.ch6Value = newValue!);
+                                  },
+                                  activeColor:
+                                      FlutterFlowTheme.of(context).primary,
+                                  checkColor: FlutterFlowTheme.of(context).info,
                                 ),
                               ),
-                              Align(
-                                alignment: AlignmentDirectional(-0.09, 0.01),
-                                child: Theme(
-                                  data: ThemeData(
-                                    checkboxTheme: CheckboxThemeData(
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius:
-                                            BorderRadius.circular(4.0),
-                                      ),
+                            ),
+                            Align(
+                              alignment: AlignmentDirectional(-0.09, 0.01),
+                              child: Theme(
+                                data: ThemeData(
+                                  checkboxTheme: CheckboxThemeData(
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(4.0),
                                     ),
-                                    unselectedWidgetColor:
-                                        FlutterFlowTheme.of(context)
-                                            .secondaryText,
                                   ),
-                                  child: Checkbox(
-                                    value: _model.ch13Value ??= false,
-                                    onChanged: (newValue) async {
-                                      setState(
-                                          () => _model.ch13Value = newValue!);
-                                    },
-                                    activeColor:
-                                        FlutterFlowTheme.of(context).primary,
-                                    checkColor:
-                                        FlutterFlowTheme.of(context).info,
-                                  ),
+                                  unselectedWidgetColor:
+                                      FlutterFlowTheme.of(context)
+                                          .secondaryText,
+                                ),
+                                child: Checkbox(
+                                  value: _model.ch13Value ??= false,
+                                  onChanged: (newValue) async {
+                                    setState(
+                                        () => _model.ch13Value = newValue!);
+                                  },
+                                  activeColor:
+                                      FlutterFlowTheme.of(context).primary,
+                                  checkColor: FlutterFlowTheme.of(context).info,
                                 ),
                               ),
-                              Align(
-                                alignment: AlignmentDirectional(0.44, 0.0),
-                                child: Theme(
-                                  data: ThemeData(
-                                    checkboxTheme: CheckboxThemeData(
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius:
-                                            BorderRadius.circular(4.0),
-                                      ),
+                            ),
+                            Align(
+                              alignment: AlignmentDirectional(0.44, 0.0),
+                              child: Theme(
+                                data: ThemeData(
+                                  checkboxTheme: CheckboxThemeData(
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(4.0),
                                     ),
-                                    unselectedWidgetColor:
-                                        FlutterFlowTheme.of(context)
-                                            .secondaryText,
                                   ),
-                                  child: Checkbox(
-                                    value: _model.ch12Value ??= false,
-                                    onChanged: (newValue) async {
-                                      setState(
-                                          () => _model.ch12Value = newValue!);
-                                    },
-                                    activeColor:
-                                        FlutterFlowTheme.of(context).primary,
-                                    checkColor:
-                                        FlutterFlowTheme.of(context).info,
-                                  ),
+                                  unselectedWidgetColor:
+                                      FlutterFlowTheme.of(context)
+                                          .secondaryText,
+                                ),
+                                child: Checkbox(
+                                  value: _model.ch12Value ??= false,
+                                  onChanged: (newValue) async {
+                                    setState(
+                                        () => _model.ch12Value = newValue!);
+                                  },
+                                  activeColor:
+                                      FlutterFlowTheme.of(context).primary,
+                                  checkColor: FlutterFlowTheme.of(context).info,
                                 ),
                               ),
-                              Align(
-                                alignment: AlignmentDirectional(0.82, -0.02),
-                                child: Theme(
-                                  data: ThemeData(
-                                    checkboxTheme: CheckboxThemeData(
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius:
-                                            BorderRadius.circular(4.0),
-                                      ),
+                            ),
+                            Align(
+                              alignment: AlignmentDirectional(0.82, -0.02),
+                              child: Theme(
+                                data: ThemeData(
+                                  checkboxTheme: CheckboxThemeData(
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(4.0),
                                     ),
-                                    unselectedWidgetColor:
-                                        FlutterFlowTheme.of(context)
-                                            .secondaryText,
                                   ),
-                                  child: Checkbox(
-                                    value: _model.ch11Value ??= false,
-                                    onChanged: (newValue) async {
-                                      setState(
-                                          () => _model.ch11Value = newValue!);
-                                    },
-                                    activeColor:
-                                        FlutterFlowTheme.of(context).primary,
-                                    checkColor:
-                                        FlutterFlowTheme.of(context).info,
-                                  ),
+                                  unselectedWidgetColor:
+                                      FlutterFlowTheme.of(context)
+                                          .secondaryText,
+                                ),
+                                child: Checkbox(
+                                  value: _model.ch11Value ??= false,
+                                  onChanged: (newValue) async {
+                                    setState(
+                                        () => _model.ch11Value = newValue!);
+                                  },
+                                  activeColor:
+                                      FlutterFlowTheme.of(context).primary,
+                                  checkColor: FlutterFlowTheme.of(context).info,
                                 ),
                               ),
-                              Align(
-                                alignment: AlignmentDirectional(-0.57, 0.76),
-                                child: Theme(
-                                  data: ThemeData(
-                                    checkboxTheme: CheckboxThemeData(
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius:
-                                            BorderRadius.circular(4.0),
-                                      ),
+                            ),
+                            Align(
+                              alignment: AlignmentDirectional(-0.57, 0.76),
+                              child: Theme(
+                                data: ThemeData(
+                                  checkboxTheme: CheckboxThemeData(
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(4.0),
                                     ),
-                                    unselectedWidgetColor:
-                                        FlutterFlowTheme.of(context)
-                                            .secondaryText,
                                   ),
-                                  child: Checkbox(
-                                    value: _model.ch7Value ??= false,
-                                    onChanged: (newValue) async {
-                                      setState(
-                                          () => _model.ch7Value = newValue!);
-                                    },
-                                    activeColor:
-                                        FlutterFlowTheme.of(context).primary,
-                                    checkColor:
-                                        FlutterFlowTheme.of(context).info,
-                                  ),
+                                  unselectedWidgetColor:
+                                      FlutterFlowTheme.of(context)
+                                          .secondaryText,
+                                ),
+                                child: Checkbox(
+                                  value: _model.ch7Value ??= false,
+                                  onChanged: (newValue) async {
+                                    setState(() => _model.ch7Value = newValue!);
+                                  },
+                                  activeColor:
+                                      FlutterFlowTheme.of(context).primary,
+                                  checkColor: FlutterFlowTheme.of(context).info,
                                 ),
                               ),
-                              Align(
-                                alignment: AlignmentDirectional(-0.17, 0.79),
-                                child: Theme(
-                                  data: ThemeData(
-                                    checkboxTheme: CheckboxThemeData(
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius:
-                                            BorderRadius.circular(4.0),
-                                      ),
+                            ),
+                            Align(
+                              alignment: AlignmentDirectional(-0.17, 0.79),
+                              child: Theme(
+                                data: ThemeData(
+                                  checkboxTheme: CheckboxThemeData(
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(4.0),
                                     ),
-                                    unselectedWidgetColor:
-                                        FlutterFlowTheme.of(context)
-                                            .secondaryText,
                                   ),
-                                  child: Checkbox(
-                                    value: _model.ch8Value ??= false,
-                                    onChanged: (newValue) async {
-                                      setState(
-                                          () => _model.ch8Value = newValue!);
-                                    },
-                                    activeColor:
-                                        FlutterFlowTheme.of(context).primary,
-                                    checkColor:
-                                        FlutterFlowTheme.of(context).info,
-                                  ),
+                                  unselectedWidgetColor:
+                                      FlutterFlowTheme.of(context)
+                                          .secondaryText,
+                                ),
+                                child: Checkbox(
+                                  value: _model.ch8Value ??= false,
+                                  onChanged: (newValue) async {
+                                    setState(() => _model.ch8Value = newValue!);
+                                  },
+                                  activeColor:
+                                      FlutterFlowTheme.of(context).primary,
+                                  checkColor: FlutterFlowTheme.of(context).info,
                                 ),
                               ),
-                              Align(
-                                alignment: AlignmentDirectional(0.1, 0.81),
-                                child: Theme(
-                                  data: ThemeData(
-                                    checkboxTheme: CheckboxThemeData(
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius:
-                                            BorderRadius.circular(4.0),
-                                      ),
+                            ),
+                            Align(
+                              alignment: AlignmentDirectional(0.1, 0.81),
+                              child: Theme(
+                                data: ThemeData(
+                                  checkboxTheme: CheckboxThemeData(
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(4.0),
                                     ),
-                                    unselectedWidgetColor:
-                                        FlutterFlowTheme.of(context)
-                                            .secondaryText,
                                   ),
-                                  child: Checkbox(
-                                    value: _model.ch9Value ??= false,
-                                    onChanged: (newValue) async {
-                                      setState(
-                                          () => _model.ch9Value = newValue!);
-                                    },
-                                    activeColor:
-                                        FlutterFlowTheme.of(context).primary,
-                                    checkColor:
-                                        FlutterFlowTheme.of(context).info,
-                                  ),
+                                  unselectedWidgetColor:
+                                      FlutterFlowTheme.of(context)
+                                          .secondaryText,
+                                ),
+                                child: Checkbox(
+                                  value: _model.ch9Value ??= false,
+                                  onChanged: (newValue) async {
+                                    setState(() => _model.ch9Value = newValue!);
+                                  },
+                                  activeColor:
+                                      FlutterFlowTheme.of(context).primary,
+                                  checkColor: FlutterFlowTheme.of(context).info,
                                 ),
                               ),
-                              Align(
-                                alignment: AlignmentDirectional(0.54, 0.74),
-                                child: Theme(
-                                  data: ThemeData(
-                                    checkboxTheme: CheckboxThemeData(
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius:
-                                            BorderRadius.circular(4.0),
-                                      ),
+                            ),
+                            Align(
+                              alignment: AlignmentDirectional(0.54, 0.74),
+                              child: Theme(
+                                data: ThemeData(
+                                  checkboxTheme: CheckboxThemeData(
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(4.0),
                                     ),
-                                    unselectedWidgetColor:
-                                        FlutterFlowTheme.of(context)
-                                            .secondaryText,
                                   ),
-                                  child: Checkbox(
-                                    value: _model.ch10Value ??= false,
-                                    onChanged: (newValue) async {
-                                      setState(
-                                          () => _model.ch10Value = newValue!);
-                                    },
-                                    activeColor:
-                                        FlutterFlowTheme.of(context).primary,
-                                    checkColor:
-                                        FlutterFlowTheme.of(context).info,
-                                  ),
+                                  unselectedWidgetColor:
+                                      FlutterFlowTheme.of(context)
+                                          .secondaryText,
+                                ),
+                                child: Checkbox(
+                                  value: _model.ch10Value ??= false,
+                                  onChanged: (newValue) async {
+                                    setState(
+                                        () => _model.ch10Value = newValue!);
+                                  },
+                                  activeColor:
+                                      FlutterFlowTheme.of(context).primary,
+                                  checkColor: FlutterFlowTheme.of(context).info,
                                 ),
                               ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
                       ),
                       Padding(

@@ -108,7 +108,7 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                                 15.0, 15.0, 15.0, 15.0),
                             child: Container(
                               width: double.infinity,
-                              height: 251.0,
+                              height: double.infinity,
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
@@ -455,730 +455,156 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                                           ],
                                         ),
                                       ),
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            15.0, 15.0, 15.0, 15.0),
-                                        child: Container(
-                                          width: double.infinity,
-                                          height: 250.0,
-                                          decoration: BoxDecoration(
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondaryBackground,
-                                          ),
-                                          child: Column(
-                                            mainAxisSize: MainAxisSize.max,
-                                            children: [
-                                              Container(
-                                                width: MediaQuery.of(context)
-                                                        .size
-                                                        .width *
-                                                    1.0,
-                                                height: 24.0,
-                                                decoration: BoxDecoration(
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .warning,
-                                                ),
-                                                child: Text(
-                                                  'İşlemler',
-                                                  textAlign: TextAlign.center,
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyMedium,
-                                                ),
+                                      Container(
+                                        width: double.infinity,
+                                        height: 225.0,
+                                        decoration: BoxDecoration(
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryBackground,
+                                        ),
+                                        child: Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          children: [
+                                            Container(
+                                              width: MediaQuery.of(context)
+                                                      .size
+                                                      .width *
+                                                  1.0,
+                                              height: 24.0,
+                                              decoration: BoxDecoration(
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .warning,
                                               ),
-                                              Expanded(
-                                                child: Padding(
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 10.0, 0.0, 0.0),
-                                                  child: GridView(
-                                                    padding: EdgeInsets.zero,
-                                                    gridDelegate:
-                                                        SliverGridDelegateWithFixedCrossAxisCount(
-                                                      crossAxisCount: 4,
-                                                      crossAxisSpacing: 10.0,
-                                                      mainAxisSpacing: 10.0,
-                                                      childAspectRatio: 1.0,
-                                                    ),
-                                                    scrollDirection:
-                                                        Axis.vertical,
-                                                    children: [
-                                                      Container(
-                                                        width: 95.0,
-                                                        height: 100.0,
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryBackground,
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      5.0),
-                                                          border: Border.all(
-                                                            color: Color(
-                                                                0xFF182C03),
-                                                          ),
-                                                        ),
-                                                        child: InkWell(
-                                                          splashColor: Colors
-                                                              .transparent,
-                                                          focusColor: Colors
-                                                              .transparent,
-                                                          hoverColor: Colors
-                                                              .transparent,
-                                                          highlightColor: Colors
-                                                              .transparent,
-                                                          onTap: () async {
-                                                            await showModalBottomSheet(
-                                                              isScrollControlled:
-                                                                  true,
-                                                              backgroundColor:
-                                                                  Colors
-                                                                      .transparent,
-                                                              enableDrag: false,
-                                                              context: context,
-                                                              builder:
-                                                                  (context) {
-                                                                return GestureDetector(
-                                                                  onTap: () => FocusScope.of(
-                                                                          context)
-                                                                      .requestFocus(
-                                                                          _model
-                                                                              .unfocusNode),
-                                                                  child:
-                                                                      Padding(
-                                                                    padding: MediaQuery.of(
-                                                                            context)
-                                                                        .viewInsets,
-                                                                    child:
-                                                                        TahsilatFormWidget(
-                                                                      bakiye: valueOrDefault<
-                                                                          double>(
-                                                                        PtsGroup
-                                                                            .aracSorguCall
-                                                                            .kalan(
-                                                                              columnAracSorguResponse.jsonBody,
-                                                                            )
-                                                                            .toDouble(),
-                                                                        0.0,
-                                                                      ),
-                                                                      baslik:
-                                                                          'NAKIT TAHSILAT',
-                                                                    ),
-                                                                  ),
-                                                                );
-                                                              },
-                                                            ).then((value) =>
-                                                                setState(() =>
-                                                                    _model.resulttahsilatform =
-                                                                        value));
-
-                                                            if (_model
-                                                                    .resulttahsilatform !=
-                                                                0.0) {
-                                                              _model.apiResultnakitislem =
-                                                                  await PtsGroup
-                                                                      .tahsilatCall
-                                                                      .call(
-                                                                db: FFAppState()
-                                                                    .veritabani,
-                                                                command:
-                                                                    'NAKIT',
-                                                                id: widget
-                                                                    .gecisId,
-                                                                userId:
-                                                                    FFAppState()
-                                                                        .UserId,
-                                                                kasaKodu:
-                                                                    getJsonField(
-                                                                  FFAppState()
-                                                                      .Kapi,
-                                                                  r'''$.KasaKodu''',
-                                                                ).toString(),
-                                                                bankaKodu: 0,
-                                                                tutar: _model
-                                                                    .resulttahsilatform,
-                                                              );
-                                                              if (PtsGroup
-                                                                  .tahsilatCall
-                                                                  .succeeded(
-                                                                (_model.apiResultnakitislem
-                                                                        ?.jsonBody ??
-                                                                    ''),
-                                                              )) {
-                                                                setState(() =>
-                                                                    _model.apiRequestCompleter =
-                                                                        null);
-                                                                await _model
-                                                                    .waitForApiRequestCompleted();
-                                                              } else {
-                                                                await showDialog(
-                                                                  context:
-                                                                      context,
-                                                                  builder:
-                                                                      (alertDialogContext) {
-                                                                    return AlertDialog(
-                                                                      title: Text(
-                                                                          'Hata'),
-                                                                      content: Text(PtsGroup
-                                                                          .tahsilatCall
-                                                                          .message(
-                                                                            (_model.apiResultnakitislem?.jsonBody ??
-                                                                                ''),
-                                                                          )
-                                                                          .toString()),
-                                                                      actions: [
-                                                                        TextButton(
-                                                                          onPressed: () =>
-                                                                              Navigator.pop(alertDialogContext),
-                                                                          child:
-                                                                              Text('Ok'),
-                                                                        ),
-                                                                      ],
-                                                                    );
-                                                                  },
-                                                                );
-                                                              }
-                                                            }
-
-                                                            setState(() {});
-                                                          },
-                                                          child: Column(
-                                                            mainAxisSize:
-                                                                MainAxisSize
-                                                                    .max,
-                                                            mainAxisAlignment:
-                                                                MainAxisAlignment
-                                                                    .center,
-                                                            children: [
-                                                              Icon(
-                                                                Icons
-                                                                    .attach_money_outlined,
-                                                                color: Color(
-                                                                    0xFF182C03),
-                                                                size: 32.0,
-                                                              ),
-                                                              Text(
-                                                                'Nakit Ödeme',
-                                                                textAlign:
-                                                                    TextAlign
-                                                                        .center,
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium,
-                                                              ),
-                                                            ],
-                                                          ),
+                                              child: Text(
+                                                'İşlemler',
+                                                textAlign: TextAlign.center,
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium,
+                                              ),
+                                            ),
+                                            Expanded(
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 10.0, 0.0, 0.0),
+                                                child: GridView(
+                                                  padding: EdgeInsets.zero,
+                                                  gridDelegate:
+                                                      SliverGridDelegateWithFixedCrossAxisCount(
+                                                    crossAxisCount: 4,
+                                                    crossAxisSpacing: 10.0,
+                                                    mainAxisSpacing: 10.0,
+                                                    childAspectRatio: 1.0,
+                                                  ),
+                                                  scrollDirection:
+                                                      Axis.vertical,
+                                                  children: [
+                                                    Container(
+                                                      width: 95.0,
+                                                      height: 100.0,
+                                                      decoration: BoxDecoration(
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .secondaryBackground,
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(5.0),
+                                                        border: Border.all(
+                                                          color:
+                                                              Color(0xFF182C03),
                                                         ),
                                                       ),
-                                                      Container(
-                                                        width: 95.0,
-                                                        height: 100.0,
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryBackground,
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      5.0),
-                                                          border: Border.all(
-                                                            color: Color(
-                                                                0xFF182C03),
-                                                          ),
-                                                        ),
-                                                        child: InkWell(
-                                                          splashColor: Colors
-                                                              .transparent,
-                                                          focusColor: Colors
-                                                              .transparent,
-                                                          hoverColor: Colors
-                                                              .transparent,
-                                                          highlightColor: Colors
-                                                              .transparent,
-                                                          onTap: () async {
-                                                            await showModalBottomSheet(
-                                                              isScrollControlled:
-                                                                  true,
-                                                              backgroundColor:
-                                                                  Colors
-                                                                      .transparent,
-                                                              enableDrag: false,
-                                                              context: context,
-                                                              builder:
-                                                                  (context) {
-                                                                return GestureDetector(
-                                                                  onTap: () => FocusScope.of(
+                                                      child: InkWell(
+                                                        splashColor:
+                                                            Colors.transparent,
+                                                        focusColor:
+                                                            Colors.transparent,
+                                                        hoverColor:
+                                                            Colors.transparent,
+                                                        highlightColor:
+                                                            Colors.transparent,
+                                                        onTap: () async {
+                                                          await showModalBottomSheet(
+                                                            isScrollControlled:
+                                                                true,
+                                                            backgroundColor:
+                                                                Colors
+                                                                    .transparent,
+                                                            enableDrag: false,
+                                                            context: context,
+                                                            builder: (context) {
+                                                              return GestureDetector(
+                                                                onTap: () => FocusScope.of(
+                                                                        context)
+                                                                    .requestFocus(
+                                                                        _model
+                                                                            .unfocusNode),
+                                                                child: Padding(
+                                                                  padding: MediaQuery.of(
                                                                           context)
-                                                                      .requestFocus(
-                                                                          _model
-                                                                              .unfocusNode),
+                                                                      .viewInsets,
                                                                   child:
-                                                                      Padding(
-                                                                    padding: MediaQuery.of(
-                                                                            context)
-                                                                        .viewInsets,
-                                                                    child:
-                                                                        TahsilatFormWidget(
-                                                                      bakiye: valueOrDefault<
-                                                                          double>(
-                                                                        PtsGroup
-                                                                            .aracSorguCall
-                                                                            .kalan(
-                                                                              columnAracSorguResponse.jsonBody,
-                                                                            )
-                                                                            .toDouble(),
-                                                                        0.0,
-                                                                      ),
-                                                                      baslik:
-                                                                          'KREDI KARTI',
-                                                                    ),
-                                                                  ),
-                                                                );
-                                                              },
-                                                            ).then((value) =>
-                                                                setState(() =>
-                                                                    _model.resulttahsilatformkredi =
-                                                                        value));
-
-                                                            if (_model
-                                                                    .resulttahsilatformkredi !=
-                                                                0.0) {
-                                                              _model.apiResultkrediislem =
-                                                                  await PtsGroup
-                                                                      .tahsilatCall
-                                                                      .call(
-                                                                db: FFAppState()
-                                                                    .veritabani,
-                                                                command:
-                                                                    'KREDI',
-                                                                id: widget
-                                                                    .gecisId,
-                                                                userId:
-                                                                    FFAppState()
-                                                                        .UserId,
-                                                                kasaKodu:
-                                                                    getJsonField(
-                                                                  FFAppState()
-                                                                      .Kapi,
-                                                                  r'''$.KasaKodu''',
-                                                                ).toString(),
-                                                                bankaKodu:
-                                                                    getJsonField(
-                                                                  FFAppState()
-                                                                      .Kapi,
-                                                                  r'''$.BankaKodu''',
-                                                                ),
-                                                                tutar:
-                                                                    valueOrDefault<
+                                                                      TahsilatFormWidget(
+                                                                    bakiye: valueOrDefault<
                                                                         double>(
-                                                                  _model
-                                                                      .resulttahsilatformkredi,
-                                                                  0.0,
+                                                                      PtsGroup
+                                                                          .aracSorguCall
+                                                                          .kalan(
+                                                                            columnAracSorguResponse.jsonBody,
+                                                                          )
+                                                                          .toDouble(),
+                                                                      0.0,
+                                                                    ),
+                                                                    baslik:
+                                                                        'NAKIT TAHSILAT',
+                                                                  ),
                                                                 ),
                                                               );
-                                                              if (PtsGroup
-                                                                  .tahsilatCall
-                                                                  .succeeded(
-                                                                (_model.apiResultkrediislem
-                                                                        ?.jsonBody ??
-                                                                    ''),
-                                                              )) {
-                                                                setState(() =>
-                                                                    _model.apiRequestCompleter =
-                                                                        null);
-                                                                await _model
-                                                                    .waitForApiRequestCompleted();
-                                                              } else {
-                                                                await showDialog(
-                                                                  context:
-                                                                      context,
-                                                                  builder:
-                                                                      (alertDialogContext) {
-                                                                    return AlertDialog(
-                                                                      title: Text(
-                                                                          'Hata'),
-                                                                      content: Text(PtsGroup
-                                                                          .tahsilatCall
-                                                                          .message(
-                                                                            (_model.apiResultkrediislem?.jsonBody ??
-                                                                                ''),
-                                                                          )
-                                                                          .toString()),
-                                                                      actions: [
-                                                                        TextButton(
-                                                                          onPressed: () =>
-                                                                              Navigator.pop(alertDialogContext),
-                                                                          child:
-                                                                              Text('Ok'),
-                                                                        ),
-                                                                      ],
-                                                                    );
-                                                                  },
-                                                                );
-                                                              }
-                                                            }
+                                                            },
+                                                          ).then((value) =>
+                                                              setState(() =>
+                                                                  _model.resulttahsilatform =
+                                                                      value));
 
-                                                            setState(() {});
-                                                          },
-                                                          child: Column(
-                                                            mainAxisSize:
-                                                                MainAxisSize
-                                                                    .max,
-                                                            mainAxisAlignment:
-                                                                MainAxisAlignment
-                                                                    .center,
-                                                            children: [
-                                                              Icon(
-                                                                Icons
-                                                                    .credit_card_outlined,
-                                                                color: Color(
-                                                                    0xFF182C03),
-                                                                size: 32.0,
-                                                              ),
-                                                              Text(
-                                                                'Kredi Kartı Ödeme',
-                                                                textAlign:
-                                                                    TextAlign
-                                                                        .center,
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium,
-                                                              ),
-                                                            ],
-                                                          ),
-                                                        ),
-                                                      ),
-                                                      Container(
-                                                        width: 95.0,
-                                                        height: 100.0,
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryBackground,
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      5.0),
-                                                          border: Border.all(
-                                                            color: Color(
-                                                                0xFF182C03),
-                                                          ),
-                                                        ),
-                                                        child: InkWell(
-                                                          splashColor: Colors
-                                                              .transparent,
-                                                          focusColor: Colors
-                                                              .transparent,
-                                                          hoverColor: Colors
-                                                              .transparent,
-                                                          highlightColor: Colors
-                                                              .transparent,
-                                                          onTap: () async {
-                                                            await showModalBottomSheet(
-                                                              isScrollControlled:
-                                                                  true,
-                                                              backgroundColor:
-                                                                  Colors
-                                                                      .transparent,
-                                                              enableDrag: false,
-                                                              context: context,
-                                                              builder:
-                                                                  (context) {
-                                                                return GestureDetector(
-                                                                  onTap: () => FocusScope.of(
-                                                                          context)
-                                                                      .requestFocus(
-                                                                          _model
-                                                                              .unfocusNode),
-                                                                  child:
-                                                                      Padding(
-                                                                    padding: MediaQuery.of(
-                                                                            context)
-                                                                        .viewInsets,
-                                                                    child:
-                                                                        HasarFormuWidget(
-                                                                      gecisId:
-                                                                          widget
-                                                                              .gecisId!,
-                                                                    ),
-                                                                  ),
-                                                                );
-                                                              },
-                                                            ).then((value) =>
-                                                                setState(
-                                                                    () {}));
-                                                          },
-                                                          child: Column(
-                                                            mainAxisSize:
-                                                                MainAxisSize
-                                                                    .max,
-                                                            mainAxisAlignment:
-                                                                MainAxisAlignment
-                                                                    .center,
-                                                            children: [
-                                                              Icon(
-                                                                Icons
-                                                                    .report_gmailerrorred_sharp,
-                                                                color: Color(
-                                                                    0xFF182C03),
-                                                                size: 32.0,
-                                                              ),
-                                                              Text(
-                                                                'Hasar Formu',
-                                                                textAlign:
-                                                                    TextAlign
-                                                                        .center,
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium,
-                                                              ),
-                                                            ],
-                                                          ),
-                                                        ),
-                                                      ),
-                                                      Container(
-                                                        width: 95.0,
-                                                        height: 100.0,
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryBackground,
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      5.0),
-                                                          border: Border.all(
-                                                            color: Color(
-                                                                0xFF182C03),
-                                                          ),
-                                                        ),
-                                                        child: Column(
-                                                          mainAxisSize:
-                                                              MainAxisSize.max,
-                                                          mainAxisAlignment:
-                                                              MainAxisAlignment
-                                                                  .center,
-                                                          children: [
-                                                            Icon(
-                                                              Icons.add_road,
-                                                              color: Color(
-                                                                  0xFF182C03),
-                                                              size: 32.0,
-                                                            ),
-                                                            Text(
-                                                              'Ek Hizmetler',
-                                                              textAlign:
-                                                                  TextAlign
-                                                                      .center,
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .bodyMedium,
-                                                            ),
-                                                          ],
-                                                        ),
-                                                      ),
-                                                      Container(
-                                                        width: 95.0,
-                                                        height: 100.0,
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryBackground,
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      5.0),
-                                                          border: Border.all(
-                                                            color: Color(
-                                                                0xFF182C03),
-                                                          ),
-                                                        ),
-                                                        child: InkWell(
-                                                          splashColor: Colors
-                                                              .transparent,
-                                                          focusColor: Colors
-                                                              .transparent,
-                                                          hoverColor: Colors
-                                                              .transparent,
-                                                          highlightColor: Colors
-                                                              .transparent,
-                                                          onTap: () async {
-                                                            _model.resultcikisfis =
-                                                                await actions
-                                                                    .cikisFisiYazdir(
-                                                              getJsonField(
-                                                                FFAppState()
-                                                                    .Otopark,
-                                                                r'''$.OtoparkAdi''',
-                                                              ).toString(),
-                                                              PtsGroup
-                                                                  .aracSorguCall
-                                                                  .plaka(
-                                                                    columnAracSorguResponse
-                                                                        .jsonBody,
-                                                                  )
-                                                                  .toString(),
-                                                              PtsGroup
-                                                                  .aracSorguCall
-                                                                  .girisTarih(
-                                                                    columnAracSorguResponse
-                                                                        .jsonBody,
-                                                                  )
-                                                                  .toString(),
-                                                              getJsonField(
-                                                                FFAppState()
-                                                                    .Kapi,
-                                                                r'''$.KapiAdi''',
-                                                              ).toString(),
-                                                              'OTOMOBIL',
-                                                              getJsonField(
-                                                                FFAppState()
-                                                                    .UserInfo,
-                                                                r'''$.Username''',
-                                                              ).toString(),
-                                                              PtsGroup
-                                                                  .aracSorguCall
-                                                                  .cikisTarih(
-                                                                    columnAracSorguResponse
-                                                                        .jsonBody,
-                                                                  )
-                                                                  .toString(),
-                                                              PtsGroup
-                                                                  .aracSorguCall
-                                                                  .gecenSure(
-                                                                    columnAracSorguResponse
-                                                                        .jsonBody,
-                                                                  )
-                                                                  .toString(),
-                                                              PtsGroup
-                                                                  .aracSorguCall
-                                                                  .ucret(
-                                                                    columnAracSorguResponse
-                                                                        .jsonBody,
-                                                                  )
-                                                                  .toDouble(),
-                                                              PtsGroup
-                                                                  .aracSorguCall
-                                                                  .indirim(
-                                                                    columnAracSorguResponse
-                                                                        .jsonBody,
-                                                                  )
-                                                                  .toDouble(),
-                                                              PtsGroup
-                                                                  .aracSorguCall
-                                                                  .tutar(
-                                                                    columnAracSorguResponse
-                                                                        .jsonBody,
-                                                                  )
-                                                                  .toDouble(),
-                                                              0.0,
-                                                              PtsGroup
-                                                                  .aracSorguCall
-                                                                  .tutar(
-                                                                    columnAracSorguResponse
-                                                                        .jsonBody,
-                                                                  )
-                                                                  .toDouble(),
-                                                              '* Iyi Gunler Dileriz *',
-                                                              'PP4',
-                                                            );
-
-                                                            setState(() {});
-                                                          },
-                                                          child: Column(
-                                                            mainAxisSize:
-                                                                MainAxisSize
-                                                                    .max,
-                                                            mainAxisAlignment:
-                                                                MainAxisAlignment
-                                                                    .center,
-                                                            children: [
-                                                              Icon(
-                                                                Icons.print,
-                                                                color: Color(
-                                                                    0xFF182C03),
-                                                                size: 32.0,
-                                                              ),
-                                                              Text(
-                                                                'Bilgi Fişi',
-                                                                textAlign:
-                                                                    TextAlign
-                                                                        .center,
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium,
-                                                              ),
-                                                            ],
-                                                          ),
-                                                        ),
-                                                      ),
-                                                      Container(
-                                                        width: 95.0,
-                                                        height: 100.0,
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryBackground,
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      5.0),
-                                                          border: Border.all(
-                                                            color: Color(
-                                                                0xFF182C03),
-                                                          ),
-                                                        ),
-                                                        child: InkWell(
-                                                          splashColor: Colors
-                                                              .transparent,
-                                                          focusColor: Colors
-                                                              .transparent,
-                                                          hoverColor: Colors
-                                                              .transparent,
-                                                          highlightColor: Colors
-                                                              .transparent,
-                                                          onTap: () async {
-                                                            _model.apiResultgef =
+                                                          if (_model
+                                                                  .resulttahsilatform !=
+                                                              0.0) {
+                                                            _model.apiResultnakitislem =
                                                                 await PtsGroup
-                                                                    .hesapKapatCall
+                                                                    .tahsilatCall
                                                                     .call(
                                                               db: FFAppState()
                                                                   .veritabani,
-                                                              command: 'CIKIS',
+                                                              command: 'NAKIT',
                                                               id: widget
                                                                   .gecisId,
                                                               userId:
                                                                   FFAppState()
                                                                       .UserId,
-                                                              kapiGrupId:
-                                                                  getJsonField(
-                                                                FFAppState()
-                                                                    .KapiGrup,
-                                                                r'''$.Id''',
-                                                              ),
-                                                              kapiId:
+                                                              kasaKodu:
                                                                   getJsonField(
                                                                 FFAppState()
                                                                     .Kapi,
-                                                                r'''$.Id''',
-                                                              ),
+                                                                r'''$.KasaKodu''',
+                                                              ).toString(),
+                                                              bankaKodu: 0,
+                                                              tutar: _model
+                                                                  .resulttahsilatform,
                                                             );
                                                             if (PtsGroup
-                                                                .hesapKapatCall
+                                                                .tahsilatCall
                                                                 .succeeded(
-                                                              (_model.apiResultgef
+                                                              (_model.apiResultnakitislem
                                                                       ?.jsonBody ??
                                                                   ''),
                                                             )) {
-                                                              context.safePop();
+                                                              setState(() =>
+                                                                  _model.apiRequestCompleter =
+                                                                      null);
+                                                              await _model
+                                                                  .waitForApiRequestCompleted();
                                                             } else {
                                                               await showDialog(
                                                                 context:
@@ -1189,9 +615,9 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                                                                     title: Text(
                                                                         'Hata'),
                                                                     content: Text(PtsGroup
-                                                                        .hesapKapatCall
+                                                                        .tahsilatCall
                                                                         .message(
-                                                                          (_model.apiResultgef?.jsonBody ??
+                                                                          (_model.apiResultnakitislem?.jsonBody ??
                                                                               ''),
                                                                         )
                                                                         .toString()),
@@ -1208,53 +634,190 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                                                                 },
                                                               );
                                                             }
+                                                          }
 
-                                                            setState(() {});
-                                                          },
-                                                          child: Column(
-                                                            mainAxisSize:
-                                                                MainAxisSize
-                                                                    .max,
-                                                            mainAxisAlignment:
-                                                                MainAxisAlignment
-                                                                    .center,
-                                                            children: [
-                                                              Icon(
-                                                                Icons.calculate,
-                                                                color: Color(
-                                                                    0xFF182C03),
-                                                                size: 32.0,
-                                                              ),
-                                                              Text(
-                                                                'Hesap Kapat',
-                                                                textAlign:
-                                                                    TextAlign
-                                                                        .center,
-                                                                style: FlutterFlowTheme.of(
+                                                          setState(() {});
+                                                        },
+                                                        child: Column(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .center,
+                                                          children: [
+                                                            Icon(
+                                                              Icons
+                                                                  .attach_money_outlined,
+                                                              color: Color(
+                                                                  0xFF182C03),
+                                                              size: 28.0,
+                                                            ),
+                                                            Text(
+                                                              'Nakit Ödeme',
+                                                              textAlign:
+                                                                  TextAlign
+                                                                      .center,
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyMedium
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Readex Pro',
+                                                                    fontSize:
+                                                                        12.0,
+                                                                  ),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                      ),
+                                                    ),
+                                                    Container(
+                                                      width: 95.0,
+                                                      height: 100.0,
+                                                      decoration: BoxDecoration(
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .secondaryBackground,
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(5.0),
+                                                        border: Border.all(
+                                                          color:
+                                                              Color(0xFF182C03),
+                                                        ),
+                                                      ),
+                                                      child: InkWell(
+                                                        splashColor:
+                                                            Colors.transparent,
+                                                        focusColor:
+                                                            Colors.transparent,
+                                                        hoverColor:
+                                                            Colors.transparent,
+                                                        highlightColor:
+                                                            Colors.transparent,
+                                                        onTap: () async {
+                                                          await showModalBottomSheet(
+                                                            isScrollControlled:
+                                                                true,
+                                                            backgroundColor:
+                                                                Colors
+                                                                    .transparent,
+                                                            enableDrag: false,
+                                                            context: context,
+                                                            builder: (context) {
+                                                              return GestureDetector(
+                                                                onTap: () => FocusScope.of(
                                                                         context)
-                                                                    .bodyMedium,
+                                                                    .requestFocus(
+                                                                        _model
+                                                                            .unfocusNode),
+                                                                child: Padding(
+                                                                  padding: MediaQuery.of(
+                                                                          context)
+                                                                      .viewInsets,
+                                                                  child:
+                                                                      TahsilatFormWidget(
+                                                                    bakiye: valueOrDefault<
+                                                                        double>(
+                                                                      PtsGroup
+                                                                          .aracSorguCall
+                                                                          .kalan(
+                                                                            columnAracSorguResponse.jsonBody,
+                                                                          )
+                                                                          .toDouble(),
+                                                                      0.0,
+                                                                    ),
+                                                                    baslik:
+                                                                        'KREDI KARTI',
+                                                                  ),
+                                                                ),
+                                                              );
+                                                            },
+                                                          ).then((value) =>
+                                                              setState(() =>
+                                                                  _model.resulttahsilatformkredi =
+                                                                      value));
+
+                                                          if (_model
+                                                                  .resulttahsilatformkredi !=
+                                                              0.0) {
+                                                            _model.apiResultkrediislem =
+                                                                await PtsGroup
+                                                                    .tahsilatCall
+                                                                    .call(
+                                                              db: FFAppState()
+                                                                  .veritabani,
+                                                              command: 'KREDI',
+                                                              id: widget
+                                                                  .gecisId,
+                                                              userId:
+                                                                  FFAppState()
+                                                                      .UserId,
+                                                              kasaKodu:
+                                                                  getJsonField(
+                                                                FFAppState()
+                                                                    .Kapi,
+                                                                r'''$.KasaKodu''',
+                                                              ).toString(),
+                                                              bankaKodu:
+                                                                  getJsonField(
+                                                                FFAppState()
+                                                                    .Kapi,
+                                                                r'''$.BankaKodu''',
                                                               ),
-                                                            ],
-                                                          ),
-                                                        ),
-                                                      ),
-                                                      Container(
-                                                        width: 95.0,
-                                                        height: 100.0,
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryBackground,
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      5.0),
-                                                          border: Border.all(
-                                                            color: Color(
-                                                                0xFF182C03),
-                                                          ),
-                                                        ),
+                                                              tutar:
+                                                                  valueOrDefault<
+                                                                      double>(
+                                                                _model
+                                                                    .resulttahsilatformkredi,
+                                                                0.0,
+                                                              ),
+                                                            );
+                                                            if (PtsGroup
+                                                                .tahsilatCall
+                                                                .succeeded(
+                                                              (_model.apiResultkrediislem
+                                                                      ?.jsonBody ??
+                                                                  ''),
+                                                            )) {
+                                                              setState(() =>
+                                                                  _model.apiRequestCompleter =
+                                                                      null);
+                                                              await _model
+                                                                  .waitForApiRequestCompleted();
+                                                            } else {
+                                                              await showDialog(
+                                                                context:
+                                                                    context,
+                                                                builder:
+                                                                    (alertDialogContext) {
+                                                                  return AlertDialog(
+                                                                    title: Text(
+                                                                        'Hata'),
+                                                                    content: Text(PtsGroup
+                                                                        .tahsilatCall
+                                                                        .message(
+                                                                          (_model.apiResultkrediislem?.jsonBody ??
+                                                                              ''),
+                                                                        )
+                                                                        .toString()),
+                                                                    actions: [
+                                                                      TextButton(
+                                                                        onPressed:
+                                                                            () =>
+                                                                                Navigator.pop(alertDialogContext),
+                                                                        child: Text(
+                                                                            'Ok'),
+                                                                      ),
+                                                                    ],
+                                                                  );
+                                                                },
+                                                              );
+                                                            }
+                                                          }
+
+                                                          setState(() {});
+                                                        },
                                                         child: Column(
                                                           mainAxisSize:
                                                               MainAxisSize.max,
@@ -1264,40 +827,85 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                                                           children: [
                                                             Icon(
                                                               Icons
-                                                                  .subdirectory_arrow_left,
+                                                                  .credit_card_outlined,
                                                               color: Color(
                                                                   0xFF182C03),
-                                                              size: 32.0,
+                                                              size: 28.0,
                                                             ),
                                                             Text(
-                                                              'İndirim Kartı',
+                                                              'Kredi Kartı Ödeme',
                                                               textAlign:
                                                                   TextAlign
                                                                       .center,
                                                               style: FlutterFlowTheme
                                                                       .of(context)
-                                                                  .bodyMedium,
+                                                                  .bodyMedium
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Readex Pro',
+                                                                    fontSize:
+                                                                        12.0,
+                                                                  ),
                                                             ),
                                                           ],
                                                         ),
                                                       ),
-                                                      Container(
-                                                        width: 95.0,
-                                                        height: 100.0,
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryBackground,
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      5.0),
-                                                          border: Border.all(
-                                                            color: Color(
-                                                                0xFF182C03),
-                                                          ),
+                                                    ),
+                                                    Container(
+                                                      width: 95.0,
+                                                      height: 100.0,
+                                                      decoration: BoxDecoration(
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .secondaryBackground,
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(5.0),
+                                                        border: Border.all(
+                                                          color:
+                                                              Color(0xFF182C03),
                                                         ),
+                                                      ),
+                                                      child: InkWell(
+                                                        splashColor:
+                                                            Colors.transparent,
+                                                        focusColor:
+                                                            Colors.transparent,
+                                                        hoverColor:
+                                                            Colors.transparent,
+                                                        highlightColor:
+                                                            Colors.transparent,
+                                                        onTap: () async {
+                                                          await showModalBottomSheet(
+                                                            isScrollControlled:
+                                                                true,
+                                                            backgroundColor:
+                                                                Colors
+                                                                    .transparent,
+                                                            enableDrag: false,
+                                                            context: context,
+                                                            builder: (context) {
+                                                              return GestureDetector(
+                                                                onTap: () => FocusScope.of(
+                                                                        context)
+                                                                    .requestFocus(
+                                                                        _model
+                                                                            .unfocusNode),
+                                                                child: Padding(
+                                                                  padding: MediaQuery.of(
+                                                                          context)
+                                                                      .viewInsets,
+                                                                  child:
+                                                                      HasarFormuWidget(
+                                                                    gecisId: widget
+                                                                        .gecisId!,
+                                                                  ),
+                                                                ),
+                                                              );
+                                                            },
+                                                          ).then((value) =>
+                                                              setState(() {}));
+                                                        },
                                                         child: Column(
                                                           mainAxisSize:
                                                               MainAxisSize.max,
@@ -1307,29 +915,428 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                                                           children: [
                                                             Icon(
                                                               Icons
-                                                                  .local_parking_rounded,
+                                                                  .report_gmailerrorred_sharp,
                                                               color: Color(
                                                                   0xFF182C03),
-                                                              size: 32.0,
+                                                              size: 28.0,
                                                             ),
                                                             Text(
-                                                              'Park \nBilgisi',
+                                                              'Hasar Formu',
                                                               textAlign:
                                                                   TextAlign
                                                                       .center,
                                                               style: FlutterFlowTheme
                                                                       .of(context)
-                                                                  .bodyMedium,
+                                                                  .bodyMedium
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Readex Pro',
+                                                                    fontSize:
+                                                                        12.0,
+                                                                  ),
                                                             ),
                                                           ],
                                                         ),
                                                       ),
-                                                    ],
-                                                  ),
+                                                    ),
+                                                    Container(
+                                                      width: 95.0,
+                                                      height: 100.0,
+                                                      decoration: BoxDecoration(
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .secondaryBackground,
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(5.0),
+                                                        border: Border.all(
+                                                          color:
+                                                              Color(0xFF182C03),
+                                                        ),
+                                                      ),
+                                                      child: Column(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment
+                                                                .center,
+                                                        children: [
+                                                          Icon(
+                                                            Icons.add_road,
+                                                            color: Color(
+                                                                0xFF182C03),
+                                                            size: 28.0,
+                                                          ),
+                                                          Text(
+                                                            'Ek Hizmetler',
+                                                            textAlign: TextAlign
+                                                                .center,
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Readex Pro',
+                                                                  fontSize:
+                                                                      12.0,
+                                                                ),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                    ),
+                                                    Container(
+                                                      width: 95.0,
+                                                      height: 100.0,
+                                                      decoration: BoxDecoration(
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .secondaryBackground,
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(5.0),
+                                                        border: Border.all(
+                                                          color:
+                                                              Color(0xFF182C03),
+                                                        ),
+                                                      ),
+                                                      child: InkWell(
+                                                        splashColor:
+                                                            Colors.transparent,
+                                                        focusColor:
+                                                            Colors.transparent,
+                                                        hoverColor:
+                                                            Colors.transparent,
+                                                        highlightColor:
+                                                            Colors.transparent,
+                                                        onTap: () async {
+                                                          _model.resultcikisfis =
+                                                              await actions
+                                                                  .cikisFisiYazdir(
+                                                            getJsonField(
+                                                              FFAppState()
+                                                                  .Otopark,
+                                                              r'''$.OtoparkAdi''',
+                                                            ).toString(),
+                                                            PtsGroup
+                                                                .aracSorguCall
+                                                                .plaka(
+                                                                  columnAracSorguResponse
+                                                                      .jsonBody,
+                                                                )
+                                                                .toString(),
+                                                            PtsGroup
+                                                                .aracSorguCall
+                                                                .girisTarih(
+                                                                  columnAracSorguResponse
+                                                                      .jsonBody,
+                                                                )
+                                                                .toString(),
+                                                            getJsonField(
+                                                              FFAppState().Kapi,
+                                                              r'''$.KapiAdi''',
+                                                            ).toString(),
+                                                            'OTOMOBIL',
+                                                            getJsonField(
+                                                              FFAppState()
+                                                                  .UserInfo,
+                                                              r'''$.Username''',
+                                                            ).toString(),
+                                                            PtsGroup
+                                                                .aracSorguCall
+                                                                .cikisTarih(
+                                                                  columnAracSorguResponse
+                                                                      .jsonBody,
+                                                                )
+                                                                .toString(),
+                                                            PtsGroup
+                                                                .aracSorguCall
+                                                                .gecenSure(
+                                                                  columnAracSorguResponse
+                                                                      .jsonBody,
+                                                                )
+                                                                .toString(),
+                                                            PtsGroup
+                                                                .aracSorguCall
+                                                                .ucret(
+                                                                  columnAracSorguResponse
+                                                                      .jsonBody,
+                                                                )
+                                                                .toDouble(),
+                                                            PtsGroup
+                                                                .aracSorguCall
+                                                                .indirim(
+                                                                  columnAracSorguResponse
+                                                                      .jsonBody,
+                                                                )
+                                                                .toDouble(),
+                                                            PtsGroup
+                                                                .aracSorguCall
+                                                                .tutar(
+                                                                  columnAracSorguResponse
+                                                                      .jsonBody,
+                                                                )
+                                                                .toDouble(),
+                                                            0.0,
+                                                            PtsGroup
+                                                                .aracSorguCall
+                                                                .tutar(
+                                                                  columnAracSorguResponse
+                                                                      .jsonBody,
+                                                                )
+                                                                .toDouble(),
+                                                            '* Iyi Gunler Dileriz *',
+                                                            'PP4',
+                                                          );
+
+                                                          setState(() {});
+                                                        },
+                                                        child: Column(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .center,
+                                                          children: [
+                                                            Icon(
+                                                              Icons.print,
+                                                              color: Color(
+                                                                  0xFF182C03),
+                                                              size: 28.0,
+                                                            ),
+                                                            Text(
+                                                              'Bilgi Fişi',
+                                                              textAlign:
+                                                                  TextAlign
+                                                                      .center,
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyMedium
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Readex Pro',
+                                                                    fontSize:
+                                                                        12.0,
+                                                                  ),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                      ),
+                                                    ),
+                                                    Container(
+                                                      width: 95.0,
+                                                      height: 100.0,
+                                                      decoration: BoxDecoration(
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .secondaryBackground,
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(5.0),
+                                                        border: Border.all(
+                                                          color:
+                                                              Color(0xFF182C03),
+                                                        ),
+                                                      ),
+                                                      child: InkWell(
+                                                        splashColor:
+                                                            Colors.transparent,
+                                                        focusColor:
+                                                            Colors.transparent,
+                                                        hoverColor:
+                                                            Colors.transparent,
+                                                        highlightColor:
+                                                            Colors.transparent,
+                                                        onTap: () async {
+                                                          _model.apiResultgef =
+                                                              await PtsGroup
+                                                                  .hesapKapatCall
+                                                                  .call(
+                                                            db: FFAppState()
+                                                                .veritabani,
+                                                            command: 'CIKIS',
+                                                            id: widget.gecisId,
+                                                            userId: FFAppState()
+                                                                .UserId,
+                                                            kapiGrupId:
+                                                                getJsonField(
+                                                              FFAppState()
+                                                                  .KapiGrup,
+                                                              r'''$.Id''',
+                                                            ),
+                                                            kapiId:
+                                                                getJsonField(
+                                                              FFAppState().Kapi,
+                                                              r'''$.Id''',
+                                                            ),
+                                                          );
+                                                          if (PtsGroup
+                                                              .hesapKapatCall
+                                                              .succeeded(
+                                                            (_model.apiResultgef
+                                                                    ?.jsonBody ??
+                                                                ''),
+                                                          )) {
+                                                            context.safePop();
+                                                          } else {
+                                                            await showDialog(
+                                                              context: context,
+                                                              builder:
+                                                                  (alertDialogContext) {
+                                                                return AlertDialog(
+                                                                  title: Text(
+                                                                      'Hata'),
+                                                                  content: Text(PtsGroup
+                                                                      .hesapKapatCall
+                                                                      .message(
+                                                                        (_model.apiResultgef?.jsonBody ??
+                                                                            ''),
+                                                                      )
+                                                                      .toString()),
+                                                                  actions: [
+                                                                    TextButton(
+                                                                      onPressed:
+                                                                          () =>
+                                                                              Navigator.pop(alertDialogContext),
+                                                                      child: Text(
+                                                                          'Ok'),
+                                                                    ),
+                                                                  ],
+                                                                );
+                                                              },
+                                                            );
+                                                          }
+
+                                                          setState(() {});
+                                                        },
+                                                        child: Column(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .center,
+                                                          children: [
+                                                            Icon(
+                                                              Icons.calculate,
+                                                              color: Color(
+                                                                  0xFF182C03),
+                                                              size: 28.0,
+                                                            ),
+                                                            Text(
+                                                              'Hesap Kapat',
+                                                              textAlign:
+                                                                  TextAlign
+                                                                      .center,
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyMedium
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Readex Pro',
+                                                                    fontSize:
+                                                                        12.0,
+                                                                  ),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                      ),
+                                                    ),
+                                                    Container(
+                                                      width: 95.0,
+                                                      height: 100.0,
+                                                      decoration: BoxDecoration(
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .secondaryBackground,
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(5.0),
+                                                        border: Border.all(
+                                                          color:
+                                                              Color(0xFF182C03),
+                                                        ),
+                                                      ),
+                                                      child: Column(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment
+                                                                .center,
+                                                        children: [
+                                                          Icon(
+                                                            Icons
+                                                                .subdirectory_arrow_left,
+                                                            color: Color(
+                                                                0xFF182C03),
+                                                            size: 28.0,
+                                                          ),
+                                                          Text(
+                                                            'İndirim Kartı',
+                                                            textAlign: TextAlign
+                                                                .center,
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Readex Pro',
+                                                                  fontSize:
+                                                                      12.0,
+                                                                ),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                    ),
+                                                    Container(
+                                                      width: 95.0,
+                                                      height: 100.0,
+                                                      decoration: BoxDecoration(
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .secondaryBackground,
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(5.0),
+                                                        border: Border.all(
+                                                          color:
+                                                              Color(0xFF182C03),
+                                                        ),
+                                                      ),
+                                                      child: Column(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment
+                                                                .center,
+                                                        children: [
+                                                          Icon(
+                                                            Icons
+                                                                .local_parking_rounded,
+                                                            color: Color(
+                                                                0xFF182C03),
+                                                            size: 32.0,
+                                                          ),
+                                                          Text(
+                                                            'Park \nBilgisi',
+                                                            textAlign: TextAlign
+                                                                .center,
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Readex Pro',
+                                                                  fontSize:
+                                                                      12.0,
+                                                                ),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                    ),
+                                                  ],
                                                 ),
                                               ),
-                                            ],
-                                          ),
+                                            ),
+                                          ],
                                         ),
                                       ),
                                     ],

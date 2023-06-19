@@ -228,7 +228,6 @@ class _AboneAracDetayWidgetState extends State<AboneAracDetayWidget> {
                                 8.0, 0.0, 8.0, 0.0),
                             child: TextFormField(
                               controller: _model.txtPlakaController,
-                              autofocus: true,
                               obscureText: false,
                               decoration: InputDecoration(
                                 labelText: 'Plaka Yazınız',
@@ -337,7 +336,6 @@ class _AboneAracDetayWidgetState extends State<AboneAracDetayWidget> {
                                     8.0, 8.0, 8.0, 0.0),
                                 child: TextFormField(
                                   controller: _model.txtAdsoyadController,
-                                  autofocus: true,
                                   obscureText: false,
                                   decoration: InputDecoration(
                                     labelText: 'Araç Kullanıcısı',
@@ -390,7 +388,6 @@ class _AboneAracDetayWidgetState extends State<AboneAracDetayWidget> {
                                     8.0, 8.0, 8.0, 0.0),
                                 child: TextFormField(
                                   controller: _model.txtTelefonController,
-                                  autofocus: true,
                                   obscureText: false,
                                   decoration: InputDecoration(
                                     labelText: 'Telefon',

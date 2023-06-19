@@ -75,10 +75,30 @@ class _AboneAraclarWidgetState extends State<AboneAraclarWidget>
           actions: [
             Padding(
               padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
-              child: Icon(
-                Icons.add_circle_outline_sharp,
-                color: Color(0xFF020000),
-                size: 35.0,
+              child: InkWell(
+                splashColor: Colors.transparent,
+                focusColor: Colors.transparent,
+                hoverColor: Colors.transparent,
+                highlightColor: Colors.transparent,
+                onTap: () async {
+                  context.pushNamed(
+                    'AboneAracDetay',
+                    queryParameters: {
+                      'cariKod': serializeParam(
+                        getJsonField(
+                          widget.cari,
+                          r'''$.Kod''',
+                        ).toString(),
+                        ParamType.String,
+                      ),
+                    }.withoutNulls,
+                  );
+                },
+                child: Icon(
+                  Icons.add_circle_outline_sharp,
+                  color: Color(0xFF020000),
+                  size: 35.0,
+                ),
               ),
             ),
           ],

@@ -39,3 +39,4 @@ export '/settings/abone_araclar/abone_araclar_widget.dart'
     show AboneAraclarWidget;
 export '/settings/abone_arac_detay/abone_arac_detay_widget.dart'
     show AboneAracDetayWidget;
+export '/register/register_widget.dart' show RegisterWidget;

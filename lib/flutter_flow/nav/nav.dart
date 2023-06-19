@@ -237,6 +237,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             arac: params.getParam('arac', ParamType.JSON),
             cariKod: params.getParam('cariKod', ParamType.String),
           ),
+        ),
+        FFRoute(
+          name: 'register',
+          path: '/register',
+          builder: (context, params) => RegisterWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

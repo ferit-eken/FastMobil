@@ -431,7 +431,6 @@ class _AboneDetayWidgetState extends State<AboneDetayWidget> {
                                       width: 280.0,
                                       child: TextFormField(
                                         controller: _model.txtUnvanController,
-                                        autofocus: true,
                                         obscureText: false,
                                         decoration: InputDecoration(
                                           labelText: 'Ad Soyad',
@@ -511,7 +510,6 @@ class _AboneDetayWidgetState extends State<AboneDetayWidget> {
                                         child: TextFormField(
                                           controller:
                                               _model.txtTelefonController,
-                                          autofocus: true,
                                           obscureText: false,
                                           decoration: InputDecoration(
                                             labelText: 'Telefon No',
@@ -591,7 +589,6 @@ class _AboneDetayWidgetState extends State<AboneDetayWidget> {
                                         width: 200.0,
                                         child: TextFormField(
                                           controller: _model.txtMailController,
-                                          autofocus: true,
                                           obscureText: false,
                                           decoration: InputDecoration(
                                             labelText: 'Mail Adres',
@@ -671,7 +668,6 @@ class _AboneDetayWidgetState extends State<AboneDetayWidget> {
                                         width: 200.0,
                                         child: TextFormField(
                                           controller: _model.txtAdresController,
-                                          autofocus: true,
                                           obscureText: false,
                                           decoration: InputDecoration(
                                             labelText: 'Adres',
@@ -751,7 +747,6 @@ class _AboneDetayWidgetState extends State<AboneDetayWidget> {
                                         width: 200.0,
                                         child: TextFormField(
                                           controller: _model.txtNotController,
-                                          autofocus: true,
                                           obscureText: false,
                                           decoration: InputDecoration(
                                             labelText: 'Not',

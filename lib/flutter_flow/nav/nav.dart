@@ -214,6 +214,21 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             yaziciListe:
                 params.getParam<dynamic>('yaziciListe', ParamType.JSON, true),
           ),
+        ),
+        FFRoute(
+          name: 'AboneDetay',
+          path: '/aboneDetay',
+          builder: (context, params) => AboneDetayWidget(
+            cari: params.getParam('cari', ParamType.JSON),
+            kod: params.getParam('kod', ParamType.String),
+          ),
+        ),
+        FFRoute(
+          name: 'AboneAraclar',
+          path: '/aboneAraclar',
+          builder: (context, params) => AboneAraclarWidget(
+            cari: params.getParam('cari', ParamType.JSON),
+          ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

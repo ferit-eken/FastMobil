@@ -8,7 +8,6 @@ import '/flutter_flow/form_field_controller.dart';
 import '/custom_code/actions/index.dart' as actions;
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'giris_model.dart';
@@ -157,7 +156,7 @@ class _GirisWidgetState extends State<GirisWidget> {
                                           () => setState(() {}),
                                         ),
                                         textCapitalization:
-                                            TextCapitalization.sentences,
+                                            TextCapitalization.characters,
                                         obscureText: false,
                                         decoration: InputDecoration(
                                           labelText: 'Plaka Giriniz',
@@ -230,10 +229,6 @@ class _GirisWidgetState extends State<GirisWidget> {
                                         validator: _model
                                             .txtPlakaControllerValidator
                                             .asValidator(context),
-                                        inputFormatters: [
-                                          FilteringTextInputFormatter.allow(
-                                              RegExp('[a-zA-Z]'))
-                                        ],
                                       ),
                                     ),
                                   ),

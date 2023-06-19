@@ -34,3 +34,6 @@ export '/pages/otoparkdurum/otoparkdurum_widget.dart' show OtoparkdurumWidget;
 export '/pages/aracistek_liste/aracistek_liste_widget.dart'
     show AracistekListeWidget;
 export '/settings/printer_list/printer_list_widget.dart' show PrinterListWidget;
+export '/settings/abone_detay/abone_detay_widget.dart' show AboneDetayWidget;
+export '/settings/abone_araclar/abone_araclar_widget.dart'
+    show AboneAraclarWidget;

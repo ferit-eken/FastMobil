@@ -58,8 +58,8 @@ class _AbonelerWidgetState extends State<AbonelerWidget>
             borderWidth: 1.0,
             buttonSize: 60.0,
             icon: Icon(
-              Icons.arrow_back_rounded,
-              color: FlutterFlowTheme.of(context).primaryText,
+              Icons.arrow_back_sharp,
+              color: Color(0xFF020000),
               size: 30.0,
             ),
             onPressed: () async {
@@ -70,9 +70,72 @@ class _AbonelerWidgetState extends State<AbonelerWidget>
             'Abone Listesi',
             style: FlutterFlowTheme.of(context).headlineSmall,
           ),
-          actions: [],
+          actions: [
+            Padding(
+              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 2.0, 0.0),
+              child: FlutterFlowIconButton(
+                borderColor: Colors.transparent,
+                borderRadius: 30.0,
+                borderWidth: 1.0,
+                buttonSize: 60.0,
+                icon: Icon(
+                  Icons.add_circle_outline_rounded,
+                  color: Color(0xFF182C03),
+                  size: 30.0,
+                ),
+                onPressed: () async {
+                  _model.apiresultgetKod = await SettingsGroup.getIDCall.call(
+                    db: FFAppState().veritabani,
+                    tablename: 'Cari',
+                    keyField: 'Kod',
+                    command: 'GETID',
+                  );
+                  if (SettingsGroup.getIDCall.successed(
+                    (_model.apiresultgetKod?.jsonBody ?? ''),
+                  )) {
+                    context.pushNamed(
+                      'AboneDetay',
+                      queryParameters: {
+                        'kod': serializeParam(
+                          SettingsGroup.getIDCall
+                              .data(
+                                (_model.apiresultgetKod?.jsonBody ?? ''),
+                              )
+                              .toString(),
+                          ParamType.String,
+                        ),
+                      }.withoutNulls,
+                    );
+                  } else {
+                    await showDialog(
+                      context: context,
+                      builder: (alertDialogContext) {
+                        return AlertDialog(
+                          title: Text('Hata'),
+                          content: Text(SettingsGroup.getIDCall
+                              .message(
+                                (_model.apiresultgetKod?.jsonBody ?? ''),
+                              )
+                              .toString()),
+                          actions: [
+                            TextButton(
+                              onPressed: () =>
+                                  Navigator.pop(alertDialogContext),
+                              child: Text('Ok'),
+                            ),
+                          ],
+                        );
+                      },
+                    );
+                  }
+
+                  setState(() {});
+                },
+              ),
+            ),
+          ],
           centerTitle: false,
-          elevation: 0.0,
+          elevation: 2.0,
         ),
         body: SafeArea(
           top: true,
@@ -173,11 +236,9 @@ class _AbonelerWidgetState extends State<AbonelerWidget>
                 child: Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 8.0, 0.0),
                   child: FutureBuilder<ApiCallResponse>(
-                    future: SettingsGroup.getRowFilterDataCall.call(
+                    future: SettingsGroup.getALLCall.call(
                       db: FFAppState().veritabani,
                       tablename: 'Cari',
-                      keyfield: 'Durum',
-                      keyvalue: '1',
                     ),
                     builder: (context, snapshot) {
                       // Customize what your widget looks like when it's loading.
@@ -192,12 +253,12 @@ class _AbonelerWidgetState extends State<AbonelerWidget>
                           ),
                         );
                       }
-                      final listViewGetRowFilterDataResponse = snapshot.data!;
+                      final listViewGetALLResponse = snapshot.data!;
                       return Builder(
                         builder: (context) {
-                          final liste = SettingsGroup.getRowFilterDataCall
+                          final liste = SettingsGroup.getALLCall
                                   .data(
-                                    listViewGetRowFilterDataResponse.jsonBody,
+                                    listViewGetALLResponse.jsonBody,
                                   )
                                   ?.toList() ??
                               [];
@@ -227,123 +288,144 @@ class _AbonelerWidgetState extends State<AbonelerWidget>
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         8.0, 8.0, 8.0, 8.0),
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      children: [
-                                        ClipRRect(
-                                          borderRadius:
-                                              BorderRadius.circular(40.0),
-                                          child: Image.network(
-                                            'https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=900&q=60',
-                                            width: 60.0,
-                                            height: 60.0,
-                                            fit: BoxFit.cover,
-                                          ),
-                                        ),
-                                        Expanded(
-                                          child: Column(
-                                            mainAxisSize: MainAxisSize.max,
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
-                                              Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        12.0, 0.0, 0.0, 0.0),
-                                                child: Text(
-                                                  getJsonField(
-                                                    listeItem,
-                                                    r'''$.Unvan''',
-                                                  ).toString(),
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyLarge,
-                                                ),
-                                              ),
-                                              Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        0.0, 4.0, 0.0, 0.0),
-                                                child: Row(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  children: [
-                                                    Padding(
-                                                      padding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  12.0,
-                                                                  0.0,
-                                                                  0.0,
-                                                                  0.0),
-                                                      child: Text(
-                                                        getJsonField(
-                                                          listeItem,
-                                                          r'''$.Kod''',
-                                                        ).toString(),
-                                                        style:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .labelMedium,
-                                                      ),
-                                                    ),
-                                                    Padding(
-                                                      padding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  4.0,
-                                                                  0.0,
-                                                                  0.0,
-                                                                  0.0),
-                                                      child: Text(
-                                                        getJsonField(
-                                                          listeItem,
-                                                          r'''$.Mail''',
-                                                        ).toString(),
-                                                        style:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Readex Pro',
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primary,
-                                                                ),
-                                                      ),
-                                                    ),
-                                                  ],
-                                                ),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                        Card(
-                                          clipBehavior:
-                                              Clip.antiAliasWithSaveLayer,
-                                          color: FlutterFlowTheme.of(context)
-                                              .primaryBackground,
-                                          elevation: 1.0,
-                                          shape: RoundedRectangleBorder(
+                                    child: InkWell(
+                                      splashColor: Colors.transparent,
+                                      focusColor: Colors.transparent,
+                                      hoverColor: Colors.transparent,
+                                      highlightColor: Colors.transparent,
+                                      onTap: () async {
+                                        context.pushNamed(
+                                          'AboneDetay',
+                                          queryParameters: {
+                                            'cari': serializeParam(
+                                              listeItem,
+                                              ParamType.JSON,
+                                            ),
+                                            'kod': serializeParam(
+                                              getJsonField(
+                                                listeItem,
+                                                r'''$.Kod''',
+                                              ).toString(),
+                                              ParamType.String,
+                                            ),
+                                          }.withoutNulls,
+                                        );
+                                      },
+                                      child: Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          ClipRRect(
                                             borderRadius:
                                                 BorderRadius.circular(40.0),
-                                          ),
-                                          child: Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    4.0, 4.0, 4.0, 4.0),
-                                            child: Icon(
-                                              Icons
-                                                  .keyboard_arrow_right_rounded,
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondaryText,
-                                              size: 24.0,
+                                            child: Image.network(
+                                              'https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=900&q=60',
+                                              width: 60.0,
+                                              height: 60.0,
+                                              fit: BoxFit.cover,
                                             ),
                                           ),
-                                        ),
-                                      ],
+                                          Expanded(
+                                            child: Column(
+                                              mainAxisSize: MainAxisSize.max,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          12.0, 0.0, 0.0, 0.0),
+                                                  child: Text(
+                                                    getJsonField(
+                                                      listeItem,
+                                                      r'''$.Unvan''',
+                                                    ).toString(),
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyLarge,
+                                                  ),
+                                                ),
+                                                Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          0.0, 4.0, 0.0, 0.0),
+                                                  child: Row(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    children: [
+                                                      Padding(
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    12.0,
+                                                                    0.0,
+                                                                    0.0,
+                                                                    0.0),
+                                                        child: Text(
+                                                          getJsonField(
+                                                            listeItem,
+                                                            r'''$.Kod''',
+                                                          ).toString(),
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .labelMedium,
+                                                        ),
+                                                      ),
+                                                      Padding(
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    4.0,
+                                                                    0.0,
+                                                                    0.0,
+                                                                    0.0),
+                                                        child: Text(
+                                                          getJsonField(
+                                                            listeItem,
+                                                            r'''$.Mail''',
+                                                          ).toString(),
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Readex Pro',
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primary,
+                                                              ),
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                          Card(
+                                            clipBehavior:
+                                                Clip.antiAliasWithSaveLayer,
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryBackground,
+                                            elevation: 1.0,
+                                            shape: RoundedRectangleBorder(
+                                              borderRadius:
+                                                  BorderRadius.circular(40.0),
+                                            ),
+                                            child: Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(4.0, 4.0, 4.0, 4.0),
+                                              child: Icon(
+                                                Icons
+                                                    .keyboard_arrow_right_rounded,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryText,
+                                                size: 24.0,
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
                                     ),
                                   ),
                                 ),

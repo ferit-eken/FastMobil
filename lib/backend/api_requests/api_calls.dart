@@ -12,7 +12,7 @@ const _kPrivateApiFunctionName = 'ffPrivateApiCall';
 /// Start User Group Code
 
 class UserGroup {
-  static String baseUrl = 'https://mobil.fastpark.com.tr/api';
+  static String baseUrl = 'http://188.132.151.170/api/api';
   static Map<String, String> headers = {};
   static LoginCall loginCall = LoginCall();
 }
@@ -77,7 +77,7 @@ class LoginCall {
 /// Start Pts Group Code
 
 class PtsGroup {
-  static String baseUrl = 'https://mobil.fastpark.com.tr/api/pts';
+  static String baseUrl = 'http://188.132.151.170/api/api/pts';
   static Map<String, String> headers = {};
   static AracGirisCall aracGirisCall = AracGirisCall();
   static AracSorguCall aracSorguCall = AracSorguCall();
@@ -510,8 +510,93 @@ class HesapKapatCall {
 /// Start Cari Group Code
 
 class CariGroup {
-  static String baseUrl = 'https://mobil.fastpark.com.tr/api';
+  static String baseUrl = 'http://188.132.151.170/api/api';
   static Map<String, String> headers = {};
+  static CariKayitCall cariKayitCall = CariKayitCall();
+}
+
+class CariKayitCall {
+  Future<ApiCallResponse> call({
+    String? db = '',
+    String? kod = '',
+    String? ad = '',
+    String? soyad = '',
+    String? unvan = '',
+    String? cariGrup = '',
+    String? gsm = '',
+    String? mail = '',
+    int? durum = 1,
+    int? karaListe = 0,
+    String? adres = '',
+    String? cariNot = '',
+    int? createdUserId,
+    String? command = '',
+  }) {
+    final body = '''
+{
+  "tablename": "Cari",
+  "KeyField": "Kod",
+  "keyvalue": "'${kod}'",
+  "Command": "${command}",
+  "data": {
+    "Kod": "${kod}",
+    "Ad": "${ad}",
+    "Soyad": "${soyad}",
+    "Unvan": "${unvan}",
+    "CariGrup": "${cariGrup}",
+    "VDaire": "",
+    "VNo": "",
+    "Adres": "${adres}",
+    "GSM": "${gsm}",
+    "Mail": "${mail}",
+    "CariNot": "${cariNot}",
+    "CariTip": "ALICI",
+    "IL": "",
+    "ILCE": "",
+    "TcKimlik": "",
+    "Personel": ${createdUserId},
+    "EkHesap": 0,
+    "Multireferans": 0,
+    "isdelete": 0,
+    "Durum": ${durum},
+    "vadelisatis": 1,
+    "FiyatKodu": 1,
+    "GeciciKart": 0,
+    "KaraListe": 0,
+    "IletiKabul": 1,
+    "Satis_Iskonto_Oran": 0,
+    "Puan_Kazansin": 1
+  }
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'CariKayit',
+      apiUrl: '${CariGroup.baseUrl}/values/${db}',
+      callType: ApiCallType.POST,
+      headers: {
+        ...CariGroup.headers,
+      },
+      params: {},
+      body: body,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+    );
+  }
+
+  dynamic successed(dynamic response) => getJsonField(
+        response,
+        r'''$.Successed''',
+      );
+  dynamic message(dynamic response) => getJsonField(
+        response,
+        r'''$.Message''',
+      );
+  dynamic data(dynamic response) => getJsonField(
+        response,
+        r'''$.data''',
+      );
 }
 
 /// End Cari Group Code
@@ -519,7 +604,7 @@ class CariGroup {
 /// Start Settings Group Code
 
 class SettingsGroup {
-  static String baseUrl = 'https://mobil.fastpark.com.tr/api/values';
+  static String baseUrl = 'http://188.132.151.170/api/api/values';
   static Map<String, String> headers = {};
   static GetALLCall getALLCall = GetALLCall();
   static GetFilterDataCall getFilterDataCall = GetFilterDataCall();

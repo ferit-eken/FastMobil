@@ -63,12 +63,6 @@ class _AboneAracDetayWidgetState extends State<AboneAracDetayWidget> {
           ).toString().toString();
         });
         setState(() {
-          _model.txtAractipiValueController?.value = getJsonField(
-            widget.arac,
-            r'''$.AracTipId''',
-          ).toString().toString();
-        });
-        setState(() {
           _model.chIsactiveValue = getJsonField(
             widget.arac,
             r'''$.isActive''',
@@ -272,7 +266,15 @@ class _AboneAracDetayWidgetState extends State<AboneAracDetayWidget> {
                                   borderRadius: BorderRadius.circular(8.0),
                                 ),
                               ),
-                              style: FlutterFlowTheme.of(context).bodyMedium,
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
+                                    fontFamily: 'Readex Pro',
+                                    color: Color(0xFF020000),
+                                    fontSize: 18.0,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                              textAlign: TextAlign.center,
                               validator: _model.txtPlakaControllerValidator
                                   .asValidator(context),
                             ),
@@ -499,7 +501,14 @@ class _AboneAracDetayWidgetState extends State<AboneAracDetayWidget> {
                                       controller:
                                           _model.txtAractipiValueController ??=
                                               FormFieldController<String>(
-                                        _model.txtAractipiValue ??= '',
+                                        _model.txtAractipiValue ??=
+                                            valueOrDefault<String>(
+                                          getJsonField(
+                                            widget.arac,
+                                            r'''$.AracTipId''',
+                                          ).toString(),
+                                          '1',
+                                        ),
                                       ),
                                       options: (getJsonField(
                                         txtAractipiGetALLResponse.jsonBody,

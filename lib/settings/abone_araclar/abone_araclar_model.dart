@@ -13,8 +13,6 @@ class AboneAraclarModel extends FlutterFlowModel {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
-  // Stores action output result for [Backend Call - API (GetID)] action in btn_new widget.
-  ApiCallResponse? apiresultgetKod;
 
   /// Initialization and disposal methods.
 

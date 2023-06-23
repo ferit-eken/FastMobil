@@ -660,7 +660,7 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                                                                     .attach_money_outlined,
                                                                 color: Color(
                                                                     0xFF182C03),
-                                                                size: 28.0,
+                                                                size: 22.0,
                                                               ),
                                                               Text(
                                                                 'Nakit Tahsilat',
@@ -845,7 +845,7 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                                                                     .credit_card_outlined,
                                                                 color: Color(
                                                                     0xFF182C03),
-                                                                size: 28.0,
+                                                                size: 22.0,
                                                               ),
                                                               Text(
                                                                 'Kredi K. Tahsilat',
@@ -1019,7 +1019,7 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                                                                 Icons.money_off,
                                                                 color: Color(
                                                                     0xDBEB1313),
-                                                                size: 28.0,
+                                                                size: 22.0,
                                                               ),
                                                               Text(
                                                                 'Nakit\nİade',
@@ -1199,7 +1199,7 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                                                                     .credit_card_outlined,
                                                                 color: Color(
                                                                     0xDBEB1313),
-                                                                size: 28.0,
+                                                                size: 22.0,
                                                               ),
                                                               Text(
                                                                 'Kredi K. İade',
@@ -1286,7 +1286,7 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
 
                                                             if (_model
                                                                     .resultucretsizsecim !=
-                                                                0) {
+                                                                null) {
                                                               _model.apiResultucretsizcikis =
                                                                   await PtsGroup
                                                                       .hesapKapatCall
@@ -1373,7 +1373,7 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primaryBackground,
-                                                                size: 28.0,
+                                                                size: 22.0,
                                                               ),
                                                               Text(
                                                                 'Ücretsiz',
@@ -1504,7 +1504,7 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                                                                 Icons.calculate,
                                                                 color: Color(
                                                                     0xFF182C03),
-                                                                size: 28.0,
+                                                                size: 22.0,
                                                               ),
                                                               Text(
                                                                 'Hesap Kapat',
@@ -1650,7 +1650,7 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                                                                   Icons.print,
                                                                   color: Color(
                                                                       0xFF182C03),
-                                                                  size: 28.0,
+                                                                  size: 22.0,
                                                                 ),
                                                                 Text(
                                                                   'Bilgi Fişi',
@@ -1745,7 +1745,7 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                                                                     .report_gmailerrorred_sharp,
                                                                 color: Color(
                                                                     0xFF182C03),
-                                                                size: 28.0,
+                                                                size: 22.0,
                                                               ),
                                                               Text(
                                                                 'Hasar Formu',
@@ -1794,7 +1794,7 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                                                               Icons.add_road,
                                                               color: Color(
                                                                   0xFF182C03),
-                                                              size: 28.0,
+                                                              size: 22.0,
                                                             ),
                                                             Text(
                                                               'Ek Hizmetler',
@@ -1843,7 +1843,7 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                                                                   .local_parking_rounded,
                                                               color: Color(
                                                                   0xFF182C03),
-                                                              size: 28.0,
+                                                              size: 22.0,
                                                             ),
                                                             Text(
                                                               'Konum',

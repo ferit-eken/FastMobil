@@ -175,8 +175,6 @@ class _LoginWidgetState extends State<LoginWidget>
                                     width: double.infinity,
                                     child: TextFormField(
                                       controller: _model.txtFirmakoduController,
-                                      autofocus: true,
-                                      autofillHints: [AutofillHints.email],
                                       obscureText: false,
                                       decoration: InputDecoration(
                                         labelText: 'Firma Kodu',
@@ -238,8 +236,6 @@ class _LoginWidgetState extends State<LoginWidget>
                                     width: double.infinity,
                                     child: TextFormField(
                                       controller: _model.txtUsernameController,
-                                      autofocus: true,
-                                      autofillHints: [AutofillHints.email],
                                       obscureText: false,
                                       decoration: InputDecoration(
                                         labelText: 'Kullanıcı Adı',
@@ -301,8 +297,6 @@ class _LoginWidgetState extends State<LoginWidget>
                                     width: double.infinity,
                                     child: TextFormField(
                                       controller: _model.txtPasswordController,
-                                      autofocus: true,
-                                      autofillHints: [AutofillHints.password],
                                       obscureText:
                                           !_model.txtPasswordVisibility,
                                       decoration: InputDecoration(

@@ -735,31 +735,35 @@ class _GirisWidgetState extends State<GirisWidget> {
                                 if (PtsGroup.aracGirisCall.succeeded(
                                   (_model.apiResultork?.jsonBody ?? ''),
                                 )) {
-                                  await actions.girisFisiYazdir(
-                                    valueOrDefault<String>(
+                                  if (FFAppState().yazicidurum) {
+                                    await actions.girisFisiYazdir(
+                                      valueOrDefault<String>(
+                                        getJsonField(
+                                          FFAppState().Otopark,
+                                          r'''$.OtoparkAdi''',
+                                        ).toString(),
+                                        'OTOPARK ISLETMESI',
+                                      ),
+                                      _model.txtPlakaController.text,
+                                      getCurrentTimestamp,
+                                      valueOrDefault<String>(
+                                        getJsonField(
+                                          FFAppState().Kapi,
+                                          r'''$.KapiAdi''',
+                                        ).toString(),
+                                        'Kapı',
+                                      ),
+                                      _model.txtAractipiValue!,
                                       getJsonField(
-                                        FFAppState().Otopark,
-                                        r'''$.OtoparkAdi''',
+                                        FFAppState().UserInfo,
+                                        r'''$.Username''',
                                       ).toString(),
-                                      'OTOPARK ISLETMESI',
-                                    ),
-                                    _model.txtPlakaController.text,
-                                    getCurrentTimestamp,
-                                    valueOrDefault<String>(
-                                      getJsonField(
-                                        FFAppState().Kapi,
-                                        r'''$.KapiAdi''',
-                                      ).toString(),
-                                      'Kapı',
-                                    ),
-                                    _model.txtAractipiValue!,
-                                    getJsonField(
-                                      FFAppState().UserInfo,
-                                      r'''$.Username''',
-                                    ).toString(),
-                                    '# Mali Degeri Yoktur #',
-                                  );
-                                  context.safePop();
+                                      '# Mali Degeri Yoktur #',
+                                    );
+                                    context.safePop();
+                                  } else {
+                                    context.safePop();
+                                  }
                                 } else {
                                   await showDialog(
                                     context: context,

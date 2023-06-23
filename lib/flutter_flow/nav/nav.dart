@@ -37,7 +37,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       errorBuilder: (context, state) => appStateNotifier.showSplashImage
           ? Builder(
               builder: (context) => Container(
-                color: Colors.transparent,
+                color: FlutterFlowTheme.of(context).secondaryBackground,
                 child: Image.asset(
                   'assets/images/traffixsplash.png',
                   fit: BoxFit.fitWidth,
@@ -52,7 +52,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, _) => appStateNotifier.showSplashImage
               ? Builder(
                   builder: (context) => Container(
-                    color: Colors.transparent,
+                    color: FlutterFlowTheme.of(context).secondaryBackground,
                     child: Image.asset(
                       'assets/images/traffixsplash.png',
                       fit: BoxFit.fitWidth,

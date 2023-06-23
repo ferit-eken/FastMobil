@@ -82,6 +82,8 @@ class PtsGroup {
   static AracGirisCall aracGirisCall = AracGirisCall();
   static AracSorguCall aracSorguCall = AracSorguCall();
   static TahsilatCall tahsilatCall = TahsilatCall();
+  static GunsonuRaporCall gunsonuRaporCall = GunsonuRaporCall();
+  static GunsonuKapatCall gunsonuKapatCall = GunsonuKapatCall();
   static HesapKapatCall hesapKapatCall = HesapKapatCall();
 }
 
@@ -182,7 +184,7 @@ class AracSorguCall {
 {
   "Command": "${command}",
   "data": {
-    "KapiGrupId": "${kapiGrupId}",
+    "GirisKapiGrupId": "${kapiGrupId}",
     "AracTipId": "${aracTipId}",
     "Plaka": "${plaka}",
     "Id": ${id}
@@ -451,6 +453,142 @@ class TahsilatCall {
       );
 }
 
+class GunsonuRaporCall {
+  Future<ApiCallResponse> call({
+    String? db = '',
+    String? command = 'GUNSONU_RAPOR',
+    int? userId,
+  }) {
+    final body = '''
+{
+  "Command": "${command}",
+  "data": {
+    "UserId": ${userId}
+  }
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'GunsonuRapor',
+      apiUrl: '${PtsGroup.baseUrl}/${db}',
+      callType: ApiCallType.POST,
+      headers: {
+        ...PtsGroup.headers,
+      },
+      params: {},
+      body: body,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+    );
+  }
+
+  dynamic succeeded(dynamic response) => getJsonField(
+        response,
+        r'''$.Succeeded''',
+      );
+  dynamic message(dynamic response) => getJsonField(
+        response,
+        r'''$.Message''',
+      );
+  dynamic id(dynamic response) => getJsonField(
+        response,
+        r'''$.Id''',
+      );
+  dynamic userId(dynamic response) => getJsonField(
+        response,
+        r'''$.UserId''',
+      );
+  dynamic tarih(dynamic response) => getJsonField(
+        response,
+        r'''$.Tarih''',
+      );
+  dynamic toplamGiris(dynamic response) => getJsonField(
+        response,
+        r'''$.ToplamGiris''',
+      );
+  dynamic toplamCikis(dynamic response) => getJsonField(
+        response,
+        r'''$.ToplamCikis''',
+      );
+  dynamic iceridekiAracSayisi(dynamic response) => getJsonField(
+        response,
+        r'''$.IceridekiAracSayisi''',
+      );
+  dynamic ucretliSayi(dynamic response) => getJsonField(
+        response,
+        r'''$.UcretliSayi''',
+      );
+  dynamic ucretsizSayi(dynamic response) => getJsonField(
+        response,
+        r'''$.UcretsizSayi''',
+      );
+  dynamic ucretsizDagilim(dynamic response) => getJsonField(
+        response,
+        r'''$.UcretsizDagilim''',
+      );
+  dynamic toplamUcret(dynamic response) => getJsonField(
+        response,
+        r'''$.ToplamUcret''',
+      );
+  dynamic nakitTahsilat(dynamic response) => getJsonField(
+        response,
+        r'''$.NakitTahsilat''',
+      );
+  dynamic krediKartiToplam(dynamic response) => getJsonField(
+        response,
+        r'''$.KrediKartiToplam''',
+      );
+  dynamic vadelitahsilat(dynamic response) => getJsonField(
+        response,
+        r'''$.Vadelitahsilat''',
+      );
+}
+
+class GunsonuKapatCall {
+  Future<ApiCallResponse> call({
+    String? db = '',
+    String? command = 'GUNSONU_YAP',
+    int? userId,
+  }) {
+    final body = '''
+{
+  "Command": "${command}",
+  "data": {
+    "UserId": ${userId}
+  }
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'GunsonuKapat',
+      apiUrl: '${PtsGroup.baseUrl}/${db}',
+      callType: ApiCallType.POST,
+      headers: {
+        ...PtsGroup.headers,
+      },
+      params: {},
+      body: body,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+    );
+  }
+
+  dynamic succeeded(dynamic response) => getJsonField(
+        response,
+        r'''$.Succeeded''',
+      );
+  dynamic message(dynamic response) => getJsonField(
+        response,
+        r'''$.Message''',
+      );
+  dynamic id(dynamic response) => getJsonField(
+        response,
+        r'''$.Id''',
+      );
+}
+
 class HesapKapatCall {
   Future<ApiCallResponse> call({
     String? db = '',
@@ -459,6 +597,8 @@ class HesapKapatCall {
     int? userId,
     int? kapiGrupId,
     int? kapiId,
+    String? cikisTuru = 'UCRETLI',
+    int? ucretsizEtiketId = 0,
   }) {
     final body = '''
 {
@@ -467,7 +607,9 @@ class HesapKapatCall {
     "Id": ${id},
     "UserId": ${userId},
     "KapiGrupId": ${kapiGrupId},
-    "kapiId": ${kapiId}
+    "kapiId": ${kapiId},
+    "UcretsizEtiketId": ${ucretsizEtiketId},
+    "CikisTuru": "${cikisTuru}"
   }
 }''';
     return ApiManager.instance.makeApiCall(
@@ -687,6 +829,8 @@ class SettingsGroup {
   static UpdateRowCall updateRowCall = UpdateRowCall();
   static GetIDCall getIDCall = GetIDCall();
   static OtoparkKapiUpdateCall otoparkKapiUpdateCall = OtoparkKapiUpdateCall();
+  static OtoparkKapiGrupUpdateCall otoparkKapiGrupUpdateCall =
+      OtoparkKapiGrupUpdateCall();
 }
 
 class GetALLCall {
@@ -1467,7 +1611,93 @@ class OtoparkKapiUpdateCall {
       );
 }
 
+class OtoparkKapiGrupUpdateCall {
+  Future<ApiCallResponse> call({
+    String? db = '',
+    String? tablename = '',
+    String? keyField = '',
+    String? keyvalue = '',
+    String? command = '',
+    int? id,
+    int? otoparkId,
+    String? grupAdi = 'OTOPARK',
+    String? grupTuru = 'OTOPARK',
+    String? girisYoksaCikis = 'GIRISYAP',
+    int? kapasite,
+    int? nakitOdeme,
+    int? krediKartiOdeme,
+    int? borcKaydet,
+    int? ucretsizOdeme,
+    int? indirimKarti,
+    int? aboneKayit,
+  }) {
+    final body = '''
+{
+  "tablename": "${tablename}",
+  "KeyField": "${keyField}",
+  "keyvalue": "${keyvalue}",
+  "Command": "${command}",
+  "data": {
+    "Id": ${id},
+    "OtoparkId": ${otoparkId},
+    "GrupAdi": "${grupAdi}",
+    "GrupTuru": "${grupTuru}",
+    "GirisYoksaCikis": "${girisYoksaCikis}",
+    "Kapasite": ${kapasite},
+    "NakitOdeme": ${nakitOdeme},
+    "KrediKartiOdeme": ${krediKartiOdeme},
+    "BorcKaydet": ${borcKaydet},
+    "UcretsizOdeme": ${ucretsizOdeme},
+    "IndirimKarti": ${indirimKarti},
+    "AboneKayit": ${aboneKayit}
+  }
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'OtoparkKapiGrupUpdate',
+      apiUrl: '${SettingsGroup.baseUrl}/${db}',
+      callType: ApiCallType.POST,
+      headers: {
+        ...SettingsGroup.headers,
+      },
+      params: {},
+      body: body,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: true,
+      cache: false,
+    );
+  }
+
+  dynamic data(dynamic response) => getJsonField(
+        response,
+        r'''$.data''',
+        true,
+      );
+  dynamic successed(dynamic response) => getJsonField(
+        response,
+        r'''$.Successed''',
+      );
+  dynamic message(dynamic response) => getJsonField(
+        response,
+        r'''$.Message''',
+      );
+  dynamic id(dynamic response) => getJsonField(
+        response,
+        r'''$.data.Id''',
+      );
+}
+
 /// End Settings Group Code
+
+/// Start Firma Group Code
+
+class FirmaGroup {
+  static String baseUrl = 'http://188.132.151.170/api/api/Firma';
+  static Map<String, String> headers = {};
+}
+
+/// End Firma Group Code
 
 class ApiPagingParams {
   int nextPageNumber = 0;

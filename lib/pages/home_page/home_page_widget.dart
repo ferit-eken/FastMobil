@@ -81,6 +81,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
             });
           }
           _model.resultYazicidurum = await actions.getYaziciDurum();
+          setState(() {
+            FFAppState().yazicidurum = _model.resultYazicidurum!;
+          });
         } else {
           await showDialog(
             context: context,
@@ -808,35 +811,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                     hoverColor: Colors.transparent,
                                     highlightColor: Colors.transparent,
                                     onTap: () async {
-                                      _model.resultfisyazdir =
-                                          await actions.girisFisiYazdir(
-                                        'FAST PARK OTOPARK İŞLETMESİ',
-                                        '34V0487',
-                                        getCurrentTimestamp,
-                                        'ATMACA GİRİŞ',
-                                        'OTOMOBİL',
-                                        'Ferit EKEN',
-                                        'Çıkış yapmak istediğinizde',
-                                      );
-                                      await showDialog(
-                                        context: context,
-                                        builder: (alertDialogContext) {
-                                          return AlertDialog(
-                                            title: Text('BASKI'),
-                                            content:
-                                                Text(_model.resultfisyazdir!),
-                                            actions: [
-                                              TextButton(
-                                                onPressed: () => Navigator.pop(
-                                                    alertDialogContext),
-                                                child: Text('Ok'),
-                                              ),
-                                            ],
-                                          );
-                                        },
-                                      );
-
-                                      setState(() {});
+                                      context.pushNamed('gunSonuRapor');
                                     },
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,

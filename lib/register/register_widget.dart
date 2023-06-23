@@ -1,3 +1,4 @@
+import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -25,7 +26,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
     super.initState();
     _model = createModel(context, () => RegisterModel());
 
-    _model.textController1 ??= TextEditingController();
+    _model.txtFirmakoduController ??= TextEditingController();
     _model.textController2 ??= TextEditingController();
     _model.textController3 ??= TextEditingController();
     _model.textController4 ??= TextEditingController();
@@ -57,7 +58,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
         appBar: AppBar(
-          backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
+          backgroundColor: FlutterFlowTheme.of(context).warning,
           automaticallyImplyLeading: false,
           leading: FlutterFlowIconButton(
             borderColor: Colors.transparent,
@@ -65,17 +66,25 @@ class _RegisterWidgetState extends State<RegisterWidget> {
             borderWidth: 1.0,
             buttonSize: 60.0,
             icon: Icon(
-              Icons.arrow_back_rounded,
-              color: FlutterFlowTheme.of(context).primaryText,
+              Icons.arrow_back_sharp,
+              color: Color(0xFF020000),
               size: 30.0,
             ),
             onPressed: () async {
               context.pop();
             },
           ),
+          title: Text(
+            'Firma Kayıt Formu',
+            style: FlutterFlowTheme.of(context).headlineMedium.override(
+                  fontFamily: 'Outfit',
+                  color: FlutterFlowTheme.of(context).primaryText,
+                  fontSize: 22.0,
+                ),
+          ),
           actions: [],
-          centerTitle: false,
-          elevation: 0.0,
+          centerTitle: true,
+          elevation: 2.0,
         ),
         body: SafeArea(
           top: true,
@@ -93,9 +102,9 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                   children: [
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(8.0, 10.0, 8.0, 0.0),
                       child: TextFormField(
-                        controller: _model.textController1,
+                        controller: _model.txtFirmakoduController,
                         autofocus: true,
                         obscureText: false,
                         decoration: InputDecoration(
@@ -132,13 +141,13 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                           ),
                         ),
                         style: FlutterFlowTheme.of(context).bodyMedium,
-                        validator: _model.textController1Validator
+                        validator: _model.txtFirmakoduControllerValidator
                             .asValidator(context),
                       ),
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(8.0, 10.0, 8.0, 0.0),
                       child: TextFormField(
                         controller: _model.textController2,
                         autofocus: true,
@@ -183,7 +192,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(8.0, 10.0, 8.0, 0.0),
                       child: TextFormField(
                         controller: _model.textController3,
                         autofocus: true,
@@ -228,7 +237,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(8.0, 10.0, 8.0, 0.0),
                       child: TextFormField(
                         controller: _model.textController4,
                         autofocus: true,
@@ -273,7 +282,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(8.0, 10.0, 8.0, 0.0),
                       child: TextFormField(
                         controller: _model.textController5,
                         autofocus: true,
@@ -318,7 +327,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(8.0, 10.0, 8.0, 0.0),
                       child: TextFormField(
                         controller: _model.textController6,
                         autofocus: true,
@@ -363,7 +372,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(8.0, 10.0, 8.0, 0.0),
                       child: TextFormField(
                         controller: _model.textController7,
                         autofocus: true,
@@ -408,7 +417,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(8.0, 10.0, 8.0, 0.0),
                       child: TextFormField(
                         controller: _model.textController8,
                         autofocus: true,
@@ -453,7 +462,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(8.0, 10.0, 8.0, 0.0),
                       child: TextFormField(
                         controller: _model.textController9,
                         autofocus: true,
@@ -498,7 +507,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(8.0, 10.0, 8.0, 0.0),
                       child: TextFormField(
                         controller: _model.textController10,
                         autofocus: true,
@@ -543,7 +552,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(8.0, 10.0, 8.0, 0.0),
                       child: TextFormField(
                         controller: _model.textController11,
                         autofocus: true,
@@ -588,7 +597,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(8.0, 10.0, 8.0, 0.0),
                       child: TextFormField(
                         controller: _model.textController12,
                         autofocus: true,
@@ -633,7 +642,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(8.0, 10.0, 8.0, 0.0),
                       child: TextFormField(
                         controller: _model.textController13,
                         autofocus: true,
@@ -680,21 +689,55 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                       padding:
                           EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 40.0),
                       child: FFButtonWidget(
-                        onPressed: () {
-                          print('Button pressed ...');
+                        onPressed: () async {
+                          var confirmDialogResponse = await showDialog<bool>(
+                                context: context,
+                                builder: (alertDialogContext) {
+                                  return AlertDialog(
+                                    title: Text('Kayıt'),
+                                    content: Text(
+                                        'Dikkat, girdiğiniz bilgilere göre firma kaydı oluşturulacak. bilgileri eksiksiz ve doğru girdiğinizden emin olunuz. Devam edilsin mi?'),
+                                    actions: [
+                                      TextButton(
+                                        onPressed: () => Navigator.pop(
+                                            alertDialogContext, false),
+                                        child: Text('İptal'),
+                                      ),
+                                      TextButton(
+                                        onPressed: () => Navigator.pop(
+                                            alertDialogContext, true),
+                                        child: Text('Devam'),
+                                      ),
+                                    ],
+                                  );
+                                },
+                              ) ??
+                              false;
+                          if (confirmDialogResponse) {
+                            _model.apiResult2dn =
+                                await UserGroup.loginCall.call();
+                            if (UserGroup.loginCall.succeeded(
+                              (_model.apiResult2dn?.jsonBody ?? ''),
+                            )) {
+                              context.safePop();
+                            }
+                          }
+
+                          setState(() {});
                         },
                         text: 'Kayıt',
                         options: FFButtonOptions(
                           width: 163.0,
+                          height: 37.0,
                           padding: EdgeInsetsDirectional.fromSTEB(
                               24.0, 0.0, 24.0, 0.0),
                           iconPadding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
-                          color: FlutterFlowTheme.of(context).primary,
+                          color: FlutterFlowTheme.of(context).warning,
                           textStyle:
                               FlutterFlowTheme.of(context).titleSmall.override(
                                     fontFamily: 'Readex Pro',
-                                    color: Colors.white,
+                                    color: Color(0xFF020000),
                                   ),
                           elevation: 3.0,
                           borderSide: BorderSide(

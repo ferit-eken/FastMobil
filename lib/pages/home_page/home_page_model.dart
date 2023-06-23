@@ -24,8 +24,6 @@ class HomePageModel extends FlutterFlowModel {
   ApiCallResponse? apiResultAracTipleri;
   // Stores action output result for [Custom Action - getYaziciDurum] action in HomePage widget.
   bool? resultYazicidurum;
-  // Stores action output result for [Custom Action - girisFisiYazdir] action in Column widget.
-  String? resultfisyazdir;
   // Stores action output result for [Custom Action - getYaziciListe] action in prn_connected widget.
   List<dynamic>? resultyazicilisteCopy;
   // Stores action output result for [Custom Action - getYaziciListe] action in prn_disconnected widget.
@@ -42,5 +40,4 @@ class HomePageModel extends FlutterFlowModel {
   /// Action blocks are added here.
 
   /// Additional helper methods are added here.
-
 }

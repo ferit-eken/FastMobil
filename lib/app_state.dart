@@ -130,6 +130,12 @@ class FFAppState extends ChangeNotifier {
   set UserId(int _value) {
     _UserId = _value;
   }
+
+  bool _yazicidurum = false;
+  bool get yazicidurum => _yazicidurum;
+  set yazicidurum(bool _value) {
+    _yazicidurum = _value;
+  }
 }
 
 LatLng? _latLngFromString(String? val) {

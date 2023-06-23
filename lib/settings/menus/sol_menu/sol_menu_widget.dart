@@ -213,22 +213,32 @@ class _SolMenuWidgetState extends State<SolMenuWidget> {
                         child: Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
                               3.0, 3.0, 3.0, 3.0),
-                          child: Column(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              Icon(
-                                Icons.calculate,
-                                color:
-                                    FlutterFlowTheme.of(context).secondaryText,
-                                size: 32.0,
-                              ),
-                              Text(
-                                'Gün Sonu',
-                                textAlign: TextAlign.center,
-                                style: FlutterFlowTheme.of(context).bodyMedium,
-                              ),
-                            ],
+                          child: InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              context.pushNamed('gunSonuRapor');
+                            },
+                            child: Column(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Icon(
+                                  Icons.calculate,
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryText,
+                                  size: 32.0,
+                                ),
+                                Text(
+                                  'Gün Sonu',
+                                  textAlign: TextAlign.center,
+                                  style:
+                                      FlutterFlowTheme.of(context).bodyMedium,
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),

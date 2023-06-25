@@ -33,3 +33,11 @@ export '/pages/gun_sonu_rapor/gun_sonu_rapor_widget.dart'
 export '/pages/otoparkdurum/otoparkdurum_widget.dart' show OtoparkdurumWidget;
 export '/pages/aracistek_liste/aracistek_liste_widget.dart'
     show AracistekListeWidget;
+export '/settings/printer_list/printer_list_widget.dart' show PrinterListWidget;
+export '/settings/abone_detay/abone_detay_widget.dart' show AboneDetayWidget;
+export '/settings/abone_araclar/abone_araclar_widget.dart'
+    show AboneAraclarWidget;
+export '/settings/abone_arac_detay/abone_arac_detay_widget.dart'
+    show AboneAracDetayWidget;
+export '/register/register_widget.dart' show RegisterWidget;
+export '/settings/fis_ayar/fis_ayar_widget.dart' show FisAyarWidget;

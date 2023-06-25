@@ -26,6 +26,8 @@ class _SolMenuOtoparkWidgetState extends State<SolMenuOtoparkWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => SolMenuOtoparkModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override

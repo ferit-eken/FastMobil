@@ -22,6 +22,12 @@ class HomePageModel extends FlutterFlowModel {
   ApiCallResponse? apiResultKapi;
   // Stores action output result for [Backend Call - API (GetALL)] action in HomePage widget.
   ApiCallResponse? apiResultAracTipleri;
+  // Stores action output result for [Custom Action - getYaziciDurum] action in HomePage widget.
+  bool? resultYazicidurum;
+  // Stores action output result for [Custom Action - getYaziciListe] action in prn_connected widget.
+  List<dynamic>? resultyazicilisteCopy;
+  // Stores action output result for [Custom Action - getYaziciListe] action in prn_disconnected widget.
+  List<dynamic>? resultyaziciliste;
 
   /// Initialization and disposal methods.
 
@@ -34,5 +40,4 @@ class HomePageModel extends FlutterFlowModel {
   /// Action blocks are added here.
 
   /// Additional helper methods are added here.
-
 }

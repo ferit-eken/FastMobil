@@ -75,6 +75,7 @@ class _LedTabelaDetayWidgetState extends State<LedTabelaDetayWidget> {
       ).toString().toString(),
       '32',
     ));
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override

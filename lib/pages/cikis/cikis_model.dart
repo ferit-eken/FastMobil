@@ -19,6 +19,8 @@ class CikisModel extends FlutterFlowModel {
   // Stores action output result for [Backend Call - API (AracSorgu)] action in Button widget.
   ApiCallResponse? apiResultxex;
   var kamerarespnse = '';
+  // Stores action output result for [Backend Call - API (AracSorgu)] action in Column widget.
+  ApiCallResponse? apiResultqrsorgu;
   bool respBio = false;
 
   /// Initialization and disposal methods.
@@ -33,5 +35,4 @@ class CikisModel extends FlutterFlowModel {
   /// Action blocks are added here.
 
   /// Additional helper methods are added here.
-
 }

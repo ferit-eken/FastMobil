@@ -24,6 +24,8 @@ class _LedTabelalarWidgetState extends State<LedTabelalarWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => LedTabelalarModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override

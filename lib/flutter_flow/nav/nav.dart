@@ -37,7 +37,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       errorBuilder: (context, state) => appStateNotifier.showSplashImage
           ? Builder(
               builder: (context) => Container(
-                color: Colors.transparent,
+                color: FlutterFlowTheme.of(context).secondaryBackground,
                 child: Image.asset(
                   'assets/images/traffixsplash.png',
                   fit: BoxFit.fitWidth,
@@ -52,7 +52,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, _) => appStateNotifier.showSplashImage
               ? Builder(
                   builder: (context) => Container(
-                    color: Colors.transparent,
+                    color: FlutterFlowTheme.of(context).secondaryBackground,
                     child: Image.asset(
                       'assets/images/traffixsplash.png',
                       fit: BoxFit.fitWidth,
@@ -206,6 +206,47 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'aracistekListe',
           path: '/aracistekListe',
           builder: (context, params) => AracistekListeWidget(),
+        ),
+        FFRoute(
+          name: 'PrinterList',
+          path: '/printerList',
+          builder: (context, params) => PrinterListWidget(
+            yaziciListe:
+                params.getParam<dynamic>('yaziciListe', ParamType.JSON, true),
+          ),
+        ),
+        FFRoute(
+          name: 'AboneDetay',
+          path: '/aboneDetay',
+          builder: (context, params) => AboneDetayWidget(
+            cari: params.getParam('cari', ParamType.JSON),
+            kod: params.getParam('kod', ParamType.String),
+          ),
+        ),
+        FFRoute(
+          name: 'AboneAraclar',
+          path: '/aboneAraclar',
+          builder: (context, params) => AboneAraclarWidget(
+            cari: params.getParam('cari', ParamType.JSON),
+          ),
+        ),
+        FFRoute(
+          name: 'AboneAracDetay',
+          path: '/aboneAracDetay',
+          builder: (context, params) => AboneAracDetayWidget(
+            arac: params.getParam('arac', ParamType.JSON),
+            cariKod: params.getParam('cariKod', ParamType.String),
+          ),
+        ),
+        FFRoute(
+          name: 'register',
+          path: '/register',
+          builder: (context, params) => RegisterWidget(),
+        ),
+        FFRoute(
+          name: 'fis_ayar',
+          path: '/fisAyar',
+          builder: (context, params) => FisAyarWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

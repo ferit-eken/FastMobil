@@ -24,6 +24,8 @@ class _BankalarWidgetState extends State<BankalarWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => BankalarModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override

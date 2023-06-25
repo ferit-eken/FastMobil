@@ -80,6 +80,10 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                   .cast<dynamic>();
             });
           }
+          _model.resultYazicidurum = await actions.getYaziciDurum();
+          setState(() {
+            FFAppState().yazicidurum = _model.resultYazicidurum!;
+          });
         } else {
           await showDialog(
             context: context,
@@ -115,6 +119,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
         );
       }
     });
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override
@@ -179,7 +185,81 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                   fontSize: 22.0,
                 ),
           ),
-          actions: [],
+          actions: [
+            Visibility(
+              visible: valueOrDefault<bool>(
+                _model.resultYazicidurum,
+                false,
+              ),
+              child: Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
+                child: InkWell(
+                  splashColor: Colors.transparent,
+                  focusColor: Colors.transparent,
+                  hoverColor: Colors.transparent,
+                  highlightColor: Colors.transparent,
+                  onTap: () async {
+                    _model.resultyazicilisteCopy =
+                        await actions.getYaziciListe();
+
+                    context.pushNamed(
+                      'PrinterList',
+                      queryParameters: {
+                        'yaziciListe': serializeParam(
+                          _model.resultyaziciliste,
+                          ParamType.JSON,
+                          true,
+                        ),
+                      }.withoutNulls,
+                    );
+
+                    setState(() {});
+                  },
+                  child: Icon(
+                    Icons.print_sharp,
+                    color: Color(0xFF275F08),
+                    size: 32.0,
+                  ),
+                ),
+              ),
+            ),
+            Visibility(
+              visible: !valueOrDefault<bool>(
+                _model.resultYazicidurum,
+                false,
+              ),
+              child: Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
+                child: InkWell(
+                  splashColor: Colors.transparent,
+                  focusColor: Colors.transparent,
+                  hoverColor: Colors.transparent,
+                  highlightColor: Colors.transparent,
+                  onTap: () async {
+                    _model.resultyaziciliste = await actions.getYaziciListe();
+
+                    context.pushNamed(
+                      'PrinterList',
+                      queryParameters: {
+                        'yaziciListe': serializeParam(
+                          _model.resultyaziciliste,
+                          ParamType.JSON,
+                          true,
+                        ),
+                      }.withoutNulls,
+                    );
+
+                    setState(() {});
+                  },
+                  child: Icon(
+                    Icons.print_disabled,
+                    color: Color(0xDBEB1313),
+                    size: 32.0,
+                  ),
+                ),
+              ),
+            ),
+          ],
           centerTitle: true,
           elevation: 2.0,
         ),
@@ -198,6 +278,13 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     children: [
+                      Text(
+                        getJsonField(
+                          FFAppState().Otopark,
+                          r'''$.OtoparkAdi''',
+                        ).toString(),
+                        style: FlutterFlowTheme.of(context).bodyMedium,
+                      ),
                       ClipRRect(
                         borderRadius: BorderRadius.circular(8.0),
                         child: Image.asset(
@@ -726,15 +813,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                     hoverColor: Colors.transparent,
                                     highlightColor: Colors.transparent,
                                     onTap: () async {
-                                      await actions.girisFisiYazdir(
-                                        'FAST PARK OTOPARK İŞLETMESİ',
-                                        '34V0487',
-                                        getCurrentTimestamp,
-                                        'ATMACA GİRİŞ',
-                                        'OTOMOBİL',
-                                        'Ferit EKEN',
-                                        'Çıkış yapmak istediğinizde telefonunuzdan fiş üzerindeki barkodu okutup aracınız isteyebilirsiniz.',
-                                      );
+                                      context.pushNamed('gunSonuRapor');
                                     },
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,

@@ -29,6 +29,7 @@ class _CikisWidgetState extends State<CikisWidget> {
     _model = createModel(context, () => CikisModel());
 
     _model.txtPlakaController ??= TextEditingController();
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override
@@ -295,6 +296,59 @@ class _CikisWidgetState extends State<CikisWidget> {
                                 ScanMode.QR,
                               );
 
+                              _model.apiResultqrsorgu =
+                                  await PtsGroup.aracSorguCall.call(
+                                db: FFAppState().veritabani,
+                                command: 'HESAP',
+                                kapiGrupId: FFAppState().KapiGrupId,
+                                aracTipId: '1',
+                                plaka: _model.kamerarespnse,
+                                id: 0,
+                              );
+                              if (PtsGroup.aracSorguCall.succeeded(
+                                (_model.apiResultqrsorgu?.jsonBody ?? ''),
+                              )) {
+                                context.pushNamed(
+                                  'CikisBilgi',
+                                  queryParameters: {
+                                    'gecisId': serializeParam(
+                                      PtsGroup.aracSorguCall.id(
+                                        (_model.apiResultqrsorgu?.jsonBody ??
+                                            ''),
+                                      ),
+                                      ParamType.int,
+                                    ),
+                                  }.withoutNulls,
+                                );
+                              } else {
+                                await showDialog(
+                                  context: context,
+                                  builder: (alertDialogContext) {
+                                    return AlertDialog(
+                                      title: Text('Uyarı'),
+                                      content: Text(PtsGroup.aracSorguCall
+                                          .message(
+                                            (_model.apiResultqrsorgu
+                                                    ?.jsonBody ??
+                                                ''),
+                                          )
+                                          .toString()),
+                                      actions: [
+                                        TextButton(
+                                          onPressed: () =>
+                                              Navigator.pop(alertDialogContext),
+                                          child: Text('Ok'),
+                                        ),
+                                      ],
+                                    );
+                                  },
+                                );
+                              }
+
+                              setState(() {
+                                _model.txtPlakaController?.clear();
+                              });
+
                               setState(() {});
                             },
                             child: Column(
@@ -302,7 +356,7 @@ class _CikisWidgetState extends State<CikisWidget> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Icon(
-                                  Icons.photo_camera_sharp,
+                                  Icons.qr_code,
                                   color: FlutterFlowTheme.of(context)
                                       .secondaryText,
                                   size: 40.0,
@@ -311,7 +365,7 @@ class _CikisWidgetState extends State<CikisWidget> {
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 5.0, 0.0, 0.0),
                                   child: Text(
-                                    'Plaka Tanıma',
+                                    'Barkod Oku',
                                     textAlign: TextAlign.center,
                                     style:
                                         FlutterFlowTheme.of(context).bodyMedium,

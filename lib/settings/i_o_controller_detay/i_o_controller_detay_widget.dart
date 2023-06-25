@@ -58,6 +58,7 @@ class _IOControllerDetayWidgetState extends State<IOControllerDetayWidget> {
       ).toString().toString(),
       '192.168.1.123',
     ));
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override

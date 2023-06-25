@@ -40,6 +40,7 @@ class _OtoparkDetayWidgetState extends State<OtoparkDetayWidget> {
       widget.otopark,
       r'''$.OtoparkKodu''',
     ).toString().toString());
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override

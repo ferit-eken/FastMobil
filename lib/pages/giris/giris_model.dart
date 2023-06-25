@@ -5,6 +5,8 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
+import '/custom_code/actions/index.dart' as actions;
+import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -47,6 +49,8 @@ class GirisModel extends FlutterFlowModel {
   bool? ch10Value;
   // Stores action output result for [Backend Call - API (AracGiris)] action in btn_giris widget.
   ApiCallResponse? apiResultork;
+  // Stores action output result for [Custom Action - girisFisiYazdir] action in btn_giris widget.
+  String? resultprint;
 
   /// Initialization and disposal methods.
 
@@ -60,5 +64,4 @@ class GirisModel extends FlutterFlowModel {
   /// Action blocks are added here.
 
   /// Additional helper methods are added here.
-
 }

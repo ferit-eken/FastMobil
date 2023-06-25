@@ -24,6 +24,8 @@ class _AracistekListeWidgetState extends State<AracistekListeWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => AracistekListeModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override

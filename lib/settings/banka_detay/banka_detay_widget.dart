@@ -55,6 +55,7 @@ class _BankaDetayWidgetState extends State<BankaDetayWidget> {
       widget.banka,
       r'''$.DovizKod''',
     ).toString().toString());
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override

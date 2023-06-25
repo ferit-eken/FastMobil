@@ -27,6 +27,18 @@ class FFAppState extends ChangeNotifier {
     _safeInit(() {
       _DefAracTipi = prefs.getString('ff_DefAracTipi') ?? _DefAracTipi;
     });
+    _safeInit(() {
+      _FisUstBilgi1 = prefs.getString('ff_FisUstBilgi1') ?? _FisUstBilgi1;
+    });
+    _safeInit(() {
+      _FisUstBilgi2 = prefs.getString('ff_FisUstBilgi2') ?? _FisUstBilgi2;
+    });
+    _safeInit(() {
+      _FisAltBilgi1 = prefs.getString('ff_FisAltBilgi1') ?? _FisAltBilgi1;
+    });
+    _safeInit(() {
+      _FisAltBilgi2 = prefs.getString('ff_FisAltBilgi2') ?? _FisAltBilgi2;
+    });
   }
 
   void update(VoidCallback callback) {
@@ -129,6 +141,46 @@ class FFAppState extends ChangeNotifier {
   int get UserId => _UserId;
   set UserId(int _value) {
     _UserId = _value;
+  }
+
+  bool _yazicidurum = false;
+  bool get yazicidurum => _yazicidurum;
+  set yazicidurum(bool _value) {
+    _yazicidurum = _value;
+  }
+
+  String _FisUstBilgi1 = '';
+  String get FisUstBilgi1 => _FisUstBilgi1;
+  set FisUstBilgi1(String _value) {
+    _FisUstBilgi1 = _value;
+    prefs.setString('ff_FisUstBilgi1', _value);
+  }
+
+  String _FisUstBilgi2 = '';
+  String get FisUstBilgi2 => _FisUstBilgi2;
+  set FisUstBilgi2(String _value) {
+    _FisUstBilgi2 = _value;
+    prefs.setString('ff_FisUstBilgi2', _value);
+  }
+
+  String _FisAltBilgi1 = '';
+  String get FisAltBilgi1 => _FisAltBilgi1;
+  set FisAltBilgi1(String _value) {
+    _FisAltBilgi1 = _value;
+    prefs.setString('ff_FisAltBilgi1', _value);
+  }
+
+  String _FisAltBilgi2 = '';
+  String get FisAltBilgi2 => _FisAltBilgi2;
+  set FisAltBilgi2(String _value) {
+    _FisAltBilgi2 = _value;
+    prefs.setString('ff_FisAltBilgi2', _value);
+  }
+
+  dynamic _firmabilgi;
+  dynamic get firmabilgi => _firmabilgi;
+  set firmabilgi(dynamic _value) {
+    _firmabilgi = _value;
   }
 }
 

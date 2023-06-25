@@ -23,6 +23,8 @@ class _OtoparkdurumWidgetState extends State<OtoparkdurumWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => OtoparkdurumModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override

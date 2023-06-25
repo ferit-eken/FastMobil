@@ -12,7 +12,7 @@ const _kPrivateApiFunctionName = 'ffPrivateApiCall';
 /// Start User Group Code
 
 class UserGroup {
-  static String baseUrl = 'https://mobil.fastpark.com.tr/api';
+  static String baseUrl = 'http://188.132.151.170/api/api';
   static Map<String, String> headers = {};
   static LoginCall loginCall = LoginCall();
 }
@@ -77,11 +77,13 @@ class LoginCall {
 /// Start Pts Group Code
 
 class PtsGroup {
-  static String baseUrl = 'https://mobil.fastpark.com.tr/api/pts';
+  static String baseUrl = 'http://188.132.151.170/api/api/pts';
   static Map<String, String> headers = {};
   static AracGirisCall aracGirisCall = AracGirisCall();
   static AracSorguCall aracSorguCall = AracSorguCall();
   static TahsilatCall tahsilatCall = TahsilatCall();
+  static GunsonuRaporCall gunsonuRaporCall = GunsonuRaporCall();
+  static GunsonuKapatCall gunsonuKapatCall = GunsonuKapatCall();
   static HesapKapatCall hesapKapatCall = HesapKapatCall();
 }
 
@@ -167,6 +169,10 @@ class AracGirisCall {
         response,
         r'''$.Id''',
       );
+  dynamic gecisbilgi(dynamic response) => getJsonField(
+        response,
+        r'''$.data''',
+      );
 }
 
 class AracSorguCall {
@@ -182,7 +188,7 @@ class AracSorguCall {
 {
   "Command": "${command}",
   "data": {
-    "KapiGrupId": "${kapiGrupId}",
+    "GirisKapiGrupId": "${kapiGrupId}",
     "AracTipId": "${aracTipId}",
     "Plaka": "${plaka}",
     "Id": ${id}
@@ -308,6 +314,10 @@ class AracSorguCall {
   dynamic kalan(dynamic response) => getJsonField(
         response,
         r'''$.data.Kalan''',
+      );
+  dynamic cikisTarih(dynamic response) => getJsonField(
+        response,
+        r'''$.data.CikisTarih''',
       );
 }
 
@@ -447,6 +457,142 @@ class TahsilatCall {
       );
 }
 
+class GunsonuRaporCall {
+  Future<ApiCallResponse> call({
+    String? db = '',
+    String? command = 'GUNSONU_RAPOR',
+    int? userId,
+  }) {
+    final body = '''
+{
+  "Command": "${command}",
+  "data": {
+    "UserId": ${userId}
+  }
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'GunsonuRapor',
+      apiUrl: '${PtsGroup.baseUrl}/${db}',
+      callType: ApiCallType.POST,
+      headers: {
+        ...PtsGroup.headers,
+      },
+      params: {},
+      body: body,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+    );
+  }
+
+  dynamic succeeded(dynamic response) => getJsonField(
+        response,
+        r'''$.Succeeded''',
+      );
+  dynamic message(dynamic response) => getJsonField(
+        response,
+        r'''$.Message''',
+      );
+  dynamic id(dynamic response) => getJsonField(
+        response,
+        r'''$.Id''',
+      );
+  dynamic userId(dynamic response) => getJsonField(
+        response,
+        r'''$.UserId''',
+      );
+  dynamic tarih(dynamic response) => getJsonField(
+        response,
+        r'''$.Tarih''',
+      );
+  dynamic toplamGiris(dynamic response) => getJsonField(
+        response,
+        r'''$.ToplamGiris''',
+      );
+  dynamic toplamCikis(dynamic response) => getJsonField(
+        response,
+        r'''$.ToplamCikis''',
+      );
+  dynamic iceridekiAracSayisi(dynamic response) => getJsonField(
+        response,
+        r'''$.IceridekiAracSayisi''',
+      );
+  dynamic ucretliSayi(dynamic response) => getJsonField(
+        response,
+        r'''$.UcretliSayi''',
+      );
+  dynamic ucretsizSayi(dynamic response) => getJsonField(
+        response,
+        r'''$.UcretsizSayi''',
+      );
+  dynamic ucretsizDagilim(dynamic response) => getJsonField(
+        response,
+        r'''$.UcretsizDagilim''',
+      );
+  dynamic toplamUcret(dynamic response) => getJsonField(
+        response,
+        r'''$.ToplamUcret''',
+      );
+  dynamic nakitTahsilat(dynamic response) => getJsonField(
+        response,
+        r'''$.NakitTahsilat''',
+      );
+  dynamic krediKartiToplam(dynamic response) => getJsonField(
+        response,
+        r'''$.KrediKartiToplam''',
+      );
+  dynamic vadelitahsilat(dynamic response) => getJsonField(
+        response,
+        r'''$.Vadelitahsilat''',
+      );
+}
+
+class GunsonuKapatCall {
+  Future<ApiCallResponse> call({
+    String? db = '',
+    String? command = 'GUNSONU_YAP',
+    int? userId,
+  }) {
+    final body = '''
+{
+  "Command": "${command}",
+  "data": {
+    "UserId": ${userId}
+  }
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'GunsonuKapat',
+      apiUrl: '${PtsGroup.baseUrl}/${db}',
+      callType: ApiCallType.POST,
+      headers: {
+        ...PtsGroup.headers,
+      },
+      params: {},
+      body: body,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+    );
+  }
+
+  dynamic succeeded(dynamic response) => getJsonField(
+        response,
+        r'''$.Succeeded''',
+      );
+  dynamic message(dynamic response) => getJsonField(
+        response,
+        r'''$.Message''',
+      );
+  dynamic id(dynamic response) => getJsonField(
+        response,
+        r'''$.Id''',
+      );
+}
+
 class HesapKapatCall {
   Future<ApiCallResponse> call({
     String? db = '',
@@ -455,6 +601,8 @@ class HesapKapatCall {
     int? userId,
     int? kapiGrupId,
     int? kapiId,
+    String? cikisTuru = 'UCRETLI',
+    int? ucretsizEtiketId = 0,
   }) {
     final body = '''
 {
@@ -463,7 +611,9 @@ class HesapKapatCall {
     "Id": ${id},
     "UserId": ${userId},
     "KapiGrupId": ${kapiGrupId},
-    "kapiId": ${kapiId}
+    "kapiId": ${kapiId},
+    "UcretsizEtiketId": ${ucretsizEtiketId},
+    "CikisTuru": "${cikisTuru}"
   }
 }''';
     return ApiManager.instance.makeApiCall(
@@ -506,8 +656,160 @@ class HesapKapatCall {
 /// Start Cari Group Code
 
 class CariGroup {
-  static String baseUrl = 'https://mobil.fastpark.com.tr/api';
+  static String baseUrl = 'http://188.132.151.170/api/api';
   static Map<String, String> headers = {};
+  static CariKayitCall cariKayitCall = CariKayitCall();
+  static CariAracKayitCall cariAracKayitCall = CariAracKayitCall();
+}
+
+class CariKayitCall {
+  Future<ApiCallResponse> call({
+    String? db = '',
+    String? kod = '',
+    String? ad = '',
+    String? soyad = '',
+    String? unvan = '',
+    String? cariGrup = '',
+    String? gsm = '',
+    String? mail = '',
+    int? durum = 1,
+    int? karaListe = 0,
+    String? adres = '',
+    String? cariNot = '',
+    int? createdUserId,
+    String? command = '',
+  }) {
+    final body = '''
+{
+  "tablename": "Cari",
+  "KeyField": "Kod",
+  "keyvalue": "'${kod}'",
+  "Command": "${command}",
+  "data": {
+    "Kod": "${kod}",
+    "Ad": "${ad}",
+    "Soyad": "${soyad}",
+    "Unvan": "${unvan}",
+    "CariGrup": "${cariGrup}",
+    "VDaire": "",
+    "VNo": "",
+    "Adres": "${adres}",
+    "GSM": "${gsm}",
+    "Mail": "${mail}",
+    "CariNot": "${cariNot}",
+    "CariTip": "ALICI",
+    "IL": "",
+    "ILCE": "",
+    "TcKimlik": "",
+    "Personel": ${createdUserId},
+    "EkHesap": 0,
+    "Multireferans": 0,
+    "isdelete": 0,
+    "Durum": ${durum},
+    "vadelisatis": 1,
+    "FiyatKodu": 1,
+    "GeciciKart": 0,
+    "KaraListe": 0,
+    "IletiKabul": 1,
+    "Satis_Iskonto_Oran": 0,
+    "Puan_Kazansin": 1
+  }
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'CariKayit',
+      apiUrl: '${CariGroup.baseUrl}/values/${db}',
+      callType: ApiCallType.POST,
+      headers: {
+        ...CariGroup.headers,
+      },
+      params: {},
+      body: body,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+    );
+  }
+
+  dynamic successed(dynamic response) => getJsonField(
+        response,
+        r'''$.Successed''',
+      );
+  dynamic message(dynamic response) => getJsonField(
+        response,
+        r'''$.Message''',
+      );
+  dynamic data(dynamic response) => getJsonField(
+        response,
+        r'''$.data''',
+      );
+}
+
+class CariAracKayitCall {
+  Future<ApiCallResponse> call({
+    String? db = '',
+    String? cariKod = '',
+    String? adSoyad = '',
+    String? telefon = '',
+    String? plaka = '',
+    String? kullanimTipi = '',
+    int? isActive,
+    String? command = '',
+    int? id,
+    String? aracTipId = '',
+  }) {
+    final body = '''
+{
+  "tablename": "CariAraclar",
+  "KeyField": "Id",
+  "keyvalue": ${id},
+  "Command": "${command}",
+  "data": {
+    "CariKod": "${cariKod}",
+    "FirmaAdi": "",
+    "AdSoyad": "${adSoyad}",
+    "Telefon": "${telefon}",
+    "Plaka": "${plaka}",
+    "AracMarkaId": 1,
+    "AracModelId": 1,
+    "AracTipId": ${aracTipId},
+    "KullanimTipi": "${kullanimTipi}",
+    "AracRenkId": 1,
+    "EtiketID": "-",
+    "Yetkiler": "-",
+    "isActive": ${isActive}
+  }
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'CariAracKayit',
+      apiUrl: '${CariGroup.baseUrl}/values/${db}',
+      callType: ApiCallType.POST,
+      headers: {
+        ...CariGroup.headers,
+      },
+      params: {},
+      body: body,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+    );
+  }
+
+  dynamic successed(dynamic response) => getJsonField(
+        response,
+        r'''$.Successed''',
+      );
+  dynamic message(dynamic response) => getJsonField(
+        response,
+        r'''$.Message''',
+      );
+  dynamic data(dynamic response) => getJsonField(
+        response,
+        r'''$.data''',
+      );
 }
 
 /// End Cari Group Code
@@ -515,7 +817,7 @@ class CariGroup {
 /// Start Settings Group Code
 
 class SettingsGroup {
-  static String baseUrl = 'https://mobil.fastpark.com.tr/api/values';
+  static String baseUrl = 'http://188.132.151.170/api/api/values';
   static Map<String, String> headers = {};
   static GetALLCall getALLCall = GetALLCall();
   static GetFilterDataCall getFilterDataCall = GetFilterDataCall();
@@ -531,6 +833,8 @@ class SettingsGroup {
   static UpdateRowCall updateRowCall = UpdateRowCall();
   static GetIDCall getIDCall = GetIDCall();
   static OtoparkKapiUpdateCall otoparkKapiUpdateCall = OtoparkKapiUpdateCall();
+  static OtoparkKapiGrupUpdateCall otoparkKapiGrupUpdateCall =
+      OtoparkKapiGrupUpdateCall();
 }
 
 class GetALLCall {
@@ -1311,7 +1615,93 @@ class OtoparkKapiUpdateCall {
       );
 }
 
+class OtoparkKapiGrupUpdateCall {
+  Future<ApiCallResponse> call({
+    String? db = '',
+    String? tablename = '',
+    String? keyField = '',
+    String? keyvalue = '',
+    String? command = '',
+    int? id,
+    int? otoparkId,
+    String? grupAdi = 'OTOPARK',
+    String? grupTuru = 'OTOPARK',
+    String? girisYoksaCikis = 'GIRISYAP',
+    int? kapasite,
+    int? nakitOdeme,
+    int? krediKartiOdeme,
+    int? borcKaydet,
+    int? ucretsizOdeme,
+    int? indirimKarti,
+    int? aboneKayit,
+  }) {
+    final body = '''
+{
+  "tablename": "${tablename}",
+  "KeyField": "${keyField}",
+  "keyvalue": "${keyvalue}",
+  "Command": "${command}",
+  "data": {
+    "Id": ${id},
+    "OtoparkId": ${otoparkId},
+    "GrupAdi": "${grupAdi}",
+    "GrupTuru": "${grupTuru}",
+    "GirisYoksaCikis": "${girisYoksaCikis}",
+    "Kapasite": ${kapasite},
+    "NakitOdeme": ${nakitOdeme},
+    "KrediKartiOdeme": ${krediKartiOdeme},
+    "BorcKaydet": ${borcKaydet},
+    "UcretsizOdeme": ${ucretsizOdeme},
+    "IndirimKarti": ${indirimKarti},
+    "AboneKayit": ${aboneKayit}
+  }
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'OtoparkKapiGrupUpdate',
+      apiUrl: '${SettingsGroup.baseUrl}/${db}',
+      callType: ApiCallType.POST,
+      headers: {
+        ...SettingsGroup.headers,
+      },
+      params: {},
+      body: body,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: true,
+      cache: false,
+    );
+  }
+
+  dynamic data(dynamic response) => getJsonField(
+        response,
+        r'''$.data''',
+        true,
+      );
+  dynamic successed(dynamic response) => getJsonField(
+        response,
+        r'''$.Successed''',
+      );
+  dynamic message(dynamic response) => getJsonField(
+        response,
+        r'''$.Message''',
+      );
+  dynamic id(dynamic response) => getJsonField(
+        response,
+        r'''$.data.Id''',
+      );
+}
+
 /// End Settings Group Code
+
+/// Start Firma Group Code
+
+class FirmaGroup {
+  static String baseUrl = 'http://188.132.151.170/api/api/Firma';
+  static Map<String, String> headers = {};
+}
+
+/// End Firma Group Code
 
 class ApiPagingParams {
   int nextPageNumber = 0;

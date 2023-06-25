@@ -123,8 +123,7 @@ class _LoginWidgetState extends State<LoginWidget>
                   ),
                 ),
                 Padding(
-                  padding:
-                      EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(15.0, 2.0, 15.0, 6.0),
                   child: Container(
                     width: double.infinity,
                     constraints: BoxConstraints(
@@ -161,7 +160,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 12.0, 0.0, 24.0),
+                                      0.0, 12.0, 0.0, 12.0),
                                   child: Text(
                                     'Sisteme erişmek için giriş yapınız',
                                     textAlign: TextAlign.center,
@@ -171,13 +170,11 @@ class _LoginWidgetState extends State<LoginWidget>
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 16.0),
+                                      0.0, 0.0, 0.0, 10.0),
                                   child: Container(
                                     width: double.infinity,
                                     child: TextFormField(
                                       controller: _model.txtFirmakoduController,
-                                      autofocus: true,
-                                      autofillHints: [AutofillHints.email],
                                       obscureText: false,
                                       decoration: InputDecoration(
                                         labelText: 'Firma Kodu',
@@ -234,13 +231,11 @@ class _LoginWidgetState extends State<LoginWidget>
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 16.0),
+                                      0.0, 0.0, 0.0, 10.0),
                                   child: Container(
                                     width: double.infinity,
                                     child: TextFormField(
                                       controller: _model.txtUsernameController,
-                                      autofocus: true,
-                                      autofillHints: [AutofillHints.email],
                                       obscureText: false,
                                       decoration: InputDecoration(
                                         labelText: 'Kullanıcı Adı',
@@ -297,13 +292,11 @@ class _LoginWidgetState extends State<LoginWidget>
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 16.0),
+                                      0.0, 0.0, 0.0, 10.0),
                                   child: Container(
                                     width: double.infinity,
                                     child: TextFormField(
                                       controller: _model.txtPasswordController,
-                                      autofocus: true,
-                                      autofillHints: [AutofillHints.password],
                                       obscureText:
                                           !_model.txtPasswordVisibility,
                                       decoration: InputDecoration(
@@ -376,7 +369,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 16.0),
+                                      0.0, 0.0, 0.0, 10.0),
                                   child: FFButtonWidget(
                                     onPressed: () async {
                                       _model.apiResultwz0 =
@@ -407,8 +400,22 @@ class _LoginWidgetState extends State<LoginWidget>
                                                 ''),
                                           );
                                         });
-
-                                        context.pushNamed('HomePage');
+                                        _model.apiresultfirma =
+                                            await SettingsGroup.getRowDataCall
+                                                .call(
+                                          db: 'fastpark',
+                                          tablename: 'Firmalar',
+                                          keyfield: 'Kod',
+                                          keyvalue: _model
+                                              .txtFirmakoduController.text,
+                                        );
+                                        if (SettingsGroup.getRowDataCall
+                                            .successed(
+                                          (_model.apiresultfirma?.jsonBody ??
+                                              ''),
+                                        )) {
+                                          context.pushNamed('HomePage');
+                                        }
                                       } else {
                                         ScaffoldMessenger.of(context)
                                             .showSnackBar(
@@ -466,7 +473,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 16.0),
+                                      0.0, 0.0, 0.0, 10.0),
                                   child: FFButtonWidget(
                                     onPressed: () {
                                       print('Button pressed ...');
@@ -505,29 +512,38 @@ class _LoginWidgetState extends State<LoginWidget>
                                 // You will have to add an action on this rich text to go to your login page.
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 12.0, 0.0, 12.0),
-                                  child: RichText(
-                                    text: TextSpan(
-                                      children: [
-                                        TextSpan(
-                                          text: 'Don\'t have an account?  ',
-                                          style: TextStyle(),
-                                        ),
-                                        TextSpan(
-                                          text: 'Sign Up here',
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                fontFamily: 'Readex Pro',
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primary,
-                                                fontWeight: FontWeight.w600,
-                                              ),
-                                        )
-                                      ],
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium,
+                                      0.0, 12.0, 0.0, 2.0),
+                                  child: InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      context.pushNamed('register');
+                                    },
+                                    child: RichText(
+                                      text: TextSpan(
+                                        children: [
+                                          TextSpan(
+                                            text: 'Yeni Hesap ',
+                                            style: TextStyle(),
+                                          ),
+                                          TextSpan(
+                                            text: 'Oluştur',
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Readex Pro',
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primary,
+                                                  fontWeight: FontWeight.w600,
+                                                ),
+                                          )
+                                        ],
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium,
+                                      ),
                                     ),
                                   ),
                                 ),

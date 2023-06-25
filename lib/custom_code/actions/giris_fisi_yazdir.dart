@@ -17,7 +17,12 @@ Future<String> girisFisiYazdir(
     String kapiadi,
     String aracTipi,
     String username,
-    String aciklama) async {
+    String aciklama,
+    String ustbilgi1,
+    String ustbilgi2,
+    String altbilgi1,
+    String altbilgi2,
+    String fisNo) async {
   // Add your function code here!
   // bluetooth printer out
 
@@ -45,25 +50,42 @@ Future<String> girisFisiYazdir(
   }
 
   if (connected == true) {
-    bluetooth.printNewLine();
-    bluetooth.printCustom(otoparkadi, 2, 1, charset: "ISO-8859-9");
+    ByteData bytesAsset = await rootBundle.load("assets/images/firmalogo.png");
+    Uint8List imageBytesFromAsset = bytesAsset.buffer
+        .asUint8List(bytesAsset.offsetInBytes, bytesAsset.lengthInBytes);
 
-    bluetooth.printQRcode(plaka, 340, 250, 3);
+    /// Example for Print Text
 
-    bluetooth.printNewLine();
+    bluetooth.printImageBytes(imageBytesFromAsset); //image from Network
 
-    bluetooth.printLeftRight("Plaka :", plaka, 1);
+    bluetooth.printCustom(ustbilgi1, 1, 1, charset: "ISO-8859-9");
+    bluetooth.printCustom(ustbilgi2, 1, 1, charset: "ISO-8859-9");
+    bluetooth.printQRcode(plaka, 380, 250, 1);
+
+    bluetooth.printCustom(otoparkadi, 1, 1, charset: "ISO-8859-9");
+
+    bluetooth.printCustom("------------------------", 2, 1,
+        charset: "ISO-8859-9");
+    bluetooth.printCustom(plaka, 2, 1, charset: "ISO-8859-9");
+    bluetooth.printCustom("------------------------", 2, 1,
+        charset: "ISO-8859-9");
+    bluetooth.printCustom("ARAC GIRIS BILGI FISI", 1, 1, charset: "ISO-8859-9");
+    bluetooth.printCustom("------------------------", 2, 1,
+        charset: "ISO-8859-9");
 
     String formattedDate = DateFormat('dd.MM.yyyy kk:mm').format(giriszaman);
 
+    bluetooth.printLeftRight("Arac Tipi :", aracTipi, 1);
     bluetooth.printLeftRight("Giris:", formattedDate, 1);
     bluetooth.printLeftRight("Vale :", username, 1);
-
-    bluetooth.printNewLine();
-    bluetooth.printNewLine();
-
+    bluetooth.printLeftRight("Fis No :", fisNo, 1);
+    bluetooth.printCustom("------------------------", 2, 1,
+        charset: "ISO-8859-9");
     bluetooth.printCustom(aciklama, 1, 1, charset: "ISO-8859-9");
-    bluetooth.printNewLine();
+    bluetooth.printCustom("------------------------", 2, 1,
+        charset: "ISO-8859-9");
+    bluetooth.printCustom(altbilgi1, 1, 1, charset: "ISO-8859-9");
+    bluetooth.printCustom(altbilgi2, 1, 1, charset: "ISO-8859-9");
     bluetooth.printNewLine();
     bluetooth.printNewLine();
     bluetooth.printNewLine();

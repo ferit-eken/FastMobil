@@ -29,6 +29,7 @@ class _CikisWidgetState extends State<CikisWidget> {
     _model = createModel(context, () => CikisModel());
 
     _model.txtPlakaController ??= TextEditingController();
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override

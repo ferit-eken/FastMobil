@@ -38,6 +38,7 @@ class _TahsilatFormWidgetState extends State<TahsilatFormWidget> {
     _model = createModel(context, () => TahsilatFormModel());
 
     _model.txtTutarController ??= TextEditingController();
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override

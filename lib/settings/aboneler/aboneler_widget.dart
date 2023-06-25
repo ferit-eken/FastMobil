@@ -28,6 +28,8 @@ class _AbonelerWidgetState extends State<AbonelerWidget>
   void initState() {
     super.initState();
     _model = createModel(context, () => AbonelerModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override

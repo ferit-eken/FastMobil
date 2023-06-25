@@ -24,6 +24,8 @@ class _AracListesiWidgetState extends State<AracListesiWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => AracListesiModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override

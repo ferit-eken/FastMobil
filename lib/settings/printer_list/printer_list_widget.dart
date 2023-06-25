@@ -32,6 +32,8 @@ class _PrinterListWidgetState extends State<PrinterListWidget>
   void initState() {
     super.initState();
     _model = createModel(context, () => PrinterListModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override

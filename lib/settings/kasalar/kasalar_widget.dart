@@ -24,6 +24,8 @@ class _KasalarWidgetState extends State<KasalarWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => KasalarModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override

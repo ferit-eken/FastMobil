@@ -32,6 +32,8 @@ class _HasarFormuWidgetState extends State<HasarFormuWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => HasarFormuModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override

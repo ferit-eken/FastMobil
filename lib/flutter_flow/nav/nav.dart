@@ -242,6 +242,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'register',
           path: '/register',
           builder: (context, params) => RegisterWidget(),
+        ),
+        FFRoute(
+          name: 'fis_ayar',
+          path: '/fisAyar',
+          builder: (context, params) => FisAyarWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

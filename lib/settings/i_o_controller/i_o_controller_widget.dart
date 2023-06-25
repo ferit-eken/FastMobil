@@ -24,6 +24,8 @@ class _IOControllerWidgetState extends State<IOControllerWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => IOControllerModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override

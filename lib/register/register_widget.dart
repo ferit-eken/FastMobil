@@ -39,6 +39,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
     _model.textController11 ??= TextEditingController();
     _model.textController12 ??= TextEditingController();
     _model.textController13 ??= TextEditingController();
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override

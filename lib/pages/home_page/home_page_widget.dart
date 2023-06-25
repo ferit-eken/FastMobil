@@ -119,6 +119,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
         );
       }
     });
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override

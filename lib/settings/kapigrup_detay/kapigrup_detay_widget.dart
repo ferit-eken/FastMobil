@@ -39,6 +39,7 @@ class _KapigrupDetayWidgetState extends State<KapigrupDetayWidget> {
       widget.kapigrup,
       r'''$.GrupAdi''',
     ).toString().toString());
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override

@@ -80,6 +80,7 @@ class _AboneAracDetayWidgetState extends State<AboneAracDetayWidget> {
     _model.txtPlakaController ??= TextEditingController();
     _model.txtAdsoyadController ??= TextEditingController();
     _model.txtTelefonController ??= TextEditingController();
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override

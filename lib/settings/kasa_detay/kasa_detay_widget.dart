@@ -45,6 +45,7 @@ class _KasaDetayWidgetState extends State<KasaDetayWidget> {
       widget.kasa,
       r'''$.DovizTuru''',
     ).toString().toString());
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override

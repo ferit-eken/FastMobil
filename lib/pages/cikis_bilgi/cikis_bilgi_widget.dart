@@ -34,6 +34,8 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => CikisBilgiModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override

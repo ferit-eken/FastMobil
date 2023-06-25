@@ -89,6 +89,7 @@ class _AboneDetayWidgetState extends State<AboneDetayWidget> {
     _model.txtMailController ??= TextEditingController();
     _model.txtAdresController ??= TextEditingController();
     _model.txtNotController ??= TextEditingController();
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override

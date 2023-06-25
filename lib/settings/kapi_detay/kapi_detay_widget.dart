@@ -44,6 +44,7 @@ class _KapiDetayWidgetState extends State<KapiDetayWidget> {
       widget.kapi,
       r'''$.Id''',
     ).toString().toString());
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override

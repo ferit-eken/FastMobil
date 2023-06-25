@@ -400,8 +400,22 @@ class _LoginWidgetState extends State<LoginWidget>
                                                 ''),
                                           );
                                         });
-
-                                        context.pushNamed('HomePage');
+                                        _model.apiresultfirma =
+                                            await SettingsGroup.getRowDataCall
+                                                .call(
+                                          db: 'fastpark',
+                                          tablename: 'Firmalar',
+                                          keyfield: 'Kod',
+                                          keyvalue: _model
+                                              .txtFirmakoduController.text,
+                                        );
+                                        if (SettingsGroup.getRowDataCall
+                                            .successed(
+                                          (_model.apiresultfirma?.jsonBody ??
+                                              ''),
+                                        )) {
+                                          context.pushNamed('HomePage');
+                                        }
                                       } else {
                                         ScaffoldMessenger.of(context)
                                             .showSnackBar(

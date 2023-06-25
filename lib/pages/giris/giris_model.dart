@@ -49,6 +49,8 @@ class GirisModel extends FlutterFlowModel {
   bool? ch10Value;
   // Stores action output result for [Backend Call - API (AracGiris)] action in btn_giris widget.
   ApiCallResponse? apiResultork;
+  // Stores action output result for [Custom Action - girisFisiYazdir] action in btn_giris widget.
+  String? resultprint;
 
   /// Initialization and disposal methods.
 

@@ -31,6 +31,7 @@ class _GirisWidgetState extends State<GirisWidget> {
     _model = createModel(context, () => GirisModel());
 
     _model.txtPlakaController ??= TextEditingController();
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override
@@ -736,7 +737,8 @@ class _GirisWidgetState extends State<GirisWidget> {
                                   (_model.apiResultork?.jsonBody ?? ''),
                                 )) {
                                   if (FFAppState().yazicidurum) {
-                                    await actions.girisFisiYazdir(
+                                    _model.resultprint =
+                                        await actions.girisFisiYazdir(
                                       valueOrDefault<String>(
                                         getJsonField(
                                           FFAppState().Otopark,
@@ -753,12 +755,23 @@ class _GirisWidgetState extends State<GirisWidget> {
                                         ).toString(),
                                         'Kapı',
                                       ),
-                                      _model.txtAractipiValue!,
+                                      getJsonField(
+                                        (_model.apiResultork?.jsonBody ?? ''),
+                                        r'''$.gecisbilgi.AracTipAdi''',
+                                      ).toString(),
                                       getJsonField(
                                         FFAppState().UserInfo,
                                         r'''$.Username''',
                                       ).toString(),
                                       '# Mali Degeri Yoktur #',
+                                      FFAppState().FisUstBilgi1,
+                                      FFAppState().FisUstBilgi2,
+                                      FFAppState().FisAltBilgi1,
+                                      FFAppState().FisAltBilgi2,
+                                      getJsonField(
+                                        (_model.apiResultork?.jsonBody ?? ''),
+                                        r'''$.gecisbilgi.Id''',
+                                      ).toString(),
                                     );
                                     context.safePop();
                                   } else {

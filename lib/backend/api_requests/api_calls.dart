@@ -169,6 +169,10 @@ class AracGirisCall {
         response,
         r'''$.Id''',
       );
+  dynamic gecisbilgi(dynamic response) => getJsonField(
+        response,
+        r'''$.data''',
+      );
 }
 
 class AracSorguCall {

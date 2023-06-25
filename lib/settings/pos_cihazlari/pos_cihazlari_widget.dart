@@ -24,6 +24,8 @@ class _PosCihazlariWidgetState extends State<PosCihazlariWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => PosCihazlariModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override

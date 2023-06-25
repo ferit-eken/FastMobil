@@ -27,6 +27,8 @@ class _UcretsizSecimWidgetState extends State<UcretsizSecimWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => UcretsizSecimModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override

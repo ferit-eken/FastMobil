@@ -71,6 +71,7 @@ class _PosDetayWidgetState extends State<PosDetayWidget> {
       ).toString().toString(),
       'FXXXX',
     ));
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override

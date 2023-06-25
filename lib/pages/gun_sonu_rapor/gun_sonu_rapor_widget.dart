@@ -26,6 +26,8 @@ class _GunSonuRaporWidgetState extends State<GunSonuRaporWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => GunSonuRaporModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override

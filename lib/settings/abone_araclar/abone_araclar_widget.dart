@@ -33,6 +33,8 @@ class _AboneAraclarWidgetState extends State<AboneAraclarWidget>
   void initState() {
     super.initState();
     _model = createModel(context, () => AboneAraclarModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override

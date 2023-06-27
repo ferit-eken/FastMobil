@@ -2,13 +2,22 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'keyboard_model.dart';
 export 'keyboard_model.dart';
 
 class KeyboardWidget extends StatefulWidget {
-  const KeyboardWidget({Key? key}) : super(key: key);
+  const KeyboardWidget({
+    Key? key,
+    this.def,
+    String? baslik,
+  })  : this.baslik = baslik ?? 'Yazınız',
+        super(key: key);
+
+  final String? def;
+  final String baslik;
 
   @override
   _KeyboardWidgetState createState() => _KeyboardWidgetState();
@@ -27,6 +36,13 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => KeyboardModel());
+
+    // On component load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      setState(() {
+        _model.txtContentController?.text = widget.def!;
+      });
+    });
 
     _model.txtContentController ??= TextEditingController();
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
@@ -61,7 +77,7 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
                   padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
                   child: FFButtonWidget(
                     onPressed: () async {
-                      Navigator.pop(context, false.toString());
+                      Navigator.pop(context, '-1');
                     },
                     text: 'Iptal',
                     options: FFButtonOptions(
@@ -70,11 +86,11 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
                           EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                       iconPadding:
                           EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                      color: FlutterFlowTheme.of(context).primary,
+                      color: FlutterFlowTheme.of(context).warning,
                       textStyle:
                           FlutterFlowTheme.of(context).titleSmall.override(
                                 fontFamily: 'Readex Pro',
-                                color: Colors.white,
+                                color: FlutterFlowTheme.of(context).primaryText,
                               ),
                       elevation: 3.0,
                       borderSide: BorderSide(
@@ -90,34 +106,34 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
                     padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
                     child: TextFormField(
                       controller: _model.txtContentController,
-                      autofocus: true,
+                      readOnly: true,
                       obscureText: false,
                       decoration: InputDecoration(
-                        labelText: 'Label here...',
                         labelStyle: FlutterFlowTheme.of(context).labelMedium,
+                        hintText: widget.baslik,
                         hintStyle: FlutterFlowTheme.of(context).labelMedium,
-                        enabledBorder: UnderlineInputBorder(
+                        enabledBorder: OutlineInputBorder(
                           borderSide: BorderSide(
                             color: FlutterFlowTheme.of(context).alternate,
                             width: 2.0,
                           ),
                           borderRadius: BorderRadius.circular(8.0),
                         ),
-                        focusedBorder: UnderlineInputBorder(
+                        focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
                             color: FlutterFlowTheme.of(context).primary,
                             width: 2.0,
                           ),
                           borderRadius: BorderRadius.circular(8.0),
                         ),
-                        errorBorder: UnderlineInputBorder(
+                        errorBorder: OutlineInputBorder(
                           borderSide: BorderSide(
                             color: FlutterFlowTheme.of(context).error,
                             width: 2.0,
                           ),
                           borderRadius: BorderRadius.circular(8.0),
                         ),
-                        focusedErrorBorder: UnderlineInputBorder(
+                        focusedErrorBorder: OutlineInputBorder(
                           borderSide: BorderSide(
                             color: FlutterFlowTheme.of(context).error,
                             width: 2.0,
@@ -144,11 +160,11 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
                           EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                       iconPadding:
                           EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                      color: FlutterFlowTheme.of(context).primary,
+                      color: Color(0xFF92F45C),
                       textStyle:
                           FlutterFlowTheme.of(context).titleSmall.override(
                                 fontFamily: 'Readex Pro',
-                                color: Colors.white,
+                                color: FlutterFlowTheme.of(context).primaryText,
                               ),
                       elevation: 3.0,
                       borderSide: BorderSide(
@@ -164,13 +180,13 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
           ),
           Container(
             width: double.infinity,
-            height: 312.0,
+            height: 475.0,
             decoration: BoxDecoration(
               color: FlutterFlowTheme.of(context).secondaryBackground,
             ),
             child: Container(
               width: 100.0,
-              height: 87.0,
+              height: 312.0,
               decoration: BoxDecoration(
                 color: FlutterFlowTheme.of(context).secondaryBackground,
               ),
@@ -183,14 +199,14 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
                       Expanded(
                         child: Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
-                              10.0, 10.0, 10.0, 20.0),
+                              10.0, 10.0, 10.0, 10.0),
                           child: GridView(
                             padding: EdgeInsets.zero,
                             gridDelegate:
                                 SliverGridDelegateWithFixedCrossAxisCount(
                               crossAxisCount: 10,
-                              crossAxisSpacing: 10.0,
-                              mainAxisSpacing: 10.0,
+                              crossAxisSpacing: 4.0,
+                              mainAxisSpacing: 4.0,
                               childAspectRatio: 1.0,
                             ),
                             shrinkWrap: true,
@@ -508,14 +524,14 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
                       Expanded(
                         child: Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
-                              10.0, 10.0, 10.0, 20.0),
+                              10.0, 10.0, 10.0, 10.0),
                           child: GridView(
                             padding: EdgeInsets.zero,
                             gridDelegate:
                                 SliverGridDelegateWithFixedCrossAxisCount(
-                              crossAxisCount: 10,
-                              crossAxisSpacing: 10.0,
-                              mainAxisSpacing: 10.0,
+                              crossAxisCount: 5,
+                              crossAxisSpacing: 4.0,
+                              mainAxisSpacing: 4.0,
                               childAspectRatio: 1.0,
                             ),
                             shrinkWrap: true,
@@ -532,22 +548,25 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
                                         .primaryText,
                                   ),
                                 ),
-                                child: InkWell(
-                                  splashColor: Colors.transparent,
-                                  focusColor: Colors.transparent,
-                                  hoverColor: Colors.transparent,
-                                  highlightColor: Colors.transparent,
-                                  onTap: () async {
-                                    setState(() {
-                                      _model.txtContentController?.text =
-                                          '${_model.txtContentController.text}1';
-                                    });
-                                  },
-                                  child: Text(
-                                    '1',
-                                    textAlign: TextAlign.center,
-                                    style: FlutterFlowTheme.of(context)
-                                        .headlineSmall,
+                                child: Align(
+                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                  child: InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      setState(() {
+                                        _model.txtContentController?.text =
+                                            '${_model.txtContentController.text}1';
+                                      });
+                                    },
+                                    child: Text(
+                                      '1',
+                                      textAlign: TextAlign.center,
+                                      style: FlutterFlowTheme.of(context)
+                                          .displayMedium,
+                                    ),
                                   ),
                                 ),
                               ),
@@ -562,22 +581,25 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
                                         .primaryText,
                                   ),
                                 ),
-                                child: InkWell(
-                                  splashColor: Colors.transparent,
-                                  focusColor: Colors.transparent,
-                                  hoverColor: Colors.transparent,
-                                  highlightColor: Colors.transparent,
-                                  onTap: () async {
-                                    setState(() {
-                                      _model.txtContentController?.text =
-                                          '${_model.txtContentController.text}2';
-                                    });
-                                  },
-                                  child: Text(
-                                    '2',
-                                    textAlign: TextAlign.center,
-                                    style: FlutterFlowTheme.of(context)
-                                        .headlineSmall,
+                                child: Align(
+                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                  child: InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      setState(() {
+                                        _model.txtContentController?.text =
+                                            '${_model.txtContentController.text}2';
+                                      });
+                                    },
+                                    child: Text(
+                                      '2',
+                                      textAlign: TextAlign.center,
+                                      style: FlutterFlowTheme.of(context)
+                                          .displayMedium,
+                                    ),
                                   ),
                                 ),
                               ),
@@ -592,22 +614,25 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
                                         .primaryText,
                                   ),
                                 ),
-                                child: InkWell(
-                                  splashColor: Colors.transparent,
-                                  focusColor: Colors.transparent,
-                                  hoverColor: Colors.transparent,
-                                  highlightColor: Colors.transparent,
-                                  onTap: () async {
-                                    setState(() {
-                                      _model.txtContentController?.text =
-                                          '${_model.txtContentController.text}3';
-                                    });
-                                  },
-                                  child: Text(
-                                    '3',
-                                    textAlign: TextAlign.center,
-                                    style: FlutterFlowTheme.of(context)
-                                        .headlineSmall,
+                                child: Align(
+                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                  child: InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      setState(() {
+                                        _model.txtContentController?.text =
+                                            '${_model.txtContentController.text}3';
+                                      });
+                                    },
+                                    child: Text(
+                                      '3',
+                                      textAlign: TextAlign.center,
+                                      style: FlutterFlowTheme.of(context)
+                                          .displayMedium,
+                                    ),
                                   ),
                                 ),
                               ),
@@ -622,22 +647,25 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
                                         .primaryText,
                                   ),
                                 ),
-                                child: InkWell(
-                                  splashColor: Colors.transparent,
-                                  focusColor: Colors.transparent,
-                                  hoverColor: Colors.transparent,
-                                  highlightColor: Colors.transparent,
-                                  onTap: () async {
-                                    setState(() {
-                                      _model.txtContentController?.text =
-                                          '${_model.txtContentController.text}4';
-                                    });
-                                  },
-                                  child: Text(
-                                    '4',
-                                    textAlign: TextAlign.center,
-                                    style: FlutterFlowTheme.of(context)
-                                        .headlineSmall,
+                                child: Align(
+                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                  child: InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      setState(() {
+                                        _model.txtContentController?.text =
+                                            '${_model.txtContentController.text}4';
+                                      });
+                                    },
+                                    child: Text(
+                                      '4',
+                                      textAlign: TextAlign.center,
+                                      style: FlutterFlowTheme.of(context)
+                                          .displayMedium,
+                                    ),
                                   ),
                                 ),
                               ),
@@ -652,22 +680,25 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
                                         .primaryText,
                                   ),
                                 ),
-                                child: InkWell(
-                                  splashColor: Colors.transparent,
-                                  focusColor: Colors.transparent,
-                                  hoverColor: Colors.transparent,
-                                  highlightColor: Colors.transparent,
-                                  onTap: () async {
-                                    setState(() {
-                                      _model.txtContentController?.text =
-                                          '${_model.txtContentController.text}5';
-                                    });
-                                  },
-                                  child: Text(
-                                    '5',
-                                    textAlign: TextAlign.center,
-                                    style: FlutterFlowTheme.of(context)
-                                        .headlineSmall,
+                                child: Align(
+                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                  child: InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      setState(() {
+                                        _model.txtContentController?.text =
+                                            '${_model.txtContentController.text}5';
+                                      });
+                                    },
+                                    child: Text(
+                                      '5',
+                                      textAlign: TextAlign.center,
+                                      style: FlutterFlowTheme.of(context)
+                                          .displayMedium,
+                                    ),
                                   ),
                                 ),
                               ),
@@ -682,22 +713,25 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
                                         .primaryText,
                                   ),
                                 ),
-                                child: InkWell(
-                                  splashColor: Colors.transparent,
-                                  focusColor: Colors.transparent,
-                                  hoverColor: Colors.transparent,
-                                  highlightColor: Colors.transparent,
-                                  onTap: () async {
-                                    setState(() {
-                                      _model.txtContentController?.text =
-                                          '${_model.txtContentController.text}6';
-                                    });
-                                  },
-                                  child: Text(
-                                    '6',
-                                    textAlign: TextAlign.center,
-                                    style: FlutterFlowTheme.of(context)
-                                        .headlineSmall,
+                                child: Align(
+                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                  child: InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      setState(() {
+                                        _model.txtContentController?.text =
+                                            '${_model.txtContentController.text}6';
+                                      });
+                                    },
+                                    child: Text(
+                                      '6',
+                                      textAlign: TextAlign.center,
+                                      style: FlutterFlowTheme.of(context)
+                                          .displayMedium,
+                                    ),
                                   ),
                                 ),
                               ),
@@ -712,22 +746,25 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
                                         .primaryText,
                                   ),
                                 ),
-                                child: InkWell(
-                                  splashColor: Colors.transparent,
-                                  focusColor: Colors.transparent,
-                                  hoverColor: Colors.transparent,
-                                  highlightColor: Colors.transparent,
-                                  onTap: () async {
-                                    setState(() {
-                                      _model.txtContentController?.text =
-                                          '${_model.txtContentController.text}7';
-                                    });
-                                  },
-                                  child: Text(
-                                    '7',
-                                    textAlign: TextAlign.center,
-                                    style: FlutterFlowTheme.of(context)
-                                        .headlineSmall,
+                                child: Align(
+                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                  child: InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      setState(() {
+                                        _model.txtContentController?.text =
+                                            '${_model.txtContentController.text}7';
+                                      });
+                                    },
+                                    child: Text(
+                                      '7',
+                                      textAlign: TextAlign.center,
+                                      style: FlutterFlowTheme.of(context)
+                                          .displayMedium,
+                                    ),
                                   ),
                                 ),
                               ),
@@ -742,22 +779,25 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
                                         .primaryText,
                                   ),
                                 ),
-                                child: InkWell(
-                                  splashColor: Colors.transparent,
-                                  focusColor: Colors.transparent,
-                                  hoverColor: Colors.transparent,
-                                  highlightColor: Colors.transparent,
-                                  onTap: () async {
-                                    setState(() {
-                                      _model.txtContentController?.text =
-                                          '${_model.txtContentController.text}8';
-                                    });
-                                  },
-                                  child: Text(
-                                    '8',
-                                    textAlign: TextAlign.center,
-                                    style: FlutterFlowTheme.of(context)
-                                        .headlineSmall,
+                                child: Align(
+                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                  child: InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      setState(() {
+                                        _model.txtContentController?.text =
+                                            '${_model.txtContentController.text}8';
+                                      });
+                                    },
+                                    child: Text(
+                                      '8',
+                                      textAlign: TextAlign.center,
+                                      style: FlutterFlowTheme.of(context)
+                                          .displayMedium,
+                                    ),
                                   ),
                                 ),
                               ),
@@ -772,22 +812,25 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
                                         .primaryText,
                                   ),
                                 ),
-                                child: InkWell(
-                                  splashColor: Colors.transparent,
-                                  focusColor: Colors.transparent,
-                                  hoverColor: Colors.transparent,
-                                  highlightColor: Colors.transparent,
-                                  onTap: () async {
-                                    setState(() {
-                                      _model.txtContentController?.text =
-                                          '${_model.txtContentController.text}9';
-                                    });
-                                  },
-                                  child: Text(
-                                    '9',
-                                    textAlign: TextAlign.center,
-                                    style: FlutterFlowTheme.of(context)
-                                        .headlineSmall,
+                                child: Align(
+                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                  child: InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      setState(() {
+                                        _model.txtContentController?.text =
+                                            '${_model.txtContentController.text}9';
+                                      });
+                                    },
+                                    child: Text(
+                                      '9',
+                                      textAlign: TextAlign.center,
+                                      style: FlutterFlowTheme.of(context)
+                                          .displayMedium,
+                                    ),
                                   ),
                                 ),
                               ),
@@ -802,22 +845,25 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
                                         .primaryText,
                                   ),
                                 ),
-                                child: InkWell(
-                                  splashColor: Colors.transparent,
-                                  focusColor: Colors.transparent,
-                                  hoverColor: Colors.transparent,
-                                  highlightColor: Colors.transparent,
-                                  onTap: () async {
-                                    setState(() {
-                                      _model.txtContentController?.text =
-                                          '${_model.txtContentController.text}0';
-                                    });
-                                  },
-                                  child: Text(
-                                    '0',
-                                    textAlign: TextAlign.center,
-                                    style: FlutterFlowTheme.of(context)
-                                        .headlineSmall,
+                                child: Align(
+                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                  child: InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      setState(() {
+                                        _model.txtContentController?.text =
+                                            '${_model.txtContentController.text}0';
+                                      });
+                                    },
+                                    child: Text(
+                                      '0',
+                                      textAlign: TextAlign.center,
+                                      style: FlutterFlowTheme.of(context)
+                                          .displayMedium,
+                                    ),
                                   ),
                                 ),
                               ),
@@ -839,7 +885,7 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
                             gridDelegate:
                                 SliverGridDelegateWithFixedCrossAxisCount(
                               crossAxisCount: 10,
-                              crossAxisSpacing: 10.0,
+                              crossAxisSpacing: 4.0,
                               mainAxisSpacing: 10.0,
                               childAspectRatio: 1.0,
                             ),
@@ -1782,16 +1828,77 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
                       ),
                     ],
                   ),
-                  Row(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Expanded(
-                        child: Padding(
+                  Padding(
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
-                              50.0, 10.0, 50.0, 0.0),
+                              10.0, 3.0, 0.0, 3.0),
                           child: Container(
-                            width: 100.0,
-                            height: 30.0,
+                            width: MediaQuery.of(context).size.width * 0.2,
+                            height: 33.0,
+                            decoration: BoxDecoration(
+                              color: FlutterFlowTheme.of(context)
+                                  .secondaryBackground,
+                              border: Border.all(
+                                color: FlutterFlowTheme.of(context).primaryText,
+                              ),
+                            ),
+                            child: InkWell(
+                              splashColor: Colors.transparent,
+                              focusColor: Colors.transparent,
+                              hoverColor: Colors.transparent,
+                              highlightColor: Colors.transparent,
+                              onLongPress: () async {
+                                setState(() {
+                                  FFAppState().defPlaka =
+                                      _model.txtContentController.text;
+                                });
+                                await showDialog(
+                                  context: context,
+                                  builder: (alertDialogContext) {
+                                    return AlertDialog(
+                                      title: Text('Ayar'),
+                                      content:
+                                          Text('Standart değer kaydedildi'),
+                                      actions: [
+                                        TextButton(
+                                          onPressed: () =>
+                                              Navigator.pop(alertDialogContext),
+                                          child: Text('Ok'),
+                                        ),
+                                      ],
+                                    );
+                                  },
+                                );
+                              },
+                              child: Text(
+                                widget.def!,
+                                textAlign: TextAlign.center,
+                                style:
+                                    FlutterFlowTheme.of(context).headlineSmall,
+                              ),
+                            ),
+                          ),
+                        ),
+                        InkWell(
+                          splashColor: Colors.transparent,
+                          focusColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
+                          onTap: () async {
+                            setState(() {
+                              _model.txtContentController?.text =
+                                  '${_model.txtContentController.text} ';
+                            });
+                          },
+                          child: Container(
+                            width: MediaQuery.of(context).size.width * 0.5,
+                            height: 33.0,
                             decoration: BoxDecoration(
                               color: FlutterFlowTheme.of(context)
                                   .secondaryBackground,
@@ -1801,8 +1908,41 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
                             ),
                           ),
                         ),
-                      ),
-                    ],
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 10.0, 0.0),
+                          child: InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              setState(() {
+                                _model.txtContentController?.clear();
+                              });
+                            },
+                            child: Container(
+                              width: MediaQuery.of(context).size.width * 0.2,
+                              height: 33.0,
+                              decoration: BoxDecoration(
+                                color: FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
+                                border: Border.all(
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryText,
+                                ),
+                              ),
+                              child: Text(
+                                'Sil',
+                                textAlign: TextAlign.center,
+                                style:
+                                    FlutterFlowTheme.of(context).headlineSmall,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ],
               ),

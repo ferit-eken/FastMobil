@@ -20,10 +20,14 @@ class CikisBilgiModel extends FlutterFlowModel {
   // Stores action output result for [Backend Call - API (Tahsilat)] action in Column widget.
   ApiCallResponse? apiResultnakitislem;
   Completer<ApiCallResponse>? apiRequestCompleter;
+  // Stores action output result for [Custom Action - cikisFisiYazdir] action in Column widget.
+  String? resultcikisfisprint1;
   // Stores action output result for [Bottom Sheet - TahsilatForm] action in Column widget.
   double? resulttahsilatformkredi;
   // Stores action output result for [Backend Call - API (Tahsilat)] action in Column widget.
   ApiCallResponse? apiResultkrediislem;
+  // Stores action output result for [Custom Action - cikisFisiYazdir] action in Column widget.
+  String? resultcikisfisprint2;
   // Stores action output result for [Bottom Sheet - TahsilatForm] action in Column widget.
   double? resulttahsilatformiade;
   // Stores action output result for [Backend Call - API (Tahsilat)] action in Column widget.

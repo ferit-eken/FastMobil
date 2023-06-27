@@ -113,13 +113,16 @@ class _LoginWidgetState extends State<LoginWidget>
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(8.0),
-                  child: Image.asset(
-                    'assets/images/traffixxlogo.png',
-                    width: 197.0,
-                    height: 84.0,
-                    fit: BoxFit.fitWidth,
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(8.0),
+                    child: Image.asset(
+                      'assets/images/fastpark.png',
+                      width: 197.0,
+                      height: 84.0,
+                      fit: BoxFit.fitWidth,
+                    ),
                   ),
                 ),
                 Padding(
@@ -454,13 +457,13 @@ class _LoginWidgetState extends State<LoginWidget>
                                       iconPadding:
                                           EdgeInsetsDirectional.fromSTEB(
                                               0.0, 0.0, 0.0, 0.0),
-                                      color:
-                                          FlutterFlowTheme.of(context).primary,
+                                      color: Color(0xFFF9CF58),
                                       textStyle: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
                                             fontFamily: 'Readex Pro',
-                                            color: Colors.white,
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryText,
                                           ),
                                       elevation: 3.0,
                                       borderSide: BorderSide(
@@ -551,6 +554,22 @@ class _LoginWidgetState extends State<LoginWidget>
                             ),
                           ),
                         ),
+                        if (responsiveVisibility(
+                          context: context,
+                          phone: false,
+                          tablet: false,
+                          tabletLandscape: false,
+                          desktop: false,
+                        ))
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(8.0),
+                            child: Image.asset(
+                              'assets/images/firmalogo.png',
+                              width: 300.0,
+                              height: 200.0,
+                              fit: BoxFit.cover,
+                            ),
+                          ),
                       ],
                     ),
                   ).animateOnPageLoad(

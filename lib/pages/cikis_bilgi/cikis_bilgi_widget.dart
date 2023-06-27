@@ -185,9 +185,115 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                                                         .jsonBody,
                                                   )
                                                   .toString(),
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .titleSmall
+                                                  .override(
+                                                    fontFamily: 'Readex Pro',
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primaryText,
+                                                  ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 5.0, 0.0, 0.0),
+                                        child: Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Text(
+                                              'Konum :',
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium,
+                                            ),
+                                            Text(
+                                              PtsGroup.aracSorguCall
+                                                  .parkKonumAdi(
+                                                    columnAracSorguResponse
+                                                        .jsonBody,
+                                                  )
+                                                  .toString(),
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .bodyMedium
+                                                  .override(
+                                                    fontFamily: 'Readex Pro',
+                                                    fontWeight: FontWeight.bold,
+                                                  ),
+                                            ),
+                                            Text(
+                                              'Anahtar :',
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium,
+                                            ),
+                                            Text(
+                                              PtsGroup.aracSorguCall
+                                                  .anahtarKodu(
+                                                    columnAracSorguResponse
+                                                        .jsonBody,
+                                                  )
+                                                  .toString(),
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .bodyMedium
+                                                  .override(
+                                                    fontFamily: 'Readex Pro',
+                                                    fontWeight: FontWeight.bold,
+                                                  ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 5.0, 0.0, 0.0),
+                                        child: Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Text(
+                                              'Ad Soyad',
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium,
+                                            ),
+                                            Text(
+                                              PtsGroup.aracSorguCall
+                                                  .adSoyad(
+                                                    columnAracSorguResponse
+                                                        .jsonBody,
+                                                  )
+                                                  .toString(),
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .bodyMedium
+                                                  .override(
+                                                    fontFamily: 'Readex Pro',
+                                                    fontWeight: FontWeight.w600,
+                                                  ),
+                                            ),
+                                            Text(
+                                              PtsGroup.aracSorguCall
+                                                  .telefon(
+                                                    columnAracSorguResponse
+                                                        .jsonBody,
+                                                  )
+                                                  .toString(),
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .bodyMedium
+                                                  .override(
+                                                    fontFamily: 'Readex Pro',
+                                                    fontWeight: FontWeight.w600,
+                                                  ),
                                             ),
                                           ],
                                         ),
@@ -617,6 +723,108 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                                                                         null);
                                                                 await _model
                                                                     .waitForApiRequestCompleted();
+                                                                if (PtsGroup
+                                                                        .aracSorguCall
+                                                                        .kalan(
+                                                                      columnAracSorguResponse
+                                                                          .jsonBody,
+                                                                    ) ==
+                                                                    0) {
+                                                                  _model.resultcikisfisprint1 =
+                                                                      await actions
+                                                                          .cikisFisiYazdir(
+                                                                    getJsonField(
+                                                                      FFAppState()
+                                                                          .Otopark,
+                                                                      r'''$.OtoparkAdi''',
+                                                                    ).toString(),
+                                                                    PtsGroup
+                                                                        .aracSorguCall
+                                                                        .plaka(
+                                                                          columnAracSorguResponse
+                                                                              .jsonBody,
+                                                                        )
+                                                                        .toString(),
+                                                                    PtsGroup
+                                                                        .aracSorguCall
+                                                                        .girisTarih(
+                                                                          columnAracSorguResponse
+                                                                              .jsonBody,
+                                                                        )
+                                                                        .toString(),
+                                                                    getJsonField(
+                                                                      FFAppState()
+                                                                          .Kapi,
+                                                                      r'''$.KapiAdi''',
+                                                                    ).toString(),
+                                                                    'OTOMOBIL',
+                                                                    getJsonField(
+                                                                      FFAppState()
+                                                                          .UserInfo,
+                                                                      r'''$.Username''',
+                                                                    ).toString(),
+                                                                    PtsGroup
+                                                                        .aracSorguCall
+                                                                        .cikisTarih(
+                                                                          columnAracSorguResponse
+                                                                              .jsonBody,
+                                                                        )
+                                                                        .toString(),
+                                                                    PtsGroup
+                                                                        .aracSorguCall
+                                                                        .gecenSure(
+                                                                          columnAracSorguResponse
+                                                                              .jsonBody,
+                                                                        )
+                                                                        .toString(),
+                                                                    PtsGroup
+                                                                        .aracSorguCall
+                                                                        .ucret(
+                                                                          columnAracSorguResponse
+                                                                              .jsonBody,
+                                                                        )
+                                                                        .toDouble(),
+                                                                    PtsGroup
+                                                                        .aracSorguCall
+                                                                        .indirim(
+                                                                          columnAracSorguResponse
+                                                                              .jsonBody,
+                                                                        )
+                                                                        .toDouble(),
+                                                                    PtsGroup
+                                                                        .aracSorguCall
+                                                                        .tutar(
+                                                                          columnAracSorguResponse
+                                                                              .jsonBody,
+                                                                        )
+                                                                        .toDouble(),
+                                                                    0.0,
+                                                                    PtsGroup
+                                                                        .aracSorguCall
+                                                                        .tutar(
+                                                                          columnAracSorguResponse
+                                                                              .jsonBody,
+                                                                        )
+                                                                        .toDouble(),
+                                                                    '* Iyi Gunler Dileriz *',
+                                                                    FFAppState()
+                                                                        .FisUstBilgi1,
+                                                                    FFAppState()
+                                                                        .FisUstBilgi2,
+                                                                    FFAppState()
+                                                                        .FisAltBilgi1,
+                                                                    FFAppState()
+                                                                        .FisAltBilgi2,
+                                                                    'PP4',
+                                                                    PtsGroup
+                                                                        .aracSorguCall
+                                                                        .id(
+                                                                          columnAracSorguResponse
+                                                                              .jsonBody,
+                                                                        )
+                                                                        .toString(),
+                                                                  );
+                                                                }
                                                               } else {
                                                                 await showDialog(
                                                                   context:
@@ -802,6 +1010,108 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                                                                         null);
                                                                 await _model
                                                                     .waitForApiRequestCompleted();
+                                                                if (PtsGroup
+                                                                        .aracSorguCall
+                                                                        .kalan(
+                                                                      columnAracSorguResponse
+                                                                          .jsonBody,
+                                                                    ) ==
+                                                                    0) {
+                                                                  _model.resultcikisfisprint2 =
+                                                                      await actions
+                                                                          .cikisFisiYazdir(
+                                                                    getJsonField(
+                                                                      FFAppState()
+                                                                          .Otopark,
+                                                                      r'''$.OtoparkAdi''',
+                                                                    ).toString(),
+                                                                    PtsGroup
+                                                                        .aracSorguCall
+                                                                        .plaka(
+                                                                          columnAracSorguResponse
+                                                                              .jsonBody,
+                                                                        )
+                                                                        .toString(),
+                                                                    PtsGroup
+                                                                        .aracSorguCall
+                                                                        .girisTarih(
+                                                                          columnAracSorguResponse
+                                                                              .jsonBody,
+                                                                        )
+                                                                        .toString(),
+                                                                    getJsonField(
+                                                                      FFAppState()
+                                                                          .Kapi,
+                                                                      r'''$.KapiAdi''',
+                                                                    ).toString(),
+                                                                    'OTOMOBIL',
+                                                                    getJsonField(
+                                                                      FFAppState()
+                                                                          .UserInfo,
+                                                                      r'''$.Username''',
+                                                                    ).toString(),
+                                                                    PtsGroup
+                                                                        .aracSorguCall
+                                                                        .cikisTarih(
+                                                                          columnAracSorguResponse
+                                                                              .jsonBody,
+                                                                        )
+                                                                        .toString(),
+                                                                    PtsGroup
+                                                                        .aracSorguCall
+                                                                        .gecenSure(
+                                                                          columnAracSorguResponse
+                                                                              .jsonBody,
+                                                                        )
+                                                                        .toString(),
+                                                                    PtsGroup
+                                                                        .aracSorguCall
+                                                                        .ucret(
+                                                                          columnAracSorguResponse
+                                                                              .jsonBody,
+                                                                        )
+                                                                        .toDouble(),
+                                                                    PtsGroup
+                                                                        .aracSorguCall
+                                                                        .indirim(
+                                                                          columnAracSorguResponse
+                                                                              .jsonBody,
+                                                                        )
+                                                                        .toDouble(),
+                                                                    PtsGroup
+                                                                        .aracSorguCall
+                                                                        .tutar(
+                                                                          columnAracSorguResponse
+                                                                              .jsonBody,
+                                                                        )
+                                                                        .toDouble(),
+                                                                    0.0,
+                                                                    PtsGroup
+                                                                        .aracSorguCall
+                                                                        .tutar(
+                                                                          columnAracSorguResponse
+                                                                              .jsonBody,
+                                                                        )
+                                                                        .toDouble(),
+                                                                    '* Iyi Gunler Dileriz *',
+                                                                    FFAppState()
+                                                                        .FisUstBilgi1,
+                                                                    FFAppState()
+                                                                        .FisUstBilgi2,
+                                                                    FFAppState()
+                                                                        .FisAltBilgi1,
+                                                                    FFAppState()
+                                                                        .FisAltBilgi2,
+                                                                    'PP4',
+                                                                    PtsGroup
+                                                                        .aracSorguCall
+                                                                        .id(
+                                                                          columnAracSorguResponse
+                                                                              .jsonBody,
+                                                                        )
+                                                                        .toString(),
+                                                                  );
+                                                                }
                                                               } else {
                                                                 await showDialog(
                                                                   context:
@@ -1274,7 +1584,7 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                                                                       height: MediaQuery.of(context)
                                                                               .size
                                                                               .height *
-                                                                          0.6,
+                                                                          0.9,
                                                                       child:
                                                                           UcretsizSecimWidget(),
                                                                     ),
@@ -1635,7 +1945,22 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                                                                     )
                                                                     .toDouble(),
                                                                 '* Iyi Gunler Dileriz *',
+                                                                FFAppState()
+                                                                    .FisUstBilgi1,
+                                                                FFAppState()
+                                                                    .FisUstBilgi2,
+                                                                FFAppState()
+                                                                    .FisAltBilgi1,
+                                                                FFAppState()
+                                                                    .FisAltBilgi2,
                                                                 'PP4',
+                                                                PtsGroup
+                                                                    .aracSorguCall
+                                                                    .id(
+                                                                      columnAracSorguResponse
+                                                                          .jsonBody,
+                                                                    )
+                                                                    .toString(),
                                                               );
 
                                                               setState(() {});

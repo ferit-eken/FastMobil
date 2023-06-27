@@ -41,3 +41,7 @@ export '/settings/abone_arac_detay/abone_arac_detay_widget.dart'
     show AboneAracDetayWidget;
 export '/register/register_widget.dart' show RegisterWidget;
 export '/settings/fis_ayar/fis_ayar_widget.dart' show FisAyarWidget;
+export '/settings/kullanicilar/kullanicilar_widget.dart'
+    show KullanicilarWidget;
+export '/settings/kullanici_detay/kullanici_detay_widget.dart'
+    show KullaniciDetayWidget;

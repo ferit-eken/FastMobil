@@ -3,10 +3,10 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/pages/keyboard/keyboard_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:local_auth/local_auth.dart';
 import 'package:provider/provider.dart';
 import 'cikis_model.dart';
 export 'cikis_model.dart';
@@ -96,7 +96,7 @@ class _CikisWidgetState extends State<CikisWidget> {
                       ClipRRect(
                         borderRadius: BorderRadius.circular(8.0),
                         child: Image.asset(
-                          'assets/images/traffixxlogo.png',
+                          'assets/images/fastpark.png',
                           width: 192.0,
                           height: 69.0,
                           fit: BoxFit.cover,
@@ -122,6 +122,7 @@ class _CikisWidgetState extends State<CikisWidget> {
                                       child: TextFormField(
                                         controller: _model.txtPlakaController,
                                         autofocus: true,
+                                        readOnly: true,
                                         obscureText: false,
                                         decoration: InputDecoration(
                                           labelText: 'Plaka Giriniz',
@@ -268,219 +269,292 @@ class _CikisWidgetState extends State<CikisWidget> {
                           ),
                         ),
                       ),
-                      Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
-                            15.0, 15.0, 15.0, 15.0),
-                        child: Container(
-                          width: 176.0,
-                          height: 85.0,
-                          decoration: BoxDecoration(
-                            color: FlutterFlowTheme.of(context)
-                                .secondaryBackground,
-                            borderRadius: BorderRadius.circular(5.0),
-                            border: Border.all(
-                              color: Color(0xFFC20707),
-                            ),
+                      Expanded(
+                        child: GridView(
+                          padding: EdgeInsets.zero,
+                          gridDelegate:
+                              SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: 2,
+                            crossAxisSpacing: 10.0,
+                            mainAxisSpacing: 10.0,
+                            childAspectRatio: 1.0,
                           ),
-                          child: InkWell(
-                            splashColor: Colors.transparent,
-                            focusColor: Colors.transparent,
-                            hoverColor: Colors.transparent,
-                            highlightColor: Colors.transparent,
-                            onTap: () async {
-                              _model.kamerarespnse =
-                                  await FlutterBarcodeScanner.scanBarcode(
-                                '#C62828', // scanning line color
-                                'Cancel', // cancel button text
-                                true, // whether to show the flash icon
-                                ScanMode.QR,
-                              );
-
-                              _model.apiResultqrsorgu =
-                                  await PtsGroup.aracSorguCall.call(
-                                db: FFAppState().veritabani,
-                                command: 'HESAP',
-                                kapiGrupId: FFAppState().KapiGrupId,
-                                aracTipId: '1',
-                                plaka: _model.kamerarespnse,
-                                id: 0,
-                              );
-                              if (PtsGroup.aracSorguCall.succeeded(
-                                (_model.apiResultqrsorgu?.jsonBody ?? ''),
-                              )) {
-                                context.pushNamed(
-                                  'CikisBilgi',
-                                  queryParameters: {
-                                    'gecisId': serializeParam(
-                                      PtsGroup.aracSorguCall.id(
-                                        (_model.apiResultqrsorgu?.jsonBody ??
-                                            ''),
-                                      ),
-                                      ParamType.int,
-                                    ),
-                                  }.withoutNulls,
-                                );
-                              } else {
-                                await showDialog(
-                                  context: context,
-                                  builder: (alertDialogContext) {
-                                    return AlertDialog(
-                                      title: Text('Uyarı'),
-                                      content: Text(PtsGroup.aracSorguCall
-                                          .message(
-                                            (_model.apiResultqrsorgu
-                                                    ?.jsonBody ??
-                                                ''),
-                                          )
-                                          .toString()),
-                                      actions: [
-                                        TextButton(
-                                          onPressed: () =>
-                                              Navigator.pop(alertDialogContext),
-                                          child: Text('Ok'),
-                                        ),
-                                      ],
+                          scrollDirection: Axis.vertical,
+                          children: [
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  15.0, 15.0, 15.0, 15.0),
+                              child: Container(
+                                width: 176.0,
+                                height: 85.0,
+                                decoration: BoxDecoration(
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryBackground,
+                                  borderRadius: BorderRadius.circular(5.0),
+                                  border: Border.all(
+                                    color: Color(0xFFC20707),
+                                  ),
+                                ),
+                                child: InkWell(
+                                  splashColor: Colors.transparent,
+                                  focusColor: Colors.transparent,
+                                  hoverColor: Colors.transparent,
+                                  highlightColor: Colors.transparent,
+                                  onTap: () async {
+                                    _model.kamerarespnse =
+                                        await FlutterBarcodeScanner.scanBarcode(
+                                      '#C62828', // scanning line color
+                                      'Cancel', // cancel button text
+                                      true, // whether to show the flash icon
+                                      ScanMode.BARCODE,
                                     );
+
+                                    _model.apiResultqrsorgu =
+                                        await PtsGroup.aracSorguCall.call(
+                                      db: FFAppState().veritabani,
+                                      command: 'HESAP',
+                                      kapiGrupId: FFAppState().KapiGrupId,
+                                      aracTipId: '1',
+                                      plaka: _model.kamerarespnse,
+                                      id: 0,
+                                    );
+                                    if (PtsGroup.aracSorguCall.succeeded(
+                                      (_model.apiResultqrsorgu?.jsonBody ?? ''),
+                                    )) {
+                                      context.pushNamed(
+                                        'CikisBilgi',
+                                        queryParameters: {
+                                          'gecisId': serializeParam(
+                                            PtsGroup.aracSorguCall.id(
+                                              (_model.apiResultqrsorgu
+                                                      ?.jsonBody ??
+                                                  ''),
+                                            ),
+                                            ParamType.int,
+                                          ),
+                                        }.withoutNulls,
+                                      );
+                                    } else {
+                                      await showDialog(
+                                        context: context,
+                                        builder: (alertDialogContext) {
+                                          return AlertDialog(
+                                            title: Text('Uyarı'),
+                                            content: Text(PtsGroup.aracSorguCall
+                                                .message(
+                                                  (_model.apiResultqrsorgu
+                                                          ?.jsonBody ??
+                                                      ''),
+                                                )
+                                                .toString()),
+                                            actions: [
+                                              TextButton(
+                                                onPressed: () => Navigator.pop(
+                                                    alertDialogContext),
+                                                child: Text('Ok'),
+                                              ),
+                                            ],
+                                          );
+                                        },
+                                      );
+                                    }
+
+                                    setState(() {
+                                      _model.txtPlakaController?.clear();
+                                    });
+
+                                    setState(() {});
                                   },
-                                );
-                              }
-
-                              setState(() {
-                                _model.txtPlakaController?.clear();
-                              });
-
-                              setState(() {});
-                            },
-                            child: Column(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Icon(
-                                  Icons.qr_code,
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryText,
-                                  size: 40.0,
-                                ),
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 5.0, 0.0, 0.0),
-                                  child: Text(
-                                    'Barkod Oku',
-                                    textAlign: TextAlign.center,
-                                    style:
-                                        FlutterFlowTheme.of(context).bodyMedium,
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Icon(
+                                        Icons.qr_code,
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryText,
+                                        size: 40.0,
+                                      ),
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 5.0, 0.0, 0.0),
+                                        child: Text(
+                                          'Barkod Oku',
+                                          textAlign: TextAlign.center,
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium,
+                                        ),
+                                      ),
+                                    ],
                                   ),
                                 ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(5.0, 5.0, 5.0, 5.0),
-                        child: Container(
-                          width: 177.0,
-                          height: 85.0,
-                          decoration: BoxDecoration(
-                            color: FlutterFlowTheme.of(context)
-                                .secondaryBackground,
-                            borderRadius: BorderRadius.circular(5.0),
-                            border: Border.all(
-                              color: Color(0xFFC20707),
-                            ),
-                          ),
-                          child: InkWell(
-                            splashColor: Colors.transparent,
-                            focusColor: Colors.transparent,
-                            hoverColor: Colors.transparent,
-                            highlightColor: Colors.transparent,
-                            onTap: () async {
-                              final _localAuth = LocalAuthentication();
-                              bool _isBiometricSupported =
-                                  await _localAuth.isDeviceSupported();
-                              bool canCheckBiometrics =
-                                  await _localAuth.canCheckBiometrics;
-                              if (_isBiometricSupported && canCheckBiometrics) {
-                                _model.respBio = await _localAuth.authenticate(
-                                    localizedReason: 'Giriş yapınız',
-                                    options: const AuthenticationOptions(
-                                        biometricOnly: true));
-                                setState(() {});
-                              }
-
-                              setState(() {});
-                            },
-                            child: Column(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Icon(
-                                  Icons.credit_card,
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryText,
-                                  size: 40.0,
-                                ),
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 5.0, 0.0, 0.0),
-                                  child: Text(
-                                    'Kart Okuma',
-                                    textAlign: TextAlign.center,
-                                    style:
-                                        FlutterFlowTheme.of(context).bodyMedium,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
-                        child: Container(
-                          width: 180.0,
-                          height: 100.0,
-                          decoration: BoxDecoration(
-                            color: FlutterFlowTheme.of(context)
-                                .secondaryBackground,
-                            borderRadius: BorderRadius.circular(5.0),
-                            border: Border.all(
-                              width: 2.0,
-                            ),
-                          ),
-                          child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                3.0, 3.0, 3.0, 3.0),
-                            child: InkWell(
-                              splashColor: Colors.transparent,
-                              focusColor: Colors.transparent,
-                              hoverColor: Colors.transparent,
-                              highlightColor: Colors.transparent,
-                              onTap: () async {
-                                context.pushNamed('AracListesi');
-                              },
-                              child: Column(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Icon(
-                                    Icons.car_repair,
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryText,
-                                    size: 32.0,
-                                  ),
-                                  Text(
-                                    'İçerdeki Araçlar',
-                                    textAlign: TextAlign.center,
-                                    style:
-                                        FlutterFlowTheme.of(context).bodyMedium,
-                                  ),
-                                ],
                               ),
                             ),
-                          ),
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  15.0, 15.0, 15.0, 15.0),
+                              child: Container(
+                                width: 177.0,
+                                height: 85.0,
+                                decoration: BoxDecoration(
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryBackground,
+                                  borderRadius: BorderRadius.circular(5.0),
+                                  border: Border.all(
+                                    color: Color(0xFFC20707),
+                                  ),
+                                ),
+                                child: InkWell(
+                                  splashColor: Colors.transparent,
+                                  focusColor: Colors.transparent,
+                                  hoverColor: Colors.transparent,
+                                  highlightColor: Colors.transparent,
+                                  onTap: () async {
+                                    await showModalBottomSheet(
+                                      isScrollControlled: true,
+                                      backgroundColor: Colors.transparent,
+                                      enableDrag: false,
+                                      context: context,
+                                      builder: (context) {
+                                        return GestureDetector(
+                                          onTap: () => FocusScope.of(context)
+                                              .requestFocus(_model.unfocusNode),
+                                          child: Padding(
+                                            padding: MediaQuery.of(context)
+                                                .viewInsets,
+                                            child: Container(
+                                              height: 480.0,
+                                              child: KeyboardWidget(
+                                                def: FFAppState().defPlaka,
+                                              ),
+                                            ),
+                                          ),
+                                        );
+                                      },
+                                    ).then((value) => setState(
+                                        () => _model.reskeyboard = value));
+
+                                    if (_model.reskeyboard != '-1') {
+                                      setState(() {
+                                        _model.txtPlakaController?.text =
+                                            _model.reskeyboard!;
+                                      });
+                                    }
+
+                                    setState(() {});
+                                  },
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Icon(
+                                        Icons.keyboard_rounded,
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryText,
+                                        size: 40.0,
+                                      ),
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 5.0, 0.0, 0.0),
+                                        child: Text(
+                                          'Klavye',
+                                          textAlign: TextAlign.center,
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  15.0, 15.0, 15.0, 15.0),
+                              child: Container(
+                                width: 180.0,
+                                height: 100.0,
+                                decoration: BoxDecoration(
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryBackground,
+                                  borderRadius: BorderRadius.circular(5.0),
+                                  border: Border.all(
+                                    width: 2.0,
+                                  ),
+                                ),
+                                child: Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      3.0, 3.0, 3.0, 3.0),
+                                  child: InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      context.pushNamed('AracListesi');
+                                    },
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Icon(
+                                          Icons.car_repair,
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryText,
+                                          size: 32.0,
+                                        ),
+                                        Text(
+                                          'İçerdeki Araçlar',
+                                          textAlign: TextAlign.center,
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium,
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  15.0, 15.0, 15.0, 15.0),
+                              child: Container(
+                                width: 176.0,
+                                height: 85.0,
+                                decoration: BoxDecoration(
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryBackground,
+                                  borderRadius: BorderRadius.circular(5.0),
+                                  border: Border.all(
+                                    color: Color(0xFFC20707),
+                                  ),
+                                ),
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Icon(
+                                      Icons.credit_card_outlined,
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryText,
+                                      size: 40.0,
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 5.0, 0.0, 0.0),
+                                      child: Text(
+                                        'Kart Oku',
+                                        textAlign: TextAlign.center,
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                     ],

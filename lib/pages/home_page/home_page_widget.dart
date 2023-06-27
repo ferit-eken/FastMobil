@@ -133,7 +133,12 @@ class _HomePageWidgetState extends State<HomePageWidget> {
   @override
   Widget build(BuildContext context) {
     context.watch<FFAppState>();
-
+    final chartPieChartColorsList = [
+      Color(0xDBEB1313),
+      Color(0xFF92F45C),
+      Colors.transparent,
+      Color(0xFF4A57C1)
+    ];
     return GestureDetector(
       onTap: () => FocusScope.of(context).requestFocus(_model.unfocusNode),
       child: Scaffold(
@@ -274,17 +279,14 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                   height: double.infinity,
                   decoration: BoxDecoration(
                     color: FlutterFlowTheme.of(context).secondaryBackground,
+                    border: Border.all(
+                      color: FlutterFlowTheme.of(context).warning,
+                      width: 10.0,
+                    ),
                   ),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     children: [
-                      Text(
-                        getJsonField(
-                          FFAppState().Otopark,
-                          r'''$.OtoparkAdi''',
-                        ).toString(),
-                        style: FlutterFlowTheme.of(context).bodyMedium,
-                      ),
                       ClipRRect(
                         borderRadius: BorderRadius.circular(8.0),
                         child: Image.asset(
@@ -314,148 +316,98 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Expanded(
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    children: [
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            8.0, 8.0, 8.0, 0.0),
-                                        child: Row(
+                                  child: Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        12.0, 10.0, 0.0, 0.0),
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Row(
                                           mainAxisSize: MainAxisSize.max,
                                           mainAxisAlignment:
-                                              MainAxisAlignment.spaceBetween,
+                                              MainAxisAlignment.start,
                                           children: [
-                                            Text(
-                                              'Giriş Sayısı',
-                                              style:
+                                            Icon(
+                                              Icons.location_history,
+                                              color:
                                                   FlutterFlowTheme.of(context)
-                                                      .bodyMedium,
+                                                      .secondaryText,
+                                              size: 24.0,
                                             ),
                                             Text(
-                                              '85',
+                                              getJsonField(
+                                                FFAppState().UserInfo,
+                                                r'''$.Username''',
+                                              ).toString(),
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium,
                                             ),
                                           ],
                                         ),
-                                      ),
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            8.0, 0.0, 8.0, 0.0),
-                                        child: Row(
+                                        Row(
                                           mainAxisSize: MainAxisSize.max,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceBetween,
                                           children: [
-                                            Text(
-                                              'Çıkış Sayısı',
-                                              style:
+                                            Icon(
+                                              Icons.local_parking,
+                                              color:
                                                   FlutterFlowTheme.of(context)
-                                                      .bodyMedium,
+                                                      .secondaryText,
+                                              size: 24.0,
                                             ),
                                             Text(
-                                              '15',
+                                              getJsonField(
+                                                FFAppState().Otopark,
+                                                r'''$.OtoparkAdi''',
+                                              ).toString(),
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium,
                                             ),
                                           ],
                                         ),
-                                      ),
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            8.0, 0.0, 8.0, 0.0),
-                                        child: Row(
-                                          mainAxisSize: MainAxisSize.max,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceBetween,
-                                          children: [
-                                            Text(
-                                              'Toplam Ciro',
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium,
+                                        Expanded(
+                                          child: GridView(
+                                            padding: EdgeInsets.zero,
+                                            gridDelegate:
+                                                SliverGridDelegateWithFixedCrossAxisCount(
+                                              crossAxisCount: 3,
+                                              crossAxisSpacing: 1.0,
+                                              mainAxisSpacing: 1.0,
+                                              childAspectRatio: 1.0,
                                             ),
-                                            Text(
-                                              '8.250',
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium,
-                                            ),
-                                          ],
+                                            scrollDirection: Axis.vertical,
+                                            children: [
+                                              Icon(
+                                                Icons.lock,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryText,
+                                                size: 24.0,
+                                              ),
+                                              Icon(
+                                                Icons.lock_open_outlined,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryText,
+                                                size: 24.0,
+                                              ),
+                                              Icon(
+                                                Icons.bar_chart_sharp,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryText,
+                                                size: 24.0,
+                                              ),
+                                            ],
+                                          ),
                                         ),
-                                      ),
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            8.0, 0.0, 8.0, 0.0),
-                                        child: Row(
-                                          mainAxisSize: MainAxisSize.max,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceBetween,
-                                          children: [
-                                            Text(
-                                              'Nakit Tahsilat',
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium,
-                                            ),
-                                            Text(
-                                              '4.000',
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium,
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            8.0, 0.0, 8.0, 0.0),
-                                        child: Row(
-                                          mainAxisSize: MainAxisSize.max,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceBetween,
-                                          children: [
-                                            Text(
-                                              'Kredi Kartı',
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium,
-                                            ),
-                                            Text(
-                                              '4.250',
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium,
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            8.0, 0.0, 8.0, 0.0),
-                                        child: Row(
-                                          mainAxisSize: MainAxisSize.max,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceBetween,
-                                          children: [
-                                            Text(
-                                              'Borç Kaydı',
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium,
-                                            ),
-                                            Text(
-                                              '0',
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium,
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ],
+                                      ],
+                                    ),
                                   ),
                                 ),
                                 Expanded(
@@ -464,12 +416,13 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                     children: [
                                       Expanded(
                                         child: FutureBuilder<ApiCallResponse>(
-                                          future:
-                                              SettingsGroup.getRowDataCall.call(
+                                          future: SettingsGroup
+                                              .getFilterDataCall
+                                              .call(
                                             db: FFAppState().veritabani,
                                             tablename: 'OtoparkGrupDoluluk',
-                                            keyfield: 'Id',
-                                            keyvalue: FFAppState().KapiGrupId,
+                                            filtre:
+                                                'Id=${FFAppState().KapiGrupId}',
                                           ),
                                           builder: (context, snapshot) {
                                             // Customize what your widget looks like when it's loading.
@@ -487,32 +440,35 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                 ),
                                               );
                                             }
-                                            final chartGetRowDataResponse =
+                                            final chartGetFilterDataResponse =
                                                 snapshot.data!;
                                             return Container(
                                               width: 370.0,
                                               height: 230.0,
                                               child: FlutterFlowPieChart(
                                                 data: FFPieChartData(
-                                                  values: [
-                                                    getJsonField(
-                                                      chartGetRowDataResponse
-                                                          .jsonBody,
-                                                      r'''$.data.Dolu''',
-                                                    )
-                                                  ],
-                                                  colors: [
-                                                    FlutterFlowTheme.of(context)
-                                                        .primary
-                                                  ],
-                                                  radius: [50.0],
+                                                  values: SettingsGroup
+                                                      .getFilterDataCall
+                                                      .data(
+                                                        chartGetFilterDataResponse
+                                                            .jsonBody,
+                                                      )!
+                                                      .map((e) => getJsonField(
+                                                            e,
+                                                            r'''$.Sayi''',
+                                                          ))
+                                                      .toList(),
+                                                  colors:
+                                                      chartPieChartColorsList,
+                                                  radius: [55.0],
+                                                  borderWidth: [2.0],
                                                 ),
                                                 donutHoleRadius: 0.0,
                                                 donutHoleColor:
                                                     Colors.transparent,
                                                 sectionLabelType:
                                                     PieChartSectionLabelType
-                                                        .percent,
+                                                        .value,
                                                 sectionLabelStyle:
                                                     FlutterFlowTheme.of(context)
                                                         .headlineSmall
@@ -522,6 +478,16 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                           fontWeight:
                                                               FontWeight.normal,
                                                         ),
+                                                labelFormatter: LabelFormatter(
+                                                  numberFormat: (val) =>
+                                                      formatNumber(
+                                                    val,
+                                                    formatType:
+                                                        FormatType.custom,
+                                                    format: '#',
+                                                    locale: '',
+                                                  ),
+                                                ),
                                               ),
                                             );
                                           },

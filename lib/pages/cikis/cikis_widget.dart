@@ -97,7 +97,7 @@ class _CikisWidgetState extends State<CikisWidget> {
                         borderRadius: BorderRadius.circular(8.0),
                         child: Image.asset(
                           'assets/images/fastpark.png',
-                          width: 192.0,
+                          width: 246.0,
                           height: 69.0,
                           fit: BoxFit.cover,
                         ),

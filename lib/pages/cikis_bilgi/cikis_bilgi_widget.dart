@@ -1895,7 +1895,13 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                                                                       .Kapi,
                                                                   r'''$.KapiAdi''',
                                                                 ).toString(),
-                                                                'OTOMOBIL',
+                                                                PtsGroup
+                                                                    .aracSorguCall
+                                                                    .aracTipAdi(
+                                                                      columnAracSorguResponse
+                                                                          .jsonBody,
+                                                                    )
+                                                                    .toString(),
                                                                 getJsonField(
                                                                   FFAppState()
                                                                       .UserInfo,
@@ -1953,7 +1959,13 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                                                                     .FisAltBilgi1,
                                                                 FFAppState()
                                                                     .FisAltBilgi2,
-                                                                'PP4',
+                                                                PtsGroup
+                                                                    .aracSorguCall
+                                                                    .parkKonumAdi(
+                                                                      columnAracSorguResponse
+                                                                          .jsonBody,
+                                                                    )
+                                                                    .toString(),
                                                                 PtsGroup
                                                                     .aracSorguCall
                                                                     .id(

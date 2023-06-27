@@ -499,6 +499,42 @@ class TahsilatCall {
         response,
         r'''$.data.isActive''',
       );
+  dynamic aracTipAdi(dynamic response) => getJsonField(
+        response,
+        r'''$.data.AracTipAdi''',
+      );
+  dynamic aracTipId(dynamic response) => getJsonField(
+        response,
+        r'''$.data.AracTipId''',
+      );
+  dynamic tahsilat(dynamic response) => getJsonField(
+        response,
+        r'''$.data.Tahsilat''',
+      );
+  dynamic adSoyad(dynamic response) => getJsonField(
+        response,
+        r'''$.data.AdSoyad''',
+      );
+  dynamic telefon(dynamic response) => getJsonField(
+        response,
+        r'''$.data.Telefon''',
+      );
+  dynamic anahtarKodu(dynamic response) => getJsonField(
+        response,
+        r'''$.data.AnahtarKodu''',
+      );
+  dynamic parkKonumId(dynamic response) => getJsonField(
+        response,
+        r'''$.data.ParkKonumId''',
+      );
+  dynamic parkKonumAdi(dynamic response) => getJsonField(
+        response,
+        r'''$.data.ParkKonumAdi''',
+      );
+  dynamic kalan(dynamic response) => getJsonField(
+        response,
+        r'''$.data.Kalan''',
+      );
 }
 
 class GunsonuRaporCall {

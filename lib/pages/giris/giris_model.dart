@@ -5,8 +5,10 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
+import '/pages/anahtar_liste/anahtar_liste_widget.dart';
+import '/pages/keyboard/keyboard_widget.dart';
+import '/pages/konum_secim/konum_secim_widget.dart';
 import '/custom_code/actions/index.dart' as actions;
-import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -15,12 +17,19 @@ class GirisModel extends FlutterFlowModel {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
-  // State field(s) for txt_plaka widget.
-  TextEditingController? txtPlakaController;
-  String? Function(BuildContext, String?)? txtPlakaControllerValidator;
   // State field(s) for txt_aractipi widget.
   String? txtAractipiValue;
   FormFieldController<String>? txtAractipiValueController;
+  // Stores action output result for [Bottom Sheet - AnahtarListe] action in Container widget.
+  int? resAnahtarsecim;
+  // Stores action output result for [Bottom Sheet - keyboard] action in Column widget.
+  String? resultAdsoyad;
+  // Stores action output result for [Bottom Sheet - keyboard] action in Container widget.
+  String? resulttelefonno;
+  // Stores action output result for [Bottom Sheet - keyboard] action in Column widget.
+  String? resultPlakakeyb;
+  // Stores action output result for [Bottom Sheet - konum_secim] action in Column widget.
+  dynamic? resultkonumsecim;
   // State field(s) for ch_4 widget.
   bool? ch4Value;
   // State field(s) for ch_3 widget.
@@ -58,7 +67,6 @@ class GirisModel extends FlutterFlowModel {
 
   void dispose() {
     unfocusNode.dispose();
-    txtPlakaController?.dispose();
   }
 
   /// Action blocks are added here.

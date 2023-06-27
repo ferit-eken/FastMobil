@@ -3,10 +3,10 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/pages/keyboard/keyboard_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:local_auth/local_auth.dart';
 import 'package:provider/provider.dart';
 
 class CikisModel extends FlutterFlowModel {
@@ -21,7 +21,8 @@ class CikisModel extends FlutterFlowModel {
   var kamerarespnse = '';
   // Stores action output result for [Backend Call - API (AracSorgu)] action in Column widget.
   ApiCallResponse? apiResultqrsorgu;
-  bool respBio = false;
+  // Stores action output result for [Bottom Sheet - keyboard] action in Column widget.
+  String? reskeyboard;
 
   /// Initialization and disposal methods.
 

@@ -12,7 +12,7 @@ const _kPrivateApiFunctionName = 'ffPrivateApiCall';
 /// Start User Group Code
 
 class UserGroup {
-  static String baseUrl = 'http://188.132.151.170/api/api';
+  static String baseUrl = 'https://mobil.fastpark.com.tr/api';
   static Map<String, String> headers = {};
   static LoginCall loginCall = LoginCall();
 }
@@ -77,7 +77,7 @@ class LoginCall {
 /// Start Pts Group Code
 
 class PtsGroup {
-  static String baseUrl = 'http://188.132.151.170/api/api/pts';
+  static String baseUrl = 'https://mobil.fastpark.com.tr/api/pts';
   static Map<String, String> headers = {};
   static AracGirisCall aracGirisCall = AracGirisCall();
   static AracSorguCall aracSorguCall = AracSorguCall();
@@ -112,6 +112,10 @@ class AracGirisCall {
     bool? hasar12,
     bool? hasar13,
     int? id = 0,
+    String? adSoyad = '',
+    String? telefon = '',
+    String? parkKonumId = '',
+    int? anahtarKodu,
   }) {
     final body = '''
 {
@@ -125,6 +129,10 @@ class AracGirisCall {
     "PersonelKod": ${personelKod},
     "GirisTuru": "${girisTuru}",
     "Plaka": "${plaka}",
+    "AdSoyad": "${adSoyad}",
+    "Telefon": "${telefon}",
+    "ParkKonumId": "${parkKonumId}",
+    "AnahtarKodu": ${anahtarKodu},
     "Hasar_1": ${hasar1},
     "Hasar_2": ${hasar2},
     "Hasar_3": ${hasar3},
@@ -172,6 +180,14 @@ class AracGirisCall {
   dynamic gecisbilgi(dynamic response) => getJsonField(
         response,
         r'''$.data''',
+      );
+  dynamic aracTipi(dynamic response) => getJsonField(
+        response,
+        r'''$.data.AracTipAdi''',
+      );
+  dynamic fisNo(dynamic response) => getJsonField(
+        response,
+        r'''$.data.Id''',
       );
 }
 
@@ -318,6 +334,34 @@ class AracSorguCall {
   dynamic cikisTarih(dynamic response) => getJsonField(
         response,
         r'''$.data.CikisTarih''',
+      );
+  dynamic aracTipId(dynamic response) => getJsonField(
+        response,
+        r'''$.data.AracTipId''',
+      );
+  dynamic aracTipAdi(dynamic response) => getJsonField(
+        response,
+        r'''$.data.AracTipAdi''',
+      );
+  dynamic adSoyad(dynamic response) => getJsonField(
+        response,
+        r'''$.data.AdSoyad''',
+      );
+  dynamic telefon(dynamic response) => getJsonField(
+        response,
+        r'''$.data.Telefon''',
+      );
+  dynamic anahtarKodu(dynamic response) => getJsonField(
+        response,
+        r'''$.data.AnahtarKodu''',
+      );
+  dynamic parkKonumId(dynamic response) => getJsonField(
+        response,
+        r'''$.data.ParkKonumId''',
+      );
+  dynamic parkKonumAdi(dynamic response) => getJsonField(
+        response,
+        r'''$.data.ParkKonumAdi''',
       );
 }
 
@@ -656,7 +700,7 @@ class HesapKapatCall {
 /// Start Cari Group Code
 
 class CariGroup {
-  static String baseUrl = 'http://188.132.151.170/api/api';
+  static String baseUrl = 'https://mobil.fastpark.com.tr/api';
   static Map<String, String> headers = {};
   static CariKayitCall cariKayitCall = CariKayitCall();
   static CariAracKayitCall cariAracKayitCall = CariAracKayitCall();
@@ -817,7 +861,7 @@ class CariAracKayitCall {
 /// Start Settings Group Code
 
 class SettingsGroup {
-  static String baseUrl = 'http://188.132.151.170/api/api/values';
+  static String baseUrl = 'https://mobil.fastpark.com.tr/api/values';
   static Map<String, String> headers = {};
   static GetALLCall getALLCall = GetALLCall();
   static GetFilterDataCall getFilterDataCall = GetFilterDataCall();
@@ -827,6 +871,7 @@ class SettingsGroup {
   static PosUpdateCall posUpdateCall = PosUpdateCall();
   static BankaUpdateCall bankaUpdateCall = BankaUpdateCall();
   static KasaUpdateCall kasaUpdateCall = KasaUpdateCall();
+  static PersonelUpdateCall personelUpdateCall = PersonelUpdateCall();
   static IOControllerUpdateCall iOControllerUpdateCall =
       IOControllerUpdateCall();
   static LedPanelUpdateCall ledPanelUpdateCall = LedPanelUpdateCall();
@@ -1245,6 +1290,67 @@ class KasaUpdateCall {
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'KasaUpdate',
+      apiUrl: '${SettingsGroup.baseUrl}/${db}',
+      callType: ApiCallType.POST,
+      headers: {
+        ...SettingsGroup.headers,
+      },
+      params: {},
+      body: body,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: true,
+      cache: false,
+    );
+  }
+
+  dynamic data(dynamic response) => getJsonField(
+        response,
+        r'''$.data''',
+        true,
+      );
+  dynamic successed(dynamic response) => getJsonField(
+        response,
+        r'''$.Successed''',
+      );
+  dynamic message(dynamic response) => getJsonField(
+        response,
+        r'''$.Message''',
+      );
+}
+
+class PersonelUpdateCall {
+  Future<ApiCallResponse> call({
+    String? db = 'fastpark',
+    String? tablename = 'Bankalar',
+    String? keyField = 'Kod',
+    String? keyvalue = '',
+    String? command = 'UPDATE',
+    String? kod = '',
+    String? ad = '',
+    String? soyad = 'TL',
+    String? username = '',
+    String? sifre = '',
+    String? gsm = '',
+  }) {
+    final body = '''
+{
+  "tablename": "${tablename}",
+  "KeyField": "${keyField}",
+  "keyvalue": "${keyvalue}",
+  "Command": "${command}",
+  "data": {
+    "Kod": "${kod}",
+    "Ad": "${ad}",
+    "Soyad": "${soyad}",
+    "Username": "${username}",
+    "Sifre": "${sifre}",
+    "GSM": "${gsm}"
+  }
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'PersonelUpdate',
       apiUrl: '${SettingsGroup.baseUrl}/${db}',
       callType: ApiCallType.POST,
       headers: {
@@ -1697,7 +1803,7 @@ class OtoparkKapiGrupUpdateCall {
 /// Start Firma Group Code
 
 class FirmaGroup {
-  static String baseUrl = 'http://188.132.151.170/api/api/Firma';
+  static String baseUrl = 'https://mobil.fastpark.com.tr/api/Firma';
   static Map<String, String> headers = {};
 }
 

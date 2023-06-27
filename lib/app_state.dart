@@ -39,6 +39,36 @@ class FFAppState extends ChangeNotifier {
     _safeInit(() {
       _FisAltBilgi2 = prefs.getString('ff_FisAltBilgi2') ?? _FisAltBilgi2;
     });
+    _safeInit(() {
+      _defPlaka = prefs.getString('ff_defPlaka') ?? _defPlaka;
+    });
+    _safeInit(() {
+      _girisFirmaKodu = prefs.getString('ff_girisFirmaKodu') ?? _girisFirmaKodu;
+    });
+    _safeInit(() {
+      _girisKullanici = prefs.getString('ff_girisKullanici') ?? _girisKullanici;
+    });
+    _safeInit(() {
+      _para1 = prefs.getInt('ff_para1') ?? _para1;
+    });
+    _safeInit(() {
+      _para2 = prefs.getInt('ff_para2') ?? _para2;
+    });
+    _safeInit(() {
+      _para3 = prefs.getInt('ff_para3') ?? _para3;
+    });
+    _safeInit(() {
+      _para4 = prefs.getInt('ff_para4') ?? _para4;
+    });
+    _safeInit(() {
+      _para5 = prefs.getInt('ff_para5') ?? _para5;
+    });
+    _safeInit(() {
+      _para6 = prefs.getInt('ff_para6') ?? _para6;
+    });
+    _safeInit(() {
+      _para7 = prefs.getInt('ff_para7') ?? _para7;
+    });
   }
 
   void update(VoidCallback callback) {
@@ -181,6 +211,126 @@ class FFAppState extends ChangeNotifier {
   dynamic get firmabilgi => _firmabilgi;
   set firmabilgi(dynamic _value) {
     _firmabilgi = _value;
+  }
+
+  String _defPlaka = '';
+  String get defPlaka => _defPlaka;
+  set defPlaka(String _value) {
+    _defPlaka = _value;
+    prefs.setString('ff_defPlaka', _value);
+  }
+
+  String _girisFirmaKodu = '';
+  String get girisFirmaKodu => _girisFirmaKodu;
+  set girisFirmaKodu(String _value) {
+    _girisFirmaKodu = _value;
+    prefs.setString('ff_girisFirmaKodu', _value);
+  }
+
+  String _girisKullanici = '';
+  String get girisKullanici => _girisKullanici;
+  set girisKullanici(String _value) {
+    _girisKullanici = _value;
+    prefs.setString('ff_girisKullanici', _value);
+  }
+
+  List<dynamic> _anahtarlar = [];
+  List<dynamic> get anahtarlar => _anahtarlar;
+  set anahtarlar(List<dynamic> _value) {
+    _anahtarlar = _value;
+  }
+
+  void addToAnahtarlar(dynamic _value) {
+    _anahtarlar.add(_value);
+  }
+
+  void removeFromAnahtarlar(dynamic _value) {
+    _anahtarlar.remove(_value);
+  }
+
+  void removeAtIndexFromAnahtarlar(int _index) {
+    _anahtarlar.removeAt(_index);
+  }
+
+  void updateAnahtarlarAtIndex(
+    int _index,
+    dynamic Function(dynamic) updateFn,
+  ) {
+    _anahtarlar[_index] = updateFn(_anahtarlar[_index]);
+  }
+
+  List<dynamic> _parkkonumlari = [];
+  List<dynamic> get parkkonumlari => _parkkonumlari;
+  set parkkonumlari(List<dynamic> _value) {
+    _parkkonumlari = _value;
+  }
+
+  void addToParkkonumlari(dynamic _value) {
+    _parkkonumlari.add(_value);
+  }
+
+  void removeFromParkkonumlari(dynamic _value) {
+    _parkkonumlari.remove(_value);
+  }
+
+  void removeAtIndexFromParkkonumlari(int _index) {
+    _parkkonumlari.removeAt(_index);
+  }
+
+  void updateParkkonumlariAtIndex(
+    int _index,
+    dynamic Function(dynamic) updateFn,
+  ) {
+    _parkkonumlari[_index] = updateFn(_parkkonumlari[_index]);
+  }
+
+  int _para1 = 0;
+  int get para1 => _para1;
+  set para1(int _value) {
+    _para1 = _value;
+    prefs.setInt('ff_para1', _value);
+  }
+
+  int _para2 = 0;
+  int get para2 => _para2;
+  set para2(int _value) {
+    _para2 = _value;
+    prefs.setInt('ff_para2', _value);
+  }
+
+  int _para3 = 0;
+  int get para3 => _para3;
+  set para3(int _value) {
+    _para3 = _value;
+    prefs.setInt('ff_para3', _value);
+  }
+
+  int _para4 = 0;
+  int get para4 => _para4;
+  set para4(int _value) {
+    _para4 = _value;
+    prefs.setInt('ff_para4', _value);
+  }
+
+  int _para5 = 0;
+  int get para5 => _para5;
+  set para5(int _value) {
+    _para5 = _value;
+    prefs.setInt('ff_para5', _value);
+  }
+
+  int _para6 = 0;
+  int get para6 => _para6;
+  set para6(int _value) {
+    _para6 = _value;
+    prefs.setInt('ff_para6', _value);
+  }
+
+  int _para7 = 0;
+  int get para7 => _para7;
+  set para7(int _value) {
+    _para7 = _value;
+    prefs.setInt('ff_para7', _value);
   }
 }
 

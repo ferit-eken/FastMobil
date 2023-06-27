@@ -24,10 +24,14 @@ class _FisAyarWidgetState extends State<FisAyarWidget> {
     super.initState();
     _model = createModel(context, () => FisAyarModel());
 
-    _model.txtUst1Controller ??= TextEditingController();
-    _model.txtUst2Controller ??= TextEditingController();
-    _model.txtAlt1Controller ??= TextEditingController();
-    _model.txtAlt2Controller ??= TextEditingController();
+    _model.txtUst1Controller ??=
+        TextEditingController(text: FFAppState().FisUstBilgi1);
+    _model.txtUst2Controller ??=
+        TextEditingController(text: FFAppState().FisUstBilgi2);
+    _model.txtAlt1Controller ??=
+        TextEditingController(text: FFAppState().FisAltBilgi1);
+    _model.txtAlt2Controller ??=
+        TextEditingController(text: FFAppState().FisAltBilgi2);
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 

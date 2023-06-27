@@ -80,7 +80,7 @@ class _SolMenuOtoparkWidgetState extends State<SolMenuOtoparkWidget> {
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(8.0),
                 child: Image.asset(
-                  'assets/images/traffixxlogo.png',
+                  'assets/images/fastpark.png',
                   width: 188.0,
                   height: 58.0,
                   fit: BoxFit.cover,

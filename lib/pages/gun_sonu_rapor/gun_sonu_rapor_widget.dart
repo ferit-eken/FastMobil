@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/custom_code/actions/index.dart' as actions;
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -570,8 +571,81 @@ class _GunSonuRaporWidgetState extends State<GunSonuRaporWidget> {
                                           MainAxisAlignment.spaceEvenly,
                                       children: [
                                         FFButtonWidget(
-                                          onPressed: () {
-                                            print('Button pressed ...');
+                                          onPressed: () async {
+                                            _model.resfisyazdir =
+                                                await actions.gunSonuFisiYazdir(
+                                              getJsonField(
+                                                FFAppState().Otopark,
+                                                r'''$.OtoparkAdi''',
+                                              ).toString(),
+                                              getJsonField(
+                                                FFAppState().UserInfo,
+                                                r'''$.Username''',
+                                              ).toString(),
+                                              PtsGroup.gunsonuRaporCall
+                                                  .tarih(
+                                                    gunSonuRaporGunsonuRaporResponse
+                                                        .jsonBody,
+                                                  )
+                                                  .toString(),
+                                              PtsGroup.gunsonuRaporCall
+                                                  .toplamGiris(
+                                                gunSonuRaporGunsonuRaporResponse
+                                                    .jsonBody,
+                                              ),
+                                              PtsGroup.gunsonuRaporCall
+                                                  .toplamCikis(
+                                                    gunSonuRaporGunsonuRaporResponse
+                                                        .jsonBody,
+                                                  )
+                                                  .toString(),
+                                              PtsGroup.gunsonuRaporCall
+                                                  .iceridekiAracSayisi(
+                                                gunSonuRaporGunsonuRaporResponse
+                                                    .jsonBody,
+                                              ),
+                                              PtsGroup.gunsonuRaporCall
+                                                  .ucretliSayi(
+                                                gunSonuRaporGunsonuRaporResponse
+                                                    .jsonBody,
+                                              ),
+                                              PtsGroup.gunsonuRaporCall
+                                                  .ucretsizSayi(
+                                                gunSonuRaporGunsonuRaporResponse
+                                                    .jsonBody,
+                                              ),
+                                              PtsGroup.gunsonuRaporCall
+                                                  .ucretsizDagilim(
+                                                    gunSonuRaporGunsonuRaporResponse
+                                                        .jsonBody,
+                                                  )
+                                                  .toString(),
+                                              PtsGroup.gunsonuRaporCall
+                                                  .toplamUcret(
+                                                gunSonuRaporGunsonuRaporResponse
+                                                    .jsonBody,
+                                              ),
+                                              PtsGroup.gunsonuRaporCall
+                                                  .nakitTahsilat(
+                                                gunSonuRaporGunsonuRaporResponse
+                                                    .jsonBody,
+                                              ),
+                                              PtsGroup.gunsonuRaporCall
+                                                  .krediKartiToplam(
+                                                    gunSonuRaporGunsonuRaporResponse
+                                                        .jsonBody,
+                                                  )
+                                                  .toString(),
+                                              PtsGroup.gunsonuRaporCall
+                                                  .vadelitahsilat(
+                                                gunSonuRaporGunsonuRaporResponse
+                                                    .jsonBody,
+                                              ),
+                                              FFAppState().FisUstBilgi1,
+                                              FFAppState().FisUstBilgi2,
+                                            );
+
+                                            setState(() {});
                                           },
                                           text: 'Yazdır',
                                           options: FFButtonOptions(

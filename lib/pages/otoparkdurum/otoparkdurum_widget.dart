@@ -1,3 +1,4 @@
+import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -95,83 +96,104 @@ class _OtoparkdurumWidgetState extends State<OtoparkdurumWidget> {
                         style: FlutterFlowTheme.of(context).bodyMedium,
                       ),
                       Expanded(
-                        child: GridView(
-                          padding: EdgeInsets.zero,
-                          gridDelegate:
-                              SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: 5,
-                            crossAxisSpacing: 10.0,
-                            mainAxisSpacing: 10.0,
-                            childAspectRatio: 1.0,
+                        child: FutureBuilder<ApiCallResponse>(
+                          future: SettingsGroup.getFilterDataCall.call(
+                            db: FFAppState().veritabani,
+                            tablename: 'ParkKonumDoluluk',
+                            filtre: 'KapiGrupId=${FFAppState().KapiGrupId}',
                           ),
-                          scrollDirection: Axis.vertical,
-                          children: [
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  3.0, 3.0, 3.0, 3.0),
-                              child: Container(
-                                width: 100.0,
-                                height: 100.0,
-                                decoration: BoxDecoration(
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
-                                  borderRadius: BorderRadius.circular(10.0),
-                                  border: Border.all(
-                                    color: FlutterFlowTheme.of(context).warning,
+                          builder: (context, snapshot) {
+                            // Customize what your widget looks like when it's loading.
+                            if (!snapshot.hasData) {
+                              return Center(
+                                child: SizedBox(
+                                  width: 50.0,
+                                  height: 50.0,
+                                  child: CircularProgressIndicator(
+                                    color: FlutterFlowTheme.of(context).primary,
                                   ),
                                 ),
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Icon(
-                                      Icons.directions_car,
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryText,
-                                      size: 24.0,
-                                    ),
-                                    Text(
-                                      'A1',
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium,
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  3.0, 3.0, 3.0, 3.0),
-                              child: Container(
-                                width: 100.0,
-                                height: 100.0,
-                                decoration: BoxDecoration(
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
-                                  borderRadius: BorderRadius.circular(10.0),
-                                  border: Border.all(
-                                    color: FlutterFlowTheme.of(context).warning,
+                              );
+                            }
+                            final gridViewGetFilterDataResponse =
+                                snapshot.data!;
+                            return Builder(
+                              builder: (context) {
+                                final konumListe =
+                                    SettingsGroup.getFilterDataCall
+                                            .data(
+                                              gridViewGetFilterDataResponse
+                                                  .jsonBody,
+                                            )
+                                            ?.toList() ??
+                                        [];
+                                return GridView.builder(
+                                  padding: EdgeInsets.zero,
+                                  gridDelegate:
+                                      SliverGridDelegateWithFixedCrossAxisCount(
+                                    crossAxisCount: 5,
+                                    crossAxisSpacing: 10.0,
+                                    mainAxisSpacing: 10.0,
+                                    childAspectRatio: 1.0,
                                   ),
-                                ),
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Icon(
-                                      Icons.directions_car,
-                                      color: Color(0xFF92F45C),
-                                      size: 24.0,
-                                    ),
-                                    Text(
-                                      'A2',
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium,
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ],
+                                  scrollDirection: Axis.vertical,
+                                  itemCount: konumListe.length,
+                                  itemBuilder: (context, konumListeIndex) {
+                                    final konumListeItem =
+                                        konumListe[konumListeIndex];
+                                    return Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          3.0, 3.0, 3.0, 3.0),
+                                      child: Container(
+                                        width: 100.0,
+                                        height: 100.0,
+                                        decoration: BoxDecoration(
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryBackground,
+                                          borderRadius:
+                                              BorderRadius.circular(10.0),
+                                          border: Border.all(
+                                            color: FlutterFlowTheme.of(context)
+                                                .warning,
+                                          ),
+                                        ),
+                                        child: Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Icon(
+                                              Icons.directions_car,
+                                              color: colorFromCssString(
+                                                getJsonField(
+                                                          konumListeItem,
+                                                          r'''$.Durum''',
+                                                        ) ==
+                                                        'DOLU'
+                                                    ? '#EB1313'
+                                                    : '#275F08',
+                                                defaultColor: Colors.black,
+                                              ),
+                                              size: 24.0,
+                                            ),
+                                            Text(
+                                              getJsonField(
+                                                konumListeItem,
+                                                r'''$.KonumAdi''',
+                                              ).toString(),
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium,
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    );
+                                  },
+                                );
+                              },
+                            );
+                          },
                         ),
                       ),
                     ],

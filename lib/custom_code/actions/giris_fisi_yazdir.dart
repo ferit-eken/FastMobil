@@ -58,8 +58,12 @@ Future<String> girisFisiYazdir(
 
     bluetooth.printImageBytes(imageBytesFromAsset); //image from Network
 
-    bluetooth.printCustom(ustbilgi1, 1, 1, charset: "ISO-8859-9");
-    bluetooth.printCustom(ustbilgi2, 1, 1, charset: "ISO-8859-9");
+    if (ustbilgi1 != "")
+      bluetooth.printCustom(ustbilgi1, 1, 1, charset: "ISO-8859-9");
+
+    if (ustbilgi2 != "")
+      bluetooth.printCustom(ustbilgi2, 1, 1, charset: "ISO-8859-9");
+
     bluetooth.printQRcode(plaka, 380, 250, 1);
 
     bluetooth.printCustom(otoparkadi, 1, 1, charset: "ISO-8859-9");
@@ -84,43 +88,19 @@ Future<String> girisFisiYazdir(
     bluetooth.printCustom(aciklama, 1, 1, charset: "ISO-8859-9");
     bluetooth.printCustom("------------------------", 2, 1,
         charset: "ISO-8859-9");
-    bluetooth.printCustom(altbilgi1, 1, 1, charset: "ISO-8859-9");
-    bluetooth.printCustom(altbilgi2, 1, 1, charset: "ISO-8859-9");
+    if (altbilgi1 != "")
+      bluetooth.printCustom(altbilgi1, 1, 1, charset: "ISO-8859-9");
+
+    if (altbilgi2 != "")
+      bluetooth.printCustom(altbilgi2, 1, 1, charset: "ISO-8859-9");
+
+    bluetooth.printCustom("------------------------", 2, 1,
+        charset: "ISO-8859-9");
+    bluetooth.printCustom("www.fastpark.com.tr", 1, 1, charset: "ISO-8859-9");
+
     bluetooth.printNewLine();
     bluetooth.printNewLine();
     bluetooth.printNewLine();
-    //  bluetooth.printLeftRight("LEFT1", "RIGHT", 0);
-    //  bluetooth.printLeftRight("LEFT2", "RIGHT", 1);
-    // bluetooth.printLeftRight("LEFT3", "RIGHT", 1, format: "%-15s %15s %n");
-    // bluetooth.printNewLine();
-    // bluetooth.printLeftRight("LEFT4", "RIGHT", 2);
-    // bluetooth.printLeftRight("LEFT5", "RIGHT", 3);
-    // bluetooth.printLeftRight("LEFT6", "RIGHT", 4);
-    // bluetooth.printNewLine();
-    // bluetooth.print3Column("Col1", "Col2", "Col3", 1);
-    // bluetooth.print3Column("Col1", "Col2", "Col3", 1,
-    //    format: "%-10s %10s %10s %n");
-    //bluetooth.printNewLine();
-    //bluetooth.print4Column("Col1", "Col2", "Col3", "Col4", 1);
-    //bluetooth.print4Column("Col1", "Col2", "Col3", "Col4", 1,
-    //     format: "%-8s %7s %7s %7s %n");
-    // bluetooth.printNewLine();
-    //String testString = " Görüşürüz";
-    //bluetooth.printCustom(testString, 1, 1, charset: "windows-1250");
-    //bluetooth.printLeftRight("Številka:", "18000001", 1, charset: "windows-1250");
-    //bluetooth.printCustom("Body left", 1, 0);
-    //bluetooth.printCustom("Body right", 0, 2);
-    // bluetooth.printNewLine();
-    //bluetooth.printCustom("Thank You", 2, 1);
-    //bluetooth.printNewLine();
-    //bluetooth.printQRcode("Insert Your Own Text to Generate", 200, 200, 1);
-    // bluetooth.printNewLine();
-    //  bluetooth.printNewLine();
-    //bluetooth.printNewLine();
-    //bluetooth.printNewLine();
-    // bluetooth.printNewLine();
-    // bluetooth.printNewLine();
-    //bluetooth.paperCut();
 
     return "FIS YAZDIRILDI";
   }

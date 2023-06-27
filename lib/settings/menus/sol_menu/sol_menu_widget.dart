@@ -79,7 +79,7 @@ class _SolMenuWidgetState extends State<SolMenuWidget> {
             ClipRRect(
               borderRadius: BorderRadius.circular(8.0),
               child: Image.asset(
-                'assets/images/traffixxlogo.png',
+                'assets/images/fastpark.png',
                 width: 190.0,
                 height: 60.0,
                 fit: BoxFit.cover,
@@ -521,22 +521,32 @@ class _SolMenuWidgetState extends State<SolMenuWidget> {
                         child: Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
                               3.0, 3.0, 3.0, 3.0),
-                          child: Column(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              Icon(
-                                Icons.check_box_outline_blank_outlined,
-                                color:
-                                    FlutterFlowTheme.of(context).secondaryText,
-                                size: 32.0,
-                              ),
-                              Text(
-                                '--',
-                                textAlign: TextAlign.center,
-                                style: FlutterFlowTheme.of(context).bodyMedium,
-                              ),
-                            ],
+                          child: InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              context.pushNamed('Kullanicilar');
+                            },
+                            child: Column(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Icon(
+                                  Icons.lock_person,
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryText,
+                                  size: 32.0,
+                                ),
+                                Text(
+                                  'Kullanıcılar',
+                                  textAlign: TextAlign.center,
+                                  style:
+                                      FlutterFlowTheme.of(context).bodyMedium,
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),

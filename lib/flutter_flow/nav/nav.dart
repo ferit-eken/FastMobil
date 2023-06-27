@@ -37,10 +37,10 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       errorBuilder: (context, state) => appStateNotifier.showSplashImage
           ? Builder(
               builder: (context) => Container(
-                color: FlutterFlowTheme.of(context).secondaryBackground,
+                color: Colors.transparent,
                 child: Image.asset(
-                  'assets/images/traffixsplash.png',
-                  fit: BoxFit.fitWidth,
+                  'assets/images/splash.png',
+                  fit: BoxFit.fitHeight,
                 ),
               ),
             )
@@ -52,10 +52,10 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, _) => appStateNotifier.showSplashImage
               ? Builder(
                   builder: (context) => Container(
-                    color: FlutterFlowTheme.of(context).secondaryBackground,
+                    color: Colors.transparent,
                     child: Image.asset(
-                      'assets/images/traffixsplash.png',
-                      fit: BoxFit.fitWidth,
+                      'assets/images/splash.png',
+                      fit: BoxFit.fitHeight,
                     ),
                   ),
                 )
@@ -247,6 +247,18 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'fis_ayar',
           path: '/fisAyar',
           builder: (context, params) => FisAyarWidget(),
+        ),
+        FFRoute(
+          name: 'Kullanicilar',
+          path: '/kullanicilar',
+          builder: (context, params) => KullanicilarWidget(),
+        ),
+        FFRoute(
+          name: 'KullaniciDetay',
+          path: '/kullaniciDetay',
+          builder: (context, params) => KullaniciDetayWidget(
+            personel: params.getParam('personel', ParamType.JSON),
+          ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

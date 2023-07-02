@@ -1,5 +1,4 @@
 import '/backend/api_requests/api_calls.dart';
-import '/flutter_flow/flutter_flow_charts.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -133,7 +132,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
   @override
   Widget build(BuildContext context) {
     context.watch<FFAppState>();
-    final chartPieChartColorsList = [Color(0xFF888676), Color(0xFFE9E9DD)];
+
     return GestureDetector(
       onTap: () => FocusScope.of(context).requestFocus(_model.unfocusNode),
       child: Scaffold(
@@ -313,6 +312,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                             ),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Expanded(
                                   child: Padding(
@@ -374,7 +374,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                             padding: EdgeInsets.zero,
                                             gridDelegate:
                                                 SliverGridDelegateWithFixedCrossAxisCount(
-                                              crossAxisCount: 3,
+                                              crossAxisCount: 4,
                                               crossAxisSpacing: 1.0,
                                               mainAxisSpacing: 1.0,
                                               childAspectRatio: 1.0,
@@ -409,103 +409,132 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                     ),
                                   ),
                                 ),
-                                Expanded(
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    children: [
-                                      Expanded(
-                                        child: Align(
-                                          alignment:
-                                              AlignmentDirectional(-1.0, 0.0),
-                                          child: FutureBuilder<ApiCallResponse>(
-                                            future: SettingsGroup
-                                                .getFilterDataCall
-                                                .call(
-                                              db: FFAppState().veritabani,
-                                              tablename: 'OtoparkGrupDoluluk',
-                                              filtre:
-                                                  'Id=${FFAppState().KapiGrupId}',
-                                            ),
-                                            builder: (context, snapshot) {
-                                              // Customize what your widget looks like when it's loading.
-                                              if (!snapshot.hasData) {
-                                                return Center(
-                                                  child: SizedBox(
-                                                    width: 50.0,
-                                                    height: 50.0,
-                                                    child:
-                                                        CircularProgressIndicator(
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .primary,
-                                                    ),
-                                                  ),
-                                                );
-                                              }
-                                              final chartGetFilterDataResponse =
-                                                  snapshot.data!;
-                                              return Container(
-                                                width: 370.0,
-                                                height: 230.0,
-                                                child: FlutterFlowPieChart(
-                                                  data: FFPieChartData(
-                                                    values: SettingsGroup
-                                                        .getFilterDataCall
-                                                        .data(
-                                                          chartGetFilterDataResponse
-                                                              .jsonBody,
-                                                        )!
-                                                        .map(
-                                                            (e) => getJsonField(
-                                                                  e,
-                                                                  r'''$.Sayi''',
-                                                                ))
-                                                        .toList(),
-                                                    colors:
-                                                        chartPieChartColorsList,
-                                                    radius: [55.0],
-                                                    borderWidth: [1.0],
-                                                    borderColor: [
-                                                      Color(0xFF140505)
-                                                    ],
-                                                  ),
-                                                  donutHoleRadius: 0.0,
-                                                  donutHoleColor:
-                                                      Colors.transparent,
-                                                  sectionLabelType:
-                                                      PieChartSectionLabelType
-                                                          .value,
-                                                  sectionLabelStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .headlineSmall
-                                                          .override(
-                                                            fontFamily:
-                                                                'Outfit',
-                                                            fontSize: 16.0,
-                                                            fontWeight:
-                                                                FontWeight
-                                                                    .normal,
-                                                          ),
-                                                  labelFormatter:
-                                                      LabelFormatter(
-                                                    numberFormat: (val) =>
-                                                        formatNumber(
-                                                      val,
-                                                      formatType:
-                                                          FormatType.custom,
-                                                      format: '#',
-                                                      locale: '',
-                                                    ),
-                                                  ),
-                                                ),
-                                              );
-                                            },
-                                          ),
-                                        ),
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 4.0, 0.0, 4.0),
+                                  child: Container(
+                                    width: 62.0,
+                                    height: double.infinity,
+                                    decoration: BoxDecoration(
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
+                                    ),
+                                    child: FutureBuilder<ApiCallResponse>(
+                                      future:
+                                          SettingsGroup.getFilterDataCall.call(
+                                        db: FFAppState().veritabani,
+                                        tablename: 'OtoparkGrupDurum',
+                                        filtre:
+                                            'GrupId=${FFAppState().KapiGrupId}',
                                       ),
-                                    ],
+                                      builder: (context, snapshot) {
+                                        // Customize what your widget looks like when it's loading.
+                                        if (!snapshot.hasData) {
+                                          return Center(
+                                            child: SizedBox(
+                                              width: 50.0,
+                                              height: 50.0,
+                                              child: CircularProgressIndicator(
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primary,
+                                              ),
+                                            ),
+                                          );
+                                        }
+                                        final gridViewGetFilterDataResponse =
+                                            snapshot.data!;
+                                        return GridView(
+                                          padding: EdgeInsets.zero,
+                                          gridDelegate:
+                                              SliverGridDelegateWithFixedCrossAxisCount(
+                                            crossAxisCount: 2,
+                                            crossAxisSpacing: 2.0,
+                                            mainAxisSpacing: 2.0,
+                                            childAspectRatio: 1.0,
+                                          ),
+                                          scrollDirection: Axis.horizontal,
+                                          children: [
+                                            Container(
+                                              width: 100.0,
+                                              height: 100.0,
+                                              decoration: BoxDecoration(
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryBackground,
+                                                border: Border.all(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondaryText,
+                                                ),
+                                              ),
+                                              child: Column(
+                                                mainAxisSize: MainAxisSize.max,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                children: [
+                                                  Text(
+                                                    'Dolu',
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMedium,
+                                                  ),
+                                                  Text(
+                                                    getJsonField(
+                                                      gridViewGetFilterDataResponse
+                                                          .jsonBody,
+                                                      r'''$.data.Dolu''',
+                                                    ).toString(),
+                                                    textAlign: TextAlign.center,
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .headlineSmall,
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                            Container(
+                                              width: 100.0,
+                                              height: 100.0,
+                                              decoration: BoxDecoration(
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryBackground,
+                                                border: Border.all(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondaryText,
+                                                ),
+                                              ),
+                                              child: Column(
+                                                mainAxisSize: MainAxisSize.max,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                children: [
+                                                  Text(
+                                                    'Boş',
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMedium,
+                                                  ),
+                                                  Text(
+                                                    getJsonField(
+                                                      gridViewGetFilterDataResponse
+                                                          .jsonBody,
+                                                      r'''$.data.Bos''',
+                                                    ).toString(),
+                                                    textAlign: TextAlign.center,
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .headlineSmall,
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                          ],
+                                        );
+                                      },
+                                    ),
                                   ),
                                 ),
                               ],

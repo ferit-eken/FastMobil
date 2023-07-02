@@ -659,7 +659,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                           size: 32.0,
                                         ),
                                         Text(
-                                          'Araç Çıkış',
+                                          'Çıkış',
                                           textAlign: TextAlign.center,
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium,

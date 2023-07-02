@@ -45,3 +45,15 @@ export '/settings/kullanicilar/kullanicilar_widget.dart'
     show KullanicilarWidget;
 export '/settings/kullanici_detay/kullanici_detay_widget.dart'
     show KullaniciDetayWidget;
+export '/pages/support/support_widget.dart' show SupportWidget;
+export '/settings/tarifeler/tarifeler_widget.dart' show TarifelerWidget;
+export '/settings/tarife_detay/tarife_detay_widget.dart' show TarifeDetayWidget;
+export '/settings/tarife_fiyatlar/tarife_fiyatlar_widget.dart'
+    show TarifeFiyatlarWidget;
+export '/settings/tarife_fiyat_detay/tarife_fiyat_detay_widget.dart'
+    show TarifeFiyatDetayWidget;
+export '/pages/about/about_widget.dart' show AboutWidget;
+export '/settings/urunler/urunler_widget.dart' show UrunlerWidget;
+export '/settings/urun_detay/urun_detay_widget.dart' show UrunDetayWidget;
+export '/settings/park_konum_detay/park_konum_detay_widget.dart'
+    show ParkKonumDetayWidget;

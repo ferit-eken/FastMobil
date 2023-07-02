@@ -2,6 +2,7 @@ import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -62,7 +63,7 @@ class _AracListesiWidgetState extends State<AracListesiWidget> {
             },
           ),
           title: Text(
-            'İçerdeki Araçlar',
+            'Içerideki Araçlar',
             style: FlutterFlowTheme.of(context).headlineMedium,
           ),
           actions: [],
@@ -121,12 +122,16 @@ class _AracListesiWidgetState extends State<AracListesiWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 1.0, 0.0, 0.0),
                           child: FutureBuilder<ApiCallResponse>(
-                            future: SettingsGroup.getFilterDataCall.call(
-                              db: FFAppState().veritabani,
-                              tablename: 'AracGecisleri',
-                              filtre:
-                                  'isActive=1 and GirisKapiGrupId =${FFAppState().KapiGrupId}',
-                            ),
+                            future: (_model.apiRequestCompleter ??=
+                                    Completer<ApiCallResponse>()
+                                      ..complete(
+                                          SettingsGroup.getFilterDataCall.call(
+                                        db: FFAppState().veritabani,
+                                        tablename: 'AracGecisleri',
+                                        filtre:
+                                            'isActive=1 and GirisKapiGrupId =${FFAppState().KapiGrupId}',
+                                      )))
+                                .future,
                             builder: (context, snapshot) {
                               // Customize what your widget looks like when it's loading.
                               if (!snapshot.hasData) {
@@ -152,199 +157,213 @@ class _AracListesiWidgetState extends State<AracListesiWidget> {
                                           )
                                           ?.toList() ??
                                       [];
-                                  return ListView.builder(
-                                    padding: EdgeInsets.zero,
-                                    shrinkWrap: true,
-                                    scrollDirection: Axis.vertical,
-                                    itemCount: liste.length,
-                                    itemBuilder: (context, listeIndex) {
-                                      final listeItem = liste[listeIndex];
-                                      return Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 0.0, 0.0, 1.0),
-                                        child: Container(
-                                          width: 100.0,
-                                          height: 52.0,
-                                          decoration: BoxDecoration(
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondaryBackground,
-                                            boxShadow: [
-                                              BoxShadow(
-                                                blurRadius: 0.0,
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .alternate,
-                                                offset: Offset(0.0, 1.0),
-                                              )
-                                            ],
-                                          ),
-                                          child: Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    16.0, 0.0, 16.0, 0.0),
-                                            child: InkWell(
-                                              splashColor: Colors.transparent,
-                                              focusColor: Colors.transparent,
-                                              hoverColor: Colors.transparent,
-                                              highlightColor:
-                                                  Colors.transparent,
-                                              onTap: () async {
-                                                _model.apiResultqit =
-                                                    await PtsGroup.aracSorguCall
-                                                        .call(
-                                                  db: FFAppState().veritabani,
-                                                  command: 'HESAP',
-                                                  kapiGrupId: '1',
-                                                  aracTipId: '1',
-                                                  plaka: 'xx',
-                                                  id: getJsonField(
-                                                    listeItem,
-                                                    r'''$.Id''',
-                                                  ),
-                                                );
-                                                if (PtsGroup.aracSorguCall
-                                                    .succeeded(
-                                                  (_model.apiResultqit
-                                                          ?.jsonBody ??
-                                                      ''),
-                                                )) {
-                                                  context.pushNamed(
-                                                    'CikisBilgi',
-                                                    queryParameters: {
-                                                      'gecisId': serializeParam(
-                                                        getJsonField(
-                                                          listeItem,
-                                                          r'''$.Id''',
-                                                        ),
-                                                        ParamType.int,
-                                                      ),
-                                                    }.withoutNulls,
+                                  return RefreshIndicator(
+                                    onRefresh: () async {
+                                      setState(() =>
+                                          _model.apiRequestCompleter = null);
+                                      await _model.waitForApiRequestCompleted();
+                                    },
+                                    child: ListView.builder(
+                                      padding: EdgeInsets.zero,
+                                      shrinkWrap: true,
+                                      scrollDirection: Axis.vertical,
+                                      itemCount: liste.length,
+                                      itemBuilder: (context, listeIndex) {
+                                        final listeItem = liste[listeIndex];
+                                        return Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 0.0, 1.0),
+                                          child: Container(
+                                            width: 100.0,
+                                            height: 52.0,
+                                            decoration: BoxDecoration(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryBackground,
+                                              boxShadow: [
+                                                BoxShadow(
+                                                  blurRadius: 0.0,
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .alternate,
+                                                  offset: Offset(0.0, 1.0),
+                                                )
+                                              ],
+                                            ),
+                                            child: Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      16.0, 0.0, 16.0, 0.0),
+                                              child: InkWell(
+                                                splashColor: Colors.transparent,
+                                                focusColor: Colors.transparent,
+                                                hoverColor: Colors.transparent,
+                                                highlightColor:
+                                                    Colors.transparent,
+                                                onTap: () async {
+                                                  _model.apiResultqit =
+                                                      await PtsGroup
+                                                          .aracSorguCall
+                                                          .call(
+                                                    db: FFAppState().veritabani,
+                                                    command: 'HESAP',
+                                                    kapiGrupId: '1',
+                                                    aracTipId: '1',
+                                                    plaka: 'xx',
+                                                    id: getJsonField(
+                                                      listeItem,
+                                                      r'''$.Id''',
+                                                    ),
                                                   );
-                                                } else {
-                                                  await showDialog(
-                                                    context: context,
-                                                    builder:
-                                                        (alertDialogContext) {
-                                                      return AlertDialog(
-                                                        title: Text('Hata'),
-                                                        content: Text(PtsGroup
-                                                            .aracSorguCall
-                                                            .message(
-                                                              (_model.apiResultqit
-                                                                      ?.jsonBody ??
-                                                                  ''),
-                                                            )
-                                                            .toString()),
-                                                        actions: [
-                                                          TextButton(
-                                                            onPressed: () =>
-                                                                Navigator.pop(
-                                                                    alertDialogContext),
-                                                            child: Text('Ok'),
+                                                  if (PtsGroup.aracSorguCall
+                                                      .succeeded(
+                                                    (_model.apiResultqit
+                                                            ?.jsonBody ??
+                                                        ''),
+                                                  )) {
+                                                    context.pushNamed(
+                                                      'CikisBilgi',
+                                                      queryParameters: {
+                                                        'gecisId':
+                                                            serializeParam(
+                                                          getJsonField(
+                                                            listeItem,
+                                                            r'''$.Id''',
                                                           ),
-                                                        ],
-                                                      );
-                                                    },
-                                                  );
-                                                }
+                                                          ParamType.int,
+                                                        ),
+                                                      }.withoutNulls,
+                                                    );
+                                                  } else {
+                                                    await showDialog(
+                                                      context: context,
+                                                      builder:
+                                                          (alertDialogContext) {
+                                                        return AlertDialog(
+                                                          title: Text('Hata'),
+                                                          content: Text(PtsGroup
+                                                              .aracSorguCall
+                                                              .message(
+                                                                (_model.apiResultqit
+                                                                        ?.jsonBody ??
+                                                                    ''),
+                                                              )
+                                                              .toString()),
+                                                          actions: [
+                                                            TextButton(
+                                                              onPressed: () =>
+                                                                  Navigator.pop(
+                                                                      alertDialogContext),
+                                                              child: Text('Ok'),
+                                                            ),
+                                                          ],
+                                                        );
+                                                      },
+                                                    );
+                                                  }
 
-                                                setState(() {});
-                                              },
-                                              child: Row(
-                                                mainAxisSize: MainAxisSize.max,
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.start,
-                                                children: [
-                                                  Icon(
-                                                    Icons.car_repair,
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .secondaryText,
-                                                    size: 24.0,
-                                                  ),
-                                                  Expanded(
-                                                    child: Padding(
-                                                      padding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  12.0,
-                                                                  0.0,
-                                                                  0.0,
-                                                                  0.0),
-                                                      child: Column(
-                                                        mainAxisSize:
-                                                            MainAxisSize.max,
-                                                        mainAxisAlignment:
-                                                            MainAxisAlignment
-                                                                .center,
-                                                        crossAxisAlignment:
-                                                            CrossAxisAlignment
-                                                                .start,
-                                                        children: [
-                                                          Row(
-                                                            mainAxisSize:
-                                                                MainAxisSize
-                                                                    .max,
-                                                            mainAxisAlignment:
-                                                                MainAxisAlignment
-                                                                    .spaceBetween,
-                                                            children: [
-                                                              Padding(
-                                                                padding:
-                                                                    EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            4.0),
-                                                                child: Text(
+                                                  setState(() {});
+                                                },
+                                                child: Row(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.start,
+                                                  children: [
+                                                    Icon(
+                                                      Icons.car_repair,
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .secondaryText,
+                                                      size: 24.0,
+                                                    ),
+                                                    Expanded(
+                                                      child: Padding(
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    12.0,
+                                                                    0.0,
+                                                                    0.0,
+                                                                    0.0),
+                                                        child: Column(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .center,
+                                                          crossAxisAlignment:
+                                                              CrossAxisAlignment
+                                                                  .start,
+                                                          children: [
+                                                            Row(
+                                                              mainAxisSize:
+                                                                  MainAxisSize
+                                                                      .max,
+                                                              mainAxisAlignment:
+                                                                  MainAxisAlignment
+                                                                      .spaceBetween,
+                                                              children: [
+                                                                Padding(
+                                                                  padding: EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          4.0),
+                                                                  child: Text(
+                                                                    getJsonField(
+                                                                      listeItem,
+                                                                      r'''$.Plaka''',
+                                                                    ).toString(),
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyLarge,
+                                                                  ),
+                                                                ),
+                                                                Text(
                                                                   getJsonField(
                                                                     listeItem,
-                                                                    r'''$.Plaka''',
+                                                                    r'''$.GirisTuru''',
                                                                   ).toString(),
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .bodyLarge,
+                                                                      .labelMedium,
                                                                 ),
-                                                              ),
-                                                              Text(
-                                                                getJsonField(
-                                                                  listeItem,
-                                                                  r'''$.GirisTuru''',
-                                                                ).toString(),
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelMedium,
-                                                              ),
-                                                            ],
-                                                          ),
-                                                          Text(
-                                                            getJsonField(
-                                                              listeItem,
-                                                              r'''$.GirisTarih''',
-                                                            ).toString(),
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .bodyMedium,
-                                                          ),
-                                                        ],
+                                                              ],
+                                                            ),
+                                                            Text(
+                                                              getJsonField(
+                                                                listeItem,
+                                                                r'''$.GirisTarih''',
+                                                              ).toString(),
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyMedium,
+                                                            ),
+                                                          ],
+                                                        ),
                                                       ),
                                                     ),
-                                                  ),
-                                                  Icon(
-                                                    Icons.chevron_right_rounded,
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .secondaryText,
-                                                    size: 24.0,
-                                                  ),
-                                                ],
+                                                    Icon(
+                                                      Icons
+                                                          .chevron_right_rounded,
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .secondaryText,
+                                                      size: 24.0,
+                                                    ),
+                                                  ],
+                                                ),
                                               ),
                                             ),
                                           ),
-                                        ),
-                                      );
-                                    },
+                                        );
+                                      },
+                                    ),
                                   );
                                 },
                               );

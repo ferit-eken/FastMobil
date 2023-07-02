@@ -259,6 +259,64 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => KullaniciDetayWidget(
             personel: params.getParam('personel', ParamType.JSON),
           ),
+        ),
+        FFRoute(
+          name: 'Support',
+          path: '/support',
+          builder: (context, params) => SupportWidget(),
+        ),
+        FFRoute(
+          name: 'Tarifeler',
+          path: '/tarifeler',
+          builder: (context, params) => TarifelerWidget(),
+        ),
+        FFRoute(
+          name: 'TarifeDetay',
+          path: '/tarifeDetay',
+          builder: (context, params) => TarifeDetayWidget(
+            tarife: params.getParam('tarife', ParamType.JSON),
+          ),
+        ),
+        FFRoute(
+          name: 'TarifeFiyatlar',
+          path: '/tarifeFiyatlar',
+          builder: (context, params) => TarifeFiyatlarWidget(
+            tarife: params.getParam('tarife', ParamType.JSON),
+          ),
+        ),
+        FFRoute(
+          name: 'TarifeFiyatDetay',
+          path: '/tarifeFiyatDetay',
+          builder: (context, params) => TarifeFiyatDetayWidget(
+            otoparkId: params.getParam('otoparkId', ParamType.int),
+            tarifeId: params.getParam('tarifeId', ParamType.int),
+            id: params.getParam('id', ParamType.int),
+          ),
+        ),
+        FFRoute(
+          name: 'About',
+          path: '/about',
+          builder: (context, params) => AboutWidget(),
+        ),
+        FFRoute(
+          name: 'Urunler',
+          path: '/urunler',
+          builder: (context, params) => UrunlerWidget(),
+        ),
+        FFRoute(
+          name: 'UrunDetay',
+          path: '/urunDetay',
+          builder: (context, params) => UrunDetayWidget(
+            kod: params.getParam('kod', ParamType.String),
+          ),
+        ),
+        FFRoute(
+          name: 'ParkKonumDetay',
+          path: '/parkKonumDetay',
+          builder: (context, params) => ParkKonumDetayWidget(
+            id: params.getParam('id', ParamType.int),
+            kapiGrupId: params.getParam('kapiGrupId', ParamType.String),
+          ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

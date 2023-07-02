@@ -7,13 +7,11 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-class AracListesiModel extends FlutterFlowModel {
+class TarifeFiyatlarModel extends FlutterFlowModel {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
   Completer<ApiCallResponse>? apiRequestCompleter;
-  // Stores action output result for [Backend Call - API (AracSorgu)] action in Row widget.
-  ApiCallResponse? apiResultqit;
 
   /// Initialization and disposal methods.
 

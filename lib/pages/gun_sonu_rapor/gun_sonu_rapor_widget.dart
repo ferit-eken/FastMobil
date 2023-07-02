@@ -114,11 +114,12 @@ class _GunSonuRaporWidgetState extends State<GunSonuRaporWidget> {
                       child: SingleChildScrollView(
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Container(
-                              width: MediaQuery.of(context).size.width * 1.0,
-                              height: 121.0,
+                              width: MediaQuery.sizeOf(context).width * 1.0,
+                              height: 100.0,
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
@@ -383,52 +384,9 @@ class _GunSonuRaporWidgetState extends State<GunSonuRaporWidget> {
                             ),
                             Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
-                                  10.0, 0.0, 0.0, 0.0),
-                              child: Text(
-                                'Ücretsiz çıkış sebepleri',
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'Readex Pro',
-                                      fontWeight: FontWeight.w600,
-                                      decoration: TextDecoration.underline,
-                                    ),
-                              ),
-                            ),
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  10.0, 10.0, 10.0, 10.0),
-                              child: Container(
-                                width: MediaQuery.of(context).size.width * 1.0,
-                                height: 100.0,
-                                decoration: BoxDecoration(
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
-                                ),
-                                child: RichText(
-                                  text: TextSpan(
-                                    children: [
-                                      TextSpan(
-                                        text: PtsGroup.gunsonuRaporCall
-                                            .ucretsizDagilim(
-                                              gunSonuRaporGunsonuRaporResponse
-                                                  .jsonBody,
-                                            )
-                                            .toString(),
-                                        style: TextStyle(),
-                                      )
-                                    ],
-                                    style:
-                                        FlutterFlowTheme.of(context).bodyMedium,
-                                  ),
-                                ),
-                              ),
-                            ),
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 10.0, 5.0),
                               child: Container(
-                                width: MediaQuery.of(context).size.width * 1.0,
+                                width: MediaQuery.sizeOf(context).width * 1.0,
                                 height: 100.0,
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context)
@@ -554,261 +512,258 @@ class _GunSonuRaporWidgetState extends State<GunSonuRaporWidget> {
                             ),
                             Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
-                                  10.0, 10.0, 10.0, 10.0),
-                              child: Container(
-                                width: MediaQuery.of(context).size.width * 1.0,
-                                height: 100.0,
-                                decoration: BoxDecoration(
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
-                                ),
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceEvenly,
-                                      children: [
-                                        FFButtonWidget(
-                                          onPressed: () async {
-                                            _model.resfisyazdir =
-                                                await actions.gunSonuFisiYazdir(
-                                              getJsonField(
-                                                FFAppState().Otopark,
-                                                r'''$.OtoparkAdi''',
-                                              ).toString(),
-                                              getJsonField(
-                                                FFAppState().UserInfo,
-                                                r'''$.Username''',
-                                              ).toString(),
-                                              PtsGroup.gunsonuRaporCall
-                                                  .tarih(
-                                                    gunSonuRaporGunsonuRaporResponse
-                                                        .jsonBody,
-                                                  )
-                                                  .toString(),
-                                              PtsGroup.gunsonuRaporCall
-                                                  .toplamGiris(
-                                                gunSonuRaporGunsonuRaporResponse
-                                                    .jsonBody,
-                                              ),
-                                              PtsGroup.gunsonuRaporCall
-                                                  .toplamCikis(
-                                                    gunSonuRaporGunsonuRaporResponse
-                                                        .jsonBody,
-                                                  )
-                                                  .toString(),
-                                              PtsGroup.gunsonuRaporCall
-                                                  .iceridekiAracSayisi(
-                                                gunSonuRaporGunsonuRaporResponse
-                                                    .jsonBody,
-                                              ),
-                                              PtsGroup.gunsonuRaporCall
-                                                  .ucretliSayi(
-                                                gunSonuRaporGunsonuRaporResponse
-                                                    .jsonBody,
-                                              ),
-                                              PtsGroup.gunsonuRaporCall
-                                                  .ucretsizSayi(
-                                                gunSonuRaporGunsonuRaporResponse
-                                                    .jsonBody,
-                                              ),
-                                              PtsGroup.gunsonuRaporCall
-                                                  .ucretsizDagilim(
-                                                    gunSonuRaporGunsonuRaporResponse
-                                                        .jsonBody,
-                                                  )
-                                                  .toString(),
-                                              PtsGroup.gunsonuRaporCall
-                                                  .toplamUcret(
-                                                gunSonuRaporGunsonuRaporResponse
-                                                    .jsonBody,
-                                              ),
-                                              PtsGroup.gunsonuRaporCall
-                                                  .nakitTahsilat(
-                                                gunSonuRaporGunsonuRaporResponse
-                                                    .jsonBody,
-                                              ),
-                                              PtsGroup.gunsonuRaporCall
-                                                  .krediKartiToplam(
-                                                    gunSonuRaporGunsonuRaporResponse
-                                                        .jsonBody,
-                                                  )
-                                                  .toString(),
-                                              PtsGroup.gunsonuRaporCall
-                                                  .vadelitahsilat(
-                                                gunSonuRaporGunsonuRaporResponse
-                                                    .jsonBody,
-                                              ),
-                                              FFAppState().FisUstBilgi1,
-                                              FFAppState().FisUstBilgi2,
-                                            );
-
-                                            setState(() {});
-                                          },
-                                          text: 'Yazdır',
-                                          options: FFButtonOptions(
-                                            width: 143.0,
-                                            height: 40.0,
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    24.0, 0.0, 24.0, 0.0),
-                                            iconPadding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 0.0, 0.0, 0.0),
-                                            color: FlutterFlowTheme.of(context)
-                                                .warning,
-                                            textStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleSmall
-                                                    .override(
-                                                      fontFamily: 'Readex Pro',
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .primaryText,
-                                                    ),
-                                            elevation: 3.0,
-                                            borderSide: BorderSide(
-                                              color: Colors.transparent,
-                                              width: 1.0,
-                                            ),
-                                            borderRadius:
-                                                BorderRadius.circular(8.0),
-                                          ),
+                                  0.0, 10.0, 0.0, 10.0),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  FFButtonWidget(
+                                    onPressed: () async {
+                                      _model.resfisyazdir =
+                                          await actions.gunSonuFisiYazdir(
+                                        getJsonField(
+                                          FFAppState().Otopark,
+                                          r'''$.OtoparkAdi''',
+                                        ).toString(),
+                                        getJsonField(
+                                          FFAppState().UserInfo,
+                                          r'''$.Username''',
+                                        ).toString(),
+                                        PtsGroup.gunsonuRaporCall
+                                            .tarih(
+                                              gunSonuRaporGunsonuRaporResponse
+                                                  .jsonBody,
+                                            )
+                                            .toString(),
+                                        PtsGroup.gunsonuRaporCall.toplamGiris(
+                                          gunSonuRaporGunsonuRaporResponse
+                                              .jsonBody,
                                         ),
-                                        FFButtonWidget(
-                                          onPressed: () async {
-                                            var confirmDialogResponse =
-                                                await showDialog<bool>(
-                                                      context: context,
-                                                      builder:
-                                                          (alertDialogContext) {
-                                                        return AlertDialog(
-                                                          title: Text(
-                                                              'Gün Kapama'),
-                                                          content: Text(
-                                                              'Dikkat hesap kapaması yapılacak emin misiniz?'),
-                                                          actions: [
-                                                            TextButton(
-                                                              onPressed: () =>
-                                                                  Navigator.pop(
-                                                                      alertDialogContext,
-                                                                      false),
-                                                              child: Text(
-                                                                  'Cancel'),
-                                                            ),
-                                                            TextButton(
-                                                              onPressed: () =>
-                                                                  Navigator.pop(
-                                                                      alertDialogContext,
-                                                                      true),
-                                                              child: Text(
-                                                                  'Confirm'),
-                                                            ),
-                                                          ],
-                                                        );
-                                                      },
-                                                    ) ??
-                                                    false;
-                                            if (confirmDialogResponse) {
-                                              _model.apiResultzn4 =
-                                                  await PtsGroup
-                                                      .gunsonuKapatCall
-                                                      .call(
-                                                db: FFAppState().veritabani,
-                                                command: 'GUNSONU_YAP',
-                                                userId: FFAppState().UserId,
-                                              );
-                                              if (PtsGroup.gunsonuKapatCall
-                                                  .succeeded(
-                                                (_model.apiResultzn4
-                                                        ?.jsonBody ??
-                                                    ''),
-                                              )) {
-                                                await showDialog(
-                                                  context: context,
-                                                  builder:
-                                                      (alertDialogContext) {
-                                                    return AlertDialog(
-                                                      title: Text('Gün Kapama'),
-                                                      content: Text(
-                                                          'Gün kapama tamamlandı.'),
-                                                      actions: [
-                                                        TextButton(
-                                                          onPressed: () =>
-                                                              Navigator.pop(
-                                                                  alertDialogContext),
-                                                          child: Text('Ok'),
-                                                        ),
-                                                      ],
-                                                    );
-                                                  },
-                                                );
-                                              } else {
-                                                await showDialog(
-                                                  context: context,
-                                                  builder:
-                                                      (alertDialogContext) {
-                                                    return AlertDialog(
-                                                      title: Text('Hata'),
-                                                      content: Text(PtsGroup
-                                                          .gunsonuRaporCall
-                                                          .message(
-                                                            gunSonuRaporGunsonuRaporResponse
-                                                                .jsonBody,
-                                                          )
-                                                          .toString()),
-                                                      actions: [
-                                                        TextButton(
-                                                          onPressed: () =>
-                                                              Navigator.pop(
-                                                                  alertDialogContext),
-                                                          child: Text('Ok'),
-                                                        ),
-                                                      ],
-                                                    );
-                                                  },
-                                                );
-                                              }
-                                            }
-
-                                            setState(() {});
-                                          },
-                                          text: 'Günü kapat',
-                                          options: FFButtonOptions(
-                                            height: 40.0,
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    24.0, 0.0, 24.0, 0.0),
-                                            iconPadding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 0.0, 0.0, 0.0),
-                                            color: FlutterFlowTheme.of(context)
-                                                .warning,
-                                            textStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleSmall
-                                                    .override(
-                                                      fontFamily: 'Readex Pro',
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .primaryText,
-                                                    ),
-                                            elevation: 3.0,
-                                            borderSide: BorderSide(
-                                              color: Colors.transparent,
-                                              width: 1.0,
-                                            ),
-                                            borderRadius:
-                                                BorderRadius.circular(8.0),
-                                          ),
+                                        PtsGroup.gunsonuRaporCall
+                                            .toplamCikis(
+                                              gunSonuRaporGunsonuRaporResponse
+                                                  .jsonBody,
+                                            )
+                                            .toString(),
+                                        PtsGroup.gunsonuRaporCall
+                                            .iceridekiAracSayisi(
+                                          gunSonuRaporGunsonuRaporResponse
+                                              .jsonBody,
                                         ),
-                                      ],
+                                        PtsGroup.gunsonuRaporCall.ucretliSayi(
+                                          gunSonuRaporGunsonuRaporResponse
+                                              .jsonBody,
+                                        ),
+                                        PtsGroup.gunsonuRaporCall.ucretsizSayi(
+                                          gunSonuRaporGunsonuRaporResponse
+                                              .jsonBody,
+                                        ),
+                                        PtsGroup.gunsonuRaporCall
+                                            .ucretsizDagilim(
+                                              gunSonuRaporGunsonuRaporResponse
+                                                  .jsonBody,
+                                            )
+                                            .toString(),
+                                        PtsGroup.gunsonuRaporCall.toplamUcret(
+                                          gunSonuRaporGunsonuRaporResponse
+                                              .jsonBody,
+                                        ),
+                                        PtsGroup.gunsonuRaporCall.nakitTahsilat(
+                                          gunSonuRaporGunsonuRaporResponse
+                                              .jsonBody,
+                                        ),
+                                        PtsGroup.gunsonuRaporCall
+                                            .krediKartiToplam(
+                                              gunSonuRaporGunsonuRaporResponse
+                                                  .jsonBody,
+                                            )
+                                            .toString(),
+                                        PtsGroup.gunsonuRaporCall
+                                            .vadelitahsilat(
+                                          gunSonuRaporGunsonuRaporResponse
+                                              .jsonBody,
+                                        ),
+                                        FFAppState().FisUstBilgi1,
+                                        FFAppState().FisUstBilgi2,
+                                      );
+
+                                      setState(() {});
+                                    },
+                                    text: 'Yazdır',
+                                    options: FFButtonOptions(
+                                      width: 143.0,
+                                      height: 40.0,
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          24.0, 0.0, 24.0, 0.0),
+                                      iconPadding:
+                                          EdgeInsetsDirectional.fromSTEB(
+                                              0.0, 0.0, 0.0, 0.0),
+                                      color:
+                                          FlutterFlowTheme.of(context).warning,
+                                      textStyle: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .override(
+                                            fontFamily: 'Readex Pro',
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                          ),
+                                      elevation: 3.0,
+                                      borderSide: BorderSide(
+                                        color: Colors.transparent,
+                                        width: 1.0,
+                                      ),
+                                      borderRadius: BorderRadius.circular(8.0),
                                     ),
+                                  ),
+                                  FFButtonWidget(
+                                    onPressed: () async {
+                                      var confirmDialogResponse =
+                                          await showDialog<bool>(
+                                                context: context,
+                                                builder: (alertDialogContext) {
+                                                  return AlertDialog(
+                                                    title: Text('Gün Kapama'),
+                                                    content: Text(
+                                                        'Dikkat hesap kapaması yapılacak emin misiniz?'),
+                                                    actions: [
+                                                      TextButton(
+                                                        onPressed: () =>
+                                                            Navigator.pop(
+                                                                alertDialogContext,
+                                                                false),
+                                                        child: Text('Cancel'),
+                                                      ),
+                                                      TextButton(
+                                                        onPressed: () =>
+                                                            Navigator.pop(
+                                                                alertDialogContext,
+                                                                true),
+                                                        child: Text('Confirm'),
+                                                      ),
+                                                    ],
+                                                  );
+                                                },
+                                              ) ??
+                                              false;
+                                      if (confirmDialogResponse) {
+                                        _model.apiResultzn4 = await PtsGroup
+                                            .gunsonuKapatCall
+                                            .call(
+                                          db: FFAppState().veritabani,
+                                          command: 'GUNSONU_YAP',
+                                          userId: FFAppState().UserId,
+                                        );
+                                        if (PtsGroup.gunsonuKapatCall.succeeded(
+                                          (_model.apiResultzn4?.jsonBody ?? ''),
+                                        )) {
+                                          await showDialog(
+                                            context: context,
+                                            builder: (alertDialogContext) {
+                                              return AlertDialog(
+                                                title: Text('Gün Kapama'),
+                                                content: Text(
+                                                    'Gün kapama tamamlandı.'),
+                                                actions: [
+                                                  TextButton(
+                                                    onPressed: () =>
+                                                        Navigator.pop(
+                                                            alertDialogContext),
+                                                    child: Text('Ok'),
+                                                  ),
+                                                ],
+                                              );
+                                            },
+                                          );
+                                        } else {
+                                          await showDialog(
+                                            context: context,
+                                            builder: (alertDialogContext) {
+                                              return AlertDialog(
+                                                title: Text('Hata'),
+                                                content: Text(
+                                                    PtsGroup.gunsonuRaporCall
+                                                        .message(
+                                                          gunSonuRaporGunsonuRaporResponse
+                                                              .jsonBody,
+                                                        )
+                                                        .toString()),
+                                                actions: [
+                                                  TextButton(
+                                                    onPressed: () =>
+                                                        Navigator.pop(
+                                                            alertDialogContext),
+                                                    child: Text('Ok'),
+                                                  ),
+                                                ],
+                                              );
+                                            },
+                                          );
+                                        }
+                                      }
+
+                                      setState(() {});
+                                    },
+                                    text: 'Günü kapat',
+                                    options: FFButtonOptions(
+                                      height: 40.0,
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          24.0, 0.0, 24.0, 0.0),
+                                      iconPadding:
+                                          EdgeInsetsDirectional.fromSTEB(
+                                              0.0, 0.0, 0.0, 0.0),
+                                      color:
+                                          FlutterFlowTheme.of(context).warning,
+                                      textStyle: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .override(
+                                            fontFamily: 'Readex Pro',
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                          ),
+                                      elevation: 3.0,
+                                      borderSide: BorderSide(
+                                        color: Colors.transparent,
+                                        width: 1.0,
+                                      ),
+                                      borderRadius: BorderRadius.circular(8.0),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  10.0, 0.0, 0.0, 0.0),
+                              child: Text(
+                                'Ücretsiz çıkış sebepleri',
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Readex Pro',
+                                      fontWeight: FontWeight.w600,
+                                      decoration: TextDecoration.underline,
+                                    ),
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  10.0, 0.0, 0.0, 0.0),
+                              child: RichText(
+                                text: TextSpan(
+                                  children: [
+                                    TextSpan(
+                                      text: PtsGroup.gunsonuRaporCall
+                                          .ucretsizDagilim(
+                                            gunSonuRaporGunsonuRaporResponse
+                                                .jsonBody,
+                                          )
+                                          .toString(),
+                                      style: TextStyle(),
+                                    )
                                   ],
+                                  style:
+                                      FlutterFlowTheme.of(context).bodyMedium,
                                 ),
                               ),
                             ),

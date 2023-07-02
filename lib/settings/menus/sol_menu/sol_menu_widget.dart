@@ -43,8 +43,8 @@ class _SolMenuWidgetState extends State<SolMenuWidget> {
     context.watch<FFAppState>();
 
     return Container(
-      width: MediaQuery.of(context).size.width * 1.0,
-      height: MediaQuery.of(context).size.height * 1.0,
+      width: MediaQuery.sizeOf(context).width * 1.0,
+      height: MediaQuery.sizeOf(context).height * 1.0,
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).secondaryBackground,
       ),
@@ -258,22 +258,32 @@ class _SolMenuWidgetState extends State<SolMenuWidget> {
                         child: Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
                               3.0, 3.0, 3.0, 3.0),
-                          child: Column(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              Icon(
-                                Icons.monetization_on_outlined,
-                                color:
-                                    FlutterFlowTheme.of(context).secondaryText,
-                                size: 32.0,
-                              ),
-                              Text(
-                                'Tarife Tanımları',
-                                textAlign: TextAlign.center,
-                                style: FlutterFlowTheme.of(context).bodyMedium,
-                              ),
-                            ],
+                          child: InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              context.pushNamed('Tarifeler');
+                            },
+                            child: Column(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Icon(
+                                  Icons.monetization_on_outlined,
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryText,
+                                  size: 32.0,
+                                ),
+                                Text(
+                                  'Tarife Tanımları',
+                                  textAlign: TextAlign.center,
+                                  style:
+                                      FlutterFlowTheme.of(context).bodyMedium,
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
@@ -291,22 +301,32 @@ class _SolMenuWidgetState extends State<SolMenuWidget> {
                         child: Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
                               3.0, 3.0, 3.0, 3.0),
-                          child: Column(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              Icon(
-                                Icons.design_services_rounded,
-                                color:
-                                    FlutterFlowTheme.of(context).secondaryText,
-                                size: 32.0,
-                              ),
-                              Text(
-                                'Hizmetler',
-                                textAlign: TextAlign.center,
-                                style: FlutterFlowTheme.of(context).bodyMedium,
-                              ),
-                            ],
+                          child: InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              context.pushNamed('Urunler');
+                            },
+                            child: Column(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Icon(
+                                  Icons.design_services_rounded,
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryText,
+                                  size: 32.0,
+                                ),
+                                Text(
+                                  'Hizmetler',
+                                  textAlign: TextAlign.center,
+                                  style:
+                                      FlutterFlowTheme.of(context).bodyMedium,
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
@@ -338,7 +358,7 @@ class _SolMenuWidgetState extends State<SolMenuWidget> {
                                 context: context,
                                 builder: (context) {
                                   return Padding(
-                                    padding: MediaQuery.of(context).viewInsets,
+                                    padding: MediaQuery.viewInsetsOf(context),
                                     child: SolMenuOtoparkWidget(),
                                   );
                                 },
@@ -379,22 +399,32 @@ class _SolMenuWidgetState extends State<SolMenuWidget> {
                         child: Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
                               3.0, 3.0, 3.0, 3.0),
-                          child: Column(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              Icon(
-                                Icons.local_car_wash_sharp,
-                                color:
-                                    FlutterFlowTheme.of(context).secondaryText,
-                                size: 32.0,
-                              ),
-                              Text(
-                                'Park Noktaları',
-                                textAlign: TextAlign.center,
-                                style: FlutterFlowTheme.of(context).bodyMedium,
-                              ),
-                            ],
+                          child: InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              context.pushNamed('otoparkdurum');
+                            },
+                            child: Column(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Icon(
+                                  Icons.local_car_wash_sharp,
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryText,
+                                  size: 32.0,
+                                ),
+                                Text(
+                                  'Park Noktaları',
+                                  textAlign: TextAlign.center,
+                                  style:
+                                      FlutterFlowTheme.of(context).bodyMedium,
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
@@ -455,22 +485,32 @@ class _SolMenuWidgetState extends State<SolMenuWidget> {
                         child: Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
                               3.0, 3.0, 3.0, 3.0),
-                          child: Column(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              Icon(
-                                Icons.call_rounded,
-                                color:
-                                    FlutterFlowTheme.of(context).secondaryText,
-                                size: 32.0,
-                              ),
-                              Text(
-                                'Teknik Destek',
-                                textAlign: TextAlign.center,
-                                style: FlutterFlowTheme.of(context).bodyMedium,
-                              ),
-                            ],
+                          child: InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              context.pushNamed('Support');
+                            },
+                            child: Column(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Icon(
+                                  Icons.call_rounded,
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryText,
+                                  size: 32.0,
+                                ),
+                                Text(
+                                  'Teknik Destek',
+                                  textAlign: TextAlign.center,
+                                  style:
+                                      FlutterFlowTheme.of(context).bodyMedium,
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
@@ -488,22 +528,32 @@ class _SolMenuWidgetState extends State<SolMenuWidget> {
                         child: Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
                               3.0, 3.0, 3.0, 3.0),
-                          child: Column(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              Icon(
-                                Icons.help_outline_sharp,
-                                color:
-                                    FlutterFlowTheme.of(context).secondaryText,
-                                size: 32.0,
-                              ),
-                              Text(
-                                'Uygulama Hakkında',
-                                textAlign: TextAlign.center,
-                                style: FlutterFlowTheme.of(context).bodyMedium,
-                              ),
-                            ],
+                          child: InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              context.pushNamed('About');
+                            },
+                            child: Column(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Icon(
+                                  Icons.help_outline_sharp,
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryText,
+                                  size: 32.0,
+                                ),
+                                Text(
+                                  'Uygulama Hakkında',
+                                  textAlign: TextAlign.center,
+                                  style:
+                                      FlutterFlowTheme.of(context).bodyMedium,
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
@@ -547,39 +597,6 @@ class _SolMenuWidgetState extends State<SolMenuWidget> {
                                 ),
                               ],
                             ),
-                          ),
-                        ),
-                      ),
-                      Container(
-                        width: 100.0,
-                        height: 100.0,
-                        decoration: BoxDecoration(
-                          color:
-                              FlutterFlowTheme.of(context).secondaryBackground,
-                          borderRadius: BorderRadius.circular(5.0),
-                          border: Border.all(
-                            width: 2.0,
-                          ),
-                        ),
-                        child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              3.0, 3.0, 3.0, 3.0),
-                          child: Column(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              Icon(
-                                Icons.check_box_outline_blank_sharp,
-                                color:
-                                    FlutterFlowTheme.of(context).secondaryText,
-                                size: 32.0,
-                              ),
-                              Text(
-                                '--',
-                                textAlign: TextAlign.center,
-                                style: FlutterFlowTheme.of(context).bodyMedium,
-                              ),
-                            ],
                           ),
                         ),
                       ),

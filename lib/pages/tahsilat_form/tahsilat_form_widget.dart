@@ -63,7 +63,7 @@ class _TahsilatFormWidgetState extends State<TahsilatFormWidget> {
         mainAxisSize: MainAxisSize.max,
         children: [
           Container(
-            width: MediaQuery.of(context).size.width * 1.0,
+            width: MediaQuery.sizeOf(context).width * 1.0,
             height: 55.0,
             decoration: BoxDecoration(
               color: FlutterFlowTheme.of(context).warning,

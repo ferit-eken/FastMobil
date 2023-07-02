@@ -150,7 +150,7 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                                     children: [
                                       Container(
                                         width:
-                                            MediaQuery.of(context).size.width *
+                                            MediaQuery.sizeOf(context).width *
                                                 1.0,
                                         height: 24.0,
                                         decoration: BoxDecoration(
@@ -579,10 +579,10 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
                                               Container(
-                                                width: MediaQuery.of(context)
-                                                        .size
-                                                        .width *
-                                                    1.0,
+                                                width:
+                                                    MediaQuery.sizeOf(context)
+                                                            .width *
+                                                        1.0,
                                                 height: 24.0,
                                                 decoration: BoxDecoration(
                                                   color: FlutterFlowTheme.of(
@@ -659,9 +659,9 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                                                                               .unfocusNode),
                                                                   child:
                                                                       Padding(
-                                                                    padding: MediaQuery.of(
-                                                                            context)
-                                                                        .viewInsets,
+                                                                    padding: MediaQuery
+                                                                        .viewInsetsOf(
+                                                                            context),
                                                                     child:
                                                                         TahsilatFormWidget(
                                                                       bakiye: valueOrDefault<
@@ -936,9 +936,9 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                                                                               .unfocusNode),
                                                                   child:
                                                                       Padding(
-                                                                    padding: MediaQuery.of(
-                                                                            context)
-                                                                        .viewInsets,
+                                                                    padding: MediaQuery
+                                                                        .viewInsetsOf(
+                                                                            context),
                                                                     child:
                                                                         TahsilatFormWidget(
                                                                       bakiye: valueOrDefault<
@@ -1223,9 +1223,9 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                                                                               .unfocusNode),
                                                                   child:
                                                                       Padding(
-                                                                    padding: MediaQuery.of(
-                                                                            context)
-                                                                        .viewInsets,
+                                                                    padding: MediaQuery
+                                                                        .viewInsetsOf(
+                                                                            context),
                                                                     child:
                                                                         TahsilatFormWidget(
                                                                       bakiye: valueOrDefault<
@@ -1397,9 +1397,9 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                                                                               .unfocusNode),
                                                                   child:
                                                                       Padding(
-                                                                    padding: MediaQuery.of(
-                                                                            context)
-                                                                        .viewInsets,
+                                                                    padding: MediaQuery
+                                                                        .viewInsetsOf(
+                                                                            context),
                                                                     child:
                                                                         TahsilatFormWidget(
                                                                       bakiye: valueOrDefault<
@@ -1576,15 +1576,14 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                                                                               .unfocusNode),
                                                                   child:
                                                                       Padding(
-                                                                    padding: MediaQuery.of(
-                                                                            context)
-                                                                        .viewInsets,
+                                                                    padding: MediaQuery
+                                                                        .viewInsetsOf(
+                                                                            context),
                                                                     child:
                                                                         Container(
-                                                                      height: MediaQuery.of(context)
-                                                                              .size
-                                                                              .height *
-                                                                          0.9,
+                                                                      height:
+                                                                          MediaQuery.sizeOf(context).height *
+                                                                              0.9,
                                                                       child:
                                                                           UcretsizSecimWidget(),
                                                                     ),
@@ -2055,9 +2054,9 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                                                                               .unfocusNode),
                                                                   child:
                                                                       Padding(
-                                                                    padding: MediaQuery.of(
-                                                                            context)
-                                                                        .viewInsets,
+                                                                    padding: MediaQuery
+                                                                        .viewInsetsOf(
+                                                                            context),
                                                                     child:
                                                                         HasarFormuWidget(
                                                                       gecisId:

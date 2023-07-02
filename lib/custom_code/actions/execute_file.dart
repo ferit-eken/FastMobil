@@ -7,13 +7,13 @@ import 'package:flutter/material.dart';
 // Begin custom action code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
-import 'dart:io';
+import 'package:open_file/open_file.dart';
 
 import 'package:path_provider/path_provider.dart';
 
 Future<String> executeFile(String apkUrl) async {
   try {
-    await openFile(apkUrl);
+    OpenFile.open(apkUrl);
     return 'Kurulum Çalıştırıldı';
   } catch (ex) {
     return 'Hata';

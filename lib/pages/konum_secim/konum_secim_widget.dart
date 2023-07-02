@@ -154,7 +154,31 @@ class _KonumSecimWidgetState extends State<KonumSecimWidget> {
                               hoverColor: Colors.transparent,
                               highlightColor: Colors.transparent,
                               onTap: () async {
-                                Navigator.pop(context, konumListeItem);
+                                if (getJsonField(
+                                      konumListeItem,
+                                      r'''$.Durum''',
+                                    ) ==
+                                    'DOLU') {
+                                  await showDialog(
+                                    context: context,
+                                    builder: (alertDialogContext) {
+                                      return AlertDialog(
+                                        title: Text('Hata'),
+                                        content: Text(
+                                            'Bu konum dolu, Lütfen faklı bir konum seçiniz.'),
+                                        actions: [
+                                          TextButton(
+                                            onPressed: () => Navigator.pop(
+                                                alertDialogContext),
+                                            child: Text('Ok'),
+                                          ),
+                                        ],
+                                      );
+                                    },
+                                  );
+                                } else {
+                                  Navigator.pop(context, konumListeItem);
+                                }
                               },
                               child: Container(
                                 width: 100.0,

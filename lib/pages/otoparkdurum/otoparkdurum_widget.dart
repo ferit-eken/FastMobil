@@ -174,75 +174,138 @@ class _OtoparkdurumWidgetState extends State<OtoparkdurumWidget> {
                                     return Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           3.0, 3.0, 3.0, 3.0),
-                                      child: Container(
-                                        width: 100.0,
-                                        height: 100.0,
-                                        decoration: BoxDecoration(
-                                          color: FlutterFlowTheme.of(context)
-                                              .secondaryBackground,
-                                          borderRadius:
-                                              BorderRadius.circular(0.0),
-                                          border: Border.all(
-                                            color: FlutterFlowTheme.of(context)
-                                                .warning,
-                                          ),
-                                        ),
-                                        child: InkWell(
-                                          splashColor: Colors.transparent,
-                                          focusColor: Colors.transparent,
-                                          hoverColor: Colors.transparent,
-                                          highlightColor: Colors.transparent,
-                                          onLongPress: () async {
+                                      child: InkWell(
+                                        splashColor: Colors.transparent,
+                                        focusColor: Colors.transparent,
+                                        hoverColor: Colors.transparent,
+                                        highlightColor: Colors.transparent,
+                                        onTap: () async {
+                                          _model.apiResultqqb =
+                                              await SettingsGroup
+                                                  .getRowFilterDataCall
+                                                  .call(
+                                            db: FFAppState().veritabani,
+                                            tablename: 'AracGecisleri',
+                                            keyfield:
+                                                'isActive = 1 and ParkKonumId = ',
+                                            keyvalue: getJsonField(
+                                              konumListeItem,
+                                              r'''$.Id''',
+                                            ).toString(),
+                                          );
+                                          if (getJsonField(
+                                            (_model.apiResultqqb?.jsonBody ??
+                                                ''),
+                                            r'''$.Successed''',
+                                          )) {
                                             context.pushNamed(
-                                              'ParkKonumDetay',
+                                              'CikisBilgi',
                                               queryParameters: {
-                                                'id': serializeParam(
+                                                'gecisId': serializeParam(
                                                   getJsonField(
-                                                    konumListeItem,
-                                                    r'''$.Id''',
+                                                    (_model.apiResultqqb
+                                                            ?.jsonBody ??
+                                                        ''),
+                                                    r'''$.data.Id''',
                                                   ),
                                                   ParamType.int,
                                                 ),
-                                                'kapiGrupId': serializeParam(
-                                                  getJsonField(
-                                                    konumListeItem,
-                                                    r'''$.KapiGrupId''',
-                                                  ).toString(),
-                                                  ParamType.String,
-                                                ),
                                               }.withoutNulls,
                                             );
-                                          },
-                                          child: Column(
-                                            mainAxisSize: MainAxisSize.max,
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                            children: [
-                                              Icon(
-                                                Icons.directions_car,
-                                                color: colorFromCssString(
-                                                  getJsonField(
-                                                            konumListeItem,
-                                                            r'''$.Durum''',
-                                                          ) ==
-                                                          'DOLU'
-                                                      ? '#EB1313'
-                                                      : '#275F08',
-                                                  defaultColor: Colors.black,
+                                          } else {
+                                            await showDialog(
+                                              context: context,
+                                              builder: (alertDialogContext) {
+                                                return AlertDialog(
+                                                  title: Text('Hata'),
+                                                  content:
+                                                      Text('Geçiş yüklenemedi'),
+                                                  actions: [
+                                                    TextButton(
+                                                      onPressed: () =>
+                                                          Navigator.pop(
+                                                              alertDialogContext),
+                                                      child: Text('Ok'),
+                                                    ),
+                                                  ],
+                                                );
+                                              },
+                                            );
+                                          }
+
+                                          setState(() {});
+                                        },
+                                        child: Container(
+                                          width: 100.0,
+                                          height: 100.0,
+                                          decoration: BoxDecoration(
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondaryBackground,
+                                            borderRadius:
+                                                BorderRadius.circular(0.0),
+                                            border: Border.all(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .warning,
+                                            ),
+                                          ),
+                                          child: InkWell(
+                                            splashColor: Colors.transparent,
+                                            focusColor: Colors.transparent,
+                                            hoverColor: Colors.transparent,
+                                            highlightColor: Colors.transparent,
+                                            onLongPress: () async {
+                                              context.pushNamed(
+                                                'ParkKonumDetay',
+                                                queryParameters: {
+                                                  'id': serializeParam(
+                                                    getJsonField(
+                                                      konumListeItem,
+                                                      r'''$.Id''',
+                                                    ),
+                                                    ParamType.int,
+                                                  ),
+                                                  'kapiGrupId': serializeParam(
+                                                    getJsonField(
+                                                      konumListeItem,
+                                                      r'''$.KapiGrupId''',
+                                                    ).toString(),
+                                                    ParamType.String,
+                                                  ),
+                                                }.withoutNulls,
+                                              );
+                                            },
+                                            child: Column(
+                                              mainAxisSize: MainAxisSize.max,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: [
+                                                Icon(
+                                                  Icons.directions_car,
+                                                  color: colorFromCssString(
+                                                    getJsonField(
+                                                              konumListeItem,
+                                                              r'''$.Durum''',
+                                                            ) ==
+                                                            'DOLU'
+                                                        ? '#EB1313'
+                                                        : '#275F08',
+                                                    defaultColor: Colors.black,
+                                                  ),
+                                                  size: 24.0,
                                                 ),
-                                                size: 24.0,
-                                              ),
-                                              Text(
-                                                getJsonField(
-                                                  konumListeItem,
-                                                  r'''$.KonumAdi''',
-                                                ).toString(),
-                                                textAlign: TextAlign.center,
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium,
-                                              ),
-                                            ],
+                                                Text(
+                                                  getJsonField(
+                                                    konumListeItem,
+                                                    r'''$.KonumAdi''',
+                                                  ).toString(),
+                                                  textAlign: TextAlign.center,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium,
+                                                ),
+                                              ],
+                                            ),
                                           ),
                                         ),
                                       ),

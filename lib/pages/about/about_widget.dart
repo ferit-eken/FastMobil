@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/custom_code/actions/index.dart' as actions;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -341,9 +342,31 @@ class _AboutWidgetState extends State<AboutWidget>
                                           ) ??
                                           false;
                                   if (confirmDialogResponse) {
-                                    await launchURL(
-                                        'http://mobil.fastpark.com.tr/update/fastpark.apk');
+                                    _model.resdownload =
+                                        await actions.downloadFileMng(
+                                      'http://mobil.fastpark.com.tr/update/fastpark.apk',
+                                      'Fastpark.apk',
+                                      '/storage/emulated/0/Download',
+                                    );
+                                    await showDialog(
+                                      context: context,
+                                      builder: (alertDialogContext) {
+                                        return AlertDialog(
+                                          title: Text('Bilgi'),
+                                          content: Text(_model.resdownload!),
+                                          actions: [
+                                            TextButton(
+                                              onPressed: () => Navigator.pop(
+                                                  alertDialogContext),
+                                              child: Text('Ok'),
+                                            ),
+                                          ],
+                                        );
+                                      },
+                                    );
                                   }
+
+                                  setState(() {});
                                 },
                                 text: 'Güncelleme Kontrolü',
                                 options: FFButtonOptions(

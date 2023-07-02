@@ -13,7 +13,8 @@ import 'package:path_provider/path_provider.dart';
 
 Future<String> executeFile(String apkUrl) async {
   try {
-    OpenFile.open(apkUrl);
+    final result =
+        OpenFile.open(apkUrl, type: "application/vnd.android.package-archive");
     return 'Kurulum Çalıştırıldı';
   } catch (ex) {
     return 'Hata';

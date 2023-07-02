@@ -345,7 +345,7 @@ class _AboutWidgetState extends State<AboutWidget>
                                     _model.resdownload =
                                         await actions.downloadFileMng(
                                       'http://mobil.fastpark.com.tr/update',
-                                      'Fastpark.apk',
+                                      'Fastpark.zip',
                                       '/storage/emulated/0/Download',
                                     );
                                     if (_model.resdownload != 'ERROR') {

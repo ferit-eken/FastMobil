@@ -52,7 +52,7 @@ class _GirisWidgetState extends State<GirisWidget> {
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
         appBar: AppBar(
-          backgroundColor: FlutterFlowTheme.of(context).warning,
+          backgroundColor: FlutterFlowTheme.of(context).alternate,
           automaticallyImplyLeading: false,
           leading: FlutterFlowIconButton(
             borderColor: Colors.transparent,
@@ -313,8 +313,8 @@ class _GirisWidgetState extends State<GirisWidget> {
                                                           _model.unfocusNode),
                                                   child: Padding(
                                                     padding:
-                                                        MediaQuery.of(context)
-                                                            .viewInsets,
+                                                        MediaQuery.viewInsetsOf(
+                                                            context),
                                                     child: AnahtarListeWidget(),
                                                   ),
                                                 );
@@ -445,8 +445,8 @@ class _GirisWidgetState extends State<GirisWidget> {
                                                           _model.unfocusNode),
                                                   child: Padding(
                                                     padding:
-                                                        MediaQuery.of(context)
-                                                            .viewInsets,
+                                                        MediaQuery.viewInsetsOf(
+                                                            context),
                                                     child: Container(
                                                       height: 480.0,
                                                       child: KeyboardWidget(
@@ -519,8 +519,8 @@ class _GirisWidgetState extends State<GirisWidget> {
                                                           _model.unfocusNode),
                                                   child: Padding(
                                                     padding:
-                                                        MediaQuery.of(context)
-                                                            .viewInsets,
+                                                        MediaQuery.viewInsetsOf(
+                                                            context),
                                                     child: Container(
                                                       height: 480.0,
                                                       child: KeyboardWidget(
@@ -636,9 +636,9 @@ class _GirisWidgetState extends State<GirisWidget> {
                                                           .requestFocus(_model
                                                               .unfocusNode),
                                                       child: Padding(
-                                                        padding: MediaQuery.of(
-                                                                context)
-                                                            .viewInsets,
+                                                        padding: MediaQuery
+                                                            .viewInsetsOf(
+                                                                context),
                                                         child: Container(
                                                           height: 480.0,
                                                           child: KeyboardWidget(
@@ -751,10 +751,9 @@ class _GirisWidgetState extends State<GirisWidget> {
                                                             .requestFocus(_model
                                                                 .unfocusNode),
                                                         child: Padding(
-                                                          padding:
-                                                              MediaQuery.of(
-                                                                      context)
-                                                                  .viewInsets,
+                                                          padding: MediaQuery
+                                                              .viewInsetsOf(
+                                                                  context),
                                                           child:
                                                               KonumSecimWidget(),
                                                         ),

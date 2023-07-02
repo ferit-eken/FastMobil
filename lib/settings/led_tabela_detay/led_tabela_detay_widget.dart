@@ -95,7 +95,7 @@ class _LedTabelaDetayWidgetState extends State<LedTabelaDetayWidget> {
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
         appBar: AppBar(
-          backgroundColor: FlutterFlowTheme.of(context).warning,
+          backgroundColor: FlutterFlowTheme.of(context).alternate,
           automaticallyImplyLeading: false,
           leading: FlutterFlowIconButton(
             borderColor: Colors.transparent,

@@ -14,44 +14,44 @@ class RegisterModel extends FlutterFlowModel {
   // State field(s) for txt_firmakodu widget.
   TextEditingController? txtFirmakoduController;
   String? Function(BuildContext, String?)? txtFirmakoduControllerValidator;
-  // State field(s) for TextField widget.
-  TextEditingController? textController2;
-  String? Function(BuildContext, String?)? textController2Validator;
-  // State field(s) for TextField widget.
-  TextEditingController? textController3;
-  String? Function(BuildContext, String?)? textController3Validator;
-  // State field(s) for TextField widget.
-  TextEditingController? textController4;
-  String? Function(BuildContext, String?)? textController4Validator;
-  // State field(s) for TextField widget.
-  TextEditingController? textController5;
-  String? Function(BuildContext, String?)? textController5Validator;
-  // State field(s) for TextField widget.
-  TextEditingController? textController6;
-  String? Function(BuildContext, String?)? textController6Validator;
-  // State field(s) for TextField widget.
-  TextEditingController? textController7;
-  String? Function(BuildContext, String?)? textController7Validator;
-  // State field(s) for TextField widget.
-  TextEditingController? textController8;
-  String? Function(BuildContext, String?)? textController8Validator;
-  // State field(s) for TextField widget.
-  TextEditingController? textController9;
-  String? Function(BuildContext, String?)? textController9Validator;
-  // State field(s) for TextField widget.
-  TextEditingController? textController10;
-  String? Function(BuildContext, String?)? textController10Validator;
-  // State field(s) for TextField widget.
-  TextEditingController? textController11;
-  String? Function(BuildContext, String?)? textController11Validator;
-  // State field(s) for TextField widget.
-  TextEditingController? textController12;
-  String? Function(BuildContext, String?)? textController12Validator;
-  // State field(s) for TextField widget.
-  TextEditingController? textController13;
-  String? Function(BuildContext, String?)? textController13Validator;
-  // Stores action output result for [Backend Call - API (Login)] action in Button widget.
-  ApiCallResponse? apiResult2dn;
+  // State field(s) for txt_firmaadi widget.
+  TextEditingController? txtFirmaadiController;
+  String? Function(BuildContext, String?)? txtFirmaadiControllerValidator;
+  // State field(s) for txt_unvan widget.
+  TextEditingController? txtUnvanController;
+  String? Function(BuildContext, String?)? txtUnvanControllerValidator;
+  // State field(s) for txt_adres widget.
+  TextEditingController? txtAdresController;
+  String? Function(BuildContext, String?)? txtAdresControllerValidator;
+  // State field(s) for txt_vergidaire widget.
+  TextEditingController? txtVergidaireController;
+  String? Function(BuildContext, String?)? txtVergidaireControllerValidator;
+  // State field(s) for txt_vergino widget.
+  TextEditingController? txtVerginoController;
+  String? Function(BuildContext, String?)? txtVerginoControllerValidator;
+  // State field(s) for txt_yetkili widget.
+  TextEditingController? txtYetkiliController;
+  String? Function(BuildContext, String?)? txtYetkiliControllerValidator;
+  // State field(s) for txt_telefon widget.
+  TextEditingController? txtTelefonController;
+  String? Function(BuildContext, String?)? txtTelefonControllerValidator;
+  // State field(s) for txt_ulke widget.
+  TextEditingController? txtUlkeController;
+  String? Function(BuildContext, String?)? txtUlkeControllerValidator;
+  // State field(s) for txt_sehir widget.
+  TextEditingController? txtSehirController;
+  String? Function(BuildContext, String?)? txtSehirControllerValidator;
+  // State field(s) for txt_ilce widget.
+  TextEditingController? txtIlceController;
+  String? Function(BuildContext, String?)? txtIlceControllerValidator;
+  // State field(s) for txt_mail widget.
+  TextEditingController? txtMailController;
+  String? Function(BuildContext, String?)? txtMailControllerValidator;
+  // State field(s) for txt_password widget.
+  TextEditingController? txtPasswordController;
+  String? Function(BuildContext, String?)? txtPasswordControllerValidator;
+  // Stores action output result for [Backend Call - API (Register)] action in Button widget.
+  ApiCallResponse? apiResultregister;
 
   /// Initialization and disposal methods.
 
@@ -60,18 +60,18 @@ class RegisterModel extends FlutterFlowModel {
   void dispose() {
     unfocusNode.dispose();
     txtFirmakoduController?.dispose();
-    textController2?.dispose();
-    textController3?.dispose();
-    textController4?.dispose();
-    textController5?.dispose();
-    textController6?.dispose();
-    textController7?.dispose();
-    textController8?.dispose();
-    textController9?.dispose();
-    textController10?.dispose();
-    textController11?.dispose();
-    textController12?.dispose();
-    textController13?.dispose();
+    txtFirmaadiController?.dispose();
+    txtUnvanController?.dispose();
+    txtAdresController?.dispose();
+    txtVergidaireController?.dispose();
+    txtVerginoController?.dispose();
+    txtYetkiliController?.dispose();
+    txtTelefonController?.dispose();
+    txtUlkeController?.dispose();
+    txtSehirController?.dispose();
+    txtIlceController?.dispose();
+    txtMailController?.dispose();
+    txtPasswordController?.dispose();
   }
 
   /// Action blocks are added here.

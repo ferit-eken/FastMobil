@@ -139,7 +139,7 @@ class _KonumSecimWidgetState extends State<KonumSecimWidget> {
                           padding: EdgeInsets.zero,
                           gridDelegate:
                               SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: 8,
+                            crossAxisCount: 7,
                             crossAxisSpacing: 10.0,
                             mainAxisSpacing: 10.0,
                             childAspectRatio: 1.0,

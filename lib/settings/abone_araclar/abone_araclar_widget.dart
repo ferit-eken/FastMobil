@@ -54,7 +54,7 @@ class _AboneAraclarWidgetState extends State<AboneAraclarWidget>
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
         appBar: AppBar(
-          backgroundColor: FlutterFlowTheme.of(context).warning,
+          backgroundColor: FlutterFlowTheme.of(context).alternate,
           automaticallyImplyLeading: false,
           leading: FlutterFlowIconButton(
             borderColor: Colors.transparent,
@@ -114,7 +114,7 @@ class _AboneAraclarWidgetState extends State<AboneAraclarWidget>
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                width: MediaQuery.of(context).size.width * 1.0,
+                width: MediaQuery.sizeOf(context).width * 1.0,
                 height: 51.0,
                 decoration: BoxDecoration(
                   color: FlutterFlowTheme.of(context).secondaryBackground,

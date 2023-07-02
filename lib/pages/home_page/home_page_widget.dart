@@ -133,19 +133,14 @@ class _HomePageWidgetState extends State<HomePageWidget> {
   @override
   Widget build(BuildContext context) {
     context.watch<FFAppState>();
-    final chartPieChartColorsList = [
-      Color(0xDBEB1313),
-      Color(0xFF92F45C),
-      Colors.transparent,
-      Color(0xFF4A57C1)
-    ];
+    final chartPieChartColorsList = [Color(0xFF888676), Color(0xFFE9E9DD)];
     return GestureDetector(
       onTap: () => FocusScope.of(context).requestFocus(_model.unfocusNode),
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
         appBar: AppBar(
-          backgroundColor: FlutterFlowTheme.of(context).warning,
+          backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
           automaticallyImplyLeading: false,
           leading: FlutterFlowIconButton(
             borderColor: Colors.transparent,
@@ -168,9 +163,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                     onTap: () =>
                         FocusScope.of(context).requestFocus(_model.unfocusNode),
                     child: Padding(
-                      padding: MediaQuery.of(context).viewInsets,
+                      padding: MediaQuery.viewInsetsOf(context),
                       child: Container(
-                        height: MediaQuery.of(context).size.height * 1.0,
+                        height: MediaQuery.sizeOf(context).height * 1.0,
                         child: SolMenuWidget(),
                       ),
                     ),
@@ -280,7 +275,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                   decoration: BoxDecoration(
                     color: FlutterFlowTheme.of(context).secondaryBackground,
                     border: Border.all(
-                      color: FlutterFlowTheme.of(context).warning,
+                      color: FlutterFlowTheme.of(context).alternate,
                       width: 10.0,
                     ),
                   ),
@@ -297,10 +292,10 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                         ),
                       ),
                       Container(
-                        width: MediaQuery.of(context).size.width * 1.0,
+                        width: MediaQuery.sizeOf(context).width * 1.0,
                         height: 138.0,
                         decoration: BoxDecoration(
-                          color: FlutterFlowTheme.of(context).warning,
+                          color: Colors.white,
                         ),
                         child: Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
@@ -310,7 +305,11 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                             height: 100.0,
                             decoration: BoxDecoration(
                               color: FlutterFlowTheme.of(context).info,
-                              borderRadius: BorderRadius.circular(30.0),
+                              borderRadius: BorderRadius.circular(0.0),
+                              border: Border.all(
+                                color:
+                                    FlutterFlowTheme.of(context).secondaryText,
+                              ),
                             ),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -415,82 +414,95 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       Expanded(
-                                        child: FutureBuilder<ApiCallResponse>(
-                                          future: SettingsGroup
-                                              .getFilterDataCall
-                                              .call(
-                                            db: FFAppState().veritabani,
-                                            tablename: 'OtoparkGrupDoluluk',
-                                            filtre:
-                                                'Id=${FFAppState().KapiGrupId}',
-                                          ),
-                                          builder: (context, snapshot) {
-                                            // Customize what your widget looks like when it's loading.
-                                            if (!snapshot.hasData) {
-                                              return Center(
-                                                child: SizedBox(
-                                                  width: 50.0,
-                                                  height: 50.0,
-                                                  child:
-                                                      CircularProgressIndicator(
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .primary,
+                                        child: Align(
+                                          alignment:
+                                              AlignmentDirectional(-1.0, 0.0),
+                                          child: FutureBuilder<ApiCallResponse>(
+                                            future: SettingsGroup
+                                                .getFilterDataCall
+                                                .call(
+                                              db: FFAppState().veritabani,
+                                              tablename: 'OtoparkGrupDoluluk',
+                                              filtre:
+                                                  'Id=${FFAppState().KapiGrupId}',
+                                            ),
+                                            builder: (context, snapshot) {
+                                              // Customize what your widget looks like when it's loading.
+                                              if (!snapshot.hasData) {
+                                                return Center(
+                                                  child: SizedBox(
+                                                    width: 50.0,
+                                                    height: 50.0,
+                                                    child:
+                                                        CircularProgressIndicator(
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primary,
+                                                    ),
+                                                  ),
+                                                );
+                                              }
+                                              final chartGetFilterDataResponse =
+                                                  snapshot.data!;
+                                              return Container(
+                                                width: 370.0,
+                                                height: 230.0,
+                                                child: FlutterFlowPieChart(
+                                                  data: FFPieChartData(
+                                                    values: SettingsGroup
+                                                        .getFilterDataCall
+                                                        .data(
+                                                          chartGetFilterDataResponse
+                                                              .jsonBody,
+                                                        )!
+                                                        .map(
+                                                            (e) => getJsonField(
+                                                                  e,
+                                                                  r'''$.Sayi''',
+                                                                ))
+                                                        .toList(),
+                                                    colors:
+                                                        chartPieChartColorsList,
+                                                    radius: [55.0],
+                                                    borderWidth: [1.0],
+                                                    borderColor: [
+                                                      Color(0xFF140505)
+                                                    ],
+                                                  ),
+                                                  donutHoleRadius: 0.0,
+                                                  donutHoleColor:
+                                                      Colors.transparent,
+                                                  sectionLabelType:
+                                                      PieChartSectionLabelType
+                                                          .value,
+                                                  sectionLabelStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .headlineSmall
+                                                          .override(
+                                                            fontFamily:
+                                                                'Outfit',
+                                                            fontSize: 16.0,
+                                                            fontWeight:
+                                                                FontWeight
+                                                                    .normal,
+                                                          ),
+                                                  labelFormatter:
+                                                      LabelFormatter(
+                                                    numberFormat: (val) =>
+                                                        formatNumber(
+                                                      val,
+                                                      formatType:
+                                                          FormatType.custom,
+                                                      format: '#',
+                                                      locale: '',
+                                                    ),
                                                   ),
                                                 ),
                                               );
-                                            }
-                                            final chartGetFilterDataResponse =
-                                                snapshot.data!;
-                                            return Container(
-                                              width: 370.0,
-                                              height: 230.0,
-                                              child: FlutterFlowPieChart(
-                                                data: FFPieChartData(
-                                                  values: SettingsGroup
-                                                      .getFilterDataCall
-                                                      .data(
-                                                        chartGetFilterDataResponse
-                                                            .jsonBody,
-                                                      )!
-                                                      .map((e) => getJsonField(
-                                                            e,
-                                                            r'''$.Sayi''',
-                                                          ))
-                                                      .toList(),
-                                                  colors:
-                                                      chartPieChartColorsList,
-                                                  radius: [55.0],
-                                                  borderWidth: [2.0],
-                                                ),
-                                                donutHoleRadius: 0.0,
-                                                donutHoleColor:
-                                                    Colors.transparent,
-                                                sectionLabelType:
-                                                    PieChartSectionLabelType
-                                                        .value,
-                                                sectionLabelStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .headlineSmall
-                                                        .override(
-                                                          fontFamily: 'Outfit',
-                                                          fontSize: 16.0,
-                                                          fontWeight:
-                                                              FontWeight.normal,
-                                                        ),
-                                                labelFormatter: LabelFormatter(
-                                                  numberFormat: (val) =>
-                                                      formatNumber(
-                                                    val,
-                                                    formatType:
-                                                        FormatType.custom,
-                                                    format: '#',
-                                                    locale: '',
-                                                  ),
-                                                ),
-                                              ),
-                                            );
-                                          },
+                                            },
+                                          ),
                                         ),
                                       ),
                                     ],
@@ -520,7 +532,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                         ),
                       ),
                       Container(
-                        width: MediaQuery.of(context).size.width * 1.0,
+                        width: MediaQuery.sizeOf(context).width * 1.0,
                         height: 138.0,
                         decoration: BoxDecoration(
                           color:
@@ -568,7 +580,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                           MainAxisAlignment.center,
                                       children: [
                                         Icon(
-                                          Icons.pin_drop,
+                                          Icons.input,
                                           color: FlutterFlowTheme.of(context)
                                               .secondaryText,
                                           size: 32.0,
@@ -612,7 +624,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                           MainAxisAlignment.center,
                                       children: [
                                         Icon(
-                                          Icons.pin_drop,
+                                          Icons.output_rounded,
                                           color: FlutterFlowTheme.of(context)
                                               .secondaryText,
                                           size: 32.0,
@@ -656,7 +668,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                           MainAxisAlignment.center,
                                       children: [
                                         Icon(
-                                          Icons.pin_drop,
+                                          Icons.settings_input_svideo_outlined,
                                           color: FlutterFlowTheme.of(context)
                                               .secondaryText,
                                           size: 32.0,
@@ -695,7 +707,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                         ),
                       ),
                       Container(
-                        width: MediaQuery.of(context).size.width * 1.0,
+                        width: MediaQuery.sizeOf(context).width * 1.0,
                         height: 138.0,
                         decoration: BoxDecoration(
                           color:
@@ -787,7 +799,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                           MainAxisAlignment.center,
                                       children: [
                                         Icon(
-                                          Icons.preview,
+                                          Icons.calculate_sharp,
                                           color: FlutterFlowTheme.of(context)
                                               .secondaryText,
                                           size: 32.0,
@@ -831,7 +843,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                           MainAxisAlignment.center,
                                       children: [
                                         Icon(
-                                          Icons.filter_9_plus_rounded,
+                                          Icons.local_parking,
                                           color: FlutterFlowTheme.of(context)
                                               .secondaryText,
                                           size: 32.0,

@@ -109,7 +109,7 @@ class _AboneDetayWidgetState extends State<AboneDetayWidget> {
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
         appBar: AppBar(
-          backgroundColor: FlutterFlowTheme.of(context).warning,
+          backgroundColor: FlutterFlowTheme.of(context).alternate,
           automaticallyImplyLeading: false,
           leading: FlutterFlowIconButton(
             borderColor: Colors.transparent,
@@ -277,10 +277,9 @@ class _AboneDetayWidgetState extends State<AboneDetayWidget> {
                                               .toList()!,
                                           onChanged: (val) => setState(() =>
                                               _model.chCarigrupValue = val),
-                                          width: MediaQuery.of(context)
-                                                  .size
-                                                  .width *
-                                              0.5,
+                                          width:
+                                              MediaQuery.sizeOf(context).width *
+                                                  0.5,
                                           height: 50.0,
                                           textStyle:
                                               FlutterFlowTheme.of(context)
@@ -321,7 +320,7 @@ class _AboneDetayWidgetState extends State<AboneDetayWidget> {
                                       optionLabels: ['Pasif', 'Aktif'],
                                       onChanged: (val) => setState(
                                           () => _model.chDurumValue = val),
-                                      width: MediaQuery.of(context).size.width *
+                                      width: MediaQuery.sizeOf(context).width *
                                           0.5,
                                       height: 50.0,
                                       textStyle: FlutterFlowTheme.of(context)
@@ -815,7 +814,7 @@ class _AboneDetayWidgetState extends State<AboneDetayWidget> {
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   5.0, 10.0, 5.0, 0.0),
                               child: Container(
-                                width: MediaQuery.of(context).size.width * 1.0,
+                                width: MediaQuery.sizeOf(context).width * 1.0,
                                 height: 177.0,
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context)

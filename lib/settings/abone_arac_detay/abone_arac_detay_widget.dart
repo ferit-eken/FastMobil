@@ -100,7 +100,7 @@ class _AboneAracDetayWidgetState extends State<AboneAracDetayWidget> {
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
         appBar: AppBar(
-          backgroundColor: FlutterFlowTheme.of(context).warning,
+          backgroundColor: FlutterFlowTheme.of(context).alternate,
           automaticallyImplyLeading: false,
           leading: FlutterFlowIconButton(
             borderColor: Colors.transparent,
@@ -446,8 +446,7 @@ class _AboneAracDetayWidgetState extends State<AboneAracDetayWidget> {
                                   options: ['SAHIS ARACI', 'SIRKET ARACI'],
                                   onChanged: (val) => setState(
                                       () => _model.txtKullanimturuValue = val),
-                                  width:
-                                      MediaQuery.of(context).size.width * 1.0,
+                                  width: MediaQuery.sizeOf(context).width * 1.0,
                                   height: 50.0,
                                   textStyle:
                                       FlutterFlowTheme.of(context).bodyMedium,
@@ -522,7 +521,7 @@ class _AboneAracDetayWidgetState extends State<AboneAracDetayWidget> {
                                           .toList()!,
                                       onChanged: (val) => setState(
                                           () => _model.txtAractipiValue = val),
-                                      width: MediaQuery.of(context).size.width *
+                                      width: MediaQuery.sizeOf(context).width *
                                           1.0,
                                       height: 50.0,
                                       textStyle: FlutterFlowTheme.of(context)

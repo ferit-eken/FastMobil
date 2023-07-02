@@ -42,8 +42,8 @@ class _SolMenuOtoparkWidgetState extends State<SolMenuOtoparkWidget> {
     context.watch<FFAppState>();
 
     return Container(
-      width: MediaQuery.of(context).size.width * 1.0,
-      height: MediaQuery.of(context).size.height * 1.0,
+      width: MediaQuery.sizeOf(context).width * 1.0,
+      height: MediaQuery.sizeOf(context).height * 1.0,
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).secondaryBackground,
       ),
@@ -469,88 +469,32 @@ class _SolMenuOtoparkWidgetState extends State<SolMenuOtoparkWidget> {
                         child: Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
                               3.0, 3.0, 3.0, 3.0),
-                          child: Column(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              Icon(
-                                Icons.call_rounded,
-                                color:
-                                    FlutterFlowTheme.of(context).secondaryText,
-                                size: 32.0,
-                              ),
-                              Text(
-                                'Teknik Destek',
-                                textAlign: TextAlign.center,
-                                style: FlutterFlowTheme.of(context).bodyMedium,
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      Container(
-                        width: 100.0,
-                        height: 100.0,
-                        decoration: BoxDecoration(
-                          color:
-                              FlutterFlowTheme.of(context).secondaryBackground,
-                          borderRadius: BorderRadius.circular(5.0),
-                          border: Border.all(
-                            width: 2.0,
-                          ),
-                        ),
-                        child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              3.0, 3.0, 3.0, 3.0),
-                          child: Column(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              Icon(
-                                Icons.help_outline_sharp,
-                                color:
-                                    FlutterFlowTheme.of(context).secondaryText,
-                                size: 32.0,
-                              ),
-                              Text(
-                                'Uygulama Hakkında',
-                                textAlign: TextAlign.center,
-                                style: FlutterFlowTheme.of(context).bodyMedium,
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      Container(
-                        width: 100.0,
-                        height: 100.0,
-                        decoration: BoxDecoration(
-                          color:
-                              FlutterFlowTheme.of(context).secondaryBackground,
-                          borderRadius: BorderRadius.circular(5.0),
-                          border: Border.all(
-                            width: 2.0,
-                          ),
-                        ),
-                        child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              3.0, 3.0, 3.0, 3.0),
-                          child: Column(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              Icon(
-                                Icons.check_box_outline_blank_outlined,
-                                color:
-                                    FlutterFlowTheme.of(context).secondaryText,
-                                size: 32.0,
-                              ),
-                              Text(
-                                '--',
-                                textAlign: TextAlign.center,
-                                style: FlutterFlowTheme.of(context).bodyMedium,
-                              ),
-                            ],
+                          child: InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              context.pushNamed('otoparkdurum');
+                            },
+                            child: Column(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Icon(
+                                  Icons.emoji_transportation_sharp,
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryText,
+                                  size: 32.0,
+                                ),
+                                Text(
+                                  'Park Konumları',
+                                  textAlign: TextAlign.center,
+                                  style:
+                                      FlutterFlowTheme.of(context).bodyMedium,
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),

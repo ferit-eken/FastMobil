@@ -45,7 +45,7 @@ class _OtoparkdurumWidgetState extends State<OtoparkdurumWidget> {
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
         appBar: AppBar(
-          backgroundColor: FlutterFlowTheme.of(context).warning,
+          backgroundColor: FlutterFlowTheme.of(context).alternate,
           automaticallyImplyLeading: false,
           leading: FlutterFlowIconButton(
             borderColor: Colors.transparent,
@@ -69,7 +69,37 @@ class _OtoparkdurumWidgetState extends State<OtoparkdurumWidget> {
                   fontSize: 22.0,
                 ),
           ),
-          actions: [],
+          actions: [
+            Padding(
+              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
+              child: InkWell(
+                splashColor: Colors.transparent,
+                focusColor: Colors.transparent,
+                hoverColor: Colors.transparent,
+                highlightColor: Colors.transparent,
+                onTap: () async {
+                  context.pushNamed(
+                    'ParkKonumDetay',
+                    queryParameters: {
+                      'id': serializeParam(
+                        0,
+                        ParamType.int,
+                      ),
+                      'kapiGrupId': serializeParam(
+                        FFAppState().KapiGrupId,
+                        ParamType.String,
+                      ),
+                    }.withoutNulls,
+                  );
+                },
+                child: Icon(
+                  Icons.add_circle_outline,
+                  color: FlutterFlowTheme.of(context).secondaryText,
+                  size: 32.0,
+                ),
+              ),
+            ),
+          ],
           centerTitle: true,
           elevation: 2.0,
         ),
@@ -151,41 +181,69 @@ class _OtoparkdurumWidgetState extends State<OtoparkdurumWidget> {
                                           color: FlutterFlowTheme.of(context)
                                               .secondaryBackground,
                                           borderRadius:
-                                              BorderRadius.circular(10.0),
+                                              BorderRadius.circular(0.0),
                                           border: Border.all(
                                             color: FlutterFlowTheme.of(context)
                                                 .warning,
                                           ),
                                         ),
-                                        child: Column(
-                                          mainAxisSize: MainAxisSize.max,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: [
-                                            Icon(
-                                              Icons.directions_car,
-                                              color: colorFromCssString(
-                                                getJsonField(
-                                                          konumListeItem,
-                                                          r'''$.Durum''',
-                                                        ) ==
-                                                        'DOLU'
-                                                    ? '#EB1313'
-                                                    : '#275F08',
-                                                defaultColor: Colors.black,
+                                        child: InkWell(
+                                          splashColor: Colors.transparent,
+                                          focusColor: Colors.transparent,
+                                          hoverColor: Colors.transparent,
+                                          highlightColor: Colors.transparent,
+                                          onLongPress: () async {
+                                            context.pushNamed(
+                                              'ParkKonumDetay',
+                                              queryParameters: {
+                                                'id': serializeParam(
+                                                  getJsonField(
+                                                    konumListeItem,
+                                                    r'''$.Id''',
+                                                  ),
+                                                  ParamType.int,
+                                                ),
+                                                'kapiGrupId': serializeParam(
+                                                  getJsonField(
+                                                    konumListeItem,
+                                                    r'''$.KapiGrupId''',
+                                                  ).toString(),
+                                                  ParamType.String,
+                                                ),
+                                              }.withoutNulls,
+                                            );
+                                          },
+                                          child: Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+                                              Icon(
+                                                Icons.directions_car,
+                                                color: colorFromCssString(
+                                                  getJsonField(
+                                                            konumListeItem,
+                                                            r'''$.Durum''',
+                                                          ) ==
+                                                          'DOLU'
+                                                      ? '#EB1313'
+                                                      : '#275F08',
+                                                  defaultColor: Colors.black,
+                                                ),
+                                                size: 24.0,
                                               ),
-                                              size: 24.0,
-                                            ),
-                                            Text(
-                                              getJsonField(
-                                                konumListeItem,
-                                                r'''$.KonumAdi''',
-                                              ).toString(),
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium,
-                                            ),
-                                          ],
+                                              Text(
+                                                getJsonField(
+                                                  konumListeItem,
+                                                  r'''$.KonumAdi''',
+                                                ).toString(),
+                                                textAlign: TextAlign.center,
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium,
+                                              ),
+                                            ],
+                                          ),
                                         ),
                                       ),
                                     );

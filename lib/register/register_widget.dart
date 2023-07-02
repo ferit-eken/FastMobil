@@ -27,18 +27,18 @@ class _RegisterWidgetState extends State<RegisterWidget> {
     _model = createModel(context, () => RegisterModel());
 
     _model.txtFirmakoduController ??= TextEditingController();
-    _model.textController2 ??= TextEditingController();
-    _model.textController3 ??= TextEditingController();
-    _model.textController4 ??= TextEditingController();
-    _model.textController5 ??= TextEditingController();
-    _model.textController6 ??= TextEditingController();
-    _model.textController7 ??= TextEditingController();
-    _model.textController8 ??= TextEditingController();
-    _model.textController9 ??= TextEditingController();
-    _model.textController10 ??= TextEditingController();
-    _model.textController11 ??= TextEditingController();
-    _model.textController12 ??= TextEditingController();
-    _model.textController13 ??= TextEditingController();
+    _model.txtFirmaadiController ??= TextEditingController();
+    _model.txtUnvanController ??= TextEditingController();
+    _model.txtAdresController ??= TextEditingController();
+    _model.txtVergidaireController ??= TextEditingController();
+    _model.txtVerginoController ??= TextEditingController();
+    _model.txtYetkiliController ??= TextEditingController();
+    _model.txtTelefonController ??= TextEditingController();
+    _model.txtUlkeController ??= TextEditingController();
+    _model.txtSehirController ??= TextEditingController();
+    _model.txtIlceController ??= TextEditingController();
+    _model.txtMailController ??= TextEditingController();
+    _model.txtPasswordController ??= TextEditingController();
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
@@ -59,7 +59,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
         appBar: AppBar(
-          backgroundColor: FlutterFlowTheme.of(context).warning,
+          backgroundColor: FlutterFlowTheme.of(context).alternate,
           automaticallyImplyLeading: false,
           leading: FlutterFlowIconButton(
             borderColor: Colors.transparent,
@@ -94,6 +94,10 @@ class _RegisterWidgetState extends State<RegisterWidget> {
             height: double.infinity,
             decoration: BoxDecoration(
               color: FlutterFlowTheme.of(context).secondaryBackground,
+              border: Border.all(
+                color: FlutterFlowTheme.of(context).alternate,
+                width: 10.0,
+              ),
             ),
             child: Padding(
               padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 10.0),
@@ -114,7 +118,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                           hintStyle: FlutterFlowTheme.of(context).labelMedium,
                           enabledBorder: OutlineInputBorder(
                             borderSide: BorderSide(
-                              color: FlutterFlowTheme.of(context).alternate,
+                              color: FlutterFlowTheme.of(context).secondaryText,
                               width: 2.0,
                             ),
                             borderRadius: BorderRadius.circular(15.0),
@@ -150,7 +154,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                       padding:
                           EdgeInsetsDirectional.fromSTEB(8.0, 10.0, 8.0, 0.0),
                       child: TextFormField(
-                        controller: _model.textController2,
+                        controller: _model.txtFirmaadiController,
                         autofocus: true,
                         obscureText: false,
                         decoration: InputDecoration(
@@ -159,7 +163,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                           hintStyle: FlutterFlowTheme.of(context).labelMedium,
                           enabledBorder: OutlineInputBorder(
                             borderSide: BorderSide(
-                              color: FlutterFlowTheme.of(context).alternate,
+                              color: FlutterFlowTheme.of(context).secondaryText,
                               width: 2.0,
                             ),
                             borderRadius: BorderRadius.circular(15.0),
@@ -187,7 +191,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                           ),
                         ),
                         style: FlutterFlowTheme.of(context).bodyMedium,
-                        validator: _model.textController2Validator
+                        validator: _model.txtFirmaadiControllerValidator
                             .asValidator(context),
                       ),
                     ),
@@ -195,7 +199,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                       padding:
                           EdgeInsetsDirectional.fromSTEB(8.0, 10.0, 8.0, 0.0),
                       child: TextFormField(
-                        controller: _model.textController3,
+                        controller: _model.txtUnvanController,
                         autofocus: true,
                         obscureText: false,
                         decoration: InputDecoration(
@@ -204,7 +208,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                           hintStyle: FlutterFlowTheme.of(context).labelMedium,
                           enabledBorder: OutlineInputBorder(
                             borderSide: BorderSide(
-                              color: FlutterFlowTheme.of(context).alternate,
+                              color: FlutterFlowTheme.of(context).secondaryText,
                               width: 2.0,
                             ),
                             borderRadius: BorderRadius.circular(15.0),
@@ -232,7 +236,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                           ),
                         ),
                         style: FlutterFlowTheme.of(context).bodyMedium,
-                        validator: _model.textController3Validator
+                        validator: _model.txtUnvanControllerValidator
                             .asValidator(context),
                       ),
                     ),
@@ -240,7 +244,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                       padding:
                           EdgeInsetsDirectional.fromSTEB(8.0, 10.0, 8.0, 0.0),
                       child: TextFormField(
-                        controller: _model.textController4,
+                        controller: _model.txtAdresController,
                         autofocus: true,
                         obscureText: false,
                         decoration: InputDecoration(
@@ -249,7 +253,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                           hintStyle: FlutterFlowTheme.of(context).labelMedium,
                           enabledBorder: OutlineInputBorder(
                             borderSide: BorderSide(
-                              color: FlutterFlowTheme.of(context).alternate,
+                              color: FlutterFlowTheme.of(context).secondaryText,
                               width: 2.0,
                             ),
                             borderRadius: BorderRadius.circular(15.0),
@@ -277,7 +281,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                           ),
                         ),
                         style: FlutterFlowTheme.of(context).bodyMedium,
-                        validator: _model.textController4Validator
+                        validator: _model.txtAdresControllerValidator
                             .asValidator(context),
                       ),
                     ),
@@ -285,7 +289,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                       padding:
                           EdgeInsetsDirectional.fromSTEB(8.0, 10.0, 8.0, 0.0),
                       child: TextFormField(
-                        controller: _model.textController5,
+                        controller: _model.txtVergidaireController,
                         autofocus: true,
                         obscureText: false,
                         decoration: InputDecoration(
@@ -294,7 +298,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                           hintStyle: FlutterFlowTheme.of(context).labelMedium,
                           enabledBorder: OutlineInputBorder(
                             borderSide: BorderSide(
-                              color: FlutterFlowTheme.of(context).alternate,
+                              color: FlutterFlowTheme.of(context).secondaryText,
                               width: 2.0,
                             ),
                             borderRadius: BorderRadius.circular(15.0),
@@ -322,7 +326,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                           ),
                         ),
                         style: FlutterFlowTheme.of(context).bodyMedium,
-                        validator: _model.textController5Validator
+                        validator: _model.txtVergidaireControllerValidator
                             .asValidator(context),
                       ),
                     ),
@@ -330,7 +334,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                       padding:
                           EdgeInsetsDirectional.fromSTEB(8.0, 10.0, 8.0, 0.0),
                       child: TextFormField(
-                        controller: _model.textController6,
+                        controller: _model.txtVerginoController,
                         autofocus: true,
                         obscureText: false,
                         decoration: InputDecoration(
@@ -339,7 +343,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                           hintStyle: FlutterFlowTheme.of(context).labelMedium,
                           enabledBorder: OutlineInputBorder(
                             borderSide: BorderSide(
-                              color: FlutterFlowTheme.of(context).alternate,
+                              color: FlutterFlowTheme.of(context).secondaryText,
                               width: 2.0,
                             ),
                             borderRadius: BorderRadius.circular(15.0),
@@ -367,7 +371,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                           ),
                         ),
                         style: FlutterFlowTheme.of(context).bodyMedium,
-                        validator: _model.textController6Validator
+                        validator: _model.txtVerginoControllerValidator
                             .asValidator(context),
                       ),
                     ),
@@ -375,7 +379,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                       padding:
                           EdgeInsetsDirectional.fromSTEB(8.0, 10.0, 8.0, 0.0),
                       child: TextFormField(
-                        controller: _model.textController7,
+                        controller: _model.txtYetkiliController,
                         autofocus: true,
                         obscureText: false,
                         decoration: InputDecoration(
@@ -384,7 +388,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                           hintStyle: FlutterFlowTheme.of(context).labelMedium,
                           enabledBorder: OutlineInputBorder(
                             borderSide: BorderSide(
-                              color: FlutterFlowTheme.of(context).alternate,
+                              color: FlutterFlowTheme.of(context).secondaryText,
                               width: 2.0,
                             ),
                             borderRadius: BorderRadius.circular(15.0),
@@ -412,7 +416,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                           ),
                         ),
                         style: FlutterFlowTheme.of(context).bodyMedium,
-                        validator: _model.textController7Validator
+                        validator: _model.txtYetkiliControllerValidator
                             .asValidator(context),
                       ),
                     ),
@@ -420,7 +424,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                       padding:
                           EdgeInsetsDirectional.fromSTEB(8.0, 10.0, 8.0, 0.0),
                       child: TextFormField(
-                        controller: _model.textController8,
+                        controller: _model.txtTelefonController,
                         autofocus: true,
                         obscureText: false,
                         decoration: InputDecoration(
@@ -429,7 +433,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                           hintStyle: FlutterFlowTheme.of(context).labelMedium,
                           enabledBorder: OutlineInputBorder(
                             borderSide: BorderSide(
-                              color: FlutterFlowTheme.of(context).alternate,
+                              color: FlutterFlowTheme.of(context).secondaryText,
                               width: 2.0,
                             ),
                             borderRadius: BorderRadius.circular(15.0),
@@ -457,7 +461,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                           ),
                         ),
                         style: FlutterFlowTheme.of(context).bodyMedium,
-                        validator: _model.textController8Validator
+                        validator: _model.txtTelefonControllerValidator
                             .asValidator(context),
                       ),
                     ),
@@ -465,7 +469,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                       padding:
                           EdgeInsetsDirectional.fromSTEB(8.0, 10.0, 8.0, 0.0),
                       child: TextFormField(
-                        controller: _model.textController9,
+                        controller: _model.txtUlkeController,
                         autofocus: true,
                         obscureText: false,
                         decoration: InputDecoration(
@@ -474,7 +478,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                           hintStyle: FlutterFlowTheme.of(context).labelMedium,
                           enabledBorder: OutlineInputBorder(
                             borderSide: BorderSide(
-                              color: FlutterFlowTheme.of(context).alternate,
+                              color: FlutterFlowTheme.of(context).secondaryText,
                               width: 2.0,
                             ),
                             borderRadius: BorderRadius.circular(15.0),
@@ -502,7 +506,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                           ),
                         ),
                         style: FlutterFlowTheme.of(context).bodyMedium,
-                        validator: _model.textController9Validator
+                        validator: _model.txtUlkeControllerValidator
                             .asValidator(context),
                       ),
                     ),
@@ -510,7 +514,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                       padding:
                           EdgeInsetsDirectional.fromSTEB(8.0, 10.0, 8.0, 0.0),
                       child: TextFormField(
-                        controller: _model.textController10,
+                        controller: _model.txtSehirController,
                         autofocus: true,
                         obscureText: false,
                         decoration: InputDecoration(
@@ -519,7 +523,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                           hintStyle: FlutterFlowTheme.of(context).labelMedium,
                           enabledBorder: OutlineInputBorder(
                             borderSide: BorderSide(
-                              color: FlutterFlowTheme.of(context).alternate,
+                              color: FlutterFlowTheme.of(context).secondaryText,
                               width: 2.0,
                             ),
                             borderRadius: BorderRadius.circular(15.0),
@@ -547,7 +551,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                           ),
                         ),
                         style: FlutterFlowTheme.of(context).bodyMedium,
-                        validator: _model.textController10Validator
+                        validator: _model.txtSehirControllerValidator
                             .asValidator(context),
                       ),
                     ),
@@ -555,7 +559,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                       padding:
                           EdgeInsetsDirectional.fromSTEB(8.0, 10.0, 8.0, 0.0),
                       child: TextFormField(
-                        controller: _model.textController11,
+                        controller: _model.txtIlceController,
                         autofocus: true,
                         obscureText: false,
                         decoration: InputDecoration(
@@ -564,7 +568,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                           hintStyle: FlutterFlowTheme.of(context).labelMedium,
                           enabledBorder: OutlineInputBorder(
                             borderSide: BorderSide(
-                              color: FlutterFlowTheme.of(context).alternate,
+                              color: FlutterFlowTheme.of(context).secondaryText,
                               width: 2.0,
                             ),
                             borderRadius: BorderRadius.circular(15.0),
@@ -592,7 +596,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                           ),
                         ),
                         style: FlutterFlowTheme.of(context).bodyMedium,
-                        validator: _model.textController11Validator
+                        validator: _model.txtIlceControllerValidator
                             .asValidator(context),
                       ),
                     ),
@@ -600,7 +604,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                       padding:
                           EdgeInsetsDirectional.fromSTEB(8.0, 10.0, 8.0, 0.0),
                       child: TextFormField(
-                        controller: _model.textController12,
+                        controller: _model.txtMailController,
                         autofocus: true,
                         obscureText: false,
                         decoration: InputDecoration(
@@ -609,7 +613,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                           hintStyle: FlutterFlowTheme.of(context).labelMedium,
                           enabledBorder: OutlineInputBorder(
                             borderSide: BorderSide(
-                              color: FlutterFlowTheme.of(context).alternate,
+                              color: FlutterFlowTheme.of(context).secondaryText,
                               width: 2.0,
                             ),
                             borderRadius: BorderRadius.circular(15.0),
@@ -637,7 +641,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                           ),
                         ),
                         style: FlutterFlowTheme.of(context).bodyMedium,
-                        validator: _model.textController12Validator
+                        validator: _model.txtMailControllerValidator
                             .asValidator(context),
                       ),
                     ),
@@ -645,7 +649,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                       padding:
                           EdgeInsetsDirectional.fromSTEB(8.0, 10.0, 8.0, 0.0),
                       child: TextFormField(
-                        controller: _model.textController13,
+                        controller: _model.txtPasswordController,
                         autofocus: true,
                         obscureText: false,
                         decoration: InputDecoration(
@@ -654,7 +658,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                           hintStyle: FlutterFlowTheme.of(context).labelMedium,
                           enabledBorder: OutlineInputBorder(
                             borderSide: BorderSide(
-                              color: FlutterFlowTheme.of(context).alternate,
+                              color: FlutterFlowTheme.of(context).secondaryText,
                               width: 2.0,
                             ),
                             borderRadius: BorderRadius.circular(15.0),
@@ -682,7 +686,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                           ),
                         ),
                         style: FlutterFlowTheme.of(context).bodyMedium,
-                        validator: _model.textController13Validator
+                        validator: _model.txtPasswordControllerValidator
                             .asValidator(context),
                       ),
                     ),
@@ -715,12 +719,71 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                               ) ??
                               false;
                           if (confirmDialogResponse) {
-                            _model.apiResult2dn =
-                                await UserGroup.loginCall.call();
-                            if (UserGroup.loginCall.succeeded(
-                              (_model.apiResult2dn?.jsonBody ?? ''),
+                            _model.apiResultregister =
+                                await UserGroup.registerCall.call(
+                              command: 'INSERT',
+                              firmaKodu: _model.txtFirmakoduController.text,
+                              firmaAdi: _model.txtFirmaadiController.text,
+                              ticariUnvan: _model.txtUnvanController.text,
+                              adres: _model.txtAdresController.text,
+                              vergiDairesi: _model.txtVergidaireController.text,
+                              vergiNo: _model.txtVerginoController.text,
+                              yetkiliAdi: _model.txtYetkiliController.text,
+                              telefon: _model.txtTelefonController.text,
+                              ulke: _model.txtUlkeController.text,
+                              sehir: _model.txtSehirController.text,
+                              ilce: _model.txtIlceController.text,
+                              mail: _model.txtMailController.text,
+                              userName: 'Admin',
+                              password: _model.txtPasswordController.text,
+                            );
+                            if (UserGroup.registerCall.succeeded(
+                              (_model.apiResultregister?.jsonBody ?? ''),
                             )) {
+                              await showDialog(
+                                context: context,
+                                builder: (alertDialogContext) {
+                                  return AlertDialog(
+                                    title: Text('Firma Oluşturuldu'),
+                                    content: Text(UserGroup.registerCall
+                                        .message(
+                                          (_model.apiResultregister?.jsonBody ??
+                                              ''),
+                                        )
+                                        .toString()),
+                                    actions: [
+                                      TextButton(
+                                        onPressed: () =>
+                                            Navigator.pop(alertDialogContext),
+                                        child: Text('Ok'),
+                                      ),
+                                    ],
+                                  );
+                                },
+                              );
                               context.safePop();
+                            } else {
+                              await showDialog(
+                                context: context,
+                                builder: (alertDialogContext) {
+                                  return AlertDialog(
+                                    title: Text('Hata'),
+                                    content: Text(UserGroup.registerCall
+                                        .message(
+                                          (_model.apiResultregister?.jsonBody ??
+                                              ''),
+                                        )
+                                        .toString()),
+                                    actions: [
+                                      TextButton(
+                                        onPressed: () =>
+                                            Navigator.pop(alertDialogContext),
+                                        child: Text('Ok'),
+                                      ),
+                                    ],
+                                  );
+                                },
+                              );
                             }
                           }
 

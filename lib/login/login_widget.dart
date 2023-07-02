@@ -100,7 +100,7 @@ class _LoginWidgetState extends State<LoginWidget>
             gradient: LinearGradient(
               colors: [
                 FlutterFlowTheme.of(context).secondaryText,
-                FlutterFlowTheme.of(context).warning
+                FlutterFlowTheme.of(context).secondaryText
               ],
               stops: [0.0, 1.0],
               begin: AlignmentDirectional(0.87, -1.0),
@@ -111,7 +111,7 @@ class _LoginWidgetState extends State<LoginWidget>
           child: SingleChildScrollView(
             child: Column(
               mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),

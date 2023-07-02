@@ -49,7 +49,7 @@ class _CikisWidgetState extends State<CikisWidget> {
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
         appBar: AppBar(
-          backgroundColor: FlutterFlowTheme.of(context).warning,
+          backgroundColor: FlutterFlowTheme.of(context).alternate,
           automaticallyImplyLeading: false,
           leading: FlutterFlowIconButton(
             borderColor: Colors.transparent,
@@ -420,8 +420,8 @@ class _CikisWidgetState extends State<CikisWidget> {
                                           onTap: () => FocusScope.of(context)
                                               .requestFocus(_model.unfocusNode),
                                           child: Padding(
-                                            padding: MediaQuery.of(context)
-                                                .viewInsets,
+                                            padding: MediaQuery.viewInsetsOf(
+                                                context),
                                             child: Container(
                                               height: 480.0,
                                               child: KeyboardWidget(

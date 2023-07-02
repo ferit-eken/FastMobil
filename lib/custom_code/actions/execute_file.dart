@@ -11,7 +11,7 @@ import 'dart:io';
 
 import 'package:path_provider/path_provider.dart';
 
-Future<String> openFile(String apkUrl) async {
+Future<String> executeFile(String apkUrl) async {
   try {
     await openFile(apkUrl);
     return 'Kurulum Çalıştırıldı';

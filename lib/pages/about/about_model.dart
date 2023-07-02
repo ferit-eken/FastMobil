@@ -17,7 +17,7 @@ class AboutModel extends FlutterFlowModel {
   final unfocusNode = FocusNode();
   // Stores action output result for [Custom Action - downloadFileMng] action in Button widget.
   String? resdownload;
-  // Stores action output result for [Custom Action - openFile] action in Button widget.
+  // Stores action output result for [Custom Action - executeFile] action in Button widget.
   String? resinstall;
 
   /// Initialization and disposal methods.

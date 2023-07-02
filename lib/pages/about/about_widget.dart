@@ -350,7 +350,7 @@ class _AboutWidgetState extends State<AboutWidget>
                                     );
                                     if (_model.resdownload != 'ERROR') {
                                       _model.resinstall =
-                                          await actions.openFile(
+                                          await actions.executeFile(
                                         _model.resdownload!,
                                       );
                                     }

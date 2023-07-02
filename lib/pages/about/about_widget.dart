@@ -351,7 +351,7 @@ class _AboutWidgetState extends State<AboutWidget>
                                     if (_model.resdownload != 'ERROR') {
                                       _model.resinstall =
                                           await actions.openFile(
-                                        '/storage/emulated/0/Download/fastpark.apk',
+                                        _model.resdownload!,
                                       );
                                     }
                                   }

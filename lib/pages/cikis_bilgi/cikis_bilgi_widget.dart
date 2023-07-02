@@ -55,7 +55,7 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
         appBar: AppBar(
-          backgroundColor: FlutterFlowTheme.of(context).warning,
+          backgroundColor: FlutterFlowTheme.of(context).alternate,
           automaticallyImplyLeading: false,
           leading: FlutterFlowIconButton(
             borderColor: Colors.transparent,
@@ -155,7 +155,7 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                                         height: 24.0,
                                         decoration: BoxDecoration(
                                           color: FlutterFlowTheme.of(context)
-                                              .warning,
+                                              .alternate,
                                         ),
                                         child: Text(
                                           'Park Bilgileri',
@@ -587,7 +587,7 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                                                 decoration: BoxDecoration(
                                                   color: FlutterFlowTheme.of(
                                                           context)
-                                                      .warning,
+                                                      .alternate,
                                                 ),
                                                 child: Text(
                                                   'İşlemler',

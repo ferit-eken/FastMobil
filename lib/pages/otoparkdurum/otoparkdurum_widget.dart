@@ -45,7 +45,7 @@ class _OtoparkdurumWidgetState extends State<OtoparkdurumWidget> {
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
         appBar: AppBar(
-          backgroundColor: FlutterFlowTheme.of(context).warning,
+          backgroundColor: FlutterFlowTheme.of(context).alternate,
           automaticallyImplyLeading: false,
           leading: FlutterFlowIconButton(
             borderColor: Colors.transparent,
@@ -181,7 +181,7 @@ class _OtoparkdurumWidgetState extends State<OtoparkdurumWidget> {
                                           color: FlutterFlowTheme.of(context)
                                               .secondaryBackground,
                                           borderRadius:
-                                              BorderRadius.circular(10.0),
+                                              BorderRadius.circular(0.0),
                                           border: Border.all(
                                             color: FlutterFlowTheme.of(context)
                                                 .warning,
@@ -237,6 +237,7 @@ class _OtoparkdurumWidgetState extends State<OtoparkdurumWidget> {
                                                   konumListeItem,
                                                   r'''$.KonumAdi''',
                                                 ).toString(),
+                                                textAlign: TextAlign.center,
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium,

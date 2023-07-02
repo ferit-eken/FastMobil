@@ -342,7 +342,7 @@ class _AboutWidgetState extends State<AboutWidget>
                                           false;
                                   if (confirmDialogResponse) {
                                     await launchURL(
-                                        'mobil.fastpark.com.tr/update/fastpark.apk');
+                                        'http://mobil.fastpark.com.tr/update/fastpark.apk');
                                   }
                                 },
                                 text: 'Güncelleme Kontrolü',

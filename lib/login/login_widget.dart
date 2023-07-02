@@ -100,7 +100,7 @@ class _LoginWidgetState extends State<LoginWidget>
             gradient: LinearGradient(
               colors: [
                 FlutterFlowTheme.of(context).secondaryText,
-                FlutterFlowTheme.of(context).warning
+                FlutterFlowTheme.of(context).secondaryText
               ],
               stops: [0.0, 1.0],
               begin: AlignmentDirectional(0.87, -1.0),

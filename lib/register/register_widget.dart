@@ -59,7 +59,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
         appBar: AppBar(
-          backgroundColor: FlutterFlowTheme.of(context).warning,
+          backgroundColor: FlutterFlowTheme.of(context).alternate,
           automaticallyImplyLeading: false,
           leading: FlutterFlowIconButton(
             borderColor: Colors.transparent,
@@ -95,7 +95,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
             decoration: BoxDecoration(
               color: FlutterFlowTheme.of(context).secondaryBackground,
               border: Border.all(
-                color: FlutterFlowTheme.of(context).warning,
+                color: FlutterFlowTheme.of(context).alternate,
                 width: 10.0,
               ),
             ),

@@ -45,7 +45,7 @@ class _TarifelerWidgetState extends State<TarifelerWidget> {
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
         appBar: AppBar(
-          backgroundColor: FlutterFlowTheme.of(context).warning,
+          backgroundColor: FlutterFlowTheme.of(context).alternate,
           automaticallyImplyLeading: false,
           leading: InkWell(
             splashColor: Colors.transparent,

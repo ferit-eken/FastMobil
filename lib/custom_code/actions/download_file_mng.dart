@@ -30,12 +30,13 @@ Future<String> downloadFileMng(
     if (response.statusCode == 200) {
       var bytes = await consolidateHttpClientResponseBytes(response);
       filePath = '$dir/$fileName';
+      filePath = filePath.replaceAll('zip', 'apk');
       file = File(filePath);
-      await file.writeAsBytes(bytes);
+      await file.writeAsBytes(bytes, mode: FileMode.write, flush: true);
     } else
-      filePath = 'Error code: ' + response.statusCode.toString();
+      filePath = 'ERROR';
   } catch (ex) {
-    filePath = 'Can not fetch url';
+    filePath = 'ERROR';
   }
 
   return filePath;

@@ -344,26 +344,16 @@ class _AboutWidgetState extends State<AboutWidget>
                                   if (confirmDialogResponse) {
                                     _model.resdownload =
                                         await actions.downloadFileMng(
-                                      'http://mobil.fastpark.com.tr/update/fastpark.apk',
+                                      'http://mobil.fastpark.com.tr/update',
                                       'Fastpark.apk',
                                       '/storage/emulated/0/Download',
                                     );
-                                    await showDialog(
-                                      context: context,
-                                      builder: (alertDialogContext) {
-                                        return AlertDialog(
-                                          title: Text('Bilgi'),
-                                          content: Text(_model.resdownload!),
-                                          actions: [
-                                            TextButton(
-                                              onPressed: () => Navigator.pop(
-                                                  alertDialogContext),
-                                              child: Text('Ok'),
-                                            ),
-                                          ],
-                                        );
-                                      },
-                                    );
+                                    if (_model.resdownload != 'ERROR') {
+                                      _model.resinstall =
+                                          await actions.openFile(
+                                        '/storage/emulated/0/Download/fastpark.apk',
+                                      );
+                                    }
                                   }
 
                                   setState(() {});

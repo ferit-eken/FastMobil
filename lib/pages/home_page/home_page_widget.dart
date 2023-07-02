@@ -30,66 +30,84 @@ class _HomePageWidgetState extends State<HomePageWidget> {
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      _model.apiResultotopark = await SettingsGroup.getRowDataCall.call(
-        db: FFAppState().veritabani,
-        tablename: 'Otopark',
-        keyfield: 'Id',
-        keyvalue: FFAppState().OtoparkId,
-      );
-      if (SettingsGroup.getRowDataCall.successed(
-        (_model.apiResultotopark?.jsonBody ?? ''),
-      )) {
-        _model.apiResultKapigrup = await SettingsGroup.getRowDataCall.call(
+      if (FFAppState().KapiId != null && FFAppState().KapiId != '') {
+        _model.apiResultotopark = await SettingsGroup.getRowDataCall.call(
           db: FFAppState().veritabani,
-          tablename: 'OtoparkKapiGrup',
+          tablename: 'Otopark',
           keyfield: 'Id',
-          keyvalue: FFAppState().KapiGrupId,
+          keyvalue: FFAppState().OtoparkId,
         );
         if (SettingsGroup.getRowDataCall.successed(
-          (_model.apiResultKapigrup?.jsonBody ?? ''),
+          (_model.apiResultotopark?.jsonBody ?? ''),
         )) {
-          _model.apiResultKapi = await SettingsGroup.getRowDataCall.call(
+          _model.apiResultKapigrup = await SettingsGroup.getRowDataCall.call(
             db: FFAppState().veritabani,
-            tablename: 'OtoparkKapi',
+            tablename: 'OtoparkKapiGrup',
             keyfield: 'Id',
-            keyvalue: FFAppState().KapiId,
-          );
-          _model.apiResultAracTipleri = await SettingsGroup.getALLCall.call(
-            db: FFAppState().veritabani,
-            tablename: 'AracTipleri',
+            keyvalue: FFAppState().KapiGrupId,
           );
           if (SettingsGroup.getRowDataCall.successed(
-            (_model.apiResultKapi?.jsonBody ?? ''),
+            (_model.apiResultKapigrup?.jsonBody ?? ''),
           )) {
+            _model.apiResultKapi = await SettingsGroup.getRowDataCall.call(
+              db: FFAppState().veritabani,
+              tablename: 'OtoparkKapi',
+              keyfield: 'Id',
+              keyvalue: FFAppState().KapiId,
+            );
+            _model.apiResultAracTipleri = await SettingsGroup.getALLCall.call(
+              db: FFAppState().veritabani,
+              tablename: 'AracTipleri',
+            );
+            if (SettingsGroup.getRowDataCall.successed(
+              (_model.apiResultKapi?.jsonBody ?? ''),
+            )) {
+              setState(() {
+                FFAppState().Otopark = SettingsGroup.getRowDataCall.data(
+                  (_model.apiResultotopark?.jsonBody ?? ''),
+                );
+                FFAppState().KapiGrup = SettingsGroup.getRowDataCall.data(
+                  (_model.apiResultKapigrup?.jsonBody ?? ''),
+                );
+                FFAppState().Kapi = SettingsGroup.getRowDataCall.data(
+                  (_model.apiResultKapi?.jsonBody ?? ''),
+                );
+                FFAppState().AracTipleri = SettingsGroup.getALLCall
+                    .data(
+                      (_model.apiResultAracTipleri?.jsonBody ?? ''),
+                    )!
+                    .toList()
+                    .cast<dynamic>();
+              });
+            }
+            _model.resultYazicidurum = await actions.getYaziciDurum();
             setState(() {
-              FFAppState().Otopark = SettingsGroup.getRowDataCall.data(
-                (_model.apiResultotopark?.jsonBody ?? ''),
-              );
-              FFAppState().KapiGrup = SettingsGroup.getRowDataCall.data(
-                (_model.apiResultKapigrup?.jsonBody ?? ''),
-              );
-              FFAppState().Kapi = SettingsGroup.getRowDataCall.data(
-                (_model.apiResultKapi?.jsonBody ?? ''),
-              );
-              FFAppState().AracTipleri = SettingsGroup.getALLCall
-                  .data(
-                    (_model.apiResultAracTipleri?.jsonBody ?? ''),
-                  )!
-                  .toList()
-                  .cast<dynamic>();
+              FFAppState().yazicidurum = _model.resultYazicidurum!;
             });
+          } else {
+            await showDialog(
+              context: context,
+              builder: (alertDialogContext) {
+                return AlertDialog(
+                  title: Text('Hata'),
+                  content: Text('Otopark bölümleri yüklenemedi.'),
+                  actions: [
+                    TextButton(
+                      onPressed: () => Navigator.pop(alertDialogContext),
+                      child: Text('Ok'),
+                    ),
+                  ],
+                );
+              },
+            );
           }
-          _model.resultYazicidurum = await actions.getYaziciDurum();
-          setState(() {
-            FFAppState().yazicidurum = _model.resultYazicidurum!;
-          });
         } else {
           await showDialog(
             context: context,
             builder: (alertDialogContext) {
               return AlertDialog(
                 title: Text('Hata'),
-                content: Text('Otopark bölümleri yüklenemedi.'),
+                content: Text('Otopark bilgisi yüklenemedi.'),
                 actions: [
                   TextButton(
                     onPressed: () => Navigator.pop(alertDialogContext),
@@ -101,21 +119,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
           );
         }
       } else {
-        await showDialog(
-          context: context,
-          builder: (alertDialogContext) {
-            return AlertDialog(
-              title: Text('Hata'),
-              content: Text('Otopark bilgisi yüklenemedi.'),
-              actions: [
-                TextButton(
-                  onPressed: () => Navigator.pop(alertDialogContext),
-                  child: Text('Ok'),
-                ),
-              ],
-            );
-          },
-        );
+        context.pushNamed('Settings');
       }
     });
 
@@ -292,7 +296,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                       ),
                       Container(
                         width: MediaQuery.sizeOf(context).width * 1.0,
-                        height: 138.0,
+                        height: 144.0,
                         decoration: BoxDecoration(
                           color: Colors.white,
                         ),
@@ -301,7 +305,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                               5.0, 5.0, 5.0, 5.0),
                           child: Container(
                             width: 100.0,
-                            height: 100.0,
+                            height: 102.0,
                             decoration: BoxDecoration(
                               color: FlutterFlowTheme.of(context).info,
                               borderRadius: BorderRadius.circular(0.0),
@@ -420,12 +424,11 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                           .secondaryBackground,
                                     ),
                                     child: FutureBuilder<ApiCallResponse>(
-                                      future:
-                                          SettingsGroup.getFilterDataCall.call(
+                                      future: SettingsGroup.getRowDataCall.call(
                                         db: FFAppState().veritabani,
                                         tablename: 'OtoparkGrupDurum',
-                                        filtre:
-                                            'GrupId=${FFAppState().KapiGrupId}',
+                                        keyfield: 'GrupId',
+                                        keyvalue: FFAppState().KapiGrupId,
                                       ),
                                       builder: (context, snapshot) {
                                         // Customize what your widget looks like when it's loading.
@@ -442,7 +445,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                             ),
                                           );
                                         }
-                                        final gridViewGetFilterDataResponse =
+                                        final gridViewGetRowDataResponse =
                                             snapshot.data!;
                                         return GridView(
                                           padding: EdgeInsets.zero,
@@ -481,7 +484,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                   ),
                                                   Text(
                                                     getJsonField(
-                                                      gridViewGetFilterDataResponse
+                                                      gridViewGetRowDataResponse
                                                           .jsonBody,
                                                       r'''$.data.Dolu''',
                                                     ).toString(),
@@ -519,7 +522,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                   ),
                                                   Text(
                                                     getJsonField(
-                                                      gridViewGetFilterDataResponse
+                                                      gridViewGetRowDataResponse
                                                           .jsonBody,
                                                       r'''$.data.Bos''',
                                                     ).toString(),

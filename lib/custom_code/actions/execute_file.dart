@@ -8,12 +8,20 @@ import 'package:flutter/material.dart';
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
 import 'package:open_filex/open_filex.dart';
-
+import 'dart:io';
+import 'package:flutter/services.dart';
 import 'package:path_provider/path_provider.dart';
 
 Future<String> executeFile(String apkUrl) async {
   try {
     OpenFilex.open(apkUrl);
+
+    if (Platform.isAndroid) {
+      SystemNavigator.pop();
+    } else if (Platform.isIOS) {
+      exit(0);
+    }
+
     return 'APK installed successfully at $apkUrl';
   } catch (e) {
     return 'Error installing APK: $e';

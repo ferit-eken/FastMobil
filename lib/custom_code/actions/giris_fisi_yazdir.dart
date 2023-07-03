@@ -97,7 +97,7 @@ Future<String> girisFisiYazdir(
 
     bluetooth.printCustom("------------------------", 2, 1,
         charset: "ISO-8859-9");
-    bluetooth.printCustom("www.fastpark.com.tr", 1, 1, charset: "ISO-8859-9");
+    // bluetooth.printCustom("www.fastpark.com.tr", 1, 1, charset: "ISO-8859-9");
 
     bluetooth.printNewLine();
     bluetooth.printNewLine();

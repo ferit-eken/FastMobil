@@ -261,7 +261,7 @@ class _AboutWidgetState extends State<AboutWidget>
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   5.0, 0.0, 0.0, 0.0),
                               child: Text(
-                                'Versiyon 1.0',
+                                'Versiyon 1.01',
                                 style: FlutterFlowTheme.of(context).bodyMedium,
                               ),
                             ),
@@ -327,14 +327,14 @@ class _AboutWidgetState extends State<AboutWidget>
                                                         Navigator.pop(
                                                             alertDialogContext,
                                                             false),
-                                                    child: Text('Cancel'),
+                                                    child: Text('İptal'),
                                                   ),
                                                   TextButton(
                                                     onPressed: () =>
                                                         Navigator.pop(
                                                             alertDialogContext,
                                                             true),
-                                                    child: Text('Confirm'),
+                                                    child: Text('Güncelle'),
                                                   ),
                                                 ],
                                               );

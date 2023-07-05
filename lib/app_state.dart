@@ -342,6 +342,31 @@ class FFAppState extends ChangeNotifier {
     _defprinterindex = _value;
     prefs.setInt('ff_defprinterindex', _value);
   }
+
+  List<dynamic> _PrinterList = [];
+  List<dynamic> get PrinterList => _PrinterList;
+  set PrinterList(List<dynamic> _value) {
+    _PrinterList = _value;
+  }
+
+  void addToPrinterList(dynamic _value) {
+    _PrinterList.add(_value);
+  }
+
+  void removeFromPrinterList(dynamic _value) {
+    _PrinterList.remove(_value);
+  }
+
+  void removeAtIndexFromPrinterList(int _index) {
+    _PrinterList.removeAt(_index);
+  }
+
+  void updatePrinterListAtIndex(
+    int _index,
+    dynamic Function(dynamic) updateFn,
+  ) {
+    _PrinterList[_index] = updateFn(_PrinterList[_index]);
+  }
 }
 
 LatLng? _latLngFromString(String? val) {

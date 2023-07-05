@@ -202,7 +202,15 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                   hoverColor: Colors.transparent,
                   highlightColor: Colors.transparent,
                   onTap: () async {
+                    _model.resultyaziciliste = await actions.getYaziciListe();
+                    setState(() {
+                      FFAppState().PrinterList =
+                          _model.resultyaziciliste!.toList().cast<dynamic>();
+                    });
+
                     context.pushNamed('PrinterList');
+
+                    setState(() {});
                   },
                   child: Icon(
                     Icons.print_sharp,
@@ -225,7 +233,15 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                   hoverColor: Colors.transparent,
                   highlightColor: Colors.transparent,
                   onTap: () async {
+                    _model.resultyaziciliste2 = await actions.getYaziciListe();
+                    setState(() {
+                      FFAppState().PrinterList =
+                          _model.resultyaziciliste2!.toList().cast<dynamic>();
+                    });
+
                     context.pushNamed('PrinterList');
+
+                    setState(() {});
                   },
                   child: Icon(
                     Icons.print_disabled,

@@ -11,7 +11,12 @@ import 'printer_list_model.dart';
 export 'printer_list_model.dart';
 
 class PrinterListWidget extends StatefulWidget {
-  const PrinterListWidget({Key? key}) : super(key: key);
+  const PrinterListWidget({
+    Key? key,
+    required this.yazicilar,
+  }) : super(key: key);
+
+  final List<dynamic>? yazicilar;
 
   @override
   _PrinterListWidgetState createState() => _PrinterListWidgetState();
@@ -83,8 +88,7 @@ class _PrinterListWidgetState extends State<PrinterListWidget>
                   padding: EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 8.0, 8.0),
                   child: Builder(
                     builder: (context) {
-                      final liste =
-                          FFAppState().PrinterList.map((e) => e).toList();
+                      final liste = widget.yazicilar!.map((e) => e).toList();
                       return ListView.builder(
                         padding: EdgeInsets.zero,
                         scrollDirection: Axis.vertical,

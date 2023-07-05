@@ -1770,7 +1770,8 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                                                                       ?.jsonBody ??
                                                                   ''),
                                                             )) {
-                                                              context.safePop();
+                                                              context.goNamed(
+                                                                  'HomePage');
                                                             } else {
                                                               await showDialog(
                                                                 context:

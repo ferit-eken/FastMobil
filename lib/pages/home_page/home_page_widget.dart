@@ -203,14 +203,17 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                   highlightColor: Colors.transparent,
                   onTap: () async {
                     _model.resultyaziciliste = await actions.getYaziciListe();
-                    setState(() {
-                      FFAppState().PrinterList = _model.resultyaziciliste!
-                          .take(3)
-                          .toList()
-                          .cast<dynamic>();
-                    });
 
-                    context.pushNamed('PrinterList');
+                    context.pushNamed(
+                      'PrinterList',
+                      queryParameters: {
+                        'yazicilar': serializeParam(
+                          _model.resultyaziciliste,
+                          ParamType.JSON,
+                          true,
+                        ),
+                      }.withoutNulls,
+                    );
 
                     setState(() {});
                   },
@@ -236,14 +239,17 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                   highlightColor: Colors.transparent,
                   onTap: () async {
                     _model.resultyaziciliste2 = await actions.getYaziciListe();
-                    setState(() {
-                      FFAppState().PrinterList = _model.resultyaziciliste2!
-                          .take(5)
-                          .toList()
-                          .cast<dynamic>();
-                    });
 
-                    context.pushNamed('PrinterList');
+                    context.pushNamed(
+                      'PrinterList',
+                      queryParameters: {
+                        'yazicilar': serializeParam(
+                          _model.resultyaziciliste2,
+                          ParamType.JSON,
+                          true,
+                        ),
+                      }.withoutNulls,
+                    );
 
                     setState(() {});
                   },

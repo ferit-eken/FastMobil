@@ -13,6 +13,8 @@ class HomePageModel extends FlutterFlowModel {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
+  // Stores action output result for [Custom Action - getYaziciDurum] action in HomePage widget.
+  bool? resultYaziciDurumu;
   // Stores action output result for [Backend Call - API (GetRowData)] action in HomePage widget.
   ApiCallResponse? apiResultotopark;
   // Stores action output result for [Backend Call - API (GetRowData)] action in HomePage widget.
@@ -21,8 +23,6 @@ class HomePageModel extends FlutterFlowModel {
   ApiCallResponse? apiResultKapi;
   // Stores action output result for [Backend Call - API (GetALL)] action in HomePage widget.
   ApiCallResponse? apiResultAracTipleri;
-  // Stores action output result for [Custom Action - getYaziciDurum] action in HomePage widget.
-  bool? resultYazicidurum;
   // Stores action output result for [Custom Action - getYaziciListe] action in prn_connected widget.
   List<dynamic>? resultyazicilisteCopy;
   // Stores action output result for [Custom Action - getYaziciListe] action in prn_disconnected widget.

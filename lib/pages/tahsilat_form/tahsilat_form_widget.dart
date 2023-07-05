@@ -178,7 +178,7 @@ class _TahsilatFormWidgetState extends State<TahsilatFormWidget> {
                   borderRadius: BorderRadius.circular(8.0),
                 ),
               ),
-              style: FlutterFlowTheme.of(context).bodyMedium,
+              style: FlutterFlowTheme.of(context).titleLarge,
               keyboardType:
                   const TextInputType.numberWithOptions(decimal: true),
               validator:

@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/custom_code/actions/index.dart' as actions;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -260,7 +261,7 @@ class _AboutWidgetState extends State<AboutWidget>
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   5.0, 0.0, 0.0, 0.0),
                               child: Text(
-                                'Versiyon 1.0',
+                                'Versiyon 1.01',
                                 style: FlutterFlowTheme.of(context).bodyMedium,
                               ),
                             ),
@@ -326,14 +327,14 @@ class _AboutWidgetState extends State<AboutWidget>
                                                         Navigator.pop(
                                                             alertDialogContext,
                                                             false),
-                                                    child: Text('Cancel'),
+                                                    child: Text('İptal'),
                                                   ),
                                                   TextButton(
                                                     onPressed: () =>
                                                         Navigator.pop(
                                                             alertDialogContext,
                                                             true),
-                                                    child: Text('Confirm'),
+                                                    child: Text('Güncelle'),
                                                   ),
                                                 ],
                                               );
@@ -341,9 +342,21 @@ class _AboutWidgetState extends State<AboutWidget>
                                           ) ??
                                           false;
                                   if (confirmDialogResponse) {
-                                    await launchURL(
-                                        'http://mobil.fastpark.com.tr/update/fastpark.apk');
+                                    _model.resdownload =
+                                        await actions.downloadFileMng(
+                                      'http://mobil.fastpark.com.tr/update',
+                                      'Fastpark.zip',
+                                      '/storage/emulated/0/Download',
+                                    );
+                                    if (_model.resdownload != 'ERROR') {
+                                      _model.resinstall =
+                                          await actions.executeFile(
+                                        _model.resdownload!,
+                                      );
+                                    }
                                   }
+
+                                  setState(() {});
                                 },
                                 text: 'Güncelleme Kontrolü',
                                 options: FFButtonOptions(

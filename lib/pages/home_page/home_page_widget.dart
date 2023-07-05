@@ -31,6 +31,13 @@ class _HomePageWidgetState extends State<HomePageWidget> {
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       if (FFAppState().KapiId != null && FFAppState().KapiId != '') {
+        _model.resultYaziciDurumu = await actions.getYaziciDurum();
+        setState(() {
+          FFAppState().yazicidurum = valueOrDefault<bool>(
+            _model.resultYaziciDurumu,
+            false,
+          );
+        });
         _model.apiResultotopark = await SettingsGroup.getRowDataCall.call(
           db: FFAppState().veritabani,
           tablename: 'Otopark',
@@ -80,10 +87,6 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                     .cast<dynamic>();
               });
             }
-            _model.resultYazicidurum = await actions.getYaziciDurum();
-            setState(() {
-              FFAppState().yazicidurum = _model.resultYazicidurum!;
-            });
           } else {
             await showDialog(
               context: context,
@@ -190,10 +193,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
           ),
           actions: [
             Visibility(
-              visible: valueOrDefault<bool>(
-                _model.resultYazicidurum,
-                false,
-              ),
+              visible: FFAppState().yazicidurum,
               child: Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
                 child: InkWell(
@@ -228,7 +228,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
             ),
             Visibility(
               visible: !valueOrDefault<bool>(
-                _model.resultYazicidurum,
+                FFAppState().yazicidurum,
                 false,
               ),
               child: Padding(
@@ -415,7 +415,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 4.0, 0.0, 4.0),
+                                      0.0, 4.0, 4.0, 4.0),
                                   child: Container(
                                     width: 62.0,
                                     height: double.infinity,

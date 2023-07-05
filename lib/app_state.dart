@@ -69,6 +69,9 @@ class FFAppState extends ChangeNotifier {
     _safeInit(() {
       _para7 = prefs.getInt('ff_para7') ?? _para7;
     });
+    _safeInit(() {
+      _defprinterindex = prefs.getInt('ff_defprinterindex') ?? _defprinterindex;
+    });
   }
 
   void update(VoidCallback callback) {
@@ -331,6 +334,13 @@ class FFAppState extends ChangeNotifier {
   set para7(int _value) {
     _para7 = _value;
     prefs.setInt('ff_para7', _value);
+  }
+
+  int _defprinterindex = 0;
+  int get defprinterindex => _defprinterindex;
+  set defprinterindex(int _value) {
+    _defprinterindex = _value;
+    prefs.setInt('ff_defprinterindex', _value);
   }
 }
 

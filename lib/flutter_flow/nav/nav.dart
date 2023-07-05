@@ -210,10 +210,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'PrinterList',
           path: '/printerList',
-          builder: (context, params) => PrinterListWidget(
-            yaziciListe:
-                params.getParam<dynamic>('yaziciListe', ParamType.JSON, true),
-          ),
+          builder: (context, params) => PrinterListWidget(),
         ),
         FFRoute(
           name: 'AboneDetay',

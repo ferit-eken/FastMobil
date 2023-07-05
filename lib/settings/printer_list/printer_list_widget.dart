@@ -2,6 +2,7 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/custom_code/actions/index.dart' as actions;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -11,12 +12,7 @@ import 'printer_list_model.dart';
 export 'printer_list_model.dart';
 
 class PrinterListWidget extends StatefulWidget {
-  const PrinterListWidget({
-    Key? key,
-    this.yaziciListe,
-  }) : super(key: key);
-
-  final List<dynamic>? yaziciListe;
+  const PrinterListWidget({Key? key}) : super(key: key);
 
   @override
   _PrinterListWidgetState createState() => _PrinterListWidgetState();
@@ -32,6 +28,11 @@ class _PrinterListWidgetState extends State<PrinterListWidget>
   void initState() {
     super.initState();
     _model = createModel(context, () => PrinterListModel());
+
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      _model.resultyazicilist = await actions.getYaziciListe();
+    });
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
@@ -88,7 +89,7 @@ class _PrinterListWidgetState extends State<PrinterListWidget>
                   padding: EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 8.0, 0.0),
                   child: Builder(
                     builder: (context) {
-                      final liste = widget.yaziciListe?.toList() ?? [];
+                      final liste = _model.resultyazicilist?.toList() ?? [];
                       return ListView.builder(
                         padding: EdgeInsets.zero,
                         scrollDirection: Axis.vertical,

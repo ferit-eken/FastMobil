@@ -202,21 +202,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                   hoverColor: Colors.transparent,
                   highlightColor: Colors.transparent,
                   onTap: () async {
-                    _model.resultyazicilisteCopy =
-                        await actions.getYaziciListe();
-
-                    context.pushNamed(
-                      'PrinterList',
-                      queryParameters: {
-                        'yaziciListe': serializeParam(
-                          _model.resultyaziciliste,
-                          ParamType.JSON,
-                          true,
-                        ),
-                      }.withoutNulls,
-                    );
-
-                    setState(() {});
+                    context.pushNamed('PrinterList');
                   },
                   child: Icon(
                     Icons.print_sharp,
@@ -239,20 +225,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                   hoverColor: Colors.transparent,
                   highlightColor: Colors.transparent,
                   onTap: () async {
-                    _model.resultyaziciliste = await actions.getYaziciListe();
-
-                    context.pushNamed(
-                      'PrinterList',
-                      queryParameters: {
-                        'yaziciListe': serializeParam(
-                          _model.resultyaziciliste,
-                          ParamType.JSON,
-                          true,
-                        ),
-                      }.withoutNulls,
-                    );
-
-                    setState(() {});
+                    context.pushNamed('PrinterList');
                   },
                   child: Icon(
                     Icons.print_disabled,

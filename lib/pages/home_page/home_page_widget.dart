@@ -204,8 +204,10 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                   onTap: () async {
                     _model.resultyaziciliste = await actions.getYaziciListe();
                     setState(() {
-                      FFAppState().PrinterList =
-                          _model.resultyaziciliste!.toList().cast<dynamic>();
+                      FFAppState().PrinterList = _model.resultyaziciliste!
+                          .take(3)
+                          .toList()
+                          .cast<dynamic>();
                     });
 
                     context.pushNamed('PrinterList');
@@ -235,8 +237,10 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                   onTap: () async {
                     _model.resultyaziciliste2 = await actions.getYaziciListe();
                     setState(() {
-                      FFAppState().PrinterList =
-                          _model.resultyaziciliste2!.toList().cast<dynamic>();
+                      FFAppState().PrinterList = _model.resultyaziciliste2!
+                          .take(5)
+                          .toList()
+                          .cast<dynamic>();
                     });
 
                     context.pushNamed('PrinterList');

@@ -34,5 +34,9 @@ Future<bool?> getYaziciDurum() async {
     }
   }
 
+  if (isConnected == null) {
+    isConnected = false;
+  }
+
   return isConnected;
 }

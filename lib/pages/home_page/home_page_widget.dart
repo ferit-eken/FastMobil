@@ -196,32 +196,10 @@ class _HomePageWidgetState extends State<HomePageWidget> {
               visible: FFAppState().yazicidurum,
               child: Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
-                child: InkWell(
-                  splashColor: Colors.transparent,
-                  focusColor: Colors.transparent,
-                  hoverColor: Colors.transparent,
-                  highlightColor: Colors.transparent,
-                  onTap: () async {
-                    _model.resultyaziciliste = await actions.getYaziciListe();
-
-                    context.pushNamed(
-                      'PrinterList',
-                      queryParameters: {
-                        'yazicilar': serializeParam(
-                          _model.resultyaziciliste,
-                          ParamType.JSON,
-                          true,
-                        ),
-                      }.withoutNulls,
-                    );
-
-                    setState(() {});
-                  },
-                  child: Icon(
-                    Icons.print_sharp,
-                    color: Color(0xFF275F08),
-                    size: 32.0,
-                  ),
+                child: Icon(
+                  Icons.print_sharp,
+                  color: Color(0xFF275F08),
+                  size: 32.0,
                 ),
               ),
             ),
@@ -232,32 +210,10 @@ class _HomePageWidgetState extends State<HomePageWidget> {
               ),
               child: Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
-                child: InkWell(
-                  splashColor: Colors.transparent,
-                  focusColor: Colors.transparent,
-                  hoverColor: Colors.transparent,
-                  highlightColor: Colors.transparent,
-                  onTap: () async {
-                    _model.resultyaziciliste2 = await actions.getYaziciListe();
-
-                    context.pushNamed(
-                      'PrinterList',
-                      queryParameters: {
-                        'yazicilar': serializeParam(
-                          _model.resultyaziciliste2,
-                          ParamType.JSON,
-                          true,
-                        ),
-                      }.withoutNulls,
-                    );
-
-                    setState(() {});
-                  },
-                  child: Icon(
-                    Icons.print_disabled,
-                    color: Color(0xDBEB1313),
-                    size: 32.0,
-                  ),
+                child: Icon(
+                  Icons.print_disabled,
+                  color: Color(0xDBEB1313),
+                  size: 32.0,
                 ),
               ),
             ),
@@ -366,6 +322,13 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                 FFAppState().Otopark,
                                                 r'''$.OtoparkAdi''',
                                               ).toString(),
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium,
+                                            ),
+                                            Text(
+                                              _model.resultYaziciDurumu!
+                                                  .toString(),
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium,

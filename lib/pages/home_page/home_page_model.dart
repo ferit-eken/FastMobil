@@ -23,10 +23,6 @@ class HomePageModel extends FlutterFlowModel {
   ApiCallResponse? apiResultKapi;
   // Stores action output result for [Backend Call - API (GetALL)] action in HomePage widget.
   ApiCallResponse? apiResultAracTipleri;
-  // Stores action output result for [Custom Action - getYaziciListe] action in prn_connected widget.
-  List<dynamic>? resultyaziciliste;
-  // Stores action output result for [Custom Action - getYaziciListe] action in prn_disconnected widget.
-  List<dynamic>? resultyaziciliste2;
 
   /// Initialization and disposal methods.
 

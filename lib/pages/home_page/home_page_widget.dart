@@ -32,6 +32,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       if (FFAppState().KapiId != null && FFAppState().KapiId != '') {
         _model.resyazicidurum = await actions.getYaziciDurum();
+        setState(() {
+          FFAppState().yazicidurum = _model.resyazicidurum!;
+        });
         _model.apiResultotopark = await SettingsGroup.getRowDataCall.call(
           db: FFAppState().veritabani,
           tablename: 'Otopark',
@@ -187,7 +190,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
           ),
           actions: [
             Visibility(
-              visible: _model.resyazicidurum ?? true,
+              visible: FFAppState().yazicidurum,
               child: Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
                 child: Icon(
@@ -198,7 +201,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
               ),
             ),
             Visibility(
-              visible: !_model.resyazicidurum!,
+              visible: !FFAppState().yazicidurum,
               child: Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
                 child: Icon(

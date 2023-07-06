@@ -67,6 +67,13 @@ class _LoginWidgetState extends State<LoginWidget>
     super.initState();
     _model = createModel(context, () => LoginModel());
 
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      setState(() {
+        FFAppState().yazicidurum = false;
+      });
+    });
+
     _model.txtFirmakoduController ??= TextEditingController();
     _model.txtUsernameController ??= TextEditingController();
     _model.txtPasswordController ??= TextEditingController();

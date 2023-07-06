@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/settings/menus/sol_menu/sol_menu_widget.dart';
+import '/custom_code/actions/index.dart' as actions;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -30,6 +31,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       if (FFAppState().KapiId != null && FFAppState().KapiId != '') {
+        _model.resyazicidurum = await actions.getYaziciDurum();
         _model.apiResultotopark = await SettingsGroup.getRowDataCall.call(
           db: FFAppState().veritabani,
           tablename: 'Otopark',
@@ -185,7 +187,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
           ),
           actions: [
             Visibility(
-              visible: FFAppState().yazicidurum,
+              visible: _model.resyazicidurum ?? true,
               child: Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
                 child: Icon(
@@ -196,10 +198,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
               ),
             ),
             Visibility(
-              visible: !valueOrDefault<bool>(
-                FFAppState().yazicidurum,
-                false,
-              ),
+              visible: !_model.resyazicidurum!,
               child: Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
                 child: Icon(

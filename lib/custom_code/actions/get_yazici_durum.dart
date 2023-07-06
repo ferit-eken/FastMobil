@@ -38,5 +38,7 @@ Future<bool?> getYaziciDurum() async {
     isConnected = false;
   }
 
+  bluetooth.disconnect();
+
   return isConnected;
 }

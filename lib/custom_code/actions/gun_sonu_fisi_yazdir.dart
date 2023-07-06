@@ -142,6 +142,7 @@ Future<String> gunSonuFisiYazdir(
     // bluetooth.printNewLine();
     // bluetooth.printNewLine();
     //bluetooth.paperCut();
+    bluetooth.disconnect();
 
     return "FIS YAZDIRILDI";
   }

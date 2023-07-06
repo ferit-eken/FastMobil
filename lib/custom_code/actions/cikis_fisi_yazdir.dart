@@ -132,6 +132,7 @@ Future<String> cikisFisiYazdir(
     bluetooth.printNewLine();
     bluetooth.printNewLine();
     bluetooth.printNewLine();
+    bluetooth.disconnect();
 
     return "FIS YAZDIRILDI";
   }

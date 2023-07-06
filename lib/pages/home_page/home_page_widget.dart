@@ -188,30 +188,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                   fontSize: 22.0,
                 ),
           ),
-          actions: [
-            Visibility(
-              visible: FFAppState().yazicidurum,
-              child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
-                child: Icon(
-                  Icons.print_sharp,
-                  color: Color(0xFF275F08),
-                  size: 32.0,
-                ),
-              ),
-            ),
-            Visibility(
-              visible: !FFAppState().yazicidurum,
-              child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
-                child: Icon(
-                  Icons.print_disabled,
-                  color: Color(0xDBEB1313),
-                  size: 32.0,
-                ),
-              ),
-            ),
-          ],
+          actions: [],
           centerTitle: true,
           elevation: 2.0,
         ),
@@ -364,6 +341,55 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryText,
                                                 size: 24.0,
+                                              ),
+                                              Container(
+                                                width: 100.0,
+                                                height: 100.0,
+                                                decoration: BoxDecoration(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondaryBackground,
+                                                ),
+                                                child: Row(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  children: [
+                                                    if (FFAppState()
+                                                        .yazicidurum)
+                                                      Padding(
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    0.0,
+                                                                    0.0,
+                                                                    10.0,
+                                                                    0.0),
+                                                        child: Icon(
+                                                          Icons.print_sharp,
+                                                          color:
+                                                              Color(0xFF275F08),
+                                                          size: 32.0,
+                                                        ),
+                                                      ),
+                                                    if (!FFAppState()
+                                                        .yazicidurum)
+                                                      Padding(
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    0.0,
+                                                                    0.0,
+                                                                    10.0,
+                                                                    0.0),
+                                                        child: Icon(
+                                                          Icons.print_disabled,
+                                                          color:
+                                                              Color(0xDBEB1313),
+                                                          size: 32.0,
+                                                        ),
+                                                      ),
+                                                  ],
+                                                ),
                                               ),
                                             ],
                                           ),

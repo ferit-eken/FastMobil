@@ -36,9 +36,8 @@ Future<String> gunSonuFisiYazdir(
 
   // Connect to bluetooth printer
   bool? isConnected = await bluetooth.isConnected;
-  var connected = isConnected;
 
-  if (connected == false) {
+  if (isConnected == false) {
     List<BluetoothDevice> devices = [];
     try {
       devices = await bluetooth.getBondedDevices();
@@ -54,7 +53,7 @@ Future<String> gunSonuFisiYazdir(
     }
   }
 
-  if (connected == true) {
+  if (isConnected == true) {
     ByteData bytesAsset = await rootBundle.load("assets/images/firmalogo.png");
     Uint8List imageBytesFromAsset = bytesAsset.buffer
         .asUint8List(bytesAsset.offsetInBytes, bytesAsset.lengthInBytes);

@@ -72,6 +72,9 @@ class FFAppState extends ChangeNotifier {
     _safeInit(() {
       _defprinterindex = prefs.getInt('ff_defprinterindex') ?? _defprinterindex;
     });
+    _safeInit(() {
+      _yaziciAktif = prefs.getBool('ff_yaziciAktif') ?? _yaziciAktif;
+    });
   }
 
   void update(VoidCallback callback) {
@@ -366,6 +369,13 @@ class FFAppState extends ChangeNotifier {
     dynamic Function(dynamic) updateFn,
   ) {
     _PrinterList[_index] = updateFn(_PrinterList[_index]);
+  }
+
+  bool _yaziciAktif = false;
+  bool get yaziciAktif => _yaziciAktif;
+  set yaziciAktif(bool _value) {
+    _yaziciAktif = _value;
+    prefs.setBool('ff_yaziciAktif', _value);
   }
 }
 

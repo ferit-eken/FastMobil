@@ -461,6 +461,47 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                               ],
                             ),
                           ),
+                          Theme(
+                            data: ThemeData(
+                              checkboxTheme: CheckboxThemeData(
+                                visualDensity: VisualDensity.compact,
+                                materialTapTargetSize:
+                                    MaterialTapTargetSize.shrinkWrap,
+                              ),
+                              unselectedWidgetColor:
+                                  FlutterFlowTheme.of(context).secondaryText,
+                            ),
+                            child: CheckboxListTile(
+                              value: _model.chYazicidurumValue ??= true,
+                              onChanged: (newValue) async {
+                                setState(() =>
+                                    _model.chYazicidurumValue = newValue!);
+                                if (newValue!) {
+                                  setState(() {
+                                    FFAppState().yaziciAktif = true;
+                                  });
+                                } else {
+                                  setState(() {
+                                    FFAppState().yaziciAktif = false;
+                                  });
+                                }
+                              },
+                              title: Text(
+                                'Fis Yazıcı aktif',
+                                style: FlutterFlowTheme.of(context).labelLarge,
+                              ),
+                              subtitle: Text(
+                                'Pasif olduğunda fiş yazdırılamayacaktır',
+                                style: FlutterFlowTheme.of(context).labelMedium,
+                              ),
+                              tileColor: FlutterFlowTheme.of(context)
+                                  .secondaryBackground,
+                              activeColor: FlutterFlowTheme.of(context).primary,
+                              checkColor: FlutterFlowTheme.of(context).info,
+                              dense: false,
+                              controlAffinity: ListTileControlAffinity.trailing,
+                            ),
+                          ),
                         ],
                       ),
                     ),

@@ -27,6 +27,8 @@ class SettingsModel extends FlutterFlowModel {
   // State field(s) for txt_aractipi widget.
   String? txtAractipiValue;
   FormFieldController<String>? txtAractipiValueController;
+  // State field(s) for ch_yazicidurum widget.
+  bool? chYazicidurumValue;
 
   /// Initialization and disposal methods.
 

@@ -600,6 +600,54 @@ class _SolMenuWidgetState extends State<SolMenuWidget> {
                           ),
                         ),
                       ),
+                      Container(
+                        width: 100.0,
+                        height: 100.0,
+                        decoration: BoxDecoration(
+                          color:
+                              FlutterFlowTheme.of(context).secondaryBackground,
+                          borderRadius: BorderRadius.circular(5.0),
+                          border: Border.all(
+                            width: 2.0,
+                          ),
+                        ),
+                        child: Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              3.0, 3.0, 3.0, 3.0),
+                          child: InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              context.pushNamed('login');
+
+                              setState(() {
+                                FFAppState().UserInfo = null;
+                                FFAppState().veritabani = '';
+                                FFAppState().UserId = 0;
+                              });
+                            },
+                            child: Column(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Icon(
+                                  Icons.login,
+                                  color: Color(0xFFD7250C),
+                                  size: 32.0,
+                                ),
+                                Text(
+                                  'Çıkış',
+                                  textAlign: TextAlign.center,
+                                  style:
+                                      FlutterFlowTheme.of(context).bodyMedium,
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
                     ],
                   ),
                 ),

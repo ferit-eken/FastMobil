@@ -8,6 +8,7 @@ import '/settings/menus/hasar_formu/hasar_formu_widget.dart';
 import '/custom_code/actions/index.dart' as actions;
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
@@ -15,6 +16,8 @@ class CikisBilgiModel extends FlutterFlowModel {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
+  // Stores action output result for [Custom Action - getYaziciDurum] action in CikisBilgi widget.
+  bool? resYazicidurum;
   // Stores action output result for [Bottom Sheet - TahsilatForm] action in Column widget.
   double? resulttahsilatform;
   // Stores action output result for [Backend Call - API (Tahsilat)] action in Column widget.

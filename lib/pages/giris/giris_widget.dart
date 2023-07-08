@@ -10,6 +10,7 @@ import '/pages/keyboard/keyboard_widget.dart';
 import '/pages/konum_secim/konum_secim_widget.dart';
 import '/custom_code/actions/index.dart' as actions;
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'giris_model.dart';
@@ -31,6 +32,11 @@ class _GirisWidgetState extends State<GirisWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => GirisModel());
+
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      _model.resYazicidurum = await actions.getYaziciDurum();
+    });
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
@@ -76,7 +82,44 @@ class _GirisWidgetState extends State<GirisWidget> {
                   fontSize: 22.0,
                 ),
           ),
-          actions: [],
+          actions: [
+            Container(
+              width: 100.0,
+              height: 100.0,
+              decoration: BoxDecoration(
+                color: FlutterFlowTheme.of(context).alternate,
+              ),
+              child: Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
+                child: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    if (_model.resYazicidurum == true)
+                      Padding(
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
+                        child: Icon(
+                          Icons.print_sharp,
+                          color: Color(0xFF275F08),
+                          size: 32.0,
+                        ),
+                      ),
+                    if (_model.resYazicidurum == false)
+                      Padding(
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
+                        child: Icon(
+                          Icons.print_disabled,
+                          color: Color(0xDBEB1313),
+                          size: 32.0,
+                        ),
+                      ),
+                  ],
+                ),
+              ),
+            ),
+          ],
           centerTitle: true,
           elevation: 2.0,
         ),
@@ -1282,7 +1325,7 @@ class _GirisWidgetState extends State<GirisWidget> {
                                   if (PtsGroup.aracGirisCall.succeeded(
                                     (_model.apiResultork?.jsonBody ?? ''),
                                   )) {
-                                    if (FFAppState().yazicidurum) {
+                                    if (FFAppState().yaziciAktif) {
                                       _model.resultprint =
                                           await actions.girisFisiYazdir(
                                         valueOrDefault<String>(
@@ -1333,8 +1376,8 @@ class _GirisWidgetState extends State<GirisWidget> {
                                           builder: (alertDialogContext) {
                                             return AlertDialog(
                                               title: Text('Hata'),
-                                              content: Text(
-                                                  'Fiş Yazdırılamadı, ${_model.resultprint}'),
+                                              content:
+                                                  Text('${_model.resultprint}'),
                                               actions: [
                                                 TextButton(
                                                   onPressed: () =>

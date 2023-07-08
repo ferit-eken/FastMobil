@@ -8,6 +8,7 @@ import '/settings/menus/hasar_formu/hasar_formu_widget.dart';
 import '/custom_code/actions/index.dart' as actions;
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'cikis_bilgi_model.dart';
@@ -34,6 +35,11 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => CikisBilgiModel());
+
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      _model.resYazicidurum = await actions.getYaziciDurum();
+    });
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
@@ -79,7 +85,44 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                   fontSize: 22.0,
                 ),
           ),
-          actions: [],
+          actions: [
+            Container(
+              width: 100.0,
+              height: 100.0,
+              decoration: BoxDecoration(
+                color: FlutterFlowTheme.of(context).alternate,
+              ),
+              child: Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
+                child: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    if (_model.resYazicidurum == true)
+                      Padding(
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
+                        child: Icon(
+                          Icons.print_sharp,
+                          color: Color(0xFF275F08),
+                          size: 32.0,
+                        ),
+                      ),
+                    if (_model.resYazicidurum == false)
+                      Padding(
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
+                        child: Icon(
+                          Icons.print_disabled,
+                          color: Color(0xDBEB1313),
+                          size: 32.0,
+                        ),
+                      ),
+                  ],
+                ),
+              ),
+            ),
+          ],
           centerTitle: true,
           elevation: 2.0,
         ),
@@ -1838,7 +1881,7 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                                                         ),
                                                       ),
                                                       if (FFAppState()
-                                                              .yazicidurum ==
+                                                              .yaziciAktif ==
                                                           true)
                                                         Container(
                                                           width: 95.0,

@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/custom_code/actions/index.dart' as actions;
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'gun_sonu_rapor_model.dart';
@@ -27,6 +28,11 @@ class _GunSonuRaporWidgetState extends State<GunSonuRaporWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => GunSonuRaporModel());
+
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      _model.resYazicidurum = await actions.getYaziciDurum();
+    });
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
@@ -95,7 +101,45 @@ class _GunSonuRaporWidgetState extends State<GunSonuRaporWidget> {
                       fontSize: 22.0,
                     ),
               ),
-              actions: [],
+              actions: [
+                Container(
+                  width: 100.0,
+                  height: 100.0,
+                  decoration: BoxDecoration(
+                    color: FlutterFlowTheme.of(context).alternate,
+                  ),
+                  child: Padding(
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        if (_model.resYazicidurum == true)
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 10.0, 0.0),
+                            child: Icon(
+                              Icons.print_sharp,
+                              color: Color(0xFF275F08),
+                              size: 32.0,
+                            ),
+                          ),
+                        if (_model.resYazicidurum == false)
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 10.0, 0.0),
+                            child: Icon(
+                              Icons.print_disabled,
+                              color: Color(0xDBEB1313),
+                              size: 32.0,
+                            ),
+                          ),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
               centerTitle: true,
               elevation: 2.0,
             ),
@@ -587,6 +631,27 @@ class _GunSonuRaporWidgetState extends State<GunSonuRaporWidget> {
                                         FFAppState().FisUstBilgi1,
                                         FFAppState().FisUstBilgi2,
                                       );
+                                      if (_model.resfisyazdir !=
+                                          'FIS YAZDIRILDI') {
+                                        await showDialog(
+                                          context: context,
+                                          builder: (alertDialogContext) {
+                                            return AlertDialog(
+                                              title: Text('Hata'),
+                                              content:
+                                                  Text(_model.resfisyazdir!),
+                                              actions: [
+                                                TextButton(
+                                                  onPressed: () =>
+                                                      Navigator.pop(
+                                                          alertDialogContext),
+                                                  child: Text('Ok'),
+                                                ),
+                                              ],
+                                            );
+                                          },
+                                        );
+                                      }
 
                                       setState(() {});
                                     },

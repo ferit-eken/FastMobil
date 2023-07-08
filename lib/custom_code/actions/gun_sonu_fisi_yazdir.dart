@@ -147,5 +147,5 @@ Future<String> gunSonuFisiYazdir(
     return "FIS YAZDIRILDI";
   }
 
-  return "FIS YAZDIRILAMADI";
+  return "Yazıcı bağlantı hatası";
 }

@@ -189,7 +189,7 @@ class _AboutWidgetState extends State<AboutWidget>
                   child: SingleChildScrollView(
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Hero(
                           tag: 'locationImage',
@@ -261,7 +261,7 @@ class _AboutWidgetState extends State<AboutWidget>
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   5.0, 0.0, 0.0, 0.0),
                               child: Text(
-                                'Versiyon 1.01',
+                                'Versiyon 1.03',
                                 style: FlutterFlowTheme.of(context).bodyMedium,
                               ),
                             ),
@@ -359,6 +359,116 @@ class _AboutWidgetState extends State<AboutWidget>
                                   setState(() {});
                                 },
                                 text: 'Güncelleme Kontrolü',
+                                options: FFButtonOptions(
+                                  height: 40.0,
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      24.0, 0.0, 24.0, 0.0),
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 0.0, 0.0),
+                                  color: Color(0xFFAC630F),
+                                  textStyle: FlutterFlowTheme.of(context)
+                                      .titleSmall
+                                      .override(
+                                        fontFamily: 'Readex Pro',
+                                        color: Colors.white,
+                                      ),
+                                  elevation: 3.0,
+                                  borderSide: BorderSide(
+                                    color: Colors.transparent,
+                                    width: 1.0,
+                                  ),
+                                  borderRadius: BorderRadius.circular(8.0),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 15.0, 0.0, 0.0),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              FFButtonWidget(
+                                onPressed: () async {
+                                  var confirmDialogResponse =
+                                      await showDialog<bool>(
+                                            context: context,
+                                            builder: (alertDialogContext) {
+                                              return AlertDialog(
+                                                title: Text('Güncelleme'),
+                                                content: Text(
+                                                    'Fişlerde kullanılmak için logonuz yüklenecek, emin misiniz?'),
+                                                actions: [
+                                                  TextButton(
+                                                    onPressed: () =>
+                                                        Navigator.pop(
+                                                            alertDialogContext,
+                                                            false),
+                                                    child: Text('İptal'),
+                                                  ),
+                                                  TextButton(
+                                                    onPressed: () =>
+                                                        Navigator.pop(
+                                                            alertDialogContext,
+                                                            true),
+                                                    child: Text('Güncelle'),
+                                                  ),
+                                                ],
+                                              );
+                                            },
+                                          ) ??
+                                          false;
+                                  if (confirmDialogResponse) {
+                                    _model.reslogodownload =
+                                        await actions.downloadLogoFile(
+                                      'http://mobil.fastpark.com.tr/update',
+                                      'Logo${FFAppState().girisFirmaKodu}.png',
+                                      '/storage/emulated/0/Download',
+                                    );
+                                    if (_model.reslogodownload != 'ERROR') {
+                                      await showDialog(
+                                        context: context,
+                                        builder: (alertDialogContext) {
+                                          return AlertDialog(
+                                            title: Text('Başarılı'),
+                                            content: Text(
+                                                'Logonuz başarı ile güncellendi.'),
+                                            actions: [
+                                              TextButton(
+                                                onPressed: () => Navigator.pop(
+                                                    alertDialogContext),
+                                                child: Text('Ok'),
+                                              ),
+                                            ],
+                                          );
+                                        },
+                                      );
+                                    } else {
+                                      await showDialog(
+                                        context: context,
+                                        builder: (alertDialogContext) {
+                                          return AlertDialog(
+                                            title: Text('Hata'),
+                                            content:
+                                                Text(_model.reslogodownload!),
+                                            actions: [
+                                              TextButton(
+                                                onPressed: () => Navigator.pop(
+                                                    alertDialogContext),
+                                                child: Text('Ok'),
+                                              ),
+                                            ],
+                                          );
+                                        },
+                                      );
+                                    }
+                                  }
+
+                                  setState(() {});
+                                },
+                                text: 'Logo Güncelle',
                                 options: FFButtonOptions(
                                   height: 40.0,
                                   padding: EdgeInsetsDirectional.fromSTEB(

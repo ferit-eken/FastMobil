@@ -31,10 +31,6 @@ class _HomePageWidgetState extends State<HomePageWidget> {
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       if (FFAppState().KapiId != null && FFAppState().KapiId != '') {
-        _model.resyazicidurum = await actions.getYaziciDurum();
-        setState(() {
-          FFAppState().yazicidurum = _model.resyazicidurum!;
-        });
         _model.apiResultotopark = await SettingsGroup.getRowDataCall.call(
           db: FFAppState().veritabani,
           tablename: 'Otopark',
@@ -63,27 +59,23 @@ class _HomePageWidgetState extends State<HomePageWidget> {
               db: FFAppState().veritabani,
               tablename: 'AracTipleri',
             );
-            if (SettingsGroup.getRowDataCall.successed(
-              (_model.apiResultKapi?.jsonBody ?? ''),
-            )) {
-              setState(() {
-                FFAppState().Otopark = SettingsGroup.getRowDataCall.data(
-                  (_model.apiResultotopark?.jsonBody ?? ''),
-                );
-                FFAppState().KapiGrup = SettingsGroup.getRowDataCall.data(
-                  (_model.apiResultKapigrup?.jsonBody ?? ''),
-                );
-                FFAppState().Kapi = SettingsGroup.getRowDataCall.data(
-                  (_model.apiResultKapi?.jsonBody ?? ''),
-                );
-                FFAppState().AracTipleri = SettingsGroup.getALLCall
-                    .data(
-                      (_model.apiResultAracTipleri?.jsonBody ?? ''),
-                    )!
-                    .toList()
-                    .cast<dynamic>();
-              });
-            }
+            setState(() {
+              FFAppState().Otopark = SettingsGroup.getRowDataCall.data(
+                (_model.apiResultotopark?.jsonBody ?? ''),
+              );
+              FFAppState().KapiGrup = SettingsGroup.getRowDataCall.data(
+                (_model.apiResultKapigrup?.jsonBody ?? ''),
+              );
+              FFAppState().Kapi = SettingsGroup.getRowDataCall.data(
+                (_model.apiResultKapi?.jsonBody ?? ''),
+              );
+              FFAppState().AracTipleri = SettingsGroup.getALLCall
+                  .data(
+                    (_model.apiResultAracTipleri?.jsonBody ?? ''),
+                  )!
+                  .toList()
+                  .cast<dynamic>();
+            });
           } else {
             await showDialog(
               context: context,
@@ -121,6 +113,11 @@ class _HomePageWidgetState extends State<HomePageWidget> {
       } else {
         context.pushNamed('Settings');
       }
+
+      _model.resyazicidurum = await actions.getYaziciDurum();
+      setState(() {
+        FFAppState().yazicidurum = _model.resyazicidurum!;
+      });
     });
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
@@ -380,9 +377,12 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                 height: 50.0,
                                                 child:
                                                     CircularProgressIndicator(
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primary,
+                                                  valueColor:
+                                                      AlwaysStoppedAnimation<
+                                                          Color>(
+                                                    FlutterFlowTheme.of(context)
+                                                        .primary,
+                                                  ),
                                                 ),
                                               ),
                                             );

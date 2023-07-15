@@ -1366,11 +1366,10 @@ class _GirisWidgetState extends State<GirisWidget> {
                                             )
                                             .toString(),
                                       );
-                                      if (_model.resultprint == 'FIS YAZDIRILDI'
+                                      if (!(_model.resultprint ==
+                                              'FIS YAZDIRILDI'
                                           ? true
-                                          : false) {
-                                        context.safePop();
-                                      } else {
+                                          : false)) {
                                         await showDialog(
                                           context: context,
                                           builder: (alertDialogContext) {
@@ -1390,7 +1389,6 @@ class _GirisWidgetState extends State<GirisWidget> {
                                           },
                                         );
                                       }
-
                                       context.safePop();
                                     } else {
                                       context.safePop();

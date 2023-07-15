@@ -19,6 +19,8 @@ class AboutModel extends FlutterFlowModel {
   String? resdownload;
   // Stores action output result for [Custom Action - executeFile] action in Button widget.
   String? resinstall;
+  // Stores action output result for [Custom Action - downloadLogoFile] action in Button widget.
+  String? reslogodownload;
 
   /// Initialization and disposal methods.
 

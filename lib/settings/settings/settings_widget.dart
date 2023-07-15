@@ -116,8 +116,11 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                         width: 50.0,
                                         height: 50.0,
                                         child: CircularProgressIndicator(
-                                          color: FlutterFlowTheme.of(context)
-                                              .primary,
+                                          valueColor:
+                                              AlwaysStoppedAnimation<Color>(
+                                            FlutterFlowTheme.of(context)
+                                                .primary,
+                                          ),
                                         ),
                                       ),
                                     );
@@ -129,10 +132,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                         _model.txtOtoparkValueController ??=
                                             FormFieldController<String>(
                                       _model.txtOtoparkValue ??=
-                                          valueOrDefault<String>(
-                                        FFAppState().OtoparkId,
-                                        '1',
-                                      ),
+                                          FFAppState().OtoparkId,
                                     ),
                                     options: (getJsonField(
                                       txtOtoparkGetALLResponse.jsonBody,
@@ -214,8 +214,11 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                           width: 50.0,
                                           height: 50.0,
                                           child: CircularProgressIndicator(
-                                            color: FlutterFlowTheme.of(context)
-                                                .primary,
+                                            valueColor:
+                                                AlwaysStoppedAnimation<Color>(
+                                              FlutterFlowTheme.of(context)
+                                                  .primary,
+                                            ),
                                           ),
                                         ),
                                       );
@@ -310,8 +313,11 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                           width: 50.0,
                                           height: 50.0,
                                           child: CircularProgressIndicator(
-                                            color: FlutterFlowTheme.of(context)
-                                                .primary,
+                                            valueColor:
+                                                AlwaysStoppedAnimation<Color>(
+                                              FlutterFlowTheme.of(context)
+                                                  .primary,
+                                            ),
                                           ),
                                         ),
                                       );
@@ -398,8 +404,11 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                           width: 50.0,
                                           height: 50.0,
                                           child: CircularProgressIndicator(
-                                            color: FlutterFlowTheme.of(context)
-                                                .primary,
+                                            valueColor:
+                                                AlwaysStoppedAnimation<Color>(
+                                              FlutterFlowTheme.of(context)
+                                                  .primary,
+                                            ),
                                           ),
                                         ),
                                       );
@@ -472,7 +481,8 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                   FlutterFlowTheme.of(context).secondaryText,
                             ),
                             child: CheckboxListTile(
-                              value: _model.chYazicidurumValue ??= true,
+                              value: _model.chYazicidurumValue ??=
+                                  FFAppState().yaziciAktif,
                               onChanged: (newValue) async {
                                 setState(() =>
                                     _model.chYazicidurumValue = newValue!);

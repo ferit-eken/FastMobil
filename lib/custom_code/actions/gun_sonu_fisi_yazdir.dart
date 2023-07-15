@@ -7,6 +7,10 @@ import 'package:flutter/material.dart';
 // Begin custom action code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
+import 'dart:io';
+
+import 'index.dart'; // Imports other custom actions
+
 import 'dart:async';
 import 'package:blue_thermal_printer/blue_thermal_printer.dart';
 import 'package:flutter/services.dart';
@@ -54,13 +58,20 @@ Future<String> gunSonuFisiYazdir(
   }
 
   if (isConnected == true) {
-    ByteData bytesAsset = await rootBundle.load("assets/images/firmalogo.png");
-    Uint8List imageBytesFromAsset = bytesAsset.buffer
-        .asUint8List(bytesAsset.offsetInBytes, bytesAsset.lengthInBytes);
-
-    /// Example for Print Text
-
-    bluetooth.printImageBytes(imageBytesFromAsset); //image from Network
+    final file = File('/storage/emulated/0/Download/Firmalogo.png');
+    if (file.exists() == true) {
+      ByteData bytesAsset =
+          await rootBundle.load("assets/images/firmalogo.png");
+      Uint8List imageBytesFromAsset = bytesAsset.buffer
+          .asUint8List(bytesAsset.offsetInBytes, bytesAsset.lengthInBytes);
+      bluetooth.printImageBytes(imageBytesFromAsset); //image from Network
+    } else {
+      ByteData bytesAsset2 =
+          await rootBundle.load("/storage/emulated/0/Download/Firmalogo.png");
+      Uint8List imageBytesFromAsset2 = bytesAsset2.buffer
+          .asUint8List(bytesAsset2.offsetInBytes, bytesAsset2.lengthInBytes);
+      bluetooth.printImageBytes(imageBytesFromAsset2); //image from Network
+    }
 
     if (ustbilgi1 != "")
       bluetooth.printCustom(ustbilgi1, 1, 1, charset: "ISO-8859-9");

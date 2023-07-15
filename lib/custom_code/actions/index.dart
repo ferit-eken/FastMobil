@@ -1,5 +1,6 @@
 export 'get_yazici_liste.dart' show getYaziciListe;
 export 'get_yazici_durum.dart' show getYaziciDurum;
+export 'download_logo_file.dart' show downloadLogoFile;
 export 'cikis_fisi_yazdir.dart' show cikisFisiYazdir;
 export 'giris_fisi_yazdir.dart' show girisFisiYazdir;
 export 'gun_sonu_fisi_yazdir.dart' show gunSonuFisiYazdir;

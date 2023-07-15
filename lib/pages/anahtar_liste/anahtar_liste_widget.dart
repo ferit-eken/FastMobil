@@ -108,7 +108,9 @@ class _AnahtarListeWidgetState extends State<AnahtarListeWidget> {
                           width: 50.0,
                           height: 50.0,
                           child: CircularProgressIndicator(
-                            color: FlutterFlowTheme.of(context).primary,
+                            valueColor: AlwaysStoppedAnimation<Color>(
+                              FlutterFlowTheme.of(context).primary,
+                            ),
                           ),
                         ),
                       );

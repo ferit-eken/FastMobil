@@ -74,8 +74,10 @@ class _LoginWidgetState extends State<LoginWidget>
       });
     });
 
-    _model.txtFirmakoduController ??= TextEditingController();
-    _model.txtUsernameController ??= TextEditingController();
+    _model.txtFirmakoduController ??=
+        TextEditingController(text: FFAppState().girisFirmaKodu);
+    _model.txtUsernameController ??=
+        TextEditingController(text: FFAppState().girisKullanici);
     _model.txtPasswordController ??= TextEditingController();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));

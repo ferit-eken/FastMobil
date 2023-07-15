@@ -67,7 +67,9 @@ class _TarifeFiyatDetayWidgetState extends State<TarifeFiyatDetayWidget> {
                 width: 50.0,
                 height: 50.0,
                 child: CircularProgressIndicator(
-                  color: FlutterFlowTheme.of(context).primary,
+                  valueColor: AlwaysStoppedAnimation<Color>(
+                    FlutterFlowTheme.of(context).primary,
+                  ),
                 ),
               ),
             ),
@@ -471,7 +473,7 @@ class _TarifeFiyatDetayWidgetState extends State<TarifeFiyatDetayWidget> {
                                               fontWeight: FontWeight.w600,
                                             ),
                                         keyboardType: const TextInputType
-                                                .numberWithOptions(
+                                            .numberWithOptions(
                                             signed: true, decimal: true),
                                         validator: _model
                                             .txtFiyatControllerValidator

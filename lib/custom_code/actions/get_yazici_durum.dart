@@ -28,7 +28,7 @@ Future<bool?> getYaziciDurum() async {
     } on PlatformException {}
 
     if (devices.length > 0) {
-      if (isConnected! == false) {
+      if (isConnected == false) {
         isConnected = await bluetooth.connect(devices[0]);
       }
     }

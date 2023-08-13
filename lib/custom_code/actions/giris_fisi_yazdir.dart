@@ -55,17 +55,14 @@ Future<String> girisFisiYazdir(
 
   if (isConnected == true) {
     final file = File('/storage/emulated/0/Download/Firmalogo.png');
-    if (file.exists() == true) {
+    if (file.existsSync() == false) {
       ByteData bytesAsset =
           await rootBundle.load("assets/images/firmalogo.png");
       Uint8List imageBytesFromAsset = bytesAsset.buffer
           .asUint8List(bytesAsset.offsetInBytes, bytesAsset.lengthInBytes);
       bluetooth.printImageBytes(imageBytesFromAsset); //image from Network
     } else {
-      ByteData bytesAsset2 =
-          await rootBundle.load("/storage/emulated/0/Download/Firmalogo.png");
-      Uint8List imageBytesFromAsset2 = bytesAsset2.buffer
-          .asUint8List(bytesAsset2.offsetInBytes, bytesAsset2.lengthInBytes);
+      Uint8List imageBytesFromAsset2 = await file.readAsBytesSync();
       bluetooth.printImageBytes(imageBytesFromAsset2); //image from Network
     }
 

@@ -318,6 +318,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             id: params.getParam('id', ParamType.int),
             kapiGrupId: params.getParam('kapiGrupId', ParamType.String),
           ),
+        ),
+        FFRoute(
+          name: 'portal_home',
+          path: '/portalHome',
+          builder: (context, params) => PortalHomeWidget(),
+        ),
+        FFRoute(
+          name: 'portal_otopark_report',
+          path: '/portalOtoparkReport',
+          builder: (context, params) => PortalOtoparkReportWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

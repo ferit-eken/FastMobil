@@ -96,7 +96,7 @@ class _CikisWidgetState extends State<CikisWidget> {
                       ClipRRect(
                         borderRadius: BorderRadius.circular(8.0),
                         child: Image.asset(
-                          'assets/images/fastpark.png',
+                          'assets/images/fastparklogo.png',
                           width: 246.0,
                           height: 69.0,
                           fit: BoxFit.cover,

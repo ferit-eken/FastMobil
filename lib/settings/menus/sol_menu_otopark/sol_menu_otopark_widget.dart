@@ -42,15 +42,19 @@ class _SolMenuOtoparkWidgetState extends State<SolMenuOtoparkWidget> {
     context.watch<FFAppState>();
 
     return Container(
-      width: MediaQuery.sizeOf(context).width * 1.0,
-      height: MediaQuery.sizeOf(context).height * 1.0,
+      width: 270.0,
+      height: double.infinity,
+      constraints: BoxConstraints(
+        maxWidth: 270.0,
+      ),
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).secondaryBackground,
       ),
       child: Padding(
         padding: EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
         child: Column(
-          mainAxisSize: MainAxisSize.max,
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Padding(
               padding: EdgeInsetsDirectional.fromSTEB(10.0, 5.0, 5.0, 0.0),
@@ -80,7 +84,7 @@ class _SolMenuOtoparkWidgetState extends State<SolMenuOtoparkWidget> {
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(8.0),
                 child: Image.asset(
-                  'assets/images/fastpark.png',
+                  'assets/images/fastparklogo.png',
                   width: 188.0,
                   height: 58.0,
                   fit: BoxFit.cover,
@@ -408,53 +412,55 @@ class _SolMenuOtoparkWidgetState extends State<SolMenuOtoparkWidget> {
                           ),
                         ),
                       ),
-                      Container(
-                        width: 100.0,
-                        height: 100.0,
-                        decoration: BoxDecoration(
-                          color:
-                              FlutterFlowTheme.of(context).secondaryBackground,
-                          borderRadius: BorderRadius.circular(5.0),
-                          border: Border.all(
-                            color: Color(0xFFC20707),
-                            width: 2.0,
+                      if (isAndroid == true)
+                        Container(
+                          width: 100.0,
+                          height: 100.0,
+                          decoration: BoxDecoration(
+                            color: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
+                            borderRadius: BorderRadius.circular(5.0),
+                            border: Border.all(
+                              color: Color(0xFFC20707),
+                              width: 2.0,
+                            ),
                           ),
-                        ),
-                        child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              3.0, 3.0, 3.0, 3.0),
-                          child: InkWell(
-                            splashColor: Colors.transparent,
-                            focusColor: Colors.transparent,
-                            hoverColor: Colors.transparent,
-                            highlightColor: Colors.transparent,
-                            onTap: () async {
-                              context.pushNamed('Settings');
-                            },
-                            child: Column(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                Icon(
-                                  Icons.settings,
-                                  color: Color(0xFFC20707),
-                                  size: 32.0,
-                                ),
-                                Text(
-                                  'Sistem Ayarları',
-                                  textAlign: TextAlign.center,
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        fontFamily: 'Readex Pro',
-                                        color: Color(0xFFC20707),
-                                      ),
-                                ),
-                              ],
+                          child: Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                3.0, 3.0, 3.0, 3.0),
+                            child: InkWell(
+                              splashColor: Colors.transparent,
+                              focusColor: Colors.transparent,
+                              hoverColor: Colors.transparent,
+                              highlightColor: Colors.transparent,
+                              onTap: () async {
+                                context.pushNamed('Settings');
+                              },
+                              child: Column(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  Icon(
+                                    Icons.settings,
+                                    color: Color(0xFFC20707),
+                                    size: 32.0,
+                                  ),
+                                  Text(
+                                    'Sistem Ayarları',
+                                    textAlign: TextAlign.center,
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Readex Pro',
+                                          color: Color(0xFFC20707),
+                                        ),
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
                         ),
-                      ),
                       Container(
                         width: 100.0,
                         height: 100.0,
@@ -495,39 +501,6 @@ class _SolMenuOtoparkWidgetState extends State<SolMenuOtoparkWidget> {
                                 ),
                               ],
                             ),
-                          ),
-                        ),
-                      ),
-                      Container(
-                        width: 100.0,
-                        height: 100.0,
-                        decoration: BoxDecoration(
-                          color:
-                              FlutterFlowTheme.of(context).secondaryBackground,
-                          borderRadius: BorderRadius.circular(5.0),
-                          border: Border.all(
-                            width: 2.0,
-                          ),
-                        ),
-                        child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              3.0, 3.0, 3.0, 3.0),
-                          child: Column(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              Icon(
-                                Icons.check_box_outline_blank_sharp,
-                                color:
-                                    FlutterFlowTheme.of(context).secondaryText,
-                                size: 32.0,
-                              ),
-                              Text(
-                                '--',
-                                textAlign: TextAlign.center,
-                                style: FlutterFlowTheme.of(context).bodyMedium,
-                              ),
-                            ],
                           ),
                         ),
                       ),

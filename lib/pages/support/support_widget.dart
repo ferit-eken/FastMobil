@@ -195,10 +195,10 @@ class _SupportWidgetState extends State<SupportWidget>
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(8.0),
                             child: Image.asset(
-                              'assets/images/fastpark.png',
+                              'assets/images/fastparklogo.png',
                               width: double.infinity,
                               height: 85.0,
-                              fit: BoxFit.fitWidth,
+                              fit: BoxFit.fitHeight,
                             ),
                           ),
                         ).animateOnPageLoad(

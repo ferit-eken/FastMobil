@@ -57,3 +57,6 @@ export '/settings/urunler/urunler_widget.dart' show UrunlerWidget;
 export '/settings/urun_detay/urun_detay_widget.dart' show UrunDetayWidget;
 export '/settings/park_konum_detay/park_konum_detay_widget.dart'
     show ParkKonumDetayWidget;
+export '/portal/portal_home/portal_home_widget.dart' show PortalHomeWidget;
+export '/portal/portal_otopark_report/portal_otopark_report_widget.dart'
+    show PortalOtoparkReportWidget;

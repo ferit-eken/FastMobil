@@ -167,14 +167,14 @@ class _KullaniciDetayWidgetState extends State<KullaniciDetayWidget> {
           top: true,
           child: Column(
             mainAxisSize: MainAxisSize.max,
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Expanded(
                 child: Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(0.0, 1.0, 0.0, 0.0),
                   child: Container(
-                    width: double.infinity,
-                    height: double.infinity,
+                    width: 350.0,
+                    height: 550.0,
                     decoration: BoxDecoration(
                       color: FlutterFlowTheme.of(context).secondaryBackground,
                       boxShadow: [

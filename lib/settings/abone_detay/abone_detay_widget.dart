@@ -230,7 +230,7 @@ class _AboneDetayWidgetState extends State<AboneDetayWidget> {
                                   7.0, 5.0, 7.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.center,
+                                mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
@@ -282,7 +282,7 @@ class _AboneDetayWidgetState extends State<AboneDetayWidget> {
                                               _model.chCarigrupValue = val),
                                           width:
                                               MediaQuery.sizeOf(context).width *
-                                                  0.5,
+                                                  0.284,
                                           height: 50.0,
                                           textStyle:
                                               FlutterFlowTheme.of(context)
@@ -312,41 +312,38 @@ class _AboneDetayWidgetState extends State<AboneDetayWidget> {
                                       },
                                     ),
                                   ),
-                                  Flexible(
-                                    child: FlutterFlowDropDown<int>(
-                                      controller:
-                                          _model.chDurumValueController ??=
-                                              FormFieldController<int>(
-                                        _model.chDurumValue ??= 1,
-                                      ),
-                                      options: [0, 1],
-                                      optionLabels: ['Pasif', 'Aktif'],
-                                      onChanged: (val) => setState(
-                                          () => _model.chDurumValue = val),
-                                      width: MediaQuery.sizeOf(context).width *
-                                          0.5,
-                                      height: 50.0,
-                                      textStyle: FlutterFlowTheme.of(context)
-                                          .bodyMedium,
-                                      hintText: 'Durum',
-                                      icon: Icon(
-                                        Icons.keyboard_arrow_down_rounded,
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondaryText,
-                                        size: 24.0,
-                                      ),
-                                      fillColor: FlutterFlowTheme.of(context)
-                                          .secondaryBackground,
-                                      elevation: 2.0,
-                                      borderColor: FlutterFlowTheme.of(context)
-                                          .alternate,
-                                      borderWidth: 2.0,
-                                      borderRadius: 8.0,
-                                      margin: EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 4.0, 16.0, 4.0),
-                                      hidesUnderline: true,
-                                      isSearchable: false,
+                                  FlutterFlowDropDown<int>(
+                                    controller:
+                                        _model.chDurumValueController ??=
+                                            FormFieldController<int>(
+                                      _model.chDurumValue ??= 1,
                                     ),
+                                    options: [0, 1],
+                                    optionLabels: ['Pasif', 'Aktif'],
+                                    onChanged: (val) => setState(
+                                        () => _model.chDurumValue = val),
+                                    width: 150.0,
+                                    height: 50.0,
+                                    textStyle:
+                                        FlutterFlowTheme.of(context).bodyMedium,
+                                    hintText: 'Durum',
+                                    icon: Icon(
+                                      Icons.keyboard_arrow_down_rounded,
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryText,
+                                      size: 24.0,
+                                    ),
+                                    fillColor: FlutterFlowTheme.of(context)
+                                        .secondaryBackground,
+                                    elevation: 2.0,
+                                    borderColor:
+                                        FlutterFlowTheme.of(context).alternate,
+                                    borderWidth: 2.0,
+                                    borderRadius: 8.0,
+                                    margin: EdgeInsetsDirectional.fromSTEB(
+                                        16.0, 4.0, 16.0, 4.0),
+                                    hidesUnderline: true,
+                                    isSearchable: false,
                                   ),
                                 ],
                               ),
@@ -815,78 +812,51 @@ class _AboneDetayWidgetState extends State<AboneDetayWidget> {
                             ),
                             Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
-                                  5.0, 10.0, 5.0, 0.0),
-                              child: Container(
-                                width: MediaQuery.sizeOf(context).width * 1.0,
-                                height: 177.0,
-                                decoration: BoxDecoration(
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
-                                ),
-                                child: Align(
-                                  alignment: AlignmentDirectional(0.0, 0.0),
-                                  child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        5.0, 0.0, 5.0, 0.0),
-                                    child: GridView(
-                                      padding: EdgeInsets.zero,
-                                      gridDelegate:
-                                          SliverGridDelegateWithFixedCrossAxisCount(
-                                        crossAxisCount: 4,
-                                        crossAxisSpacing: 10.0,
-                                        mainAxisSpacing: 10.0,
-                                        childAspectRatio: 1.0,
+                                  10.0, 10.0, 0.0, 0.0),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Container(
+                                    width: 100.0,
+                                    height: 100.0,
+                                    decoration: BoxDecoration(
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
+                                      boxShadow: [
+                                        BoxShadow(
+                                          blurRadius: 4.0,
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryText,
+                                          offset: Offset(0.0, 2.0),
+                                        )
+                                      ],
+                                      borderRadius: BorderRadius.circular(8.0),
+                                      border: Border.all(
+                                        color: FlutterFlowTheme.of(context)
+                                            .warning,
+                                        width: 2.0,
                                       ),
-                                      scrollDirection: Axis.vertical,
+                                    ),
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
                                       children: [
-                                        Container(
-                                          width: 100.0,
-                                          height: 100.0,
-                                          decoration: BoxDecoration(
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondaryBackground,
-                                            boxShadow: [
-                                              BoxShadow(
-                                                blurRadius: 4.0,
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryText,
-                                                offset: Offset(0.0, 2.0),
-                                              )
-                                            ],
-                                            borderRadius:
-                                                BorderRadius.circular(8.0),
-                                            border: Border.all(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .warning,
-                                              width: 2.0,
-                                            ),
-                                          ),
-                                          child: Column(
-                                            mainAxisSize: MainAxisSize.max,
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                            children: [
-                                              Icon(
-                                                Icons.delete_outlined,
-                                                color: Color(0xDBEB1313),
-                                                size: 35.0,
-                                              ),
-                                              Text(
-                                                'Abone Sil',
-                                                textAlign: TextAlign.center,
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium,
-                                              ),
-                                            ],
-                                          ),
+                                        Icon(
+                                          Icons.delete_outlined,
+                                          color: Color(0xDBEB1313),
+                                          size: 35.0,
+                                        ),
+                                        Text(
+                                          'Abone Sil',
+                                          textAlign: TextAlign.center,
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium,
                                         ),
                                       ],
                                     ),
                                   ),
-                                ),
+                                ],
                               ),
                             ),
                           ],

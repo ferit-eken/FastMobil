@@ -126,7 +126,7 @@ class _LoginWidgetState extends State<LoginWidget>
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(8.0),
                       child: Image.asset(
-                        'assets/images/fastpark.png',
+                        'assets/images/fastparklogo.png',
                         width: 197.0,
                         height: 84.0,
                         fit: BoxFit.fitWidth,
@@ -459,7 +459,11 @@ class _LoginWidgetState extends State<LoginWidget>
                                             (_model.apiresultfirma?.jsonBody ??
                                                 ''),
                                           )) {
-                                            context.pushNamed('HomePage');
+                                            if (isWeb == true) {
+                                              context.pushNamed('portal_home');
+                                            } else {
+                                              context.pushNamed('HomePage');
+                                            }
                                           }
                                         } else {
                                           ScaffoldMessenger.of(context)

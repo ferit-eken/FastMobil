@@ -5,13 +5,17 @@ import 'flutter_flow/flutter_flow_util.dart';
 import 'dart:convert';
 
 class FFAppState extends ChangeNotifier {
-  static final FFAppState _instance = FFAppState._internal();
+  static FFAppState _instance = FFAppState._internal();
 
   factory FFAppState() {
     return _instance;
   }
 
   FFAppState._internal();
+
+  static void reset() {
+    _instance = FFAppState._internal();
+  }
 
   Future initializePersistedState() async {
     prefs = await SharedPreferences.getInstance();
@@ -173,6 +177,10 @@ class FFAppState extends ChangeNotifier {
     _AracTipleri[_index] = updateFn(_AracTipleri[_index]);
   }
 
+  void insertAtIndexInAracTipleri(int _index, dynamic _value) {
+    _AracTipleri.insert(_index, _value);
+  }
+
   int _UserId = 0;
   int get UserId => _UserId;
   set UserId(int _value) {
@@ -265,6 +273,10 @@ class FFAppState extends ChangeNotifier {
     _anahtarlar[_index] = updateFn(_anahtarlar[_index]);
   }
 
+  void insertAtIndexInAnahtarlar(int _index, dynamic _value) {
+    _anahtarlar.insert(_index, _value);
+  }
+
   List<dynamic> _parkkonumlari = [];
   List<dynamic> get parkkonumlari => _parkkonumlari;
   set parkkonumlari(List<dynamic> _value) {
@@ -288,6 +300,10 @@ class FFAppState extends ChangeNotifier {
     dynamic Function(dynamic) updateFn,
   ) {
     _parkkonumlari[_index] = updateFn(_parkkonumlari[_index]);
+  }
+
+  void insertAtIndexInParkkonumlari(int _index, dynamic _value) {
+    _parkkonumlari.insert(_index, _value);
   }
 
   int _para1 = 0;
@@ -369,6 +385,10 @@ class FFAppState extends ChangeNotifier {
     dynamic Function(dynamic) updateFn,
   ) {
     _PrinterList[_index] = updateFn(_PrinterList[_index]);
+  }
+
+  void insertAtIndexInPrinterList(int _index, dynamic _value) {
+    _PrinterList.insert(_index, _value);
   }
 
   bool _yaziciAktif = false;

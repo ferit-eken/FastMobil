@@ -93,7 +93,7 @@ class _HasarFormuWidgetState extends State<HasarFormuWidget> {
                     child: Stack(
                       children: [
                         Align(
-                          alignment: AlignmentDirectional(0.0, 0.0),
+                          alignment: AlignmentDirectional(0.00, 0.00),
                           child: Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 20.0, 0.0, 0.0),
@@ -109,7 +109,7 @@ class _HasarFormuWidgetState extends State<HasarFormuWidget> {
                           ),
                         ),
                         Align(
-                          alignment: AlignmentDirectional(-0.7, -0.6),
+                          alignment: AlignmentDirectional(-0.70, -0.60),
                           child: Theme(
                             data: ThemeData(
                               checkboxTheme: CheckboxThemeData(
@@ -159,7 +159,7 @@ class _HasarFormuWidgetState extends State<HasarFormuWidget> {
                           ),
                         ),
                         Align(
-                          alignment: AlignmentDirectional(0.11, -0.62),
+                          alignment: AlignmentDirectional(0.11, -0.61),
                           child: Theme(
                             data: ThemeData(
                               checkboxTheme: CheckboxThemeData(
@@ -209,7 +209,7 @@ class _HasarFormuWidgetState extends State<HasarFormuWidget> {
                           ),
                         ),
                         Align(
-                          alignment: AlignmentDirectional(-1.0, 0.09),
+                          alignment: AlignmentDirectional(-1.00, 0.09),
                           child: Theme(
                             data: ThemeData(
                               checkboxTheme: CheckboxThemeData(
@@ -259,7 +259,7 @@ class _HasarFormuWidgetState extends State<HasarFormuWidget> {
                           ),
                         ),
                         Align(
-                          alignment: AlignmentDirectional(-0.1, 0.1),
+                          alignment: AlignmentDirectional(-0.10, 0.10),
                           child: Theme(
                             data: ThemeData(
                               checkboxTheme: CheckboxThemeData(
@@ -359,7 +359,7 @@ class _HasarFormuWidgetState extends State<HasarFormuWidget> {
                           ),
                         ),
                         Align(
-                          alignment: AlignmentDirectional(-0.21, 0.78),
+                          alignment: AlignmentDirectional(-0.20, 0.78),
                           child: Theme(
                             data: ThemeData(
                               checkboxTheme: CheckboxThemeData(

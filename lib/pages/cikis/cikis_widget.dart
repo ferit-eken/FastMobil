@@ -431,7 +431,7 @@ class _CikisWidgetState extends State<CikisWidget> {
                                           ),
                                         );
                                       },
-                                    ).then((value) => setState(
+                                    ).then((value) => safeSetState(
                                         () => _model.reskeyboard = value));
 
                                     if (_model.reskeyboard != '-1') {

@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
@@ -180,6 +181,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                         16.0, 4.0, 16.0, 4.0),
                                     hidesUnderline: true,
                                     isSearchable: false,
+                                    isMultiSelect: false,
                                   );
                                 },
                               ),
@@ -278,6 +280,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                           16.0, 4.0, 16.0, 4.0),
                                       hidesUnderline: true,
                                       isSearchable: false,
+                                      isMultiSelect: false,
                                     );
                                   },
                                 ),
@@ -373,6 +376,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                           16.0, 4.0, 16.0, 4.0),
                                       hidesUnderline: true,
                                       isSearchable: false,
+                                      isMultiSelect: false,
                                     );
                                   },
                                 ),
@@ -464,6 +468,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                           16.0, 4.0, 16.0, 4.0),
                                       hidesUnderline: true,
                                       isSearchable: false,
+                                      isMultiSelect: false,
                                     );
                                   },
                                 ),

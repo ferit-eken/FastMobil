@@ -114,7 +114,7 @@ class _LoginWidgetState extends State<LoginWidget>
                 end: AlignmentDirectional(-0.87, 1.0),
               ),
             ),
-            alignment: AlignmentDirectional(0.0, -1.0),
+            alignment: AlignmentDirectional(0.00, -1.00),
             child: SingleChildScrollView(
               child: Column(
                 mainAxisSize: MainAxisSize.max,
@@ -156,7 +156,7 @@ class _LoginWidgetState extends State<LoginWidget>
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Align(
-                            alignment: AlignmentDirectional(0.0, 0.0),
+                            alignment: AlignmentDirectional(0.00, 0.00),
                             child: Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   32.0, 32.0, 32.0, 32.0),
@@ -459,7 +459,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                             (_model.apiresultfirma?.jsonBody ??
                                                 ''),
                                           )) {
-                                            if (isWeb == true) {
+                                            if (isAndroid == true) {
                                               context.pushNamed('portal_home');
                                             } else {
                                               context.pushNamed('HomePage');
@@ -575,6 +575,8 @@ class _LoginWidgetState extends State<LoginWidget>
                                         context.pushNamed('register');
                                       },
                                       child: RichText(
+                                        textScaleFactor: MediaQuery.of(context)
+                                            .textScaleFactor,
                                         text: TextSpan(
                                           children: [
                                             TextSpan(

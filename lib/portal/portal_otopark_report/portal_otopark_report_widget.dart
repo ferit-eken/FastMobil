@@ -1,6 +1,7 @@
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import '/portal/poral_menu/portal_mainmenu/portal_mainmenu_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -31,7 +32,7 @@ class _PortalOtoparkReportWidgetState extends State<PortalOtoparkReportWidget>
       vsync: this,
       length: 3,
       initialIndex: 0,
-    );
+    )..addListener(() => setState(() {}));
     _model.textController ??= TextEditingController();
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
@@ -81,7 +82,7 @@ class _PortalOtoparkReportWidgetState extends State<PortalOtoparkReportWidget>
                     ),
                   );
                 },
-              ).then((value) => setState(() {}));
+              ).then((value) => safeSetState(() {}));
             },
           ),
           title: Text(
@@ -113,6 +114,8 @@ class _PortalOtoparkReportWidgetState extends State<PortalOtoparkReportWidget>
                         labelStyle: FlutterFlowTheme.of(context).titleMedium,
                         unselectedLabelStyle: TextStyle(),
                         indicatorColor: FlutterFlowTheme.of(context).primary,
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(4.0, 4.0, 4.0, 4.0),
                         tabs: [
                           Tab(
                             text: 'Geçiş Raporu',
@@ -125,7 +128,6 @@ class _PortalOtoparkReportWidgetState extends State<PortalOtoparkReportWidget>
                           ),
                         ],
                         controller: _model.tabBarController,
-                        onTap: (value) => setState(() {}),
                       ),
                     ),
                     Expanded(

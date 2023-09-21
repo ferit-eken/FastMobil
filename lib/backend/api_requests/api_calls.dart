@@ -24,7 +24,7 @@ class LoginCall {
     String? username = '',
     String? password = '',
   }) {
-    final body = '''
+    final ffApiRequestBody = '''
 {
   "FirmaKodu": "${firmaKodu}",
   "Username": "${username}",
@@ -38,7 +38,7 @@ class LoginCall {
         ...UserGroup.headers,
       },
       params: {},
-      body: body,
+      body: ffApiRequestBody,
       bodyType: BodyType.JSON,
       returnBody: true,
       encodeBodyUtf8: false,
@@ -91,7 +91,7 @@ class RegisterCall {
     String? userName = '',
     String? password = '',
   }) {
-    final body = '''
+    final ffApiRequestBody = '''
 {
   "Command": "${firmaKodu}",
   "Bilgi": {
@@ -119,7 +119,7 @@ class RegisterCall {
         ...UserGroup.headers,
       },
       params: {},
-      body: body,
+      body: ffApiRequestBody,
       bodyType: BodyType.JSON,
       returnBody: true,
       encodeBodyUtf8: false,
@@ -199,7 +199,7 @@ class AracGirisCall {
     String? parkKonumId = '',
     int? anahtarKodu,
   }) {
-    final body = '''
+    final ffApiRequestBody = '''
 {
   "Command": "${command}",
   "data": {
@@ -238,7 +238,7 @@ class AracGirisCall {
         ...PtsGroup.headers,
       },
       params: {},
-      body: body,
+      body: ffApiRequestBody,
       bodyType: BodyType.JSON,
       returnBody: true,
       encodeBodyUtf8: false,
@@ -282,7 +282,7 @@ class AracSorguCall {
     String? plaka = '',
     int? id,
   }) {
-    final body = '''
+    final ffApiRequestBody = '''
 {
   "Command": "${command}",
   "data": {
@@ -300,7 +300,7 @@ class AracSorguCall {
         ...PtsGroup.headers,
       },
       params: {},
-      body: body,
+      body: ffApiRequestBody,
       bodyType: BodyType.JSON,
       returnBody: true,
       encodeBodyUtf8: false,
@@ -457,7 +457,7 @@ class TahsilatCall {
     int? bankaKodu,
     double? tutar,
   }) {
-    final body = '''
+    final ffApiRequestBody = '''
 {
   "Command": "${command}",
   "data": {
@@ -476,7 +476,7 @@ class TahsilatCall {
         ...PtsGroup.headers,
       },
       params: {},
-      body: body,
+      body: ffApiRequestBody,
       bodyType: BodyType.JSON,
       returnBody: true,
       encodeBodyUtf8: false,
@@ -625,7 +625,7 @@ class GunsonuRaporCall {
     String? command = 'GUNSONU_RAPOR',
     int? userId,
   }) {
-    final body = '''
+    final ffApiRequestBody = '''
 {
   "Command": "${command}",
   "data": {
@@ -640,7 +640,7 @@ class GunsonuRaporCall {
         ...PtsGroup.headers,
       },
       params: {},
-      body: body,
+      body: ffApiRequestBody,
       bodyType: BodyType.JSON,
       returnBody: true,
       encodeBodyUtf8: false,
@@ -717,7 +717,7 @@ class GunsonuKapatCall {
     String? command = 'GUNSONU_YAP',
     int? userId,
   }) {
-    final body = '''
+    final ffApiRequestBody = '''
 {
   "Command": "${command}",
   "data": {
@@ -732,7 +732,7 @@ class GunsonuKapatCall {
         ...PtsGroup.headers,
       },
       params: {},
-      body: body,
+      body: ffApiRequestBody,
       bodyType: BodyType.JSON,
       returnBody: true,
       encodeBodyUtf8: false,
@@ -766,7 +766,7 @@ class HesapKapatCall {
     String? cikisTuru = 'UCRETLI',
     int? ucretsizEtiketId = 0,
   }) {
-    final body = '''
+    final ffApiRequestBody = '''
 {
   "Command": "${command}",
   "data": {
@@ -786,7 +786,7 @@ class HesapKapatCall {
         ...PtsGroup.headers,
       },
       params: {},
-      body: body,
+      body: ffApiRequestBody,
       bodyType: BodyType.JSON,
       returnBody: true,
       encodeBodyUtf8: false,
@@ -841,7 +841,7 @@ class CariKayitCall {
     int? createdUserId,
     String? command = '',
   }) {
-    final body = '''
+    final ffApiRequestBody = '''
 {
   "tablename": "Cari",
   "KeyField": "Kod",
@@ -885,7 +885,7 @@ class CariKayitCall {
         ...CariGroup.headers,
       },
       params: {},
-      body: body,
+      body: ffApiRequestBody,
       bodyType: BodyType.JSON,
       returnBody: true,
       encodeBodyUtf8: false,
@@ -921,7 +921,7 @@ class CariAracKayitCall {
     int? id,
     String? aracTipId = '',
   }) {
-    final body = '''
+    final ffApiRequestBody = '''
 {
   "tablename": "CariAraclar",
   "KeyField": "Id",
@@ -951,7 +951,7 @@ class CariAracKayitCall {
         ...CariGroup.headers,
       },
       params: {},
-      body: body,
+      body: ffApiRequestBody,
       bodyType: BodyType.JSON,
       returnBody: true,
       encodeBodyUtf8: false,
@@ -993,7 +993,7 @@ class StokKayitCall {
     int? durum = 1,
     String? command = '',
   }) {
-    final body = '''
+    final ffApiRequestBody = '''
 {
    "Command": "${command}",
   "data": {
@@ -1012,7 +1012,7 @@ class StokKayitCall {
         ...StokGroup.headers,
       },
       params: {},
-      body: body,
+      body: ffApiRequestBody,
       bodyType: BodyType.JSON,
       returnBody: true,
       encodeBodyUtf8: false,
@@ -1268,7 +1268,7 @@ class OtoparkUpdateCall {
     String? otoparkAdi = '',
     String? arsivPath = '',
   }) {
-    final body = '''
+    final ffApiRequestBody = '''
 {
   "tablename": "${tablename}",
   "KeyField": "${keyField}",
@@ -1289,7 +1289,7 @@ class OtoparkUpdateCall {
         ...SettingsGroup.headers,
       },
       params: {},
-      body: body,
+      body: ffApiRequestBody,
       bodyType: BodyType.JSON,
       returnBody: true,
       encodeBodyUtf8: false,
@@ -1333,7 +1333,7 @@ class PosUpdateCall {
     int? baudrate,
     String? posKey = '',
   }) {
-    final body = '''
+    final ffApiRequestBody = '''
 {
   "tablename": "${tablename}",
   "KeyField": "${keyField}",
@@ -1358,7 +1358,7 @@ class PosUpdateCall {
         ...SettingsGroup.headers,
       },
       params: {},
-      body: body,
+      body: ffApiRequestBody,
       bodyType: BodyType.JSON,
       returnBody: true,
       encodeBodyUtf8: false,
@@ -1399,7 +1399,7 @@ class BankaUpdateCall {
     String? hesap = '',
     String? dovizKod = 'TL',
   }) {
-    final body = '''
+    final ffApiRequestBody = '''
 {
   "tablename": "${tablename}",
   "KeyField": "${keyField}",
@@ -1421,7 +1421,7 @@ class BankaUpdateCall {
         ...SettingsGroup.headers,
       },
       params: {},
-      body: body,
+      body: ffApiRequestBody,
       bodyType: BodyType.JSON,
       returnBody: true,
       encodeBodyUtf8: false,
@@ -1462,7 +1462,7 @@ class OtoparkKonumUpdateCall {
     bool? durum = true,
     bool? isActive = true,
   }) {
-    final body = '''
+    final ffApiRequestBody = '''
 {
   "tablename": "${tablename}",
   "KeyField": "${keyField}",
@@ -1484,7 +1484,7 @@ class OtoparkKonumUpdateCall {
         ...SettingsGroup.headers,
       },
       params: {},
-      body: body,
+      body: ffApiRequestBody,
       bodyType: BodyType.JSON,
       returnBody: true,
       encodeBodyUtf8: false,
@@ -1527,7 +1527,7 @@ class AboneTarifeUpdateCall {
     int? gunlukUcretsizLimitSayi,
     String? gunDonusumSaati = '',
   }) {
-    final body = '''
+    final ffApiRequestBody = '''
 {
   "tablename": "${tablename}",
   "KeyField": "${keyField}",
@@ -1551,7 +1551,7 @@ class AboneTarifeUpdateCall {
         ...SettingsGroup.headers,
       },
       params: {},
-      body: body,
+      body: ffApiRequestBody,
       bodyType: BodyType.JSON,
       returnBody: true,
       encodeBodyUtf8: false,
@@ -1600,7 +1600,7 @@ class AboneTarifeFiyatUpdateCall {
     bool? gun5,
     bool? gun6,
   }) {
-    final body = '''
+    final ffApiRequestBody = '''
 {
   "tablename": "${tablename}",
   "KeyField": "${keyField}",
@@ -1630,7 +1630,7 @@ class AboneTarifeFiyatUpdateCall {
         ...SettingsGroup.headers,
       },
       params: {},
-      body: body,
+      body: ffApiRequestBody,
       bodyType: BodyType.JSON,
       returnBody: true,
       encodeBodyUtf8: false,
@@ -1669,7 +1669,7 @@ class KasaUpdateCall {
     String? aciklama = '',
     String? dovizTuru = 'TL',
   }) {
-    final body = '''
+    final ffApiRequestBody = '''
 {
   "tablename": "${tablename}",
   "KeyField": "${keyField}",
@@ -1689,7 +1689,7 @@ class KasaUpdateCall {
         ...SettingsGroup.headers,
       },
       params: {},
-      body: body,
+      body: ffApiRequestBody,
       bodyType: BodyType.JSON,
       returnBody: true,
       encodeBodyUtf8: false,
@@ -1727,7 +1727,7 @@ class PersonelUpdateCall {
     String? sifre = '',
     String? gsm = '',
   }) {
-    final body = '''
+    final ffApiRequestBody = '''
 {
   "tablename": "${tablename}",
   "KeyField": "${keyField}",
@@ -1750,7 +1750,7 @@ class PersonelUpdateCall {
         ...SettingsGroup.headers,
       },
       params: {},
-      body: body,
+      body: ffApiRequestBody,
       bodyType: BodyType.JSON,
       returnBody: true,
       encodeBodyUtf8: false,
@@ -1791,7 +1791,7 @@ class IOControllerUpdateCall {
     int? tetikAraligi = 5,
     bool? isActive = true,
   }) {
-    final body = '''
+    final ffApiRequestBody = '''
 {
   "tablename": "${tablename}",
   "KeyField": "${keyField}",
@@ -1817,7 +1817,7 @@ class IOControllerUpdateCall {
         ...SettingsGroup.headers,
       },
       params: {},
-      body: body,
+      body: ffApiRequestBody,
       bodyType: BodyType.JSON,
       returnBody: true,
       encodeBodyUtf8: false,
@@ -1864,7 +1864,7 @@ class LedPanelUpdateCall {
     bool? isActive = true,
     int? beklemeSn,
   }) {
-    final body = '''
+    final ffApiRequestBody = '''
 {
   "tablename": "${tablename}",
   "KeyField": "${keyField}",
@@ -1892,7 +1892,7 @@ class LedPanelUpdateCall {
         ...SettingsGroup.headers,
       },
       params: {},
-      body: body,
+      body: ffApiRequestBody,
       bodyType: BodyType.JSON,
       returnBody: true,
       encodeBodyUtf8: false,
@@ -1930,7 +1930,7 @@ class UpdateRowCall {
     dynamic? dataJson,
   }) {
     final data = _serializeJson(dataJson);
-    final body = '''
+    final ffApiRequestBody = '''
 {
   "tablename": "${tablename}",
   "KeyField": "${keyField}",
@@ -1946,7 +1946,7 @@ class UpdateRowCall {
         ...SettingsGroup.headers,
       },
       params: {},
-      body: body,
+      body: ffApiRequestBody,
       bodyType: BodyType.JSON,
       returnBody: true,
       encodeBodyUtf8: false,
@@ -1981,7 +1981,7 @@ class GetIDCall {
     String? keyField = '',
     String? command = 'GETID',
   }) {
-    final body = '''
+    final ffApiRequestBody = '''
 {
   "db": "${db}",
   "tablename": "${tablename}",
@@ -1996,7 +1996,7 @@ class GetIDCall {
         ...SettingsGroup.headers,
       },
       params: {},
-      body: body,
+      body: ffApiRequestBody,
       bodyType: BodyType.JSON,
       returnBody: true,
       encodeBodyUtf8: false,
@@ -2048,7 +2048,7 @@ class OtoparkKapiUpdateCall {
     int? odemeNoktasi,
     String? posId = '',
   }) {
-    final body = '''
+    final ffApiRequestBody = '''
 {
   "tablename": "${tablename}",
   "KeyField": "${keyField}",
@@ -2086,7 +2086,7 @@ class OtoparkKapiUpdateCall {
         ...SettingsGroup.headers,
       },
       params: {},
-      body: body,
+      body: ffApiRequestBody,
       bodyType: BodyType.JSON,
       returnBody: true,
       encodeBodyUtf8: false,
@@ -2134,7 +2134,7 @@ class OtoparkKapiGrupUpdateCall {
     int? indirimKarti,
     int? aboneKayit,
   }) {
-    final body = '''
+    final ffApiRequestBody = '''
 {
   "tablename": "${tablename}",
   "KeyField": "${keyField}",
@@ -2163,7 +2163,7 @@ class OtoparkKapiGrupUpdateCall {
         ...SettingsGroup.headers,
       },
       params: {},
-      body: body,
+      body: ffApiRequestBody,
       bodyType: BodyType.JSON,
       returnBody: true,
       encodeBodyUtf8: false,

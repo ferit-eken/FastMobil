@@ -332,6 +332,7 @@ class _GirisWidgetState extends State<GirisWidget> {
                                             16.0, 4.0, 16.0, 4.0),
                                         hidesUnderline: true,
                                         isSearchable: false,
+                                        isMultiSelect: false,
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
@@ -362,7 +363,7 @@ class _GirisWidgetState extends State<GirisWidget> {
                                                   ),
                                                 );
                                               },
-                                            ).then((value) => setState(() =>
+                                            ).then((value) => safeSetState(() =>
                                                 _model.resAnahtarsecim =
                                                     value));
 
@@ -407,7 +408,7 @@ class _GirisWidgetState extends State<GirisWidget> {
                                                     Align(
                                                       alignment:
                                                           AlignmentDirectional(
-                                                              0.0, 0.0),
+                                                              0.00, 0.00),
                                                       child: Padding(
                                                         padding:
                                                             EdgeInsetsDirectional
@@ -500,7 +501,7 @@ class _GirisWidgetState extends State<GirisWidget> {
                                                   ),
                                                 );
                                               },
-                                            ).then((value) => setState(() =>
+                                            ).then((value) => safeSetState(() =>
                                                 _model.resultAdsoyad = value));
 
                                             setState(() {});
@@ -518,7 +519,7 @@ class _GirisWidgetState extends State<GirisWidget> {
                                               ),
                                               Align(
                                                 alignment: AlignmentDirectional(
-                                                    0.0, 0.0),
+                                                    0.00, 0.00),
                                                 child: Text(
                                                   valueOrDefault<String>(
                                                     _model.resultAdsoyad,
@@ -574,7 +575,7 @@ class _GirisWidgetState extends State<GirisWidget> {
                                                   ),
                                                 );
                                               },
-                                            ).then((value) => setState(() =>
+                                            ).then((value) => safeSetState(() =>
                                                 _model.resulttelefonno =
                                                     value));
 
@@ -608,7 +609,7 @@ class _GirisWidgetState extends State<GirisWidget> {
                                                 Align(
                                                   alignment:
                                                       AlignmentDirectional(
-                                                          0.0, 0.0),
+                                                          0.00, 0.00),
                                                   child: Text(
                                                     valueOrDefault<String>(
                                                       _model.resulttelefonno,
@@ -694,9 +695,10 @@ class _GirisWidgetState extends State<GirisWidget> {
                                                       ),
                                                     );
                                                   },
-                                                ).then((value) => setState(() =>
-                                                    _model.resultPlakakeyb =
-                                                        value));
+                                                ).then((value) => safeSetState(
+                                                    () =>
+                                                        _model.resultPlakakeyb =
+                                                            value));
 
                                                 setState(() {});
                                               },
@@ -716,7 +718,7 @@ class _GirisWidgetState extends State<GirisWidget> {
                                                   Align(
                                                     alignment:
                                                         AlignmentDirectional(
-                                                            0.0, 0.0),
+                                                            0.00, 0.00),
                                                     child: Padding(
                                                       padding:
                                                           EdgeInsetsDirectional
@@ -802,8 +804,8 @@ class _GirisWidgetState extends State<GirisWidget> {
                                                         ),
                                                       );
                                                     },
-                                                  ).then((value) => setState(
-                                                      () => _model
+                                                  ).then((value) =>
+                                                      safeSetState(() => _model
                                                               .resultkonumsecim =
                                                           value));
 
@@ -827,7 +829,7 @@ class _GirisWidgetState extends State<GirisWidget> {
                                                     Align(
                                                       alignment:
                                                           AlignmentDirectional(
-                                                              0.0, 0.0),
+                                                              0.00, 0.00),
                                                       child: Padding(
                                                         padding:
                                                             EdgeInsetsDirectional
@@ -892,7 +894,7 @@ class _GirisWidgetState extends State<GirisWidget> {
                           child: Stack(
                             children: [
                               Align(
-                                alignment: AlignmentDirectional(0.0, 0.0),
+                                alignment: AlignmentDirectional(0.00, 0.00),
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(8.0),
                                   child: Image.asset(
@@ -904,7 +906,7 @@ class _GirisWidgetState extends State<GirisWidget> {
                                 ),
                               ),
                               Align(
-                                alignment: AlignmentDirectional(-0.59, -0.77),
+                                alignment: AlignmentDirectional(-0.58, -0.77),
                                 child: Theme(
                                   data: ThemeData(
                                     checkboxTheme: CheckboxThemeData(
@@ -985,7 +987,7 @@ class _GirisWidgetState extends State<GirisWidget> {
                                 ),
                               ),
                               Align(
-                                alignment: AlignmentDirectional(0.51, -0.7),
+                                alignment: AlignmentDirectional(0.51, -0.70),
                                 child: Theme(
                                   data: ThemeData(
                                     checkboxTheme: CheckboxThemeData(
@@ -1093,7 +1095,7 @@ class _GirisWidgetState extends State<GirisWidget> {
                                 ),
                               ),
                               Align(
-                                alignment: AlignmentDirectional(0.44, 0.0),
+                                alignment: AlignmentDirectional(0.44, -0.00),
                                 child: Theme(
                                   data: ThemeData(
                                     checkboxTheme: CheckboxThemeData(
@@ -1120,7 +1122,7 @@ class _GirisWidgetState extends State<GirisWidget> {
                                 ),
                               ),
                               Align(
-                                alignment: AlignmentDirectional(0.82, -0.02),
+                                alignment: AlignmentDirectional(0.82, -0.01),
                                 child: Theme(
                                   data: ThemeData(
                                     checkboxTheme: CheckboxThemeData(
@@ -1201,7 +1203,7 @@ class _GirisWidgetState extends State<GirisWidget> {
                                 ),
                               ),
                               Align(
-                                alignment: AlignmentDirectional(0.1, 0.81),
+                                alignment: AlignmentDirectional(0.10, 0.81),
                                 child: Theme(
                                   data: ThemeData(
                                     checkboxTheme: CheckboxThemeData(

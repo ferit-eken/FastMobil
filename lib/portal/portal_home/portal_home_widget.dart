@@ -84,7 +84,7 @@ class _PortalHomeWidgetState extends State<PortalHomeWidget> {
                         ),
                       );
                     },
-                  ).then((value) => setState(() {}));
+                  ).then((value) => safeSetState(() {}));
                 },
               ),
               title: Text(

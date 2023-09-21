@@ -366,7 +366,7 @@ class _SolMenuWidgetState extends State<SolMenuWidget> {
                                     child: SolMenuOtoparkWidget(),
                                   );
                                 },
-                              ).then((value) => setState(() {}));
+                              ).then((value) => safeSetState(() {}));
                             },
                             child: Column(
                               mainAxisSize: MainAxisSize.max,

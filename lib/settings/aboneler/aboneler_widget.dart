@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -290,7 +291,7 @@ class _AbonelerWidgetState extends State<AbonelerWidget>
                                         ),
                                         Align(
                                           alignment:
-                                              AlignmentDirectional(0.0, 0.0),
+                                              AlignmentDirectional(0.00, 0.00),
                                           child: FlutterFlowIconButton(
                                             borderColor:
                                                 FlutterFlowTheme.of(context)
@@ -323,7 +324,7 @@ class _AbonelerWidgetState extends State<AbonelerWidget>
                                         ),
                                         Align(
                                           alignment:
-                                              AlignmentDirectional(0.0, 0.0),
+                                              AlignmentDirectional(0.00, 0.00),
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(

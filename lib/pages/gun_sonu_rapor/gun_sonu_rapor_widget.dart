@@ -817,6 +817,8 @@ class _GunSonuRaporWidgetState extends State<GunSonuRaporWidget> {
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 0.0, 0.0),
                               child: RichText(
+                                textScaleFactor:
+                                    MediaQuery.of(context).textScaleFactor,
                                 text: TextSpan(
                                   children: [
                                     TextSpan(

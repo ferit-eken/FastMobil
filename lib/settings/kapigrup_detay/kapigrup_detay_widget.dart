@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -244,6 +245,7 @@ class _KapigrupDetayWidgetState extends State<KapigrupDetayWidget> {
                                       16.0, 4.0, 16.0, 4.0),
                                   hidesUnderline: true,
                                   isSearchable: false,
+                                  isMultiSelect: false,
                                 ),
                               ),
                             ],
@@ -349,7 +351,7 @@ class _KapigrupDetayWidgetState extends State<KapigrupDetayWidget> {
                                     ),
                                   ),
                                   Align(
-                                    alignment: AlignmentDirectional(0.9, 0.0),
+                                    alignment: AlignmentDirectional(0.90, 0.00),
                                     child: Icon(
                                       Icons.arrow_forward_ios,
                                       color: FlutterFlowTheme.of(context)

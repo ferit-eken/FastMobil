@@ -2,6 +2,7 @@ import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -120,7 +121,7 @@ class _AracListesiWidgetState extends State<AracListesiWidget> {
                     children: [
                       Expanded(
                         child: Align(
-                          alignment: AlignmentDirectional(-1.0, -1.0),
+                          alignment: AlignmentDirectional(-1.00, -1.00),
                           child: Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 1.0, 0.0, 0.0),

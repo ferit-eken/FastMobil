@@ -14,8 +14,6 @@ class UserGroup {
   static String baseUrl = 'https://mobil.fastpark.com.tr/api';
   static Map<String, String> headers = {
     'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Methods': 'GET, POST',
-    'Access-Control-Allow-Headers': 'X-Requested-With',
   };
   static LoginCall loginCall = LoginCall();
   static RegisterCall registerCall = RegisterCall();
@@ -39,8 +37,6 @@ class LoginCall {
       callType: ApiCallType.POST,
       headers: {
         'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'GET, POST',
-        'Access-Control-Allow-Headers': 'X-Requested-With',
       },
       params: {},
       body: ffApiRequestBody,
@@ -122,8 +118,6 @@ class RegisterCall {
       callType: ApiCallType.POST,
       headers: {
         'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'GET, POST',
-        'Access-Control-Allow-Headers': 'X-Requested-With',
       },
       params: {},
       body: ffApiRequestBody,
@@ -169,8 +163,6 @@ class PtsGroup {
   static String baseUrl = 'https://mobil.fastpark.com.tr/api/pts';
   static Map<String, String> headers = {
     'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Methods': 'GET, POST',
-    'Access-Control-Allow-Headers': 'X-Requested-With',
   };
   static AracGirisCall aracGirisCall = AracGirisCall();
   static AracSorguCall aracSorguCall = AracSorguCall();
@@ -247,8 +239,6 @@ class AracGirisCall {
       callType: ApiCallType.POST,
       headers: {
         'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'GET, POST',
-        'Access-Control-Allow-Headers': 'X-Requested-With',
       },
       params: {},
       body: ffApiRequestBody,
@@ -311,8 +301,6 @@ class AracSorguCall {
       callType: ApiCallType.POST,
       headers: {
         'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'GET, POST',
-        'Access-Control-Allow-Headers': 'X-Requested-With',
       },
       params: {},
       body: ffApiRequestBody,
@@ -489,8 +477,6 @@ class TahsilatCall {
       callType: ApiCallType.POST,
       headers: {
         'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'GET, POST',
-        'Access-Control-Allow-Headers': 'X-Requested-With',
       },
       params: {},
       body: ffApiRequestBody,
@@ -655,8 +641,6 @@ class GunsonuRaporCall {
       callType: ApiCallType.POST,
       headers: {
         'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'GET, POST',
-        'Access-Control-Allow-Headers': 'X-Requested-With',
       },
       params: {},
       body: ffApiRequestBody,
@@ -749,8 +733,6 @@ class GunsonuKapatCall {
       callType: ApiCallType.POST,
       headers: {
         'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'GET, POST',
-        'Access-Control-Allow-Headers': 'X-Requested-With',
       },
       params: {},
       body: ffApiRequestBody,
@@ -805,8 +787,6 @@ class HesapKapatCall {
       callType: ApiCallType.POST,
       headers: {
         'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'GET, POST',
-        'Access-Control-Allow-Headers': 'X-Requested-With',
       },
       params: {},
       body: ffApiRequestBody,
@@ -844,8 +824,6 @@ class CariGroup {
   static String baseUrl = 'https://mobil.fastpark.com.tr/api';
   static Map<String, String> headers = {
     'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Methods': 'GET, POST',
-    'Access-Control-Allow-Headers': 'X-Requested-With',
   };
   static CariKayitCall cariKayitCall = CariKayitCall();
   static CariAracKayitCall cariAracKayitCall = CariAracKayitCall();
@@ -910,8 +888,6 @@ class CariKayitCall {
       callType: ApiCallType.POST,
       headers: {
         'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'GET, POST',
-        'Access-Control-Allow-Headers': 'X-Requested-With',
       },
       params: {},
       body: ffApiRequestBody,
@@ -978,8 +954,6 @@ class CariAracKayitCall {
       callType: ApiCallType.POST,
       headers: {
         'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'GET, POST',
-        'Access-Control-Allow-Headers': 'X-Requested-With',
       },
       params: {},
       body: ffApiRequestBody,
@@ -1013,8 +987,6 @@ class StokGroup {
   static String baseUrl = 'https://mobil.fastpark.com.tr/api/Stok';
   static Map<String, String> headers = {
     'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Methods': 'GET, POST',
-    'Access-Control-Allow-Headers': 'X-Requested-With',
   };
   static StokKayitCall stokKayitCall = StokKayitCall();
 }
@@ -1045,8 +1017,6 @@ class StokKayitCall {
       callType: ApiCallType.POST,
       headers: {
         'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'GET, POST',
-        'Access-Control-Allow-Headers': 'X-Requested-With',
       },
       params: {},
       body: ffApiRequestBody,
@@ -1080,8 +1050,6 @@ class SettingsGroup {
   static String baseUrl = 'https://mobil.fastpark.com.tr/api/values';
   static Map<String, String> headers = {
     'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Methods': 'GET, POST',
-    'Access-Control-Allow-Headers': 'X-Requested-With',
   };
   static GetALLCall getALLCall = GetALLCall();
   static GetFilterDataCall getFilterDataCall = GetFilterDataCall();
@@ -1118,8 +1086,6 @@ class GetALLCall {
       callType: ApiCallType.GET,
       headers: {
         'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'GET, POST',
-        'Access-Control-Allow-Headers': 'X-Requested-With',
       },
       params: {},
       returnBody: true,
@@ -1168,8 +1134,6 @@ class GetFilterDataCall {
       callType: ApiCallType.GET,
       headers: {
         'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'GET, POST',
-        'Access-Control-Allow-Headers': 'X-Requested-With',
       },
       params: {},
       returnBody: true,
@@ -1220,8 +1184,6 @@ class GetRowFilterDataCall {
       callType: ApiCallType.GET,
       headers: {
         'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'GET, POST',
-        'Access-Control-Allow-Headers': 'X-Requested-With',
       },
       params: {},
       returnBody: true,
@@ -1272,8 +1234,6 @@ class GetRowDataCall {
       callType: ApiCallType.GET,
       headers: {
         'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'GET, POST',
-        'Access-Control-Allow-Headers': 'X-Requested-With',
       },
       params: {},
       returnBody: true,
@@ -1336,8 +1296,6 @@ class OtoparkUpdateCall {
       callType: ApiCallType.POST,
       headers: {
         'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'GET, POST',
-        'Access-Control-Allow-Headers': 'X-Requested-With',
       },
       params: {},
       body: ffApiRequestBody,
@@ -1407,8 +1365,6 @@ class PosUpdateCall {
       callType: ApiCallType.POST,
       headers: {
         'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'GET, POST',
-        'Access-Control-Allow-Headers': 'X-Requested-With',
       },
       params: {},
       body: ffApiRequestBody,
@@ -1472,8 +1428,6 @@ class BankaUpdateCall {
       callType: ApiCallType.POST,
       headers: {
         'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'GET, POST',
-        'Access-Control-Allow-Headers': 'X-Requested-With',
       },
       params: {},
       body: ffApiRequestBody,
@@ -1537,8 +1491,6 @@ class OtoparkKonumUpdateCall {
       callType: ApiCallType.POST,
       headers: {
         'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'GET, POST',
-        'Access-Control-Allow-Headers': 'X-Requested-With',
       },
       params: {},
       body: ffApiRequestBody,
@@ -1606,8 +1558,6 @@ class AboneTarifeUpdateCall {
       callType: ApiCallType.POST,
       headers: {
         'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'GET, POST',
-        'Access-Control-Allow-Headers': 'X-Requested-With',
       },
       params: {},
       body: ffApiRequestBody,
@@ -1687,8 +1637,6 @@ class AboneTarifeFiyatUpdateCall {
       callType: ApiCallType.POST,
       headers: {
         'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'GET, POST',
-        'Access-Control-Allow-Headers': 'X-Requested-With',
       },
       params: {},
       body: ffApiRequestBody,
@@ -1748,8 +1696,6 @@ class KasaUpdateCall {
       callType: ApiCallType.POST,
       headers: {
         'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'GET, POST',
-        'Access-Control-Allow-Headers': 'X-Requested-With',
       },
       params: {},
       body: ffApiRequestBody,
@@ -1811,8 +1757,6 @@ class PersonelUpdateCall {
       callType: ApiCallType.POST,
       headers: {
         'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'GET, POST',
-        'Access-Control-Allow-Headers': 'X-Requested-With',
       },
       params: {},
       body: ffApiRequestBody,
@@ -1880,8 +1824,6 @@ class IOControllerUpdateCall {
       callType: ApiCallType.POST,
       headers: {
         'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'GET, POST',
-        'Access-Control-Allow-Headers': 'X-Requested-With',
       },
       params: {},
       body: ffApiRequestBody,
@@ -1957,8 +1899,6 @@ class LedPanelUpdateCall {
       callType: ApiCallType.POST,
       headers: {
         'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'GET, POST',
-        'Access-Control-Allow-Headers': 'X-Requested-With',
       },
       params: {},
       body: ffApiRequestBody,
@@ -2013,8 +1953,6 @@ class UpdateRowCall {
       callType: ApiCallType.POST,
       headers: {
         'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'GET, POST',
-        'Access-Control-Allow-Headers': 'X-Requested-With',
       },
       params: {},
       body: ffApiRequestBody,
@@ -2065,8 +2003,6 @@ class GetIDCall {
       callType: ApiCallType.POST,
       headers: {
         'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'GET, POST',
-        'Access-Control-Allow-Headers': 'X-Requested-With',
       },
       params: {},
       body: ffApiRequestBody,
@@ -2157,8 +2093,6 @@ class OtoparkKapiUpdateCall {
       callType: ApiCallType.POST,
       headers: {
         'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'GET, POST',
-        'Access-Control-Allow-Headers': 'X-Requested-With',
       },
       params: {},
       body: ffApiRequestBody,
@@ -2236,8 +2170,6 @@ class OtoparkKapiGrupUpdateCall {
       callType: ApiCallType.POST,
       headers: {
         'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'GET, POST',
-        'Access-Control-Allow-Headers': 'X-Requested-With',
       },
       params: {},
       body: ffApiRequestBody,
@@ -2276,8 +2208,6 @@ class FirmaGroup {
   static String baseUrl = 'https://mobil.fastpark.com.tr/api/Firma';
   static Map<String, String> headers = {
     'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Methods': 'GET, POST',
-    'Access-Control-Allow-Headers': 'X-Requested-With',
   };
 }
 

@@ -422,7 +422,6 @@ class _LoginWidgetState extends State<LoginWidget>
                                             0.0, 0.0, 0.0, 10.0),
                                         child: FFButtonWidget(
                                           onPressed: () async {
-                                            var _shouldSetState = false;
                                             _model.apiResultwz0 =
                                                 await UserGroup.loginCall.call(
                                               firmaKodu: _model
@@ -432,7 +431,6 @@ class _LoginWidgetState extends State<LoginWidget>
                                               password: _model
                                                   .txtPasswordController.text,
                                             );
-                                            _shouldSetState = true;
                                             if (UserGroup.loginCall.succeeded(
                                               (_model.apiResultwz0?.jsonBody ??
                                                   ''),
@@ -463,11 +461,29 @@ class _LoginWidgetState extends State<LoginWidget>
                                                     _model.txtUsernameController
                                                         .text;
                                               });
-                                              if (isAndroid == true) {
-                                                context
-                                                    .pushNamed('portal_home');
-                                              } else {
-                                                context.pushNamed('HomePage');
+                                              _model.apiresultfirma =
+                                                  await SettingsGroup
+                                                      .getRowDataCall
+                                                      .call(
+                                                db: 'fastpark',
+                                                tablename: 'Firmalar',
+                                                keyfield: 'Kod',
+                                                keyvalue: _model
+                                                    .txtFirmakoduController
+                                                    .text,
+                                              );
+                                              if (SettingsGroup.getRowDataCall
+                                                  .successed(
+                                                (_model.apiresultfirma
+                                                        ?.jsonBody ??
+                                                    ''),
+                                              )) {
+                                                if (isAndroid == true) {
+                                                  context
+                                                      .pushNamed('portal_home');
+                                                } else {
+                                                  context.pushNamed('HomePage');
+                                                }
                                               }
                                             } else {
                                               ScaffoldMessenger.of(context)
@@ -496,13 +512,9 @@ class _LoginWidgetState extends State<LoginWidget>
                                                           .secondary,
                                                 ),
                                               );
-                                              if (_shouldSetState)
-                                                setState(() {});
-                                              return;
                                             }
 
-                                            if (_shouldSetState)
-                                              setState(() {});
+                                            setState(() {});
                                           },
                                           text: 'Giriş',
                                           options: FFButtonOptions(

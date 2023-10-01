@@ -58,5 +58,8 @@ export '/settings/urun_detay/urun_detay_widget.dart' show UrunDetayWidget;
 export '/settings/park_konum_detay/park_konum_detay_widget.dart'
     show ParkKonumDetayWidget;
 export '/portal/portal_home/portal_home_widget.dart' show PortalHomeWidget;
-export '/portal/portal_otopark_report/portal_otopark_report_widget.dart'
-    show PortalOtoparkReportWidget;
+export '/portal/portal_mainpage/portal_mainpage_widget.dart'
+    show PortalMainpageWidget;
+export '/portal/portal_liste/portal_liste_widget.dart' show PortalListeWidget;
+export '/portal/portal_profil/portal_profil_widget.dart'
+    show PortalProfilWidget;

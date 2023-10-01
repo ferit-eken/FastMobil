@@ -462,8 +462,8 @@ class _LoginWidgetState extends State<LoginWidget>
                                                         .text;
                                               });
                                               if (isWeb == true) {
-                                                context
-                                                    .pushNamed('portal_home');
+                                                context.pushNamed(
+                                                    'portal_mainpage');
                                               } else {
                                                 context.pushNamed('HomePage');
                                               }

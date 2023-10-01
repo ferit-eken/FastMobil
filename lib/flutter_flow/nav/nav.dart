@@ -326,9 +326,19 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => PortalHomeWidget(),
         ),
         FFRoute(
-          name: 'portal_otopark_report',
-          path: '/portalOtoparkReport',
-          builder: (context, params) => PortalOtoparkReportWidget(),
+          name: 'portal_mainpage',
+          path: '/portalMainpage',
+          builder: (context, params) => PortalMainpageWidget(),
+        ),
+        FFRoute(
+          name: 'portal_liste',
+          path: '/portalListe',
+          builder: (context, params) => PortalListeWidget(),
+        ),
+        FFRoute(
+          name: 'portal_profil',
+          path: '/portalProfil',
+          builder: (context, params) => PortalProfilWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

@@ -14,8 +14,10 @@ class UserGroup {
   static String baseUrl = 'https://mobil.fastpark.com.tr/api';
   static Map<String, String> headers = {
     'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Methods': 'GET, POST',
-    'Access-Control-Allow-Headers': 'X-Requested-With',
+    'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+    'Access-Control-Allow-Headers':
+        'DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range',
+    'Access-Control-Expose-Headers': 'Content-Length,Content-Range',
   };
   static LoginCall loginCall = LoginCall();
   static RegisterCall registerCall = RegisterCall();
@@ -39,8 +41,10 @@ class LoginCall {
       callType: ApiCallType.POST,
       headers: {
         'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'GET, POST',
-        'Access-Control-Allow-Headers': 'X-Requested-With',
+        'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+        'Access-Control-Allow-Headers':
+            'DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range',
+        'Access-Control-Expose-Headers': 'Content-Length,Content-Range',
       },
       params: {},
       body: ffApiRequestBody,
@@ -122,8 +126,10 @@ class RegisterCall {
       callType: ApiCallType.POST,
       headers: {
         'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'GET, POST',
-        'Access-Control-Allow-Headers': 'X-Requested-With',
+        'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+        'Access-Control-Allow-Headers':
+            'DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range',
+        'Access-Control-Expose-Headers': 'Content-Length,Content-Range',
       },
       params: {},
       body: ffApiRequestBody,

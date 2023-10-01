@@ -2,8 +2,6 @@ import 'dart:convert';
 import 'dart:typed_data';
 
 import '../../flutter_flow/flutter_flow_util.dart';
-import '../cloud_functions/cloud_functions.dart';
-
 import 'api_manager.dart';
 
 export 'api_manager.dart' show ApiCallResponse;
@@ -13,6 +11,14 @@ const _kPrivateApiFunctionName = 'ffPrivateApiCall';
 /// Start User Group Code
 
 class UserGroup {
+  static String baseUrl = 'https://mobil.fastpark.com.tr/api';
+  static Map<String, String> headers = {
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+    'Access-Control-Allow-Headers':
+        'DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range',
+    'Access-Control-Expose-Headers': 'Content-Length,Content-Range',
+  };
   static LoginCall loginCall = LoginCall();
   static RegisterCall registerCall = RegisterCall();
 }
@@ -22,19 +28,32 @@ class LoginCall {
     String? firmaKodu = '',
     String? username = '',
     String? password = '',
-  }) async {
-    final response = await makeCloudCall(
-      _kPrivateApiFunctionName,
-      {
-        'callName': 'LoginCall',
-        'variables': {
-          'firmaKodu': firmaKodu,
-          'username': username,
-          'password': password,
-        },
+  }) {
+    final ffApiRequestBody = '''
+{
+  "FirmaKodu": "${firmaKodu}",
+  "Username": "${username}",
+  "Password": "${password}"
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'Login',
+      apiUrl: '${UserGroup.baseUrl}/user',
+      callType: ApiCallType.POST,
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+        'Access-Control-Allow-Headers':
+            'DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range',
+        'Access-Control-Expose-Headers': 'Content-Length,Content-Range',
       },
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
     );
-    return ApiCallResponse.fromCloudCallResponse(response);
   }
 
   dynamic userId(dynamic response) => getJsonField(
@@ -80,31 +99,46 @@ class RegisterCall {
     String? mail = '',
     String? userName = '',
     String? password = '',
-  }) async {
-    final response = await makeCloudCall(
-      _kPrivateApiFunctionName,
-      {
-        'callName': 'RegisterCall',
-        'variables': {
-          'command': command,
-          'firmaKodu': firmaKodu,
-          'firmaAdi': firmaAdi,
-          'ticariUnvan': ticariUnvan,
-          'adres': adres,
-          'vergiDairesi': vergiDairesi,
-          'vergiNo': vergiNo,
-          'yetkiliAdi': yetkiliAdi,
-          'telefon': telefon,
-          'ulke': ulke,
-          'sehir': sehir,
-          'ilce': ilce,
-          'mail': mail,
-          'userName': userName,
-          'password': password,
-        },
+  }) {
+    final ffApiRequestBody = '''
+{
+  "Command": "${firmaKodu}",
+  "Bilgi": {
+    "FirmaKodu": "${firmaKodu}",
+    "FirmaAdi": "${firmaAdi}",
+    "TicariUnvan": "${ticariUnvan}",
+    "Adres": "${adres}",
+    "VergiDairesi": "${vergiDairesi}",
+    "VergiNo": "${vergiNo}",
+    "YetkiliAdi": "${yetkiliAdi}",
+    "Telefon": "${telefon}",
+    "Ulke": "${ulke}",
+    "Sehir": "${sehir}",
+    "Ilce": "${ilce}",
+    "Mail": "${mail}",
+    "UserName": "${userName}",
+    "Password": "${password}"
+  }
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'Register',
+      apiUrl: '${UserGroup.baseUrl}/Firma',
+      callType: ApiCallType.POST,
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+        'Access-Control-Allow-Headers':
+            'DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range',
+        'Access-Control-Expose-Headers': 'Content-Length,Content-Range',
       },
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
     );
-    return ApiCallResponse.fromCloudCallResponse(response);
   }
 
   dynamic userId(dynamic response) => getJsonField(

@@ -12,7 +12,11 @@ const _kPrivateApiFunctionName = 'ffPrivateApiCall';
 
 class UserGroup {
   static String baseUrl = 'https://mobil.fastpark.com.tr/api';
-  static Map<String, String> headers = {};
+  static Map<String, String> headers = {
+    'Access-Control-Allow-Headers': '*',
+    'Access-Control-Allow-Credentials': 'true',
+    'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE',
+  };
   static LoginCall loginCall = LoginCall();
   static RegisterCall registerCall = RegisterCall();
 }
@@ -33,7 +37,11 @@ class LoginCall {
       callName: 'Login',
       apiUrl: '${UserGroup.baseUrl}/user',
       callType: ApiCallType.POST,
-      headers: {},
+      headers: {
+        'Access-Control-Allow-Headers': '*',
+        'Access-Control-Allow-Credentials': 'true',
+        'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE',
+      },
       params: {},
       body: ffApiRequestBody,
       bodyType: BodyType.JSON,
@@ -112,7 +120,11 @@ class RegisterCall {
       callName: 'Register',
       apiUrl: '${UserGroup.baseUrl}/Firma',
       callType: ApiCallType.POST,
-      headers: {},
+      headers: {
+        'Access-Control-Allow-Headers': '*',
+        'Access-Control-Allow-Credentials': 'true',
+        'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE',
+      },
       params: {},
       body: ffApiRequestBody,
       bodyType: BodyType.JSON,
@@ -155,7 +167,11 @@ class RegisterCall {
 
 class PtsGroup {
   static String baseUrl = 'https://mobil.fastpark.com.tr/api/pts';
-  static Map<String, String> headers = {};
+  static Map<String, String> headers = {
+    'Access-Control-Allow-Headers': '*',
+    'Access-Control-Allow-Credentials': 'true',
+    'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE',
+  };
   static AracGirisCall aracGirisCall = AracGirisCall();
   static AracSorguCall aracSorguCall = AracSorguCall();
   static TahsilatCall tahsilatCall = TahsilatCall();
@@ -229,7 +245,11 @@ class AracGirisCall {
       callName: 'AracGiris',
       apiUrl: '${PtsGroup.baseUrl}/${db}',
       callType: ApiCallType.POST,
-      headers: {},
+      headers: {
+        'Access-Control-Allow-Headers': '*',
+        'Access-Control-Allow-Credentials': 'true',
+        'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE',
+      },
       params: {},
       body: ffApiRequestBody,
       bodyType: BodyType.JSON,
@@ -289,7 +309,11 @@ class AracSorguCall {
       callName: 'AracSorgu',
       apiUrl: '${PtsGroup.baseUrl}/${db}',
       callType: ApiCallType.POST,
-      headers: {},
+      headers: {
+        'Access-Control-Allow-Headers': '*',
+        'Access-Control-Allow-Credentials': 'true',
+        'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE',
+      },
       params: {},
       body: ffApiRequestBody,
       bodyType: BodyType.JSON,
@@ -463,7 +487,11 @@ class TahsilatCall {
       callName: 'Tahsilat',
       apiUrl: '${PtsGroup.baseUrl}/${db}',
       callType: ApiCallType.POST,
-      headers: {},
+      headers: {
+        'Access-Control-Allow-Headers': '*',
+        'Access-Control-Allow-Credentials': 'true',
+        'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE',
+      },
       params: {},
       body: ffApiRequestBody,
       bodyType: BodyType.JSON,
@@ -625,7 +653,11 @@ class GunsonuRaporCall {
       callName: 'GunsonuRapor',
       apiUrl: '${PtsGroup.baseUrl}/${db}',
       callType: ApiCallType.POST,
-      headers: {},
+      headers: {
+        'Access-Control-Allow-Headers': '*',
+        'Access-Control-Allow-Credentials': 'true',
+        'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE',
+      },
       params: {},
       body: ffApiRequestBody,
       bodyType: BodyType.JSON,
@@ -715,7 +747,11 @@ class GunsonuKapatCall {
       callName: 'GunsonuKapat',
       apiUrl: '${PtsGroup.baseUrl}/${db}',
       callType: ApiCallType.POST,
-      headers: {},
+      headers: {
+        'Access-Control-Allow-Headers': '*',
+        'Access-Control-Allow-Credentials': 'true',
+        'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE',
+      },
       params: {},
       body: ffApiRequestBody,
       bodyType: BodyType.JSON,
@@ -767,7 +803,11 @@ class HesapKapatCall {
       callName: 'HesapKapat',
       apiUrl: '${PtsGroup.baseUrl}/${db}',
       callType: ApiCallType.POST,
-      headers: {},
+      headers: {
+        'Access-Control-Allow-Headers': '*',
+        'Access-Control-Allow-Credentials': 'true',
+        'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE',
+      },
       params: {},
       body: ffApiRequestBody,
       bodyType: BodyType.JSON,
@@ -802,7 +842,11 @@ class HesapKapatCall {
 
 class CariGroup {
   static String baseUrl = 'https://mobil.fastpark.com.tr/api';
-  static Map<String, String> headers = {};
+  static Map<String, String> headers = {
+    'Access-Control-Allow-Headers': '*',
+    'Access-Control-Allow-Credentials': 'true',
+    'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE',
+  };
   static CariKayitCall cariKayitCall = CariKayitCall();
   static CariAracKayitCall cariAracKayitCall = CariAracKayitCall();
 }
@@ -864,7 +908,11 @@ class CariKayitCall {
       callName: 'CariKayit',
       apiUrl: '${CariGroup.baseUrl}/values/${db}',
       callType: ApiCallType.POST,
-      headers: {},
+      headers: {
+        'Access-Control-Allow-Headers': '*',
+        'Access-Control-Allow-Credentials': 'true',
+        'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE',
+      },
       params: {},
       body: ffApiRequestBody,
       bodyType: BodyType.JSON,
@@ -928,7 +976,11 @@ class CariAracKayitCall {
       callName: 'CariAracKayit',
       apiUrl: '${CariGroup.baseUrl}/values/${db}',
       callType: ApiCallType.POST,
-      headers: {},
+      headers: {
+        'Access-Control-Allow-Headers': '*',
+        'Access-Control-Allow-Credentials': 'true',
+        'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE',
+      },
       params: {},
       body: ffApiRequestBody,
       bodyType: BodyType.JSON,
@@ -959,7 +1011,11 @@ class CariAracKayitCall {
 
 class StokGroup {
   static String baseUrl = 'https://mobil.fastpark.com.tr/api/Stok';
-  static Map<String, String> headers = {};
+  static Map<String, String> headers = {
+    'Access-Control-Allow-Headers': '*',
+    'Access-Control-Allow-Credentials': 'true',
+    'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE',
+  };
   static StokKayitCall stokKayitCall = StokKayitCall();
 }
 
@@ -987,7 +1043,11 @@ class StokKayitCall {
       callName: 'StokKayit',
       apiUrl: '${StokGroup.baseUrl}/${db}',
       callType: ApiCallType.POST,
-      headers: {},
+      headers: {
+        'Access-Control-Allow-Headers': '*',
+        'Access-Control-Allow-Credentials': 'true',
+        'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE',
+      },
       params: {},
       body: ffApiRequestBody,
       bodyType: BodyType.JSON,
@@ -1018,7 +1078,11 @@ class StokKayitCall {
 
 class SettingsGroup {
   static String baseUrl = 'https://mobil.fastpark.com.tr/api/values';
-  static Map<String, String> headers = {};
+  static Map<String, String> headers = {
+    'Access-Control-Allow-Headers': '*',
+    'Access-Control-Allow-Credentials': 'true',
+    'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE',
+  };
   static GetALLCall getALLCall = GetALLCall();
   static GetFilterDataCall getFilterDataCall = GetFilterDataCall();
   static GetRowFilterDataCall getRowFilterDataCall = GetRowFilterDataCall();
@@ -1052,7 +1116,11 @@ class GetALLCall {
       callName: 'GetALL',
       apiUrl: '${SettingsGroup.baseUrl}/${db}/${tablename}',
       callType: ApiCallType.GET,
-      headers: {},
+      headers: {
+        'Access-Control-Allow-Headers': '*',
+        'Access-Control-Allow-Credentials': 'true',
+        'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE',
+      },
       params: {},
       returnBody: true,
       encodeBodyUtf8: false,
@@ -1098,7 +1166,11 @@ class GetFilterDataCall {
       callName: 'GetFilterData',
       apiUrl: '${SettingsGroup.baseUrl}/${db}/${tablename}/${filtre}',
       callType: ApiCallType.GET,
-      headers: {},
+      headers: {
+        'Access-Control-Allow-Headers': '*',
+        'Access-Control-Allow-Credentials': 'true',
+        'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE',
+      },
       params: {},
       returnBody: true,
       encodeBodyUtf8: false,
@@ -1146,7 +1218,11 @@ class GetRowFilterDataCall {
       apiUrl:
           '${SettingsGroup.baseUrl}/${db}/${tablename}/${keyfield}/${keyvalue}',
       callType: ApiCallType.GET,
-      headers: {},
+      headers: {
+        'Access-Control-Allow-Headers': '*',
+        'Access-Control-Allow-Credentials': 'true',
+        'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE',
+      },
       params: {},
       returnBody: true,
       encodeBodyUtf8: false,
@@ -1194,7 +1270,11 @@ class GetRowDataCall {
       apiUrl:
           '${SettingsGroup.baseUrl}/${db}/${tablename}/${keyfield}/${keyvalue}',
       callType: ApiCallType.GET,
-      headers: {},
+      headers: {
+        'Access-Control-Allow-Headers': '*',
+        'Access-Control-Allow-Credentials': 'true',
+        'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE',
+      },
       params: {},
       returnBody: true,
       encodeBodyUtf8: false,
@@ -1254,7 +1334,11 @@ class OtoparkUpdateCall {
       callName: 'OtoparkUpdate',
       apiUrl: '${SettingsGroup.baseUrl}/${db}',
       callType: ApiCallType.POST,
-      headers: {},
+      headers: {
+        'Access-Control-Allow-Headers': '*',
+        'Access-Control-Allow-Credentials': 'true',
+        'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE',
+      },
       params: {},
       body: ffApiRequestBody,
       bodyType: BodyType.JSON,
@@ -1321,7 +1405,11 @@ class PosUpdateCall {
       callName: 'PosUpdate',
       apiUrl: '${SettingsGroup.baseUrl}/${db}',
       callType: ApiCallType.POST,
-      headers: {},
+      headers: {
+        'Access-Control-Allow-Headers': '*',
+        'Access-Control-Allow-Credentials': 'true',
+        'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE',
+      },
       params: {},
       body: ffApiRequestBody,
       bodyType: BodyType.JSON,
@@ -1382,7 +1470,11 @@ class BankaUpdateCall {
       callName: 'BankaUpdate',
       apiUrl: '${SettingsGroup.baseUrl}/${db}',
       callType: ApiCallType.POST,
-      headers: {},
+      headers: {
+        'Access-Control-Allow-Headers': '*',
+        'Access-Control-Allow-Credentials': 'true',
+        'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE',
+      },
       params: {},
       body: ffApiRequestBody,
       bodyType: BodyType.JSON,
@@ -1443,7 +1535,11 @@ class OtoparkKonumUpdateCall {
       callName: 'OtoparkKonumUpdate',
       apiUrl: '${SettingsGroup.baseUrl}/${db}',
       callType: ApiCallType.POST,
-      headers: {},
+      headers: {
+        'Access-Control-Allow-Headers': '*',
+        'Access-Control-Allow-Credentials': 'true',
+        'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE',
+      },
       params: {},
       body: ffApiRequestBody,
       bodyType: BodyType.JSON,
@@ -1508,7 +1604,11 @@ class AboneTarifeUpdateCall {
       callName: 'AboneTarifeUpdate',
       apiUrl: '${SettingsGroup.baseUrl}/${db}',
       callType: ApiCallType.POST,
-      headers: {},
+      headers: {
+        'Access-Control-Allow-Headers': '*',
+        'Access-Control-Allow-Credentials': 'true',
+        'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE',
+      },
       params: {},
       body: ffApiRequestBody,
       bodyType: BodyType.JSON,
@@ -1585,7 +1685,11 @@ class AboneTarifeFiyatUpdateCall {
       callName: 'AboneTarifeFiyatUpdate',
       apiUrl: '${SettingsGroup.baseUrl}/${db}',
       callType: ApiCallType.POST,
-      headers: {},
+      headers: {
+        'Access-Control-Allow-Headers': '*',
+        'Access-Control-Allow-Credentials': 'true',
+        'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE',
+      },
       params: {},
       body: ffApiRequestBody,
       bodyType: BodyType.JSON,
@@ -1642,7 +1746,11 @@ class KasaUpdateCall {
       callName: 'KasaUpdate',
       apiUrl: '${SettingsGroup.baseUrl}/${db}',
       callType: ApiCallType.POST,
-      headers: {},
+      headers: {
+        'Access-Control-Allow-Headers': '*',
+        'Access-Control-Allow-Credentials': 'true',
+        'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE',
+      },
       params: {},
       body: ffApiRequestBody,
       bodyType: BodyType.JSON,
@@ -1701,7 +1809,11 @@ class PersonelUpdateCall {
       callName: 'PersonelUpdate',
       apiUrl: '${SettingsGroup.baseUrl}/${db}',
       callType: ApiCallType.POST,
-      headers: {},
+      headers: {
+        'Access-Control-Allow-Headers': '*',
+        'Access-Control-Allow-Credentials': 'true',
+        'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE',
+      },
       params: {},
       body: ffApiRequestBody,
       bodyType: BodyType.JSON,
@@ -1766,7 +1878,11 @@ class IOControllerUpdateCall {
       callName: 'IOControllerUpdate',
       apiUrl: '${SettingsGroup.baseUrl}/${db}',
       callType: ApiCallType.POST,
-      headers: {},
+      headers: {
+        'Access-Control-Allow-Headers': '*',
+        'Access-Control-Allow-Credentials': 'true',
+        'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE',
+      },
       params: {},
       body: ffApiRequestBody,
       bodyType: BodyType.JSON,
@@ -1839,7 +1955,11 @@ class LedPanelUpdateCall {
       callName: 'LedPanelUpdate',
       apiUrl: '${SettingsGroup.baseUrl}/${db}',
       callType: ApiCallType.POST,
-      headers: {},
+      headers: {
+        'Access-Control-Allow-Headers': '*',
+        'Access-Control-Allow-Credentials': 'true',
+        'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE',
+      },
       params: {},
       body: ffApiRequestBody,
       bodyType: BodyType.JSON,
@@ -1891,7 +2011,11 @@ class UpdateRowCall {
       callName: 'UpdateRow',
       apiUrl: '${SettingsGroup.baseUrl}/${db}',
       callType: ApiCallType.POST,
-      headers: {},
+      headers: {
+        'Access-Control-Allow-Headers': '*',
+        'Access-Control-Allow-Credentials': 'true',
+        'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE',
+      },
       params: {},
       body: ffApiRequestBody,
       bodyType: BodyType.JSON,
@@ -1939,7 +2063,11 @@ class GetIDCall {
       callName: 'GetID',
       apiUrl: '${SettingsGroup.baseUrl}/${db}',
       callType: ApiCallType.POST,
-      headers: {},
+      headers: {
+        'Access-Control-Allow-Headers': '*',
+        'Access-Control-Allow-Credentials': 'true',
+        'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE',
+      },
       params: {},
       body: ffApiRequestBody,
       bodyType: BodyType.JSON,
@@ -2027,7 +2155,11 @@ class OtoparkKapiUpdateCall {
       callName: 'OtoparkKapiUpdate',
       apiUrl: '${SettingsGroup.baseUrl}/${db}',
       callType: ApiCallType.POST,
-      headers: {},
+      headers: {
+        'Access-Control-Allow-Headers': '*',
+        'Access-Control-Allow-Credentials': 'true',
+        'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE',
+      },
       params: {},
       body: ffApiRequestBody,
       bodyType: BodyType.JSON,
@@ -2102,7 +2234,11 @@ class OtoparkKapiGrupUpdateCall {
       callName: 'OtoparkKapiGrupUpdate',
       apiUrl: '${SettingsGroup.baseUrl}/${db}',
       callType: ApiCallType.POST,
-      headers: {},
+      headers: {
+        'Access-Control-Allow-Headers': '*',
+        'Access-Control-Allow-Credentials': 'true',
+        'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE',
+      },
       params: {},
       body: ffApiRequestBody,
       bodyType: BodyType.JSON,
@@ -2139,7 +2275,9 @@ class OtoparkKapiGrupUpdateCall {
 class FirmaGroup {
   static String baseUrl = 'https://mobil.fastpark.com.tr/api/Firma';
   static Map<String, String> headers = {
-    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Headers': '*',
+    'Access-Control-Allow-Credentials': 'true',
+    'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE',
   };
 }
 

@@ -99,7 +99,9 @@ class _AboneAracDetayWidgetState extends State<AboneAracDetayWidget> {
         title: 'AboneAracDetay',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
-          onTap: () => FocusScope.of(context).requestFocus(_model.unfocusNode),
+          onTap: () => _model.unfocusNode.canRequestFocus
+              ? FocusScope.of(context).requestFocus(_model.unfocusNode)
+              : FocusScope.of(context).unfocus(),
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -536,12 +538,14 @@ class _AboneAracDetayWidgetState extends State<AboneAracDetayWidget> {
                                           options: (getJsonField(
                                             txtAractipiGetALLResponse.jsonBody,
                                             r'''$.data[:].Id''',
+                                            true,
                                           ) as List)
                                               .map<String>((s) => s.toString())
                                               .toList()!,
                                           optionLabels: (getJsonField(
                                             txtAractipiGetALLResponse.jsonBody,
                                             r'''$.data[:].AracTipi''',
+                                            true,
                                           ) as List)
                                               .map<String>((s) => s.toString())
                                               .toList()!,

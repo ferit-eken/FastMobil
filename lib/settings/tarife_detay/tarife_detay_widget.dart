@@ -76,7 +76,9 @@ class _TarifeDetayWidgetState extends State<TarifeDetayWidget> {
         title: 'TarifeDetay',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
-          onTap: () => FocusScope.of(context).requestFocus(_model.unfocusNode),
+          onTap: () => _model.unfocusNode.canRequestFocus
+              ? FocusScope.of(context).requestFocus(_model.unfocusNode)
+              : FocusScope.of(context).unfocus(),
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -451,12 +453,14 @@ class _TarifeDetayWidgetState extends State<TarifeDetayWidget> {
                                           options: (getJsonField(
                                             txtOtoparkGetALLResponse.jsonBody,
                                             r'''$.data[:].Id''',
+                                            true,
                                           ) as List)
                                               .map<String>((s) => s.toString())
                                               .toList()!,
                                           optionLabels: (getJsonField(
                                             txtOtoparkGetALLResponse.jsonBody,
                                             r'''$.data[:].OtoparkAdi''',
+                                            true,
                                           ) as List)
                                               .map<String>((s) => s.toString())
                                               .toList()!,
@@ -546,12 +550,14 @@ class _TarifeDetayWidgetState extends State<TarifeDetayWidget> {
                                           options: (getJsonField(
                                             txtAractipiGetALLResponse.jsonBody,
                                             r'''$.data[:].Id''',
+                                            true,
                                           ) as List)
                                               .map<String>((s) => s.toString())
                                               .toList()!,
                                           optionLabels: (getJsonField(
                                             txtAractipiGetALLResponse.jsonBody,
                                             r'''$.data[:].AracTipi''',
+                                            true,
                                           ) as List)
                                               .map<String>((s) => s.toString())
                                               .toList()!,

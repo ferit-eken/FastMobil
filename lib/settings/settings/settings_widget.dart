@@ -47,7 +47,9 @@ class _SettingsWidgetState extends State<SettingsWidget> {
         title: 'Settings',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
-          onTap: () => FocusScope.of(context).requestFocus(_model.unfocusNode),
+          onTap: () => _model.unfocusNode.canRequestFocus
+              ? FocusScope.of(context).requestFocus(_model.unfocusNode)
+              : FocusScope.of(context).unfocus(),
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -143,12 +145,14 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                         options: (getJsonField(
                                           txtOtoparkGetALLResponse.jsonBody,
                                           r'''$.data[:].Id''',
+                                          true,
                                         ) as List)
                                             .map<String>((s) => s.toString())
                                             .toList()!,
                                         optionLabels: (getJsonField(
                                           txtOtoparkGetALLResponse.jsonBody,
                                           r'''$.data[:].OtoparkAdi''',
+                                          true,
                                         ) as List)
                                             .map<String>((s) => s.toString())
                                             .toList()!,
@@ -246,12 +250,14 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                           options: (getJsonField(
                                             txtKapigrupGetALLResponse.jsonBody,
                                             r'''$.data[:].Id''',
+                                            true,
                                           ) as List)
                                               .map<String>((s) => s.toString())
                                               .toList()!,
                                           optionLabels: (getJsonField(
                                             txtKapigrupGetALLResponse.jsonBody,
                                             r'''$.data[:].GrupAdi''',
+                                            true,
                                           ) as List)
                                               .map<String>((s) => s.toString())
                                               .toList()!,
@@ -353,12 +359,14 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                           options: (getJsonField(
                                             txtKapiGetALLResponse.jsonBody,
                                             r'''$.data[:].Id''',
+                                            true,
                                           ) as List)
                                               .map<String>((s) => s.toString())
                                               .toList()!,
                                           optionLabels: (getJsonField(
                                             txtKapiGetALLResponse.jsonBody,
                                             r'''$.data[:].KapiAdi''',
+                                            true,
                                           ) as List)
                                               .map<String>((s) => s.toString())
                                               .toList()!,
@@ -451,12 +459,14 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                           options: (getJsonField(
                                             txtAractipiGetALLResponse.jsonBody,
                                             r'''$.data[:].Id''',
+                                            true,
                                           ) as List)
                                               .map<String>((s) => s.toString())
                                               .toList()!,
                                           optionLabels: (getJsonField(
                                             txtAractipiGetALLResponse.jsonBody,
                                             r'''$.data[:].AracTipi''',
+                                            true,
                                           ) as List)
                                               .map<String>((s) => s.toString())
                                               .toList()!,

@@ -9,12 +9,13 @@ import '/pages/anahtar_liste/anahtar_liste_widget.dart';
 import '/pages/keyboard/keyboard_widget.dart';
 import '/pages/konum_secim/konum_secim_widget.dart';
 import '/custom_code/actions/index.dart' as actions;
+import 'giris_widget.dart' show GirisWidget;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-class GirisModel extends FlutterFlowModel {
+class GirisModel extends FlutterFlowModel<GirisWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();

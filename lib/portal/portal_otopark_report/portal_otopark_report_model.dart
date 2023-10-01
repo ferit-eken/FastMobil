@@ -3,11 +3,13 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/portal/poral_menu/portal_mainmenu/portal_mainmenu_widget.dart';
+import 'portal_otopark_report_widget.dart' show PortalOtoparkReportWidget;
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-class PortalOtoparkReportModel extends FlutterFlowModel {
+class PortalOtoparkReportModel
+    extends FlutterFlowModel<PortalOtoparkReportWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();

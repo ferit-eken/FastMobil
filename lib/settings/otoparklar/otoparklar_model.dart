@@ -3,11 +3,12 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'otoparklar_widget.dart' show OtoparklarWidget;
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-class OtoparklarModel extends FlutterFlowModel {
+class OtoparklarModel extends FlutterFlowModel<OtoparklarWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();

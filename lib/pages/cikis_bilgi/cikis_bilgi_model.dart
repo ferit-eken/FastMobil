@@ -7,13 +7,14 @@ import '/pages/tahsilat_form/tahsilat_form_widget.dart';
 import '/pages/ucretsiz_secim/ucretsiz_secim_widget.dart';
 import '/settings/menus/hasar_formu/hasar_formu_widget.dart';
 import '/custom_code/actions/index.dart' as actions;
+import 'cikis_bilgi_widget.dart' show CikisBilgiWidget;
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-class CikisBilgiModel extends FlutterFlowModel {
+class CikisBilgiModel extends FlutterFlowModel<CikisBilgiWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();

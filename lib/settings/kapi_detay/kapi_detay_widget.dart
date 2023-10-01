@@ -63,7 +63,9 @@ class _KapiDetayWidgetState extends State<KapiDetayWidget> {
         title: 'kapi_detay',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
-          onTap: () => FocusScope.of(context).requestFocus(_model.unfocusNode),
+          onTap: () => _model.unfocusNode.canRequestFocus
+              ? FocusScope.of(context).requestFocus(_model.unfocusNode)
+              : FocusScope.of(context).unfocus(),
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -622,12 +624,14 @@ class _KapiDetayWidgetState extends State<KapiDetayWidget> {
                                           options: (getJsonField(
                                             txtKameraGetALLResponse.jsonBody,
                                             r'''$.data[:].Id''',
+                                            true,
                                           ) as List)
                                               .map<String>((s) => s.toString())
                                               .toList()!,
                                           optionLabels: (getJsonField(
                                             txtKameraGetALLResponse.jsonBody,
                                             r'''$.data[:].KameraAdi''',
+                                            true,
                                           ) as List)
                                               .map<String>((s) => s.toString())
                                               .toList()!,
@@ -724,6 +728,7 @@ class _KapiDetayWidgetState extends State<KapiDetayWidget> {
                                                 txtIocontrollerGetALLResponse
                                                     .jsonBody,
                                                 r'''$.data[:].Id''',
+                                                true,
                                               ) as List)
                                                   .map<String>(
                                                       (s) => s.toString())
@@ -732,6 +737,7 @@ class _KapiDetayWidgetState extends State<KapiDetayWidget> {
                                                 txtIocontrollerGetALLResponse
                                                     .jsonBody,
                                                 r'''$.data[:].Aciklama''',
+                                                true,
                                               ) as List)
                                                   .map<String>(
                                                       (s) => s.toString())
@@ -877,12 +883,14 @@ class _KapiDetayWidgetState extends State<KapiDetayWidget> {
                                           options: (getJsonField(
                                             txtLedpanelGetALLResponse.jsonBody,
                                             r'''$.data[:].Id''',
+                                            true,
                                           ) as List)
                                               .map<String>((s) => s.toString())
                                               .toList()!,
                                           optionLabels: (getJsonField(
                                             txtLedpanelGetALLResponse.jsonBody,
                                             r'''$.data[:].PanelAdi''',
+                                            true,
                                           ) as List)
                                               .map<String>((s) => s.toString())
                                               .toList()!,
@@ -972,12 +980,14 @@ class _KapiDetayWidgetState extends State<KapiDetayWidget> {
                                           options: (getJsonField(
                                             txtKasalarGetALLResponse.jsonBody,
                                             r'''$.data[:].Kod''',
+                                            true,
                                           ) as List)
                                               .map<String>((s) => s.toString())
                                               .toList()!,
                                           optionLabels: (getJsonField(
                                             txtKasalarGetALLResponse.jsonBody,
                                             r'''$.data[:].Aciklama''',
+                                            true,
                                           ) as List)
                                               .map<String>((s) => s.toString())
                                               .toList()!,
@@ -1067,12 +1077,14 @@ class _KapiDetayWidgetState extends State<KapiDetayWidget> {
                                           options: (getJsonField(
                                             txtBankaGetALLResponse.jsonBody,
                                             r'''$.data[:].Kod''',
+                                            true,
                                           ) as List)
                                               .map<String>((s) => s.toString())
                                               .toList()!,
                                           optionLabels: (getJsonField(
                                             txtBankaGetALLResponse.jsonBody,
                                             r'''$.data[:].BankaAd''',
+                                            true,
                                           ) as List)
                                               .map<String>((s) => s.toString())
                                               .toList()!,
@@ -1162,12 +1174,14 @@ class _KapiDetayWidgetState extends State<KapiDetayWidget> {
                                           options: (getJsonField(
                                             chPoscihaziGetALLResponse.jsonBody,
                                             r'''$.data[:].Id''',
+                                            true,
                                           ) as List)
                                               .map<String>((s) => s.toString())
                                               .toList()!,
                                           optionLabels: (getJsonField(
                                             chPoscihaziGetALLResponse.jsonBody,
                                             r'''$.data[:].PosAdi''',
+                                            true,
                                           ) as List)
                                               .map<String>((s) => s.toString())
                                               .toList()!,

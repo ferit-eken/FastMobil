@@ -108,7 +108,9 @@ class _AboneDetayWidgetState extends State<AboneDetayWidget> {
         title: 'AboneDetay',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
-          onTap: () => FocusScope.of(context).requestFocus(_model.unfocusNode),
+          onTap: () => _model.unfocusNode.canRequestFocus
+              ? FocusScope.of(context).requestFocus(_model.unfocusNode)
+              : FocusScope.of(context).unfocus(),
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -278,6 +280,7 @@ class _AboneDetayWidgetState extends State<AboneDetayWidget> {
                                                 chCarigrupGetALLResponse
                                                     .jsonBody,
                                                 r'''$.data[:].Kod''',
+                                                true,
                                               ) as List)
                                                   .map<String>(
                                                       (s) => s.toString())
@@ -286,6 +289,7 @@ class _AboneDetayWidgetState extends State<AboneDetayWidget> {
                                                 chCarigrupGetALLResponse
                                                     .jsonBody,
                                                 r'''$.data[:].Ad''',
+                                                true,
                                               ) as List)
                                                   .map<String>(
                                                       (s) => s.toString())

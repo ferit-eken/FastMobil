@@ -2,11 +2,12 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'fis_ayar_widget.dart' show FisAyarWidget;
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-class FisAyarModel extends FlutterFlowModel {
+class FisAyarModel extends FlutterFlowModel<FisAyarWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();

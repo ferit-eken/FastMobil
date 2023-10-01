@@ -46,7 +46,9 @@ class _PortalHomeWidgetState extends State<PortalHomeWidget> {
         title: 'portal_home',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
-          onTap: () => FocusScope.of(context).requestFocus(_model.unfocusNode),
+          onTap: () => _model.unfocusNode.canRequestFocus
+              ? FocusScope.of(context).requestFocus(_model.unfocusNode)
+              : FocusScope.of(context).unfocus(),
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -76,8 +78,10 @@ class _PortalHomeWidgetState extends State<PortalHomeWidget> {
                         context: context,
                         builder: (context) {
                           return GestureDetector(
-                            onTap: () => FocusScope.of(context)
-                                .requestFocus(_model.unfocusNode),
+                            onTap: () => _model.unfocusNode.canRequestFocus
+                                ? FocusScope.of(context)
+                                    .requestFocus(_model.unfocusNode)
+                                : FocusScope.of(context).unfocus(),
                             child: Padding(
                               padding: MediaQuery.viewInsetsOf(context),
                               child: Container(
@@ -370,6 +374,7 @@ class _PortalHomeWidgetState extends State<PortalHomeWidget> {
                                                   radius: 35.0,
                                                   lineWidth: 12.0,
                                                   animation: true,
+                                                  animateFromLastPercent: true,
                                                   progressColor:
                                                       FlutterFlowTheme.of(
                                                               context)

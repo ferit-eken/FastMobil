@@ -4,11 +4,12 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:async';
+import 'tarife_fiyatlar_widget.dart' show TarifeFiyatlarWidget;
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-class TarifeFiyatlarModel extends FlutterFlowModel {
+class TarifeFiyatlarModel extends FlutterFlowModel<TarifeFiyatlarWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();

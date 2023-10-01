@@ -3,11 +3,12 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'park_konum_detay_widget.dart' show ParkKonumDetayWidget;
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-class ParkKonumDetayModel extends FlutterFlowModel {
+class ParkKonumDetayModel extends FlutterFlowModel<ParkKonumDetayWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();

@@ -2226,7 +2226,11 @@ class OtoparkKapiGrupUpdateCall {
 
 class FirmaGroup {
   static String baseUrl = 'https://mobil.fastpark.com.tr/api/Firma';
-  static Map<String, String> headers = {};
+  static Map<String, String> headers = {
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Methods': 'GET, POST',
+    'Access-Control-Allow-Headers': 'X-Requested-With',
+  };
 }
 
 /// End Firma Group Code

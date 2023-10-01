@@ -844,8 +844,6 @@ class CariGroup {
   static String baseUrl = 'https://mobil.fastpark.com.tr/api';
   static Map<String, String> headers = {
     'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Methods': 'GET, POST',
-    'Access-Control-Allow-Headers': 'X-Requested-With',
   };
   static CariKayitCall cariKayitCall = CariKayitCall();
   static CariAracKayitCall cariAracKayitCall = CariAracKayitCall();
@@ -910,8 +908,6 @@ class CariKayitCall {
       callType: ApiCallType.POST,
       headers: {
         'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'GET, POST',
-        'Access-Control-Allow-Headers': 'X-Requested-With',
       },
       params: {},
       body: ffApiRequestBody,
@@ -978,8 +974,6 @@ class CariAracKayitCall {
       callType: ApiCallType.POST,
       headers: {
         'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'GET, POST',
-        'Access-Control-Allow-Headers': 'X-Requested-With',
       },
       params: {},
       body: ffApiRequestBody,
@@ -1014,7 +1008,6 @@ class StokGroup {
   static Map<String, String> headers = {
     'Access-Control-Allow-Origin': '*',
     'Access-Control-Allow-Methods': 'GET, POST',
-    'Access-Control-Allow-Headers': 'X-Requested-With',
   };
   static StokKayitCall stokKayitCall = StokKayitCall();
 }
@@ -1046,7 +1039,6 @@ class StokKayitCall {
       headers: {
         'Access-Control-Allow-Origin': '*',
         'Access-Control-Allow-Methods': 'GET, POST',
-        'Access-Control-Allow-Headers': 'X-Requested-With',
       },
       params: {},
       body: ffApiRequestBody,

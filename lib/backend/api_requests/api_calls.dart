@@ -167,7 +167,11 @@ class RegisterCall {
 
 class PtsGroup {
   static String baseUrl = 'https://mobil.fastpark.com.tr/api/pts';
-  static Map<String, String> headers = {};
+  static Map<String, String> headers = {
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Methods': 'GET, POST',
+    'Access-Control-Allow-Headers': 'X-Requested-With',
+  };
   static AracGirisCall aracGirisCall = AracGirisCall();
   static AracSorguCall aracSorguCall = AracSorguCall();
   static TahsilatCall tahsilatCall = TahsilatCall();
@@ -241,7 +245,11 @@ class AracGirisCall {
       callName: 'AracGiris',
       apiUrl: '${PtsGroup.baseUrl}/${db}',
       callType: ApiCallType.POST,
-      headers: {},
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'GET, POST',
+        'Access-Control-Allow-Headers': 'X-Requested-With',
+      },
       params: {},
       body: ffApiRequestBody,
       bodyType: BodyType.JSON,
@@ -301,7 +309,11 @@ class AracSorguCall {
       callName: 'AracSorgu',
       apiUrl: '${PtsGroup.baseUrl}/${db}',
       callType: ApiCallType.POST,
-      headers: {},
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'GET, POST',
+        'Access-Control-Allow-Headers': 'X-Requested-With',
+      },
       params: {},
       body: ffApiRequestBody,
       bodyType: BodyType.JSON,
@@ -475,7 +487,11 @@ class TahsilatCall {
       callName: 'Tahsilat',
       apiUrl: '${PtsGroup.baseUrl}/${db}',
       callType: ApiCallType.POST,
-      headers: {},
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'GET, POST',
+        'Access-Control-Allow-Headers': 'X-Requested-With',
+      },
       params: {},
       body: ffApiRequestBody,
       bodyType: BodyType.JSON,
@@ -637,7 +653,11 @@ class GunsonuRaporCall {
       callName: 'GunsonuRapor',
       apiUrl: '${PtsGroup.baseUrl}/${db}',
       callType: ApiCallType.POST,
-      headers: {},
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'GET, POST',
+        'Access-Control-Allow-Headers': 'X-Requested-With',
+      },
       params: {},
       body: ffApiRequestBody,
       bodyType: BodyType.JSON,
@@ -727,7 +747,11 @@ class GunsonuKapatCall {
       callName: 'GunsonuKapat',
       apiUrl: '${PtsGroup.baseUrl}/${db}',
       callType: ApiCallType.POST,
-      headers: {},
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'GET, POST',
+        'Access-Control-Allow-Headers': 'X-Requested-With',
+      },
       params: {},
       body: ffApiRequestBody,
       bodyType: BodyType.JSON,
@@ -779,7 +803,11 @@ class HesapKapatCall {
       callName: 'HesapKapat',
       apiUrl: '${PtsGroup.baseUrl}/${db}',
       callType: ApiCallType.POST,
-      headers: {},
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'GET, POST',
+        'Access-Control-Allow-Headers': 'X-Requested-With',
+      },
       params: {},
       body: ffApiRequestBody,
       bodyType: BodyType.JSON,
@@ -814,7 +842,11 @@ class HesapKapatCall {
 
 class CariGroup {
   static String baseUrl = 'https://mobil.fastpark.com.tr/api';
-  static Map<String, String> headers = {};
+  static Map<String, String> headers = {
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Methods': 'GET, POST',
+    'Access-Control-Allow-Headers': 'X-Requested-With',
+  };
   static CariKayitCall cariKayitCall = CariKayitCall();
   static CariAracKayitCall cariAracKayitCall = CariAracKayitCall();
 }
@@ -876,7 +908,11 @@ class CariKayitCall {
       callName: 'CariKayit',
       apiUrl: '${CariGroup.baseUrl}/values/${db}',
       callType: ApiCallType.POST,
-      headers: {},
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'GET, POST',
+        'Access-Control-Allow-Headers': 'X-Requested-With',
+      },
       params: {},
       body: ffApiRequestBody,
       bodyType: BodyType.JSON,
@@ -940,7 +976,11 @@ class CariAracKayitCall {
       callName: 'CariAracKayit',
       apiUrl: '${CariGroup.baseUrl}/values/${db}',
       callType: ApiCallType.POST,
-      headers: {},
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'GET, POST',
+        'Access-Control-Allow-Headers': 'X-Requested-With',
+      },
       params: {},
       body: ffApiRequestBody,
       bodyType: BodyType.JSON,
@@ -971,7 +1011,11 @@ class CariAracKayitCall {
 
 class StokGroup {
   static String baseUrl = 'https://mobil.fastpark.com.tr/api/Stok';
-  static Map<String, String> headers = {};
+  static Map<String, String> headers = {
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Methods': 'GET, POST',
+    'Access-Control-Allow-Headers': 'X-Requested-With',
+  };
   static StokKayitCall stokKayitCall = StokKayitCall();
 }
 
@@ -999,7 +1043,11 @@ class StokKayitCall {
       callName: 'StokKayit',
       apiUrl: '${StokGroup.baseUrl}/${db}',
       callType: ApiCallType.POST,
-      headers: {},
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'GET, POST',
+        'Access-Control-Allow-Headers': 'X-Requested-With',
+      },
       params: {},
       body: ffApiRequestBody,
       bodyType: BodyType.JSON,

@@ -422,7 +422,7 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                                                           4.0,
                                                                           0.0),
                                                                   child: Text(
-                                                                    '\$567k',
+                                                                    '1.250₺',
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
                                                                         .displaySmall,
@@ -503,7 +503,7 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                                                             4.0,
                                                                             0.0),
                                                                 child: Text(
-                                                                  '5.7m',
+                                                                  '250₺',
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
                                                                       .displaySmall,
@@ -583,7 +583,7 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                                                             4.0,
                                                                             0.0),
                                                                 child: Text(
-                                                                  '2.5k',
+                                                                  '1.000₺',
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
                                                                       .displaySmall,
@@ -663,7 +663,7 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                                                             4.0,
                                                                             0.0),
                                                                 child: Text(
-                                                                  '6.4k',
+                                                                  '124',
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
                                                                       .displaySmall,
@@ -750,7 +750,7 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                                                     .start,
                                                             children: [
                                                               Text(
-                                                                'Outstanding Balance',
+                                                                'Toplam Giriş',
                                                                 style: FlutterFlowTheme.of(
                                                                         context)
                                                                     .labelMedium,
@@ -768,7 +768,7 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                                                             4.0,
                                                                             0.0),
                                                                     child: Text(
-                                                                      '\$529,204',
+                                                                      '124',
                                                                       style: FlutterFlowTheme.of(
                                                                               context)
                                                                           .displaySmall,
@@ -850,7 +850,7 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                                                     .start,
                                                             children: [
                                                               Text(
-                                                                'Outstanding Balance',
+                                                                'Depom Çıkış',
                                                                 style: FlutterFlowTheme.of(
                                                                         context)
                                                                     .labelMedium,
@@ -868,7 +868,7 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                                                             4.0,
                                                                             0.0),
                                                                     child: Text(
-                                                                      '\$529,204',
+                                                                      '74',
                                                                       style: FlutterFlowTheme.of(
                                                                               context)
                                                                           .displaySmall,
@@ -880,7 +880,7 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                                           ),
                                                         ),
                                                         CircularPercentIndicator(
-                                                          percent: 0.55,
+                                                          percent: 0.65,
                                                           radius: 45.0,
                                                           lineWidth: 8.0,
                                                           animation: true,
@@ -895,7 +895,7 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                                                       context)
                                                                   .accent1,
                                                           center: Text(
-                                                            '55%',
+                                                            '66%',
                                                             style: FlutterFlowTheme
                                                                     .of(context)
                                                                 .headlineMedium,
@@ -1040,9 +1040,12 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                                                               .start,
                                                                       children: [
                                                                         Text(
-                                                                          'Network Requests',
-                                                                          style:
-                                                                              FlutterFlowTheme.of(context).titleLarge,
+                                                                          'Çıkış Türleri',
+                                                                          style: FlutterFlowTheme.of(context)
+                                                                              .titleLarge
+                                                                              .override(
+                                                                                fontFamily: 'Open Sans',
+                                                                              ),
                                                                         ),
                                                                         Padding(
                                                                           padding: const EdgeInsetsDirectional.fromSTEB(
@@ -1052,7 +1055,7 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                                                               0.0),
                                                                           child:
                                                                               Text(
-                                                                            'You’re using 80% of available requests.',
+                                                                            'Çıkışların Ücretli, Ücretsiz yada Misafir oranları',
                                                                             style:
                                                                                 FlutterFlowTheme.of(context).labelMedium,
                                                                           ),
@@ -1095,7 +1098,7 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                                                         context)
                                                                     .accent2,
                                                             center: Text(
-                                                              '562k',
+                                                              '75',
                                                               style: FlutterFlowTheme
                                                                       .of(context)
                                                                   .displaySmall,
@@ -1112,7 +1115,7 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                                                     16.0,
                                                                     0.0),
                                                         child: Text(
-                                                          'You’ve almost reached your limit',
+                                                          'Ücretli Geçiş',
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .bodyLarge,
@@ -1127,7 +1130,7 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                                                     16.0,
                                                                     8.0),
                                                         child: Text(
-                                                          'You have used 80% of your available requests. Upgrade plan to make more network requests.',
+                                                          'Bu bölümde aktif güne ait araç ıkışlarının türlere göre sayıları raporlanır',
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .labelSmall,
@@ -1423,21 +1426,6 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                                               style: FlutterFlowTheme
                                                                       .of(context)
                                                                   .bodyLarge,
-                                                            ),
-                                                          ),
-                                                          Padding(
-                                                            padding:
-                                                                const EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        16.0,
-                                                                        4.0,
-                                                                        16.0,
-                                                                        8.0),
-                                                            child: Text(
-                                                              '',
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .labelSmall,
                                                             ),
                                                           ),
                                                         ],

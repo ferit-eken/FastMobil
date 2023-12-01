@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'park_konum_detay_widget.dart' show ParkKonumDetayWidget;
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
@@ -13,6 +14,7 @@ class ParkKonumDetayModel extends FlutterFlowModel<ParkKonumDetayWidget> {
 
   final unfocusNode = FocusNode();
   // State field(s) for txt_ad widget.
+  FocusNode? txtAdFocusNode;
   TextEditingController? txtAdController;
   String? Function(BuildContext, String?)? txtAdControllerValidator;
   // State field(s) for ch_isactive widget.
@@ -26,6 +28,7 @@ class ParkKonumDetayModel extends FlutterFlowModel<ParkKonumDetayWidget> {
 
   void dispose() {
     unfocusNode.dispose();
+    txtAdFocusNode?.dispose();
     txtAdController?.dispose();
   }
 

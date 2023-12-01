@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 import 'package:provider/provider.dart';
@@ -37,6 +38,12 @@ class _TarifeFiyatDetayWidgetState extends State<TarifeFiyatDetayWidget> {
     super.initState();
     _model = createModel(context, () => TarifeFiyatDetayModel());
 
+    _model.txtBaslangicFocusNode ??= FocusNode();
+
+    _model.txtBitisFocusNode ??= FocusNode();
+
+    _model.txtFiyatFocusNode ??= FocusNode();
+
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
@@ -49,6 +56,15 @@ class _TarifeFiyatDetayWidgetState extends State<TarifeFiyatDetayWidget> {
 
   @override
   Widget build(BuildContext context) {
+    if (isiOS) {
+      SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle(
+          statusBarBrightness: Theme.of(context).brightness,
+          systemStatusBarContrastEnforced: true,
+        ),
+      );
+    }
+
     context.watch<FFAppState>();
 
     return FutureBuilder<ApiCallResponse>(
@@ -237,6 +253,8 @@ class _TarifeFiyatDetayWidgetState extends State<TarifeFiyatDetayWidget> {
                                                 r'''$.data.Baslangic''',
                                               ).toString(),
                                             ),
+                                            focusNode:
+                                                _model.txtBaslangicFocusNode,
                                             autofocus: true,
                                             obscureText: false,
                                             decoration: InputDecoration(
@@ -332,6 +350,7 @@ class _TarifeFiyatDetayWidgetState extends State<TarifeFiyatDetayWidget> {
                                                 r'''$.data.Bitis''',
                                               ).toString(),
                                             ),
+                                            focusNode: _model.txtBitisFocusNode,
                                             autofocus: true,
                                             obscureText: false,
                                             decoration: InputDecoration(
@@ -427,6 +446,7 @@ class _TarifeFiyatDetayWidgetState extends State<TarifeFiyatDetayWidget> {
                                                 r'''$.data.Ucret''',
                                               ).toString(),
                                             ),
+                                            focusNode: _model.txtFiyatFocusNode,
                                             autofocus: true,
                                             obscureText: false,
                                             decoration: InputDecoration(

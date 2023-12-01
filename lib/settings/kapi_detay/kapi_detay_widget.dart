@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'kapi_detay_model.dart';
@@ -40,11 +41,15 @@ class _KapiDetayWidgetState extends State<KapiDetayWidget> {
       widget.kapi,
       r'''$.KapiAdi''',
     ).toString().toString());
+    _model.txtKapiadiFocusNode ??= FocusNode();
+
     _model.txtIdController ??= TextEditingController(
         text: getJsonField(
       widget.kapi,
       r'''$.Id''',
     ).toString().toString());
+    _model.txtIdFocusNode ??= FocusNode();
+
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
@@ -57,6 +62,15 @@ class _KapiDetayWidgetState extends State<KapiDetayWidget> {
 
   @override
   Widget build(BuildContext context) {
+    if (isiOS) {
+      SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle(
+          statusBarBrightness: Theme.of(context).brightness,
+          systemStatusBarContrastEnforced: true,
+        ),
+      );
+    }
+
     context.watch<FFAppState>();
 
     return Title(
@@ -237,6 +251,8 @@ class _KapiDetayWidgetState extends State<KapiDetayWidget> {
                                             child: TextFormField(
                                               controller:
                                                   _model.txtKapiadiController,
+                                              focusNode:
+                                                  _model.txtKapiadiFocusNode,
                                               autofocus: true,
                                               obscureText: false,
                                               decoration: InputDecoration(
@@ -373,6 +389,7 @@ class _KapiDetayWidgetState extends State<KapiDetayWidget> {
                                                   8.0, 0.0, 8.0, 0.0),
                                           child: TextFormField(
                                             controller: _model.txtIdController,
+                                            focusNode: _model.txtIdFocusNode,
                                             autofocus: true,
                                             obscureText: false,
                                             decoration: InputDecoration(
@@ -621,13 +638,15 @@ class _KapiDetayWidgetState extends State<KapiDetayWidget> {
                                               r'''$.GirisKameraId''',
                                             ).toString(),
                                           ),
-                                          options: (getJsonField(
+                                          options: List<String>.from(
+                                              (getJsonField(
                                             txtKameraGetALLResponse.jsonBody,
                                             r'''$.data[:].Id''',
                                             true,
                                           ) as List)
-                                              .map<String>((s) => s.toString())
-                                              .toList()!,
+                                                  .map<String>(
+                                                      (s) => s.toString())
+                                                  .toList()!),
                                           optionLabels: (getJsonField(
                                             txtKameraGetALLResponse.jsonBody,
                                             r'''$.data[:].KameraAdi''',
@@ -724,15 +743,16 @@ class _KapiDetayWidgetState extends State<KapiDetayWidget> {
                                                   r'''$.IOControllerId''',
                                                 ).toString(),
                                               ),
-                                              options: (getJsonField(
+                                              options: List<String>.from(
+                                                  (getJsonField(
                                                 txtIocontrollerGetALLResponse
                                                     .jsonBody,
                                                 r'''$.data[:].Id''',
                                                 true,
                                               ) as List)
-                                                  .map<String>(
-                                                      (s) => s.toString())
-                                                  .toList()!,
+                                                      .map<String>(
+                                                          (s) => s.toString())
+                                                      .toList()!),
                                               optionLabels: (getJsonField(
                                                 txtIocontrollerGetALLResponse
                                                     .jsonBody,
@@ -787,7 +807,8 @@ class _KapiDetayWidgetState extends State<KapiDetayWidget> {
                                               r'''$.TetikNo''',
                                             ),
                                           ),
-                                          options: [1, 2, 3, 4, 5, 6, 7, 8],
+                                          options: List<int>.from(
+                                              [1, 2, 3, 4, 5, 6, 7, 8]),
                                           optionLabels: [
                                             '1',
                                             '2',
@@ -880,13 +901,15 @@ class _KapiDetayWidgetState extends State<KapiDetayWidget> {
                                               r'''$.LedPanelId''',
                                             ).toString(),
                                           ),
-                                          options: (getJsonField(
+                                          options: List<String>.from(
+                                              (getJsonField(
                                             txtLedpanelGetALLResponse.jsonBody,
                                             r'''$.data[:].Id''',
                                             true,
                                           ) as List)
-                                              .map<String>((s) => s.toString())
-                                              .toList()!,
+                                                  .map<String>(
+                                                      (s) => s.toString())
+                                                  .toList()!),
                                           optionLabels: (getJsonField(
                                             txtLedpanelGetALLResponse.jsonBody,
                                             r'''$.data[:].PanelAdi''',
@@ -977,13 +1000,15 @@ class _KapiDetayWidgetState extends State<KapiDetayWidget> {
                                               r'''$.KasaKodu''',
                                             ).toString(),
                                           ),
-                                          options: (getJsonField(
+                                          options: List<String>.from(
+                                              (getJsonField(
                                             txtKasalarGetALLResponse.jsonBody,
                                             r'''$.data[:].Kod''',
                                             true,
                                           ) as List)
-                                              .map<String>((s) => s.toString())
-                                              .toList()!,
+                                                  .map<String>(
+                                                      (s) => s.toString())
+                                                  .toList()!),
                                           optionLabels: (getJsonField(
                                             txtKasalarGetALLResponse.jsonBody,
                                             r'''$.data[:].Aciklama''',
@@ -1074,13 +1099,15 @@ class _KapiDetayWidgetState extends State<KapiDetayWidget> {
                                               r'''$.BankaKodu''',
                                             ).toString(),
                                           ),
-                                          options: (getJsonField(
+                                          options: List<String>.from(
+                                              (getJsonField(
                                             txtBankaGetALLResponse.jsonBody,
                                             r'''$.data[:].Kod''',
                                             true,
                                           ) as List)
-                                              .map<String>((s) => s.toString())
-                                              .toList()!,
+                                                  .map<String>(
+                                                      (s) => s.toString())
+                                                  .toList()!),
                                           optionLabels: (getJsonField(
                                             txtBankaGetALLResponse.jsonBody,
                                             r'''$.data[:].BankaAd''',
@@ -1171,13 +1198,15 @@ class _KapiDetayWidgetState extends State<KapiDetayWidget> {
                                               r'''$.PosId''',
                                             ).toString(),
                                           ),
-                                          options: (getJsonField(
+                                          options: List<String>.from(
+                                              (getJsonField(
                                             chPoscihaziGetALLResponse.jsonBody,
                                             r'''$.data[:].Id''',
                                             true,
                                           ) as List)
-                                              .map<String>((s) => s.toString())
-                                              .toList()!,
+                                                  .map<String>(
+                                                      (s) => s.toString())
+                                                  .toList()!),
                                           optionLabels: (getJsonField(
                                             chPoscihaziGetALLResponse.jsonBody,
                                             r'''$.data[:].PosAdi''',

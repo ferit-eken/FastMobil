@@ -8,6 +8,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'i_o_controller_detay_widget.dart' show IOControllerDetayWidget;
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
@@ -18,17 +19,20 @@ class IOControllerDetayModel extends FlutterFlowModel<IOControllerDetayWidget> {
 
   final unfocusNode = FocusNode();
   // State field(s) for txt_aciklama widget.
+  FocusNode? txtAciklamaFocusNode;
   TextEditingController? txtAciklamaController;
   String? Function(BuildContext, String?)? txtAciklamaControllerValidator;
   // State field(s) for txt_baglantituru widget.
   String? txtBaglantituruValue;
   FormFieldController<String>? txtBaglantituruValueController;
   // State field(s) for txt_Id widget.
+  FocusNode? txtIdFocusNode;
   TextEditingController? txtIdController;
   String? Function(BuildContext, String?)? txtIdControllerValidator;
   // State field(s) for ch_isactive widget.
   bool? chIsactiveValue;
   // State field(s) for txt_ipadres widget.
+  FocusNode? txtIpadresFocusNode;
   TextEditingController? txtIpadresController;
   final txtIpadresMask = MaskTextInputFormatter(mask: '###.###.###.###');
   String? Function(BuildContext, String?)? txtIpadresControllerValidator;
@@ -52,8 +56,13 @@ class IOControllerDetayModel extends FlutterFlowModel<IOControllerDetayWidget> {
 
   void dispose() {
     unfocusNode.dispose();
+    txtAciklamaFocusNode?.dispose();
     txtAciklamaController?.dispose();
+
+    txtIdFocusNode?.dispose();
     txtIdController?.dispose();
+
+    txtIpadresFocusNode?.dispose();
     txtIpadresController?.dispose();
   }
 

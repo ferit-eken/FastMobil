@@ -7,6 +7,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'urun_detay_widget.dart' show UrunDetayWidget;
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
@@ -15,15 +16,18 @@ class UrunDetayModel extends FlutterFlowModel<UrunDetayWidget> {
 
   final unfocusNode = FocusNode();
   // State field(s) for txt_kod widget.
+  FocusNode? txtKodFocusNode;
   TextEditingController? txtKodController;
   String? Function(BuildContext, String?)? txtKodControllerValidator;
   // State field(s) for ch_durum widget.
   int? chDurumValue;
   FormFieldController<int>? chDurumValueController;
   // State field(s) for txt_urunadi widget.
+  FocusNode? txtUrunadiFocusNode;
   TextEditingController? txtUrunadiController;
   String? Function(BuildContext, String?)? txtUrunadiControllerValidator;
   // State field(s) for txt_fiyat widget.
+  FocusNode? txtFiyatFocusNode;
   TextEditingController? txtFiyatController;
   String? Function(BuildContext, String?)? txtFiyatControllerValidator;
   // Stores action output result for [Backend Call - API (StokKayit)] action in Icon widget.
@@ -35,8 +39,13 @@ class UrunDetayModel extends FlutterFlowModel<UrunDetayWidget> {
 
   void dispose() {
     unfocusNode.dispose();
+    txtKodFocusNode?.dispose();
     txtKodController?.dispose();
+
+    txtUrunadiFocusNode?.dispose();
     txtUrunadiController?.dispose();
+
+    txtFiyatFocusNode?.dispose();
     txtFiyatController?.dispose();
   }
 

@@ -8,6 +8,7 @@ import '/flutter_flow/form_field_controller.dart';
 import 'abone_arac_detay_widget.dart' show AboneAracDetayWidget;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
@@ -20,14 +21,17 @@ class AboneAracDetayModel extends FlutterFlowModel<AboneAracDetayWidget> {
 
   final unfocusNode = FocusNode();
   // State field(s) for txt_plaka widget.
+  FocusNode? txtPlakaFocusNode;
   TextEditingController? txtPlakaController;
   String? Function(BuildContext, String?)? txtPlakaControllerValidator;
   // State field(s) for ch_isactive widget.
   bool? chIsactiveValue;
   // State field(s) for txt_adsoyad widget.
+  FocusNode? txtAdsoyadFocusNode;
   TextEditingController? txtAdsoyadController;
   String? Function(BuildContext, String?)? txtAdsoyadControllerValidator;
   // State field(s) for txt_telefon widget.
+  FocusNode? txtTelefonFocusNode;
   TextEditingController? txtTelefonController;
   String? Function(BuildContext, String?)? txtTelefonControllerValidator;
   // State field(s) for txt_kullanimturu widget.
@@ -45,8 +49,13 @@ class AboneAracDetayModel extends FlutterFlowModel<AboneAracDetayWidget> {
 
   void dispose() {
     unfocusNode.dispose();
+    txtPlakaFocusNode?.dispose();
     txtPlakaController?.dispose();
+
+    txtAdsoyadFocusNode?.dispose();
     txtAdsoyadController?.dispose();
+
+    txtTelefonFocusNode?.dispose();
     txtTelefonController?.dispose();
   }
 

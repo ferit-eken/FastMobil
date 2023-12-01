@@ -7,6 +7,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'kapi_detay_widget.dart' show KapiDetayWidget;
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
@@ -15,12 +16,14 @@ class KapiDetayModel extends FlutterFlowModel<KapiDetayWidget> {
 
   final unfocusNode = FocusNode();
   // State field(s) for txt_kapiadi widget.
+  FocusNode? txtKapiadiFocusNode;
   TextEditingController? txtKapiadiController;
   String? Function(BuildContext, String?)? txtKapiadiControllerValidator;
   // State field(s) for txt_giristuru widget.
   String? txtGiristuruValue;
   FormFieldController<String>? txtGiristuruValueController;
   // State field(s) for txt_Id widget.
+  FocusNode? txtIdFocusNode;
   TextEditingController? txtIdController;
   String? Function(BuildContext, String?)? txtIdControllerValidator;
   // State field(s) for ch_tanimsizonay widget.
@@ -67,7 +70,10 @@ class KapiDetayModel extends FlutterFlowModel<KapiDetayWidget> {
 
   void dispose() {
     unfocusNode.dispose();
+    txtKapiadiFocusNode?.dispose();
     txtKapiadiController?.dispose();
+
+    txtIdFocusNode?.dispose();
     txtIdController?.dispose();
   }
 

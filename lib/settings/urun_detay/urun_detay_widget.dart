@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'urun_detay_model.dart';
@@ -33,6 +34,12 @@ class _UrunDetayWidgetState extends State<UrunDetayWidget> {
     super.initState();
     _model = createModel(context, () => UrunDetayModel());
 
+    _model.txtKodFocusNode ??= FocusNode();
+
+    _model.txtUrunadiFocusNode ??= FocusNode();
+
+    _model.txtFiyatFocusNode ??= FocusNode();
+
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
@@ -45,6 +52,15 @@ class _UrunDetayWidgetState extends State<UrunDetayWidget> {
 
   @override
   Widget build(BuildContext context) {
+    if (isiOS) {
+      SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle(
+          statusBarBrightness: Theme.of(context).brightness,
+          systemStatusBarContrastEnforced: true,
+        ),
+      );
+    }
+
     context.watch<FFAppState>();
 
     return FutureBuilder<ApiCallResponse>(
@@ -230,6 +246,8 @@ class _UrunDetayWidgetState extends State<UrunDetayWidget> {
                                                       r'''$.data.Kod''',
                                                     ).toString(),
                                                   ),
+                                                  focusNode:
+                                                      _model.txtKodFocusNode,
                                                   readOnly: true,
                                                   obscureText: false,
                                                   decoration: InputDecoration(
@@ -320,7 +338,7 @@ class _UrunDetayWidgetState extends State<UrunDetayWidget> {
                                                         ? 1
                                                         : 0,
                                               ),
-                                              options: [0, 1],
+                                              options: List<int>.from([0, 1]),
                                               optionLabels: ['Pasif', 'Aktif'],
                                               onChanged: (val) => setState(() =>
                                                   _model.chDurumValue = val),
@@ -386,6 +404,8 @@ class _UrunDetayWidgetState extends State<UrunDetayWidget> {
                                                       r'''$.data.UrunAd''',
                                                     ).toString(),
                                                   ),
+                                                  focusNode: _model
+                                                      .txtUrunadiFocusNode,
                                                   obscureText: false,
                                                   decoration: InputDecoration(
                                                     labelText: 'Açıklama',
@@ -487,6 +507,8 @@ class _UrunDetayWidgetState extends State<UrunDetayWidget> {
                                                       r'''$.data.SatisFiyat1''',
                                                     ).toString(),
                                                   ),
+                                                  focusNode:
+                                                      _model.txtFiyatFocusNode,
                                                   obscureText: false,
                                                   decoration: InputDecoration(
                                                     labelText: 'Satış Fiyatı',

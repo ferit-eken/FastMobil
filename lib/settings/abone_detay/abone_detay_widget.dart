@@ -7,6 +7,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'abone_detay_model.dart';
@@ -85,11 +86,23 @@ class _AboneDetayWidgetState extends State<AboneDetayWidget> {
     });
 
     _model.txtKodController ??= TextEditingController(text: widget.kod);
+    _model.txtKodFocusNode ??= FocusNode();
+
     _model.txtUnvanController ??= TextEditingController();
+    _model.txtUnvanFocusNode ??= FocusNode();
+
     _model.txtTelefonController ??= TextEditingController();
+    _model.txtTelefonFocusNode ??= FocusNode();
+
     _model.txtMailController ??= TextEditingController();
+    _model.txtMailFocusNode ??= FocusNode();
+
     _model.txtAdresController ??= TextEditingController();
+    _model.txtAdresFocusNode ??= FocusNode();
+
     _model.txtNotController ??= TextEditingController();
+    _model.txtNotFocusNode ??= FocusNode();
+
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
@@ -102,6 +115,15 @@ class _AboneDetayWidgetState extends State<AboneDetayWidget> {
 
   @override
   Widget build(BuildContext context) {
+    if (isiOS) {
+      SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle(
+          statusBarBrightness: Theme.of(context).brightness,
+          systemStatusBarContrastEnforced: true,
+        ),
+      );
+    }
+
     context.watch<FFAppState>();
 
     return Title(
@@ -276,15 +298,16 @@ class _AboneDetayWidgetState extends State<AboneDetayWidget> {
                                                   FormFieldController<String>(
                                                 _model.chCarigrupValue ??= '1',
                                               ),
-                                              options: (getJsonField(
+                                              options: List<String>.from(
+                                                  (getJsonField(
                                                 chCarigrupGetALLResponse
                                                     .jsonBody,
                                                 r'''$.data[:].Kod''',
                                                 true,
                                               ) as List)
-                                                  .map<String>(
-                                                      (s) => s.toString())
-                                                  .toList()!,
+                                                      .map<String>(
+                                                          (s) => s.toString())
+                                                      .toList()!),
                                               optionLabels: (getJsonField(
                                                 chCarigrupGetALLResponse
                                                     .jsonBody,
@@ -337,7 +360,7 @@ class _AboneDetayWidgetState extends State<AboneDetayWidget> {
                                                 FormFieldController<int>(
                                           _model.chDurumValue ??= 1,
                                         ),
-                                        options: [0, 1],
+                                        options: List<int>.from([0, 1]),
                                         optionLabels: ['Pasif', 'Aktif'],
                                         onChanged: (val) => setState(
                                             () => _model.chDurumValue = val),
@@ -386,6 +409,7 @@ class _AboneDetayWidgetState extends State<AboneDetayWidget> {
                                             child: TextFormField(
                                               controller:
                                                   _model.txtKodController,
+                                              focusNode: _model.txtKodFocusNode,
                                               readOnly: true,
                                               obscureText: false,
                                               decoration: InputDecoration(
@@ -462,6 +486,7 @@ class _AboneDetayWidgetState extends State<AboneDetayWidget> {
                                           child: TextFormField(
                                             controller:
                                                 _model.txtUnvanController,
+                                            focusNode: _model.txtUnvanFocusNode,
                                             obscureText: false,
                                             decoration: InputDecoration(
                                               labelText: 'Ad Soyad',
@@ -542,6 +567,8 @@ class _AboneDetayWidgetState extends State<AboneDetayWidget> {
                                             child: TextFormField(
                                               controller:
                                                   _model.txtTelefonController,
+                                              focusNode:
+                                                  _model.txtTelefonFocusNode,
                                               obscureText: false,
                                               decoration: InputDecoration(
                                                 labelText: 'Telefon No',
@@ -630,6 +657,8 @@ class _AboneDetayWidgetState extends State<AboneDetayWidget> {
                                             child: TextFormField(
                                               controller:
                                                   _model.txtMailController,
+                                              focusNode:
+                                                  _model.txtMailFocusNode,
                                               obscureText: false,
                                               decoration: InputDecoration(
                                                 labelText: 'Mail Adres',
@@ -718,6 +747,8 @@ class _AboneDetayWidgetState extends State<AboneDetayWidget> {
                                             child: TextFormField(
                                               controller:
                                                   _model.txtAdresController,
+                                              focusNode:
+                                                  _model.txtAdresFocusNode,
                                               obscureText: false,
                                               decoration: InputDecoration(
                                                 labelText: 'Adres',
@@ -806,6 +837,7 @@ class _AboneDetayWidgetState extends State<AboneDetayWidget> {
                                             child: TextFormField(
                                               controller:
                                                   _model.txtNotController,
+                                              focusNode: _model.txtNotFocusNode,
                                               obscureText: false,
                                               decoration: InputDecoration(
                                                 labelText: 'Not',

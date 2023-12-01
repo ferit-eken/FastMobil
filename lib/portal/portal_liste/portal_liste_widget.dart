@@ -8,6 +8,7 @@ import '/flutter_flow/form_field_controller.dart';
 import '/portal/poral_menu/side_menu/side_menu_widget.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'portal_liste_model.dart';
@@ -31,6 +32,8 @@ class _PortalListeWidgetState extends State<PortalListeWidget> {
     _model = createModel(context, () => PortalListeModel());
 
     _model.textController ??= TextEditingController();
+    _model.textFieldFocusNode ??= FocusNode();
+
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
@@ -43,6 +46,15 @@ class _PortalListeWidgetState extends State<PortalListeWidget> {
 
   @override
   Widget build(BuildContext context) {
+    if (isiOS) {
+      SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle(
+          statusBarBrightness: Theme.of(context).brightness,
+          systemStatusBarContrastEnforced: true,
+        ),
+      );
+    }
+
     context.watch<FFAppState>();
 
     return Title(
@@ -253,6 +265,7 @@ class _PortalListeWidgetState extends State<PortalListeWidget> {
                                           16.0, 8.0, 16.0, 0.0),
                                       child: TextFormField(
                                         controller: _model.textController,
+                                        focusNode: _model.textFieldFocusNode,
                                         textCapitalization:
                                             TextCapitalization.words,
                                         obscureText: false,

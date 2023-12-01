@@ -7,6 +7,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -40,26 +41,36 @@ class _LedTabelaDetayWidgetState extends State<LedTabelaDetayWidget> {
       widget.item,
       r'''$.PanelAdi''',
     ).toString().toString());
+    _model.txtCihazadiFocusNode ??= FocusNode();
+
     _model.txtIdController ??= TextEditingController(
         text: getJsonField(
       widget.item,
       r'''$.Id''',
     ).toString().toString());
+    _model.txtIdFocusNode ??= FocusNode();
+
     _model.txtAdresController ??= TextEditingController(
         text: getJsonField(
       widget.item,
       r'''$.Adres''',
     ).toString().toString());
+    _model.txtAdresFocusNode ??= FocusNode();
+
     _model.txtTcpportController ??= TextEditingController(
         text: getJsonField(
       widget.item,
       r'''$.TcpPort''',
     ).toString().toString());
+    _model.txtTcpportFocusNode ??= FocusNode();
+
     _model.txtBaudrateController ??= TextEditingController(
         text: getJsonField(
       widget.item,
       r'''$.Baudrate''',
     ).toString().toString());
+    _model.txtBaudrateFocusNode ??= FocusNode();
+
     _model.txtPoskeyController1 ??= TextEditingController(
         text: valueOrDefault<String>(
       getJsonField(
@@ -68,6 +79,8 @@ class _LedTabelaDetayWidgetState extends State<LedTabelaDetayWidget> {
       ).toString().toString(),
       '64',
     ));
+    _model.txtPoskeyFocusNode1 ??= FocusNode();
+
     _model.txtPoskeyController2 ??= TextEditingController(
         text: valueOrDefault<String>(
       getJsonField(
@@ -76,6 +89,8 @@ class _LedTabelaDetayWidgetState extends State<LedTabelaDetayWidget> {
       ).toString().toString(),
       '32',
     ));
+    _model.txtPoskeyFocusNode2 ??= FocusNode();
+
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
@@ -88,6 +103,15 @@ class _LedTabelaDetayWidgetState extends State<LedTabelaDetayWidget> {
 
   @override
   Widget build(BuildContext context) {
+    if (isiOS) {
+      SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle(
+          statusBarBrightness: Theme.of(context).brightness,
+          systemStatusBarContrastEnforced: true,
+        ),
+      );
+    }
+
     context.watch<FFAppState>();
 
     return Title(
@@ -258,6 +282,8 @@ class _LedTabelaDetayWidgetState extends State<LedTabelaDetayWidget> {
                                             child: TextFormField(
                                               controller:
                                                   _model.txtCihazadiController,
+                                              focusNode:
+                                                  _model.txtCihazadiFocusNode,
                                               autofocus: true,
                                               obscureText: false,
                                               decoration: InputDecoration(
@@ -342,7 +368,8 @@ class _LedTabelaDetayWidgetState extends State<LedTabelaDetayWidget> {
                                                   r'''$.Marka''',
                                                 ).toString(),
                                               ),
-                                              options: ['HD', 'INT', 'EKS'],
+                                              options: List<String>.from(
+                                                  ['HD', 'INT', 'EKS']),
                                               optionLabels: [
                                                 'HD',
                                                 'TRAFFIX',
@@ -398,6 +425,7 @@ class _LedTabelaDetayWidgetState extends State<LedTabelaDetayWidget> {
                                                   8.0, 0.0, 8.0, 0.0),
                                           child: TextFormField(
                                             controller: _model.txtIdController,
+                                            focusNode: _model.txtIdFocusNode,
                                             autofocus: true,
                                             obscureText: false,
                                             decoration: InputDecoration(
@@ -532,6 +560,7 @@ class _LedTabelaDetayWidgetState extends State<LedTabelaDetayWidget> {
                                       width: 200.0,
                                       child: TextFormField(
                                         controller: _model.txtAdresController,
+                                        focusNode: _model.txtAdresFocusNode,
                                         autofocus: true,
                                         obscureText: false,
                                         decoration: InputDecoration(
@@ -615,6 +644,7 @@ class _LedTabelaDetayWidgetState extends State<LedTabelaDetayWidget> {
                                       width: 200.0,
                                       child: TextFormField(
                                         controller: _model.txtTcpportController,
+                                        focusNode: _model.txtTcpportFocusNode,
                                         autofocus: true,
                                         obscureText: false,
                                         decoration: InputDecoration(
@@ -699,6 +729,7 @@ class _LedTabelaDetayWidgetState extends State<LedTabelaDetayWidget> {
                                       child: TextFormField(
                                         controller:
                                             _model.txtBaudrateController,
+                                        focusNode: _model.txtBaudrateFocusNode,
                                         autofocus: true,
                                         obscureText: false,
                                         decoration: InputDecoration(
@@ -790,6 +821,7 @@ class _LedTabelaDetayWidgetState extends State<LedTabelaDetayWidget> {
                                       width: 100.0,
                                       child: TextFormField(
                                         controller: _model.txtPoskeyController1,
+                                        focusNode: _model.txtPoskeyFocusNode1,
                                         autofocus: true,
                                         obscureText: false,
                                         decoration: InputDecoration(
@@ -858,6 +890,7 @@ class _LedTabelaDetayWidgetState extends State<LedTabelaDetayWidget> {
                                       width: 100.0,
                                       child: TextFormField(
                                         controller: _model.txtPoskeyController2,
+                                        focusNode: _model.txtPoskeyFocusNode2,
                                         autofocus: true,
                                         obscureText: false,
                                         decoration: InputDecoration(

@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'dart:typed_data';
 
-import '../../flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_util.dart';
 import 'api_manager.dart';
 
 export 'api_manager.dart' show ApiCallResponse;
@@ -22,7 +22,7 @@ class LoginCall {
     String? firmaKodu = '',
     String? username = '',
     String? password = '',
-  }) {
+  }) async {
     final ffApiRequestBody = '''
 {
   "FirmaKodu": "${firmaKodu}",
@@ -87,7 +87,7 @@ class RegisterCall {
     String? mail = '',
     String? userName = '',
     String? password = '',
-  }) {
+  }) async {
     final ffApiRequestBody = '''
 {
   "Command": "${firmaKodu}",
@@ -193,7 +193,7 @@ class AracGirisCall {
     String? telefon = '',
     String? parkKonumId = '',
     int? anahtarKodu,
-  }) {
+  }) async {
     final ffApiRequestBody = '''
 {
   "Command": "${command}",
@@ -274,7 +274,7 @@ class AracSorguCall {
     String? aracTipId = '1',
     String? plaka = '',
     int? id,
-  }) {
+  }) async {
     final ffApiRequestBody = '''
 {
   "Command": "${command}",
@@ -447,7 +447,7 @@ class TahsilatCall {
     String? kasaKodu = '',
     int? bankaKodu,
     double? tutar,
-  }) {
+  }) async {
     final ffApiRequestBody = '''
 {
   "Command": "${command}",
@@ -613,7 +613,7 @@ class GunsonuRaporCall {
     String? db = '',
     String? command = 'GUNSONU_RAPOR',
     int? userId,
-  }) {
+  }) async {
     final ffApiRequestBody = '''
 {
   "Command": "${command}",
@@ -703,7 +703,7 @@ class GunsonuKapatCall {
     String? db = '',
     String? command = 'GUNSONU_YAP',
     int? userId,
-  }) {
+  }) async {
     final ffApiRequestBody = '''
 {
   "Command": "${command}",
@@ -750,7 +750,7 @@ class HesapKapatCall {
     int? kapiId,
     String? cikisTuru = 'UCRETLI',
     int? ucretsizEtiketId = 0,
-  }) {
+  }) async {
     final ffApiRequestBody = '''
 {
   "Command": "${command}",
@@ -823,7 +823,7 @@ class CariKayitCall {
     String? cariNot = '',
     int? createdUserId,
     String? command = '',
-  }) {
+  }) async {
     final ffApiRequestBody = '''
 {
   "tablename": "Cari",
@@ -901,7 +901,7 @@ class CariAracKayitCall {
     String? command = '',
     int? id,
     String? aracTipId = '',
-  }) {
+  }) async {
     final ffApiRequestBody = '''
 {
   "tablename": "CariAraclar",
@@ -971,7 +971,7 @@ class StokKayitCall {
     double? satisFiyat1,
     int? durum = 1,
     String? command = '',
-  }) {
+  }) async {
     final ffApiRequestBody = '''
 {
    "Command": "${command}",
@@ -1047,7 +1047,7 @@ class GetALLCall {
   Future<ApiCallResponse> call({
     String? db = '',
     String? tablename = '',
-  }) {
+  }) async {
     return ApiManager.instance.makeApiCall(
       callName: 'GetALL',
       apiUrl: '${SettingsGroup.baseUrl}/${db}/${tablename}',
@@ -1093,7 +1093,7 @@ class GetFilterDataCall {
     String? db = '',
     String? tablename = '',
     String? filtre = '',
-  }) {
+  }) async {
     return ApiManager.instance.makeApiCall(
       callName: 'GetFilterData',
       apiUrl: '${SettingsGroup.baseUrl}/${db}/${tablename}/${filtre}',
@@ -1140,7 +1140,7 @@ class GetRowFilterDataCall {
     String? tablename = '',
     String? keyfield = 'Id',
     String? keyvalue = '1',
-  }) {
+  }) async {
     return ApiManager.instance.makeApiCall(
       callName: 'GetRowFilterData',
       apiUrl:
@@ -1188,7 +1188,7 @@ class GetRowDataCall {
     String? tablename = '',
     String? keyfield = '',
     String? keyvalue = '',
-  }) {
+  }) async {
     return ApiManager.instance.makeApiCall(
       callName: 'GetRowData',
       apiUrl:
@@ -1236,7 +1236,7 @@ class OtoparkUpdateCall {
     String? otoparkKodu = '',
     String? otoparkAdi = '',
     String? arsivPath = '',
-  }) {
+  }) async {
     final ffApiRequestBody = '''
 {
   "tablename": "${tablename}",
@@ -1299,7 +1299,7 @@ class PosUpdateCall {
     int? tcpPort,
     int? baudrate,
     String? posKey = '',
-  }) {
+  }) async {
     final ffApiRequestBody = '''
 {
   "tablename": "${tablename}",
@@ -1363,7 +1363,7 @@ class BankaUpdateCall {
     String? sube = '',
     String? hesap = '',
     String? dovizKod = 'TL',
-  }) {
+  }) async {
     final ffApiRequestBody = '''
 {
   "tablename": "${tablename}",
@@ -1424,7 +1424,7 @@ class OtoparkKonumUpdateCall {
     String? konumAdi = '',
     bool? durum = true,
     bool? isActive = true,
-  }) {
+  }) async {
     final ffApiRequestBody = '''
 {
   "tablename": "${tablename}",
@@ -1487,7 +1487,7 @@ class AboneTarifeUpdateCall {
     String? odemeGecerlilikSuresi = 'TL',
     int? gunlukUcretsizLimitSayi,
     String? gunDonusumSaati = '',
-  }) {
+  }) async {
     final ffApiRequestBody = '''
 {
   "tablename": "${tablename}",
@@ -1558,7 +1558,7 @@ class AboneTarifeFiyatUpdateCall {
     bool? gun4,
     bool? gun5,
     bool? gun6,
-  }) {
+  }) async {
     final ffApiRequestBody = '''
 {
   "tablename": "${tablename}",
@@ -1625,7 +1625,7 @@ class KasaUpdateCall {
     String? kod = '',
     String? aciklama = '',
     String? dovizTuru = 'TL',
-  }) {
+  }) async {
     final ffApiRequestBody = '''
 {
   "tablename": "${tablename}",
@@ -1681,7 +1681,7 @@ class PersonelUpdateCall {
     String? username = '',
     String? sifre = '',
     String? gsm = '',
-  }) {
+  }) async {
     final ffApiRequestBody = '''
 {
   "tablename": "${tablename}",
@@ -1743,7 +1743,7 @@ class IOControllerUpdateCall {
     int? tCPPort = 23,
     int? tetikAraligi = 5,
     bool? isActive = true,
-  }) {
+  }) async {
     final ffApiRequestBody = '''
 {
   "tablename": "${tablename}",
@@ -1814,7 +1814,7 @@ class LedPanelUpdateCall {
     int? dikeyPx,
     bool? isActive = true,
     int? beklemeSn,
-  }) {
+  }) async {
     final ffApiRequestBody = '''
 {
   "tablename": "${tablename}",
@@ -1877,7 +1877,7 @@ class UpdateRowCall {
     String? keyvalue = '',
     String? command = 'UPDATE',
     dynamic? dataJson,
-  }) {
+  }) async {
     final data = _serializeJson(dataJson);
     final ffApiRequestBody = '''
 {
@@ -1927,7 +1927,7 @@ class GetIDCall {
     String? tablename = '',
     String? keyField = '',
     String? command = 'GETID',
-  }) {
+  }) async {
     final ffApiRequestBody = '''
 {
   "db": "${db}",
@@ -1992,7 +1992,7 @@ class OtoparkKapiUpdateCall {
     int? misafirGecis,
     int? odemeNoktasi,
     String? posId = '',
-  }) {
+  }) async {
     final ffApiRequestBody = '''
 {
   "tablename": "${tablename}",
@@ -2076,7 +2076,7 @@ class OtoparkKapiGrupUpdateCall {
     int? ucretsizOdeme,
     int? indirimKarti,
     int? aboneKayit,
-  }) {
+  }) async {
     final ffApiRequestBody = '''
 {
   "tablename": "${tablename}",

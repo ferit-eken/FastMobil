@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'tahsilat_form_widget.dart' show TahsilatFormWidget;
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
@@ -10,6 +11,7 @@ class TahsilatFormModel extends FlutterFlowModel<TahsilatFormWidget> {
   ///  State fields for stateful widgets in this component.
 
   // State field(s) for txt_tutar widget.
+  FocusNode? txtTutarFocusNode;
   TextEditingController? txtTutarController;
   String? Function(BuildContext, String?)? txtTutarControllerValidator;
 
@@ -18,6 +20,7 @@ class TahsilatFormModel extends FlutterFlowModel<TahsilatFormWidget> {
   void initState(BuildContext context) {}
 
   void dispose() {
+    txtTutarFocusNode?.dispose();
     txtTutarController?.dispose();
   }
 

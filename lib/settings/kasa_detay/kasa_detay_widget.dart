@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'kasa_detay_model.dart';
@@ -36,16 +37,22 @@ class _KasaDetayWidgetState extends State<KasaDetayWidget> {
       widget.kasa,
       r'''$.Aciklama''',
     ).toString().toString());
+    _model.txtAdFocusNode ??= FocusNode();
+
     _model.txtKodController ??= TextEditingController(
         text: getJsonField(
       widget.kasa,
       r'''$.Kod''',
     ).toString().toString());
+    _model.txtKodFocusNode ??= FocusNode();
+
     _model.txtDovizkodController ??= TextEditingController(
         text: getJsonField(
       widget.kasa,
       r'''$.DovizTuru''',
     ).toString().toString());
+    _model.txtDovizkodFocusNode ??= FocusNode();
+
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
@@ -58,6 +65,15 @@ class _KasaDetayWidgetState extends State<KasaDetayWidget> {
 
   @override
   Widget build(BuildContext context) {
+    if (isiOS) {
+      SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle(
+          statusBarBrightness: Theme.of(context).brightness,
+          systemStatusBarContrastEnforced: true,
+        ),
+      );
+    }
+
     context.watch<FFAppState>();
 
     return Title(
@@ -220,6 +236,7 @@ class _KasaDetayWidgetState extends State<KasaDetayWidget> {
                                             child: TextFormField(
                                               controller:
                                                   _model.txtAdController,
+                                              focusNode: _model.txtAdFocusNode,
                                               autofocus: true,
                                               obscureText: false,
                                               decoration: InputDecoration(
@@ -317,6 +334,7 @@ class _KasaDetayWidgetState extends State<KasaDetayWidget> {
                                       width: 200.0,
                                       child: TextFormField(
                                         controller: _model.txtKodController,
+                                        focusNode: _model.txtKodFocusNode,
                                         autofocus: true,
                                         obscureText: false,
                                         decoration: InputDecoration(
@@ -401,6 +419,7 @@ class _KasaDetayWidgetState extends State<KasaDetayWidget> {
                                       child: TextFormField(
                                         controller:
                                             _model.txtDovizkodController,
+                                        focusNode: _model.txtDovizkodFocusNode,
                                         autofocus: true,
                                         obscureText: false,
                                         decoration: InputDecoration(

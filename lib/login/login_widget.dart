@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -76,9 +77,14 @@ class _LoginWidgetState extends State<LoginWidget>
 
     _model.txtFirmakoduController ??=
         TextEditingController(text: FFAppState().girisFirmaKodu);
+    _model.txtFirmakoduFocusNode ??= FocusNode();
+
     _model.txtUsernameController ??=
         TextEditingController(text: FFAppState().girisKullanici);
+    _model.txtUsernameFocusNode ??= FocusNode();
+
     _model.txtPasswordController ??= TextEditingController();
+    _model.txtPasswordFocusNode ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
@@ -92,6 +98,15 @@ class _LoginWidgetState extends State<LoginWidget>
 
   @override
   Widget build(BuildContext context) {
+    if (isiOS) {
+      SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle(
+          statusBarBrightness: Theme.of(context).brightness,
+          systemStatusBarContrastEnforced: true,
+        ),
+      );
+    }
+
     context.watch<FFAppState>();
 
     return Title(
@@ -195,6 +210,8 @@ class _LoginWidgetState extends State<LoginWidget>
                                           child: TextFormField(
                                             controller:
                                                 _model.txtFirmakoduController,
+                                            focusNode:
+                                                _model.txtFirmakoduFocusNode,
                                             obscureText: false,
                                             decoration: InputDecoration(
                                               labelText: 'Firma Kodu',
@@ -265,6 +282,8 @@ class _LoginWidgetState extends State<LoginWidget>
                                           child: TextFormField(
                                             controller:
                                                 _model.txtUsernameController,
+                                            focusNode:
+                                                _model.txtUsernameFocusNode,
                                             obscureText: false,
                                             decoration: InputDecoration(
                                               labelText: 'Kullanıcı Adı',
@@ -335,6 +354,8 @@ class _LoginWidgetState extends State<LoginWidget>
                                           child: TextFormField(
                                             controller:
                                                 _model.txtPasswordController,
+                                            focusNode:
+                                                _model.txtPasswordFocusNode,
                                             obscureText:
                                                 !_model.txtPasswordVisibility,
                                             decoration: InputDecoration(

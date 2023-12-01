@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'tarife_detay_model.dart';
@@ -38,26 +39,36 @@ class _TarifeDetayWidgetState extends State<TarifeDetayWidget> {
       widget.tarife,
       r'''$.TarifeAdi''',
     ).toString().toString());
+    _model.txtAdFocusNode ??= FocusNode();
+
     _model.txtIdController ??= TextEditingController(
         text: getJsonField(
       widget.tarife,
       r'''$.Id''',
     ).toString().toString());
+    _model.txtIdFocusNode ??= FocusNode();
+
     _model.txtOdemegecerlilikController ??= TextEditingController(
         text: getJsonField(
       widget.tarife,
       r'''$.OdemeGecerlilikSuresi''',
     ).toString().toString());
+    _model.txtOdemegecerlilikFocusNode ??= FocusNode();
+
     _model.txtUcretsizlimitController ??= TextEditingController(
         text: getJsonField(
       widget.tarife,
       r'''$.GunlukUcretsizLimitSayi''',
     ).toString().toString());
+    _model.txtUcretsizlimitFocusNode ??= FocusNode();
+
     _model.txtGundonusumController ??= TextEditingController(
         text: getJsonField(
       widget.tarife,
       r'''$.GunDonusumSaati''',
     ).toString().toString());
+    _model.txtGundonusumFocusNode ??= FocusNode();
+
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
@@ -70,6 +81,15 @@ class _TarifeDetayWidgetState extends State<TarifeDetayWidget> {
 
   @override
   Widget build(BuildContext context) {
+    if (isiOS) {
+      SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle(
+          statusBarBrightness: Theme.of(context).brightness,
+          systemStatusBarContrastEnforced: true,
+        ),
+      );
+    }
+
     context.watch<FFAppState>();
 
     return Title(
@@ -238,6 +258,7 @@ class _TarifeDetayWidgetState extends State<TarifeDetayWidget> {
                                             child: TextFormField(
                                               controller:
                                                   _model.txtAdController,
+                                              focusNode: _model.txtAdFocusNode,
                                               autofocus: true,
                                               obscureText: false,
                                               decoration: InputDecoration(
@@ -336,6 +357,7 @@ class _TarifeDetayWidgetState extends State<TarifeDetayWidget> {
                                       width: 200.0,
                                       child: TextFormField(
                                         controller: _model.txtIdController,
+                                        focusNode: _model.txtIdFocusNode,
                                         autofocus: true,
                                         obscureText: false,
                                         decoration: InputDecoration(
@@ -450,13 +472,15 @@ class _TarifeDetayWidgetState extends State<TarifeDetayWidget> {
                                               r'''$.OtoparkId''',
                                             ).toString(),
                                           ),
-                                          options: (getJsonField(
+                                          options: List<String>.from(
+                                              (getJsonField(
                                             txtOtoparkGetALLResponse.jsonBody,
                                             r'''$.data[:].Id''',
                                             true,
                                           ) as List)
-                                              .map<String>((s) => s.toString())
-                                              .toList()!,
+                                                  .map<String>(
+                                                      (s) => s.toString())
+                                                  .toList()!),
                                           optionLabels: (getJsonField(
                                             txtOtoparkGetALLResponse.jsonBody,
                                             r'''$.data[:].OtoparkAdi''',
@@ -547,13 +571,15 @@ class _TarifeDetayWidgetState extends State<TarifeDetayWidget> {
                                               r'''$.OtoparkId''',
                                             ).toString(),
                                           ),
-                                          options: (getJsonField(
+                                          options: List<String>.from(
+                                              (getJsonField(
                                             txtAractipiGetALLResponse.jsonBody,
                                             r'''$.data[:].Id''',
                                             true,
                                           ) as List)
-                                              .map<String>((s) => s.toString())
-                                              .toList()!,
+                                                  .map<String>(
+                                                      (s) => s.toString())
+                                                  .toList()!),
                                           optionLabels: (getJsonField(
                                             txtAractipiGetALLResponse.jsonBody,
                                             r'''$.data[:].AracTipi''',
@@ -614,6 +640,8 @@ class _TarifeDetayWidgetState extends State<TarifeDetayWidget> {
                                       child: TextFormField(
                                         controller:
                                             _model.txtOdemegecerlilikController,
+                                        focusNode:
+                                            _model.txtOdemegecerlilikFocusNode,
                                         autofocus: true,
                                         obscureText: false,
                                         decoration: InputDecoration(
@@ -698,6 +726,8 @@ class _TarifeDetayWidgetState extends State<TarifeDetayWidget> {
                                       child: TextFormField(
                                         controller:
                                             _model.txtUcretsizlimitController,
+                                        focusNode:
+                                            _model.txtUcretsizlimitFocusNode,
                                         autofocus: true,
                                         obscureText: false,
                                         decoration: InputDecoration(
@@ -782,6 +812,8 @@ class _TarifeDetayWidgetState extends State<TarifeDetayWidget> {
                                       child: TextFormField(
                                         controller:
                                             _model.txtGundonusumController,
+                                        focusNode:
+                                            _model.txtGundonusumFocusNode,
                                         autofocus: true,
                                         obscureText: false,
                                         decoration: InputDecoration(

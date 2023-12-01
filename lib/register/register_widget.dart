@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'register_model.dart';
@@ -27,18 +28,44 @@ class _RegisterWidgetState extends State<RegisterWidget> {
     _model = createModel(context, () => RegisterModel());
 
     _model.txtFirmakoduController ??= TextEditingController();
+    _model.txtFirmakoduFocusNode ??= FocusNode();
+
     _model.txtFirmaadiController ??= TextEditingController();
+    _model.txtFirmaadiFocusNode ??= FocusNode();
+
     _model.txtUnvanController ??= TextEditingController();
+    _model.txtUnvanFocusNode ??= FocusNode();
+
     _model.txtAdresController ??= TextEditingController();
+    _model.txtAdresFocusNode ??= FocusNode();
+
     _model.txtVergidaireController ??= TextEditingController();
+    _model.txtVergidaireFocusNode ??= FocusNode();
+
     _model.txtVerginoController ??= TextEditingController();
+    _model.txtVerginoFocusNode ??= FocusNode();
+
     _model.txtYetkiliController ??= TextEditingController();
+    _model.txtYetkiliFocusNode ??= FocusNode();
+
     _model.txtTelefonController ??= TextEditingController();
+    _model.txtTelefonFocusNode ??= FocusNode();
+
     _model.txtUlkeController ??= TextEditingController();
+    _model.txtUlkeFocusNode ??= FocusNode();
+
     _model.txtSehirController ??= TextEditingController();
+    _model.txtSehirFocusNode ??= FocusNode();
+
     _model.txtIlceController ??= TextEditingController();
+    _model.txtIlceFocusNode ??= FocusNode();
+
     _model.txtMailController ??= TextEditingController();
+    _model.txtMailFocusNode ??= FocusNode();
+
     _model.txtPasswordController ??= TextEditingController();
+    _model.txtPasswordFocusNode ??= FocusNode();
+
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
@@ -51,6 +78,15 @@ class _RegisterWidgetState extends State<RegisterWidget> {
 
   @override
   Widget build(BuildContext context) {
+    if (isiOS) {
+      SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle(
+          statusBarBrightness: Theme.of(context).brightness,
+          systemStatusBarContrastEnforced: true,
+        ),
+      );
+    }
+
     context.watch<FFAppState>();
 
     return Title(
@@ -129,6 +165,8 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                         child: TextFormField(
                                           controller:
                                               _model.txtFirmakoduController,
+                                          focusNode:
+                                              _model.txtFirmakoduFocusNode,
                                           autofocus: true,
                                           obscureText: false,
                                           decoration: InputDecoration(
@@ -194,6 +232,8 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                         child: TextFormField(
                                           controller:
                                               _model.txtFirmaadiController,
+                                          focusNode:
+                                              _model.txtFirmaadiFocusNode,
                                           autofocus: true,
                                           obscureText: false,
                                           decoration: InputDecoration(
@@ -258,6 +298,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                             8.0, 10.0, 8.0, 0.0),
                                         child: TextFormField(
                                           controller: _model.txtUnvanController,
+                                          focusNode: _model.txtUnvanFocusNode,
                                           autofocus: true,
                                           obscureText: false,
                                           decoration: InputDecoration(
@@ -322,6 +363,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                             8.0, 10.0, 8.0, 0.0),
                                         child: TextFormField(
                                           controller: _model.txtAdresController,
+                                          focusNode: _model.txtAdresFocusNode,
                                           autofocus: true,
                                           obscureText: false,
                                           decoration: InputDecoration(
@@ -387,6 +429,8 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                         child: TextFormField(
                                           controller:
                                               _model.txtVergidaireController,
+                                          focusNode:
+                                              _model.txtVergidaireFocusNode,
                                           autofocus: true,
                                           obscureText: false,
                                           decoration: InputDecoration(
@@ -452,6 +496,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                         child: TextFormField(
                                           controller:
                                               _model.txtVerginoController,
+                                          focusNode: _model.txtVerginoFocusNode,
                                           autofocus: true,
                                           obscureText: false,
                                           decoration: InputDecoration(
@@ -517,6 +562,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                         child: TextFormField(
                                           controller:
                                               _model.txtYetkiliController,
+                                          focusNode: _model.txtYetkiliFocusNode,
                                           autofocus: true,
                                           obscureText: false,
                                           decoration: InputDecoration(
@@ -582,6 +628,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                         child: TextFormField(
                                           controller:
                                               _model.txtTelefonController,
+                                          focusNode: _model.txtTelefonFocusNode,
                                           autofocus: true,
                                           obscureText: false,
                                           decoration: InputDecoration(
@@ -646,6 +693,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                             8.0, 10.0, 8.0, 0.0),
                                         child: TextFormField(
                                           controller: _model.txtUlkeController,
+                                          focusNode: _model.txtUlkeFocusNode,
                                           autofocus: true,
                                           obscureText: false,
                                           decoration: InputDecoration(
@@ -710,6 +758,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                             8.0, 10.0, 8.0, 0.0),
                                         child: TextFormField(
                                           controller: _model.txtSehirController,
+                                          focusNode: _model.txtSehirFocusNode,
                                           autofocus: true,
                                           obscureText: false,
                                           decoration: InputDecoration(
@@ -774,6 +823,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                             8.0, 10.0, 8.0, 0.0),
                                         child: TextFormField(
                                           controller: _model.txtIlceController,
+                                          focusNode: _model.txtIlceFocusNode,
                                           autofocus: true,
                                           obscureText: false,
                                           decoration: InputDecoration(
@@ -838,6 +888,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                             8.0, 10.0, 8.0, 0.0),
                                         child: TextFormField(
                                           controller: _model.txtMailController,
+                                          focusNode: _model.txtMailFocusNode,
                                           autofocus: true,
                                           obscureText: false,
                                           decoration: InputDecoration(
@@ -903,6 +954,8 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                         child: TextFormField(
                                           controller:
                                               _model.txtPasswordController,
+                                          focusNode:
+                                              _model.txtPasswordFocusNode,
                                           autofocus: true,
                                           obscureText: false,
                                           decoration: InputDecoration(

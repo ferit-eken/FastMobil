@@ -7,6 +7,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'abone_arac_detay_model.dart';
@@ -79,8 +80,14 @@ class _AboneAracDetayWidgetState extends State<AboneAracDetayWidget> {
     });
 
     _model.txtPlakaController ??= TextEditingController();
+    _model.txtPlakaFocusNode ??= FocusNode();
+
     _model.txtAdsoyadController ??= TextEditingController();
+    _model.txtAdsoyadFocusNode ??= FocusNode();
+
     _model.txtTelefonController ??= TextEditingController();
+    _model.txtTelefonFocusNode ??= FocusNode();
+
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
@@ -93,6 +100,15 @@ class _AboneAracDetayWidgetState extends State<AboneAracDetayWidget> {
 
   @override
   Widget build(BuildContext context) {
+    if (isiOS) {
+      SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle(
+          statusBarBrightness: Theme.of(context).brightness,
+          systemStatusBarContrastEnforced: true,
+        ),
+      );
+    }
+
     context.watch<FFAppState>();
 
     return Title(
@@ -236,6 +252,7 @@ class _AboneAracDetayWidgetState extends State<AboneAracDetayWidget> {
                                     8.0, 0.0, 8.0, 0.0),
                                 child: TextFormField(
                                   controller: _model.txtPlakaController,
+                                  focusNode: _model.txtPlakaFocusNode,
                                   obscureText: false,
                                   decoration: InputDecoration(
                                     labelText: 'Plaka Yazınız',
@@ -351,6 +368,7 @@ class _AboneAracDetayWidgetState extends State<AboneAracDetayWidget> {
                                         8.0, 8.0, 8.0, 0.0),
                                     child: TextFormField(
                                       controller: _model.txtAdsoyadController,
+                                      focusNode: _model.txtAdsoyadFocusNode,
                                       obscureText: false,
                                       decoration: InputDecoration(
                                         labelText: 'Araç Kullanıcısı',
@@ -407,6 +425,7 @@ class _AboneAracDetayWidgetState extends State<AboneAracDetayWidget> {
                                         8.0, 8.0, 8.0, 0.0),
                                     child: TextFormField(
                                       controller: _model.txtTelefonController,
+                                      focusNode: _model.txtTelefonFocusNode,
                                       obscureText: false,
                                       decoration: InputDecoration(
                                         labelText: 'Telefon',
@@ -535,13 +554,15 @@ class _AboneAracDetayWidgetState extends State<AboneAracDetayWidget> {
                                               '1',
                                             ),
                                           ),
-                                          options: (getJsonField(
+                                          options: List<String>.from(
+                                              (getJsonField(
                                             txtAractipiGetALLResponse.jsonBody,
                                             r'''$.data[:].Id''',
                                             true,
                                           ) as List)
-                                              .map<String>((s) => s.toString())
-                                              .toList()!,
+                                                  .map<String>(
+                                                      (s) => s.toString())
+                                                  .toList()!),
                                           optionLabels: (getJsonField(
                                             txtAractipiGetALLResponse.jsonBody,
                                             r'''$.data[:].AracTipi''',

@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'otopark_detay_model.dart';
@@ -36,11 +37,15 @@ class _OtoparkDetayWidgetState extends State<OtoparkDetayWidget> {
       widget.otopark,
       r'''$.OtoparkAdi''',
     ).toString().toString());
+    _model.textFieldFocusNode1 ??= FocusNode();
+
     _model.textController2 ??= TextEditingController(
         text: getJsonField(
       widget.otopark,
       r'''$.OtoparkKodu''',
     ).toString().toString());
+    _model.textFieldFocusNode2 ??= FocusNode();
+
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
@@ -53,6 +58,15 @@ class _OtoparkDetayWidgetState extends State<OtoparkDetayWidget> {
 
   @override
   Widget build(BuildContext context) {
+    if (isiOS) {
+      SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle(
+          statusBarBrightness: Theme.of(context).brightness,
+          systemStatusBarContrastEnforced: true,
+        ),
+      );
+    }
+
     context.watch<FFAppState>();
 
     return Title(
@@ -212,6 +226,7 @@ class _OtoparkDetayWidgetState extends State<OtoparkDetayWidget> {
                                           8.0, 0.0, 8.0, 0.0),
                                       child: TextFormField(
                                         controller: _model.textController1,
+                                        focusNode: _model.textFieldFocusNode1,
                                         autofocus: true,
                                         obscureText: false,
                                         decoration: InputDecoration(
@@ -285,6 +300,7 @@ class _OtoparkDetayWidgetState extends State<OtoparkDetayWidget> {
                                           8.0, 0.0, 8.0, 0.0),
                                       child: TextFormField(
                                         controller: _model.textController2,
+                                        focusNode: _model.textFieldFocusNode2,
                                         autofocus: true,
                                         obscureText: false,
                                         decoration: InputDecoration(

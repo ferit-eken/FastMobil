@@ -11,6 +11,7 @@ import '/pages/konum_secim/konum_secim_widget.dart';
 import '/custom_code/actions/index.dart' as actions;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'giris_model.dart';
@@ -50,6 +51,15 @@ class _GirisWidgetState extends State<GirisWidget> {
 
   @override
   Widget build(BuildContext context) {
+    if (isiOS) {
+      SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle(
+          statusBarBrightness: Theme.of(context).brightness,
+          systemStatusBarContrastEnforced: true,
+        ),
+      );
+    }
+
     context.watch<FFAppState>();
 
     return Title(
@@ -303,15 +313,16 @@ class _GirisWidgetState extends State<GirisWidget> {
                                               _model.txtAractipiValue ??=
                                                   FFAppState().DefAracTipi,
                                             ),
-                                            options: FFAppState()
-                                                .AracTipleri
-                                                .map((e) => getJsonField(
-                                                      e,
-                                                      r'''$.Id''',
-                                                    ))
-                                                .toList()
-                                                .map((e) => e.toString())
-                                                .toList(),
+                                            options:
+                                                List<String>.from(FFAppState()
+                                                    .AracTipleri
+                                                    .map((e) => getJsonField(
+                                                          e,
+                                                          r'''$.Id''',
+                                                        ))
+                                                    .toList()
+                                                    .map((e) => e.toString())
+                                                    .toList()),
                                             optionLabels: FFAppState()
                                                 .AracTipleri
                                                 .map((e) => getJsonField(

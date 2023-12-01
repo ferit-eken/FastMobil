@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'banka_detay_model.dart';
@@ -36,26 +37,36 @@ class _BankaDetayWidgetState extends State<BankaDetayWidget> {
       widget.banka,
       r'''$.BankaAd''',
     ).toString().toString());
+    _model.txtAdFocusNode ??= FocusNode();
+
     _model.txtKodController ??= TextEditingController(
         text: getJsonField(
       widget.banka,
       r'''$.Kod''',
     ).toString().toString());
+    _model.txtKodFocusNode ??= FocusNode();
+
     _model.txtSubeController ??= TextEditingController(
         text: getJsonField(
       widget.banka,
       r'''$.Sube''',
     ).toString().toString());
+    _model.txtSubeFocusNode ??= FocusNode();
+
     _model.txtHesapController ??= TextEditingController(
         text: getJsonField(
       widget.banka,
       r'''$.Hesap''',
     ).toString().toString());
+    _model.txtHesapFocusNode ??= FocusNode();
+
     _model.txtDovizkodController ??= TextEditingController(
         text: getJsonField(
       widget.banka,
       r'''$.DovizKod''',
     ).toString().toString());
+    _model.txtDovizkodFocusNode ??= FocusNode();
+
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
@@ -68,6 +79,15 @@ class _BankaDetayWidgetState extends State<BankaDetayWidget> {
 
   @override
   Widget build(BuildContext context) {
+    if (isiOS) {
+      SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle(
+          statusBarBrightness: Theme.of(context).brightness,
+          systemStatusBarContrastEnforced: true,
+        ),
+      );
+    }
+
     context.watch<FFAppState>();
 
     return Title(
@@ -232,6 +252,7 @@ class _BankaDetayWidgetState extends State<BankaDetayWidget> {
                                             child: TextFormField(
                                               controller:
                                                   _model.txtAdController,
+                                              focusNode: _model.txtAdFocusNode,
                                               autofocus: true,
                                               obscureText: false,
                                               decoration: InputDecoration(
@@ -330,6 +351,7 @@ class _BankaDetayWidgetState extends State<BankaDetayWidget> {
                                       width: 200.0,
                                       child: TextFormField(
                                         controller: _model.txtKodController,
+                                        focusNode: _model.txtKodFocusNode,
                                         autofocus: true,
                                         obscureText: false,
                                         decoration: InputDecoration(
@@ -413,6 +435,7 @@ class _BankaDetayWidgetState extends State<BankaDetayWidget> {
                                       width: 200.0,
                                       child: TextFormField(
                                         controller: _model.txtSubeController,
+                                        focusNode: _model.txtSubeFocusNode,
                                         autofocus: true,
                                         obscureText: false,
                                         decoration: InputDecoration(
@@ -496,6 +519,7 @@ class _BankaDetayWidgetState extends State<BankaDetayWidget> {
                                       width: 200.0,
                                       child: TextFormField(
                                         controller: _model.txtHesapController,
+                                        focusNode: _model.txtHesapFocusNode,
                                         autofocus: true,
                                         obscureText: false,
                                         decoration: InputDecoration(
@@ -580,6 +604,7 @@ class _BankaDetayWidgetState extends State<BankaDetayWidget> {
                                       child: TextFormField(
                                         controller:
                                             _model.txtDovizkodController,
+                                        focusNode: _model.txtDovizkodFocusNode,
                                         autofocus: true,
                                         obscureText: false,
                                         decoration: InputDecoration(

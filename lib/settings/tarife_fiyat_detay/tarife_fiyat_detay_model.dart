@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'tarife_fiyat_detay_widget.dart' show TarifeFiyatDetayWidget;
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 import 'package:provider/provider.dart';
@@ -14,14 +15,17 @@ class TarifeFiyatDetayModel extends FlutterFlowModel<TarifeFiyatDetayWidget> {
 
   final unfocusNode = FocusNode();
   // State field(s) for txt_baslangic widget.
+  FocusNode? txtBaslangicFocusNode;
   TextEditingController? txtBaslangicController;
   final txtBaslangicMask = MaskTextInputFormatter(mask: '##:##:##');
   String? Function(BuildContext, String?)? txtBaslangicControllerValidator;
   // State field(s) for txt_bitis widget.
+  FocusNode? txtBitisFocusNode;
   TextEditingController? txtBitisController;
   final txtBitisMask = MaskTextInputFormatter(mask: '##:##:##');
   String? Function(BuildContext, String?)? txtBitisControllerValidator;
   // State field(s) for txt_fiyat widget.
+  FocusNode? txtFiyatFocusNode;
   TextEditingController? txtFiyatController;
   String? Function(BuildContext, String?)? txtFiyatControllerValidator;
   // State field(s) for gun_1 widget.
@@ -47,8 +51,13 @@ class TarifeFiyatDetayModel extends FlutterFlowModel<TarifeFiyatDetayWidget> {
 
   void dispose() {
     unfocusNode.dispose();
+    txtBaslangicFocusNode?.dispose();
     txtBaslangicController?.dispose();
+
+    txtBitisFocusNode?.dispose();
     txtBitisController?.dispose();
+
+    txtFiyatFocusNode?.dispose();
     txtFiyatController?.dispose();
   }
 

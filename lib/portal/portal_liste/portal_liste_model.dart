@@ -9,6 +9,7 @@ import '/portal/poral_menu/side_menu/side_menu_widget.dart';
 import 'portal_liste_widget.dart' show PortalListeWidget;
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
@@ -19,6 +20,7 @@ class PortalListeModel extends FlutterFlowModel<PortalListeWidget> {
   // Model for side_menu component.
   late SideMenuModel sideMenuModel;
   // State field(s) for TextField widget.
+  FocusNode? textFieldFocusNode;
   TextEditingController? textController;
   String? Function(BuildContext, String?)? textControllerValidator;
   // State field(s) for ChoiceChips widget.
@@ -34,6 +36,7 @@ class PortalListeModel extends FlutterFlowModel<PortalListeWidget> {
   void dispose() {
     unfocusNode.dispose();
     sideMenuModel.dispose();
+    textFieldFocusNode?.dispose();
     textController?.dispose();
   }
 

@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'pos_detay_model.dart';
@@ -38,16 +39,22 @@ class _PosDetayWidgetState extends State<PosDetayWidget> {
       widget.pos,
       r'''$.PosAdi''',
     ).toString().toString());
+    _model.txtCihazadiFocusNode ??= FocusNode();
+
     _model.txtIdController ??= TextEditingController(
         text: getJsonField(
       widget.pos,
       r'''$.Id''',
     ).toString().toString());
+    _model.txtIdFocusNode ??= FocusNode();
+
     _model.txtAdresController ??= TextEditingController(
         text: getJsonField(
       widget.pos,
       r'''$.Adres''',
     ).toString().toString());
+    _model.txtAdresFocusNode ??= FocusNode();
+
     _model.txtTcpportController ??= TextEditingController(
         text: valueOrDefault<String>(
       getJsonField(
@@ -56,6 +63,8 @@ class _PosDetayWidgetState extends State<PosDetayWidget> {
       ).toString().toString(),
       '4444',
     ));
+    _model.txtTcpportFocusNode ??= FocusNode();
+
     _model.txtBaudrateController ??= TextEditingController(
         text: valueOrDefault<String>(
       getJsonField(
@@ -64,6 +73,8 @@ class _PosDetayWidgetState extends State<PosDetayWidget> {
       ).toString().toString(),
       '9600',
     ));
+    _model.txtBaudrateFocusNode ??= FocusNode();
+
     _model.txtPoskeyController ??= TextEditingController(
         text: valueOrDefault<String>(
       getJsonField(
@@ -72,6 +83,8 @@ class _PosDetayWidgetState extends State<PosDetayWidget> {
       ).toString().toString(),
       'FXXXX',
     ));
+    _model.txtPoskeyFocusNode ??= FocusNode();
+
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
@@ -84,6 +97,15 @@ class _PosDetayWidgetState extends State<PosDetayWidget> {
 
   @override
   Widget build(BuildContext context) {
+    if (isiOS) {
+      SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle(
+          statusBarBrightness: Theme.of(context).brightness,
+          systemStatusBarContrastEnforced: true,
+        ),
+      );
+    }
+
     context.watch<FFAppState>();
 
     return Title(
@@ -252,6 +274,8 @@ class _PosDetayWidgetState extends State<PosDetayWidget> {
                                             child: TextFormField(
                                               controller:
                                                   _model.txtCihazadiController,
+                                              focusNode:
+                                                  _model.txtCihazadiFocusNode,
                                               autofocus: true,
                                               obscureText: false,
                                               decoration: InputDecoration(
@@ -387,6 +411,7 @@ class _PosDetayWidgetState extends State<PosDetayWidget> {
                                                   8.0, 0.0, 8.0, 0.0),
                                           child: TextFormField(
                                             controller: _model.txtIdController,
+                                            focusNode: _model.txtIdFocusNode,
                                             autofocus: true,
                                             obscureText: false,
                                             decoration: InputDecoration(
@@ -477,7 +502,8 @@ class _PosDetayWidgetState extends State<PosDetayWidget> {
                                           'TCP',
                                         ),
                                       ),
-                                      options: ['COM', 'TCP'],
+                                      options:
+                                          List<String>.from(['COM', 'TCP']),
                                       optionLabels: ['COM', 'TCP'],
                                       onChanged: (val) => setState(() =>
                                           _model.txtBaglantitipiValue = val),
@@ -524,6 +550,7 @@ class _PosDetayWidgetState extends State<PosDetayWidget> {
                                       width: 200.0,
                                       child: TextFormField(
                                         controller: _model.txtAdresController,
+                                        focusNode: _model.txtAdresFocusNode,
                                         autofocus: true,
                                         obscureText: false,
                                         decoration: InputDecoration(
@@ -607,6 +634,7 @@ class _PosDetayWidgetState extends State<PosDetayWidget> {
                                       width: 200.0,
                                       child: TextFormField(
                                         controller: _model.txtTcpportController,
+                                        focusNode: _model.txtTcpportFocusNode,
                                         autofocus: true,
                                         obscureText: false,
                                         decoration: InputDecoration(
@@ -691,6 +719,7 @@ class _PosDetayWidgetState extends State<PosDetayWidget> {
                                       child: TextFormField(
                                         controller:
                                             _model.txtBaudrateController,
+                                        focusNode: _model.txtBaudrateFocusNode,
                                         autofocus: true,
                                         obscureText: false,
                                         decoration: InputDecoration(
@@ -774,6 +803,7 @@ class _PosDetayWidgetState extends State<PosDetayWidget> {
                                       width: 200.0,
                                       child: TextFormField(
                                         controller: _model.txtPoskeyController,
+                                        focusNode: _model.txtPoskeyFocusNode,
                                         autofocus: true,
                                         obscureText: false,
                                         decoration: InputDecoration(

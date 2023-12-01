@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'keyboard_model.dart';
@@ -46,6 +47,8 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
     });
 
     _model.txtContentController ??= TextEditingController();
+    _model.txtContentFocusNode ??= FocusNode();
+
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
@@ -107,6 +110,7 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
                     padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
                     child: TextFormField(
                       controller: _model.txtContentController,
+                      focusNode: _model.txtContentFocusNode,
                       obscureText: false,
                       decoration: InputDecoration(
                         labelStyle: FlutterFlowTheme.of(context).labelMedium,

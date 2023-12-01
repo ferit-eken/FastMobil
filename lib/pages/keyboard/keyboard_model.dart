@@ -5,6 +5,7 @@ import '/flutter_flow/custom_functions.dart' as functions;
 import 'keyboard_widget.dart' show KeyboardWidget;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
@@ -12,6 +13,7 @@ class KeyboardModel extends FlutterFlowModel<KeyboardWidget> {
   ///  State fields for stateful widgets in this component.
 
   // State field(s) for txt_content widget.
+  FocusNode? txtContentFocusNode;
   TextEditingController? txtContentController;
   String? Function(BuildContext, String?)? txtContentControllerValidator;
 
@@ -20,6 +22,7 @@ class KeyboardModel extends FlutterFlowModel<KeyboardWidget> {
   void initState(BuildContext context) {}
 
   void dispose() {
+    txtContentFocusNode?.dispose();
     txtContentController?.dispose();
   }
 

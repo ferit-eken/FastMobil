@@ -7,6 +7,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'settings_model.dart';
@@ -41,6 +42,15 @@ class _SettingsWidgetState extends State<SettingsWidget> {
 
   @override
   Widget build(BuildContext context) {
+    if (isiOS) {
+      SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle(
+          statusBarBrightness: Theme.of(context).brightness,
+          systemStatusBarContrastEnforced: true,
+        ),
+      );
+    }
+
     context.watch<FFAppState>();
 
     return Title(
@@ -142,13 +152,15 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                           _model.txtOtoparkValue ??=
                                               FFAppState().OtoparkId,
                                         ),
-                                        options: (getJsonField(
+                                        options: List<String>.from(
+                                            (getJsonField(
                                           txtOtoparkGetALLResponse.jsonBody,
                                           r'''$.data[:].Id''',
                                           true,
                                         ) as List)
-                                            .map<String>((s) => s.toString())
-                                            .toList()!,
+                                                .map<String>(
+                                                    (s) => s.toString())
+                                                .toList()!),
                                         optionLabels: (getJsonField(
                                           txtOtoparkGetALLResponse.jsonBody,
                                           r'''$.data[:].OtoparkAdi''',
@@ -247,13 +259,15 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                             _model.txtKapigrupValue ??=
                                                 FFAppState().KapiGrupId,
                                           ),
-                                          options: (getJsonField(
+                                          options: List<String>.from(
+                                              (getJsonField(
                                             txtKapigrupGetALLResponse.jsonBody,
                                             r'''$.data[:].Id''',
                                             true,
                                           ) as List)
-                                              .map<String>((s) => s.toString())
-                                              .toList()!,
+                                                  .map<String>(
+                                                      (s) => s.toString())
+                                                  .toList()!),
                                           optionLabels: (getJsonField(
                                             txtKapigrupGetALLResponse.jsonBody,
                                             r'''$.data[:].GrupAdi''',
@@ -356,13 +370,15 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                             _model.txtKapiValue ??=
                                                 FFAppState().KapiId,
                                           ),
-                                          options: (getJsonField(
+                                          options: List<String>.from(
+                                              (getJsonField(
                                             txtKapiGetALLResponse.jsonBody,
                                             r'''$.data[:].Id''',
                                             true,
                                           ) as List)
-                                              .map<String>((s) => s.toString())
-                                              .toList()!,
+                                                  .map<String>(
+                                                      (s) => s.toString())
+                                                  .toList()!),
                                           optionLabels: (getJsonField(
                                             txtKapiGetALLResponse.jsonBody,
                                             r'''$.data[:].KapiAdi''',
@@ -456,13 +472,15 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                             _model.txtAractipiValue ??=
                                                 FFAppState().DefAracTipi,
                                           ),
-                                          options: (getJsonField(
+                                          options: List<String>.from(
+                                              (getJsonField(
                                             txtAractipiGetALLResponse.jsonBody,
                                             r'''$.data[:].Id''',
                                             true,
                                           ) as List)
-                                              .map<String>((s) => s.toString())
-                                              .toList()!,
+                                                  .map<String>(
+                                                      (s) => s.toString())
+                                                  .toList()!),
                                           optionLabels: (getJsonField(
                                             txtAractipiGetALLResponse.jsonBody,
                                             r'''$.data[:].AracTipi''',

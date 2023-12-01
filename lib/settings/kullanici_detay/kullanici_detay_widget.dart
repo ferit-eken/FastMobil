@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'kullanici_detay_model.dart';
@@ -36,31 +37,43 @@ class _KullaniciDetayWidgetState extends State<KullaniciDetayWidget> {
       widget.personel,
       r'''$.Username''',
     ).toString().toString());
+    _model.txtUsernameFocusNode ??= FocusNode();
+
     _model.txtKodController ??= TextEditingController(
         text: getJsonField(
       widget.personel,
       r'''$.Kod''',
     ).toString().toString());
+    _model.txtKodFocusNode ??= FocusNode();
+
     _model.txtAdController ??= TextEditingController(
         text: getJsonField(
       widget.personel,
       r'''$.Ad''',
     ).toString().toString());
+    _model.txtAdFocusNode ??= FocusNode();
+
     _model.txtSoyadController ??= TextEditingController(
         text: getJsonField(
       widget.personel,
       r'''$.Soyad''',
     ).toString().toString());
+    _model.txtSoyadFocusNode ??= FocusNode();
+
     _model.txtGsmController ??= TextEditingController(
         text: getJsonField(
       widget.personel,
       r'''$.GSM''',
     ).toString().toString());
+    _model.txtGsmFocusNode ??= FocusNode();
+
     _model.txtSifreController ??= TextEditingController(
         text: getJsonField(
       widget.personel,
       r'''$.Sifre''',
     ).toString().toString());
+    _model.txtSifreFocusNode ??= FocusNode();
+
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
@@ -73,6 +86,15 @@ class _KullaniciDetayWidgetState extends State<KullaniciDetayWidget> {
 
   @override
   Widget build(BuildContext context) {
+    if (isiOS) {
+      SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle(
+          statusBarBrightness: Theme.of(context).brightness,
+          systemStatusBarContrastEnforced: true,
+        ),
+      );
+    }
+
     context.watch<FFAppState>();
 
     return Title(
@@ -238,6 +260,8 @@ class _KullaniciDetayWidgetState extends State<KullaniciDetayWidget> {
                                             child: TextFormField(
                                               controller:
                                                   _model.txtUsernameController,
+                                              focusNode:
+                                                  _model.txtUsernameFocusNode,
                                               autofocus: true,
                                               obscureText: false,
                                               decoration: InputDecoration(
@@ -335,6 +359,7 @@ class _KullaniciDetayWidgetState extends State<KullaniciDetayWidget> {
                                       width: 200.0,
                                       child: TextFormField(
                                         controller: _model.txtKodController,
+                                        focusNode: _model.txtKodFocusNode,
                                         autofocus: true,
                                         obscureText: false,
                                         decoration: InputDecoration(
@@ -418,6 +443,7 @@ class _KullaniciDetayWidgetState extends State<KullaniciDetayWidget> {
                                       width: 200.0,
                                       child: TextFormField(
                                         controller: _model.txtAdController,
+                                        focusNode: _model.txtAdFocusNode,
                                         autofocus: true,
                                         obscureText: false,
                                         decoration: InputDecoration(
@@ -501,6 +527,7 @@ class _KullaniciDetayWidgetState extends State<KullaniciDetayWidget> {
                                       width: 200.0,
                                       child: TextFormField(
                                         controller: _model.txtSoyadController,
+                                        focusNode: _model.txtSoyadFocusNode,
                                         autofocus: true,
                                         obscureText: false,
                                         decoration: InputDecoration(
@@ -584,6 +611,7 @@ class _KullaniciDetayWidgetState extends State<KullaniciDetayWidget> {
                                       width: 200.0,
                                       child: TextFormField(
                                         controller: _model.txtGsmController,
+                                        focusNode: _model.txtGsmFocusNode,
                                         autofocus: true,
                                         obscureText: false,
                                         decoration: InputDecoration(
@@ -667,6 +695,7 @@ class _KullaniciDetayWidgetState extends State<KullaniciDetayWidget> {
                                       width: 200.0,
                                       child: TextFormField(
                                         controller: _model.txtSifreController,
+                                        focusNode: _model.txtSifreFocusNode,
                                         autofocus: true,
                                         obscureText: false,
                                         decoration: InputDecoration(

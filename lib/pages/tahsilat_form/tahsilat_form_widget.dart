@@ -2,6 +2,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'tahsilat_form_model.dart';
@@ -39,6 +40,8 @@ class _TahsilatFormWidgetState extends State<TahsilatFormWidget> {
 
     _model.txtTutarController ??=
         TextEditingController(text: widget.bakiye.toString());
+    _model.txtTutarFocusNode ??= FocusNode();
+
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
@@ -144,6 +147,7 @@ class _TahsilatFormWidgetState extends State<TahsilatFormWidget> {
             padding: EdgeInsetsDirectional.fromSTEB(8.0, 10.0, 8.0, 10.0),
             child: TextFormField(
               controller: _model.txtTutarController,
+              focusNode: _model.txtTutarFocusNode,
               obscureText: false,
               decoration: InputDecoration(
                 labelText: 'Tutar Giriniz...',

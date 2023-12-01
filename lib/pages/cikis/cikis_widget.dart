@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/pages/keyboard/keyboard_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -29,6 +30,8 @@ class _CikisWidgetState extends State<CikisWidget> {
     _model = createModel(context, () => CikisModel());
 
     _model.txtPlakaController ??= TextEditingController();
+    _model.txtPlakaFocusNode ??= FocusNode();
+
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
@@ -41,6 +44,15 @@ class _CikisWidgetState extends State<CikisWidget> {
 
   @override
   Widget build(BuildContext context) {
+    if (isiOS) {
+      SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle(
+          statusBarBrightness: Theme.of(context).brightness,
+          systemStatusBarContrastEnforced: true,
+        ),
+      );
+    }
+
     context.watch<FFAppState>();
 
     return Title(
@@ -127,6 +139,7 @@ class _CikisWidgetState extends State<CikisWidget> {
                                           child: TextFormField(
                                             controller:
                                                 _model.txtPlakaController,
+                                            focusNode: _model.txtPlakaFocusNode,
                                             autofocus: true,
                                             readOnly: true,
                                             obscureText: false,

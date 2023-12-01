@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'fis_ayar_model.dart';
@@ -27,12 +28,20 @@ class _FisAyarWidgetState extends State<FisAyarWidget> {
 
     _model.txtUst1Controller ??=
         TextEditingController(text: FFAppState().FisUstBilgi1);
+    _model.txtUst1FocusNode ??= FocusNode();
+
     _model.txtUst2Controller ??=
         TextEditingController(text: FFAppState().FisUstBilgi2);
+    _model.txtUst2FocusNode ??= FocusNode();
+
     _model.txtAlt1Controller ??=
         TextEditingController(text: FFAppState().FisAltBilgi1);
+    _model.txtAlt1FocusNode ??= FocusNode();
+
     _model.txtAlt2Controller ??=
         TextEditingController(text: FFAppState().FisAltBilgi2);
+    _model.txtAlt2FocusNode ??= FocusNode();
+
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
@@ -45,6 +54,15 @@ class _FisAyarWidgetState extends State<FisAyarWidget> {
 
   @override
   Widget build(BuildContext context) {
+    if (isiOS) {
+      SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle(
+          statusBarBrightness: Theme.of(context).brightness,
+          systemStatusBarContrastEnforced: true,
+        ),
+      );
+    }
+
     context.watch<FFAppState>();
 
     return Title(
@@ -137,6 +155,7 @@ class _FisAyarWidgetState extends State<FisAyarWidget> {
                                   8.0, 0.0, 8.0, 0.0),
                               child: TextFormField(
                                 controller: _model.txtUst1Controller,
+                                focusNode: _model.txtUst1FocusNode,
                                 autofocus: true,
                                 obscureText: false,
                                 decoration: InputDecoration(
@@ -186,6 +205,7 @@ class _FisAyarWidgetState extends State<FisAyarWidget> {
                                   8.0, 0.0, 8.0, 0.0),
                               child: TextFormField(
                                 controller: _model.txtUst2Controller,
+                                focusNode: _model.txtUst2FocusNode,
                                 autofocus: true,
                                 obscureText: false,
                                 decoration: InputDecoration(
@@ -235,6 +255,7 @@ class _FisAyarWidgetState extends State<FisAyarWidget> {
                                   8.0, 0.0, 8.0, 0.0),
                               child: TextFormField(
                                 controller: _model.txtAlt1Controller,
+                                focusNode: _model.txtAlt1FocusNode,
                                 autofocus: true,
                                 obscureText: false,
                                 decoration: InputDecoration(
@@ -284,6 +305,7 @@ class _FisAyarWidgetState extends State<FisAyarWidget> {
                                   8.0, 0.0, 8.0, 0.0),
                               child: TextFormField(
                                 controller: _model.txtAlt2Controller,
+                                focusNode: _model.txtAlt2FocusNode,
                                 autofocus: true,
                                 obscureText: false,
                                 decoration: InputDecoration(

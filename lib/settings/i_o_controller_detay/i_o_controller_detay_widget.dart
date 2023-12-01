@@ -7,6 +7,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
@@ -46,11 +47,15 @@ class _IOControllerDetayWidgetState extends State<IOControllerDetayWidget> {
       FFAppState().ActiveRow,
       r'''$.Aciklama''',
     ).toString().toString());
+    _model.txtAciklamaFocusNode ??= FocusNode();
+
     _model.txtIdController ??= TextEditingController(
         text: getJsonField(
       FFAppState().ActiveRow,
       r'''$.Id''',
     ).toString().toString());
+    _model.txtIdFocusNode ??= FocusNode();
+
     _model.txtIpadresController ??= TextEditingController(
         text: valueOrDefault<String>(
       getJsonField(
@@ -59,6 +64,8 @@ class _IOControllerDetayWidgetState extends State<IOControllerDetayWidget> {
       ).toString().toString(),
       '192.168.1.123',
     ));
+    _model.txtIpadresFocusNode ??= FocusNode();
+
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
@@ -71,6 +78,15 @@ class _IOControllerDetayWidgetState extends State<IOControllerDetayWidget> {
 
   @override
   Widget build(BuildContext context) {
+    if (isiOS) {
+      SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle(
+          statusBarBrightness: Theme.of(context).brightness,
+          systemStatusBarContrastEnforced: true,
+        ),
+      );
+    }
+
     context.watch<FFAppState>();
 
     return Title(
@@ -241,6 +257,8 @@ class _IOControllerDetayWidgetState extends State<IOControllerDetayWidget> {
                                             child: TextFormField(
                                               controller:
                                                   _model.txtAciklamaController,
+                                              focusNode:
+                                                  _model.txtAciklamaFocusNode,
                                               autofocus: true,
                                               obscureText: false,
                                               decoration: InputDecoration(
@@ -380,6 +398,7 @@ class _IOControllerDetayWidgetState extends State<IOControllerDetayWidget> {
                                                   8.0, 0.0, 8.0, 0.0),
                                           child: TextFormField(
                                             controller: _model.txtIdController,
+                                            focusNode: _model.txtIdFocusNode,
                                             autofocus: true,
                                             obscureText: false,
                                             decoration: InputDecoration(
@@ -510,6 +529,7 @@ class _IOControllerDetayWidgetState extends State<IOControllerDetayWidget> {
                                         child: TextFormField(
                                           controller:
                                               _model.txtIpadresController,
+                                          focusNode: _model.txtIpadresFocusNode,
                                           autofocus: true,
                                           obscureText: false,
                                           decoration: InputDecoration(
@@ -607,7 +627,8 @@ class _IOControllerDetayWidgetState extends State<IOControllerDetayWidget> {
                                               2,
                                             ),
                                           ),
-                                          options: [1, 2, 3, 4, 5, 6, 7, 8],
+                                          options: List<int>.from(
+                                              [1, 2, 3, 4, 5, 6, 7, 8]),
                                           optionLabels: [
                                             '1',
                                             '2',
@@ -678,7 +699,7 @@ class _IOControllerDetayWidgetState extends State<IOControllerDetayWidget> {
                                           23,
                                         ),
                                       ),
-                                      options: [5000, 23],
+                                      options: List<int>.from([5000, 23]),
                                       optionLabels: ['5000', '23'],
                                       onChanged: (val) => setState(
                                           () => _model.txtPortnoValue = val),
@@ -734,7 +755,8 @@ class _IOControllerDetayWidgetState extends State<IOControllerDetayWidget> {
                                           9600,
                                         ),
                                       ),
-                                      options: [9600, 38400, 56000],
+                                      options:
+                                          List<int>.from([9600, 38400, 56000]),
                                       optionLabels: ['9600', '38400', '56000'],
                                       onChanged: (val) => setState(
                                           () => _model.txtBaudrateValue = val),

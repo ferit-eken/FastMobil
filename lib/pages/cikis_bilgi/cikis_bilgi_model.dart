@@ -1,19 +1,8 @@
 import '/backend/api_requests/api_calls.dart';
-import '/flutter_flow/flutter_flow_icon_button.dart';
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import '/pages/tahsilat_form/tahsilat_form_widget.dart';
-import '/pages/ucretsiz_secim/ucretsiz_secim_widget.dart';
-import '/settings/menus/hasar_formu/hasar_formu_widget.dart';
-import '/custom_code/actions/index.dart' as actions;
 import 'cikis_bilgi_widget.dart' show CikisBilgiWidget;
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
-import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 
 class CikisBilgiModel extends FlutterFlowModel<CikisBilgiWidget> {
   ///  State fields for stateful widgets in this page.
@@ -53,8 +42,10 @@ class CikisBilgiModel extends FlutterFlowModel<CikisBilgiWidget> {
 
   /// Initialization and disposal methods.
 
+  @override
   void initState(BuildContext context) {}
 
+  @override
   void dispose() {
     unfocusNode.dispose();
   }
@@ -69,7 +60,7 @@ class CikisBilgiModel extends FlutterFlowModel<CikisBilgiWidget> {
   }) async {
     final stopwatch = Stopwatch()..start();
     while (true) {
-      await Future.delayed(Duration(milliseconds: 50));
+      await Future.delayed(const Duration(milliseconds: 50));
       final timeElapsed = stopwatch.elapsedMilliseconds;
       final requestComplete = apiRequestCompleter?.isCompleted ?? false;
       if (timeElapsed > maxWait || (requestComplete && timeElapsed > minWait)) {

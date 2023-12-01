@@ -6,16 +6,14 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/portal/poral_menu/side_menu/side_menu_widget.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'portal_profil_model.dart';
 export 'portal_profil_model.dart';
 
 class PortalProfilWidget extends StatefulWidget {
-  const PortalProfilWidget({Key? key}) : super(key: key);
+  const PortalProfilWidget({super.key});
 
   @override
   _PortalProfilWidgetState createState() => _PortalProfilWidgetState();
@@ -42,8 +40,8 @@ class _PortalProfilWidgetState extends State<PortalProfilWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: Offset(0.0, 90.0),
-          end: Offset(0.0, 0.0),
+          begin: const Offset(0.0, 90.0),
+          end: const Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -61,8 +59,8 @@ class _PortalProfilWidgetState extends State<PortalProfilWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: Offset(0.0, 90.0),
-          end: Offset(0.0, 0.0),
+          begin: const Offset(0.0, 90.0),
+          end: const Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -121,7 +119,7 @@ class _PortalProfilWidgetState extends State<PortalProfilWidget>
                 borderRadius: 30.0,
                 borderWidth: 1.0,
                 buttonSize: 60.0,
-                icon: Icon(
+                icon: const Icon(
                   Icons.menu_outlined,
                   color: Color(0xFF020000),
                   size: 30.0,
@@ -138,7 +136,7 @@ class _PortalProfilWidgetState extends State<PortalProfilWidget>
                       fontSize: 22.0,
                     ),
               ),
-              actions: [],
+              actions: const [],
               centerTitle: true,
               elevation: 2.0,
             ),
@@ -161,13 +159,13 @@ class _PortalProfilWidgetState extends State<PortalProfilWidget>
                           child: wrapWithModel(
                             model: _model.sideMenuModel,
                             updateCallback: () => setState(() {}),
-                            child: SideMenuWidget(),
+                            child: const SideMenuWidget(),
                           ),
                         ),
                         Align(
-                          alignment: AlignmentDirectional(-1.00, -1.00),
+                          alignment: const AlignmentDirectional(-1.00, -1.00),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 16.0, 16.0, 16.0, 0.0),
                             child: Wrap(
                               spacing: 16.0,
@@ -181,7 +179,7 @@ class _PortalProfilWidgetState extends State<PortalProfilWidget>
                               children: [
                                 Container(
                                   width: double.infinity,
-                                  constraints: BoxConstraints(
+                                  constraints: const BoxConstraints(
                                     maxWidth: 470.0,
                                   ),
                                   decoration: BoxDecoration(
@@ -198,7 +196,7 @@ class _PortalProfilWidgetState extends State<PortalProfilWidget>
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             16.0, 16.0, 16.0, 16.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -220,7 +218,7 @@ class _PortalProfilWidgetState extends State<PortalProfilWidget>
                                                 ),
                                               ),
                                               child: Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         2.0, 2.0, 2.0, 2.0),
                                                 child: ClipRRect(
@@ -228,9 +226,9 @@ class _PortalProfilWidgetState extends State<PortalProfilWidget>
                                                       BorderRadius.circular(
                                                           8.0),
                                                   child: CachedNetworkImage(
-                                                    fadeInDuration: Duration(
+                                                    fadeInDuration: const Duration(
                                                         milliseconds: 500),
-                                                    fadeOutDuration: Duration(
+                                                    fadeOutDuration: const Duration(
                                                         milliseconds: 500),
                                                     imageUrl:
                                                         'https://images.unsplash.com/photo-1624561172888-ac93c696e10c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NjJ8fHVzZXJzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=900&q=60',
@@ -243,7 +241,7 @@ class _PortalProfilWidgetState extends State<PortalProfilWidget>
                                             ),
                                             Expanded(
                                               child: Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         16.0, 4.0, 0.0, 4.0),
                                                 child: Column(
@@ -261,7 +259,7 @@ class _PortalProfilWidgetState extends State<PortalProfilWidget>
                                                     ),
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   4.0,
@@ -289,14 +287,14 @@ class _PortalProfilWidgetState extends State<PortalProfilWidget>
                                             .alternate,
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 0.0, 12.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Expanded(
                                               child: Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 0.0, 0.0, 12.0),
                                                 child: Container(
@@ -311,7 +309,7 @@ class _PortalProfilWidgetState extends State<PortalProfilWidget>
                                                   ),
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(
                                                                 12.0,
                                                                 12.0,
@@ -333,7 +331,7 @@ class _PortalProfilWidgetState extends State<PortalProfilWidget>
                                                         ),
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       8.0,
@@ -365,7 +363,7 @@ class _PortalProfilWidgetState extends State<PortalProfilWidget>
                                             ),
                                             Expanded(
                                               child: Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 0.0, 0.0, 12.0),
                                                 child: Container(
@@ -380,7 +378,7 @@ class _PortalProfilWidgetState extends State<PortalProfilWidget>
                                                   ),
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(
                                                                 12.0,
                                                                 12.0,
@@ -403,7 +401,7 @@ class _PortalProfilWidgetState extends State<PortalProfilWidget>
                                                         ),
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       8.0,
@@ -441,10 +439,10 @@ class _PortalProfilWidgetState extends State<PortalProfilWidget>
                                 ),
                                 Container(
                                   width: double.infinity,
-                                  constraints: BoxConstraints(
+                                  constraints: const BoxConstraints(
                                     maxWidth: 570.0,
                                   ),
-                                  decoration: BoxDecoration(),
+                                  decoration: const BoxDecoration(),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
                                     crossAxisAlignment:
@@ -464,7 +462,7 @@ class _PortalProfilWidgetState extends State<PortalProfilWidget>
                                         ),
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 12.0, 0.0, 12.0),
                                           child: Text(
                                             'My Account Information',
@@ -474,7 +472,7 @@ class _PortalProfilWidgetState extends State<PortalProfilWidget>
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 0.0, 1.0),
                                         child: Container(
                                           width: double.infinity,
@@ -488,14 +486,14 @@ class _PortalProfilWidgetState extends State<PortalProfilWidget>
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .alternate,
-                                                offset: Offset(0.0, 1.0),
+                                                offset: const Offset(0.0, 1.0),
                                               )
                                             ],
                                             shape: BoxShape.rectangle,
                                           ),
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 0.0, 16.0, 0.0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
@@ -516,7 +514,7 @@ class _PortalProfilWidgetState extends State<PortalProfilWidget>
                                                     Expanded(
                                                       child: Align(
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 1.00, 0.00),
                                                         child: Icon(
                                                           Icons
@@ -536,7 +534,7 @@ class _PortalProfilWidgetState extends State<PortalProfilWidget>
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 0.0, 1.0),
                                         child: Container(
                                           width: double.infinity,
@@ -550,14 +548,14 @@ class _PortalProfilWidgetState extends State<PortalProfilWidget>
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .alternate,
-                                                offset: Offset(0.0, 1.0),
+                                                offset: const Offset(0.0, 1.0),
                                               )
                                             ],
                                             shape: BoxShape.rectangle,
                                           ),
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 0.0, 16.0, 0.0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
@@ -585,7 +583,7 @@ class _PortalProfilWidgetState extends State<PortalProfilWidget>
                                                     Expanded(
                                                       child: Align(
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 1.00, 0.00),
                                                         child: Icon(
                                                           Icons
@@ -605,7 +603,7 @@ class _PortalProfilWidgetState extends State<PortalProfilWidget>
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 12.0, 0.0, 0.0),
                                         child: Container(
                                           width: double.infinity,
@@ -622,7 +620,7 @@ class _PortalProfilWidgetState extends State<PortalProfilWidget>
                                           ),
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 12.0, 0.0, 12.0),
                                             child: Text(
                                               'Support',
@@ -634,7 +632,7 @@ class _PortalProfilWidgetState extends State<PortalProfilWidget>
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 0.0, 1.0),
                                         child: Container(
                                           width: double.infinity,
@@ -648,14 +646,14 @@ class _PortalProfilWidgetState extends State<PortalProfilWidget>
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .alternate,
-                                                offset: Offset(0.0, 1.0),
+                                                offset: const Offset(0.0, 1.0),
                                               )
                                             ],
                                             shape: BoxShape.rectangle,
                                           ),
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 0.0, 16.0, 0.0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
@@ -683,7 +681,7 @@ class _PortalProfilWidgetState extends State<PortalProfilWidget>
                                                     Expanded(
                                                       child: Align(
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 1.00, 0.00),
                                                         child: Icon(
                                                           Icons
@@ -703,7 +701,7 @@ class _PortalProfilWidgetState extends State<PortalProfilWidget>
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 0.0, 1.0),
                                         child: Container(
                                           width: double.infinity,
@@ -717,14 +715,14 @@ class _PortalProfilWidgetState extends State<PortalProfilWidget>
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .alternate,
-                                                offset: Offset(0.0, 1.0),
+                                                offset: const Offset(0.0, 1.0),
                                               )
                                             ],
                                             shape: BoxShape.rectangle,
                                           ),
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 0.0, 16.0, 0.0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
@@ -752,7 +750,7 @@ class _PortalProfilWidgetState extends State<PortalProfilWidget>
                                                     Expanded(
                                                       child: Align(
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 1.00, 0.00),
                                                         child: Icon(
                                                           Icons
@@ -772,7 +770,7 @@ class _PortalProfilWidgetState extends State<PortalProfilWidget>
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 0.0, 1.0),
                                         child: Container(
                                           width: double.infinity,
@@ -786,14 +784,14 @@ class _PortalProfilWidgetState extends State<PortalProfilWidget>
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .alternate,
-                                                offset: Offset(0.0, 1.0),
+                                                offset: const Offset(0.0, 1.0),
                                               )
                                             ],
                                             shape: BoxShape.rectangle,
                                           ),
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 0.0, 16.0, 0.0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
@@ -814,7 +812,7 @@ class _PortalProfilWidgetState extends State<PortalProfilWidget>
                                                     Expanded(
                                                       child: Align(
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 1.00, 0.00),
                                                         child: Icon(
                                                           Icons
@@ -835,15 +833,15 @@ class _PortalProfilWidgetState extends State<PortalProfilWidget>
                                       ),
                                       Align(
                                         alignment:
-                                            AlignmentDirectional(0.00, -1.00),
+                                            const AlignmentDirectional(0.00, -1.00),
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 16.0, 16.0, 16.0),
                                           child: Container(
                                             width: double.infinity,
                                             height: 50.0,
-                                            constraints: BoxConstraints(
+                                            constraints: const BoxConstraints(
                                               maxWidth: 500.0,
                                             ),
                                             decoration: BoxDecoration(
@@ -860,7 +858,7 @@ class _PortalProfilWidgetState extends State<PortalProfilWidget>
                                               ),
                                             ),
                                             child: Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(4.0, 4.0, 4.0, 4.0),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
@@ -947,7 +945,7 @@ class _PortalProfilWidgetState extends State<PortalProfilWidget>
                                                             ),
                                                             Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           4.0,
                                                                           0.0,
@@ -1049,7 +1047,7 @@ class _PortalProfilWidgetState extends State<PortalProfilWidget>
                                                             ),
                                                             Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           4.0,
                                                                           0.0,
@@ -1086,10 +1084,10 @@ class _PortalProfilWidgetState extends State<PortalProfilWidget>
                                       ),
                                       Align(
                                         alignment:
-                                            AlignmentDirectional(0.00, -1.00),
+                                            const AlignmentDirectional(0.00, -1.00),
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 24.0, 0.0, 0.0),
                                           child: FFButtonWidget(
                                             onPressed: () {
@@ -1099,9 +1097,9 @@ class _PortalProfilWidgetState extends State<PortalProfilWidget>
                                             options: FFButtonOptions(
                                               width: 130.0,
                                               height: 50.0,
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                              iconPadding: EdgeInsetsDirectional
+                                              iconPadding: const EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 0.0),
                                               color:
                                                   FlutterFlowTheme.of(context)

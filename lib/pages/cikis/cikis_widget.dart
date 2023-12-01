@@ -7,13 +7,12 @@ import '/pages/keyboard/keyboard_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'cikis_model.dart';
 export 'cikis_model.dart';
 
 class CikisWidget extends StatefulWidget {
-  const CikisWidget({Key? key}) : super(key: key);
+  const CikisWidget({super.key});
 
   @override
   _CikisWidgetState createState() => _CikisWidgetState();
@@ -73,7 +72,7 @@ class _CikisWidgetState extends State<CikisWidget> {
                 borderRadius: 30.0,
                 borderWidth: 1.0,
                 buttonSize: 60.0,
-                icon: Icon(
+                icon: const Icon(
                   Icons.arrow_back_rounded,
                   color: Color(0xFF020000),
                   size: 30.0,
@@ -90,7 +89,7 @@ class _CikisWidgetState extends State<CikisWidget> {
                       fontSize: 22.0,
                     ),
               ),
-              actions: [],
+              actions: const [],
               centerTitle: true,
               elevation: 2.0,
             ),
@@ -120,7 +119,7 @@ class _CikisWidgetState extends State<CikisWidget> {
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 10.0, 0.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -129,12 +128,12 @@ class _CikisWidgetState extends State<CikisWidget> {
                                 Column(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
-                                    Container(
+                                    SizedBox(
                                       width: 200.0,
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             8.0, 0.0, 8.0, 0.0),
-                                        child: Container(
+                                        child: SizedBox(
                                           width: 75.0,
                                           child: TextFormField(
                                             controller:
@@ -208,7 +207,7 @@ class _CikisWidgetState extends State<CikisWidget> {
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 8.0, 0.0, 0.0),
                             child: FFButtonWidget(
                               onPressed: () async {
@@ -240,7 +239,7 @@ class _CikisWidgetState extends State<CikisWidget> {
                                     context: context,
                                     builder: (alertDialogContext) {
                                       return AlertDialog(
-                                        title: Text('Uyarı'),
+                                        title: const Text('Uyarı'),
                                         content: Text(PtsGroup.aracSorguCall
                                             .message(
                                               (_model.apiResultxex?.jsonBody ??
@@ -251,7 +250,7 @@ class _CikisWidgetState extends State<CikisWidget> {
                                           TextButton(
                                             onPressed: () => Navigator.pop(
                                                 alertDialogContext),
-                                            child: Text('Ok'),
+                                            child: const Text('Ok'),
                                           ),
                                         ],
                                       );
@@ -269,19 +268,19 @@ class _CikisWidgetState extends State<CikisWidget> {
                               options: FFButtonOptions(
                                 width: 181.0,
                                 height: 40.0,
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     24.0, 0.0, 24.0, 0.0),
-                                iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color: FlutterFlowTheme.of(context).warning,
                                 textStyle: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
                                       fontFamily: 'Readex Pro',
-                                      color: Color(0xFF020000),
+                                      color: const Color(0xFF020000),
                                     ),
                                 elevation: 3.0,
-                                borderSide: BorderSide(
+                                borderSide: const BorderSide(
                                   color: Colors.transparent,
                                   width: 1.0,
                                 ),
@@ -293,7 +292,7 @@ class _CikisWidgetState extends State<CikisWidget> {
                             child: GridView(
                               padding: EdgeInsets.zero,
                               gridDelegate:
-                                  SliverGridDelegateWithFixedCrossAxisCount(
+                                  const SliverGridDelegateWithFixedCrossAxisCount(
                                 crossAxisCount: 2,
                                 crossAxisSpacing: 10.0,
                                 mainAxisSpacing: 10.0,
@@ -302,7 +301,7 @@ class _CikisWidgetState extends State<CikisWidget> {
                               scrollDirection: Axis.vertical,
                               children: [
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       15.0, 15.0, 15.0, 15.0),
                                   child: Container(
                                     width: 176.0,
@@ -312,7 +311,7 @@ class _CikisWidgetState extends State<CikisWidget> {
                                           .secondaryBackground,
                                       borderRadius: BorderRadius.circular(5.0),
                                       border: Border.all(
-                                        color: Color(0xFFC20707),
+                                        color: const Color(0xFFC20707),
                                       ),
                                     ),
                                     child: InkWell(
@@ -361,7 +360,7 @@ class _CikisWidgetState extends State<CikisWidget> {
                                             context: context,
                                             builder: (alertDialogContext) {
                                               return AlertDialog(
-                                                title: Text('Uyarı'),
+                                                title: const Text('Uyarı'),
                                                 content:
                                                     Text(PtsGroup.aracSorguCall
                                                         .message(
@@ -375,7 +374,7 @@ class _CikisWidgetState extends State<CikisWidget> {
                                                     onPressed: () =>
                                                         Navigator.pop(
                                                             alertDialogContext),
-                                                    child: Text('Ok'),
+                                                    child: const Text('Ok'),
                                                   ),
                                                 ],
                                               );
@@ -402,7 +401,7 @@ class _CikisWidgetState extends State<CikisWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 5.0, 0.0, 0.0),
                                             child: Text(
                                               'Barkod Oku',
@@ -418,7 +417,7 @@ class _CikisWidgetState extends State<CikisWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       15.0, 15.0, 15.0, 15.0),
                                   child: Container(
                                     width: 177.0,
@@ -428,7 +427,7 @@ class _CikisWidgetState extends State<CikisWidget> {
                                           .secondaryBackground,
                                       borderRadius: BorderRadius.circular(5.0),
                                       border: Border.all(
-                                        color: Color(0xFFC20707),
+                                        color: const Color(0xFFC20707),
                                       ),
                                     ),
                                     child: InkWell(
@@ -455,7 +454,7 @@ class _CikisWidgetState extends State<CikisWidget> {
                                                 padding:
                                                     MediaQuery.viewInsetsOf(
                                                         context),
-                                                child: Container(
+                                                child: SizedBox(
                                                   height: 480.0,
                                                   child: KeyboardWidget(
                                                     def: FFAppState().defPlaka,
@@ -489,7 +488,7 @@ class _CikisWidgetState extends State<CikisWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 5.0, 0.0, 0.0),
                                             child: Text(
                                               'Klavye',
@@ -505,7 +504,7 @@ class _CikisWidgetState extends State<CikisWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       15.0, 15.0, 15.0, 15.0),
                                   child: Container(
                                     width: 180.0,
@@ -519,7 +518,7 @@ class _CikisWidgetState extends State<CikisWidget> {
                                       ),
                                     ),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           3.0, 3.0, 3.0, 3.0),
                                       child: InkWell(
                                         splashColor: Colors.transparent,
@@ -555,7 +554,7 @@ class _CikisWidgetState extends State<CikisWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       15.0, 15.0, 15.0, 15.0),
                                   child: Container(
                                     width: 176.0,
@@ -565,7 +564,7 @@ class _CikisWidgetState extends State<CikisWidget> {
                                           .secondaryBackground,
                                       borderRadius: BorderRadius.circular(5.0),
                                       border: Border.all(
-                                        color: Color(0xFFC20707),
+                                        color: const Color(0xFFC20707),
                                       ),
                                     ),
                                     child: Column(
@@ -581,7 +580,7 @@ class _CikisWidgetState extends State<CikisWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 5.0, 0.0, 0.0),
                                           child: Text(
                                             'Kart Oku',

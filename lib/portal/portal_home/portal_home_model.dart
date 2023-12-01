@@ -1,15 +1,6 @@
-import '/backend/api_requests/api_calls.dart';
-import '/flutter_flow/flutter_flow_icon_button.dart';
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import '/portal/poral_menu/side_menu/side_menu_widget.dart';
 import 'portal_home_widget.dart' show PortalHomeWidget;
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:percent_indicator/percent_indicator.dart';
-import 'package:provider/provider.dart';
 
 class PortalHomeModel extends FlutterFlowModel<PortalHomeWidget> {
   ///  State fields for stateful widgets in this page.
@@ -18,8 +9,10 @@ class PortalHomeModel extends FlutterFlowModel<PortalHomeWidget> {
 
   /// Initialization and disposal methods.
 
+  @override
   void initState(BuildContext context) {}
 
+  @override
   void dispose() {
     unfocusNode.dispose();
   }

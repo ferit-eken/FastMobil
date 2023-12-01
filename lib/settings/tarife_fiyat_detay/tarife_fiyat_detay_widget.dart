@@ -2,23 +2,19 @@ import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 import 'package:provider/provider.dart';
 import 'tarife_fiyat_detay_model.dart';
 export 'tarife_fiyat_detay_model.dart';
 
 class TarifeFiyatDetayWidget extends StatefulWidget {
   const TarifeFiyatDetayWidget({
-    Key? key,
+    super.key,
     required this.otoparkId,
     required this.tarifeId,
     int? id,
-  })  : this.id = id ?? 0,
-        super(key: key);
+  })  : id = id ?? 0;
 
   final int? otoparkId;
   final int? tarifeId;
@@ -127,7 +123,7 @@ class _TarifeFiyatDetayWidgetState extends State<TarifeFiyatDetayWidget> {
                   actions: [
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
                       child: InkWell(
                         splashColor: Colors.transparent,
                         focusColor: Colors.transparent,
@@ -167,7 +163,7 @@ class _TarifeFiyatDetayWidgetState extends State<TarifeFiyatDetayWidget> {
                               context: context,
                               builder: (alertDialogContext) {
                                 return AlertDialog(
-                                  title: Text('Hata'),
+                                  title: const Text('Hata'),
                                   content: Text(
                                       SettingsGroup.aboneTarifeFiyatUpdateCall
                                           .message(
@@ -179,7 +175,7 @@ class _TarifeFiyatDetayWidgetState extends State<TarifeFiyatDetayWidget> {
                                     TextButton(
                                       onPressed: () =>
                                           Navigator.pop(alertDialogContext),
-                                      child: Text('Ok'),
+                                      child: const Text('Ok'),
                                     ),
                                   ],
                                 );
@@ -189,7 +185,7 @@ class _TarifeFiyatDetayWidgetState extends State<TarifeFiyatDetayWidget> {
 
                           setState(() {});
                         },
-                        child: Icon(
+                        child: const Icon(
                           Icons.save_sharp,
                           color: Color(0xFF020000),
                           size: 42.0,
@@ -208,7 +204,7 @@ class _TarifeFiyatDetayWidgetState extends State<TarifeFiyatDetayWidget> {
                     children: [
                       Expanded(
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 1.0, 0.0, 0.0),
                           child: Container(
                             width: double.infinity,
@@ -216,7 +212,7 @@ class _TarifeFiyatDetayWidgetState extends State<TarifeFiyatDetayWidget> {
                             decoration: BoxDecoration(
                               color: FlutterFlowTheme.of(context)
                                   .secondaryBackground,
-                              boxShadow: [
+                              boxShadow: const [
                                 BoxShadow(
                                   blurRadius: 3.0,
                                   color: Color(0x33000000),
@@ -229,7 +225,7 @@ class _TarifeFiyatDetayWidgetState extends State<TarifeFiyatDetayWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         16.0, 16.0, 16.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -241,7 +237,7 @@ class _TarifeFiyatDetayWidgetState extends State<TarifeFiyatDetayWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium,
                                         ),
-                                        Container(
+                                        SizedBox(
                                           width: 200.0,
                                           child: TextFormField(
                                             controller: _model
@@ -326,7 +322,7 @@ class _TarifeFiyatDetayWidgetState extends State<TarifeFiyatDetayWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         16.0, 0.0, 16.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -338,7 +334,7 @@ class _TarifeFiyatDetayWidgetState extends State<TarifeFiyatDetayWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium,
                                         ),
-                                        Container(
+                                        SizedBox(
                                           width: 200.0,
                                           child: TextFormField(
                                             controller:
@@ -422,7 +418,7 @@ class _TarifeFiyatDetayWidgetState extends State<TarifeFiyatDetayWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         16.0, 0.0, 16.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -434,7 +430,7 @@ class _TarifeFiyatDetayWidgetState extends State<TarifeFiyatDetayWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium,
                                         ),
-                                        Container(
+                                        SizedBox(
                                           width: 200.0,
                                           child: TextFormField(
                                             controller:
@@ -517,7 +513,7 @@ class _TarifeFiyatDetayWidgetState extends State<TarifeFiyatDetayWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         16.0, 16.0, 16.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -540,7 +536,7 @@ class _TarifeFiyatDetayWidgetState extends State<TarifeFiyatDetayWidget> {
                                   ),
                                   Theme(
                                     data: ThemeData(
-                                      checkboxTheme: CheckboxThemeData(
+                                      checkboxTheme: const CheckboxThemeData(
                                         visualDensity: VisualDensity.compact,
                                         materialTapTargetSize:
                                             MaterialTapTargetSize.shrinkWrap,
@@ -577,7 +573,7 @@ class _TarifeFiyatDetayWidgetState extends State<TarifeFiyatDetayWidget> {
                                   ),
                                   Theme(
                                     data: ThemeData(
-                                      checkboxTheme: CheckboxThemeData(
+                                      checkboxTheme: const CheckboxThemeData(
                                         visualDensity: VisualDensity.compact,
                                         materialTapTargetSize:
                                             MaterialTapTargetSize.shrinkWrap,
@@ -614,7 +610,7 @@ class _TarifeFiyatDetayWidgetState extends State<TarifeFiyatDetayWidget> {
                                   ),
                                   Theme(
                                     data: ThemeData(
-                                      checkboxTheme: CheckboxThemeData(
+                                      checkboxTheme: const CheckboxThemeData(
                                         visualDensity: VisualDensity.compact,
                                         materialTapTargetSize:
                                             MaterialTapTargetSize.shrinkWrap,
@@ -651,7 +647,7 @@ class _TarifeFiyatDetayWidgetState extends State<TarifeFiyatDetayWidget> {
                                   ),
                                   Theme(
                                     data: ThemeData(
-                                      checkboxTheme: CheckboxThemeData(
+                                      checkboxTheme: const CheckboxThemeData(
                                         visualDensity: VisualDensity.compact,
                                         materialTapTargetSize:
                                             MaterialTapTargetSize.shrinkWrap,
@@ -688,7 +684,7 @@ class _TarifeFiyatDetayWidgetState extends State<TarifeFiyatDetayWidget> {
                                   ),
                                   Theme(
                                     data: ThemeData(
-                                      checkboxTheme: CheckboxThemeData(
+                                      checkboxTheme: const CheckboxThemeData(
                                         visualDensity: VisualDensity.compact,
                                         materialTapTargetSize:
                                             MaterialTapTargetSize.shrinkWrap,
@@ -725,7 +721,7 @@ class _TarifeFiyatDetayWidgetState extends State<TarifeFiyatDetayWidget> {
                                   ),
                                   Theme(
                                     data: ThemeData(
-                                      checkboxTheme: CheckboxThemeData(
+                                      checkboxTheme: const CheckboxThemeData(
                                         visualDensity: VisualDensity.compact,
                                         materialTapTargetSize:
                                             MaterialTapTargetSize.shrinkWrap,
@@ -762,7 +758,7 @@ class _TarifeFiyatDetayWidgetState extends State<TarifeFiyatDetayWidget> {
                                   ),
                                   Theme(
                                     data: ThemeData(
-                                      checkboxTheme: CheckboxThemeData(
+                                      checkboxTheme: const CheckboxThemeData(
                                         visualDensity: VisualDensity.compact,
                                         materialTapTargetSize:
                                             MaterialTapTargetSize.shrinkWrap,

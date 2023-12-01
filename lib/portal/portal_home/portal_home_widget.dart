@@ -6,14 +6,13 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/portal/poral_menu/side_menu/side_menu_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'package:provider/provider.dart';
 import 'portal_home_model.dart';
 export 'portal_home_model.dart';
 
 class PortalHomeWidget extends StatefulWidget {
-  const PortalHomeWidget({Key? key}) : super(key: key);
+  const PortalHomeWidget({super.key});
 
   @override
   _PortalHomeWidgetState createState() => _PortalHomeWidgetState();
@@ -75,7 +74,7 @@ class _PortalHomeWidgetState extends State<PortalHomeWidget> {
                     borderRadius: 30.0,
                     borderWidth: 1.0,
                     buttonSize: 60.0,
-                    icon: Icon(
+                    icon: const Icon(
                       Icons.menu_outlined,
                       color: Color(0xFF020000),
                       size: 30.0,
@@ -94,9 +93,9 @@ class _PortalHomeWidgetState extends State<PortalHomeWidget> {
                                 : FocusScope.of(context).unfocus(),
                             child: Padding(
                               padding: MediaQuery.viewInsetsOf(context),
-                              child: Container(
+                              child: SizedBox(
                                 height: MediaQuery.sizeOf(context).height * 1.0,
-                                child: SideMenuWidget(),
+                                child: const SideMenuWidget(),
                               ),
                             ),
                           );
@@ -112,7 +111,7 @@ class _PortalHomeWidgetState extends State<PortalHomeWidget> {
                           fontSize: 22.0,
                         ),
                   ),
-                  actions: [],
+                  actions: const [],
                   centerTitle: true,
                   elevation: 2.0,
                 )
@@ -122,7 +121,7 @@ class _PortalHomeWidgetState extends State<PortalHomeWidget> {
                   return SafeArea(
                     top: false,
                     child: Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(
+                      padding: const EdgeInsetsDirectional.fromSTEB(
                           10.0, 10.0, 10.0, 10.0),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
@@ -132,7 +131,7 @@ class _PortalHomeWidgetState extends State<PortalHomeWidget> {
                             children: [
                               Expanded(
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       5.0, 5.0, 5.0, 12.0),
                                   child: Container(
                                     width: 100.0,
@@ -145,7 +144,7 @@ class _PortalHomeWidgetState extends State<PortalHomeWidget> {
                                           blurRadius: 4.0,
                                           color: FlutterFlowTheme.of(context)
                                               .tertiary,
-                                          offset: Offset(0.0, 2.0),
+                                          offset: const Offset(0.0, 2.0),
                                         )
                                       ],
                                       borderRadius: BorderRadius.circular(12.0),
@@ -154,7 +153,7 @@ class _PortalHomeWidgetState extends State<PortalHomeWidget> {
                                       ),
                                     ),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           5.0, 5.0, 5.0, 5.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -308,7 +307,7 @@ class _PortalHomeWidgetState extends State<PortalHomeWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .secondaryBackground,
                                             ),
-                                            child: Column(
+                                            child: const Column(
                                               mainAxisSize: MainAxisSize.max,
                                               mainAxisAlignment:
                                                   MainAxisAlignment.center,
@@ -324,7 +323,7 @@ class _PortalHomeWidgetState extends State<PortalHomeWidget> {
                             ],
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 20.0, 0.0, 20.0, 0.0),
                             child: FutureBuilder<ApiCallResponse>(
                               future: SettingsGroup.getALLCall.call(
@@ -603,14 +602,14 @@ class _PortalHomeWidgetState extends State<PortalHomeWidget> {
                                                               FFButtonOptions(
                                                             height: 40.0,
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         24.0,
                                                                         0.0,
                                                                         24.0,
                                                                         0.0),
                                                             iconPadding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
@@ -631,7 +630,7 @@ class _PortalHomeWidgetState extends State<PortalHomeWidget> {
                                                                     ),
                                                             elevation: 3.0,
                                                             borderSide:
-                                                                BorderSide(
+                                                                const BorderSide(
                                                               color: Colors
                                                                   .transparent,
                                                               width: 1.0,

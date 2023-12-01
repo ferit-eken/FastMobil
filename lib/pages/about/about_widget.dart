@@ -5,17 +5,15 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/custom_code/actions/index.dart' as actions;
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'about_model.dart';
 export 'about_model.dart';
 
 class AboutWidget extends StatefulWidget {
-  const AboutWidget({Key? key}) : super(key: key);
+  const AboutWidget({super.key});
 
   @override
   _AboutWidgetState createState() => _AboutWidgetState();
@@ -42,15 +40,15 @@ class _AboutWidgetState extends State<AboutWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: Offset(0.0, 40.0),
-          end: Offset(0.0, 0.0),
+          begin: const Offset(0.0, 40.0),
+          end: const Offset(0.0, 0.0),
         ),
         ScaleEffect(
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: Offset(0.6, 0.6),
-          end: Offset(1.0, 1.0),
+          begin: const Offset(0.6, 0.6),
+          end: const Offset(1.0, 1.0),
         ),
       ],
     ),
@@ -68,8 +66,8 @@ class _AboutWidgetState extends State<AboutWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: Offset(50.0, 0.0),
-          end: Offset(0.0, 0.0),
+          begin: const Offset(50.0, 0.0),
+          end: const Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -87,8 +85,8 @@ class _AboutWidgetState extends State<AboutWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: Offset(50.0, 0.0),
-          end: Offset(0.0, 0.0),
+          begin: const Offset(50.0, 0.0),
+          end: const Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -107,8 +105,8 @@ class _AboutWidgetState extends State<AboutWidget>
           curve: Curves.easeInOut,
           delay: 100.ms,
           duration: 600.ms,
-          begin: Offset(60.0, 0.0),
-          end: Offset(0.0, 0.0),
+          begin: const Offset(60.0, 0.0),
+          end: const Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -126,8 +124,8 @@ class _AboutWidgetState extends State<AboutWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: Offset(50.0, 0.0),
-          end: Offset(0.0, 0.0),
+          begin: const Offset(50.0, 0.0),
+          end: const Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -188,7 +186,7 @@ class _AboutWidgetState extends State<AboutWidget>
                   context.pop();
                 },
               ),
-              actions: [],
+              actions: const [],
               centerTitle: false,
               elevation: 0.0,
             ),
@@ -199,7 +197,7 @@ class _AboutWidgetState extends State<AboutWidget>
                 children: [
                   Expanded(
                     child: Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(
+                      padding: const EdgeInsetsDirectional.fromSTEB(
                           12.0, 12.0, 12.0, 12.0),
                       child: SingleChildScrollView(
                         child: Column(
@@ -221,7 +219,7 @@ class _AboutWidgetState extends State<AboutWidget>
                             ).animateOnPageLoad(
                                 animationsMap['imageOnPageLoadAnimation']!),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 16.0, 0.0, 0.0),
                               child: Text(
                                 'Otopark Uygulaması',
@@ -231,7 +229,7 @@ class _AboutWidgetState extends State<AboutWidget>
                                   animationsMap['textOnPageLoadAnimation1']!),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 4.0, 0.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -251,7 +249,7 @@ class _AboutWidgetState extends State<AboutWidget>
                                   animationsMap['rowOnPageLoadAnimation']!),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   4.0, 4.0, 0.0, 0.0),
                               child: Text(
                                 'Otoparkınız için kompakt çözümler sunar',
@@ -275,7 +273,7 @@ class _AboutWidgetState extends State<AboutWidget>
                                   size: 24.0,
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       5.0, 0.0, 0.0, 0.0),
                                   child: Text(
                                     'Versiyon 1.03',
@@ -294,7 +292,7 @@ class _AboutWidgetState extends State<AboutWidget>
                                   size: 24.0,
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       5.0, 0.0, 0.0, 0.0),
                                   child: Text(
                                     'destek@fastpark.com.tr',
@@ -314,7 +312,7 @@ class _AboutWidgetState extends State<AboutWidget>
                                   size: 24.0,
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       5.0, 0.0, 0.0, 0.0),
                                   child: Text(
                                     'TÜBİTAK Teknoloji Geliştirme Bölgesi No:30/1\nGebze /KOCAELİ / TÜRKİYE',
@@ -325,7 +323,7 @@ class _AboutWidgetState extends State<AboutWidget>
                               ],
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 10.0, 0.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -338,8 +336,8 @@ class _AboutWidgetState extends State<AboutWidget>
                                                 context: context,
                                                 builder: (alertDialogContext) {
                                                   return AlertDialog(
-                                                    title: Text('Güncelleme'),
-                                                    content: Text(
+                                                    title: const Text('Güncelleme'),
+                                                    content: const Text(
                                                         'Uygulamanın güncel versiyonu yüklenecek emin misiniz?'),
                                                     actions: [
                                                       TextButton(
@@ -347,14 +345,14 @@ class _AboutWidgetState extends State<AboutWidget>
                                                             Navigator.pop(
                                                                 alertDialogContext,
                                                                 false),
-                                                        child: Text('İptal'),
+                                                        child: const Text('İptal'),
                                                       ),
                                                       TextButton(
                                                         onPressed: () =>
                                                             Navigator.pop(
                                                                 alertDialogContext,
                                                                 true),
-                                                        child: Text('Güncelle'),
+                                                        child: const Text('Güncelle'),
                                                       ),
                                                     ],
                                                   );
@@ -381,12 +379,12 @@ class _AboutWidgetState extends State<AboutWidget>
                                     text: 'Güncelleme Kontrolü',
                                     options: FFButtonOptions(
                                       height: 40.0,
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           24.0, 0.0, 24.0, 0.0),
                                       iconPadding:
-                                          EdgeInsetsDirectional.fromSTEB(
+                                          const EdgeInsetsDirectional.fromSTEB(
                                               0.0, 0.0, 0.0, 0.0),
-                                      color: Color(0xFFAC630F),
+                                      color: const Color(0xFFAC630F),
                                       textStyle: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
@@ -394,7 +392,7 @@ class _AboutWidgetState extends State<AboutWidget>
                                             color: Colors.white,
                                           ),
                                       elevation: 3.0,
-                                      borderSide: BorderSide(
+                                      borderSide: const BorderSide(
                                         color: Colors.transparent,
                                         width: 1.0,
                                       ),
@@ -405,7 +403,7 @@ class _AboutWidgetState extends State<AboutWidget>
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 15.0, 0.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -418,8 +416,8 @@ class _AboutWidgetState extends State<AboutWidget>
                                                 context: context,
                                                 builder: (alertDialogContext) {
                                                   return AlertDialog(
-                                                    title: Text('Güncelleme'),
-                                                    content: Text(
+                                                    title: const Text('Güncelleme'),
+                                                    content: const Text(
                                                         'Fişlerde kullanılmak için logonuz yüklenecek, emin misiniz?'),
                                                     actions: [
                                                       TextButton(
@@ -427,14 +425,14 @@ class _AboutWidgetState extends State<AboutWidget>
                                                             Navigator.pop(
                                                                 alertDialogContext,
                                                                 false),
-                                                        child: Text('İptal'),
+                                                        child: const Text('İptal'),
                                                       ),
                                                       TextButton(
                                                         onPressed: () =>
                                                             Navigator.pop(
                                                                 alertDialogContext,
                                                                 true),
-                                                        child: Text('Güncelle'),
+                                                        child: const Text('Güncelle'),
                                                       ),
                                                     ],
                                                   );
@@ -453,15 +451,15 @@ class _AboutWidgetState extends State<AboutWidget>
                                             context: context,
                                             builder: (alertDialogContext) {
                                               return AlertDialog(
-                                                title: Text('Başarılı'),
-                                                content: Text(
+                                                title: const Text('Başarılı'),
+                                                content: const Text(
                                                     'Logonuz başarı ile güncellendi.'),
                                                 actions: [
                                                   TextButton(
                                                     onPressed: () =>
                                                         Navigator.pop(
                                                             alertDialogContext),
-                                                    child: Text('Ok'),
+                                                    child: const Text('Ok'),
                                                   ),
                                                 ],
                                               );
@@ -472,7 +470,7 @@ class _AboutWidgetState extends State<AboutWidget>
                                             context: context,
                                             builder: (alertDialogContext) {
                                               return AlertDialog(
-                                                title: Text('Hata'),
+                                                title: const Text('Hata'),
                                                 content: Text(
                                                     _model.reslogodownload!),
                                                 actions: [
@@ -480,7 +478,7 @@ class _AboutWidgetState extends State<AboutWidget>
                                                     onPressed: () =>
                                                         Navigator.pop(
                                                             alertDialogContext),
-                                                    child: Text('Ok'),
+                                                    child: const Text('Ok'),
                                                   ),
                                                 ],
                                               );
@@ -494,12 +492,12 @@ class _AboutWidgetState extends State<AboutWidget>
                                     text: 'Logo Güncelle',
                                     options: FFButtonOptions(
                                       height: 40.0,
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           24.0, 0.0, 24.0, 0.0),
                                       iconPadding:
-                                          EdgeInsetsDirectional.fromSTEB(
+                                          const EdgeInsetsDirectional.fromSTEB(
                                               0.0, 0.0, 0.0, 0.0),
-                                      color: Color(0xFFAC630F),
+                                      color: const Color(0xFFAC630F),
                                       textStyle: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
@@ -507,7 +505,7 @@ class _AboutWidgetState extends State<AboutWidget>
                                             color: Colors.white,
                                           ),
                                       elevation: 3.0,
-                                      borderSide: BorderSide(
+                                      borderSide: const BorderSide(
                                         color: Colors.transparent,
                                         width: 1.0,
                                       ),
@@ -518,13 +516,13 @@ class _AboutWidgetState extends State<AboutWidget>
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 15.0, 0.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         5.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       'www.fastpark.com.tr',
@@ -536,13 +534,13 @@ class _AboutWidgetState extends State<AboutWidget>
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 5.0, 0.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         5.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       'Fastparkturkiye',
@@ -554,7 +552,7 @@ class _AboutWidgetState extends State<AboutWidget>
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 5.0, 0.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -566,7 +564,7 @@ class _AboutWidgetState extends State<AboutWidget>
                                     size: 24.0,
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         5.0, 0.0, 0.0, 0.0),
                                     child: FaIcon(
                                       FontAwesomeIcons.twitterSquare,
@@ -576,7 +574,7 @@ class _AboutWidgetState extends State<AboutWidget>
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         5.0, 0.0, 0.0, 0.0),
                                     child: FaIcon(
                                       FontAwesomeIcons.linkedinIn,
@@ -586,7 +584,7 @@ class _AboutWidgetState extends State<AboutWidget>
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         5.0, 0.0, 0.0, 0.0),
                                     child: FaIcon(
                                       FontAwesomeIcons.instagram,

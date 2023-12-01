@@ -2,17 +2,15 @@ import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'hasar_formu_model.dart';
 export 'hasar_formu_model.dart';
 
 class HasarFormuWidget extends StatefulWidget {
   const HasarFormuWidget({
-    Key? key,
+    super.key,
     required this.gecisId,
-  }) : super(key: key);
+  });
 
   final int? gecisId;
 
@@ -55,7 +53,7 @@ class _HasarFormuWidgetState extends State<HasarFormuWidget> {
         color: FlutterFlowTheme.of(context).secondaryBackground,
       ),
       child: Padding(
-        padding: EdgeInsetsDirectional.fromSTEB(0.0, 25.0, 0.0, 0.0),
+        padding: const EdgeInsetsDirectional.fromSTEB(0.0, 25.0, 0.0, 0.0),
         child: FutureBuilder<ApiCallResponse>(
           future: SettingsGroup.getRowDataCall.call(
             db: FFAppState().veritabani,
@@ -88,15 +86,15 @@ class _HasarFormuWidgetState extends State<HasarFormuWidget> {
                   decoration: BoxDecoration(
                     color: FlutterFlowTheme.of(context).secondaryBackground,
                   ),
-                  child: Container(
+                  child: SizedBox(
                     width: 380.0,
                     height: 200.0,
                     child: Stack(
                       children: [
                         Align(
-                          alignment: AlignmentDirectional(0.00, 0.00),
+                          alignment: const AlignmentDirectional(0.00, 0.00),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 20.0, 0.0, 0.0),
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(8.0),
@@ -110,7 +108,7 @@ class _HasarFormuWidgetState extends State<HasarFormuWidget> {
                           ),
                         ),
                         Align(
-                          alignment: AlignmentDirectional(-0.70, -0.60),
+                          alignment: const AlignmentDirectional(-0.70, -0.60),
                           child: Theme(
                             data: ThemeData(
                               checkboxTheme: CheckboxThemeData(
@@ -135,7 +133,7 @@ class _HasarFormuWidgetState extends State<HasarFormuWidget> {
                           ),
                         ),
                         Align(
-                          alignment: AlignmentDirectional(-0.19, -0.61),
+                          alignment: const AlignmentDirectional(-0.19, -0.61),
                           child: Theme(
                             data: ThemeData(
                               checkboxTheme: CheckboxThemeData(
@@ -160,7 +158,7 @@ class _HasarFormuWidgetState extends State<HasarFormuWidget> {
                           ),
                         ),
                         Align(
-                          alignment: AlignmentDirectional(0.11, -0.61),
+                          alignment: const AlignmentDirectional(0.11, -0.61),
                           child: Theme(
                             data: ThemeData(
                               checkboxTheme: CheckboxThemeData(
@@ -185,7 +183,7 @@ class _HasarFormuWidgetState extends State<HasarFormuWidget> {
                           ),
                         ),
                         Align(
-                          alignment: AlignmentDirectional(0.64, -0.69),
+                          alignment: const AlignmentDirectional(0.64, -0.69),
                           child: Theme(
                             data: ThemeData(
                               checkboxTheme: CheckboxThemeData(
@@ -210,7 +208,7 @@ class _HasarFormuWidgetState extends State<HasarFormuWidget> {
                           ),
                         ),
                         Align(
-                          alignment: AlignmentDirectional(-1.00, 0.09),
+                          alignment: const AlignmentDirectional(-1.00, 0.09),
                           child: Theme(
                             data: ThemeData(
                               checkboxTheme: CheckboxThemeData(
@@ -235,7 +233,7 @@ class _HasarFormuWidgetState extends State<HasarFormuWidget> {
                           ),
                         ),
                         Align(
-                          alignment: AlignmentDirectional(-0.67, 0.09),
+                          alignment: const AlignmentDirectional(-0.67, 0.09),
                           child: Theme(
                             data: ThemeData(
                               checkboxTheme: CheckboxThemeData(
@@ -260,7 +258,7 @@ class _HasarFormuWidgetState extends State<HasarFormuWidget> {
                           ),
                         ),
                         Align(
-                          alignment: AlignmentDirectional(-0.10, 0.10),
+                          alignment: const AlignmentDirectional(-0.10, 0.10),
                           child: Theme(
                             data: ThemeData(
                               checkboxTheme: CheckboxThemeData(
@@ -285,7 +283,7 @@ class _HasarFormuWidgetState extends State<HasarFormuWidget> {
                           ),
                         ),
                         Align(
-                          alignment: AlignmentDirectional(0.53, 0.08),
+                          alignment: const AlignmentDirectional(0.53, 0.08),
                           child: Theme(
                             data: ThemeData(
                               checkboxTheme: CheckboxThemeData(
@@ -310,7 +308,7 @@ class _HasarFormuWidgetState extends State<HasarFormuWidget> {
                           ),
                         ),
                         Align(
-                          alignment: AlignmentDirectional(0.99, 0.07),
+                          alignment: const AlignmentDirectional(0.99, 0.07),
                           child: Theme(
                             data: ThemeData(
                               checkboxTheme: CheckboxThemeData(
@@ -335,7 +333,7 @@ class _HasarFormuWidgetState extends State<HasarFormuWidget> {
                           ),
                         ),
                         Align(
-                          alignment: AlignmentDirectional(-0.69, 0.76),
+                          alignment: const AlignmentDirectional(-0.69, 0.76),
                           child: Theme(
                             data: ThemeData(
                               checkboxTheme: CheckboxThemeData(
@@ -360,7 +358,7 @@ class _HasarFormuWidgetState extends State<HasarFormuWidget> {
                           ),
                         ),
                         Align(
-                          alignment: AlignmentDirectional(-0.20, 0.78),
+                          alignment: const AlignmentDirectional(-0.20, 0.78),
                           child: Theme(
                             data: ThemeData(
                               checkboxTheme: CheckboxThemeData(
@@ -385,7 +383,7 @@ class _HasarFormuWidgetState extends State<HasarFormuWidget> {
                           ),
                         ),
                         Align(
-                          alignment: AlignmentDirectional(0.12, 0.79),
+                          alignment: const AlignmentDirectional(0.12, 0.79),
                           child: Theme(
                             data: ThemeData(
                               checkboxTheme: CheckboxThemeData(
@@ -410,7 +408,7 @@ class _HasarFormuWidgetState extends State<HasarFormuWidget> {
                           ),
                         ),
                         Align(
-                          alignment: AlignmentDirectional(0.66, 0.73),
+                          alignment: const AlignmentDirectional(0.66, 0.73),
                           child: Theme(
                             data: ThemeData(
                               checkboxTheme: CheckboxThemeData(

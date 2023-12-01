@@ -3,22 +3,20 @@ import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'abone_detay_model.dart';
 export 'abone_detay_model.dart';
 
 class AboneDetayWidget extends StatefulWidget {
   const AboneDetayWidget({
-    Key? key,
+    super.key,
     this.cari,
     required this.kod,
-  }) : super(key: key);
+  });
 
   final dynamic cari;
   final String? kod;
@@ -159,7 +157,7 @@ class _AboneDetayWidgetState extends State<AboneDetayWidget> {
               ),
               actions: [
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
                   child: InkWell(
                     splashColor: Colors.transparent,
                     focusColor: Colors.transparent,
@@ -192,7 +190,7 @@ class _AboneDetayWidgetState extends State<AboneDetayWidget> {
                           context: context,
                           builder: (alertDialogContext) {
                             return AlertDialog(
-                              title: Text('Hata'),
+                              title: const Text('Hata'),
                               content: Text(CariGroup.cariKayitCall
                                   .message(
                                     (_model.apiResultcariupdate?.jsonBody ??
@@ -203,7 +201,7 @@ class _AboneDetayWidgetState extends State<AboneDetayWidget> {
                                 TextButton(
                                   onPressed: () =>
                                       Navigator.pop(alertDialogContext),
-                                  child: Text('Ok'),
+                                  child: const Text('Ok'),
                                 ),
                               ],
                             );
@@ -213,7 +211,7 @@ class _AboneDetayWidgetState extends State<AboneDetayWidget> {
 
                       setState(() {});
                     },
-                    child: Icon(
+                    child: const Icon(
                       Icons.save_sharp,
                       color: Color(0xFF020000),
                       size: 42.0,
@@ -233,7 +231,7 @@ class _AboneDetayWidgetState extends State<AboneDetayWidget> {
                   Expanded(
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(5.0, 5.0, 5.0, 5.0),
+                          const EdgeInsetsDirectional.fromSTEB(5.0, 5.0, 5.0, 5.0),
                       child: Container(
                         width: double.infinity,
                         height: double.infinity,
@@ -243,27 +241,27 @@ class _AboneDetayWidgetState extends State<AboneDetayWidget> {
                             BoxShadow(
                               blurRadius: 3.0,
                               color: FlutterFlowTheme.of(context).secondary,
-                              offset: Offset(0.0, 1.0),
+                              offset: const Offset(0.0, 1.0),
                             )
                           ],
                           borderRadius: BorderRadius.circular(8.0),
                         ),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               5.0, 5.0, 5.0, 5.0),
                           child: SingleChildScrollView(
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       7.0, 5.0, 7.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     children: [
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 8.0, 0.0),
                                         child: FutureBuilder<ApiCallResponse>(
                                           future: SettingsGroup.getALLCall.call(
@@ -307,7 +305,7 @@ class _AboneDetayWidgetState extends State<AboneDetayWidget> {
                                               ) as List)
                                                       .map<String>(
                                                           (s) => s.toString())
-                                                      .toList()!),
+                                                      .toList()),
                                               optionLabels: (getJsonField(
                                                 chCarigrupGetALLResponse
                                                     .jsonBody,
@@ -316,7 +314,7 @@ class _AboneDetayWidgetState extends State<AboneDetayWidget> {
                                               ) as List)
                                                   .map<String>(
                                                       (s) => s.toString())
-                                                  .toList()!,
+                                                  .toList(),
                                               onChanged: (val) => setState(() =>
                                                   _model.chCarigrupValue = val),
                                               width: MediaQuery.sizeOf(context)
@@ -344,7 +342,7 @@ class _AboneDetayWidgetState extends State<AboneDetayWidget> {
                                                       .alternate,
                                               borderWidth: 2.0,
                                               borderRadius: 8.0,
-                                              margin: EdgeInsetsDirectional
+                                              margin: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       16.0, 4.0, 16.0, 4.0),
                                               hidesUnderline: true,
@@ -361,7 +359,7 @@ class _AboneDetayWidgetState extends State<AboneDetayWidget> {
                                           _model.chDurumValue ??= 1,
                                         ),
                                         options: List<int>.from([0, 1]),
-                                        optionLabels: ['Pasif', 'Aktif'],
+                                        optionLabels: const ['Pasif', 'Aktif'],
                                         onChanged: (val) => setState(
                                             () => _model.chDurumValue = val),
                                         width: 150.0,
@@ -383,7 +381,7 @@ class _AboneDetayWidgetState extends State<AboneDetayWidget> {
                                                 .alternate,
                                         borderWidth: 2.0,
                                         borderRadius: 8.0,
-                                        margin: EdgeInsetsDirectional.fromSTEB(
+                                        margin: const EdgeInsetsDirectional.fromSTEB(
                                             16.0, 4.0, 16.0, 4.0),
                                         hidesUnderline: true,
                                         isSearchable: false,
@@ -393,7 +391,7 @@ class _AboneDetayWidgetState extends State<AboneDetayWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 5.0, 0.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -402,9 +400,9 @@ class _AboneDetayWidgetState extends State<AboneDetayWidget> {
                                       Flexible(
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   8.0, 0.0, 8.0, 0.0),
-                                          child: Container(
+                                          child: SizedBox(
                                             width: 70.0,
                                             child: TextFormField(
                                               controller:
@@ -479,9 +477,9 @@ class _AboneDetayWidgetState extends State<AboneDetayWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             3.0, 0.0, 8.0, 0.0),
-                                        child: Container(
+                                        child: SizedBox(
                                           width: 280.0,
                                           child: TextFormField(
                                             controller:
@@ -550,7 +548,7 @@ class _AboneDetayWidgetState extends State<AboneDetayWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 5.0, 0.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -560,9 +558,9 @@ class _AboneDetayWidgetState extends State<AboneDetayWidget> {
                                       Expanded(
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   8.0, 0.0, 8.0, 0.0),
-                                          child: Container(
+                                          child: SizedBox(
                                             width: 200.0,
                                             child: TextFormField(
                                               controller:
@@ -640,7 +638,7 @@ class _AboneDetayWidgetState extends State<AboneDetayWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 5.0, 0.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -650,9 +648,9 @@ class _AboneDetayWidgetState extends State<AboneDetayWidget> {
                                       Expanded(
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   8.0, 0.0, 8.0, 0.0),
-                                          child: Container(
+                                          child: SizedBox(
                                             width: 200.0,
                                             child: TextFormField(
                                               controller:
@@ -730,7 +728,7 @@ class _AboneDetayWidgetState extends State<AboneDetayWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 5.0, 0.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -740,9 +738,9 @@ class _AboneDetayWidgetState extends State<AboneDetayWidget> {
                                       Expanded(
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   8.0, 0.0, 8.0, 0.0),
-                                          child: Container(
+                                          child: SizedBox(
                                             width: 200.0,
                                             child: TextFormField(
                                               controller:
@@ -820,7 +818,7 @@ class _AboneDetayWidgetState extends State<AboneDetayWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 5.0, 0.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -830,9 +828,9 @@ class _AboneDetayWidgetState extends State<AboneDetayWidget> {
                                       Expanded(
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   8.0, 0.0, 8.0, 0.0),
-                                          child: Container(
+                                          child: SizedBox(
                                             width: 200.0,
                                             child: TextFormField(
                                               controller:
@@ -909,7 +907,7 @@ class _AboneDetayWidgetState extends State<AboneDetayWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       10.0, 10.0, 0.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -926,7 +924,7 @@ class _AboneDetayWidgetState extends State<AboneDetayWidget> {
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .secondaryText,
-                                              offset: Offset(0.0, 2.0),
+                                              offset: const Offset(0.0, 2.0),
                                             )
                                           ],
                                           borderRadius:
@@ -942,7 +940,7 @@ class _AboneDetayWidgetState extends State<AboneDetayWidget> {
                                           mainAxisAlignment:
                                               MainAxisAlignment.center,
                                           children: [
-                                            Icon(
+                                            const Icon(
                                               Icons.delete_outlined,
                                               color: Color(0xDBEB1313),
                                               size: 35.0,

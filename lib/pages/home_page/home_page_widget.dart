@@ -2,19 +2,17 @@ import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/settings/menus/sol_menu/sol_menu_widget.dart';
 import '/custom_code/actions/index.dart' as actions;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'home_page_model.dart';
 export 'home_page_model.dart';
 
 class HomePageWidget extends StatefulWidget {
-  const HomePageWidget({Key? key}) : super(key: key);
+  const HomePageWidget({super.key});
 
   @override
   _HomePageWidgetState createState() => _HomePageWidgetState();
@@ -32,7 +30,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      if (FFAppState().KapiId != null && FFAppState().KapiId != '') {
+      if (FFAppState().KapiId != '') {
         _model.apiResultotopark = await SettingsGroup.getRowDataCall.call(
           db: FFAppState().veritabani,
           tablename: 'Otopark',
@@ -83,12 +81,12 @@ class _HomePageWidgetState extends State<HomePageWidget> {
               context: context,
               builder: (alertDialogContext) {
                 return AlertDialog(
-                  title: Text('Hata'),
-                  content: Text('Otopark bölümleri yüklenemedi.'),
+                  title: const Text('Hata'),
+                  content: const Text('Otopark bölümleri yüklenemedi.'),
                   actions: [
                     TextButton(
                       onPressed: () => Navigator.pop(alertDialogContext),
-                      child: Text('Ok'),
+                      child: const Text('Ok'),
                     ),
                   ],
                 );
@@ -100,12 +98,12 @@ class _HomePageWidgetState extends State<HomePageWidget> {
             context: context,
             builder: (alertDialogContext) {
               return AlertDialog(
-                title: Text('Hata'),
-                content: Text('Otopark bilgisi yüklenemedi.'),
+                title: const Text('Hata'),
+                content: const Text('Otopark bilgisi yüklenemedi.'),
                 actions: [
                   TextButton(
                     onPressed: () => Navigator.pop(alertDialogContext),
-                    child: Text('Ok'),
+                    child: const Text('Ok'),
                   ),
                 ],
               );
@@ -165,7 +163,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                   borderRadius: 30.0,
                   borderWidth: 1.0,
                   buttonSize: 60.0,
-                  icon: Icon(
+                  icon: const Icon(
                     Icons.menu_open_rounded,
                     color: Color(0xFF020000),
                     size: 30.0,
@@ -184,9 +182,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                               : FocusScope.of(context).unfocus(),
                           child: Padding(
                             padding: MediaQuery.viewInsetsOf(context),
-                            child: Container(
+                            child: SizedBox(
                               height: MediaQuery.sizeOf(context).height * 1.0,
-                              child: SolMenuWidget(),
+                              child: const SolMenuWidget(),
                             ),
                           ),
                         );
@@ -201,11 +199,11 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                   ).toString(),
                   style: FlutterFlowTheme.of(context).headlineMedium.override(
                         fontFamily: 'Outfit',
-                        color: Color(0xFF020000),
+                        color: const Color(0xFF020000),
                         fontSize: 22.0,
                       ),
                 ),
-                actions: [],
+                actions: const [],
                 centerTitle: true,
                 elevation: 2.0,
               ),
@@ -241,11 +239,11 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                             Container(
                               width: MediaQuery.sizeOf(context).width * 1.0,
                               height: 144.0,
-                              decoration: BoxDecoration(
+                              decoration: const BoxDecoration(
                                 color: Colors.white,
                               ),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     5.0, 5.0, 5.0, 5.0),
                                 child: Container(
                                   width: 100.0,
@@ -266,7 +264,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                       Expanded(
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   12.0, 10.0, 0.0, 0.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
@@ -325,7 +323,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                 child: GridView(
                                                   padding: EdgeInsets.zero,
                                                   gridDelegate:
-                                                      SliverGridDelegateWithFixedCrossAxisCount(
+                                                      const SliverGridDelegateWithFixedCrossAxisCount(
                                                     crossAxisCount: 4,
                                                     crossAxisSpacing: 1.0,
                                                     mainAxisSpacing: 1.0,
@@ -375,7 +373,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 4.0, 4.0, 4.0),
                                         child: Container(
                                           width: 62.0,
@@ -417,7 +415,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                               return GridView(
                                                 padding: EdgeInsets.zero,
                                                 gridDelegate:
-                                                    SliverGridDelegateWithFixedCrossAxisCount(
+                                                    const SliverGridDelegateWithFixedCrossAxisCount(
                                                   crossAxisCount: 2,
                                                   crossAxisSpacing: 2.0,
                                                   mainAxisSpacing: 2.0,
@@ -522,7 +520,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   10.0, 10.0, 0.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -547,12 +545,12 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                     .secondaryBackground,
                               ),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     10.0, 10.0, 10.0, 10.0),
                                 child: GridView(
                                   padding: EdgeInsets.zero,
                                   gridDelegate:
-                                      SliverGridDelegateWithFixedCrossAxisCount(
+                                      const SliverGridDelegateWithFixedCrossAxisCount(
                                     crossAxisCount: 3,
                                     crossAxisSpacing: 10.0,
                                     mainAxisSpacing: 10.0,
@@ -573,7 +571,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                         ),
                                       ),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             3.0, 3.0, 3.0, 3.0),
                                         child: InkWell(
                                           splashColor: Colors.transparent,
@@ -620,7 +618,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                         ),
                                       ),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             3.0, 3.0, 3.0, 3.0),
                                         child: InkWell(
                                           splashColor: Colors.transparent,
@@ -667,7 +665,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                         ),
                                       ),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             3.0, 3.0, 3.0, 3.0),
                                         child: InkWell(
                                           splashColor: Colors.transparent,
@@ -707,7 +705,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 0.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -732,12 +730,12 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                     .secondaryBackground,
                               ),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     10.0, 10.0, 10.0, 10.0),
                                 child: GridView(
                                   padding: EdgeInsets.zero,
                                   gridDelegate:
-                                      SliverGridDelegateWithFixedCrossAxisCount(
+                                      const SliverGridDelegateWithFixedCrossAxisCount(
                                     crossAxisCount: 3,
                                     crossAxisSpacing: 10.0,
                                     mainAxisSpacing: 10.0,
@@ -758,7 +756,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                         ),
                                       ),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             3.0, 3.0, 3.0, 3.0),
                                         child: InkWell(
                                           splashColor: Colors.transparent,
@@ -805,7 +803,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                         ),
                                       ),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             3.0, 3.0, 3.0, 3.0),
                                         child: InkWell(
                                           splashColor: Colors.transparent,
@@ -852,7 +850,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                         ),
                                       ),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             3.0, 3.0, 3.0, 3.0),
                                         child: InkWell(
                                           splashColor: Colors.transparent,

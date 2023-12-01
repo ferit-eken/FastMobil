@@ -2,20 +2,17 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'tahsilat_form_model.dart';
 export 'tahsilat_form_model.dart';
 
 class TahsilatFormWidget extends StatefulWidget {
   const TahsilatFormWidget({
-    Key? key,
+    super.key,
     double? bakiye,
     String? baslik,
-  })  : this.bakiye = bakiye ?? 0.0,
-        this.baslik = baslik ?? 'TAHSİLAT',
-        super(key: key);
+  })  : bakiye = bakiye ?? 0.0,
+        baslik = baslik ?? 'TAHSİLAT';
 
   final double bakiye;
   final String baslik;
@@ -76,7 +73,7 @@ class _TahsilatFormWidgetState extends State<TahsilatFormWidget> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
@@ -88,7 +85,7 @@ class _TahsilatFormWidgetState extends State<TahsilatFormWidget> {
                         onTap: () async {
                           Navigator.pop(context, 0.0);
                         },
-                        child: Icon(
+                        child: const Icon(
                           Icons.arrow_back_rounded,
                           color: Color(0xFF020000),
                           size: 32.0,
@@ -105,7 +102,7 @@ class _TahsilatFormWidgetState extends State<TahsilatFormWidget> {
                                   .titleMedium
                                   .override(
                                     fontFamily: 'Readex Pro',
-                                    color: Color(0xFF020000),
+                                    color: const Color(0xFF020000),
                                   ),
                             ),
                           ],
@@ -118,13 +115,13 @@ class _TahsilatFormWidgetState extends State<TahsilatFormWidget> {
             ),
           ),
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(10.0, 8.0, 10.0, 0.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(10.0, 8.0, 10.0, 0.0),
             child: Row(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 5.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 5.0),
                   child: Text(
                     'Kalan Bakiye :',
                     style: FlutterFlowTheme.of(context).bodyMedium,
@@ -137,14 +134,14 @@ class _TahsilatFormWidgetState extends State<TahsilatFormWidget> {
                   ),
                   style: FlutterFlowTheme.of(context).titleMedium.override(
                         fontFamily: 'Readex Pro',
-                        color: Color(0xFF020000),
+                        color: const Color(0xFF020000),
                       ),
                 ),
               ],
             ),
           ),
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(8.0, 10.0, 8.0, 10.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(8.0, 10.0, 8.0, 10.0),
             child: TextFormField(
               controller: _model.txtTutarController,
               focusNode: _model.txtTutarFocusNode,
@@ -190,7 +187,7 @@ class _TahsilatFormWidgetState extends State<TahsilatFormWidget> {
             ),
           ),
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
             child: Row(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.center,
@@ -205,16 +202,16 @@ class _TahsilatFormWidgetState extends State<TahsilatFormWidget> {
                     width: 282.0,
                     height: 40.0,
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                     iconPadding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     color: FlutterFlowTheme.of(context).warning,
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                           fontFamily: 'Readex Pro',
                           color: FlutterFlowTheme.of(context).primaryText,
                         ),
                     elevation: 3.0,
-                    borderSide: BorderSide(
+                    borderSide: const BorderSide(
                       color: Colors.transparent,
                       width: 1.0,
                     ),
@@ -230,10 +227,10 @@ class _TahsilatFormWidgetState extends State<TahsilatFormWidget> {
               Expanded(
                 child: Padding(
                   padding:
-                      EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 10.0),
+                      const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 10.0),
                   child: GridView(
                     padding: EdgeInsets.zero,
-                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 4,
                       crossAxisSpacing: 10.0,
                       mainAxisSpacing: 10.0,
@@ -317,7 +314,7 @@ class _TahsilatFormWidgetState extends State<TahsilatFormWidget> {
                                             .primaryText,
                                       ),
                                     ),
-                                    duration: Duration(milliseconds: 4000),
+                                    duration: const Duration(milliseconds: 4000),
                                     backgroundColor:
                                         FlutterFlowTheme.of(context).secondary,
                                   ),
@@ -372,7 +369,7 @@ class _TahsilatFormWidgetState extends State<TahsilatFormWidget> {
                                             .primaryText,
                                       ),
                                     ),
-                                    duration: Duration(milliseconds: 4000),
+                                    duration: const Duration(milliseconds: 4000),
                                     backgroundColor:
                                         FlutterFlowTheme.of(context).secondary,
                                   ),
@@ -427,7 +424,7 @@ class _TahsilatFormWidgetState extends State<TahsilatFormWidget> {
                                             .primaryText,
                                       ),
                                     ),
-                                    duration: Duration(milliseconds: 4000),
+                                    duration: const Duration(milliseconds: 4000),
                                     backgroundColor:
                                         FlutterFlowTheme.of(context).secondary,
                                   ),
@@ -482,7 +479,7 @@ class _TahsilatFormWidgetState extends State<TahsilatFormWidget> {
                                             .primaryText,
                                       ),
                                     ),
-                                    duration: Duration(milliseconds: 4000),
+                                    duration: const Duration(milliseconds: 4000),
                                     backgroundColor:
                                         FlutterFlowTheme.of(context).secondary,
                                   ),
@@ -537,7 +534,7 @@ class _TahsilatFormWidgetState extends State<TahsilatFormWidget> {
                                             .primaryText,
                                       ),
                                     ),
-                                    duration: Duration(milliseconds: 4000),
+                                    duration: const Duration(milliseconds: 4000),
                                     backgroundColor:
                                         FlutterFlowTheme.of(context).secondary,
                                   ),
@@ -592,7 +589,7 @@ class _TahsilatFormWidgetState extends State<TahsilatFormWidget> {
                                             .primaryText,
                                       ),
                                     ),
-                                    duration: Duration(milliseconds: 4000),
+                                    duration: const Duration(milliseconds: 4000),
                                     backgroundColor:
                                         FlutterFlowTheme.of(context).secondary,
                                   ),
@@ -649,7 +646,7 @@ class _TahsilatFormWidgetState extends State<TahsilatFormWidget> {
                                             .primaryText,
                                       ),
                                     ),
-                                    duration: Duration(milliseconds: 4000),
+                                    duration: const Duration(milliseconds: 4000),
                                     backgroundColor:
                                         FlutterFlowTheme.of(context).secondary,
                                   ),

@@ -1,17 +1,10 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 
 import '/index.dart';
-import '/main.dart';
-import '/flutter_flow/flutter_flow_theme.dart';
-import '/flutter_flow/lat_lng.dart';
-import '/flutter_flow/place.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'serialization_util.dart';
 
 export 'package:go_router/go_router.dart';
 export 'serialization_util.dart';
@@ -46,7 +39,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                 ),
               ),
             )
-          : LoginWidget(),
+          : const LoginWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
@@ -61,22 +54,22 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                     ),
                   ),
                 )
-              : LoginWidget(),
+              : const LoginWidget(),
         ),
         FFRoute(
           name: 'HomePage',
           path: '/homePage',
-          builder: (context, params) => HomePageWidget(),
+          builder: (context, params) => const HomePageWidget(),
         ),
         FFRoute(
           name: 'login',
           path: '/login',
-          builder: (context, params) => LoginWidget(),
+          builder: (context, params) => const LoginWidget(),
         ),
         FFRoute(
           name: 'otoparklar',
           path: '/otoparklar',
-          builder: (context, params) => OtoparklarWidget(),
+          builder: (context, params) => const OtoparklarWidget(),
         ),
         FFRoute(
           name: 'otopark_detay',
@@ -104,7 +97,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'IOController',
           path: '/iOController',
-          builder: (context, params) => IOControllerWidget(),
+          builder: (context, params) => const IOControllerWidget(),
         ),
         FFRoute(
           name: 'IOControllerDetay',
@@ -117,7 +110,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'PosCihazlari',
           path: '/posCihazlari',
-          builder: (context, params) => PosCihazlariWidget(),
+          builder: (context, params) => const PosCihazlariWidget(),
         ),
         FFRoute(
           name: 'PosDetay',
@@ -129,7 +122,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'LedTabelalar',
           path: '/ledTabelalar',
-          builder: (context, params) => LedTabelalarWidget(),
+          builder: (context, params) => const LedTabelalarWidget(),
         ),
         FFRoute(
           name: 'LedTabelaDetay',
@@ -141,7 +134,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'Bankalar',
           path: '/bankalar',
-          builder: (context, params) => BankalarWidget(),
+          builder: (context, params) => const BankalarWidget(),
         ),
         FFRoute(
           name: 'BankaDetay',
@@ -153,7 +146,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'Kasalar',
           path: '/kasalar',
-          builder: (context, params) => KasalarWidget(),
+          builder: (context, params) => const KasalarWidget(),
         ),
         FFRoute(
           name: 'KasaDetay',
@@ -165,27 +158,27 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'Settings',
           path: '/settings',
-          builder: (context, params) => SettingsWidget(),
+          builder: (context, params) => const SettingsWidget(),
         ),
         FFRoute(
           name: 'Giris',
           path: '/giris',
-          builder: (context, params) => GirisWidget(),
+          builder: (context, params) => const GirisWidget(),
         ),
         FFRoute(
           name: 'AracListesi',
           path: '/aracListesi',
-          builder: (context, params) => AracListesiWidget(),
+          builder: (context, params) => const AracListesiWidget(),
         ),
         FFRoute(
           name: 'Cikis',
           path: '/cikis',
-          builder: (context, params) => CikisWidget(),
+          builder: (context, params) => const CikisWidget(),
         ),
         FFRoute(
           name: 'Aboneler',
           path: '/aboneler',
-          builder: (context, params) => AbonelerWidget(),
+          builder: (context, params) => const AbonelerWidget(),
         ),
         FFRoute(
           name: 'CikisBilgi',
@@ -197,17 +190,17 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'gunSonuRapor',
           path: '/gunSonuRapor',
-          builder: (context, params) => GunSonuRaporWidget(),
+          builder: (context, params) => const GunSonuRaporWidget(),
         ),
         FFRoute(
           name: 'otoparkdurum',
           path: '/otoparkdurum',
-          builder: (context, params) => OtoparkdurumWidget(),
+          builder: (context, params) => const OtoparkdurumWidget(),
         ),
         FFRoute(
           name: 'aracistekListe',
           path: '/aracistekListe',
-          builder: (context, params) => AracistekListeWidget(),
+          builder: (context, params) => const AracistekListeWidget(),
         ),
         FFRoute(
           name: 'PrinterList',
@@ -243,17 +236,17 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'register',
           path: '/register',
-          builder: (context, params) => RegisterWidget(),
+          builder: (context, params) => const RegisterWidget(),
         ),
         FFRoute(
           name: 'fis_ayar',
           path: '/fisAyar',
-          builder: (context, params) => FisAyarWidget(),
+          builder: (context, params) => const FisAyarWidget(),
         ),
         FFRoute(
           name: 'Kullanicilar',
           path: '/kullanicilar',
-          builder: (context, params) => KullanicilarWidget(),
+          builder: (context, params) => const KullanicilarWidget(),
         ),
         FFRoute(
           name: 'KullaniciDetay',
@@ -265,12 +258,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'Support',
           path: '/support',
-          builder: (context, params) => SupportWidget(),
+          builder: (context, params) => const SupportWidget(),
         ),
         FFRoute(
           name: 'Tarifeler',
           path: '/tarifeler',
-          builder: (context, params) => TarifelerWidget(),
+          builder: (context, params) => const TarifelerWidget(),
         ),
         FFRoute(
           name: 'TarifeDetay',
@@ -298,12 +291,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'About',
           path: '/about',
-          builder: (context, params) => AboutWidget(),
+          builder: (context, params) => const AboutWidget(),
         ),
         FFRoute(
           name: 'Urunler',
           path: '/urunler',
-          builder: (context, params) => UrunlerWidget(),
+          builder: (context, params) => const UrunlerWidget(),
         ),
         FFRoute(
           name: 'UrunDetay',
@@ -323,22 +316,22 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'portal_home',
           path: '/portalHome',
-          builder: (context, params) => PortalHomeWidget(),
+          builder: (context, params) => const PortalHomeWidget(),
         ),
         FFRoute(
           name: 'portal_mainpage',
           path: '/portalMainpage',
-          builder: (context, params) => PortalMainpageWidget(),
+          builder: (context, params) => const PortalMainpageWidget(),
         ),
         FFRoute(
           name: 'portal_liste',
           path: '/portalListe',
-          builder: (context, params) => PortalListeWidget(),
+          builder: (context, params) => const PortalListeWidget(),
         ),
         FFRoute(
           name: 'portal_profil',
           path: '/portalProfil',
-          builder: (context, params) => PortalProfilWidget(),
+          builder: (context, params) => const PortalProfilWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -494,7 +487,7 @@ class TransitionInfo {
   final Duration duration;
   final Alignment? alignment;
 
-  static TransitionInfo appDefault() => TransitionInfo(hasTransition: false);
+  static TransitionInfo appDefault() => const TransitionInfo(hasTransition: false);
 }
 
 class RootPageContext {

@@ -2,16 +2,14 @@ import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'aracistek_liste_model.dart';
 export 'aracistek_liste_model.dart';
 
 class AracistekListeWidget extends StatefulWidget {
-  const AracistekListeWidget({Key? key}) : super(key: key);
+  const AracistekListeWidget({super.key});
 
   @override
   _AracistekListeWidgetState createState() => _AracistekListeWidgetState();
@@ -68,7 +66,7 @@ class _AracistekListeWidgetState extends State<AracistekListeWidget> {
                 borderRadius: 30.0,
                 borderWidth: 1.0,
                 buttonSize: 60.0,
-                icon: Icon(
+                icon: const Icon(
                   Icons.arrow_back_rounded,
                   color: Color(0xFF020000),
                   size: 30.0,
@@ -81,7 +79,7 @@ class _AracistekListeWidgetState extends State<AracistekListeWidget> {
                 'Araç Talepleri',
                 style: FlutterFlowTheme.of(context).headlineMedium,
               ),
-              actions: [],
+              actions: const [],
               centerTitle: false,
               elevation: 2.0,
             ),
@@ -95,7 +93,7 @@ class _AracistekListeWidgetState extends State<AracistekListeWidget> {
                       width: double.infinity,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).secondaryBackground,
-                        boxShadow: [
+                        boxShadow: const [
                           BoxShadow(
                             blurRadius: 3.0,
                             color: Color(0x33000000),
@@ -108,7 +106,7 @@ class _AracistekListeWidgetState extends State<AracistekListeWidget> {
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 16.0, 0.0, 0.0, 12.0),
                             child: Text(
                               'Çıkış yapmak isteyen araç listesidir.',
@@ -120,7 +118,7 @@ class _AracistekListeWidgetState extends State<AracistekListeWidget> {
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 1.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 1.0, 0.0, 0.0),
                       child: FutureBuilder<ApiCallResponse>(
                         future: SettingsGroup.getFilterDataCall.call(
                           db: FFAppState().veritabani,
@@ -160,7 +158,7 @@ class _AracistekListeWidgetState extends State<AracistekListeWidget> {
                                 itemBuilder: (context, listeIndex) {
                                   final listeItem = liste[listeIndex];
                                   return Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 1.0),
                                     child: Container(
                                       width: 100.0,
@@ -173,12 +171,12 @@ class _AracistekListeWidgetState extends State<AracistekListeWidget> {
                                             blurRadius: 0.0,
                                             color: FlutterFlowTheme.of(context)
                                                 .alternate,
-                                            offset: Offset(0.0, 1.0),
+                                            offset: const Offset(0.0, 1.0),
                                           )
                                         ],
                                       ),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             16.0, 0.0, 16.0, 0.0),
                                         child: InkWell(
                                           splashColor: Colors.transparent,
@@ -221,7 +219,7 @@ class _AracistekListeWidgetState extends State<AracistekListeWidget> {
                                                 context: context,
                                                 builder: (alertDialogContext) {
                                                   return AlertDialog(
-                                                    title: Text('Hata'),
+                                                    title: const Text('Hata'),
                                                     content: Text(
                                                         PtsGroup.aracSorguCall
                                                             .message(
@@ -235,7 +233,7 @@ class _AracistekListeWidgetState extends State<AracistekListeWidget> {
                                                         onPressed: () =>
                                                             Navigator.pop(
                                                                 alertDialogContext),
-                                                        child: Text('Ok'),
+                                                        child: const Text('Ok'),
                                                       ),
                                                     ],
                                                   );
@@ -250,14 +248,14 @@ class _AracistekListeWidgetState extends State<AracistekListeWidget> {
                                             mainAxisAlignment:
                                                 MainAxisAlignment.start,
                                             children: [
-                                              Icon(
+                                              const Icon(
                                                 Icons.car_rental,
                                                 color: Color(0xFFC20707),
                                                 size: 24.0,
                                               ),
                                               Expanded(
                                                 child: Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           12.0, 0.0, 0.0, 0.0),
                                                   child: Column(
@@ -279,7 +277,7 @@ class _AracistekListeWidgetState extends State<AracistekListeWidget> {
                                                         children: [
                                                           Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,

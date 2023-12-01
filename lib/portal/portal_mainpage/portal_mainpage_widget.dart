@@ -7,17 +7,15 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/portal/poral_menu/side_menu/side_menu_widget.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'package:provider/provider.dart';
 import 'portal_mainpage_model.dart';
 export 'portal_mainpage_model.dart';
 
 class PortalMainpageWidget extends StatefulWidget {
-  const PortalMainpageWidget({Key? key}) : super(key: key);
+  const PortalMainpageWidget({super.key});
 
   @override
   _PortalMainpageWidgetState createState() => _PortalMainpageWidgetState();
@@ -44,15 +42,15 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: Offset(-50.0, 0.0),
-          end: Offset(0.0, 0.0),
+          begin: const Offset(-50.0, 0.0),
+          end: const Offset(0.0, 0.0),
         ),
         ScaleEffect(
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: Offset(0.7, 0.7),
-          end: Offset(1.0, 1.0),
+          begin: const Offset(0.7, 0.7),
+          end: const Offset(1.0, 1.0),
         ),
       ],
     ),
@@ -70,15 +68,15 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: Offset(-50.0, 0.0),
-          end: Offset(0.0, 0.0),
+          begin: const Offset(-50.0, 0.0),
+          end: const Offset(0.0, 0.0),
         ),
         ScaleEffect(
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: Offset(0.7, 0.7),
-          end: Offset(1.0, 1.0),
+          begin: const Offset(0.7, 0.7),
+          end: const Offset(1.0, 1.0),
         ),
       ],
     ),
@@ -96,15 +94,15 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: Offset(-50.0, 0.0),
-          end: Offset(0.0, 0.0),
+          begin: const Offset(-50.0, 0.0),
+          end: const Offset(0.0, 0.0),
         ),
         ScaleEffect(
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: Offset(0.7, 0.7),
-          end: Offset(1.0, 1.0),
+          begin: const Offset(0.7, 0.7),
+          end: const Offset(1.0, 1.0),
         ),
       ],
     ),
@@ -122,15 +120,15 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: Offset(-50.0, 0.0),
-          end: Offset(0.0, 0.0),
+          begin: const Offset(-50.0, 0.0),
+          end: const Offset(0.0, 0.0),
         ),
         ScaleEffect(
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: Offset(0.7, 0.7),
-          end: Offset(1.0, 1.0),
+          begin: const Offset(0.7, 0.7),
+          end: const Offset(1.0, 1.0),
         ),
       ],
     ),
@@ -148,15 +146,15 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: Offset(-50.0, 0.0),
-          end: Offset(0.0, 0.0),
+          begin: const Offset(-50.0, 0.0),
+          end: const Offset(0.0, 0.0),
         ),
         ScaleEffect(
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: Offset(0.7, 0.7),
-          end: Offset(1.0, 1.0),
+          begin: const Offset(0.7, 0.7),
+          end: const Offset(1.0, 1.0),
         ),
       ],
     ),
@@ -215,7 +213,7 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                 borderRadius: 30.0,
                 borderWidth: 1.0,
                 buttonSize: 60.0,
-                icon: Icon(
+                icon: const Icon(
                   Icons.menu_outlined,
                   color: Color(0xFF020000),
                   size: 30.0,
@@ -232,7 +230,7 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                       fontSize: 22.0,
                     ),
               ),
-              actions: [],
+              actions: const [],
               centerTitle: true,
               elevation: 2.0,
             ),
@@ -255,24 +253,24 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                           child: wrapWithModel(
                             model: _model.sideMenuModel,
                             updateCallback: () => setState(() {}),
-                            child: SideMenuWidget(),
+                            child: const SideMenuWidget(),
                           ),
                         ),
                         Expanded(
                           child: Align(
-                            alignment: AlignmentDirectional(0.00, -1.00),
+                            alignment: const AlignmentDirectional(0.00, -1.00),
                             child: Container(
                               width: double.infinity,
-                              constraints: BoxConstraints(
+                              constraints: const BoxConstraints(
                                 maxWidth: 1470.0,
                               ),
-                              decoration: BoxDecoration(),
+                              decoration: const BoxDecoration(),
                               child: SingleChildScrollView(
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           16.0, 16.0, 16.0, 0.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -292,7 +290,7 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                                       .headlineMedium,
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 4.0, 0.0, 8.0),
                                                   child: Text(
@@ -305,7 +303,7 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                               ],
                                             ),
                                           ),
-                                          Column(
+                                          const Column(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [],
                                           ),
@@ -314,9 +312,9 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                     ),
                                     Align(
                                       alignment:
-                                          AlignmentDirectional(0.00, 0.00),
+                                          const AlignmentDirectional(0.00, 0.00),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             16.0, 8.0, 16.0, 0.0),
                                         child: GridView(
                                           padding: EdgeInsets.zero,
@@ -369,7 +367,7 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                           children: [
                                             Container(
                                               height: 120.0,
-                                              constraints: BoxConstraints(
+                                              constraints: const BoxConstraints(
                                                 maxWidth: 270.0,
                                               ),
                                               decoration: BoxDecoration(
@@ -386,7 +384,7 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                                 ),
                                               ),
                                               child: Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         16.0, 0.0, 16.0, 0.0),
                                                 child: Row(
@@ -417,7 +415,7 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                                             children: [
                                                               Expanded(
                                                                 child: Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           8.0,
@@ -450,7 +448,7 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                             ),
                                             Container(
                                               height: 120.0,
-                                              constraints: BoxConstraints(
+                                              constraints: const BoxConstraints(
                                                 maxWidth: 270.0,
                                               ),
                                               decoration: BoxDecoration(
@@ -467,7 +465,7 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                                 ),
                                               ),
                                               child: Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         16.0, 0.0, 16.0, 0.0),
                                                 child: Row(
@@ -498,7 +496,7 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                                             children: [
                                                               Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             8.0,
@@ -530,7 +528,7 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                             ),
                                             Container(
                                               height: 120.0,
-                                              constraints: BoxConstraints(
+                                              constraints: const BoxConstraints(
                                                 maxWidth: 270.0,
                                               ),
                                               decoration: BoxDecoration(
@@ -547,7 +545,7 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                                 ),
                                               ),
                                               child: Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         16.0, 0.0, 16.0, 0.0),
                                                 child: Row(
@@ -578,7 +576,7 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                                             children: [
                                                               Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             8.0,
@@ -610,7 +608,7 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                             ),
                                             Container(
                                               height: 120.0,
-                                              constraints: BoxConstraints(
+                                              constraints: const BoxConstraints(
                                                 maxWidth: 270.0,
                                               ),
                                               decoration: BoxDecoration(
@@ -627,7 +625,7 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                                 ),
                                               ),
                                               child: Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         16.0, 0.0, 16.0, 0.0),
                                                 child: Row(
@@ -658,7 +656,7 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                                             children: [
                                                               Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             4.0,
@@ -699,7 +697,7 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                       tabletLandscape: false,
                                     ))
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             16.0, 16.0, 16.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -712,7 +710,7 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                                 Container(
                                                   width: double.infinity,
                                                   height: 120.0,
-                                                  constraints: BoxConstraints(
+                                                  constraints: const BoxConstraints(
                                                     maxWidth: 400.0,
                                                   ),
                                                   decoration: BoxDecoration(
@@ -732,7 +730,7 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                                   ),
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(16.0, 0.0,
                                                                 16.0, 0.0),
                                                     child: Row(
@@ -763,7 +761,7 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                                                         .max,
                                                                 children: [
                                                                   Padding(
-                                                                    padding: EdgeInsetsDirectional
+                                                                    padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             4.0,
@@ -812,7 +810,7 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                                 Container(
                                                   width: double.infinity,
                                                   height: 120.0,
-                                                  constraints: BoxConstraints(
+                                                  constraints: const BoxConstraints(
                                                     maxWidth: 400.0,
                                                   ),
                                                   decoration: BoxDecoration(
@@ -832,7 +830,7 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                                   ),
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(16.0, 0.0,
                                                                 16.0, 0.0),
                                                     child: Row(
@@ -863,7 +861,7 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                                                         .max,
                                                                 children: [
                                                                   Padding(
-                                                                    padding: EdgeInsetsDirectional
+                                                                    padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             4.0,
@@ -909,7 +907,7 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                                     ),
                                                   ),
                                                 ),
-                                              ].divide(SizedBox(height: 16.0)),
+                                              ].divide(const SizedBox(height: 16.0)),
                                             ),
                                             Expanded(
                                               child: Container(
@@ -951,7 +949,7 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                                   ),
                                                 ),
                                                 child: Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 0.0, 16.0),
                                                   child: Column(
@@ -965,7 +963,7 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                                     children: [
                                                       Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     1.0,
                                                                     1.0,
@@ -985,12 +983,12 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .alternate,
-                                                                offset: Offset(
+                                                                offset: const Offset(
                                                                     0.0, 1.0),
                                                               )
                                                             ],
                                                             borderRadius:
-                                                                BorderRadius
+                                                                const BorderRadius
                                                                     .only(
                                                               bottomLeft: Radius
                                                                   .circular(
@@ -1009,7 +1007,7 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                                           ),
                                                           child: Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         16.0,
                                                                         0.0,
@@ -1023,7 +1021,7 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                                                 Expanded(
                                                                   child:
                                                                       Padding(
-                                                                    padding: EdgeInsetsDirectional
+                                                                    padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             16.0,
@@ -1047,7 +1045,7 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                                                               FlutterFlowTheme.of(context).titleLarge,
                                                                         ),
                                                                         Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
                                                                               0.0,
                                                                               4.0,
                                                                               0.0,
@@ -1070,11 +1068,11 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                                       ),
                                                       Align(
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 0.00, 0.00),
                                                         child: Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       24.0,
                                                                       24.0,
@@ -1107,7 +1105,7 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                                       ),
                                                       Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     16.0,
                                                                     16.0,
@@ -1122,7 +1120,7 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                                       ),
                                                       Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     16.0,
                                                                     4.0,
@@ -1180,7 +1178,7 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                                   ),
                                                 ),
                                                 child: Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 0.0, 16.0),
                                                   child: FutureBuilder<
@@ -1228,7 +1226,7 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                                         children: [
                                                           Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         1.0,
                                                                         1.0,
@@ -1250,13 +1248,13 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                                                             context)
                                                                         .alternate,
                                                                     offset:
-                                                                        Offset(
+                                                                        const Offset(
                                                                             0.0,
                                                                             1.0),
                                                                   )
                                                                 ],
                                                                 borderRadius:
-                                                                    BorderRadius
+                                                                    const BorderRadius
                                                                         .only(
                                                                   bottomLeft: Radius
                                                                       .circular(
@@ -1273,7 +1271,7 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                                                 ),
                                                               ),
                                                               child: Padding(
-                                                                padding: EdgeInsetsDirectional
+                                                                padding: const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         16.0,
                                                                         0.0,
@@ -1287,7 +1285,7 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                                                     Expanded(
                                                                       child:
                                                                           Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             16.0,
                                                                             0.0,
@@ -1306,7 +1304,7 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                                                               style: FlutterFlowTheme.of(context).titleLarge,
                                                                             ),
                                                                             Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
+                                                                              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
                                                                               child: Text(
                                                                                 'Tüm otoparklardaki toplam araç sayısı ve kapasite göstergesidir.',
                                                                                 style: FlutterFlowTheme.of(context).labelMedium,
@@ -1323,11 +1321,11 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                                           ),
                                                           Align(
                                                             alignment:
-                                                                AlignmentDirectional(
+                                                                const AlignmentDirectional(
                                                                     0.00, 0.00),
                                                             child: Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           24.0,
                                                                           24.0,
@@ -1414,7 +1412,7 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                                           ),
                                                           Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         16.0,
                                                                         16.0,
@@ -1429,7 +1427,7 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                                           ),
                                                           Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         16.0,
                                                                         4.0,
@@ -1449,7 +1447,7 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                                 ),
                                               ),
                                             ),
-                                          ].divide(SizedBox(width: 16.0)),
+                                          ].divide(const SizedBox(width: 16.0)),
                                         ),
                                       ),
                                     if (responsiveVisibility(
@@ -1457,7 +1455,7 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                       desktop: false,
                                     ))
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             16.0, 16.0, 16.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -1503,7 +1501,7 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                                   ),
                                                 ),
                                                 child: Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           16.0, 0.0, 16.0, 0.0),
                                                   child: Row(
@@ -1533,7 +1531,7 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                                                       .max,
                                                               children: [
                                                                 Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           4.0,
@@ -1630,7 +1628,7 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                                   ),
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(16.0, 0.0,
                                                                 16.0, 0.0),
                                                     child: Row(
@@ -1661,7 +1659,7 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                                                         .max,
                                                                 children: [
                                                                   Padding(
-                                                                    padding: EdgeInsetsDirectional
+                                                                    padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             4.0,
@@ -1708,7 +1706,7 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                                   ),
                                                 ),
                                               ),
-                                          ].divide(SizedBox(width: 16.0)),
+                                          ].divide(const SizedBox(width: 16.0)),
                                         ),
                                       ),
                                     if (responsiveVisibility(
@@ -1716,7 +1714,7 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                       desktop: false,
                                     ))
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             16.0, 16.0, 16.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -1763,7 +1761,7 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                                   ),
                                                 ),
                                                 child: Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 0.0, 16.0),
                                                   child: Column(
@@ -1777,7 +1775,7 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                                     children: [
                                                       Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     1.0,
                                                                     1.0,
@@ -1797,12 +1795,12 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .alternate,
-                                                                offset: Offset(
+                                                                offset: const Offset(
                                                                     0.0, 1.0),
                                                               )
                                                             ],
                                                             borderRadius:
-                                                                BorderRadius
+                                                                const BorderRadius
                                                                     .only(
                                                               bottomLeft: Radius
                                                                   .circular(
@@ -1821,7 +1819,7 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                                           ),
                                                           child: Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         16.0,
                                                                         0.0,
@@ -1835,7 +1833,7 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                                                 Expanded(
                                                                   child:
                                                                       Padding(
-                                                                    padding: EdgeInsetsDirectional
+                                                                    padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             16.0,
@@ -1859,7 +1857,7 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                                                               FlutterFlowTheme.of(context).titleLarge,
                                                                         ),
                                                                         Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
                                                                               0.0,
                                                                               4.0,
                                                                               0.0,
@@ -1882,11 +1880,11 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                                       ),
                                                       Align(
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 0.00, 0.00),
                                                         child: Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       24.0,
                                                                       24.0,
@@ -1919,7 +1917,7 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                                       ),
                                                       Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     16.0,
                                                                     16.0,
@@ -1934,7 +1932,7 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                                       ),
                                                       Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     16.0,
                                                                     4.0,
@@ -2001,7 +1999,7 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                                   ),
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 16.0),
                                                     child: Column(
@@ -2016,7 +2014,7 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                                       children: [
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       1.0,
                                                                       1.0,
@@ -2038,13 +2036,13 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                                                           context)
                                                                       .alternate,
                                                                   offset:
-                                                                      Offset(
+                                                                      const Offset(
                                                                           0.0,
                                                                           1.0),
                                                                 )
                                                               ],
                                                               borderRadius:
-                                                                  BorderRadius
+                                                                  const BorderRadius
                                                                       .only(
                                                                 bottomLeft: Radius
                                                                     .circular(
@@ -2062,7 +2060,7 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                                             ),
                                                             child: Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           16.0,
                                                                           0.0,
@@ -2076,7 +2074,7 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                                                   Expanded(
                                                                     child:
                                                                         Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           16.0,
                                                                           0.0,
@@ -2096,7 +2094,7 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                                                                 FlutterFlowTheme.of(context).titleLarge,
                                                                           ),
                                                                           Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 0.0,
                                                                                 4.0,
                                                                                 0.0,
@@ -2118,11 +2116,11 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                                         ),
                                                         Align(
                                                           alignment:
-                                                              AlignmentDirectional(
+                                                              const AlignmentDirectional(
                                                                   0.00, 0.00),
                                                           child: Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         24.0,
                                                                         24.0,
@@ -2155,7 +2153,7 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                                         ),
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       16.0,
                                                                       16.0,
@@ -2170,7 +2168,7 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                                         ),
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       16.0,
                                                                       4.0,
@@ -2188,11 +2186,11 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                                   ),
                                                 ),
                                               ),
-                                          ].divide(SizedBox(width: 16.0)),
+                                          ].divide(const SizedBox(width: 16.0)),
                                         ),
                                       ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           16.0, 16.0, 16.0, 0.0),
                                       child: Container(
                                         width: double.infinity,
@@ -2209,7 +2207,7 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                         ),
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 16.0, 16.0, 16.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
@@ -2232,7 +2230,7 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                                       children: [
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -2247,7 +2245,7 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                                         ),
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       4.0,
@@ -2280,14 +2278,14 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                                     options: FFButtonOptions(
                                                       height: 40.0,
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   0.0,
                                                                   16.0,
                                                                   0.0),
                                                       iconPadding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   0.0,
@@ -2307,7 +2305,7 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                                                 fontSize: 14.0,
                                                               ),
                                                       elevation: 2.0,
-                                                      borderSide: BorderSide(
+                                                      borderSide: const BorderSide(
                                                         color:
                                                             Colors.transparent,
                                                         width: 1.0,
@@ -2320,7 +2318,7 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                                 ],
                                               ),
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 16.0, 0.0, 0.0),
                                                 child: Container(
@@ -2331,7 +2329,7 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                                             context)
                                                         .primaryBackground,
                                                     borderRadius:
-                                                        BorderRadius.only(
+                                                        const BorderRadius.only(
                                                       bottomLeft:
                                                           Radius.circular(0.0),
                                                       bottomRight:
@@ -2344,7 +2342,7 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                                   ),
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(16.0, 0.0,
                                                                 16.0, 0.0),
                                                     child: Row(
@@ -2509,7 +2507,7 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                                                     otoparkListeIndex];
                                                             return Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -2529,14 +2527,14 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .primaryBackground,
-                                                                      offset: Offset(
+                                                                      offset: const Offset(
                                                                           0.0,
                                                                           1.0),
                                                                     )
                                                                   ],
                                                                 ),
                                                                 child: Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           16.0,
                                                                           0.0,
@@ -2551,7 +2549,7 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                                                         flex: 4,
                                                                         child:
                                                                             Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
                                                                               0.0,
                                                                               8.0,
                                                                               12.0,
@@ -2562,7 +2560,7 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                                                                 MainAxisSize.max,
                                                                             children: [
                                                                               Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                                                                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 0.0),
                                                                                 child: ClipRRect(
                                                                                   borderRadius: BorderRadius.circular(40.0),
                                                                                   child: Image.network(
@@ -2575,7 +2573,7 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                                                               ),
                                                                               Expanded(
                                                                                 child: Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 0.0, 0.0),
+                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 0.0, 0.0),
                                                                                   child: Column(
                                                                                     mainAxisSize: MainAxisSize.max,
                                                                                     mainAxisAlignment: MainAxisAlignment.center,
@@ -2592,7 +2590,7 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                                                                             ),
                                                                                       ),
                                                                                       Padding(
-                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
+                                                                                        padding: const EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
                                                                                         child: Text(
                                                                                           getJsonField(
                                                                                             otoparkListeItem,
@@ -2616,7 +2614,7 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                                                         flex: 2,
                                                                         child:
                                                                             Align(
-                                                                          alignment: AlignmentDirectional(
+                                                                          alignment: const AlignmentDirectional(
                                                                               0.00,
                                                                               0.00),
                                                                           child:
@@ -2765,7 +2763,7 @@ class _PortalMainpageWidgetState extends State<PortalMainpageWidget>
                                         ),
                                       ),
                                     ),
-                                  ].addToEnd(SizedBox(height: 24.0)),
+                                  ].addToEnd(const SizedBox(height: 24.0)),
                                 ),
                               ),
                             ),

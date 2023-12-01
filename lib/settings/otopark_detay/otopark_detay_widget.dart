@@ -2,19 +2,17 @@ import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'otopark_detay_model.dart';
 export 'otopark_detay_model.dart';
 
 class OtoparkDetayWidget extends StatefulWidget {
   const OtoparkDetayWidget({
-    Key? key,
+    super.key,
     required this.otopark,
-  }) : super(key: key);
+  });
 
   final dynamic otopark;
 
@@ -102,7 +100,7 @@ class _OtoparkDetayWidgetState extends State<OtoparkDetayWidget> {
               ),
               actions: [
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
                   child: InkWell(
                     splashColor: Colors.transparent,
                     focusColor: Colors.transparent,
@@ -136,7 +134,7 @@ class _OtoparkDetayWidgetState extends State<OtoparkDetayWidget> {
                           context: context,
                           builder: (alertDialogContext) {
                             return AlertDialog(
-                              title: Text('Hata'),
+                              title: const Text('Hata'),
                               content: Text(SettingsGroup.otoparkUpdateCall
                                   .message(
                                     (_model.apiResultyer?.jsonBody ?? ''),
@@ -146,7 +144,7 @@ class _OtoparkDetayWidgetState extends State<OtoparkDetayWidget> {
                                 TextButton(
                                   onPressed: () =>
                                       Navigator.pop(alertDialogContext),
-                                  child: Text('Ok'),
+                                  child: const Text('Ok'),
                                 ),
                               ],
                             );
@@ -156,7 +154,7 @@ class _OtoparkDetayWidgetState extends State<OtoparkDetayWidget> {
 
                       setState(() {});
                     },
-                    child: Icon(
+                    child: const Icon(
                       Icons.save_sharp,
                       color: Color(0xFF020000),
                       size: 42.0,
@@ -174,12 +172,12 @@ class _OtoparkDetayWidgetState extends State<OtoparkDetayWidget> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 1.0, 0.0, 0.0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 1.0, 0.0, 0.0),
                     child: Container(
                       width: double.infinity,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).secondaryBackground,
-                        boxShadow: [
+                        boxShadow: const [
                           BoxShadow(
                             blurRadius: 3.0,
                             color: Color(0x33000000),
@@ -188,7 +186,7 @@ class _OtoparkDetayWidgetState extends State<OtoparkDetayWidget> {
                         ],
                       ),
                       child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 16.0, 16.0, 16.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
@@ -212,17 +210,17 @@ class _OtoparkDetayWidgetState extends State<OtoparkDetayWidget> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 0.0, 0.0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Container(
+                                  SizedBox(
                                     width: 200.0,
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           8.0, 0.0, 8.0, 0.0),
                                       child: TextFormField(
                                         controller: _model.textController1,
@@ -294,9 +292,9 @@ class _OtoparkDetayWidgetState extends State<OtoparkDetayWidget> {
                                   ),
                                   Container(
                                     width: 200.0,
-                                    decoration: BoxDecoration(),
+                                    decoration: const BoxDecoration(),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           8.0, 0.0, 8.0, 0.0),
                                       child: TextFormField(
                                         controller: _model.textController2,
@@ -371,7 +369,7 @@ class _OtoparkDetayWidgetState extends State<OtoparkDetayWidget> {
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 0.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 0.0, 0.0),
                     child: Text(
                       'Otopark Bölümleri',
                       style: FlutterFlowTheme.of(context).labelLarge,
@@ -422,7 +420,7 @@ class _OtoparkDetayWidgetState extends State<OtoparkDetayWidget> {
                               final kapiGrupListeItem =
                                   kapiGrupListe[kapiGrupListeIndex];
                               return Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     8.0, 8.0, 8.0, 8.0),
                                 child: InkWell(
                                   splashColor: Colors.transparent,
@@ -456,7 +454,7 @@ class _OtoparkDetayWidgetState extends State<OtoparkDetayWidget> {
                                       Expanded(
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   12.0, 0.0, 0.0, 0.0),
                                           child: Text(
                                             getJsonField(
@@ -470,7 +468,7 @@ class _OtoparkDetayWidgetState extends State<OtoparkDetayWidget> {
                                       ),
                                       Align(
                                         alignment:
-                                            AlignmentDirectional(0.90, 0.00),
+                                            const AlignmentDirectional(0.90, 0.00),
                                         child: Icon(
                                           Icons.arrow_forward_ios,
                                           color: FlutterFlowTheme.of(context)

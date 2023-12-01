@@ -2,14 +2,12 @@ import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'ucretsiz_secim_model.dart';
 export 'ucretsiz_secim_model.dart';
 
 class UcretsizSecimWidget extends StatefulWidget {
-  const UcretsizSecimWidget({Key? key}) : super(key: key);
+  const UcretsizSecimWidget({super.key});
 
   @override
   _UcretsizSecimWidgetState createState() => _UcretsizSecimWidgetState();
@@ -46,7 +44,7 @@ class _UcretsizSecimWidgetState extends State<UcretsizSecimWidget> {
     return Material(
       color: Colors.transparent,
       elevation: 5.0,
-      shape: RoundedRectangleBorder(
+      shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(0.0),
           bottomRight: Radius.circular(0.0),
@@ -58,7 +56,7 @@ class _UcretsizSecimWidgetState extends State<UcretsizSecimWidget> {
         width: double.infinity,
         decoration: BoxDecoration(
           color: FlutterFlowTheme.of(context).secondaryBackground,
-          borderRadius: BorderRadius.only(
+          borderRadius: const BorderRadius.only(
             bottomLeft: Radius.circular(0.0),
             bottomRight: Radius.circular(0.0),
             topLeft: Radius.circular(16.0),
@@ -69,7 +67,7 @@ class _UcretsizSecimWidgetState extends State<UcretsizSecimWidget> {
           mainAxisSize: MainAxisSize.max,
           children: [
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
               child: Container(
                 width: 50.0,
                 height: 4.0,
@@ -80,7 +78,7 @@ class _UcretsizSecimWidgetState extends State<UcretsizSecimWidget> {
               ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 0.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 children: [
@@ -92,7 +90,7 @@ class _UcretsizSecimWidgetState extends State<UcretsizSecimWidget> {
               ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 32.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 32.0),
               child: FutureBuilder<ApiCallResponse>(
                 future: SettingsGroup.getALLCall.call(
                   db: FFAppState().veritabani,
@@ -131,7 +129,7 @@ class _UcretsizSecimWidgetState extends State<UcretsizSecimWidget> {
                         itemBuilder: (context, etiketListeIndex) {
                           final etiketListeItem = etiketListe[etiketListeIndex];
                           return Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 16.0, 5.0, 16.0, 0.0),
                             child: InkWell(
                               splashColor: Colors.transparent,
@@ -162,7 +160,7 @@ class _UcretsizSecimWidgetState extends State<UcretsizSecimWidget> {
                                   ),
                                 ),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       16.0, 12.0, 8.0, 12.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -177,7 +175,7 @@ class _UcretsizSecimWidgetState extends State<UcretsizSecimWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyLarge,
                                       ),
-                                      Icon(
+                                      const Icon(
                                         Icons.chevron_right_rounded,
                                         color: Color(0xFF7C8791),
                                         size: 24.0,

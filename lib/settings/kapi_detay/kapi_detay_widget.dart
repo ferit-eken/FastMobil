@@ -3,21 +3,19 @@ import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'kapi_detay_model.dart';
 export 'kapi_detay_model.dart';
 
 class KapiDetayWidget extends StatefulWidget {
   const KapiDetayWidget({
-    Key? key,
+    super.key,
     required this.kapi,
     required this.kapigrup,
-  }) : super(key: key);
+  });
 
   final dynamic kapi;
   final dynamic kapigrup;
@@ -106,7 +104,7 @@ class _KapiDetayWidgetState extends State<KapiDetayWidget> {
               ),
               actions: [
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
                   child: InkWell(
                     splashColor: Colors.transparent,
                     focusColor: Colors.transparent,
@@ -151,7 +149,7 @@ class _KapiDetayWidgetState extends State<KapiDetayWidget> {
                           context: context,
                           builder: (alertDialogContext) {
                             return AlertDialog(
-                              title: Text('Hata'),
+                              title: const Text('Hata'),
                               content: Text(SettingsGroup.otoparkKapiUpdateCall
                                   .message(
                                     (_model.apiResultgar?.jsonBody ?? ''),
@@ -161,7 +159,7 @@ class _KapiDetayWidgetState extends State<KapiDetayWidget> {
                                 TextButton(
                                   onPressed: () =>
                                       Navigator.pop(alertDialogContext),
-                                  child: Text('Ok'),
+                                  child: const Text('Ok'),
                                 ),
                               ],
                             );
@@ -171,7 +169,7 @@ class _KapiDetayWidgetState extends State<KapiDetayWidget> {
 
                       setState(() {});
                     },
-                    child: Icon(
+                    child: const Icon(
                       Icons.save_sharp,
                       color: Color(0xFF020000),
                       size: 42.0,
@@ -191,14 +189,14 @@ class _KapiDetayWidgetState extends State<KapiDetayWidget> {
                   Expanded(
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 1.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 1.0, 0.0, 0.0),
                       child: Container(
                         width: double.infinity,
                         height: double.infinity,
                         decoration: BoxDecoration(
                           color:
                               FlutterFlowTheme.of(context).secondaryBackground,
-                          boxShadow: [
+                          boxShadow: const [
                             BoxShadow(
                               blurRadius: 3.0,
                               color: Color(0x33000000),
@@ -211,7 +209,7 @@ class _KapiDetayWidgetState extends State<KapiDetayWidget> {
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 16.0, 16.0, 16.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -237,7 +235,7 @@ class _KapiDetayWidgetState extends State<KapiDetayWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           16.0, 0.0, 0.0, 0.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
@@ -246,7 +244,7 @@ class _KapiDetayWidgetState extends State<KapiDetayWidget> {
                                         crossAxisAlignment:
                                             CrossAxisAlignment.start,
                                         children: [
-                                          Container(
+                                          SizedBox(
                                             width: 200.0,
                                             child: TextFormField(
                                               controller:
@@ -326,7 +324,7 @@ class _KapiDetayWidgetState extends State<KapiDetayWidget> {
                                           ),
                                           Container(
                                             width: 200.0,
-                                            decoration: BoxDecoration(),
+                                            decoration: const BoxDecoration(),
                                             child: FlutterFlowDropDown<String>(
                                               controller: _model
                                                       .txtGiristuruValueController ??=
@@ -337,7 +335,7 @@ class _KapiDetayWidgetState extends State<KapiDetayWidget> {
                                                   r'''$.GecisYonu''',
                                                 ).toString(),
                                               ),
-                                              options: ['GIRIS', 'CIKIS'],
+                                              options: const ['GIRIS', 'CIKIS'],
                                               onChanged: (val) => setState(() =>
                                                   _model.txtGiristuruValue =
                                                       val),
@@ -364,7 +362,7 @@ class _KapiDetayWidgetState extends State<KapiDetayWidget> {
                                                       .alternate,
                                               borderWidth: 2.0,
                                               borderRadius: 8.0,
-                                              margin: EdgeInsetsDirectional
+                                              margin: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       16.0, 4.0, 16.0, 4.0),
                                               hidesUnderline: true,
@@ -385,7 +383,7 @@ class _KapiDetayWidgetState extends State<KapiDetayWidget> {
                                       Expanded(
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   8.0, 0.0, 8.0, 0.0),
                                           child: TextFormField(
                                             controller: _model.txtIdController,
@@ -455,7 +453,7 @@ class _KapiDetayWidgetState extends State<KapiDetayWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 3.0, 16.0, 3.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -500,7 +498,7 @@ class _KapiDetayWidgetState extends State<KapiDetayWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 3.0, 16.0, 3.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -545,7 +543,7 @@ class _KapiDetayWidgetState extends State<KapiDetayWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 3.0, 16.0, 3.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -591,7 +589,7 @@ class _KapiDetayWidgetState extends State<KapiDetayWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -646,14 +644,14 @@ class _KapiDetayWidgetState extends State<KapiDetayWidget> {
                                           ) as List)
                                                   .map<String>(
                                                       (s) => s.toString())
-                                                  .toList()!),
+                                                  .toList()),
                                           optionLabels: (getJsonField(
                                             txtKameraGetALLResponse.jsonBody,
                                             r'''$.data[:].KameraAdi''',
                                             true,
                                           ) as List)
                                               .map<String>((s) => s.toString())
-                                              .toList()!,
+                                              .toList(),
                                           onChanged: (val) => setState(() =>
                                               _model.txtKameraValue = val),
                                           width: 200.0,
@@ -678,7 +676,7 @@ class _KapiDetayWidgetState extends State<KapiDetayWidget> {
                                           borderWidth: 2.0,
                                           borderRadius: 8.0,
                                           margin:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 4.0, 16.0, 4.0),
                                           hidesUnderline: true,
                                           isSearchable: false,
@@ -690,7 +688,7 @@ class _KapiDetayWidgetState extends State<KapiDetayWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -752,7 +750,7 @@ class _KapiDetayWidgetState extends State<KapiDetayWidget> {
                                               ) as List)
                                                       .map<String>(
                                                           (s) => s.toString())
-                                                      .toList()!),
+                                                      .toList()),
                                               optionLabels: (getJsonField(
                                                 txtIocontrollerGetALLResponse
                                                     .jsonBody,
@@ -761,7 +759,7 @@ class _KapiDetayWidgetState extends State<KapiDetayWidget> {
                                               ) as List)
                                                   .map<String>(
                                                       (s) => s.toString())
-                                                  .toList()!,
+                                                  .toList(),
                                               onChanged: (val) => setState(() =>
                                                   _model.txtIocontrollerValue =
                                                       val),
@@ -788,7 +786,7 @@ class _KapiDetayWidgetState extends State<KapiDetayWidget> {
                                                       .alternate,
                                               borderWidth: 2.0,
                                               borderRadius: 8.0,
-                                              margin: EdgeInsetsDirectional
+                                              margin: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       16.0, 4.0, 16.0, 4.0),
                                               hidesUnderline: true,
@@ -809,7 +807,7 @@ class _KapiDetayWidgetState extends State<KapiDetayWidget> {
                                           ),
                                           options: List<int>.from(
                                               [1, 2, 3, 4, 5, 6, 7, 8]),
-                                          optionLabels: [
+                                          optionLabels: const [
                                             '1',
                                             '2',
                                             '3',
@@ -842,7 +840,7 @@ class _KapiDetayWidgetState extends State<KapiDetayWidget> {
                                           borderWidth: 2.0,
                                           borderRadius: 8.0,
                                           margin:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 4.0, 16.0, 4.0),
                                           hidesUnderline: true,
                                           isSearchable: false,
@@ -854,7 +852,7 @@ class _KapiDetayWidgetState extends State<KapiDetayWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -909,14 +907,14 @@ class _KapiDetayWidgetState extends State<KapiDetayWidget> {
                                           ) as List)
                                                   .map<String>(
                                                       (s) => s.toString())
-                                                  .toList()!),
+                                                  .toList()),
                                           optionLabels: (getJsonField(
                                             txtLedpanelGetALLResponse.jsonBody,
                                             r'''$.data[:].PanelAdi''',
                                             true,
                                           ) as List)
                                               .map<String>((s) => s.toString())
-                                              .toList()!,
+                                              .toList(),
                                           onChanged: (val) => setState(() =>
                                               _model.txtLedpanelValue = val),
                                           width: 200.0,
@@ -941,7 +939,7 @@ class _KapiDetayWidgetState extends State<KapiDetayWidget> {
                                           borderWidth: 2.0,
                                           borderRadius: 8.0,
                                           margin:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 4.0, 16.0, 4.0),
                                           hidesUnderline: true,
                                           isSearchable: false,
@@ -953,7 +951,7 @@ class _KapiDetayWidgetState extends State<KapiDetayWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -1008,14 +1006,14 @@ class _KapiDetayWidgetState extends State<KapiDetayWidget> {
                                           ) as List)
                                                   .map<String>(
                                                       (s) => s.toString())
-                                                  .toList()!),
+                                                  .toList()),
                                           optionLabels: (getJsonField(
                                             txtKasalarGetALLResponse.jsonBody,
                                             r'''$.data[:].Aciklama''',
                                             true,
                                           ) as List)
                                               .map<String>((s) => s.toString())
-                                              .toList()!,
+                                              .toList(),
                                           onChanged: (val) => setState(() =>
                                               _model.txtKasalarValue = val),
                                           width: 200.0,
@@ -1040,7 +1038,7 @@ class _KapiDetayWidgetState extends State<KapiDetayWidget> {
                                           borderWidth: 2.0,
                                           borderRadius: 8.0,
                                           margin:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 4.0, 16.0, 4.0),
                                           hidesUnderline: true,
                                           isSearchable: false,
@@ -1052,7 +1050,7 @@ class _KapiDetayWidgetState extends State<KapiDetayWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -1107,14 +1105,14 @@ class _KapiDetayWidgetState extends State<KapiDetayWidget> {
                                           ) as List)
                                                   .map<String>(
                                                       (s) => s.toString())
-                                                  .toList()!),
+                                                  .toList()),
                                           optionLabels: (getJsonField(
                                             txtBankaGetALLResponse.jsonBody,
                                             r'''$.data[:].BankaAd''',
                                             true,
                                           ) as List)
                                               .map<String>((s) => s.toString())
-                                              .toList()!,
+                                              .toList(),
                                           onChanged: (val) => setState(
                                               () => _model.txtBankaValue = val),
                                           width: 200.0,
@@ -1139,7 +1137,7 @@ class _KapiDetayWidgetState extends State<KapiDetayWidget> {
                                           borderWidth: 2.0,
                                           borderRadius: 8.0,
                                           margin:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 4.0, 16.0, 4.0),
                                           hidesUnderline: true,
                                           isSearchable: false,
@@ -1151,7 +1149,7 @@ class _KapiDetayWidgetState extends State<KapiDetayWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -1206,14 +1204,14 @@ class _KapiDetayWidgetState extends State<KapiDetayWidget> {
                                           ) as List)
                                                   .map<String>(
                                                       (s) => s.toString())
-                                                  .toList()!),
+                                                  .toList()),
                                           optionLabels: (getJsonField(
                                             chPoscihaziGetALLResponse.jsonBody,
                                             r'''$.data[:].PosAdi''',
                                             true,
                                           ) as List)
                                               .map<String>((s) => s.toString())
-                                              .toList()!,
+                                              .toList(),
                                           onChanged: (val) => setState(() =>
                                               _model.chPoscihaziValue = val),
                                           width: 200.0,
@@ -1238,7 +1236,7 @@ class _KapiDetayWidgetState extends State<KapiDetayWidget> {
                                           borderWidth: 2.0,
                                           borderRadius: 8.0,
                                           margin:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 4.0, 16.0, 4.0),
                                           hidesUnderline: true,
                                           isSearchable: false,
@@ -1250,7 +1248,7 @@ class _KapiDetayWidgetState extends State<KapiDetayWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 3.0, 16.0, 3.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -1295,7 +1293,7 @@ class _KapiDetayWidgetState extends State<KapiDetayWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 3.0, 16.0, 3.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -1340,7 +1338,7 @@ class _KapiDetayWidgetState extends State<KapiDetayWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 3.0, 16.0, 3.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -1385,7 +1383,7 @@ class _KapiDetayWidgetState extends State<KapiDetayWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 3.0, 16.0, 3.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,

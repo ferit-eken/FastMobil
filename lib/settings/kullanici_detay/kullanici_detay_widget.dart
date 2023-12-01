@@ -2,19 +2,17 @@ import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'kullanici_detay_model.dart';
 export 'kullanici_detay_model.dart';
 
 class KullaniciDetayWidget extends StatefulWidget {
   const KullaniciDetayWidget({
-    Key? key,
+    super.key,
     this.personel,
-  }) : super(key: key);
+  });
 
   final dynamic personel;
 
@@ -130,7 +128,7 @@ class _KullaniciDetayWidgetState extends State<KullaniciDetayWidget> {
               ),
               actions: [
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
                   child: InkWell(
                     splashColor: Colors.transparent,
                     focusColor: Colors.transparent,
@@ -160,7 +158,7 @@ class _KullaniciDetayWidgetState extends State<KullaniciDetayWidget> {
                           context: context,
                           builder: (alertDialogContext) {
                             return AlertDialog(
-                              title: Text('Hata'),
+                              title: const Text('Hata'),
                               content: Text(SettingsGroup.personelUpdateCall
                                   .message(
                                     (_model.apiResultgar?.jsonBody ?? ''),
@@ -170,7 +168,7 @@ class _KullaniciDetayWidgetState extends State<KullaniciDetayWidget> {
                                 TextButton(
                                   onPressed: () =>
                                       Navigator.pop(alertDialogContext),
-                                  child: Text('Ok'),
+                                  child: const Text('Ok'),
                                 ),
                               ],
                             );
@@ -180,7 +178,7 @@ class _KullaniciDetayWidgetState extends State<KullaniciDetayWidget> {
 
                       setState(() {});
                     },
-                    child: Icon(
+                    child: const Icon(
                       Icons.save_sharp,
                       color: Color(0xFF020000),
                       size: 42.0,
@@ -200,14 +198,14 @@ class _KullaniciDetayWidgetState extends State<KullaniciDetayWidget> {
                   Expanded(
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 1.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 1.0, 0.0, 0.0),
                       child: Container(
                         width: 350.0,
                         height: 550.0,
                         decoration: BoxDecoration(
                           color:
                               FlutterFlowTheme.of(context).secondaryBackground,
-                          boxShadow: [
+                          boxShadow: const [
                             BoxShadow(
                               blurRadius: 3.0,
                               color: Color(0x33000000),
@@ -220,7 +218,7 @@ class _KullaniciDetayWidgetState extends State<KullaniciDetayWidget> {
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 16.0, 16.0, 16.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -246,7 +244,7 @@ class _KullaniciDetayWidgetState extends State<KullaniciDetayWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           16.0, 0.0, 0.0, 0.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
@@ -255,7 +253,7 @@ class _KullaniciDetayWidgetState extends State<KullaniciDetayWidget> {
                                         crossAxisAlignment:
                                             CrossAxisAlignment.start,
                                         children: [
-                                          Container(
+                                          SizedBox(
                                             width: 200.0,
                                             child: TextFormField(
                                               controller:
@@ -334,7 +332,7 @@ class _KullaniciDetayWidgetState extends State<KullaniciDetayWidget> {
                                           ),
                                           Container(
                                             width: 200.0,
-                                            decoration: BoxDecoration(),
+                                            decoration: const BoxDecoration(),
                                           ),
                                         ],
                                       ),
@@ -343,7 +341,7 @@ class _KullaniciDetayWidgetState extends State<KullaniciDetayWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -355,7 +353,7 @@ class _KullaniciDetayWidgetState extends State<KullaniciDetayWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium,
                                     ),
-                                    Container(
+                                    SizedBox(
                                       width: 200.0,
                                       child: TextFormField(
                                         controller: _model.txtKodController,
@@ -427,7 +425,7 @@ class _KullaniciDetayWidgetState extends State<KullaniciDetayWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -439,7 +437,7 @@ class _KullaniciDetayWidgetState extends State<KullaniciDetayWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium,
                                     ),
-                                    Container(
+                                    SizedBox(
                                       width: 200.0,
                                       child: TextFormField(
                                         controller: _model.txtAdController,
@@ -511,7 +509,7 @@ class _KullaniciDetayWidgetState extends State<KullaniciDetayWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -523,7 +521,7 @@ class _KullaniciDetayWidgetState extends State<KullaniciDetayWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium,
                                     ),
-                                    Container(
+                                    SizedBox(
                                       width: 200.0,
                                       child: TextFormField(
                                         controller: _model.txtSoyadController,
@@ -595,7 +593,7 @@ class _KullaniciDetayWidgetState extends State<KullaniciDetayWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -607,7 +605,7 @@ class _KullaniciDetayWidgetState extends State<KullaniciDetayWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium,
                                     ),
-                                    Container(
+                                    SizedBox(
                                       width: 200.0,
                                       child: TextFormField(
                                         controller: _model.txtGsmController,
@@ -679,7 +677,7 @@ class _KullaniciDetayWidgetState extends State<KullaniciDetayWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -691,7 +689,7 @@ class _KullaniciDetayWidgetState extends State<KullaniciDetayWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium,
                                     ),
-                                    Container(
+                                    SizedBox(
                                       width: 200.0,
                                       child: TextFormField(
                                         controller: _model.txtSifreController,

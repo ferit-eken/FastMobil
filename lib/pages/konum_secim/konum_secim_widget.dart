@@ -2,14 +2,12 @@ import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'konum_secim_model.dart';
 export 'konum_secim_model.dart';
 
 class KonumSecimWidget extends StatefulWidget {
-  const KonumSecimWidget({Key? key}) : super(key: key);
+  const KonumSecimWidget({super.key});
 
   @override
   _KonumSecimWidgetState createState() => _KonumSecimWidgetState();
@@ -46,7 +44,7 @@ class _KonumSecimWidgetState extends State<KonumSecimWidget> {
     return Material(
       color: Colors.transparent,
       elevation: 5.0,
-      shape: RoundedRectangleBorder(
+      shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(0.0),
           bottomRight: Radius.circular(0.0),
@@ -58,7 +56,7 @@ class _KonumSecimWidgetState extends State<KonumSecimWidget> {
         width: double.infinity,
         decoration: BoxDecoration(
           color: FlutterFlowTheme.of(context).secondaryBackground,
-          borderRadius: BorderRadius.only(
+          borderRadius: const BorderRadius.only(
             bottomLeft: Radius.circular(0.0),
             bottomRight: Radius.circular(0.0),
             topLeft: Radius.circular(16.0),
@@ -69,7 +67,7 @@ class _KonumSecimWidgetState extends State<KonumSecimWidget> {
           mainAxisSize: MainAxisSize.max,
           children: [
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
               child: Container(
                 width: 50.0,
                 height: 4.0,
@@ -80,7 +78,7 @@ class _KonumSecimWidgetState extends State<KonumSecimWidget> {
               ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 0.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 children: [
@@ -107,7 +105,7 @@ class _KonumSecimWidgetState extends State<KonumSecimWidget> {
             ),
             Expanded(
               child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 10.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 10.0),
                 child: FutureBuilder<ApiCallResponse>(
                   future: SettingsGroup.getFilterDataCall.call(
                     db: FFAppState().veritabani,
@@ -141,7 +139,7 @@ class _KonumSecimWidgetState extends State<KonumSecimWidget> {
                         return GridView.builder(
                           padding: EdgeInsets.zero,
                           gridDelegate:
-                              SliverGridDelegateWithFixedCrossAxisCount(
+                              const SliverGridDelegateWithFixedCrossAxisCount(
                             crossAxisCount: 7,
                             crossAxisSpacing: 10.0,
                             mainAxisSpacing: 10.0,
@@ -166,14 +164,14 @@ class _KonumSecimWidgetState extends State<KonumSecimWidget> {
                                     context: context,
                                     builder: (alertDialogContext) {
                                       return AlertDialog(
-                                        title: Text('Hata'),
-                                        content: Text(
+                                        title: const Text('Hata'),
+                                        content: const Text(
                                             'Bu konum dolu, Lütfen faklı bir konum seçiniz.'),
                                         actions: [
                                           TextButton(
                                             onPressed: () => Navigator.pop(
                                                 alertDialogContext),
-                                            child: Text('Ok'),
+                                            child: const Text('Ok'),
                                           ),
                                         ],
                                       );

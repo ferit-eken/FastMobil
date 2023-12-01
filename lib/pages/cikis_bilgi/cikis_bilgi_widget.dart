@@ -2,7 +2,6 @@ import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/pages/tahsilat_form/tahsilat_form_widget.dart';
 import '/pages/ucretsiz_secim/ucretsiz_secim_widget.dart';
 import '/settings/menus/hasar_formu/hasar_formu_widget.dart';
@@ -11,16 +10,15 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'cikis_bilgi_model.dart';
 export 'cikis_bilgi_model.dart';
 
 class CikisBilgiWidget extends StatefulWidget {
   const CikisBilgiWidget({
-    Key? key,
+    super.key,
     required this.gecisId,
-  }) : super(key: key);
+  });
 
   final int? gecisId;
 
@@ -84,7 +82,7 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                 borderRadius: 30.0,
                 borderWidth: 1.0,
                 buttonSize: 60.0,
-                icon: Icon(
+                icon: const Icon(
                   Icons.arrow_back_rounded,
                   color: Color(0xFF020000),
                   size: 30.0,
@@ -110,13 +108,13 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                   ),
                   child: Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         if (_model.resYazicidurum == true)
-                          Padding(
+                          const Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 10.0, 0.0),
                             child: Icon(
@@ -126,7 +124,7 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                             ),
                           ),
                         if (_model.resYazicidurum == false)
-                          Padding(
+                          const Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 10.0, 0.0),
                             child: Icon(
@@ -167,7 +165,7 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                                     .secondaryBackground,
                               ),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     15.0, 15.0, 15.0, 15.0),
                                 child: Container(
                                   width: double.infinity,
@@ -231,7 +229,7 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 5.0, 0.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -269,7 +267,7 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 5.0, 0.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -328,7 +326,7 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 5.0, 0.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -381,7 +379,7 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 5.0, 0.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -411,7 +409,7 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 5.0, 0.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -441,7 +439,7 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 5.0, 0.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -471,7 +469,7 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 5.0, 0.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -501,7 +499,7 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 5.0, 0.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -529,7 +527,7 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                                                         fontFamily:
                                                             'Readex Pro',
                                                         color:
-                                                            Color(0xFF05055A),
+                                                            const Color(0xFF05055A),
                                                       ),
                                                 ),
                                               ],
@@ -537,7 +535,7 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 5.0, 0.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -560,7 +558,7 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                                                         fontFamily:
                                                             'Readex Pro',
                                                         color:
-                                                            Color(0xFFFF4600),
+                                                            const Color(0xFFFF4600),
                                                       ),
                                                 ),
                                               ],
@@ -568,7 +566,7 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 5.0, 0.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -599,7 +597,7 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                                                         fontFamily:
                                                             'Readex Pro',
                                                         color:
-                                                            Color(0xFFFF4600),
+                                                            const Color(0xFFFF4600),
                                                       ),
                                                 ),
                                               ],
@@ -607,7 +605,7 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 5.0, 0.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -635,7 +633,7 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                                                         fontFamily:
                                                             'Readex Pro',
                                                         color:
-                                                            Color(0xFF275F08),
+                                                            const Color(0xFF275F08),
                                                       ),
                                                 ),
                                               ],
@@ -643,7 +641,7 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 5.0, 0.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -680,7 +678,7 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                                                       .secondaryBackground,
                                             ),
                                             child: Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 15.0, 0.0, 0.0),
                                               child: Column(
@@ -711,7 +709,7 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                                                   Expanded(
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   10.0,
@@ -721,7 +719,7 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                                                         padding:
                                                             EdgeInsets.zero,
                                                         gridDelegate:
-                                                            SliverGridDelegateWithFixedCrossAxisCount(
+                                                            const SliverGridDelegateWithFixedCrossAxisCount(
                                                           crossAxisCount: 5,
                                                           crossAxisSpacing:
                                                               10.0,
@@ -745,7 +743,7 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                                                                           5.0),
                                                               border:
                                                                   Border.all(
-                                                                color: Color(
+                                                                color: const Color(
                                                                     0xFF182C03),
                                                               ),
                                                             ),
@@ -945,7 +943,7 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                                                                           (alertDialogContext) {
                                                                         return AlertDialog(
                                                                           title:
-                                                                              Text('Hata'),
+                                                                              const Text('Hata'),
                                                                           content: Text(PtsGroup
                                                                               .tahsilatCall
                                                                               .message(
@@ -955,7 +953,7 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                                                                           actions: [
                                                                             TextButton(
                                                                               onPressed: () => Navigator.pop(alertDialogContext),
-                                                                              child: Text('Ok'),
+                                                                              child: const Text('Ok'),
                                                                             ),
                                                                           ],
                                                                         );
@@ -974,7 +972,7 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                                                                     MainAxisAlignment
                                                                         .center,
                                                                 children: [
-                                                                  Icon(
+                                                                  const Icon(
                                                                     Icons
                                                                         .attach_money_outlined,
                                                                     color: Color(
@@ -1014,7 +1012,7 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                                                                           5.0),
                                                               border:
                                                                   Border.all(
-                                                                color: Color(
+                                                                color: const Color(
                                                                     0xFF182C03),
                                                               ),
                                                             ),
@@ -1222,7 +1220,7 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                                                                           (alertDialogContext) {
                                                                         return AlertDialog(
                                                                           title:
-                                                                              Text('Hata'),
+                                                                              const Text('Hata'),
                                                                           content: Text(PtsGroup
                                                                               .tahsilatCall
                                                                               .message(
@@ -1232,7 +1230,7 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                                                                           actions: [
                                                                             TextButton(
                                                                               onPressed: () => Navigator.pop(alertDialogContext),
-                                                                              child: Text('Ok'),
+                                                                              child: const Text('Ok'),
                                                                             ),
                                                                           ],
                                                                         );
@@ -1251,7 +1249,7 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                                                                     MainAxisAlignment
                                                                         .center,
                                                                 children: [
-                                                                  Icon(
+                                                                  const Icon(
                                                                     Icons
                                                                         .credit_card_outlined,
                                                                     color: Color(
@@ -1291,7 +1289,7 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                                                                           5.0),
                                                               border:
                                                                   Border.all(
-                                                                color: Color(
+                                                                color: const Color(
                                                                     0xFF182C03),
                                                               ),
                                                             ),
@@ -1398,7 +1396,7 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                                                                           (alertDialogContext) {
                                                                         return AlertDialog(
                                                                           title:
-                                                                              Text('Hata'),
+                                                                              const Text('Hata'),
                                                                           content: Text(PtsGroup
                                                                               .tahsilatCall
                                                                               .message(
@@ -1408,7 +1406,7 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                                                                           actions: [
                                                                             TextButton(
                                                                               onPressed: () => Navigator.pop(alertDialogContext),
-                                                                              child: Text('Ok'),
+                                                                              child: const Text('Ok'),
                                                                             ),
                                                                           ],
                                                                         );
@@ -1427,7 +1425,7 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                                                                     MainAxisAlignment
                                                                         .center,
                                                                 children: [
-                                                                  Icon(
+                                                                  const Icon(
                                                                     Icons
                                                                         .money_off,
                                                                     color: Color(
@@ -1467,7 +1465,7 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                                                                           5.0),
                                                               border:
                                                                   Border.all(
-                                                                color: Color(
+                                                                color: const Color(
                                                                     0xFF182C03),
                                                               ),
                                                             ),
@@ -1578,7 +1576,7 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                                                                           (alertDialogContext) {
                                                                         return AlertDialog(
                                                                           title:
-                                                                              Text('Hata'),
+                                                                              const Text('Hata'),
                                                                           content: Text(PtsGroup
                                                                               .tahsilatCall
                                                                               .message(
@@ -1588,7 +1586,7 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                                                                           actions: [
                                                                             TextButton(
                                                                               onPressed: () => Navigator.pop(alertDialogContext),
-                                                                              child: Text('Ok'),
+                                                                              child: const Text('Ok'),
                                                                             ),
                                                                           ],
                                                                         );
@@ -1607,7 +1605,7 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                                                                     MainAxisAlignment
                                                                         .center,
                                                                 children: [
-                                                                  Icon(
+                                                                  const Icon(
                                                                     Icons
                                                                         .credit_card_outlined,
                                                                     color: Color(
@@ -1638,7 +1636,7 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                                                             height: 100.0,
                                                             decoration:
                                                                 BoxDecoration(
-                                                              color: Color(
+                                                              color: const Color(
                                                                   0xFF275F08),
                                                               borderRadius:
                                                                   BorderRadius
@@ -1646,7 +1644,7 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                                                                           5.0),
                                                               border:
                                                                   Border.all(
-                                                                color: Color(
+                                                                color: const Color(
                                                                     0xFF182C03),
                                                               ),
                                                             ),
@@ -1686,11 +1684,11 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                                                                         padding:
                                                                             MediaQuery.viewInsetsOf(context),
                                                                         child:
-                                                                            Container(
+                                                                            SizedBox(
                                                                           height:
                                                                               MediaQuery.sizeOf(context).height * 0.9,
                                                                           child:
-                                                                              UcretsizSecimWidget(),
+                                                                              const UcretsizSecimWidget(),
                                                                         ),
                                                                       ),
                                                                     );
@@ -1750,7 +1748,7 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                                                                           (alertDialogContext) {
                                                                         return AlertDialog(
                                                                           title:
-                                                                              Text('Hata'),
+                                                                              const Text('Hata'),
                                                                           content: Text(PtsGroup
                                                                               .hesapKapatCall
                                                                               .message(
@@ -1760,7 +1758,7 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                                                                           actions: [
                                                                             TextButton(
                                                                               onPressed: () => Navigator.pop(alertDialogContext),
-                                                                              child: Text('Ok'),
+                                                                              child: const Text('Ok'),
                                                                             ),
                                                                           ],
                                                                         );
@@ -1822,7 +1820,7 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                                                                           5.0),
                                                               border:
                                                                   Border.all(
-                                                                color: Color(
+                                                                color: const Color(
                                                                     0xFF182C03),
                                                               ),
                                                             ),
@@ -1883,7 +1881,7 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                                                                     builder:
                                                                         (alertDialogContext) {
                                                                       return AlertDialog(
-                                                                        title: Text(
+                                                                        title: const Text(
                                                                             'Hata'),
                                                                         content: Text(PtsGroup
                                                                             .hesapKapatCall
@@ -1896,7 +1894,7 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                                                                             onPressed: () =>
                                                                                 Navigator.pop(alertDialogContext),
                                                                             child:
-                                                                                Text('Ok'),
+                                                                                const Text('Ok'),
                                                                           ),
                                                                         ],
                                                                       );
@@ -1914,7 +1912,7 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                                                                     MainAxisAlignment
                                                                         .center,
                                                                 children: [
-                                                                  Icon(
+                                                                  const Icon(
                                                                     Icons
                                                                         .calculate,
                                                                     color: Color(
@@ -1957,7 +1955,7 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                                                                             5.0),
                                                                 border:
                                                                     Border.all(
-                                                                  color: Color(
+                                                                  color: const Color(
                                                                       0xFF182C03),
                                                                 ),
                                                               ),
@@ -2091,7 +2089,7 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                                                                       MainAxisAlignment
                                                                           .center,
                                                                   children: [
-                                                                    Icon(
+                                                                    const Icon(
                                                                       Icons
                                                                           .print,
                                                                       color: Color(
@@ -2132,7 +2130,7 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                                                                           5.0),
                                                               border:
                                                                   Border.all(
-                                                                color: Color(
+                                                                color: const Color(
                                                                     0xFF182C03),
                                                               ),
                                                             ),
@@ -2191,7 +2189,7 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                                                                     MainAxisAlignment
                                                                         .center,
                                                                 children: [
-                                                                  Icon(
+                                                                  const Icon(
                                                                     Icons
                                                                         .report_gmailerrorred_sharp,
                                                                     color: Color(
@@ -2231,7 +2229,7 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                                                                           5.0),
                                                               border:
                                                                   Border.all(
-                                                                color: Color(
+                                                                color: const Color(
                                                                     0xFF182C03),
                                                               ),
                                                             ),
@@ -2243,7 +2241,7 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                                                                   MainAxisAlignment
                                                                       .center,
                                                               children: [
-                                                                Icon(
+                                                                const Icon(
                                                                   Icons
                                                                       .add_road,
                                                                   color: Color(
@@ -2282,7 +2280,7 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                                                                           5.0),
                                                               border:
                                                                   Border.all(
-                                                                color: Color(
+                                                                color: const Color(
                                                                     0xFF182C03),
                                                               ),
                                                             ),
@@ -2294,7 +2292,7 @@ class _CikisBilgiWidgetState extends State<CikisBilgiWidget> {
                                                                   MainAxisAlignment
                                                                       .center,
                                                               children: [
-                                                                Icon(
+                                                                const Icon(
                                                                   Icons
                                                                       .local_parking_rounded,
                                                                   color: Color(

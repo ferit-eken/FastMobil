@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'dart:typed_data';
 
 import '/flutter_flow/flutter_flow_util.dart';
 import 'api_manager.dart';
@@ -25,9 +24,9 @@ class LoginCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "FirmaKodu": "${firmaKodu}",
-  "Username": "${username}",
-  "Password": "${password}"
+  "FirmaKodu": "$firmaKodu",
+  "Username": "$username",
+  "Password": "$password"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'Login',
@@ -90,22 +89,22 @@ class RegisterCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "Command": "${firmaKodu}",
+  "Command": "$firmaKodu",
   "Bilgi": {
-    "FirmaKodu": "${firmaKodu}",
-    "FirmaAdi": "${firmaAdi}",
-    "TicariUnvan": "${ticariUnvan}",
-    "Adres": "${adres}",
-    "VergiDairesi": "${vergiDairesi}",
-    "VergiNo": "${vergiNo}",
-    "YetkiliAdi": "${yetkiliAdi}",
-    "Telefon": "${telefon}",
-    "Ulke": "${ulke}",
-    "Sehir": "${sehir}",
-    "Ilce": "${ilce}",
-    "Mail": "${mail}",
-    "UserName": "${userName}",
-    "Password": "${password}"
+    "FirmaKodu": "$firmaKodu",
+    "FirmaAdi": "$firmaAdi",
+    "TicariUnvan": "$ticariUnvan",
+    "Adres": "$adres",
+    "VergiDairesi": "$vergiDairesi",
+    "VergiNo": "$vergiNo",
+    "YetkiliAdi": "$yetkiliAdi",
+    "Telefon": "$telefon",
+    "Ulke": "$ulke",
+    "Sehir": "$sehir",
+    "Ilce": "$ilce",
+    "Mail": "$mail",
+    "UserName": "$userName",
+    "Password": "$password"
   }
 }''';
     return ApiManager.instance.makeApiCall(
@@ -196,38 +195,38 @@ class AracGirisCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "Command": "${command}",
+  "Command": "$command",
   "data": {
-    "Id": ${id},
-    "OtoparkId": "${otoparkId}",
-    "KapiGrupId": "${kapiGrupId}",
-    "kapiId": "${kapiId}",
-    "AracTipId": "${aracTipId}",
-    "PersonelKod": ${personelKod},
-    "GirisTuru": "${girisTuru}",
-    "Plaka": "${plaka}",
-    "AdSoyad": "${adSoyad}",
-    "Telefon": "${telefon}",
-    "ParkKonumId": "${parkKonumId}",
-    "AnahtarKodu": ${anahtarKodu},
-    "Hasar_1": ${hasar1},
-    "Hasar_2": ${hasar2},
-    "Hasar_3": ${hasar3},
-    "Hasar_4": ${hasar4},
-    "Hasar_5": ${hasar5},
-    "Hasar_6": ${hasar6},
-    "Hasar_7": ${hasar7},
-    "Hasar_8": ${hasar8},
-    "Hasar_9": ${hasar9},
-    "Hasar_10": ${hasar10},
-    "Hasar_11": ${hasar11},
-    "Hasar_12": ${hasar12},
-    "Hasar_13": ${hasar13}
+    "Id": $id,
+    "OtoparkId": "$otoparkId",
+    "KapiGrupId": "$kapiGrupId",
+    "kapiId": "$kapiId",
+    "AracTipId": "$aracTipId",
+    "PersonelKod": $personelKod,
+    "GirisTuru": "$girisTuru",
+    "Plaka": "$plaka",
+    "AdSoyad": "$adSoyad",
+    "Telefon": "$telefon",
+    "ParkKonumId": "$parkKonumId",
+    "AnahtarKodu": $anahtarKodu,
+    "Hasar_1": $hasar1,
+    "Hasar_2": $hasar2,
+    "Hasar_3": $hasar3,
+    "Hasar_4": $hasar4,
+    "Hasar_5": $hasar5,
+    "Hasar_6": $hasar6,
+    "Hasar_7": $hasar7,
+    "Hasar_8": $hasar8,
+    "Hasar_9": $hasar9,
+    "Hasar_10": $hasar10,
+    "Hasar_11": $hasar11,
+    "Hasar_12": $hasar12,
+    "Hasar_13": $hasar13
   }
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'AracGiris',
-      apiUrl: '${PtsGroup.baseUrl}/${db}',
+      apiUrl: '${PtsGroup.baseUrl}/$db',
       callType: ApiCallType.POST,
       headers: {},
       params: {},
@@ -277,17 +276,17 @@ class AracSorguCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "Command": "${command}",
+  "Command": "$command",
   "data": {
-    "GirisKapiGrupId": "${kapiGrupId}",
-    "AracTipId": "${aracTipId}",
-    "Plaka": "${plaka}",
-    "Id": ${id}
+    "GirisKapiGrupId": "$kapiGrupId",
+    "AracTipId": "$aracTipId",
+    "Plaka": "$plaka",
+    "Id": $id
   }
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'AracSorgu',
-      apiUrl: '${PtsGroup.baseUrl}/${db}',
+      apiUrl: '${PtsGroup.baseUrl}/$db',
       callType: ApiCallType.POST,
       headers: {},
       params: {},
@@ -450,18 +449,18 @@ class TahsilatCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "Command": "${command}",
+  "Command": "$command",
   "data": {
-    "Id": ${id},
-    "UserId": ${userId},
-    "KasaKodu": "${kasaKodu}",
-    "BankaKodu": ${bankaKodu},
-    "Tutar": ${tutar}
+    "Id": $id,
+    "UserId": $userId,
+    "KasaKodu": "$kasaKodu",
+    "BankaKodu": $bankaKodu,
+    "Tutar": $tutar
   }
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'Tahsilat',
-      apiUrl: '${PtsGroup.baseUrl}/${db}',
+      apiUrl: '${PtsGroup.baseUrl}/$db',
       callType: ApiCallType.POST,
       headers: {},
       params: {},
@@ -616,14 +615,14 @@ class GunsonuRaporCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "Command": "${command}",
+  "Command": "$command",
   "data": {
-    "UserId": ${userId}
+    "UserId": $userId
   }
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'GunsonuRapor',
-      apiUrl: '${PtsGroup.baseUrl}/${db}',
+      apiUrl: '${PtsGroup.baseUrl}/$db',
       callType: ApiCallType.POST,
       headers: {},
       params: {},
@@ -706,14 +705,14 @@ class GunsonuKapatCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "Command": "${command}",
+  "Command": "$command",
   "data": {
-    "UserId": ${userId}
+    "UserId": $userId
   }
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'GunsonuKapat',
-      apiUrl: '${PtsGroup.baseUrl}/${db}',
+      apiUrl: '${PtsGroup.baseUrl}/$db',
       callType: ApiCallType.POST,
       headers: {},
       params: {},
@@ -753,19 +752,19 @@ class HesapKapatCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "Command": "${command}",
+  "Command": "$command",
   "data": {
-    "Id": ${id},
-    "UserId": ${userId},
-    "KapiGrupId": ${kapiGrupId},
-    "kapiId": ${kapiId},
-    "UcretsizEtiketId": ${ucretsizEtiketId},
-    "CikisTuru": "${cikisTuru}"
+    "Id": $id,
+    "UserId": $userId,
+    "KapiGrupId": $kapiGrupId,
+    "kapiId": $kapiId,
+    "UcretsizEtiketId": $ucretsizEtiketId,
+    "CikisTuru": "$cikisTuru"
   }
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'HesapKapat',
-      apiUrl: '${PtsGroup.baseUrl}/${db}',
+      apiUrl: '${PtsGroup.baseUrl}/$db',
       callType: ApiCallType.POST,
       headers: {},
       params: {},
@@ -828,29 +827,29 @@ class CariKayitCall {
 {
   "tablename": "Cari",
   "KeyField": "Kod",
-  "keyvalue": "'${kod}'",
-  "Command": "${command}",
+  "keyvalue": "'$kod'",
+  "Command": "$command",
   "data": {
-    "Kod": "${kod}",
-    "Ad": "${ad}",
-    "Soyad": "${soyad}",
-    "Unvan": "${unvan}",
-    "CariGrup": "${cariGrup}",
+    "Kod": "$kod",
+    "Ad": "$ad",
+    "Soyad": "$soyad",
+    "Unvan": "$unvan",
+    "CariGrup": "$cariGrup",
     "VDaire": "",
     "VNo": "",
-    "Adres": "${adres}",
-    "GSM": "${gsm}",
-    "Mail": "${mail}",
-    "CariNot": "${cariNot}",
+    "Adres": "$adres",
+    "GSM": "$gsm",
+    "Mail": "$mail",
+    "CariNot": "$cariNot",
     "CariTip": "ALICI",
     "IL": "",
     "ILCE": "",
     "TcKimlik": "",
-    "Personel": ${createdUserId},
+    "Personel": $createdUserId,
     "EkHesap": 0,
     "Multireferans": 0,
     "isdelete": 0,
-    "Durum": ${durum},
+    "Durum": $durum,
     "vadelisatis": 1,
     "FiyatKodu": 1,
     "GeciciKart": 0,
@@ -862,7 +861,7 @@ class CariKayitCall {
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'CariKayit',
-      apiUrl: '${CariGroup.baseUrl}/values/${db}',
+      apiUrl: '${CariGroup.baseUrl}/values/$db',
       callType: ApiCallType.POST,
       headers: {},
       params: {},
@@ -906,27 +905,27 @@ class CariAracKayitCall {
 {
   "tablename": "CariAraclar",
   "KeyField": "Id",
-  "keyvalue": ${id},
-  "Command": "${command}",
+  "keyvalue": $id,
+  "Command": "$command",
   "data": {
-    "CariKod": "${cariKod}",
+    "CariKod": "$cariKod",
     "FirmaAdi": "",
-    "AdSoyad": "${adSoyad}",
-    "Telefon": "${telefon}",
-    "Plaka": "${plaka}",
+    "AdSoyad": "$adSoyad",
+    "Telefon": "$telefon",
+    "Plaka": "$plaka",
     "AracMarkaId": 1,
     "AracModelId": 1,
-    "AracTipId": ${aracTipId},
-    "KullanimTipi": "${kullanimTipi}",
+    "AracTipId": $aracTipId,
+    "KullanimTipi": "$kullanimTipi",
     "AracRenkId": 1,
     "EtiketID": "-",
     "Yetkiler": "-",
-    "isActive": ${isActive}
+    "isActive": $isActive
   }
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'CariAracKayit',
-      apiUrl: '${CariGroup.baseUrl}/values/${db}',
+      apiUrl: '${CariGroup.baseUrl}/values/$db',
       callType: ApiCallType.POST,
       headers: {},
       params: {},
@@ -974,18 +973,18 @@ class StokKayitCall {
   }) async {
     final ffApiRequestBody = '''
 {
-   "Command": "${command}",
+   "Command": "$command",
   "data": {
-    "Kod": "${kod}",
-    "UrunAd": "${urunAd}",
-    "SatisFiyat1":${satisFiyat1} ,
-    "Durum":${durum} 
+    "Kod": "$kod",
+    "UrunAd": "$urunAd",
+    "SatisFiyat1":$satisFiyat1 ,
+    "Durum":$durum 
     
   }
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'StokKayit',
-      apiUrl: '${StokGroup.baseUrl}/${db}',
+      apiUrl: '${StokGroup.baseUrl}/$db',
       callType: ApiCallType.POST,
       headers: {},
       params: {},
@@ -1050,7 +1049,7 @@ class GetALLCall {
   }) async {
     return ApiManager.instance.makeApiCall(
       callName: 'GetALL',
-      apiUrl: '${SettingsGroup.baseUrl}/${db}/${tablename}',
+      apiUrl: '${SettingsGroup.baseUrl}/$db/$tablename',
       callType: ApiCallType.GET,
       headers: {},
       params: {},
@@ -1096,7 +1095,7 @@ class GetFilterDataCall {
   }) async {
     return ApiManager.instance.makeApiCall(
       callName: 'GetFilterData',
-      apiUrl: '${SettingsGroup.baseUrl}/${db}/${tablename}/${filtre}',
+      apiUrl: '${SettingsGroup.baseUrl}/$db/$tablename/$filtre',
       callType: ApiCallType.GET,
       headers: {},
       params: {},
@@ -1144,7 +1143,7 @@ class GetRowFilterDataCall {
     return ApiManager.instance.makeApiCall(
       callName: 'GetRowFilterData',
       apiUrl:
-          '${SettingsGroup.baseUrl}/${db}/${tablename}/${keyfield}/${keyvalue}',
+          '${SettingsGroup.baseUrl}/$db/$tablename/$keyfield/$keyvalue',
       callType: ApiCallType.GET,
       headers: {},
       params: {},
@@ -1192,7 +1191,7 @@ class GetRowDataCall {
     return ApiManager.instance.makeApiCall(
       callName: 'GetRowData',
       apiUrl:
-          '${SettingsGroup.baseUrl}/${db}/${tablename}/${keyfield}/${keyvalue}',
+          '${SettingsGroup.baseUrl}/$db/$tablename/$keyfield/$keyvalue',
       callType: ApiCallType.GET,
       headers: {},
       params: {},
@@ -1239,20 +1238,20 @@ class OtoparkUpdateCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "tablename": "${tablename}",
-  "KeyField": "${keyField}",
-  "keyvalue": "${keyvalue}",
-  "Command": "${command}",
+  "tablename": "$tablename",
+  "KeyField": "$keyField",
+  "keyvalue": "$keyvalue",
+  "Command": "$command",
   "data": {
-    "Id": ${otoparkId},
-    "OtoparkKodu": "${otoparkKodu}",
-    "OtoparkAdi": "${otoparkAdi}",
-    "ArsivPath": "${arsivPath}"
+    "Id": $otoparkId,
+    "OtoparkKodu": "$otoparkKodu",
+    "OtoparkAdi": "$otoparkAdi",
+    "ArsivPath": "$arsivPath"
   }
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'OtoparkUpdate',
-      apiUrl: '${SettingsGroup.baseUrl}/${db}',
+      apiUrl: '${SettingsGroup.baseUrl}/$db',
       callType: ApiCallType.POST,
       headers: {},
       params: {},
@@ -1302,24 +1301,24 @@ class PosUpdateCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "tablename": "${tablename}",
-  "KeyField": "${keyField}",
-  "keyvalue": "${keyvalue}",
-  "Command": "${command}",
+  "tablename": "$tablename",
+  "KeyField": "$keyField",
+  "keyvalue": "$keyvalue",
+  "Command": "$command",
   "data": {
-    "Id": ${id},
-    "PosAdi": "${posAdi}",
-    "Marka": "${marka}",
-    "BaglantiTipi": "${baglantiTipi}",
-    "Adres": "${adres}",
-    "TcpPort": ${tcpPort},
-    "Baudrate": ${baudrate},
-    "PosKey": "${posKey}"
+    "Id": $id,
+    "PosAdi": "$posAdi",
+    "Marka": "$marka",
+    "BaglantiTipi": "$baglantiTipi",
+    "Adres": "$adres",
+    "TcpPort": $tcpPort,
+    "Baudrate": $baudrate,
+    "PosKey": "$posKey"
   }
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'PosUpdate',
-      apiUrl: '${SettingsGroup.baseUrl}/${db}',
+      apiUrl: '${SettingsGroup.baseUrl}/$db',
       callType: ApiCallType.POST,
       headers: {},
       params: {},
@@ -1366,21 +1365,21 @@ class BankaUpdateCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "tablename": "${tablename}",
-  "KeyField": "${keyField}",
-  "keyvalue": "${keyvalue}",
-  "Command": "${command}",
+  "tablename": "$tablename",
+  "KeyField": "$keyField",
+  "keyvalue": "$keyvalue",
+  "Command": "$command",
   "data": {
-    "Kod": "${kod}",
-    "BankaAd": "${bankaAd}",
-    "Sube": "${sube}",
-    "Hesap": "${hesap}",
-    "DovizKod": "${dovizKod}"
+    "Kod": "$kod",
+    "BankaAd": "$bankaAd",
+    "Sube": "$sube",
+    "Hesap": "$hesap",
+    "DovizKod": "$dovizKod"
   }
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'BankaUpdate',
-      apiUrl: '${SettingsGroup.baseUrl}/${db}',
+      apiUrl: '${SettingsGroup.baseUrl}/$db',
       callType: ApiCallType.POST,
       headers: {},
       params: {},
@@ -1427,21 +1426,21 @@ class OtoparkKonumUpdateCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "tablename": "${tablename}",
-  "KeyField": "${keyField}",
-  "keyvalue": "${keyvalue}",
-  "Command": "${command}",
+  "tablename": "$tablename",
+  "KeyField": "$keyField",
+  "keyvalue": "$keyvalue",
+  "Command": "$command",
   "data": {
-    "Id": ${id},
-    "KapiGrupId": ${kapiGrupId},
-    "KonumAdi": "${konumAdi}",
-    "Durum": ${durum},
-    "isActive": ${isActive}
+    "Id": $id,
+    "KapiGrupId": $kapiGrupId,
+    "KonumAdi": "$konumAdi",
+    "Durum": $durum,
+    "isActive": $isActive
   }
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'OtoparkKonumUpdate',
-      apiUrl: '${SettingsGroup.baseUrl}/${db}',
+      apiUrl: '${SettingsGroup.baseUrl}/$db',
       callType: ApiCallType.POST,
       headers: {},
       params: {},
@@ -1490,23 +1489,23 @@ class AboneTarifeUpdateCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "tablename": "${tablename}",
-  "KeyField": "${keyField}",
-  "keyvalue": "${keyvalue}",
-  "Command": "${command}",
+  "tablename": "$tablename",
+  "KeyField": "$keyField",
+  "keyvalue": "$keyvalue",
+  "Command": "$command",
   "data": {
-    "Id": ${id},
-    "OtoparkId": ${otoparkId},
-    "TarifeAdi": "${tarifeAdi}",
-    "AracTipId": ${aracTipId},
-    "OdemeGecerlilikSuresi": "${odemeGecerlilikSuresi}",
-    "GunlukUcretsizLimitSayi": ${gunlukUcretsizLimitSayi},
-    "GunDonusumSaati": "${gunDonusumSaati}"
+    "Id": $id,
+    "OtoparkId": $otoparkId,
+    "TarifeAdi": "$tarifeAdi",
+    "AracTipId": $aracTipId,
+    "OdemeGecerlilikSuresi": "$odemeGecerlilikSuresi",
+    "GunlukUcretsizLimitSayi": $gunlukUcretsizLimitSayi,
+    "GunDonusumSaati": "$gunDonusumSaati"
   }
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'AboneTarifeUpdate',
-      apiUrl: '${SettingsGroup.baseUrl}/${db}',
+      apiUrl: '${SettingsGroup.baseUrl}/$db',
       callType: ApiCallType.POST,
       headers: {},
       params: {},
@@ -1561,29 +1560,29 @@ class AboneTarifeFiyatUpdateCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "tablename": "${tablename}",
-  "KeyField": "${keyField}",
-  "keyvalue": "${keyvalue}",
-  "Command": "${command}",
+  "tablename": "$tablename",
+  "KeyField": "$keyField",
+  "keyvalue": "$keyvalue",
+  "Command": "$command",
   "data": {
-    "Id": ${id},
-    "OtoparkId": ${otoparkId},
-    "TarifeId": ${tarifeId},
-    "Baslangic": "${baslangic}",
-    "Bitis": "${bitis}",
-    "Ucret": ${ucret},
-    "Gun0": ${gun0},
-    "Gun1": ${gun1},
-    "Gun2": ${gun2},
-    "Gun3": ${gun3},
-    "Gun4": ${gun4},
-    "Gun5": ${gun5},
-    "Gun6": ${gun6}
+    "Id": $id,
+    "OtoparkId": $otoparkId,
+    "TarifeId": $tarifeId,
+    "Baslangic": "$baslangic",
+    "Bitis": "$bitis",
+    "Ucret": $ucret,
+    "Gun0": $gun0,
+    "Gun1": $gun1,
+    "Gun2": $gun2,
+    "Gun3": $gun3,
+    "Gun4": $gun4,
+    "Gun5": $gun5,
+    "Gun6": $gun6
   }
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'AboneTarifeFiyatUpdate',
-      apiUrl: '${SettingsGroup.baseUrl}/${db}',
+      apiUrl: '${SettingsGroup.baseUrl}/$db',
       callType: ApiCallType.POST,
       headers: {},
       params: {},
@@ -1628,19 +1627,19 @@ class KasaUpdateCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "tablename": "${tablename}",
-  "KeyField": "${keyField}",
-  "keyvalue": "${keyvalue}",
-  "Command": "${command}",
+  "tablename": "$tablename",
+  "KeyField": "$keyField",
+  "keyvalue": "$keyvalue",
+  "Command": "$command",
   "data": {
-    "Kod": "${kod}",
-    "Aciklama": "${aciklama}",
-    "DovizTuru": "${dovizTuru}"
+    "Kod": "$kod",
+    "Aciklama": "$aciklama",
+    "DovizTuru": "$dovizTuru"
   }
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'KasaUpdate',
-      apiUrl: '${SettingsGroup.baseUrl}/${db}',
+      apiUrl: '${SettingsGroup.baseUrl}/$db',
       callType: ApiCallType.POST,
       headers: {},
       params: {},
@@ -1684,22 +1683,22 @@ class PersonelUpdateCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "tablename": "${tablename}",
-  "KeyField": "${keyField}",
-  "keyvalue": "${keyvalue}",
-  "Command": "${command}",
+  "tablename": "$tablename",
+  "KeyField": "$keyField",
+  "keyvalue": "$keyvalue",
+  "Command": "$command",
   "data": {
-    "Kod": "${kod}",
-    "Ad": "${ad}",
-    "Soyad": "${soyad}",
-    "Username": "${username}",
-    "Sifre": "${sifre}",
-    "GSM": "${gsm}"
+    "Kod": "$kod",
+    "Ad": "$ad",
+    "Soyad": "$soyad",
+    "Username": "$username",
+    "Sifre": "$sifre",
+    "GSM": "$gsm"
   }
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'PersonelUpdate',
-      apiUrl: '${SettingsGroup.baseUrl}/${db}',
+      apiUrl: '${SettingsGroup.baseUrl}/$db',
       callType: ApiCallType.POST,
       headers: {},
       params: {},
@@ -1746,25 +1745,25 @@ class IOControllerUpdateCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "tablename": "${tablename}",
-  "KeyField": "${keyField}",
-  "keyvalue": "${keyvalue}",
-  "Command": "${command}",
+  "tablename": "$tablename",
+  "KeyField": "$keyField",
+  "keyvalue": "$keyvalue",
+  "Command": "$command",
   "data": {
-    "Id": ${id},
-    "Aciklama": "${aciklama}",
-    "CikisSayisi": ${cikisSayisi},
-    "BaglantiTuru": "${baglantiTuru}",
-    "Adres": "${adres}",
-    "Baudrate": ${baudrate},
-    "TCPPort": ${tCPPort},
-    "TetikAraligi": ${tetikAraligi},
-    "isActive": ${isActive}
+    "Id": $id,
+    "Aciklama": "$aciklama",
+    "CikisSayisi": $cikisSayisi,
+    "BaglantiTuru": "$baglantiTuru",
+    "Adres": "$adres",
+    "Baudrate": $baudrate,
+    "TCPPort": $tCPPort,
+    "TetikAraligi": $tetikAraligi,
+    "isActive": $isActive
   }
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'IOControllerUpdate',
-      apiUrl: '${SettingsGroup.baseUrl}/${db}',
+      apiUrl: '${SettingsGroup.baseUrl}/$db',
       callType: ApiCallType.POST,
       headers: {},
       params: {},
@@ -1817,27 +1816,27 @@ class LedPanelUpdateCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "tablename": "${tablename}",
-  "KeyField": "${keyField}",
-  "keyvalue": "${keyvalue}",
-  "Command": "${command}",
+  "tablename": "$tablename",
+  "KeyField": "$keyField",
+  "keyvalue": "$keyvalue",
+  "Command": "$command",
   "data": {
-    "Id": ${id},
-    "PanelAdi": "${panelAdi}",
-    "Marka": "${marka}",
-    "BaglantiTuru": "${baglantiTuru}",
-    "Adres": "${adres}",
-    "Baudrate": ${baudrate},
-    "TcpPort": ${tcpPort},
-    "Yatay_Px": ${yatayPx},
-    "Dikey_Px": ${dikeyPx},
-    "BeklemeSn": ${beklemeSn},
-    "isActive": ${isActive}
+    "Id": $id,
+    "PanelAdi": "$panelAdi",
+    "Marka": "$marka",
+    "BaglantiTuru": "$baglantiTuru",
+    "Adres": "$adres",
+    "Baudrate": $baudrate,
+    "TcpPort": $tcpPort,
+    "Yatay_Px": $yatayPx,
+    "Dikey_Px": $dikeyPx,
+    "BeklemeSn": $beklemeSn,
+    "isActive": $isActive
   }
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'LedPanelUpdate',
-      apiUrl: '${SettingsGroup.baseUrl}/${db}',
+      apiUrl: '${SettingsGroup.baseUrl}/$db',
       callType: ApiCallType.POST,
       headers: {},
       params: {},
@@ -1876,20 +1875,20 @@ class UpdateRowCall {
     String? keyField = '',
     String? keyvalue = '',
     String? command = 'UPDATE',
-    dynamic? dataJson,
+    dynamic dataJson,
   }) async {
     final data = _serializeJson(dataJson);
     final ffApiRequestBody = '''
 {
-  "tablename": "${tablename}",
-  "KeyField": "${keyField}",
-  "keyvalue": "${keyvalue}",
-  "Command": "${command}",
-  "data": ${data}
+  "tablename": "$tablename",
+  "KeyField": "$keyField",
+  "keyvalue": "$keyvalue",
+  "Command": "$command",
+  "data": $data
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'UpdateRow',
-      apiUrl: '${SettingsGroup.baseUrl}/${db}',
+      apiUrl: '${SettingsGroup.baseUrl}/$db',
       callType: ApiCallType.POST,
       headers: {},
       params: {},
@@ -1930,14 +1929,14 @@ class GetIDCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "db": "${db}",
-  "tablename": "${tablename}",
-  "KeyField": "${keyField}",
-  "Command": "${command}"
+  "db": "$db",
+  "tablename": "$tablename",
+  "KeyField": "$keyField",
+  "Command": "$command"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'GetID',
-      apiUrl: '${SettingsGroup.baseUrl}/${db}',
+      apiUrl: '${SettingsGroup.baseUrl}/$db',
       callType: ApiCallType.POST,
       headers: {},
       params: {},
@@ -1995,37 +1994,37 @@ class OtoparkKapiUpdateCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "tablename": "${tablename}",
-  "KeyField": "${keyField}",
-  "keyvalue": "${keyvalue}",
-  "Command": "${command}",
+  "tablename": "$tablename",
+  "KeyField": "$keyField",
+  "keyvalue": "$keyvalue",
+  "Command": "$command",
   "data": {
-    "Id": ${kapiId},
-    "KapiGrupId": ${kapiGrupId},
-    "KapiAdi": "${kapiAdi}",
-    "GecisYonu": "${gecisYonu}",
-    "TanimsizOnayi": ${tanimsizOnayi},
-    "GecisKaydi": ${gecisKaydi},
-    "GirisKameraId": "${girisKameraId}",
-    "Goruntu_Isleme": ${goruntuIsleme},
-    "IOControllerId": "${iOControllerId}",
-    "TetikNo": ${tetikNo},
-    "PauseTetik": ${pauseTetik},
-    "TetikKapat": ${tetikKapat},
-    "TetikKapamaSn": ${tetikKapamaSn},
-    "LedPanelId": "${ledPanelId}",
-    "KasaKodu": "${kasaKodu}",
-    "BankaKodu": "${bankaKodu}",
-    "AboneGecisi": ${aboneGecisi},
-    "UcretliGecis": ${ucretliGecis},
-    "MisafirGecis": ${misafirGecis},
-    "OdemeNoktasi": ${odemeNoktasi},
-    "PosId": "${posId}"
+    "Id": $kapiId,
+    "KapiGrupId": $kapiGrupId,
+    "KapiAdi": "$kapiAdi",
+    "GecisYonu": "$gecisYonu",
+    "TanimsizOnayi": $tanimsizOnayi,
+    "GecisKaydi": $gecisKaydi,
+    "GirisKameraId": "$girisKameraId",
+    "Goruntu_Isleme": $goruntuIsleme,
+    "IOControllerId": "$iOControllerId",
+    "TetikNo": $tetikNo,
+    "PauseTetik": $pauseTetik,
+    "TetikKapat": $tetikKapat,
+    "TetikKapamaSn": $tetikKapamaSn,
+    "LedPanelId": "$ledPanelId",
+    "KasaKodu": "$kasaKodu",
+    "BankaKodu": "$bankaKodu",
+    "AboneGecisi": $aboneGecisi,
+    "UcretliGecis": $ucretliGecis,
+    "MisafirGecis": $misafirGecis,
+    "OdemeNoktasi": $odemeNoktasi,
+    "PosId": "$posId"
   }
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'OtoparkKapiUpdate',
-      apiUrl: '${SettingsGroup.baseUrl}/${db}',
+      apiUrl: '${SettingsGroup.baseUrl}/$db',
       callType: ApiCallType.POST,
       headers: {},
       params: {},
@@ -2079,28 +2078,28 @@ class OtoparkKapiGrupUpdateCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "tablename": "${tablename}",
-  "KeyField": "${keyField}",
-  "keyvalue": "${keyvalue}",
-  "Command": "${command}",
+  "tablename": "$tablename",
+  "KeyField": "$keyField",
+  "keyvalue": "$keyvalue",
+  "Command": "$command",
   "data": {
-    "Id": ${id},
-    "OtoparkId": ${otoparkId},
-    "GrupAdi": "${grupAdi}",
-    "GrupTuru": "${grupTuru}",
-    "GirisYoksaCikis": "${girisYoksaCikis}",
-    "Kapasite": ${kapasite},
-    "NakitOdeme": ${nakitOdeme},
-    "KrediKartiOdeme": ${krediKartiOdeme},
-    "BorcKaydet": ${borcKaydet},
-    "UcretsizOdeme": ${ucretsizOdeme},
-    "IndirimKarti": ${indirimKarti},
-    "AboneKayit": ${aboneKayit}
+    "Id": $id,
+    "OtoparkId": $otoparkId,
+    "GrupAdi": "$grupAdi",
+    "GrupTuru": "$grupTuru",
+    "GirisYoksaCikis": "$girisYoksaCikis",
+    "Kapasite": $kapasite,
+    "NakitOdeme": $nakitOdeme,
+    "KrediKartiOdeme": $krediKartiOdeme,
+    "BorcKaydet": $borcKaydet,
+    "UcretsizOdeme": $ucretsizOdeme,
+    "IndirimKarti": $indirimKarti,
+    "AboneKayit": $aboneKayit
   }
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'OtoparkKapiGrupUpdate',
-      apiUrl: '${SettingsGroup.baseUrl}/${db}',
+      apiUrl: '${SettingsGroup.baseUrl}/$db',
       callType: ApiCallType.POST,
       headers: {},
       params: {},

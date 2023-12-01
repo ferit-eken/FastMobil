@@ -2,14 +2,12 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/settings/menus/sol_menu_otopark/sol_menu_otopark_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'sol_menu_model.dart';
 export 'sol_menu_model.dart';
 
 class SolMenuWidget extends StatefulWidget {
-  const SolMenuWidget({Key? key}) : super(key: key);
+  const SolMenuWidget({super.key});
 
   @override
   _SolMenuWidgetState createState() => _SolMenuWidgetState();
@@ -46,7 +44,7 @@ class _SolMenuWidgetState extends State<SolMenuWidget> {
     return Container(
       width: double.infinity,
       height: double.infinity,
-      constraints: BoxConstraints(
+      constraints: const BoxConstraints(
         maxWidth: 270.0,
       ),
       decoration: BoxDecoration(
@@ -55,12 +53,12 @@ class _SolMenuWidgetState extends State<SolMenuWidget> {
         shape: BoxShape.rectangle,
       ),
       child: Padding(
-        padding: EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 10.0, 0.0),
+        padding: const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 10.0, 0.0),
         child: Column(
           mainAxisSize: MainAxisSize.max,
           children: [
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(10.0, 5.0, 5.0, 5.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(10.0, 5.0, 5.0, 5.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -92,7 +90,7 @@ class _SolMenuWidgetState extends State<SolMenuWidget> {
               ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
               child: Text(
                 getJsonField(
                   FFAppState().UserInfo,
@@ -109,10 +107,10 @@ class _SolMenuWidgetState extends State<SolMenuWidget> {
                   color: FlutterFlowTheme.of(context).secondaryBackground,
                 ),
                 child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 10.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 10.0),
                   child: GridView(
                     padding: EdgeInsets.zero,
-                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 3,
                       crossAxisSpacing: 10.0,
                       mainAxisSpacing: 10.0,
@@ -132,7 +130,7 @@ class _SolMenuWidgetState extends State<SolMenuWidget> {
                           ),
                         ),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               3.0, 3.0, 3.0, 3.0),
                           child: InkWell(
                             splashColor: Colors.transparent,
@@ -175,7 +173,7 @@ class _SolMenuWidgetState extends State<SolMenuWidget> {
                           ),
                         ),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               3.0, 3.0, 3.0, 3.0),
                           child: InkWell(
                             splashColor: Colors.transparent,
@@ -218,7 +216,7 @@ class _SolMenuWidgetState extends State<SolMenuWidget> {
                           ),
                         ),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               3.0, 3.0, 3.0, 3.0),
                           child: InkWell(
                             splashColor: Colors.transparent,
@@ -261,7 +259,7 @@ class _SolMenuWidgetState extends State<SolMenuWidget> {
                           ),
                         ),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               3.0, 3.0, 3.0, 3.0),
                           child: InkWell(
                             splashColor: Colors.transparent,
@@ -304,7 +302,7 @@ class _SolMenuWidgetState extends State<SolMenuWidget> {
                           ),
                         ),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               3.0, 3.0, 3.0, 3.0),
                           child: InkWell(
                             splashColor: Colors.transparent,
@@ -347,7 +345,7 @@ class _SolMenuWidgetState extends State<SolMenuWidget> {
                           ),
                         ),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               3.0, 3.0, 3.0, 3.0),
                           child: InkWell(
                             splashColor: Colors.transparent,
@@ -364,7 +362,7 @@ class _SolMenuWidgetState extends State<SolMenuWidget> {
                                 builder: (context) {
                                   return Padding(
                                     padding: MediaQuery.viewInsetsOf(context),
-                                    child: SolMenuOtoparkWidget(),
+                                    child: const SolMenuOtoparkWidget(),
                                   );
                                 },
                               ).then((value) => safeSetState(() {}));
@@ -402,7 +400,7 @@ class _SolMenuWidgetState extends State<SolMenuWidget> {
                           ),
                         ),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               3.0, 3.0, 3.0, 3.0),
                           child: InkWell(
                             splashColor: Colors.transparent,
@@ -446,7 +444,7 @@ class _SolMenuWidgetState extends State<SolMenuWidget> {
                             ),
                           ),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 3.0, 3.0, 3.0, 3.0),
                             child: InkWell(
                               splashColor: Colors.transparent,
@@ -490,7 +488,7 @@ class _SolMenuWidgetState extends State<SolMenuWidget> {
                           ),
                         ),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               3.0, 3.0, 3.0, 3.0),
                           child: InkWell(
                             splashColor: Colors.transparent,
@@ -533,7 +531,7 @@ class _SolMenuWidgetState extends State<SolMenuWidget> {
                           ),
                         ),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               3.0, 3.0, 3.0, 3.0),
                           child: InkWell(
                             splashColor: Colors.transparent,
@@ -576,7 +574,7 @@ class _SolMenuWidgetState extends State<SolMenuWidget> {
                           ),
                         ),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               3.0, 3.0, 3.0, 3.0),
                           child: InkWell(
                             splashColor: Colors.transparent,
@@ -619,7 +617,7 @@ class _SolMenuWidgetState extends State<SolMenuWidget> {
                           ),
                         ),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               3.0, 3.0, 3.0, 3.0),
                           child: InkWell(
                             splashColor: Colors.transparent,
@@ -639,7 +637,7 @@ class _SolMenuWidgetState extends State<SolMenuWidget> {
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
-                                Icon(
+                                const Icon(
                                   Icons.login,
                                   color: Color(0xFFD7250C),
                                   size: 32.0,

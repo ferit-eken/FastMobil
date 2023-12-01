@@ -2,17 +2,15 @@ import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'arac_listesi_model.dart';
 export 'arac_listesi_model.dart';
 
 class AracListesiWidget extends StatefulWidget {
-  const AracListesiWidget({Key? key}) : super(key: key);
+  const AracListesiWidget({super.key});
 
   @override
   _AracListesiWidgetState createState() => _AracListesiWidgetState();
@@ -69,7 +67,7 @@ class _AracListesiWidgetState extends State<AracListesiWidget> {
                 borderRadius: 30.0,
                 borderWidth: 1.0,
                 buttonSize: 60.0,
-                icon: Icon(
+                icon: const Icon(
                   Icons.arrow_back_rounded,
                   color: Color(0xFF020000),
                   size: 30.0,
@@ -82,7 +80,7 @@ class _AracListesiWidgetState extends State<AracListesiWidget> {
                 'Içerideki Araçlar',
                 style: FlutterFlowTheme.of(context).headlineMedium,
               ),
-              actions: [],
+              actions: const [],
               centerTitle: false,
               elevation: 2.0,
             ),
@@ -99,7 +97,7 @@ class _AracListesiWidgetState extends State<AracListesiWidget> {
                         decoration: BoxDecoration(
                           color:
                               FlutterFlowTheme.of(context).secondaryBackground,
-                          boxShadow: [
+                          boxShadow: const [
                             BoxShadow(
                               blurRadius: 3.0,
                               color: Color(0x33000000),
@@ -112,7 +110,7 @@ class _AracListesiWidgetState extends State<AracListesiWidget> {
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 0.0, 12.0),
                               child: Text(
                                 'Çıkış yapmayan araçları bu listeden yönetebilirsiniz',
@@ -137,9 +135,9 @@ class _AracListesiWidgetState extends State<AracListesiWidget> {
                         children: [
                           Expanded(
                             child: Align(
-                              alignment: AlignmentDirectional(-1.00, -1.00),
+                              alignment: const AlignmentDirectional(-1.00, -1.00),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 1.0, 0.0, 0.0),
                                 child: FutureBuilder<ApiCallResponse>(
                                   future: (_model.apiRequestCompleter ??=
@@ -198,7 +196,7 @@ class _AracListesiWidgetState extends State<AracListesiWidget> {
                                               final listeItem =
                                                   liste[listeIndex];
                                               return Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 0.0, 0.0, 1.0),
                                                 child: Container(
@@ -216,13 +214,13 @@ class _AracListesiWidgetState extends State<AracListesiWidget> {
                                                                     context)
                                                                 .alternate,
                                                         offset:
-                                                            Offset(0.0, 1.0),
+                                                            const Offset(0.0, 1.0),
                                                       )
                                                     ],
                                                   ),
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(16.0, 0.0,
                                                                 16.0, 0.0),
                                                     child: InkWell(
@@ -276,7 +274,7 @@ class _AracListesiWidgetState extends State<AracListesiWidget> {
                                                             builder:
                                                                 (alertDialogContext) {
                                                               return AlertDialog(
-                                                                title: Text(
+                                                                title: const Text(
                                                                     'Hata'),
                                                                 content: Text(PtsGroup
                                                                     .aracSorguCall
@@ -291,7 +289,7 @@ class _AracListesiWidgetState extends State<AracListesiWidget> {
                                                                     onPressed: () =>
                                                                         Navigator.pop(
                                                                             alertDialogContext),
-                                                                    child: Text(
+                                                                    child: const Text(
                                                                         'Ok'),
                                                                   ),
                                                                 ],
@@ -319,7 +317,7 @@ class _AracListesiWidgetState extends State<AracListesiWidget> {
                                                           Expanded(
                                                             child: Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           12.0,
                                                                           0.0,
@@ -345,7 +343,7 @@ class _AracListesiWidgetState extends State<AracListesiWidget> {
                                                                             .spaceBetween,
                                                                     children: [
                                                                       Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             0.0,
                                                                             0.0,

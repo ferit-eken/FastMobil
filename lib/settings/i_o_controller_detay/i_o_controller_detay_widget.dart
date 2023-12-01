@@ -4,25 +4,21 @@ import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 import 'package:provider/provider.dart';
 import 'i_o_controller_detay_model.dart';
 export 'i_o_controller_detay_model.dart';
 
 class IOControllerDetayWidget extends StatefulWidget {
   const IOControllerDetayWidget({
-    Key? key,
+    super.key,
     String? command,
     int? id,
-  })  : this.command = command ?? 'UPDATE',
-        this.id = id ?? 0,
-        super(key: key);
+  })  : command = command ?? 'UPDATE',
+        id = id ?? 0;
 
   final String command;
   final int id;
@@ -122,7 +118,7 @@ class _IOControllerDetayWidgetState extends State<IOControllerDetayWidget> {
               ),
               actions: [
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
                   child: InkWell(
                     splashColor: Colors.transparent,
                     focusColor: Colors.transparent,
@@ -155,7 +151,7 @@ class _IOControllerDetayWidgetState extends State<IOControllerDetayWidget> {
                           context: context,
                           builder: (alertDialogContext) {
                             return AlertDialog(
-                              title: Text('Hata'),
+                              title: const Text('Hata'),
                               content: Text(SettingsGroup.iOControllerUpdateCall
                                   .message(
                                     (_model.apiResultgar?.jsonBody ?? ''),
@@ -165,7 +161,7 @@ class _IOControllerDetayWidgetState extends State<IOControllerDetayWidget> {
                                 TextButton(
                                   onPressed: () =>
                                       Navigator.pop(alertDialogContext),
-                                  child: Text('Ok'),
+                                  child: const Text('Ok'),
                                 ),
                               ],
                             );
@@ -175,7 +171,7 @@ class _IOControllerDetayWidgetState extends State<IOControllerDetayWidget> {
 
                       setState(() {});
                     },
-                    child: Icon(
+                    child: const Icon(
                       Icons.save_sharp,
                       color: Color(0xFF020000),
                       size: 42.0,
@@ -195,14 +191,14 @@ class _IOControllerDetayWidgetState extends State<IOControllerDetayWidget> {
                   Expanded(
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 1.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 1.0, 0.0, 0.0),
                       child: Container(
                         width: double.infinity,
                         height: double.infinity,
                         decoration: BoxDecoration(
                           color:
                               FlutterFlowTheme.of(context).secondaryBackground,
-                          boxShadow: [
+                          boxShadow: const [
                             BoxShadow(
                               blurRadius: 3.0,
                               color: Color(0x33000000),
@@ -215,7 +211,7 @@ class _IOControllerDetayWidgetState extends State<IOControllerDetayWidget> {
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     10.0, 10.0, 10.0, 10.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -243,7 +239,7 @@ class _IOControllerDetayWidgetState extends State<IOControllerDetayWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           16.0, 0.0, 0.0, 0.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
@@ -252,7 +248,7 @@ class _IOControllerDetayWidgetState extends State<IOControllerDetayWidget> {
                                         crossAxisAlignment:
                                             CrossAxisAlignment.start,
                                         children: [
-                                          Container(
+                                          SizedBox(
                                             width: 200.0,
                                             child: TextFormField(
                                               controller:
@@ -332,7 +328,7 @@ class _IOControllerDetayWidgetState extends State<IOControllerDetayWidget> {
                                           ),
                                           Container(
                                             width: 200.0,
-                                            decoration: BoxDecoration(),
+                                            decoration: const BoxDecoration(),
                                             child: FlutterFlowDropDown<String>(
                                               controller: _model
                                                       .txtBaglantituruValueController ??=
@@ -346,7 +342,7 @@ class _IOControllerDetayWidgetState extends State<IOControllerDetayWidget> {
                                                   'TCP',
                                                 ),
                                               ),
-                                              options: ['TCP', 'COM'],
+                                              options: const ['TCP', 'COM'],
                                               onChanged: (val) => setState(() =>
                                                   _model.txtBaglantituruValue =
                                                       val),
@@ -373,7 +369,7 @@ class _IOControllerDetayWidgetState extends State<IOControllerDetayWidget> {
                                                       .alternate,
                                               borderWidth: 2.0,
                                               borderRadius: 8.0,
-                                              margin: EdgeInsetsDirectional
+                                              margin: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       16.0, 4.0, 16.0, 4.0),
                                               hidesUnderline: true,
@@ -394,7 +390,7 @@ class _IOControllerDetayWidgetState extends State<IOControllerDetayWidget> {
                                       Expanded(
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   8.0, 0.0, 8.0, 0.0),
                                           child: TextFormField(
                                             controller: _model.txtIdController,
@@ -464,7 +460,7 @@ class _IOControllerDetayWidgetState extends State<IOControllerDetayWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 3.0, 16.0, 3.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -509,7 +505,7 @@ class _IOControllerDetayWidgetState extends State<IOControllerDetayWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -522,9 +518,9 @@ class _IOControllerDetayWidgetState extends State<IOControllerDetayWidget> {
                                           .bodyMedium,
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           8.0, 0.0, 0.0, 0.0),
-                                      child: Container(
+                                      child: SizedBox(
                                         width: 200.0,
                                         child: TextFormField(
                                           controller:
@@ -598,7 +594,7 @@ class _IOControllerDetayWidgetState extends State<IOControllerDetayWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -629,7 +625,7 @@ class _IOControllerDetayWidgetState extends State<IOControllerDetayWidget> {
                                           ),
                                           options: List<int>.from(
                                               [1, 2, 3, 4, 5, 6, 7, 8]),
-                                          optionLabels: [
+                                          optionLabels: const [
                                             '1',
                                             '2',
                                             '3',
@@ -662,7 +658,7 @@ class _IOControllerDetayWidgetState extends State<IOControllerDetayWidget> {
                                           borderWidth: 2.0,
                                           borderRadius: 8.0,
                                           margin:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 4.0, 16.0, 4.0),
                                           hidesUnderline: true,
                                           isSearchable: false,
@@ -674,7 +670,7 @@ class _IOControllerDetayWidgetState extends State<IOControllerDetayWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -700,7 +696,7 @@ class _IOControllerDetayWidgetState extends State<IOControllerDetayWidget> {
                                         ),
                                       ),
                                       options: List<int>.from([5000, 23]),
-                                      optionLabels: ['5000', '23'],
+                                      optionLabels: const ['5000', '23'],
                                       onChanged: (val) => setState(
                                           () => _model.txtPortnoValue = val),
                                       width: 200.0,
@@ -720,7 +716,7 @@ class _IOControllerDetayWidgetState extends State<IOControllerDetayWidget> {
                                           .alternate,
                                       borderWidth: 2.0,
                                       borderRadius: 8.0,
-                                      margin: EdgeInsetsDirectional.fromSTEB(
+                                      margin: const EdgeInsetsDirectional.fromSTEB(
                                           16.0, 4.0, 16.0, 4.0),
                                       hidesUnderline: true,
                                       isSearchable: false,
@@ -730,7 +726,7 @@ class _IOControllerDetayWidgetState extends State<IOControllerDetayWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -757,7 +753,7 @@ class _IOControllerDetayWidgetState extends State<IOControllerDetayWidget> {
                                       ),
                                       options:
                                           List<int>.from([9600, 38400, 56000]),
-                                      optionLabels: ['9600', '38400', '56000'],
+                                      optionLabels: const ['9600', '38400', '56000'],
                                       onChanged: (val) => setState(
                                           () => _model.txtBaudrateValue = val),
                                       width: 200.0,
@@ -777,7 +773,7 @@ class _IOControllerDetayWidgetState extends State<IOControllerDetayWidget> {
                                           .alternate,
                                       borderWidth: 2.0,
                                       borderRadius: 8.0,
-                                      margin: EdgeInsetsDirectional.fromSTEB(
+                                      margin: const EdgeInsetsDirectional.fromSTEB(
                                           16.0, 4.0, 16.0, 4.0),
                                       hidesUnderline: true,
                                       isSearchable: false,
@@ -787,7 +783,7 @@ class _IOControllerDetayWidgetState extends State<IOControllerDetayWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,

@@ -1,13 +1,7 @@
 import '/backend/api_requests/api_calls.dart';
-import '/flutter_flow/flutter_flow_icon_button.dart';
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'banka_detay_widget.dart' show BankaDetayWidget;
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 
 class BankaDetayModel extends FlutterFlowModel<BankaDetayWidget> {
   ///  State fields for stateful widgets in this page.
@@ -38,8 +32,10 @@ class BankaDetayModel extends FlutterFlowModel<BankaDetayWidget> {
 
   /// Initialization and disposal methods.
 
+  @override
   void initState(BuildContext context) {}
 
+  @override
   void dispose() {
     unfocusNode.dispose();
     txtAdFocusNode?.dispose();

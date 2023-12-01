@@ -1,23 +1,18 @@
 import '/backend/api_requests/api_calls.dart';
-import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'abone_araclar_model.dart';
 export 'abone_araclar_model.dart';
 
 class AboneAraclarWidget extends StatefulWidget {
   const AboneAraclarWidget({
-    Key? key,
+    super.key,
     required this.cari,
-  }) : super(key: key);
+  });
 
   final dynamic cari;
 
@@ -77,7 +72,7 @@ class _AboneAraclarWidgetState extends State<AboneAraclarWidget>
                 borderRadius: 30.0,
                 borderWidth: 1.0,
                 buttonSize: 60.0,
-                icon: Icon(
+                icon: const Icon(
                   Icons.arrow_back_sharp,
                   color: Color(0xFF020000),
                   size: 30.0,
@@ -92,7 +87,7 @@ class _AboneAraclarWidgetState extends State<AboneAraclarWidget>
               ),
               actions: [
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
                   child: InkWell(
                     splashColor: Colors.transparent,
                     focusColor: Colors.transparent,
@@ -112,7 +107,7 @@ class _AboneAraclarWidgetState extends State<AboneAraclarWidget>
                         }.withoutNulls,
                       );
                     },
-                    child: Icon(
+                    child: const Icon(
                       Icons.add_circle_outline_sharp,
                       color: Color(0xFF020000),
                       size: 35.0,
@@ -137,7 +132,7 @@ class _AboneAraclarWidgetState extends State<AboneAraclarWidget>
                     ),
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         children: [
@@ -150,7 +145,7 @@ class _AboneAraclarWidgetState extends State<AboneAraclarWidget>
                                 .titleMedium
                                 .override(
                                   fontFamily: 'Readex Pro',
-                                  color: Color(0xFF020000),
+                                  color: const Color(0xFF020000),
                                 ),
                           ),
                         ],
@@ -160,7 +155,7 @@ class _AboneAraclarWidgetState extends State<AboneAraclarWidget>
                   Expanded(
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 8.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 8.0, 0.0),
                       child: FutureBuilder<ApiCallResponse>(
                         future: SettingsGroup.getFilterDataCall.call(
                           db: FFAppState().veritabani,
@@ -202,7 +197,7 @@ class _AboneAraclarWidgetState extends State<AboneAraclarWidget>
                                   final aracListeItem =
                                       aracListe[aracListeIndex];
                                   return Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 1.0),
                                     child: Container(
                                       width: 100.0,
@@ -214,12 +209,12 @@ class _AboneAraclarWidgetState extends State<AboneAraclarWidget>
                                             blurRadius: 0.0,
                                             color: FlutterFlowTheme.of(context)
                                                 .alternate,
-                                            offset: Offset(0.0, 1.0),
+                                            offset: const Offset(0.0, 1.0),
                                           )
                                         ],
                                       ),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             8.0, 8.0, 8.0, 8.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -228,7 +223,7 @@ class _AboneAraclarWidgetState extends State<AboneAraclarWidget>
                                               aracListeItem,
                                               r'''$.isActive''',
                                             ))
-                                              Icon(
+                                              const Icon(
                                                 Icons.local_car_wash_outlined,
                                                 color: Color(0xFF275F08),
                                                 size: 32.0,
@@ -237,7 +232,7 @@ class _AboneAraclarWidgetState extends State<AboneAraclarWidget>
                                               aracListeItem,
                                               r'''$.isActive''',
                                             ))
-                                              Icon(
+                                              const Icon(
                                                 Icons.car_repair,
                                                 color: Color(0xFFC20707),
                                                 size: 32.0,
@@ -250,7 +245,7 @@ class _AboneAraclarWidgetState extends State<AboneAraclarWidget>
                                                 children: [
                                                   Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(12.0, 0.0,
                                                                 0.0, 0.0),
                                                     child: Text(
@@ -266,7 +261,7 @@ class _AboneAraclarWidgetState extends State<AboneAraclarWidget>
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 4.0,
                                                                 0.0, 0.0),
                                                     child: Row(
@@ -275,7 +270,7 @@ class _AboneAraclarWidgetState extends State<AboneAraclarWidget>
                                                       children: [
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       12.0,
                                                                       0.0,
@@ -298,14 +293,14 @@ class _AboneAraclarWidgetState extends State<AboneAraclarWidget>
                                               ),
                                             ),
                                             FlutterFlowIconButton(
-                                              borderColor: Color(0xDBEB1313),
+                                              borderColor: const Color(0xDBEB1313),
                                               borderRadius: 20.0,
                                               borderWidth: 1.0,
                                               buttonSize: 40.0,
                                               fillColor:
                                                   FlutterFlowTheme.of(context)
                                                       .warning,
-                                              icon: Icon(
+                                              icon: const Icon(
                                                 Icons.delete_outline,
                                                 color: Color(0xFFC20707),
                                                 size: 24.0,
@@ -315,7 +310,7 @@ class _AboneAraclarWidgetState extends State<AboneAraclarWidget>
                                               },
                                             ),
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       10.0, 0.0, 0.0, 0.0),
                                               child: FlutterFlowIconButton(

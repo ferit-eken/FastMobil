@@ -1,20 +1,15 @@
 import '/backend/api_requests/api_calls.dart';
-import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'aboneler_model.dart';
 export 'aboneler_model.dart';
 
 class AbonelerWidget extends StatefulWidget {
-  const AbonelerWidget({Key? key}) : super(key: key);
+  const AbonelerWidget({super.key});
 
   @override
   _AbonelerWidgetState createState() => _AbonelerWidgetState();
@@ -72,7 +67,7 @@ class _AbonelerWidgetState extends State<AbonelerWidget>
                 borderRadius: 30.0,
                 borderWidth: 1.0,
                 buttonSize: 60.0,
-                icon: Icon(
+                icon: const Icon(
                   Icons.arrow_back_sharp,
                   color: Color(0xFF020000),
                   size: 30.0,
@@ -87,13 +82,13 @@ class _AbonelerWidgetState extends State<AbonelerWidget>
               ),
               actions: [
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 2.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 2.0, 0.0),
                   child: FlutterFlowIconButton(
                     borderColor: Colors.transparent,
                     borderRadius: 30.0,
                     borderWidth: 1.0,
                     buttonSize: 60.0,
-                    icon: Icon(
+                    icon: const Icon(
                       Icons.add_circle_outline_rounded,
                       color: Color(0xFF182C03),
                       size: 30.0,
@@ -127,7 +122,7 @@ class _AbonelerWidgetState extends State<AbonelerWidget>
                           context: context,
                           builder: (alertDialogContext) {
                             return AlertDialog(
-                              title: Text('Hata'),
+                              title: const Text('Hata'),
                               content: Text(SettingsGroup.getIDCall
                                   .message(
                                     (_model.apiresultgetKod?.jsonBody ?? ''),
@@ -137,7 +132,7 @@ class _AbonelerWidgetState extends State<AbonelerWidget>
                                 TextButton(
                                   onPressed: () =>
                                       Navigator.pop(alertDialogContext),
-                                  child: Text('Ok'),
+                                  child: const Text('Ok'),
                                 ),
                               ],
                             );
@@ -162,7 +157,7 @@ class _AbonelerWidgetState extends State<AbonelerWidget>
                   Expanded(
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 8.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 8.0, 0.0),
                       child: FutureBuilder<ApiCallResponse>(
                         future: SettingsGroup.getALLCall.call(
                           db: FFAppState().veritabani,
@@ -199,7 +194,7 @@ class _AbonelerWidgetState extends State<AbonelerWidget>
                                 itemBuilder: (context, listeIndex) {
                                   final listeItem = liste[listeIndex];
                                   return Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 1.0),
                                     child: Container(
                                       width: 100.0,
@@ -211,12 +206,12 @@ class _AbonelerWidgetState extends State<AbonelerWidget>
                                             blurRadius: 0.0,
                                             color: FlutterFlowTheme.of(context)
                                                 .alternate,
-                                            offset: Offset(0.0, 1.0),
+                                            offset: const Offset(0.0, 1.0),
                                           )
                                         ],
                                       ),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             8.0, 8.0, 8.0, 8.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -236,7 +231,7 @@ class _AbonelerWidgetState extends State<AbonelerWidget>
                                                 children: [
                                                   Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(12.0, 0.0,
                                                                 0.0, 0.0),
                                                     child: Text(
@@ -252,7 +247,7 @@ class _AbonelerWidgetState extends State<AbonelerWidget>
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 4.0,
                                                                 0.0, 0.0),
                                                     child: Row(
@@ -261,7 +256,7 @@ class _AbonelerWidgetState extends State<AbonelerWidget>
                                                       children: [
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       12.0,
                                                                       0.0,
@@ -279,7 +274,7 @@ class _AbonelerWidgetState extends State<AbonelerWidget>
                                                         ),
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       4.0,
                                                                       0.0,
@@ -309,7 +304,7 @@ class _AbonelerWidgetState extends State<AbonelerWidget>
                                               ),
                                             ),
                                             Align(
-                                              alignment: AlignmentDirectional(
+                                              alignment: const AlignmentDirectional(
                                                   0.00, 0.00),
                                               child: FlutterFlowIconButton(
                                                 borderColor:
@@ -342,10 +337,10 @@ class _AbonelerWidgetState extends State<AbonelerWidget>
                                               ),
                                             ),
                                             Align(
-                                              alignment: AlignmentDirectional(
+                                              alignment: const AlignmentDirectional(
                                                   0.00, 0.00),
                                               child: Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         10.0, 0.0, 0.0, 0.0),
                                                 child: FlutterFlowIconButton(

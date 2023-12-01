@@ -2,19 +2,16 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'support_model.dart';
 export 'support_model.dart';
 
 class SupportWidget extends StatefulWidget {
-  const SupportWidget({Key? key}) : super(key: key);
+  const SupportWidget({super.key});
 
   @override
   _SupportWidgetState createState() => _SupportWidgetState();
@@ -41,15 +38,15 @@ class _SupportWidgetState extends State<SupportWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: Offset(0.0, 40.0),
-          end: Offset(0.0, 0.0),
+          begin: const Offset(0.0, 40.0),
+          end: const Offset(0.0, 0.0),
         ),
         ScaleEffect(
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: Offset(0.6, 0.6),
-          end: Offset(1.0, 1.0),
+          begin: const Offset(0.6, 0.6),
+          end: const Offset(1.0, 1.0),
         ),
       ],
     ),
@@ -67,8 +64,8 @@ class _SupportWidgetState extends State<SupportWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: Offset(50.0, 0.0),
-          end: Offset(0.0, 0.0),
+          begin: const Offset(50.0, 0.0),
+          end: const Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -86,8 +83,8 @@ class _SupportWidgetState extends State<SupportWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: Offset(50.0, 0.0),
-          end: Offset(0.0, 0.0),
+          begin: const Offset(50.0, 0.0),
+          end: const Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -106,8 +103,8 @@ class _SupportWidgetState extends State<SupportWidget>
           curve: Curves.easeInOut,
           delay: 100.ms,
           duration: 600.ms,
-          begin: Offset(60.0, 0.0),
-          end: Offset(0.0, 0.0),
+          begin: const Offset(60.0, 0.0),
+          end: const Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -125,8 +122,8 @@ class _SupportWidgetState extends State<SupportWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: Offset(50.0, 0.0),
-          end: Offset(0.0, 0.0),
+          begin: const Offset(50.0, 0.0),
+          end: const Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -187,7 +184,7 @@ class _SupportWidgetState extends State<SupportWidget>
                   context.pop();
                 },
               ),
-              actions: [],
+              actions: const [],
               centerTitle: false,
               elevation: 0.0,
             ),
@@ -198,7 +195,7 @@ class _SupportWidgetState extends State<SupportWidget>
                 children: [
                   Expanded(
                     child: Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(
+                      padding: const EdgeInsetsDirectional.fromSTEB(
                           12.0, 12.0, 12.0, 12.0),
                       child: SingleChildScrollView(
                         child: Column(
@@ -220,7 +217,7 @@ class _SupportWidgetState extends State<SupportWidget>
                             ).animateOnPageLoad(
                                 animationsMap['imageOnPageLoadAnimation']!),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 16.0, 0.0, 0.0),
                               child: Text(
                                 'Destek  Hizmetleri',
@@ -230,7 +227,7 @@ class _SupportWidgetState extends State<SupportWidget>
                                   animationsMap['textOnPageLoadAnimation1']!),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 4.0, 0.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -250,7 +247,7 @@ class _SupportWidgetState extends State<SupportWidget>
                                   animationsMap['rowOnPageLoadAnimation']!),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   4.0, 4.0, 0.0, 0.0),
                               child: Text(
                                 'Sistem ile ilgili yaşadağınız sorun yada talepleriniz için aşağıdaki iletişim kanallarını kullanabilirsiniz.',
@@ -273,7 +270,7 @@ class _SupportWidgetState extends State<SupportWidget>
                                   size: 24.0,
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       5.0, 0.0, 0.0, 0.0),
                                   child: Text(
                                     '0850 850 00 85',
@@ -292,7 +289,7 @@ class _SupportWidgetState extends State<SupportWidget>
                                   size: 24.0,
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       5.0, 0.0, 0.0, 0.0),
                                   child: Text(
                                     'destek@fastpark.com.tr',
@@ -312,7 +309,7 @@ class _SupportWidgetState extends State<SupportWidget>
                                   size: 24.0,
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       5.0, 0.0, 0.0, 0.0),
                                   child: Text(
                                     'TÜBİTAK Teknoloji Geliştirme Bölgesi No:30/1\nGebze /KOCAELİ / TÜRKİYE',
@@ -323,13 +320,13 @@ class _SupportWidgetState extends State<SupportWidget>
                               ],
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 15.0, 0.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         5.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       'www.fastpark.com.tr',
@@ -341,13 +338,13 @@ class _SupportWidgetState extends State<SupportWidget>
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 5.0, 0.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         5.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       'Fastparkturkiye',
@@ -359,7 +356,7 @@ class _SupportWidgetState extends State<SupportWidget>
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 5.0, 0.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -371,7 +368,7 @@ class _SupportWidgetState extends State<SupportWidget>
                                     size: 24.0,
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         5.0, 0.0, 0.0, 0.0),
                                     child: FaIcon(
                                       FontAwesomeIcons.twitterSquare,
@@ -381,7 +378,7 @@ class _SupportWidgetState extends State<SupportWidget>
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         5.0, 0.0, 0.0, 0.0),
                                     child: FaIcon(
                                       FontAwesomeIcons.linkedinIn,
@@ -391,7 +388,7 @@ class _SupportWidgetState extends State<SupportWidget>
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         5.0, 0.0, 0.0, 0.0),
                                     child: FaIcon(
                                       FontAwesomeIcons.instagram,

@@ -2,14 +2,12 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'portal_mainmenu_model.dart';
 export 'portal_mainmenu_model.dart';
 
 class PortalMainmenuWidget extends StatefulWidget {
-  const PortalMainmenuWidget({Key? key}) : super(key: key);
+  const PortalMainmenuWidget({super.key});
 
   @override
   _PortalMainmenuWidgetState createState() => _PortalMainmenuWidgetState();
@@ -61,13 +59,13 @@ class _PortalMainmenuWidgetState extends State<PortalMainmenuWidget> {
           ),
         ),
         child: Padding(
-          padding: EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 16.0),
+          padding: const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 16.0),
           child: Column(
             mainAxisSize: MainAxisSize.max,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 12.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 12.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
@@ -95,7 +93,7 @@ class _PortalMainmenuWidgetState extends State<PortalMainmenuWidget> {
                   children: [
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 0.0, 0.0),
                       child: Text(
                         'Ana Menü',
                         style: FlutterFlowTheme.of(context).labelMedium,
@@ -103,9 +101,9 @@ class _PortalMainmenuWidgetState extends State<PortalMainmenuWidget> {
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                       child: AnimatedContainer(
-                        duration: Duration(milliseconds: 200),
+                        duration: const Duration(milliseconds: 200),
                         curve: Curves.easeInOut,
                         width: double.infinity,
                         height: 44.0,
@@ -115,7 +113,7 @@ class _PortalMainmenuWidgetState extends State<PortalMainmenuWidget> {
                           shape: BoxShape.rectangle,
                         ),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               8.0, 0.0, 6.0, 0.0),
                           child: InkWell(
                             splashColor: Colors.transparent,
@@ -135,7 +133,7 @@ class _PortalMainmenuWidgetState extends State<PortalMainmenuWidget> {
                                   size: 24.0,
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       12.0, 0.0, 0.0, 0.0),
                                   child: Text(
                                     'Dashboard',
@@ -151,9 +149,9 @@ class _PortalMainmenuWidgetState extends State<PortalMainmenuWidget> {
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                       child: AnimatedContainer(
-                        duration: Duration(milliseconds: 200),
+                        duration: const Duration(milliseconds: 200),
                         curve: Curves.easeInOut,
                         width: double.infinity,
                         height: 44.0,
@@ -163,7 +161,7 @@ class _PortalMainmenuWidgetState extends State<PortalMainmenuWidget> {
                           shape: BoxShape.rectangle,
                         ),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               8.0, 0.0, 6.0, 0.0),
                           child: InkWell(
                             splashColor: Colors.transparent,
@@ -183,7 +181,7 @@ class _PortalMainmenuWidgetState extends State<PortalMainmenuWidget> {
                                   size: 24.0,
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       12.0, 0.0, 0.0, 0.0),
                                   child: Text(
                                     'Abone Yönetimi',
@@ -199,9 +197,9 @@ class _PortalMainmenuWidgetState extends State<PortalMainmenuWidget> {
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                       child: AnimatedContainer(
-                        duration: Duration(milliseconds: 200),
+                        duration: const Duration(milliseconds: 200),
                         curve: Curves.easeInOut,
                         width: double.infinity,
                         height: 44.0,
@@ -211,7 +209,7 @@ class _PortalMainmenuWidgetState extends State<PortalMainmenuWidget> {
                           shape: BoxShape.rectangle,
                         ),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               8.0, 0.0, 6.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -222,7 +220,7 @@ class _PortalMainmenuWidgetState extends State<PortalMainmenuWidget> {
                                 size: 24.0,
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     12.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   'Raporlar',
@@ -237,7 +235,7 @@ class _PortalMainmenuWidgetState extends State<PortalMainmenuWidget> {
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                       child: Text(
                         'Settings',
                         style: FlutterFlowTheme.of(context).labelMedium,
@@ -245,9 +243,9 @@ class _PortalMainmenuWidgetState extends State<PortalMainmenuWidget> {
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                       child: AnimatedContainer(
-                        duration: Duration(milliseconds: 200),
+                        duration: const Duration(milliseconds: 200),
                         curve: Curves.easeInOut,
                         width: double.infinity,
                         height: 44.0,
@@ -257,7 +255,7 @@ class _PortalMainmenuWidgetState extends State<PortalMainmenuWidget> {
                           shape: BoxShape.rectangle,
                         ),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               8.0, 0.0, 6.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -269,7 +267,7 @@ class _PortalMainmenuWidgetState extends State<PortalMainmenuWidget> {
                               ),
                               Expanded(
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       12.0, 0.0, 0.0, 0.0),
                                   child: Text(
                                     'Bildirimler',
@@ -285,9 +283,9 @@ class _PortalMainmenuWidgetState extends State<PortalMainmenuWidget> {
                                   borderRadius: BorderRadius.circular(8.0),
                                 ),
                                 child: Align(
-                                  alignment: AlignmentDirectional(0.00, 0.00),
+                                  alignment: const AlignmentDirectional(0.00, 0.00),
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         8.0, 4.0, 8.0, 4.0),
                                     child: Text(
                                       '12',
@@ -309,9 +307,9 @@ class _PortalMainmenuWidgetState extends State<PortalMainmenuWidget> {
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                       child: AnimatedContainer(
-                        duration: Duration(milliseconds: 200),
+                        duration: const Duration(milliseconds: 200),
                         curve: Curves.easeInOut,
                         width: double.infinity,
                         height: 44.0,
@@ -321,7 +319,7 @@ class _PortalMainmenuWidgetState extends State<PortalMainmenuWidget> {
                           shape: BoxShape.rectangle,
                         ),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               8.0, 0.0, 6.0, 0.0),
                           child: InkWell(
                             splashColor: Colors.transparent,
@@ -341,7 +339,7 @@ class _PortalMainmenuWidgetState extends State<PortalMainmenuWidget> {
                                   size: 24.0,
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       12.0, 0.0, 0.0, 0.0),
                                   child: Text(
                                     'Tanımlar',
@@ -357,9 +355,9 @@ class _PortalMainmenuWidgetState extends State<PortalMainmenuWidget> {
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                       child: AnimatedContainer(
-                        duration: Duration(milliseconds: 200),
+                        duration: const Duration(milliseconds: 200),
                         curve: Curves.easeInOut,
                         width: double.infinity,
                         height: 44.0,
@@ -369,7 +367,7 @@ class _PortalMainmenuWidgetState extends State<PortalMainmenuWidget> {
                           shape: BoxShape.rectangle,
                         ),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               8.0, 0.0, 6.0, 0.0),
                           child: InkWell(
                             splashColor: Colors.transparent,
@@ -389,7 +387,7 @@ class _PortalMainmenuWidgetState extends State<PortalMainmenuWidget> {
                                   size: 24.0,
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       12.0, 0.0, 0.0, 0.0),
                                   child: Text(
                                     'Kullanıcılar',
@@ -403,7 +401,7 @@ class _PortalMainmenuWidgetState extends State<PortalMainmenuWidget> {
                         ),
                       ),
                     ),
-                  ].divide(SizedBox(height: 12.0)),
+                  ].divide(const SizedBox(height: 12.0)),
                 ),
               ),
               Divider(
@@ -412,7 +410,7 @@ class _PortalMainmenuWidgetState extends State<PortalMainmenuWidget> {
                 color: FlutterFlowTheme.of(context).alternate,
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 12.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 12.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
@@ -429,12 +427,12 @@ class _PortalMainmenuWidgetState extends State<PortalMainmenuWidget> {
                       ),
                       child: Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(2.0, 2.0, 2.0, 2.0),
+                            const EdgeInsetsDirectional.fromSTEB(2.0, 2.0, 2.0, 2.0),
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(8.0),
                           child: CachedNetworkImage(
-                            fadeInDuration: Duration(milliseconds: 500),
-                            fadeOutDuration: Duration(milliseconds: 500),
+                            fadeInDuration: const Duration(milliseconds: 500),
+                            fadeOutDuration: const Duration(milliseconds: 500),
                             imageUrl:
                                 'https://images.unsplash.com/photo-1624561172888-ac93c696e10c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NjJ8fHVzZXJzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=900&q=60',
                             width: 44.0,
@@ -447,7 +445,7 @@ class _PortalMainmenuWidgetState extends State<PortalMainmenuWidget> {
                     Expanded(
                       child: Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -460,7 +458,7 @@ class _PortalMainmenuWidgetState extends State<PortalMainmenuWidget> {
                               style: FlutterFlowTheme.of(context).bodyLarge,
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 4.0, 0.0, 0.0),
                               child: Text(
                                 getJsonField(
@@ -478,7 +476,7 @@ class _PortalMainmenuWidgetState extends State<PortalMainmenuWidget> {
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.end,

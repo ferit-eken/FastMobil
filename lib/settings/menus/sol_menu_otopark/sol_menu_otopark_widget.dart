@@ -1,14 +1,12 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'sol_menu_otopark_model.dart';
 export 'sol_menu_otopark_model.dart';
 
 class SolMenuOtoparkWidget extends StatefulWidget {
-  const SolMenuOtoparkWidget({Key? key}) : super(key: key);
+  const SolMenuOtoparkWidget({super.key});
 
   @override
   _SolMenuOtoparkWidgetState createState() => _SolMenuOtoparkWidgetState();
@@ -45,20 +43,20 @@ class _SolMenuOtoparkWidgetState extends State<SolMenuOtoparkWidget> {
     return Container(
       width: 270.0,
       height: double.infinity,
-      constraints: BoxConstraints(
+      constraints: const BoxConstraints(
         maxWidth: 270.0,
       ),
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).secondaryBackground,
       ),
       child: Padding(
-        padding: EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+        padding: const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(10.0, 5.0, 5.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(10.0, 5.0, 5.0, 0.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -81,7 +79,7 @@ class _SolMenuOtoparkWidgetState extends State<SolMenuOtoparkWidget> {
               ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(5.0, 5.0, 5.0, 5.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(5.0, 5.0, 5.0, 5.0),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(8.0),
                 child: Image.asset(
@@ -93,7 +91,7 @@ class _SolMenuOtoparkWidgetState extends State<SolMenuOtoparkWidget> {
               ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
               child: Text(
                 getJsonField(
                   FFAppState().UserInfo,
@@ -111,10 +109,10 @@ class _SolMenuOtoparkWidgetState extends State<SolMenuOtoparkWidget> {
                 ),
                 child: Padding(
                   padding:
-                      EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 10.0),
+                      const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 10.0),
                   child: GridView(
                     padding: EdgeInsets.zero,
-                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 3,
                       crossAxisSpacing: 10.0,
                       mainAxisSpacing: 10.0,
@@ -134,7 +132,7 @@ class _SolMenuOtoparkWidgetState extends State<SolMenuOtoparkWidget> {
                           ),
                         ),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               3.0, 3.0, 3.0, 3.0),
                           child: InkWell(
                             splashColor: Colors.transparent,
@@ -177,7 +175,7 @@ class _SolMenuOtoparkWidgetState extends State<SolMenuOtoparkWidget> {
                           ),
                         ),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               3.0, 3.0, 3.0, 3.0),
                           child: InkWell(
                             splashColor: Colors.transparent,
@@ -220,7 +218,7 @@ class _SolMenuOtoparkWidgetState extends State<SolMenuOtoparkWidget> {
                           ),
                         ),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               3.0, 3.0, 3.0, 3.0),
                           child: InkWell(
                             splashColor: Colors.transparent,
@@ -263,7 +261,7 @@ class _SolMenuOtoparkWidgetState extends State<SolMenuOtoparkWidget> {
                           ),
                         ),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               3.0, 3.0, 3.0, 3.0),
                           child: InkWell(
                             splashColor: Colors.transparent,
@@ -306,7 +304,7 @@ class _SolMenuOtoparkWidgetState extends State<SolMenuOtoparkWidget> {
                           ),
                         ),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               3.0, 3.0, 3.0, 3.0),
                           child: InkWell(
                             splashColor: Colors.transparent,
@@ -349,7 +347,7 @@ class _SolMenuOtoparkWidgetState extends State<SolMenuOtoparkWidget> {
                           ),
                         ),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               3.0, 3.0, 3.0, 3.0),
                           child: InkWell(
                             splashColor: Colors.transparent,
@@ -392,7 +390,7 @@ class _SolMenuOtoparkWidgetState extends State<SolMenuOtoparkWidget> {
                           ),
                         ),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               3.0, 3.0, 3.0, 3.0),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
@@ -422,12 +420,12 @@ class _SolMenuOtoparkWidgetState extends State<SolMenuOtoparkWidget> {
                                 .secondaryBackground,
                             borderRadius: BorderRadius.circular(5.0),
                             border: Border.all(
-                              color: Color(0xFFC20707),
+                              color: const Color(0xFFC20707),
                               width: 2.0,
                             ),
                           ),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 3.0, 3.0, 3.0, 3.0),
                             child: InkWell(
                               splashColor: Colors.transparent,
@@ -442,7 +440,7 @@ class _SolMenuOtoparkWidgetState extends State<SolMenuOtoparkWidget> {
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceEvenly,
                                 children: [
-                                  Icon(
+                                  const Icon(
                                     Icons.settings,
                                     color: Color(0xFFC20707),
                                     size: 32.0,
@@ -454,7 +452,7 @@ class _SolMenuOtoparkWidgetState extends State<SolMenuOtoparkWidget> {
                                         .bodyMedium
                                         .override(
                                           fontFamily: 'Readex Pro',
-                                          color: Color(0xFFC20707),
+                                          color: const Color(0xFFC20707),
                                         ),
                                   ),
                                 ],
@@ -474,7 +472,7 @@ class _SolMenuOtoparkWidgetState extends State<SolMenuOtoparkWidget> {
                           ),
                         ),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               3.0, 3.0, 3.0, 3.0),
                           child: InkWell(
                             splashColor: Colors.transparent,

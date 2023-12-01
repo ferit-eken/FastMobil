@@ -4,21 +4,19 @@ import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'led_tabela_detay_model.dart';
 export 'led_tabela_detay_model.dart';
 
 class LedTabelaDetayWidget extends StatefulWidget {
   const LedTabelaDetayWidget({
-    Key? key,
+    super.key,
     this.item,
-  }) : super(key: key);
+  });
 
   final dynamic item;
 
@@ -147,7 +145,7 @@ class _LedTabelaDetayWidgetState extends State<LedTabelaDetayWidget> {
               ),
               actions: [
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
                   child: InkWell(
                     splashColor: Colors.transparent,
                     focusColor: Colors.transparent,
@@ -183,7 +181,7 @@ class _LedTabelaDetayWidgetState extends State<LedTabelaDetayWidget> {
                           context: context,
                           builder: (alertDialogContext) {
                             return AlertDialog(
-                              title: Text('Hata'),
+                              title: const Text('Hata'),
                               content: Text(SettingsGroup.ledPanelUpdateCall
                                   .message(
                                     (_model.apiResultgar?.jsonBody ?? ''),
@@ -193,7 +191,7 @@ class _LedTabelaDetayWidgetState extends State<LedTabelaDetayWidget> {
                                 TextButton(
                                   onPressed: () =>
                                       Navigator.pop(alertDialogContext),
-                                  child: Text('Ok'),
+                                  child: const Text('Ok'),
                                 ),
                               ],
                             );
@@ -203,7 +201,7 @@ class _LedTabelaDetayWidgetState extends State<LedTabelaDetayWidget> {
 
                       setState(() {});
                     },
-                    child: Icon(
+                    child: const Icon(
                       Icons.save_sharp,
                       color: Color(0xFF020000),
                       size: 42.0,
@@ -223,14 +221,14 @@ class _LedTabelaDetayWidgetState extends State<LedTabelaDetayWidget> {
                   Expanded(
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 1.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 1.0, 0.0, 0.0),
                       child: Container(
                         width: double.infinity,
                         height: double.infinity,
                         decoration: BoxDecoration(
                           color:
                               FlutterFlowTheme.of(context).secondaryBackground,
-                          boxShadow: [
+                          boxShadow: const [
                             BoxShadow(
                               blurRadius: 3.0,
                               color: Color(0x33000000),
@@ -243,7 +241,7 @@ class _LedTabelaDetayWidgetState extends State<LedTabelaDetayWidget> {
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 16.0, 16.0, 16.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -252,7 +250,7 @@ class _LedTabelaDetayWidgetState extends State<LedTabelaDetayWidget> {
                                       width: 90.0,
                                       height: 90.0,
                                       decoration: BoxDecoration(
-                                        color: Color(0xFF3CA349),
+                                        color: const Color(0xFF3CA349),
                                         shape: BoxShape.circle,
                                         border: Border.all(
                                           color: FlutterFlowTheme.of(context)
@@ -268,7 +266,7 @@ class _LedTabelaDetayWidgetState extends State<LedTabelaDetayWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           16.0, 0.0, 0.0, 0.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
@@ -277,7 +275,7 @@ class _LedTabelaDetayWidgetState extends State<LedTabelaDetayWidget> {
                                         crossAxisAlignment:
                                             CrossAxisAlignment.start,
                                         children: [
-                                          Container(
+                                          SizedBox(
                                             width: 200.0,
                                             child: TextFormField(
                                               controller:
@@ -357,7 +355,7 @@ class _LedTabelaDetayWidgetState extends State<LedTabelaDetayWidget> {
                                           ),
                                           Container(
                                             width: 200.0,
-                                            decoration: BoxDecoration(),
+                                            decoration: const BoxDecoration(),
                                             child: FlutterFlowDropDown<String>(
                                               controller: _model
                                                       .txtMarkaValueController ??=
@@ -370,7 +368,7 @@ class _LedTabelaDetayWidgetState extends State<LedTabelaDetayWidget> {
                                               ),
                                               options: List<String>.from(
                                                   ['HD', 'INT', 'EKS']),
-                                              optionLabels: [
+                                              optionLabels: const [
                                                 'HD',
                                                 'TRAFFIX',
                                                 'EKS'
@@ -400,7 +398,7 @@ class _LedTabelaDetayWidgetState extends State<LedTabelaDetayWidget> {
                                                       .alternate,
                                               borderWidth: 2.0,
                                               borderRadius: 8.0,
-                                              margin: EdgeInsetsDirectional
+                                              margin: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       16.0, 4.0, 16.0, 4.0),
                                               hidesUnderline: true,
@@ -421,7 +419,7 @@ class _LedTabelaDetayWidgetState extends State<LedTabelaDetayWidget> {
                                       Expanded(
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   8.0, 0.0, 8.0, 0.0),
                                           child: TextFormField(
                                             controller: _model.txtIdController,
@@ -491,7 +489,7 @@ class _LedTabelaDetayWidgetState extends State<LedTabelaDetayWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -513,7 +511,7 @@ class _LedTabelaDetayWidgetState extends State<LedTabelaDetayWidget> {
                                           r'''$.BaglantiTuru''',
                                         ).toString(),
                                       ),
-                                      options: ['TCP', 'COM'],
+                                      options: const ['TCP', 'COM'],
                                       onChanged: (val) => setState(() =>
                                           _model.txtBaglantituruValue = val),
                                       width: 200.0,
@@ -534,7 +532,7 @@ class _LedTabelaDetayWidgetState extends State<LedTabelaDetayWidget> {
                                           .alternate,
                                       borderWidth: 2.0,
                                       borderRadius: 8.0,
-                                      margin: EdgeInsetsDirectional.fromSTEB(
+                                      margin: const EdgeInsetsDirectional.fromSTEB(
                                           16.0, 4.0, 16.0, 4.0),
                                       hidesUnderline: true,
                                       isSearchable: false,
@@ -544,7 +542,7 @@ class _LedTabelaDetayWidgetState extends State<LedTabelaDetayWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -556,7 +554,7 @@ class _LedTabelaDetayWidgetState extends State<LedTabelaDetayWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium,
                                     ),
-                                    Container(
+                                    SizedBox(
                                       width: 200.0,
                                       child: TextFormField(
                                         controller: _model.txtAdresController,
@@ -628,7 +626,7 @@ class _LedTabelaDetayWidgetState extends State<LedTabelaDetayWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -640,7 +638,7 @@ class _LedTabelaDetayWidgetState extends State<LedTabelaDetayWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium,
                                     ),
-                                    Container(
+                                    SizedBox(
                                       width: 200.0,
                                       child: TextFormField(
                                         controller: _model.txtTcpportController,
@@ -712,7 +710,7 @@ class _LedTabelaDetayWidgetState extends State<LedTabelaDetayWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -724,7 +722,7 @@ class _LedTabelaDetayWidgetState extends State<LedTabelaDetayWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium,
                                     ),
-                                    Container(
+                                    SizedBox(
                                       width: 200.0,
                                       child: TextFormField(
                                         controller:
@@ -797,7 +795,7 @@ class _LedTabelaDetayWidgetState extends State<LedTabelaDetayWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -817,7 +815,7 @@ class _LedTabelaDetayWidgetState extends State<LedTabelaDetayWidget> {
                                         ],
                                       ),
                                     ),
-                                    Container(
+                                    SizedBox(
                                       width: 100.0,
                                       child: TextFormField(
                                         controller: _model.txtPoskeyController1,
@@ -886,7 +884,7 @@ class _LedTabelaDetayWidgetState extends State<LedTabelaDetayWidget> {
                                             .asValidator(context),
                                       ),
                                     ),
-                                    Container(
+                                    SizedBox(
                                       width: 100.0,
                                       child: TextFormField(
                                         controller: _model.txtPoskeyController2,
@@ -959,7 +957,7 @@ class _LedTabelaDetayWidgetState extends State<LedTabelaDetayWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -1047,7 +1045,7 @@ class _LedTabelaDetayWidgetState extends State<LedTabelaDetayWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,

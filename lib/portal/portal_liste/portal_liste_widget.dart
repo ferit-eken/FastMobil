@@ -3,19 +3,17 @@ import '/flutter_flow/flutter_flow_choice_chips.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/portal/poral_menu/side_menu/side_menu_widget.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'portal_liste_model.dart';
 export 'portal_liste_model.dart';
 
 class PortalListeWidget extends StatefulWidget {
-  const PortalListeWidget({Key? key}) : super(key: key);
+  const PortalListeWidget({super.key});
 
   @override
   _PortalListeWidgetState createState() => _PortalListeWidgetState();
@@ -75,7 +73,7 @@ class _PortalListeWidgetState extends State<PortalListeWidget> {
                 borderRadius: 30.0,
                 borderWidth: 1.0,
                 buttonSize: 60.0,
-                icon: Icon(
+                icon: const Icon(
                   Icons.menu_outlined,
                   color: Color(0xFF020000),
                   size: 30.0,
@@ -92,7 +90,7 @@ class _PortalListeWidgetState extends State<PortalListeWidget> {
                       fontSize: 22.0,
                     ),
               ),
-              actions: [],
+              actions: const [],
               centerTitle: true,
               elevation: 2.0,
             ),
@@ -115,26 +113,26 @@ class _PortalListeWidgetState extends State<PortalListeWidget> {
                           child: wrapWithModel(
                             model: _model.sideMenuModel,
                             updateCallback: () => setState(() {}),
-                            child: SideMenuWidget(),
+                            child: const SideMenuWidget(),
                           ),
                         ),
                         Expanded(
                           flex: 8,
                           child: Align(
-                            alignment: AlignmentDirectional(0.00, -1.00),
+                            alignment: const AlignmentDirectional(0.00, -1.00),
                             child: Container(
                               width: double.infinity,
-                              constraints: BoxConstraints(
+                              constraints: const BoxConstraints(
                                 maxWidth: 1470.0,
                               ),
-                              decoration: BoxDecoration(),
+                              decoration: const BoxDecoration(),
                               child: SingleChildScrollView(
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 16.0, 16.0, 0.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -147,7 +145,7 @@ class _PortalListeWidgetState extends State<PortalListeWidget> {
                                                 CrossAxisAlignment.start,
                                             children: [
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         16.0, 0.0, 0.0, 4.0),
                                                 child: Text(
@@ -158,7 +156,7 @@ class _PortalListeWidgetState extends State<PortalListeWidget> {
                                                 ),
                                               ),
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         16.0, 0.0, 0.0, 8.0),
                                                 child: Text(
@@ -172,7 +170,7 @@ class _PortalListeWidgetState extends State<PortalListeWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 0.0, 16.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -197,7 +195,7 @@ class _PortalListeWidgetState extends State<PortalListeWidget> {
                                                   ),
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(2.0, 2.0,
                                                                 2.0, 2.0),
                                                     child: ClipRRect(
@@ -206,11 +204,11 @@ class _PortalListeWidgetState extends State<PortalListeWidget> {
                                                               8.0),
                                                       child: CachedNetworkImage(
                                                         fadeInDuration:
-                                                            Duration(
+                                                            const Duration(
                                                                 milliseconds:
                                                                     500),
                                                         fadeOutDuration:
-                                                            Duration(
+                                                            const Duration(
                                                                 milliseconds:
                                                                     500),
                                                         imageUrl:
@@ -229,7 +227,7 @@ class _PortalListeWidgetState extends State<PortalListeWidget> {
                                                 ))
                                                   Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(12.0, 0.0,
                                                                 0.0, 0.0),
                                                     child: Column(
@@ -257,11 +255,11 @@ class _PortalListeWidgetState extends State<PortalListeWidget> {
                                               ],
                                             ),
                                           ),
-                                        ].divide(SizedBox(width: 6.0)),
+                                        ].divide(const SizedBox(width: 6.0)),
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           16.0, 8.0, 16.0, 0.0),
                                       child: TextFormField(
                                         controller: _model.textController,
@@ -319,7 +317,7 @@ class _PortalListeWidgetState extends State<PortalListeWidget> {
                                                 BorderRadius.circular(12.0),
                                           ),
                                           contentPadding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   20.0, 0.0, 0.0, 0.0),
                                           suffixIcon: Icon(
                                             Icons.search_rounded,
@@ -344,10 +342,10 @@ class _PortalListeWidgetState extends State<PortalListeWidget> {
                                         children: [
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 8.0, 0.0, 8.0),
                                             child: FlutterFlowChoiceChips(
-                                              options: [
+                                              options: const [
                                                 ChipData('All'),
                                                 ChipData('Owners'),
                                                 ChipData('Editors'),
@@ -425,12 +423,12 @@ class _PortalListeWidgetState extends State<PortalListeWidget> {
                                             ),
                                           ),
                                         ]
-                                            .addToStart(SizedBox(width: 16.0))
-                                            .addToEnd(SizedBox(width: 16.0)),
+                                            .addToStart(const SizedBox(width: 16.0))
+                                            .addToEnd(const SizedBox(width: 16.0)),
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           16.0, 0.0, 16.0, 0.0),
                                       child: Container(
                                         width: double.infinity,
@@ -442,7 +440,7 @@ class _PortalListeWidgetState extends State<PortalListeWidget> {
                                               BorderRadius.circular(12.0),
                                         ),
                                         alignment:
-                                            AlignmentDirectional(-1.00, 0.00),
+                                            const AlignmentDirectional(-1.00, 0.00),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
@@ -453,15 +451,15 @@ class _PortalListeWidgetState extends State<PortalListeWidget> {
                                               Container(
                                                 width: 40.0,
                                                 height: 100.0,
-                                                decoration: BoxDecoration(),
+                                                decoration: const BoxDecoration(),
                                               ),
                                             Expanded(
                                               flex: 4,
                                               child: Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     -1.00, 0.00),
                                                 child: Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           16.0, 0.0, 0.0, 0.0),
                                                   child: Text(
@@ -481,7 +479,7 @@ class _PortalListeWidgetState extends State<PortalListeWidget> {
                                                 flex: 2,
                                                 child: Align(
                                                   alignment:
-                                                      AlignmentDirectional(
+                                                      const AlignmentDirectional(
                                                           -1.00, 0.00),
                                                   child: Text(
                                                     'Last Active',
@@ -500,7 +498,7 @@ class _PortalListeWidgetState extends State<PortalListeWidget> {
                                                 flex: 3,
                                                 child: Align(
                                                   alignment:
-                                                      AlignmentDirectional(
+                                                      const AlignmentDirectional(
                                                           -1.00, 0.00),
                                                   child: Text(
                                                     'Title',
@@ -519,7 +517,7 @@ class _PortalListeWidgetState extends State<PortalListeWidget> {
                                                 children: [
                                                   Align(
                                                     alignment:
-                                                        AlignmentDirectional(
+                                                        const AlignmentDirectional(
                                                             1.00, 0.00),
                                                     child: Text(
                                                       'Status',
@@ -574,7 +572,7 @@ class _PortalListeWidgetState extends State<PortalListeWidget> {
                                                         ?.toList() ??
                                                     [];
                                             return ListView.separated(
-                                              padding: EdgeInsets.fromLTRB(
+                                              padding: const EdgeInsets.fromLTRB(
                                                 0,
                                                 0,
                                                 0,
@@ -585,7 +583,7 @@ class _PortalListeWidgetState extends State<PortalListeWidget> {
                                               scrollDirection: Axis.vertical,
                                               itemCount: aboneListe.length,
                                               separatorBuilder: (_, __) =>
-                                                  SizedBox(height: 1.0),
+                                                  const SizedBox(height: 1.0),
                                               itemBuilder:
                                                   (context, aboneListeIndex) {
                                                 final aboneListeItem =
@@ -604,13 +602,13 @@ class _PortalListeWidgetState extends State<PortalListeWidget> {
                                                                     context)
                                                                 .alternate,
                                                         offset:
-                                                            Offset(0.0, 1.0),
+                                                            const Offset(0.0, 1.0),
                                                       )
                                                     ],
                                                   ),
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(
                                                                 16.0,
                                                                 12.0,
@@ -641,7 +639,7 @@ class _PortalListeWidgetState extends State<PortalListeWidget> {
                                                           ),
                                                           child: Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         2.0,
                                                                         2.0,
@@ -667,7 +665,7 @@ class _PortalListeWidgetState extends State<PortalListeWidget> {
                                                           flex: 4,
                                                           child: Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         12.0,
                                                                         0.0,
@@ -691,7 +689,7 @@ class _PortalListeWidgetState extends State<PortalListeWidget> {
                                                                       .bodyLarge,
                                                                 ),
                                                                 Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -710,7 +708,7 @@ class _PortalListeWidgetState extends State<PortalListeWidget> {
                                                                         ),
                                                                   ),
                                                                 ),
-                                                              ].divide(SizedBox(
+                                                              ].divide(const SizedBox(
                                                                   height: 4.0)),
                                                             ),
                                                           ),
@@ -723,7 +721,7 @@ class _PortalListeWidgetState extends State<PortalListeWidget> {
                                                             flex: 2,
                                                             child: Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -746,7 +744,7 @@ class _PortalListeWidgetState extends State<PortalListeWidget> {
                                                             flex: 3,
                                                             child: Align(
                                                               alignment:
-                                                                  AlignmentDirectional(
+                                                                  const AlignmentDirectional(
                                                                       -1.00,
                                                                       0.00),
                                                               child: Text(
@@ -783,12 +781,12 @@ class _PortalListeWidgetState extends State<PortalListeWidget> {
                                                                 ),
                                                                 child: Align(
                                                                   alignment:
-                                                                      AlignmentDirectional(
+                                                                      const AlignmentDirectional(
                                                                           0.00,
                                                                           0.00),
                                                                   child:
                                                                       Padding(
-                                                                    padding: EdgeInsetsDirectional
+                                                                    padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             8.0,
                                                                             4.0,
@@ -816,7 +814,7 @@ class _PortalListeWidgetState extends State<PortalListeWidget> {
                                         );
                                       },
                                     ),
-                                  ].addToEnd(SizedBox(height: 64.0)),
+                                  ].addToEnd(const SizedBox(height: 64.0)),
                                 ),
                               ),
                             ),

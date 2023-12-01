@@ -1,20 +1,8 @@
 import '/backend/api_requests/api_calls.dart';
-import '/flutter_flow/flutter_flow_drop_down.dart';
-import '/flutter_flow/flutter_flow_icon_button.dart';
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
-import '/pages/anahtar_liste/anahtar_liste_widget.dart';
-import '/pages/keyboard/keyboard_widget.dart';
-import '/pages/konum_secim/konum_secim_widget.dart';
-import '/custom_code/actions/index.dart' as actions;
 import 'giris_widget.dart' show GirisWidget;
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
-import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 
 class GirisModel extends FlutterFlowModel<GirisWidget> {
   ///  State fields for stateful widgets in this page.
@@ -34,7 +22,7 @@ class GirisModel extends FlutterFlowModel<GirisWidget> {
   // Stores action output result for [Bottom Sheet - keyboard] action in Column widget.
   String? resultPlakakeyb;
   // Stores action output result for [Bottom Sheet - konum_secim] action in Column widget.
-  dynamic? resultkonumsecim;
+  dynamic resultkonumsecim;
   // State field(s) for ch_4 widget.
   bool? ch4Value;
   // State field(s) for ch_3 widget.
@@ -68,8 +56,10 @@ class GirisModel extends FlutterFlowModel<GirisWidget> {
 
   /// Initialization and disposal methods.
 
+  @override
   void initState(BuildContext context) {}
 
+  @override
   void dispose() {
     unfocusNode.dispose();
   }

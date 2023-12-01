@@ -2,20 +2,18 @@ import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'tarife_fiyatlar_model.dart';
 export 'tarife_fiyatlar_model.dart';
 
 class TarifeFiyatlarWidget extends StatefulWidget {
   const TarifeFiyatlarWidget({
-    Key? key,
+    super.key,
     required this.tarife,
-  }) : super(key: key);
+  });
 
   final dynamic tarife;
 
@@ -89,7 +87,7 @@ class _TarifeFiyatlarWidgetState extends State<TarifeFiyatlarWidget> {
               ),
               actions: [
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 12.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 12.0, 0.0),
                   child: FlutterFlowIconButton(
                     borderColor: Colors.transparent,
                     borderRadius: 30.0,
@@ -141,7 +139,7 @@ class _TarifeFiyatlarWidgetState extends State<TarifeFiyatlarWidget> {
                       width: double.infinity,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).secondaryBackground,
-                        boxShadow: [
+                        boxShadow: const [
                           BoxShadow(
                             blurRadius: 3.0,
                             color: Color(0x33000000),
@@ -154,7 +152,7 @@ class _TarifeFiyatlarWidgetState extends State<TarifeFiyatlarWidget> {
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 16.0, 10.0, 0.0, 12.0),
                             child: Text(
                               'Otopark fiyat tarifesini bu listeden ayarlayabilirsiniz.',
@@ -166,7 +164,7 @@ class _TarifeFiyatlarWidgetState extends State<TarifeFiyatlarWidget> {
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 1.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 1.0, 0.0, 0.0),
                       child: FutureBuilder<ApiCallResponse>(
                         future: (_model.apiRequestCompleter ??= Completer<
                                 ApiCallResponse>()
@@ -217,7 +215,7 @@ class _TarifeFiyatlarWidgetState extends State<TarifeFiyatlarWidget> {
                                   itemBuilder: (context, listeIndex) {
                                     final listeItem = liste[listeIndex];
                                     return Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 1.0),
                                       child: Container(
                                         width: 100.0,
@@ -231,13 +229,13 @@ class _TarifeFiyatlarWidgetState extends State<TarifeFiyatlarWidget> {
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .alternate,
-                                              offset: Offset(0.0, 1.0),
+                                              offset: const Offset(0.0, 1.0),
                                             )
                                           ],
                                         ),
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 0.0, 16.0, 0.0),
                                           child: InkWell(
                                             splashColor: Colors.transparent,
@@ -281,10 +279,10 @@ class _TarifeFiyatlarWidgetState extends State<TarifeFiyatlarWidget> {
                                                   width: 44.0,
                                                   height: 44.0,
                                                   decoration: BoxDecoration(
-                                                    color: Color(0xFF275F08),
+                                                    color: const Color(0xFF275F08),
                                                     shape: BoxShape.circle,
                                                     border: Border.all(
-                                                      color: Color(0xFF020000),
+                                                      color: const Color(0xFF020000),
                                                       width: 2.0,
                                                     ),
                                                   ),
@@ -299,7 +297,7 @@ class _TarifeFiyatlarWidgetState extends State<TarifeFiyatlarWidget> {
                                                 Expanded(
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(12.0, 0.0,
                                                                 0.0, 0.0),
                                                     child: Column(
@@ -314,7 +312,7 @@ class _TarifeFiyatlarWidgetState extends State<TarifeFiyatlarWidget> {
                                                       children: [
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -332,7 +330,7 @@ class _TarifeFiyatlarWidgetState extends State<TarifeFiyatlarWidget> {
                                                         ),
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,

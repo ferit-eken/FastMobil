@@ -3,18 +3,16 @@ import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'settings_model.dart';
 export 'settings_model.dart';
 
 class SettingsWidget extends StatefulWidget {
-  const SettingsWidget({Key? key}) : super(key: key);
+  const SettingsWidget({super.key});
 
   @override
   _SettingsWidgetState createState() => _SettingsWidgetState();
@@ -71,7 +69,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                 borderRadius: 30.0,
                 borderWidth: 1.0,
                 buttonSize: 60.0,
-                icon: Icon(
+                icon: const Icon(
                   Icons.arrow_back_rounded,
                   color: Color(0xFF020000),
                   size: 30.0,
@@ -88,7 +86,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                       fontSize: 22.0,
                     ),
               ),
-              actions: [],
+              actions: const [],
               centerTitle: true,
               elevation: 2.0,
             ),
@@ -105,7 +103,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                         color: FlutterFlowTheme.of(context).secondaryBackground,
                       ),
                       child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             10.0, 10.0, 10.0, 10.0),
                         child: SingleChildScrollView(
                           child: Column(
@@ -160,14 +158,14 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                         ) as List)
                                                 .map<String>(
                                                     (s) => s.toString())
-                                                .toList()!),
+                                                .toList()),
                                         optionLabels: (getJsonField(
                                           txtOtoparkGetALLResponse.jsonBody,
                                           r'''$.data[:].OtoparkAdi''',
                                           true,
                                         ) as List)
                                             .map<String>((s) => s.toString())
-                                            .toList()!,
+                                            .toList(),
                                         onChanged: (val) async {
                                           setState(() =>
                                               _model.txtOtoparkValue = val);
@@ -199,7 +197,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                                 .alternate,
                                         borderWidth: 2.0,
                                         borderRadius: 8.0,
-                                        margin: EdgeInsetsDirectional.fromSTEB(
+                                        margin: const EdgeInsetsDirectional.fromSTEB(
                                             16.0, 4.0, 16.0, 4.0),
                                         hidesUnderline: true,
                                         isSearchable: false,
@@ -210,7 +208,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                 ],
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 5.0, 0.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -267,14 +265,14 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                           ) as List)
                                                   .map<String>(
                                                       (s) => s.toString())
-                                                  .toList()!),
+                                                  .toList()),
                                           optionLabels: (getJsonField(
                                             txtKapigrupGetALLResponse.jsonBody,
                                             r'''$.data[:].GrupAdi''',
                                             true,
                                           ) as List)
                                               .map<String>((s) => s.toString())
-                                              .toList()!,
+                                              .toList(),
                                           onChanged: (val) async {
                                             setState(() =>
                                                 _model.txtKapigrupValue = val);
@@ -309,7 +307,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                           borderWidth: 2.0,
                                           borderRadius: 8.0,
                                           margin:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 4.0, 16.0, 4.0),
                                           hidesUnderline: true,
                                           isSearchable: false,
@@ -321,7 +319,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 5.0, 0.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -378,14 +376,14 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                           ) as List)
                                                   .map<String>(
                                                       (s) => s.toString())
-                                                  .toList()!),
+                                                  .toList()),
                                           optionLabels: (getJsonField(
                                             txtKapiGetALLResponse.jsonBody,
                                             r'''$.data[:].KapiAdi''',
                                             true,
                                           ) as List)
                                               .map<String>((s) => s.toString())
-                                              .toList()!,
+                                              .toList(),
                                           onChanged: (val) async {
                                             setState(() =>
                                                 _model.txtKapiValue = val);
@@ -416,7 +414,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                           borderWidth: 2.0,
                                           borderRadius: 8.0,
                                           margin:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 4.0, 16.0, 4.0),
                                           hidesUnderline: true,
                                           isSearchable: false,
@@ -428,7 +426,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 5.0, 0.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -480,14 +478,14 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                           ) as List)
                                                   .map<String>(
                                                       (s) => s.toString())
-                                                  .toList()!),
+                                                  .toList()),
                                           optionLabels: (getJsonField(
                                             txtAractipiGetALLResponse.jsonBody,
                                             r'''$.data[:].AracTipi''',
                                             true,
                                           ) as List)
                                               .map<String>((s) => s.toString())
-                                              .toList()!,
+                                              .toList(),
                                           onChanged: (val) async {
                                             setState(() =>
                                                 _model.txtAractipiValue = val);
@@ -518,7 +516,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                           borderWidth: 2.0,
                                           borderRadius: 8.0,
                                           margin:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 4.0, 16.0, 4.0),
                                           hidesUnderline: true,
                                           isSearchable: false,
@@ -531,7 +529,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                               ),
                               Theme(
                                 data: ThemeData(
-                                  checkboxTheme: CheckboxThemeData(
+                                  checkboxTheme: const CheckboxThemeData(
                                     visualDensity: VisualDensity.compact,
                                     materialTapTargetSize:
                                         MaterialTapTargetSize.shrinkWrap,

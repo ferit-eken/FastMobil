@@ -2,19 +2,17 @@ import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'banka_detay_model.dart';
 export 'banka_detay_model.dart';
 
 class BankaDetayWidget extends StatefulWidget {
   const BankaDetayWidget({
-    Key? key,
+    super.key,
     this.banka,
-  }) : super(key: key);
+  });
 
   final dynamic banka;
 
@@ -123,7 +121,7 @@ class _BankaDetayWidgetState extends State<BankaDetayWidget> {
               ),
               actions: [
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
                   child: InkWell(
                     splashColor: Colors.transparent,
                     focusColor: Colors.transparent,
@@ -152,7 +150,7 @@ class _BankaDetayWidgetState extends State<BankaDetayWidget> {
                           context: context,
                           builder: (alertDialogContext) {
                             return AlertDialog(
-                              title: Text('Hata'),
+                              title: const Text('Hata'),
                               content: Text(SettingsGroup.bankaUpdateCall
                                   .message(
                                     (_model.apiResultgar?.jsonBody ?? ''),
@@ -162,7 +160,7 @@ class _BankaDetayWidgetState extends State<BankaDetayWidget> {
                                 TextButton(
                                   onPressed: () =>
                                       Navigator.pop(alertDialogContext),
-                                  child: Text('Ok'),
+                                  child: const Text('Ok'),
                                 ),
                               ],
                             );
@@ -172,7 +170,7 @@ class _BankaDetayWidgetState extends State<BankaDetayWidget> {
 
                       setState(() {});
                     },
-                    child: Icon(
+                    child: const Icon(
                       Icons.save_sharp,
                       color: Color(0xFF020000),
                       size: 42.0,
@@ -192,14 +190,14 @@ class _BankaDetayWidgetState extends State<BankaDetayWidget> {
                   Expanded(
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 1.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 1.0, 0.0, 0.0),
                       child: Container(
                         width: double.infinity,
                         height: double.infinity,
                         decoration: BoxDecoration(
                           color:
                               FlutterFlowTheme.of(context).secondaryBackground,
-                          boxShadow: [
+                          boxShadow: const [
                             BoxShadow(
                               blurRadius: 3.0,
                               color: Color(0x33000000),
@@ -212,7 +210,7 @@ class _BankaDetayWidgetState extends State<BankaDetayWidget> {
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 16.0, 16.0, 16.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -238,7 +236,7 @@ class _BankaDetayWidgetState extends State<BankaDetayWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           16.0, 0.0, 0.0, 0.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
@@ -247,7 +245,7 @@ class _BankaDetayWidgetState extends State<BankaDetayWidget> {
                                         crossAxisAlignment:
                                             CrossAxisAlignment.start,
                                         children: [
-                                          Container(
+                                          SizedBox(
                                             width: 200.0,
                                             child: TextFormField(
                                               controller:
@@ -326,7 +324,7 @@ class _BankaDetayWidgetState extends State<BankaDetayWidget> {
                                           ),
                                           Container(
                                             width: 200.0,
-                                            decoration: BoxDecoration(),
+                                            decoration: const BoxDecoration(),
                                           ),
                                         ],
                                       ),
@@ -335,7 +333,7 @@ class _BankaDetayWidgetState extends State<BankaDetayWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -347,7 +345,7 @@ class _BankaDetayWidgetState extends State<BankaDetayWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium,
                                     ),
-                                    Container(
+                                    SizedBox(
                                       width: 200.0,
                                       child: TextFormField(
                                         controller: _model.txtKodController,
@@ -419,7 +417,7 @@ class _BankaDetayWidgetState extends State<BankaDetayWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -431,7 +429,7 @@ class _BankaDetayWidgetState extends State<BankaDetayWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium,
                                     ),
-                                    Container(
+                                    SizedBox(
                                       width: 200.0,
                                       child: TextFormField(
                                         controller: _model.txtSubeController,
@@ -503,7 +501,7 @@ class _BankaDetayWidgetState extends State<BankaDetayWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -515,7 +513,7 @@ class _BankaDetayWidgetState extends State<BankaDetayWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium,
                                     ),
-                                    Container(
+                                    SizedBox(
                                       width: 200.0,
                                       child: TextFormField(
                                         controller: _model.txtHesapController,
@@ -587,7 +585,7 @@ class _BankaDetayWidgetState extends State<BankaDetayWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -599,7 +597,7 @@ class _BankaDetayWidgetState extends State<BankaDetayWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium,
                                     ),
-                                    Container(
+                                    SizedBox(
                                       width: 200.0,
                                       child: TextFormField(
                                         controller:

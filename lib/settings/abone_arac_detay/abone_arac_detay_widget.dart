@@ -3,22 +3,20 @@ import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'abone_arac_detay_model.dart';
 export 'abone_arac_detay_model.dart';
 
 class AboneAracDetayWidget extends StatefulWidget {
   const AboneAracDetayWidget({
-    Key? key,
+    super.key,
     this.arac,
     required this.cariKod,
-  }) : super(key: key);
+  });
 
   final dynamic arac;
   final String? cariKod;
@@ -129,7 +127,7 @@ class _AboneAracDetayWidgetState extends State<AboneAracDetayWidget> {
                 borderRadius: 30.0,
                 borderWidth: 1.0,
                 buttonSize: 60.0,
-                icon: Icon(
+                icon: const Icon(
                   Icons.arrow_back_sharp,
                   color: Color(0xFF020000),
                   size: 30.0,
@@ -148,7 +146,7 @@ class _AboneAracDetayWidgetState extends State<AboneAracDetayWidget> {
               ),
               actions: [
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
                   child: InkWell(
                     splashColor: Colors.transparent,
                     focusColor: Colors.transparent,
@@ -180,7 +178,7 @@ class _AboneAracDetayWidgetState extends State<AboneAracDetayWidget> {
                           context: context,
                           builder: (alertDialogContext) {
                             return AlertDialog(
-                              title: Text('Hata'),
+                              title: const Text('Hata'),
                               content: Text(CariGroup.cariAracKayitCall
                                   .message(
                                     (_model.apiResultg6j?.jsonBody ?? ''),
@@ -190,7 +188,7 @@ class _AboneAracDetayWidgetState extends State<AboneAracDetayWidget> {
                                 TextButton(
                                   onPressed: () =>
                                       Navigator.pop(alertDialogContext),
-                                  child: Text('Ok'),
+                                  child: const Text('Ok'),
                                 ),
                               ],
                             );
@@ -200,7 +198,7 @@ class _AboneAracDetayWidgetState extends State<AboneAracDetayWidget> {
 
                       setState(() {});
                     },
-                    child: Icon(
+                    child: const Icon(
                       Icons.save,
                       color: Color(0xFF020000),
                       size: 38.0,
@@ -227,7 +225,7 @@ class _AboneAracDetayWidgetState extends State<AboneAracDetayWidget> {
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 10.0, 0.0, 0.0),
                             child: Container(
                               width: 332.0,
@@ -235,7 +233,7 @@ class _AboneAracDetayWidgetState extends State<AboneAracDetayWidget> {
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
-                                boxShadow: [
+                                boxShadow: const [
                                   BoxShadow(
                                     blurRadius: 10.0,
                                     color: Color(0xFF020000),
@@ -248,7 +246,7 @@ class _AboneAracDetayWidgetState extends State<AboneAracDetayWidget> {
                                 ),
                               ),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     8.0, 0.0, 8.0, 0.0),
                                 child: TextFormField(
                                   controller: _model.txtPlakaController,
@@ -297,7 +295,7 @@ class _AboneAracDetayWidgetState extends State<AboneAracDetayWidget> {
                                       .bodyMedium
                                       .override(
                                         fontFamily: 'Readex Pro',
-                                        color: Color(0xFF020000),
+                                        color: const Color(0xFF020000),
                                         fontSize: 18.0,
                                         fontWeight: FontWeight.w600,
                                       ),
@@ -309,7 +307,7 @@ class _AboneAracDetayWidgetState extends State<AboneAracDetayWidget> {
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 20.0, 10.0, 20.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -351,7 +349,7 @@ class _AboneAracDetayWidgetState extends State<AboneAracDetayWidget> {
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 10.0, 10.0, 10.0, 10.0),
                             child: Container(
                               width: double.infinity,
@@ -364,7 +362,7 @@ class _AboneAracDetayWidgetState extends State<AboneAracDetayWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         8.0, 8.0, 8.0, 0.0),
                                     child: TextFormField(
                                       controller: _model.txtAdsoyadController,
@@ -421,7 +419,7 @@ class _AboneAracDetayWidgetState extends State<AboneAracDetayWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         8.0, 8.0, 8.0, 0.0),
                                     child: TextFormField(
                                       controller: _model.txtTelefonController,
@@ -478,13 +476,13 @@ class _AboneAracDetayWidgetState extends State<AboneAracDetayWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         8.0, 8.0, 8.0, 0.0),
                                     child: FlutterFlowDropDown<String>(
                                       controller: _model
                                               .txtKullanimturuValueController ??=
                                           FormFieldController<String>(null),
-                                      options: ['SAHIS ARACI', 'SIRKET ARACI'],
+                                      options: const ['SAHIS ARACI', 'SIRKET ARACI'],
                                       onChanged: (val) => setState(() =>
                                           _model.txtKullanimturuValue = val),
                                       width: MediaQuery.sizeOf(context).width *
@@ -506,7 +504,7 @@ class _AboneAracDetayWidgetState extends State<AboneAracDetayWidget> {
                                           .alternate,
                                       borderWidth: 2.0,
                                       borderRadius: 8.0,
-                                      margin: EdgeInsetsDirectional.fromSTEB(
+                                      margin: const EdgeInsetsDirectional.fromSTEB(
                                           16.0, 4.0, 16.0, 4.0),
                                       hidesUnderline: true,
                                       isSearchable: false,
@@ -514,7 +512,7 @@ class _AboneAracDetayWidgetState extends State<AboneAracDetayWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         8.0, 8.0, 8.0, 0.0),
                                     child: FutureBuilder<ApiCallResponse>(
                                       future: SettingsGroup.getALLCall.call(
@@ -562,14 +560,14 @@ class _AboneAracDetayWidgetState extends State<AboneAracDetayWidget> {
                                           ) as List)
                                                   .map<String>(
                                                       (s) => s.toString())
-                                                  .toList()!),
+                                                  .toList()),
                                           optionLabels: (getJsonField(
                                             txtAractipiGetALLResponse.jsonBody,
                                             r'''$.data[:].AracTipi''',
                                             true,
                                           ) as List)
                                               .map<String>((s) => s.toString())
-                                              .toList()!,
+                                              .toList(),
                                           onChanged: (val) => setState(() =>
                                               _model.txtAractipiValue = val),
                                           width:
@@ -596,7 +594,7 @@ class _AboneAracDetayWidgetState extends State<AboneAracDetayWidget> {
                                           borderWidth: 2.0,
                                           borderRadius: 8.0,
                                           margin:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 4.0, 16.0, 4.0),
                                           hidesUnderline: true,
                                           isSearchable: false,

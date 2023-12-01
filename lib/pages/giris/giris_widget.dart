@@ -12,13 +12,12 @@ import '/custom_code/actions/index.dart' as actions;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'giris_model.dart';
 export 'giris_model.dart';
 
 class GirisWidget extends StatefulWidget {
-  const GirisWidget({Key? key}) : super(key: key);
+  const GirisWidget({super.key});
 
   @override
   _GirisWidgetState createState() => _GirisWidgetState();
@@ -80,7 +79,7 @@ class _GirisWidgetState extends State<GirisWidget> {
                 borderRadius: 30.0,
                 borderWidth: 1.0,
                 buttonSize: 60.0,
-                icon: Icon(
+                icon: const Icon(
                   Icons.arrow_back_rounded,
                   color: Color(0xFF020000),
                   size: 30.0,
@@ -106,13 +105,13 @@ class _GirisWidgetState extends State<GirisWidget> {
                   ),
                   child: Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         if (_model.resYazicidurum == true)
-                          Padding(
+                          const Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 10.0, 0.0),
                             child: Icon(
@@ -122,7 +121,7 @@ class _GirisWidgetState extends State<GirisWidget> {
                             ),
                           ),
                         if (_model.resYazicidurum == false)
-                          Padding(
+                          const Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 10.0, 0.0),
                             child: Icon(
@@ -156,7 +155,7 @@ class _GirisWidgetState extends State<GirisWidget> {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 10.0, 0.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -164,7 +163,7 @@ class _GirisWidgetState extends State<GirisWidget> {
                                     MainAxisAlignment.spaceAround,
                                 children: [
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         5.0, 5.0, 5.0, 5.0),
                                     child: Container(
                                       width: 70.0,
@@ -175,7 +174,7 @@ class _GirisWidgetState extends State<GirisWidget> {
                                         borderRadius:
                                             BorderRadius.circular(5.0),
                                         border: Border.all(
-                                          color: Color(0xFFC20707),
+                                          color: const Color(0xFFC20707),
                                         ),
                                       ),
                                       child: Column(
@@ -200,7 +199,7 @@ class _GirisWidgetState extends State<GirisWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         5.0, 5.0, 5.0, 5.0),
                                     child: Container(
                                       width: 70.0,
@@ -211,7 +210,7 @@ class _GirisWidgetState extends State<GirisWidget> {
                                         borderRadius:
                                             BorderRadius.circular(5.0),
                                         border: Border.all(
-                                          color: Color(0xFFC20707),
+                                          color: const Color(0xFFC20707),
                                         ),
                                       ),
                                       child: Column(
@@ -236,7 +235,7 @@ class _GirisWidgetState extends State<GirisWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         5.0, 5.0, 5.0, 5.0),
                                     child: Container(
                                       width: 70.0,
@@ -247,7 +246,7 @@ class _GirisWidgetState extends State<GirisWidget> {
                                         borderRadius:
                                             BorderRadius.circular(5.0),
                                         border: Border.all(
-                                          color: Color(0xFFC20707),
+                                          color: const Color(0xFFC20707),
                                         ),
                                       ),
                                       child: Column(
@@ -275,7 +274,7 @@ class _GirisWidgetState extends State<GirisWidget> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   10.0, 10.0, 10.0, 10.0),
                               child: Container(
                                 width: double.infinity,
@@ -288,7 +287,7 @@ class _GirisWidgetState extends State<GirisWidget> {
                                       blurRadius: 4.0,
                                       color: FlutterFlowTheme.of(context)
                                           .primaryText,
-                                      offset: Offset(0.0, 2.0),
+                                      offset: const Offset(0.0, 2.0),
                                     )
                                   ],
                                   border: Border.all(
@@ -299,7 +298,7 @@ class _GirisWidgetState extends State<GirisWidget> {
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 5.0, 0.0, 0.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -357,7 +356,7 @@ class _GirisWidgetState extends State<GirisWidget> {
                                             borderWidth: 2.0,
                                             borderRadius: 8.0,
                                             margin:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 4.0, 16.0, 4.0),
                                             hidesUnderline: true,
                                             isSearchable: false,
@@ -365,7 +364,7 @@ class _GirisWidgetState extends State<GirisWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     10.0, 0.0, 0.0, 0.0),
                                             child: InkWell(
                                               splashColor: Colors.transparent,
@@ -397,7 +396,7 @@ class _GirisWidgetState extends State<GirisWidget> {
                                                             .viewInsetsOf(
                                                                 context),
                                                         child:
-                                                            AnahtarListeWidget(),
+                                                            const AnahtarListeWidget(),
                                                       ),
                                                     );
                                                   },
@@ -449,11 +448,11 @@ class _GirisWidgetState extends State<GirisWidget> {
                                                         ),
                                                         Align(
                                                           alignment:
-                                                              AlignmentDirectional(
+                                                              const AlignmentDirectional(
                                                                   0.00, 0.00),
                                                           child: Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         5.0,
                                                                         0.0,
@@ -491,7 +490,7 @@ class _GirisWidgetState extends State<GirisWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 5.0, 0.0, 0.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -543,7 +542,7 @@ class _GirisWidgetState extends State<GirisWidget> {
                                                         padding: MediaQuery
                                                             .viewInsetsOf(
                                                                 context),
-                                                        child: Container(
+                                                        child: const SizedBox(
                                                           height: 480.0,
                                                           child: KeyboardWidget(
                                                             def: '',
@@ -572,7 +571,7 @@ class _GirisWidgetState extends State<GirisWidget> {
                                                   ),
                                                   Align(
                                                     alignment:
-                                                        AlignmentDirectional(
+                                                        const AlignmentDirectional(
                                                             0.00, 0.00),
                                                     child: Text(
                                                       valueOrDefault<String>(
@@ -596,7 +595,7 @@ class _GirisWidgetState extends State<GirisWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     10.0, 0.0, 0.0, 0.0),
                                             child: InkWell(
                                               splashColor: Colors.transparent,
@@ -627,7 +626,7 @@ class _GirisWidgetState extends State<GirisWidget> {
                                                         padding: MediaQuery
                                                             .viewInsetsOf(
                                                                 context),
-                                                        child: Container(
+                                                        child: const SizedBox(
                                                           height: 480.0,
                                                           child: KeyboardWidget(
                                                             def: '',
@@ -675,7 +674,7 @@ class _GirisWidgetState extends State<GirisWidget> {
                                                     ),
                                                     Align(
                                                       alignment:
-                                                          AlignmentDirectional(
+                                                          const AlignmentDirectional(
                                                               0.00, 0.00),
                                                       child: Text(
                                                         valueOrDefault<String>(
@@ -705,7 +704,7 @@ class _GirisWidgetState extends State<GirisWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 5.0, 0.0, 0.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -766,7 +765,7 @@ class _GirisWidgetState extends State<GirisWidget> {
                                                             padding: MediaQuery
                                                                 .viewInsetsOf(
                                                                     context),
-                                                            child: Container(
+                                                            child: SizedBox(
                                                               height: 480.0,
                                                               child:
                                                                   KeyboardWidget(
@@ -805,11 +804,11 @@ class _GirisWidgetState extends State<GirisWidget> {
                                                       ),
                                                       Align(
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 0.00, 0.00),
                                                         child: Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       5.0,
                                                                       0.0,
@@ -843,7 +842,7 @@ class _GirisWidgetState extends State<GirisWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     10.0, 0.0, 0.0, 0.0),
                                             child: Container(
                                               width: 163.0,
@@ -901,7 +900,7 @@ class _GirisWidgetState extends State<GirisWidget> {
                                                                   .viewInsetsOf(
                                                                       context),
                                                               child:
-                                                                  KonumSecimWidget(),
+                                                                  const KonumSecimWidget(),
                                                             ),
                                                           );
                                                         },
@@ -930,11 +929,11 @@ class _GirisWidgetState extends State<GirisWidget> {
                                                         ),
                                                         Align(
                                                           alignment:
-                                                              AlignmentDirectional(
+                                                              const AlignmentDirectional(
                                                                   0.00, 0.00),
                                                           child: Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         5.0,
                                                                         0.0,
@@ -977,7 +976,7 @@ class _GirisWidgetState extends State<GirisWidget> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 5.0, 0.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -991,13 +990,13 @@ class _GirisWidgetState extends State<GirisWidget> {
                                 ],
                               ),
                             ),
-                            Container(
+                            SizedBox(
                               width: 383.0,
                               height: 200.0,
                               child: Stack(
                                 children: [
                                   Align(
-                                    alignment: AlignmentDirectional(0.00, 0.00),
+                                    alignment: const AlignmentDirectional(0.00, 0.00),
                                     child: ClipRRect(
                                       borderRadius: BorderRadius.circular(8.0),
                                       child: Image.asset(
@@ -1010,7 +1009,7 @@ class _GirisWidgetState extends State<GirisWidget> {
                                   ),
                                   Align(
                                     alignment:
-                                        AlignmentDirectional(-0.58, -0.77),
+                                        const AlignmentDirectional(-0.58, -0.77),
                                     child: Theme(
                                       data: ThemeData(
                                         checkboxTheme: CheckboxThemeData(
@@ -1039,7 +1038,7 @@ class _GirisWidgetState extends State<GirisWidget> {
                                   ),
                                   Align(
                                     alignment:
-                                        AlignmentDirectional(-0.17, -0.79),
+                                        const AlignmentDirectional(-0.17, -0.79),
                                     child: Theme(
                                       data: ThemeData(
                                         checkboxTheme: CheckboxThemeData(
@@ -1068,7 +1067,7 @@ class _GirisWidgetState extends State<GirisWidget> {
                                   ),
                                   Align(
                                     alignment:
-                                        AlignmentDirectional(0.08, -0.77),
+                                        const AlignmentDirectional(0.08, -0.77),
                                     child: Theme(
                                       data: ThemeData(
                                         checkboxTheme: CheckboxThemeData(
@@ -1097,7 +1096,7 @@ class _GirisWidgetState extends State<GirisWidget> {
                                   ),
                                   Align(
                                     alignment:
-                                        AlignmentDirectional(0.51, -0.70),
+                                        const AlignmentDirectional(0.51, -0.70),
                                     child: Theme(
                                       data: ThemeData(
                                         checkboxTheme: CheckboxThemeData(
@@ -1126,7 +1125,7 @@ class _GirisWidgetState extends State<GirisWidget> {
                                   ),
                                   Align(
                                     alignment:
-                                        AlignmentDirectional(-0.82, 0.02),
+                                        const AlignmentDirectional(-0.82, 0.02),
                                     child: Theme(
                                       data: ThemeData(
                                         checkboxTheme: CheckboxThemeData(
@@ -1155,7 +1154,7 @@ class _GirisWidgetState extends State<GirisWidget> {
                                   ),
                                   Align(
                                     alignment:
-                                        AlignmentDirectional(-0.56, 0.01),
+                                        const AlignmentDirectional(-0.56, 0.01),
                                     child: Theme(
                                       data: ThemeData(
                                         checkboxTheme: CheckboxThemeData(
@@ -1184,7 +1183,7 @@ class _GirisWidgetState extends State<GirisWidget> {
                                   ),
                                   Align(
                                     alignment:
-                                        AlignmentDirectional(-0.09, 0.01),
+                                        const AlignmentDirectional(-0.09, 0.01),
                                     child: Theme(
                                       data: ThemeData(
                                         checkboxTheme: CheckboxThemeData(
@@ -1213,7 +1212,7 @@ class _GirisWidgetState extends State<GirisWidget> {
                                   ),
                                   Align(
                                     alignment:
-                                        AlignmentDirectional(0.44, -0.00),
+                                        const AlignmentDirectional(0.44, -0.00),
                                     child: Theme(
                                       data: ThemeData(
                                         checkboxTheme: CheckboxThemeData(
@@ -1242,7 +1241,7 @@ class _GirisWidgetState extends State<GirisWidget> {
                                   ),
                                   Align(
                                     alignment:
-                                        AlignmentDirectional(0.82, -0.01),
+                                        const AlignmentDirectional(0.82, -0.01),
                                     child: Theme(
                                       data: ThemeData(
                                         checkboxTheme: CheckboxThemeData(
@@ -1271,7 +1270,7 @@ class _GirisWidgetState extends State<GirisWidget> {
                                   ),
                                   Align(
                                     alignment:
-                                        AlignmentDirectional(-0.57, 0.76),
+                                        const AlignmentDirectional(-0.57, 0.76),
                                     child: Theme(
                                       data: ThemeData(
                                         checkboxTheme: CheckboxThemeData(
@@ -1300,7 +1299,7 @@ class _GirisWidgetState extends State<GirisWidget> {
                                   ),
                                   Align(
                                     alignment:
-                                        AlignmentDirectional(-0.17, 0.79),
+                                        const AlignmentDirectional(-0.17, 0.79),
                                     child: Theme(
                                       data: ThemeData(
                                         checkboxTheme: CheckboxThemeData(
@@ -1328,7 +1327,7 @@ class _GirisWidgetState extends State<GirisWidget> {
                                     ),
                                   ),
                                   Align(
-                                    alignment: AlignmentDirectional(0.10, 0.81),
+                                    alignment: const AlignmentDirectional(0.10, 0.81),
                                     child: Theme(
                                       data: ThemeData(
                                         checkboxTheme: CheckboxThemeData(
@@ -1356,7 +1355,7 @@ class _GirisWidgetState extends State<GirisWidget> {
                                     ),
                                   ),
                                   Align(
-                                    alignment: AlignmentDirectional(0.54, 0.74),
+                                    alignment: const AlignmentDirectional(0.54, 0.74),
                                     child: Theme(
                                       data: ThemeData(
                                         checkboxTheme: CheckboxThemeData(
@@ -1387,7 +1386,7 @@ class _GirisWidgetState extends State<GirisWidget> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   4.0, 4.0, 4.0, 4.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -1506,7 +1505,7 @@ class _GirisWidgetState extends State<GirisWidget> {
                                               context: context,
                                               builder: (alertDialogContext) {
                                                 return AlertDialog(
-                                                  title: Text('Hata'),
+                                                  title: const Text('Hata'),
                                                   content: Text(
                                                       '${_model.resultprint}'),
                                                   actions: [
@@ -1514,7 +1513,7 @@ class _GirisWidgetState extends State<GirisWidget> {
                                                       onPressed: () =>
                                                           Navigator.pop(
                                                               alertDialogContext),
-                                                      child: Text('Ok'),
+                                                      child: const Text('Ok'),
                                                     ),
                                                   ],
                                                 );
@@ -1530,7 +1529,7 @@ class _GirisWidgetState extends State<GirisWidget> {
                                           context: context,
                                           builder: (alertDialogContext) {
                                             return AlertDialog(
-                                              title: Text('Hata'),
+                                              title: const Text('Hata'),
                                               content:
                                                   Text(PtsGroup.aracGirisCall
                                                       .message(
@@ -1544,7 +1543,7 @@ class _GirisWidgetState extends State<GirisWidget> {
                                                   onPressed: () =>
                                                       Navigator.pop(
                                                           alertDialogContext),
-                                                  child: Text('Ok'),
+                                                  child: const Text('Ok'),
                                                 ),
                                               ],
                                             );
@@ -1558,10 +1557,10 @@ class _GirisWidgetState extends State<GirisWidget> {
                                     options: FFButtonOptions(
                                       width: 182.0,
                                       height: 40.0,
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           24.0, 0.0, 24.0, 0.0),
                                       iconPadding:
-                                          EdgeInsetsDirectional.fromSTEB(
+                                          const EdgeInsetsDirectional.fromSTEB(
                                               0.0, 0.0, 0.0, 0.0),
                                       color:
                                           FlutterFlowTheme.of(context).warning,
@@ -1569,10 +1568,10 @@ class _GirisWidgetState extends State<GirisWidget> {
                                           .titleSmall
                                           .override(
                                             fontFamily: 'Readex Pro',
-                                            color: Color(0xFF020000),
+                                            color: const Color(0xFF020000),
                                           ),
                                       elevation: 3.0,
-                                      borderSide: BorderSide(
+                                      borderSide: const BorderSide(
                                         color: Colors.transparent,
                                         width: 1.0,
                                       ),

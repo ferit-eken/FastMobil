@@ -2,20 +2,18 @@ import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'park_konum_detay_model.dart';
 export 'park_konum_detay_model.dart';
 
 class ParkKonumDetayWidget extends StatefulWidget {
   const ParkKonumDetayWidget({
-    Key? key,
+    super.key,
     required this.id,
     required this.kapiGrupId,
-  }) : super(key: key);
+  });
 
   final int? id;
   final String? kapiGrupId;
@@ -119,7 +117,7 @@ class _ParkKonumDetayWidgetState extends State<ParkKonumDetayWidget> {
                   actions: [
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
                       child: InkWell(
                         splashColor: Colors.transparent,
                         focusColor: Colors.transparent,
@@ -151,7 +149,7 @@ class _ParkKonumDetayWidgetState extends State<ParkKonumDetayWidget> {
                               context: context,
                               builder: (alertDialogContext) {
                                 return AlertDialog(
-                                  title: Text('Hata'),
+                                  title: const Text('Hata'),
                                   content:
                                       Text(SettingsGroup.otoparkKonumUpdateCall
                                           .message(
@@ -163,7 +161,7 @@ class _ParkKonumDetayWidgetState extends State<ParkKonumDetayWidget> {
                                     TextButton(
                                       onPressed: () =>
                                           Navigator.pop(alertDialogContext),
-                                      child: Text('Ok'),
+                                      child: const Text('Ok'),
                                     ),
                                   ],
                                 );
@@ -173,7 +171,7 @@ class _ParkKonumDetayWidgetState extends State<ParkKonumDetayWidget> {
 
                           setState(() {});
                         },
-                        child: Icon(
+                        child: const Icon(
                           Icons.save_sharp,
                           color: Color(0xFF020000),
                           size: 42.0,
@@ -192,7 +190,7 @@ class _ParkKonumDetayWidgetState extends State<ParkKonumDetayWidget> {
                     children: [
                       Expanded(
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 1.0, 0.0, 0.0),
                           child: Container(
                             width: double.infinity,
@@ -200,7 +198,7 @@ class _ParkKonumDetayWidgetState extends State<ParkKonumDetayWidget> {
                             decoration: BoxDecoration(
                               color: FlutterFlowTheme.of(context)
                                   .secondaryBackground,
-                              boxShadow: [
+                              boxShadow: const [
                                 BoxShadow(
                                   blurRadius: 3.0,
                                   color: Color(0x33000000),
@@ -213,7 +211,7 @@ class _ParkKonumDetayWidgetState extends State<ParkKonumDetayWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         16.0, 16.0, 16.0, 16.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -241,7 +239,7 @@ class _ParkKonumDetayWidgetState extends State<ParkKonumDetayWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 0.0, 0.0, 0.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
@@ -250,7 +248,7 @@ class _ParkKonumDetayWidgetState extends State<ParkKonumDetayWidget> {
                                             crossAxisAlignment:
                                                 CrossAxisAlignment.start,
                                             children: [
-                                              Container(
+                                              SizedBox(
                                                 width: 200.0,
                                                 child: TextFormField(
                                                   controller:
@@ -346,7 +344,7 @@ class _ParkKonumDetayWidgetState extends State<ParkKonumDetayWidget> {
                                               ),
                                               Container(
                                                 width: 200.0,
-                                                decoration: BoxDecoration(),
+                                                decoration: const BoxDecoration(),
                                               ),
                                             ],
                                           ),
@@ -355,7 +353,7 @@ class _ParkKonumDetayWidgetState extends State<ParkKonumDetayWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         16.0, 0.0, 16.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,

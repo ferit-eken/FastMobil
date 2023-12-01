@@ -4,19 +4,16 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'keyboard_model.dart';
 export 'keyboard_model.dart';
 
 class KeyboardWidget extends StatefulWidget {
   const KeyboardWidget({
-    Key? key,
+    super.key,
     this.def,
     String? baslik,
-  })  : this.baslik = baslik ?? 'Yazınız',
-        super(key: key);
+  })  : baslik = baslik ?? 'Yazınız';
 
   final String? def;
   final String baslik;
@@ -73,12 +70,12 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
         mainAxisSize: MainAxisSize.max,
         children: [
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
             child: Row(
               mainAxisSize: MainAxisSize.max,
               children: [
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
                   child: FFButtonWidget(
                     onPressed: () async {
                       Navigator.pop(context, '-1');
@@ -87,9 +84,9 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
                     options: FFButtonOptions(
                       height: 40.0,
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                       iconPadding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                       color: FlutterFlowTheme.of(context).warning,
                       textStyle:
                           FlutterFlowTheme.of(context).titleSmall.override(
@@ -97,7 +94,7 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
                                 color: FlutterFlowTheme.of(context).primaryText,
                               ),
                       elevation: 3.0,
-                      borderSide: BorderSide(
+                      borderSide: const BorderSide(
                         color: Colors.transparent,
                         width: 1.0,
                       ),
@@ -107,7 +104,7 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
                 ),
                 Expanded(
                   child: Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
                     child: TextFormField(
                       controller: _model.txtContentController,
                       focusNode: _model.txtContentFocusNode,
@@ -152,7 +149,7 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
                   child: FFButtonWidget(
                     onPressed: () async {
                       Navigator.pop(context, _model.txtContentController.text);
@@ -161,17 +158,17 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
                     options: FFButtonOptions(
                       height: 40.0,
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                       iconPadding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                      color: Color(0xFF92F45C),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                      color: const Color(0xFF92F45C),
                       textStyle:
                           FlutterFlowTheme.of(context).titleSmall.override(
                                 fontFamily: 'Readex Pro',
                                 color: FlutterFlowTheme.of(context).primaryText,
                               ),
                       elevation: 3.0,
-                      borderSide: BorderSide(
+                      borderSide: const BorderSide(
                         color: Colors.transparent,
                         width: 1.0,
                       ),
@@ -202,12 +199,12 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
                     children: [
                       Expanded(
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               10.0, 10.0, 10.0, 10.0),
                           child: GridView(
                             padding: EdgeInsets.zero,
                             gridDelegate:
-                                SliverGridDelegateWithFixedCrossAxisCount(
+                                const SliverGridDelegateWithFixedCrossAxisCount(
                               crossAxisCount: 10,
                               crossAxisSpacing: 4.0,
                               mainAxisSpacing: 4.0,
@@ -540,12 +537,12 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
                     children: [
                       Expanded(
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               10.0, 10.0, 10.0, 10.0),
                           child: GridView(
                             padding: EdgeInsets.zero,
                             gridDelegate:
-                                SliverGridDelegateWithFixedCrossAxisCount(
+                                const SliverGridDelegateWithFixedCrossAxisCount(
                               crossAxisCount: 5,
                               crossAxisSpacing: 4.0,
                               mainAxisSpacing: 4.0,
@@ -577,7 +574,7 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
                                     ),
                                   ),
                                   child: Align(
-                                    alignment: AlignmentDirectional(0.00, 0.00),
+                                    alignment: const AlignmentDirectional(0.00, 0.00),
                                     child: InkWell(
                                       splashColor: Colors.transparent,
                                       focusColor: Colors.transparent,
@@ -622,7 +619,7 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
                                     ),
                                   ),
                                   child: Align(
-                                    alignment: AlignmentDirectional(0.00, 0.00),
+                                    alignment: const AlignmentDirectional(0.00, 0.00),
                                     child: InkWell(
                                       splashColor: Colors.transparent,
                                       focusColor: Colors.transparent,
@@ -667,7 +664,7 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
                                     ),
                                   ),
                                   child: Align(
-                                    alignment: AlignmentDirectional(0.00, 0.00),
+                                    alignment: const AlignmentDirectional(0.00, 0.00),
                                     child: InkWell(
                                       splashColor: Colors.transparent,
                                       focusColor: Colors.transparent,
@@ -712,7 +709,7 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
                                     ),
                                   ),
                                   child: Align(
-                                    alignment: AlignmentDirectional(0.00, 0.00),
+                                    alignment: const AlignmentDirectional(0.00, 0.00),
                                     child: InkWell(
                                       splashColor: Colors.transparent,
                                       focusColor: Colors.transparent,
@@ -757,7 +754,7 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
                                     ),
                                   ),
                                   child: Align(
-                                    alignment: AlignmentDirectional(0.00, 0.00),
+                                    alignment: const AlignmentDirectional(0.00, 0.00),
                                     child: InkWell(
                                       splashColor: Colors.transparent,
                                       focusColor: Colors.transparent,
@@ -802,7 +799,7 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
                                     ),
                                   ),
                                   child: Align(
-                                    alignment: AlignmentDirectional(0.00, 0.00),
+                                    alignment: const AlignmentDirectional(0.00, 0.00),
                                     child: InkWell(
                                       splashColor: Colors.transparent,
                                       focusColor: Colors.transparent,
@@ -847,7 +844,7 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
                                     ),
                                   ),
                                   child: Align(
-                                    alignment: AlignmentDirectional(0.00, 0.00),
+                                    alignment: const AlignmentDirectional(0.00, 0.00),
                                     child: InkWell(
                                       splashColor: Colors.transparent,
                                       focusColor: Colors.transparent,
@@ -892,7 +889,7 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
                                     ),
                                   ),
                                   child: Align(
-                                    alignment: AlignmentDirectional(0.00, 0.00),
+                                    alignment: const AlignmentDirectional(0.00, 0.00),
                                     child: InkWell(
                                       splashColor: Colors.transparent,
                                       focusColor: Colors.transparent,
@@ -937,7 +934,7 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
                                     ),
                                   ),
                                   child: Align(
-                                    alignment: AlignmentDirectional(0.00, 0.00),
+                                    alignment: const AlignmentDirectional(0.00, 0.00),
                                     child: InkWell(
                                       splashColor: Colors.transparent,
                                       focusColor: Colors.transparent,
@@ -982,7 +979,7 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
                                     ),
                                   ),
                                   child: Align(
-                                    alignment: AlignmentDirectional(0.00, 0.00),
+                                    alignment: const AlignmentDirectional(0.00, 0.00),
                                     child: InkWell(
                                       splashColor: Colors.transparent,
                                       focusColor: Colors.transparent,
@@ -1015,12 +1012,12 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
                     children: [
                       Expanded(
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               10.0, 0.0, 10.0, 0.0),
                           child: GridView(
                             padding: EdgeInsets.zero,
                             gridDelegate:
-                                SliverGridDelegateWithFixedCrossAxisCount(
+                                const SliverGridDelegateWithFixedCrossAxisCount(
                               crossAxisCount: 10,
                               crossAxisSpacing: 4.0,
                               mainAxisSpacing: 10.0,
@@ -1051,7 +1048,7 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
                                           .primaryText,
                                     ),
                                   ),
-                                  alignment: AlignmentDirectional(0.00, 0.00),
+                                  alignment: const AlignmentDirectional(0.00, 0.00),
                                   child: Text(
                                     'Q',
                                     textAlign: TextAlign.center,
@@ -1082,7 +1079,7 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
                                           .primaryText,
                                     ),
                                   ),
-                                  alignment: AlignmentDirectional(0.00, 0.00),
+                                  alignment: const AlignmentDirectional(0.00, 0.00),
                                   child: Text(
                                     'W',
                                     textAlign: TextAlign.center,
@@ -1113,7 +1110,7 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
                                           .primaryText,
                                     ),
                                   ),
-                                  alignment: AlignmentDirectional(0.00, 0.00),
+                                  alignment: const AlignmentDirectional(0.00, 0.00),
                                   child: Text(
                                     'E',
                                     textAlign: TextAlign.center,
@@ -1144,7 +1141,7 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
                                           .primaryText,
                                     ),
                                   ),
-                                  alignment: AlignmentDirectional(0.00, 0.00),
+                                  alignment: const AlignmentDirectional(0.00, 0.00),
                                   child: Text(
                                     'R',
                                     textAlign: TextAlign.center,
@@ -1175,7 +1172,7 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
                                           .primaryText,
                                     ),
                                   ),
-                                  alignment: AlignmentDirectional(0.00, 0.00),
+                                  alignment: const AlignmentDirectional(0.00, 0.00),
                                   child: Text(
                                     'T',
                                     textAlign: TextAlign.center,
@@ -1206,7 +1203,7 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
                                           .primaryText,
                                     ),
                                   ),
-                                  alignment: AlignmentDirectional(0.00, 0.00),
+                                  alignment: const AlignmentDirectional(0.00, 0.00),
                                   child: Text(
                                     'Y',
                                     textAlign: TextAlign.center,
@@ -1237,7 +1234,7 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
                                           .primaryText,
                                     ),
                                   ),
-                                  alignment: AlignmentDirectional(0.00, 0.00),
+                                  alignment: const AlignmentDirectional(0.00, 0.00),
                                   child: Text(
                                     'U',
                                     textAlign: TextAlign.center,
@@ -1268,7 +1265,7 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
                                           .primaryText,
                                     ),
                                   ),
-                                  alignment: AlignmentDirectional(0.00, 0.00),
+                                  alignment: const AlignmentDirectional(0.00, 0.00),
                                   child: Text(
                                     'I',
                                     textAlign: TextAlign.center,
@@ -1299,7 +1296,7 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
                                           .primaryText,
                                     ),
                                   ),
-                                  alignment: AlignmentDirectional(0.00, 0.00),
+                                  alignment: const AlignmentDirectional(0.00, 0.00),
                                   child: Text(
                                     'O',
                                     textAlign: TextAlign.center,
@@ -1330,7 +1327,7 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
                                           .primaryText,
                                     ),
                                   ),
-                                  alignment: AlignmentDirectional(0.00, 0.00),
+                                  alignment: const AlignmentDirectional(0.00, 0.00),
                                   child: Text(
                                     'P',
                                     textAlign: TextAlign.center,
@@ -1361,7 +1358,7 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
                                           .primaryText,
                                     ),
                                   ),
-                                  alignment: AlignmentDirectional(0.00, 0.00),
+                                  alignment: const AlignmentDirectional(0.00, 0.00),
                                   child: Text(
                                     'A',
                                     textAlign: TextAlign.center,
@@ -1392,7 +1389,7 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
                                           .primaryText,
                                     ),
                                   ),
-                                  alignment: AlignmentDirectional(0.00, 0.00),
+                                  alignment: const AlignmentDirectional(0.00, 0.00),
                                   child: Text(
                                     'S',
                                     textAlign: TextAlign.center,
@@ -1423,7 +1420,7 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
                                           .primaryText,
                                     ),
                                   ),
-                                  alignment: AlignmentDirectional(0.00, 0.00),
+                                  alignment: const AlignmentDirectional(0.00, 0.00),
                                   child: Text(
                                     'D',
                                     textAlign: TextAlign.center,
@@ -1454,7 +1451,7 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
                                           .primaryText,
                                     ),
                                   ),
-                                  alignment: AlignmentDirectional(0.00, 0.00),
+                                  alignment: const AlignmentDirectional(0.00, 0.00),
                                   child: Text(
                                     'F',
                                     textAlign: TextAlign.center,
@@ -1485,7 +1482,7 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
                                           .primaryText,
                                     ),
                                   ),
-                                  alignment: AlignmentDirectional(0.00, 0.00),
+                                  alignment: const AlignmentDirectional(0.00, 0.00),
                                   child: Text(
                                     'G',
                                     textAlign: TextAlign.center,
@@ -1516,7 +1513,7 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
                                           .primaryText,
                                     ),
                                   ),
-                                  alignment: AlignmentDirectional(0.00, 0.00),
+                                  alignment: const AlignmentDirectional(0.00, 0.00),
                                   child: Text(
                                     'H',
                                     textAlign: TextAlign.center,
@@ -1547,7 +1544,7 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
                                           .primaryText,
                                     ),
                                   ),
-                                  alignment: AlignmentDirectional(0.00, 0.00),
+                                  alignment: const AlignmentDirectional(0.00, 0.00),
                                   child: Text(
                                     'J',
                                     textAlign: TextAlign.center,
@@ -1578,7 +1575,7 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
                                           .primaryText,
                                     ),
                                   ),
-                                  alignment: AlignmentDirectional(0.00, 0.00),
+                                  alignment: const AlignmentDirectional(0.00, 0.00),
                                   child: Text(
                                     'K',
                                     textAlign: TextAlign.center,
@@ -1609,7 +1606,7 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
                                           .primaryText,
                                     ),
                                   ),
-                                  alignment: AlignmentDirectional(0.00, 0.00),
+                                  alignment: const AlignmentDirectional(0.00, 0.00),
                                   child: Text(
                                     'L',
                                     textAlign: TextAlign.center,
@@ -1640,7 +1637,7 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
                                           .primaryText,
                                     ),
                                   ),
-                                  alignment: AlignmentDirectional(0.00, 0.00),
+                                  alignment: const AlignmentDirectional(0.00, 0.00),
                                   child: Text(
                                     '_',
                                     textAlign: TextAlign.center,
@@ -1671,7 +1668,7 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
                                           .primaryText,
                                     ),
                                   ),
-                                  alignment: AlignmentDirectional(0.00, 0.00),
+                                  alignment: const AlignmentDirectional(0.00, 0.00),
                                   child: Text(
                                     'Z',
                                     textAlign: TextAlign.center,
@@ -1702,7 +1699,7 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
                                           .primaryText,
                                     ),
                                   ),
-                                  alignment: AlignmentDirectional(0.00, 0.00),
+                                  alignment: const AlignmentDirectional(0.00, 0.00),
                                   child: Text(
                                     'X',
                                     textAlign: TextAlign.center,
@@ -1733,7 +1730,7 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
                                           .primaryText,
                                     ),
                                   ),
-                                  alignment: AlignmentDirectional(0.00, 0.00),
+                                  alignment: const AlignmentDirectional(0.00, 0.00),
                                   child: Text(
                                     'C',
                                     textAlign: TextAlign.center,
@@ -1764,7 +1761,7 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
                                           .primaryText,
                                     ),
                                   ),
-                                  alignment: AlignmentDirectional(0.00, 0.00),
+                                  alignment: const AlignmentDirectional(0.00, 0.00),
                                   child: Text(
                                     'V',
                                     textAlign: TextAlign.center,
@@ -1795,7 +1792,7 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
                                           .primaryText,
                                     ),
                                   ),
-                                  alignment: AlignmentDirectional(0.00, 0.00),
+                                  alignment: const AlignmentDirectional(0.00, 0.00),
                                   child: Text(
                                     'B',
                                     textAlign: TextAlign.center,
@@ -1826,7 +1823,7 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
                                           .primaryText,
                                     ),
                                   ),
-                                  alignment: AlignmentDirectional(0.00, 0.00),
+                                  alignment: const AlignmentDirectional(0.00, 0.00),
                                   child: Text(
                                     'N',
                                     textAlign: TextAlign.center,
@@ -1857,7 +1854,7 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
                                           .primaryText,
                                     ),
                                   ),
-                                  alignment: AlignmentDirectional(0.00, 0.00),
+                                  alignment: const AlignmentDirectional(0.00, 0.00),
                                   child: Text(
                                     'M',
                                     textAlign: TextAlign.center,
@@ -1888,7 +1885,7 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
                                           .primaryText,
                                     ),
                                   ),
-                                  alignment: AlignmentDirectional(0.00, 0.00),
+                                  alignment: const AlignmentDirectional(0.00, 0.00),
                                   child: Text(
                                     '.',
                                     textAlign: TextAlign.center,
@@ -1919,7 +1916,7 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
                                           .primaryText,
                                     ),
                                   ),
-                                  alignment: AlignmentDirectional(0.00, 0.00),
+                                  alignment: const AlignmentDirectional(0.00, 0.00),
                                   child: Text(
                                     ',',
                                     textAlign: TextAlign.center,
@@ -1950,7 +1947,7 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
                                           .primaryText,
                                     ),
                                   ),
-                                  alignment: AlignmentDirectional(0.00, 0.00),
+                                  alignment: const AlignmentDirectional(0.00, 0.00),
                                   child: Text(
                                     '@',
                                     textAlign: TextAlign.center,
@@ -1967,13 +1964,13 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               10.0, 3.0, 0.0, 3.0),
                           child: Container(
                             width: MediaQuery.sizeOf(context).width * 0.2,
@@ -2005,14 +2002,14 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
                                   context: context,
                                   builder: (alertDialogContext) {
                                     return AlertDialog(
-                                      title: Text('Ayar'),
+                                      title: const Text('Ayar'),
                                       content:
-                                          Text('Standart değer kaydedildi'),
+                                          const Text('Standart değer kaydedildi'),
                                       actions: [
                                         TextButton(
                                           onPressed: () =>
                                               Navigator.pop(alertDialogContext),
-                                          child: Text('Ok'),
+                                          child: const Text('Ok'),
                                         ),
                                       ],
                                     );
@@ -2052,7 +2049,7 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 10.0, 0.0),
                           child: InkWell(
                             splashColor: Colors.transparent,

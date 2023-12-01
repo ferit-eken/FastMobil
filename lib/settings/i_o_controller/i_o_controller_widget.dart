@@ -2,16 +2,14 @@ import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'i_o_controller_model.dart';
 export 'i_o_controller_model.dart';
 
 class IOControllerWidget extends StatefulWidget {
-  const IOControllerWidget({Key? key}) : super(key: key);
+  const IOControllerWidget({super.key});
 
   @override
   _IOControllerWidgetState createState() => _IOControllerWidgetState();
@@ -83,7 +81,7 @@ class _IOControllerWidgetState extends State<IOControllerWidget> {
               ),
               actions: [
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 12.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 12.0, 0.0),
                   child: FlutterFlowIconButton(
                     borderColor: Colors.transparent,
                     borderRadius: 30.0,
@@ -154,7 +152,7 @@ class _IOControllerWidgetState extends State<IOControllerWidget> {
                       width: double.infinity,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).secondaryBackground,
-                        boxShadow: [
+                        boxShadow: const [
                           BoxShadow(
                             blurRadius: 3.0,
                             color: Color(0x33000000),
@@ -167,7 +165,7 @@ class _IOControllerWidgetState extends State<IOControllerWidget> {
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 16.0, 10.0, 0.0, 12.0),
                             child: Text(
                               'Otoparklarınızı bu listeden yönetebilirsiniz',
@@ -179,7 +177,7 @@ class _IOControllerWidgetState extends State<IOControllerWidget> {
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 1.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 1.0, 0.0, 0.0),
                       child: FutureBuilder<ApiCallResponse>(
                         future: SettingsGroup.getALLCall.call(
                           db: FFAppState().veritabani,
@@ -218,7 +216,7 @@ class _IOControllerWidgetState extends State<IOControllerWidget> {
                                   final kartListeItem =
                                       kartListe[kartListeIndex];
                                   return Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 1.0),
                                     child: Container(
                                       width: 100.0,
@@ -231,12 +229,12 @@ class _IOControllerWidgetState extends State<IOControllerWidget> {
                                             blurRadius: 0.0,
                                             color: FlutterFlowTheme.of(context)
                                                 .alternate,
-                                            offset: Offset(0.0, 1.0),
+                                            offset: const Offset(0.0, 1.0),
                                           )
                                         ],
                                       ),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             16.0, 0.0, 16.0, 0.0),
                                         child: InkWell(
                                           splashColor: Colors.transparent,
@@ -268,7 +266,7 @@ class _IOControllerWidgetState extends State<IOControllerWidget> {
                                                       .warning,
                                                   shape: BoxShape.circle,
                                                   border: Border.all(
-                                                    color: Color(0xFF020000),
+                                                    color: const Color(0xFF020000),
                                                     width: 2.0,
                                                   ),
                                                 ),
@@ -282,7 +280,7 @@ class _IOControllerWidgetState extends State<IOControllerWidget> {
                                               ),
                                               Expanded(
                                                 child: Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           12.0, 0.0, 0.0, 0.0),
                                                   child: InkWell(
@@ -330,7 +328,7 @@ class _IOControllerWidgetState extends State<IOControllerWidget> {
                                                       children: [
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,

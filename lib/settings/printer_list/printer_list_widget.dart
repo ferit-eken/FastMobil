@@ -1,22 +1,17 @@
-import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'printer_list_model.dart';
 export 'printer_list_model.dart';
 
 class PrinterListWidget extends StatefulWidget {
   const PrinterListWidget({
-    Key? key,
+    super.key,
     required this.yazicilar,
-  }) : super(key: key);
+  });
 
   final List<dynamic>? yazicilar;
 
@@ -89,7 +84,7 @@ class _PrinterListWidgetState extends State<PrinterListWidget>
                 'Aygıt Listesi',
                 style: FlutterFlowTheme.of(context).headlineSmall,
               ),
-              actions: [],
+              actions: const [],
               centerTitle: false,
               elevation: 0.0,
             ),
@@ -102,7 +97,7 @@ class _PrinterListWidgetState extends State<PrinterListWidget>
                   Expanded(
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 8.0, 8.0),
+                          const EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 8.0, 8.0),
                       child: Builder(
                         builder: (context) {
                           final liste =
@@ -114,7 +109,7 @@ class _PrinterListWidgetState extends State<PrinterListWidget>
                             itemBuilder: (context, listeIndex) {
                               final listeItem = liste[listeIndex];
                               return Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 1.0),
                                 child: Container(
                                   width: 100.0,
@@ -126,12 +121,12 @@ class _PrinterListWidgetState extends State<PrinterListWidget>
                                         blurRadius: 0.0,
                                         color: FlutterFlowTheme.of(context)
                                             .alternate,
-                                        offset: Offset(0.0, 1.0),
+                                        offset: const Offset(0.0, 1.0),
                                       )
                                     ],
                                   ),
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         8.0, 8.0, 8.0, 8.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -161,7 +156,7 @@ class _PrinterListWidgetState extends State<PrinterListWidget>
                                                   CrossAxisAlignment.start,
                                               children: [
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           12.0, 0.0, 0.0, 0.0),
                                                   child: Text(
@@ -175,7 +170,7 @@ class _PrinterListWidgetState extends State<PrinterListWidget>
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 4.0, 0.0, 0.0),
                                                   child: Row(
@@ -184,7 +179,7 @@ class _PrinterListWidgetState extends State<PrinterListWidget>
                                                     children: [
                                                       Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     12.0,
                                                                     0.0,
@@ -202,7 +197,7 @@ class _PrinterListWidgetState extends State<PrinterListWidget>
                                                       ),
                                                       Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     4.0,
                                                                     0.0,
@@ -244,7 +239,7 @@ class _PrinterListWidgetState extends State<PrinterListWidget>
                                           ),
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     4.0, 4.0, 4.0, 4.0),
                                             child: Icon(
                                               Icons

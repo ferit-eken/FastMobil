@@ -3,16 +3,13 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'side_menu_model.dart';
 export 'side_menu_model.dart';
 
 class SideMenuWidget extends StatefulWidget {
-  const SideMenuWidget({Key? key}) : super(key: key);
+  const SideMenuWidget({super.key});
 
   @override
   _SideMenuWidgetState createState() => _SideMenuWidgetState();
@@ -31,8 +28,8 @@ class _SideMenuWidgetState extends State<SideMenuWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 300.ms,
-          begin: Offset(-40.0, 0.0),
-          end: Offset(0.0, 0.0),
+          begin: const Offset(-40.0, 0.0),
+          end: const Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -74,8 +71,8 @@ class _SideMenuWidgetState extends State<SideMenuWidget>
       width: 270.0,
       height: double.infinity,
       decoration: BoxDecoration(
-        color: Color(0xFF9BBFF4),
-        boxShadow: [
+        color: const Color(0xFF9BBFF4),
+        boxShadow: const [
           BoxShadow(
             blurRadius: 0.0,
             color: Color(0xFFE5E7EB),
@@ -85,16 +82,16 @@ class _SideMenuWidgetState extends State<SideMenuWidget>
         borderRadius: BorderRadius.circular(0.0),
       ),
       child: Padding(
-        padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
+        padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
         child: Column(
           mainAxisSize: MainAxisSize.max,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
               child: Container(
                 width: double.infinity,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: Color(0x4D9489F5),
                   boxShadow: [
                     BoxShadow(
@@ -108,7 +105,7 @@ class _SideMenuWidgetState extends State<SideMenuWidget>
                   children: [
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(16.0, 24.0, 16.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(16.0, 24.0, 16.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -126,7 +123,7 @@ class _SideMenuWidgetState extends State<SideMenuWidget>
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(
+                      padding: const EdgeInsetsDirectional.fromSTEB(
                           16.0, 20.0, 16.0, 16.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
@@ -135,21 +132,21 @@ class _SideMenuWidgetState extends State<SideMenuWidget>
                             width: 44.0,
                             height: 44.0,
                             decoration: BoxDecoration(
-                              color: Color(0x4D9489F5),
+                              color: const Color(0x4D9489F5),
                               borderRadius: BorderRadius.circular(12.0),
                               border: Border.all(
-                                color: Color(0xFF6F61EF),
+                                color: const Color(0xFF6F61EF),
                                 width: 2.0,
                               ),
                             ),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   2.0, 2.0, 2.0, 2.0),
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(8.0),
                                 child: CachedNetworkImage(
-                                  fadeInDuration: Duration(milliseconds: 500),
-                                  fadeOutDuration: Duration(milliseconds: 500),
+                                  fadeInDuration: const Duration(milliseconds: 500),
+                                  fadeOutDuration: const Duration(milliseconds: 500),
                                   imageUrl:
                                       'https://images.unsplash.com/photo-1624561172888-ac93c696e10c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NjJ8fHVzZXJzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=900&q=60',
                                   width: 44.0,
@@ -161,7 +158,7 @@ class _SideMenuWidgetState extends State<SideMenuWidget>
                           ),
                           Expanded(
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   12.0, 0.0, 0.0, 0.0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
@@ -182,7 +179,7 @@ class _SideMenuWidgetState extends State<SideMenuWidget>
                                         ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 4.0, 0.0, 0.0),
                                     child: Text(
                                       'admin@gmail.com',
@@ -190,7 +187,7 @@ class _SideMenuWidgetState extends State<SideMenuWidget>
                                           .labelSmall
                                           .override(
                                             fontFamily: 'Plus Jakarta Sans',
-                                            color: Color(0x9AFFFFFF),
+                                            color: const Color(0x9AFFFFFF),
                                             fontSize: 12.0,
                                             fontWeight: FontWeight.w500,
                                           ),
@@ -200,7 +197,7 @@ class _SideMenuWidgetState extends State<SideMenuWidget>
                               ),
                             ),
                           ),
-                          Icon(
+                          const Icon(
                             Icons.notifications_none,
                             color: Colors.white,
                             size: 28.0,
@@ -213,7 +210,7 @@ class _SideMenuWidgetState extends State<SideMenuWidget>
               ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 12.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 12.0),
               child: InkWell(
                 splashColor: Colors.transparent,
                 focusColor: Colors.transparent,
@@ -226,22 +223,22 @@ class _SideMenuWidgetState extends State<SideMenuWidget>
                   width: double.infinity,
                   height: 50.0,
                   decoration: BoxDecoration(
-                    color: Color(0x4D9489F5),
+                    color: const Color(0x4D9489F5),
                     borderRadius: BorderRadius.circular(12.0),
                     shape: BoxShape.rectangle,
                     border: Border.all(
-                      color: Color(0xFF6F61EF),
+                      color: const Color(0xFF6F61EF),
                       width: 1.0,
                     ),
                   ),
                   child: Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 12.0, 12.0, 12.0),
                           child: Container(
                             width: 4.0,
@@ -252,13 +249,13 @@ class _SideMenuWidgetState extends State<SideMenuWidget>
                             ),
                           ),
                         ),
-                        Icon(
+                        const Icon(
                           Icons.stacked_bar_chart_rounded,
                           color: Colors.white,
                           size: 28.0,
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               12.0, 0.0, 0.0, 0.0),
                           child: Text(
                             'Dashboard',
@@ -279,40 +276,40 @@ class _SideMenuWidgetState extends State<SideMenuWidget>
               ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 12.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 12.0),
               child: Container(
                 width: double.infinity,
                 height: 50.0,
                 decoration: BoxDecoration(
-                  color: Color(0xFF6F61EF),
+                  color: const Color(0xFF6F61EF),
                   borderRadius: BorderRadius.circular(12.0),
                   shape: BoxShape.rectangle,
                 ),
                 child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             0.0, 12.0, 12.0, 12.0),
                         child: Container(
                           width: 4.0,
                           height: 100.0,
                           decoration: BoxDecoration(
-                            color: Color(0x4D9489F5),
+                            color: const Color(0x4D9489F5),
                             borderRadius: BorderRadius.circular(12.0),
                           ),
                         ),
                       ),
-                      Icon(
+                      const Icon(
                         Icons.forum_rounded,
                         color: Colors.white,
                         size: 28.0,
                       ),
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                         child: Text(
                           'Aboneler',
                           style:
@@ -330,40 +327,40 @@ class _SideMenuWidgetState extends State<SideMenuWidget>
               ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 12.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 12.0),
               child: Container(
                 width: double.infinity,
                 height: 50.0,
                 decoration: BoxDecoration(
-                  color: Color(0xFF6F61EF),
+                  color: const Color(0xFF6F61EF),
                   borderRadius: BorderRadius.circular(12.0),
                   shape: BoxShape.rectangle,
                 ),
                 child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             0.0, 12.0, 12.0, 12.0),
                         child: Container(
                           width: 4.0,
                           height: 100.0,
                           decoration: BoxDecoration(
-                            color: Color(0x4D9489F5),
+                            color: const Color(0x4D9489F5),
                             borderRadius: BorderRadius.circular(12.0),
                           ),
                         ),
                       ),
-                      Icon(
+                      const Icon(
                         Icons.grain,
                         color: Colors.white,
                         size: 28.0,
                       ),
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                         child: Text(
                           'Raporlar',
                           style:
@@ -381,40 +378,40 @@ class _SideMenuWidgetState extends State<SideMenuWidget>
               ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 12.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 12.0),
               child: Container(
                 width: double.infinity,
                 height: 50.0,
                 decoration: BoxDecoration(
-                  color: Color(0xFF6F61EF),
+                  color: const Color(0xFF6F61EF),
                   borderRadius: BorderRadius.circular(12.0),
                   shape: BoxShape.rectangle,
                 ),
                 child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             0.0, 12.0, 12.0, 12.0),
                         child: Container(
                           width: 4.0,
                           height: 100.0,
                           decoration: BoxDecoration(
-                            color: Color(0x4D9489F5),
+                            color: const Color(0x4D9489F5),
                             borderRadius: BorderRadius.circular(12.0),
                           ),
                         ),
                       ),
-                      Icon(
+                      const Icon(
                         Icons.wifi_tethering_rounded,
                         color: Colors.white,
                         size: 28.0,
                       ),
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                         child: Text(
                           'Tanımlar',
                           style:
@@ -433,20 +430,20 @@ class _SideMenuWidgetState extends State<SideMenuWidget>
             ),
             Expanded(
               child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.end,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Divider(
+                    const Divider(
                       height: 12.0,
                       thickness: 2.0,
                       color: Color(0x4D9489F5),
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 12.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 12.0, 0.0),
                       child: InkWell(
                         splashColor: Colors.transparent,
                         focusColor: Colors.transparent,
@@ -481,20 +478,20 @@ class _SideMenuWidgetState extends State<SideMenuWidget>
                           width: 80.0,
                           height: 40.0,
                           decoration: BoxDecoration(
-                            color: Color(0x4D9489F5),
+                            color: const Color(0x4D9489F5),
                             borderRadius: BorderRadius.circular(20.0),
                             border: Border.all(
-                              color: Color(0x4D9489F5),
+                              color: const Color(0x4D9489F5),
                               width: 1.0,
                             ),
                           ),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 2.0, 2.0, 2.0, 2.0),
                             child: Stack(
-                              alignment: AlignmentDirectional(0.0, 0.0),
+                              alignment: const AlignmentDirectional(0.0, 0.0),
                               children: [
-                                Align(
+                                const Align(
                                   alignment: AlignmentDirectional(-0.90, 0.00),
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
@@ -506,7 +503,7 @@ class _SideMenuWidgetState extends State<SideMenuWidget>
                                     ),
                                   ),
                                 ),
-                                Align(
+                                const Align(
                                   alignment: AlignmentDirectional(1.00, 0.00),
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
@@ -519,13 +516,13 @@ class _SideMenuWidgetState extends State<SideMenuWidget>
                                   ),
                                 ),
                                 Align(
-                                  alignment: AlignmentDirectional(1.00, 0.00),
+                                  alignment: const AlignmentDirectional(1.00, 0.00),
                                   child: Container(
                                     width: 36.0,
                                     height: 36.0,
                                     decoration: BoxDecoration(
                                       color: Colors.white,
-                                      boxShadow: [
+                                      boxShadow: const [
                                         BoxShadow(
                                           blurRadius: 4.0,
                                           color: Color(0x430B0D0F),
@@ -546,7 +543,7 @@ class _SideMenuWidgetState extends State<SideMenuWidget>
                         ),
                       ),
                     ),
-                  ].divide(SizedBox(height: 12.0)),
+                  ].divide(const SizedBox(height: 12.0)),
                 ),
               ),
             ),

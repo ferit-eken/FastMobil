@@ -2,16 +2,14 @@ import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'otoparkdurum_model.dart';
 export 'otoparkdurum_model.dart';
 
 class OtoparkdurumWidget extends StatefulWidget {
-  const OtoparkdurumWidget({Key? key}) : super(key: key);
+  const OtoparkdurumWidget({super.key});
 
   @override
   _OtoparkdurumWidgetState createState() => _OtoparkdurumWidgetState();
@@ -68,7 +66,7 @@ class _OtoparkdurumWidgetState extends State<OtoparkdurumWidget> {
                 borderRadius: 30.0,
                 borderWidth: 1.0,
                 buttonSize: 60.0,
-                icon: Icon(
+                icon: const Icon(
                   Icons.arrow_back,
                   color: Color(0xFF020000),
                   size: 30.0,
@@ -87,7 +85,7 @@ class _OtoparkdurumWidgetState extends State<OtoparkdurumWidget> {
               ),
               actions: [
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
                   child: InkWell(
                     splashColor: Colors.transparent,
                     focusColor: Colors.transparent,
@@ -179,7 +177,7 @@ class _OtoparkdurumWidgetState extends State<OtoparkdurumWidget> {
                                     return GridView.builder(
                                       padding: EdgeInsets.zero,
                                       gridDelegate:
-                                          SliverGridDelegateWithFixedCrossAxisCount(
+                                          const SliverGridDelegateWithFixedCrossAxisCount(
                                         crossAxisCount: 5,
                                         crossAxisSpacing: 10.0,
                                         mainAxisSpacing: 10.0,
@@ -192,7 +190,7 @@ class _OtoparkdurumWidgetState extends State<OtoparkdurumWidget> {
                                             konumListe[konumListeIndex];
                                         return Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   3.0, 3.0, 3.0, 3.0),
                                           child: InkWell(
                                             splashColor: Colors.transparent,
@@ -239,15 +237,15 @@ class _OtoparkdurumWidgetState extends State<OtoparkdurumWidget> {
                                                   builder:
                                                       (alertDialogContext) {
                                                     return AlertDialog(
-                                                      title: Text('Hata'),
-                                                      content: Text(
+                                                      title: const Text('Hata'),
+                                                      content: const Text(
                                                           'Geçiş yüklenemedi'),
                                                       actions: [
                                                         TextButton(
                                                           onPressed: () =>
                                                               Navigator.pop(
                                                                   alertDialogContext),
-                                                          child: Text('Ok'),
+                                                          child: const Text('Ok'),
                                                         ),
                                                       ],
                                                     );

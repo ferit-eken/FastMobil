@@ -2,16 +2,14 @@ import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'otoparklar_model.dart';
 export 'otoparklar_model.dart';
 
 class OtoparklarWidget extends StatefulWidget {
-  const OtoparklarWidget({Key? key}) : super(key: key);
+  const OtoparklarWidget({super.key});
 
   @override
   _OtoparklarWidgetState createState() => _OtoparklarWidgetState();
@@ -83,7 +81,7 @@ class _OtoparklarWidgetState extends State<OtoparklarWidget> {
               ),
               actions: [
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 12.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 12.0, 0.0),
                   child: FlutterFlowIconButton(
                     borderColor: Colors.transparent,
                     borderRadius: 30.0,
@@ -113,7 +111,7 @@ class _OtoparklarWidgetState extends State<OtoparklarWidget> {
                       width: double.infinity,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).secondaryBackground,
-                        boxShadow: [
+                        boxShadow: const [
                           BoxShadow(
                             blurRadius: 3.0,
                             color: Color(0x33000000),
@@ -126,7 +124,7 @@ class _OtoparklarWidgetState extends State<OtoparklarWidget> {
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 16.0, 10.0, 0.0, 12.0),
                             child: Text(
                               'Otoparklarınızı bu listeden yönetebilirsiniz',
@@ -138,7 +136,7 @@ class _OtoparklarWidgetState extends State<OtoparklarWidget> {
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 1.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 1.0, 0.0, 0.0),
                       child: FutureBuilder<ApiCallResponse>(
                         future: SettingsGroup.getALLCall.call(
                           db: FFAppState().veritabani,
@@ -177,7 +175,7 @@ class _OtoparklarWidgetState extends State<OtoparklarWidget> {
                                   final otoparkListeItem =
                                       otoparkListe[otoparkListeIndex];
                                   return Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 1.0),
                                     child: Container(
                                       width: 100.0,
@@ -190,12 +188,12 @@ class _OtoparklarWidgetState extends State<OtoparklarWidget> {
                                             blurRadius: 0.0,
                                             color: FlutterFlowTheme.of(context)
                                                 .alternate,
-                                            offset: Offset(0.0, 1.0),
+                                            offset: const Offset(0.0, 1.0),
                                           )
                                         ],
                                       ),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             16.0, 0.0, 16.0, 0.0),
                                         child: InkWell(
                                           splashColor: Colors.transparent,
@@ -227,7 +225,7 @@ class _OtoparklarWidgetState extends State<OtoparklarWidget> {
                                                       .warning,
                                                   shape: BoxShape.circle,
                                                   border: Border.all(
-                                                    color: Color(0xFF020000),
+                                                    color: const Color(0xFF020000),
                                                     width: 2.0,
                                                   ),
                                                 ),
@@ -241,7 +239,7 @@ class _OtoparklarWidgetState extends State<OtoparklarWidget> {
                                               ),
                                               Expanded(
                                                 child: Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           12.0, 0.0, 0.0, 0.0),
                                                   child: Column(
@@ -256,7 +254,7 @@ class _OtoparklarWidgetState extends State<OtoparklarWidget> {
                                                     children: [
                                                       Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     0.0,

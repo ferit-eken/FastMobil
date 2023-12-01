@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'backend/api_requests/api_manager.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'flutter_flow/flutter_flow_util.dart';
-import 'dart:convert';
 
 class FFAppState extends ChangeNotifier {
   static FFAppState _instance = FFAppState._internal();
@@ -90,312 +88,312 @@ class FFAppState extends ChangeNotifier {
 
   dynamic _UserInfo;
   dynamic get UserInfo => _UserInfo;
-  set UserInfo(dynamic _value) {
-    _UserInfo = _value;
+  set UserInfo(dynamic value) {
+    _UserInfo = value;
   }
 
   String _veritabani = '';
   String get veritabani => _veritabani;
-  set veritabani(String _value) {
-    _veritabani = _value;
+  set veritabani(String value) {
+    _veritabani = value;
   }
 
   dynamic _ActiveRow;
   dynamic get ActiveRow => _ActiveRow;
-  set ActiveRow(dynamic _value) {
-    _ActiveRow = _value;
+  set ActiveRow(dynamic value) {
+    _ActiveRow = value;
   }
 
   dynamic _Otopark;
   dynamic get Otopark => _Otopark;
-  set Otopark(dynamic _value) {
-    _Otopark = _value;
+  set Otopark(dynamic value) {
+    _Otopark = value;
   }
 
   dynamic _KapiGrup;
   dynamic get KapiGrup => _KapiGrup;
-  set KapiGrup(dynamic _value) {
-    _KapiGrup = _value;
+  set KapiGrup(dynamic value) {
+    _KapiGrup = value;
   }
 
   dynamic _Kapi;
   dynamic get Kapi => _Kapi;
-  set Kapi(dynamic _value) {
-    _Kapi = _value;
+  set Kapi(dynamic value) {
+    _Kapi = value;
   }
 
   String _OtoparkId = '';
   String get OtoparkId => _OtoparkId;
-  set OtoparkId(String _value) {
-    _OtoparkId = _value;
-    prefs.setString('ff_OtoparkId', _value);
+  set OtoparkId(String value) {
+    _OtoparkId = value;
+    prefs.setString('ff_OtoparkId', value);
   }
 
   String _KapiGrupId = '';
   String get KapiGrupId => _KapiGrupId;
-  set KapiGrupId(String _value) {
-    _KapiGrupId = _value;
-    prefs.setString('ff_KapiGrupId', _value);
+  set KapiGrupId(String value) {
+    _KapiGrupId = value;
+    prefs.setString('ff_KapiGrupId', value);
   }
 
   String _KapiId = '';
   String get KapiId => _KapiId;
-  set KapiId(String _value) {
-    _KapiId = _value;
-    prefs.setString('ff_KapiId', _value);
+  set KapiId(String value) {
+    _KapiId = value;
+    prefs.setString('ff_KapiId', value);
   }
 
   String _DefAracTipi = '';
   String get DefAracTipi => _DefAracTipi;
-  set DefAracTipi(String _value) {
-    _DefAracTipi = _value;
-    prefs.setString('ff_DefAracTipi', _value);
+  set DefAracTipi(String value) {
+    _DefAracTipi = value;
+    prefs.setString('ff_DefAracTipi', value);
   }
 
   List<dynamic> _AracTipleri = [];
   List<dynamic> get AracTipleri => _AracTipleri;
-  set AracTipleri(List<dynamic> _value) {
-    _AracTipleri = _value;
+  set AracTipleri(List<dynamic> value) {
+    _AracTipleri = value;
   }
 
-  void addToAracTipleri(dynamic _value) {
-    _AracTipleri.add(_value);
+  void addToAracTipleri(dynamic value) {
+    _AracTipleri.add(value);
   }
 
-  void removeFromAracTipleri(dynamic _value) {
-    _AracTipleri.remove(_value);
+  void removeFromAracTipleri(dynamic value) {
+    _AracTipleri.remove(value);
   }
 
-  void removeAtIndexFromAracTipleri(int _index) {
-    _AracTipleri.removeAt(_index);
+  void removeAtIndexFromAracTipleri(int index) {
+    _AracTipleri.removeAt(index);
   }
 
   void updateAracTipleriAtIndex(
-    int _index,
+    int index,
     dynamic Function(dynamic) updateFn,
   ) {
-    _AracTipleri[_index] = updateFn(_AracTipleri[_index]);
+    _AracTipleri[index] = updateFn(_AracTipleri[index]);
   }
 
-  void insertAtIndexInAracTipleri(int _index, dynamic _value) {
-    _AracTipleri.insert(_index, _value);
+  void insertAtIndexInAracTipleri(int index, dynamic value) {
+    _AracTipleri.insert(index, value);
   }
 
   int _UserId = 0;
   int get UserId => _UserId;
-  set UserId(int _value) {
-    _UserId = _value;
+  set UserId(int value) {
+    _UserId = value;
   }
 
   bool _yazicidurum = false;
   bool get yazicidurum => _yazicidurum;
-  set yazicidurum(bool _value) {
-    _yazicidurum = _value;
+  set yazicidurum(bool value) {
+    _yazicidurum = value;
   }
 
   String _FisUstBilgi1 = '';
   String get FisUstBilgi1 => _FisUstBilgi1;
-  set FisUstBilgi1(String _value) {
-    _FisUstBilgi1 = _value;
-    prefs.setString('ff_FisUstBilgi1', _value);
+  set FisUstBilgi1(String value) {
+    _FisUstBilgi1 = value;
+    prefs.setString('ff_FisUstBilgi1', value);
   }
 
   String _FisUstBilgi2 = '';
   String get FisUstBilgi2 => _FisUstBilgi2;
-  set FisUstBilgi2(String _value) {
-    _FisUstBilgi2 = _value;
-    prefs.setString('ff_FisUstBilgi2', _value);
+  set FisUstBilgi2(String value) {
+    _FisUstBilgi2 = value;
+    prefs.setString('ff_FisUstBilgi2', value);
   }
 
   String _FisAltBilgi1 = '';
   String get FisAltBilgi1 => _FisAltBilgi1;
-  set FisAltBilgi1(String _value) {
-    _FisAltBilgi1 = _value;
-    prefs.setString('ff_FisAltBilgi1', _value);
+  set FisAltBilgi1(String value) {
+    _FisAltBilgi1 = value;
+    prefs.setString('ff_FisAltBilgi1', value);
   }
 
   String _FisAltBilgi2 = '';
   String get FisAltBilgi2 => _FisAltBilgi2;
-  set FisAltBilgi2(String _value) {
-    _FisAltBilgi2 = _value;
-    prefs.setString('ff_FisAltBilgi2', _value);
+  set FisAltBilgi2(String value) {
+    _FisAltBilgi2 = value;
+    prefs.setString('ff_FisAltBilgi2', value);
   }
 
   dynamic _firmabilgi;
   dynamic get firmabilgi => _firmabilgi;
-  set firmabilgi(dynamic _value) {
-    _firmabilgi = _value;
+  set firmabilgi(dynamic value) {
+    _firmabilgi = value;
   }
 
   String _defPlaka = '';
   String get defPlaka => _defPlaka;
-  set defPlaka(String _value) {
-    _defPlaka = _value;
-    prefs.setString('ff_defPlaka', _value);
+  set defPlaka(String value) {
+    _defPlaka = value;
+    prefs.setString('ff_defPlaka', value);
   }
 
   String _girisFirmaKodu = '';
   String get girisFirmaKodu => _girisFirmaKodu;
-  set girisFirmaKodu(String _value) {
-    _girisFirmaKodu = _value;
-    prefs.setString('ff_girisFirmaKodu', _value);
+  set girisFirmaKodu(String value) {
+    _girisFirmaKodu = value;
+    prefs.setString('ff_girisFirmaKodu', value);
   }
 
   String _girisKullanici = '';
   String get girisKullanici => _girisKullanici;
-  set girisKullanici(String _value) {
-    _girisKullanici = _value;
-    prefs.setString('ff_girisKullanici', _value);
+  set girisKullanici(String value) {
+    _girisKullanici = value;
+    prefs.setString('ff_girisKullanici', value);
   }
 
   List<dynamic> _anahtarlar = [];
   List<dynamic> get anahtarlar => _anahtarlar;
-  set anahtarlar(List<dynamic> _value) {
-    _anahtarlar = _value;
+  set anahtarlar(List<dynamic> value) {
+    _anahtarlar = value;
   }
 
-  void addToAnahtarlar(dynamic _value) {
-    _anahtarlar.add(_value);
+  void addToAnahtarlar(dynamic value) {
+    _anahtarlar.add(value);
   }
 
-  void removeFromAnahtarlar(dynamic _value) {
-    _anahtarlar.remove(_value);
+  void removeFromAnahtarlar(dynamic value) {
+    _anahtarlar.remove(value);
   }
 
-  void removeAtIndexFromAnahtarlar(int _index) {
-    _anahtarlar.removeAt(_index);
+  void removeAtIndexFromAnahtarlar(int index) {
+    _anahtarlar.removeAt(index);
   }
 
   void updateAnahtarlarAtIndex(
-    int _index,
+    int index,
     dynamic Function(dynamic) updateFn,
   ) {
-    _anahtarlar[_index] = updateFn(_anahtarlar[_index]);
+    _anahtarlar[index] = updateFn(_anahtarlar[index]);
   }
 
-  void insertAtIndexInAnahtarlar(int _index, dynamic _value) {
-    _anahtarlar.insert(_index, _value);
+  void insertAtIndexInAnahtarlar(int index, dynamic value) {
+    _anahtarlar.insert(index, value);
   }
 
   List<dynamic> _parkkonumlari = [];
   List<dynamic> get parkkonumlari => _parkkonumlari;
-  set parkkonumlari(List<dynamic> _value) {
-    _parkkonumlari = _value;
+  set parkkonumlari(List<dynamic> value) {
+    _parkkonumlari = value;
   }
 
-  void addToParkkonumlari(dynamic _value) {
-    _parkkonumlari.add(_value);
+  void addToParkkonumlari(dynamic value) {
+    _parkkonumlari.add(value);
   }
 
-  void removeFromParkkonumlari(dynamic _value) {
-    _parkkonumlari.remove(_value);
+  void removeFromParkkonumlari(dynamic value) {
+    _parkkonumlari.remove(value);
   }
 
-  void removeAtIndexFromParkkonumlari(int _index) {
-    _parkkonumlari.removeAt(_index);
+  void removeAtIndexFromParkkonumlari(int index) {
+    _parkkonumlari.removeAt(index);
   }
 
   void updateParkkonumlariAtIndex(
-    int _index,
+    int index,
     dynamic Function(dynamic) updateFn,
   ) {
-    _parkkonumlari[_index] = updateFn(_parkkonumlari[_index]);
+    _parkkonumlari[index] = updateFn(_parkkonumlari[index]);
   }
 
-  void insertAtIndexInParkkonumlari(int _index, dynamic _value) {
-    _parkkonumlari.insert(_index, _value);
+  void insertAtIndexInParkkonumlari(int index, dynamic value) {
+    _parkkonumlari.insert(index, value);
   }
 
   int _para1 = 0;
   int get para1 => _para1;
-  set para1(int _value) {
-    _para1 = _value;
-    prefs.setInt('ff_para1', _value);
+  set para1(int value) {
+    _para1 = value;
+    prefs.setInt('ff_para1', value);
   }
 
   int _para2 = 0;
   int get para2 => _para2;
-  set para2(int _value) {
-    _para2 = _value;
-    prefs.setInt('ff_para2', _value);
+  set para2(int value) {
+    _para2 = value;
+    prefs.setInt('ff_para2', value);
   }
 
   int _para3 = 0;
   int get para3 => _para3;
-  set para3(int _value) {
-    _para3 = _value;
-    prefs.setInt('ff_para3', _value);
+  set para3(int value) {
+    _para3 = value;
+    prefs.setInt('ff_para3', value);
   }
 
   int _para4 = 0;
   int get para4 => _para4;
-  set para4(int _value) {
-    _para4 = _value;
-    prefs.setInt('ff_para4', _value);
+  set para4(int value) {
+    _para4 = value;
+    prefs.setInt('ff_para4', value);
   }
 
   int _para5 = 0;
   int get para5 => _para5;
-  set para5(int _value) {
-    _para5 = _value;
-    prefs.setInt('ff_para5', _value);
+  set para5(int value) {
+    _para5 = value;
+    prefs.setInt('ff_para5', value);
   }
 
   int _para6 = 0;
   int get para6 => _para6;
-  set para6(int _value) {
-    _para6 = _value;
-    prefs.setInt('ff_para6', _value);
+  set para6(int value) {
+    _para6 = value;
+    prefs.setInt('ff_para6', value);
   }
 
   int _para7 = 0;
   int get para7 => _para7;
-  set para7(int _value) {
-    _para7 = _value;
-    prefs.setInt('ff_para7', _value);
+  set para7(int value) {
+    _para7 = value;
+    prefs.setInt('ff_para7', value);
   }
 
   int _defprinterindex = 0;
   int get defprinterindex => _defprinterindex;
-  set defprinterindex(int _value) {
-    _defprinterindex = _value;
-    prefs.setInt('ff_defprinterindex', _value);
+  set defprinterindex(int value) {
+    _defprinterindex = value;
+    prefs.setInt('ff_defprinterindex', value);
   }
 
   List<dynamic> _PrinterList = [];
   List<dynamic> get PrinterList => _PrinterList;
-  set PrinterList(List<dynamic> _value) {
-    _PrinterList = _value;
+  set PrinterList(List<dynamic> value) {
+    _PrinterList = value;
   }
 
-  void addToPrinterList(dynamic _value) {
-    _PrinterList.add(_value);
+  void addToPrinterList(dynamic value) {
+    _PrinterList.add(value);
   }
 
-  void removeFromPrinterList(dynamic _value) {
-    _PrinterList.remove(_value);
+  void removeFromPrinterList(dynamic value) {
+    _PrinterList.remove(value);
   }
 
-  void removeAtIndexFromPrinterList(int _index) {
-    _PrinterList.removeAt(_index);
+  void removeAtIndexFromPrinterList(int index) {
+    _PrinterList.removeAt(index);
   }
 
   void updatePrinterListAtIndex(
-    int _index,
+    int index,
     dynamic Function(dynamic) updateFn,
   ) {
-    _PrinterList[_index] = updateFn(_PrinterList[_index]);
+    _PrinterList[index] = updateFn(_PrinterList[index]);
   }
 
-  void insertAtIndexInPrinterList(int _index, dynamic _value) {
-    _PrinterList.insert(_index, _value);
+  void insertAtIndexInPrinterList(int index, dynamic value) {
+    _PrinterList.insert(index, value);
   }
 
   bool _yaziciAktif = false;
   bool get yaziciAktif => _yaziciAktif;
-  set yaziciAktif(bool _value) {
-    _yaziciAktif = _value;
-    prefs.setBool('ff_yaziciAktif', _value);
+  set yaziciAktif(bool value) {
+    _yaziciAktif = value;
+    prefs.setBool('ff_yaziciAktif', value);
   }
 }
 

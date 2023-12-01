@@ -4,17 +4,15 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/custom_code/actions/index.dart' as actions;
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'gun_sonu_rapor_model.dart';
 export 'gun_sonu_rapor_model.dart';
 
 class GunSonuRaporWidget extends StatefulWidget {
-  const GunSonuRaporWidget({Key? key}) : super(key: key);
+  const GunSonuRaporWidget({super.key});
 
   @override
   _GunSonuRaporWidgetState createState() => _GunSonuRaporWidgetState();
@@ -101,7 +99,7 @@ class _GunSonuRaporWidgetState extends State<GunSonuRaporWidget> {
                     borderRadius: 30.0,
                     borderWidth: 1.0,
                     buttonSize: 60.0,
-                    icon: Icon(
+                    icon: const Icon(
                       Icons.arrow_back,
                       color: Color(0xFF020000),
                       size: 30.0,
@@ -127,13 +125,13 @@ class _GunSonuRaporWidgetState extends State<GunSonuRaporWidget> {
                       ),
                       child: Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
                             if (_model.resYazicidurum == true)
-                              Padding(
+                              const Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 10.0, 0.0),
                                 child: Icon(
@@ -143,7 +141,7 @@ class _GunSonuRaporWidgetState extends State<GunSonuRaporWidget> {
                                 ),
                               ),
                             if (_model.resYazicidurum == false)
-                              Padding(
+                              const Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 10.0, 0.0),
                                 child: Icon(
@@ -187,12 +185,12 @@ class _GunSonuRaporWidgetState extends State<GunSonuRaporWidget> {
                                         .secondaryBackground,
                                   ),
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         10.0, 10.0, 10.0, 10.0),
                                     child: GridView(
                                       padding: EdgeInsets.zero,
                                       gridDelegate:
-                                          SliverGridDelegateWithFixedCrossAxisCount(
+                                          const SliverGridDelegateWithFixedCrossAxisCount(
                                         crossAxisCount: 5,
                                         crossAxisSpacing: 10.0,
                                         mainAxisSpacing: 10.0,
@@ -212,7 +210,7 @@ class _GunSonuRaporWidgetState extends State<GunSonuRaporWidget> {
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primaryText,
-                                                offset: Offset(0.0, 2.0),
+                                                offset: const Offset(0.0, 2.0),
                                               )
                                             ],
                                             border: Border.all(
@@ -265,7 +263,7 @@ class _GunSonuRaporWidgetState extends State<GunSonuRaporWidget> {
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primaryText,
-                                                offset: Offset(0.0, 2.0),
+                                                offset: const Offset(0.0, 2.0),
                                               )
                                             ],
                                             border: Border.all(
@@ -318,7 +316,7 @@ class _GunSonuRaporWidgetState extends State<GunSonuRaporWidget> {
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primaryText,
-                                                offset: Offset(0.0, 2.0),
+                                                offset: const Offset(0.0, 2.0),
                                               )
                                             ],
                                             border: Border.all(
@@ -371,7 +369,7 @@ class _GunSonuRaporWidgetState extends State<GunSonuRaporWidget> {
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primaryText,
-                                                offset: Offset(0.0, 2.0),
+                                                offset: const Offset(0.0, 2.0),
                                               )
                                             ],
                                             border: Border.all(
@@ -424,7 +422,7 @@ class _GunSonuRaporWidgetState extends State<GunSonuRaporWidget> {
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primaryText,
-                                                offset: Offset(0.0, 2.0),
+                                                offset: const Offset(0.0, 2.0),
                                               )
                                             ],
                                             border: Border.all(
@@ -470,7 +468,7 @@ class _GunSonuRaporWidgetState extends State<GunSonuRaporWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       10.0, 0.0, 10.0, 5.0),
                                   child: Container(
                                     width:
@@ -484,7 +482,7 @@ class _GunSonuRaporWidgetState extends State<GunSonuRaporWidget> {
                                           blurRadius: 4.0,
                                           color: FlutterFlowTheme.of(context)
                                               .primaryText,
-                                          offset: Offset(0.0, 2.0),
+                                          offset: const Offset(0.0, 2.0),
                                         )
                                       ],
                                       border: Border.all(
@@ -521,7 +519,7 @@ class _GunSonuRaporWidgetState extends State<GunSonuRaporWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 5.0, 0.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -550,7 +548,7 @@ class _GunSonuRaporWidgetState extends State<GunSonuRaporWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 5.0, 0.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -579,7 +577,7 @@ class _GunSonuRaporWidgetState extends State<GunSonuRaporWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 5.0, 0.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -611,7 +609,7 @@ class _GunSonuRaporWidgetState extends State<GunSonuRaporWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 10.0, 0.0, 10.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -698,7 +696,7 @@ class _GunSonuRaporWidgetState extends State<GunSonuRaporWidget> {
                                               context: context,
                                               builder: (alertDialogContext) {
                                                 return AlertDialog(
-                                                  title: Text('Hata'),
+                                                  title: const Text('Hata'),
                                                   content: Text(
                                                       _model.resfisyazdir!),
                                                   actions: [
@@ -706,7 +704,7 @@ class _GunSonuRaporWidgetState extends State<GunSonuRaporWidget> {
                                                       onPressed: () =>
                                                           Navigator.pop(
                                                               alertDialogContext),
-                                                      child: Text('Ok'),
+                                                      child: const Text('Ok'),
                                                     ),
                                                   ],
                                                 );
@@ -721,10 +719,10 @@ class _GunSonuRaporWidgetState extends State<GunSonuRaporWidget> {
                                           width: 143.0,
                                           height: 40.0,
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   24.0, 0.0, 24.0, 0.0),
                                           iconPadding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
                                           color: FlutterFlowTheme.of(context)
                                               .warning,
@@ -738,7 +736,7 @@ class _GunSonuRaporWidgetState extends State<GunSonuRaporWidget> {
                                                         .primaryText,
                                               ),
                                           elevation: 3.0,
-                                          borderSide: BorderSide(
+                                          borderSide: const BorderSide(
                                             color: Colors.transparent,
                                             width: 1.0,
                                           ),
@@ -755,8 +753,8 @@ class _GunSonuRaporWidgetState extends State<GunSonuRaporWidget> {
                                                         (alertDialogContext) {
                                                       return AlertDialog(
                                                         title:
-                                                            Text('Gün Kapama'),
-                                                        content: Text(
+                                                            const Text('Gün Kapama'),
+                                                        content: const Text(
                                                             'Dikkat hesap kapaması yapılacak emin misiniz?'),
                                                         actions: [
                                                           TextButton(
@@ -765,7 +763,7 @@ class _GunSonuRaporWidgetState extends State<GunSonuRaporWidget> {
                                                                     alertDialogContext,
                                                                     false),
                                                             child:
-                                                                Text('Cancel'),
+                                                                const Text('Cancel'),
                                                           ),
                                                           TextButton(
                                                             onPressed: () =>
@@ -773,7 +771,7 @@ class _GunSonuRaporWidgetState extends State<GunSonuRaporWidget> {
                                                                     alertDialogContext,
                                                                     true),
                                                             child:
-                                                                Text('Confirm'),
+                                                                const Text('Confirm'),
                                                           ),
                                                         ],
                                                       );
@@ -797,15 +795,15 @@ class _GunSonuRaporWidgetState extends State<GunSonuRaporWidget> {
                                                 context: context,
                                                 builder: (alertDialogContext) {
                                                   return AlertDialog(
-                                                    title: Text('Gün Kapama'),
-                                                    content: Text(
+                                                    title: const Text('Gün Kapama'),
+                                                    content: const Text(
                                                         'Gün kapama tamamlandı.'),
                                                     actions: [
                                                       TextButton(
                                                         onPressed: () =>
                                                             Navigator.pop(
                                                                 alertDialogContext),
-                                                        child: Text('Ok'),
+                                                        child: const Text('Ok'),
                                                       ),
                                                     ],
                                                   );
@@ -816,7 +814,7 @@ class _GunSonuRaporWidgetState extends State<GunSonuRaporWidget> {
                                                 context: context,
                                                 builder: (alertDialogContext) {
                                                   return AlertDialog(
-                                                    title: Text('Hata'),
+                                                    title: const Text('Hata'),
                                                     content: Text(PtsGroup
                                                         .gunsonuRaporCall
                                                         .message(
@@ -829,7 +827,7 @@ class _GunSonuRaporWidgetState extends State<GunSonuRaporWidget> {
                                                         onPressed: () =>
                                                             Navigator.pop(
                                                                 alertDialogContext),
-                                                        child: Text('Ok'),
+                                                        child: const Text('Ok'),
                                                       ),
                                                     ],
                                                   );
@@ -844,10 +842,10 @@ class _GunSonuRaporWidgetState extends State<GunSonuRaporWidget> {
                                         options: FFButtonOptions(
                                           height: 40.0,
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   24.0, 0.0, 24.0, 0.0),
                                           iconPadding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
                                           color: FlutterFlowTheme.of(context)
                                               .warning,
@@ -861,7 +859,7 @@ class _GunSonuRaporWidgetState extends State<GunSonuRaporWidget> {
                                                         .primaryText,
                                               ),
                                           elevation: 3.0,
-                                          borderSide: BorderSide(
+                                          borderSide: const BorderSide(
                                             color: Colors.transparent,
                                             width: 1.0,
                                           ),
@@ -873,7 +871,7 @@ class _GunSonuRaporWidgetState extends State<GunSonuRaporWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       10.0, 0.0, 0.0, 0.0),
                                   child: Text(
                                     'Ücretsiz çıkış sebepleri',
@@ -887,7 +885,7 @@ class _GunSonuRaporWidgetState extends State<GunSonuRaporWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       10.0, 0.0, 0.0, 0.0),
                                   child: RichText(
                                     textScaleFactor:
@@ -901,7 +899,7 @@ class _GunSonuRaporWidgetState extends State<GunSonuRaporWidget> {
                                                     .jsonBody,
                                               )
                                               .toString(),
-                                          style: TextStyle(),
+                                          style: const TextStyle(),
                                         )
                                       ],
                                       style: FlutterFlowTheme.of(context)

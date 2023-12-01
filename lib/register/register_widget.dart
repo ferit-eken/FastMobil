@@ -5,13 +5,12 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'register_model.dart';
 export 'register_model.dart';
 
 class RegisterWidget extends StatefulWidget {
-  const RegisterWidget({Key? key}) : super(key: key);
+  const RegisterWidget({super.key});
 
   @override
   _RegisterWidgetState createState() => _RegisterWidgetState();
@@ -107,7 +106,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                 borderRadius: 30.0,
                 borderWidth: 1.0,
                 buttonSize: 60.0,
-                icon: Icon(
+                icon: const Icon(
                   Icons.arrow_back_sharp,
                   color: Color(0xFF020000),
                   size: 30.0,
@@ -124,7 +123,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                       fontSize: 22.0,
                     ),
               ),
-              actions: [],
+              actions: const [],
               centerTitle: true,
               elevation: 2.0,
             ),
@@ -139,7 +138,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                       children: [
                         Expanded(
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 10.0, 0.0, 20.0),
                             child: Container(
                               width: 350.0,
@@ -153,14 +152,14 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                 ),
                               ),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     10.0, 0.0, 10.0, 10.0),
                                 child: SingleChildScrollView(
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             8.0, 10.0, 8.0, 0.0),
                                         child: TextFormField(
                                           controller:
@@ -227,7 +226,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             8.0, 10.0, 8.0, 0.0),
                                         child: TextFormField(
                                           controller:
@@ -294,7 +293,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             8.0, 10.0, 8.0, 0.0),
                                         child: TextFormField(
                                           controller: _model.txtUnvanController,
@@ -359,7 +358,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             8.0, 10.0, 8.0, 0.0),
                                         child: TextFormField(
                                           controller: _model.txtAdresController,
@@ -424,7 +423,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             8.0, 10.0, 8.0, 0.0),
                                         child: TextFormField(
                                           controller:
@@ -491,7 +490,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             8.0, 10.0, 8.0, 0.0),
                                         child: TextFormField(
                                           controller:
@@ -557,7 +556,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             8.0, 10.0, 8.0, 0.0),
                                         child: TextFormField(
                                           controller:
@@ -623,7 +622,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             8.0, 10.0, 8.0, 0.0),
                                         child: TextFormField(
                                           controller:
@@ -689,7 +688,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             8.0, 10.0, 8.0, 0.0),
                                         child: TextFormField(
                                           controller: _model.txtUlkeController,
@@ -754,7 +753,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             8.0, 10.0, 8.0, 0.0),
                                         child: TextFormField(
                                           controller: _model.txtSehirController,
@@ -819,7 +818,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             8.0, 10.0, 8.0, 0.0),
                                         child: TextFormField(
                                           controller: _model.txtIlceController,
@@ -884,7 +883,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             8.0, 10.0, 8.0, 0.0),
                                         child: TextFormField(
                                           controller: _model.txtMailController,
@@ -949,7 +948,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             8.0, 10.0, 8.0, 0.0),
                                         child: TextFormField(
                                           controller:
@@ -1016,7 +1015,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 10.0, 0.0, 40.0),
                                         child: FFButtonWidget(
                                           onPressed: () async {
@@ -1026,8 +1025,8 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                                       builder:
                                                           (alertDialogContext) {
                                                         return AlertDialog(
-                                                          title: Text('Kayıt'),
-                                                          content: Text(
+                                                          title: const Text('Kayıt'),
+                                                          content: const Text(
                                                               'Dikkat, girdiğiniz bilgilere göre firma kaydı oluşturulacak. bilgileri eksiksiz ve doğru girdiğinizden emin olunuz. Devam edilsin mi?'),
                                                           actions: [
                                                             TextButton(
@@ -1036,7 +1035,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                                                       alertDialogContext,
                                                                       false),
                                                               child:
-                                                                  Text('İptal'),
+                                                                  const Text('İptal'),
                                                             ),
                                                             TextButton(
                                                               onPressed: () =>
@@ -1044,7 +1043,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                                                       alertDialogContext,
                                                                       true),
                                                               child:
-                                                                  Text('Devam'),
+                                                                  const Text('Devam'),
                                                             ),
                                                           ],
                                                         );
@@ -1097,7 +1096,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                                   builder:
                                                       (alertDialogContext) {
                                                     return AlertDialog(
-                                                      title: Text(
+                                                      title: const Text(
                                                           'Firma Oluşturuldu'),
                                                       content: Text(
                                                           UserGroup.registerCall
@@ -1112,7 +1111,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                                           onPressed: () =>
                                                               Navigator.pop(
                                                                   alertDialogContext),
-                                                          child: Text('Ok'),
+                                                          child: const Text('Ok'),
                                                         ),
                                                       ],
                                                     );
@@ -1125,7 +1124,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                                   builder:
                                                       (alertDialogContext) {
                                                     return AlertDialog(
-                                                      title: Text('Hata'),
+                                                      title: const Text('Hata'),
                                                       content: Text(
                                                           UserGroup.registerCall
                                                               .message(
@@ -1139,7 +1138,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                                           onPressed: () =>
                                                               Navigator.pop(
                                                                   alertDialogContext),
-                                                          child: Text('Ok'),
+                                                          child: const Text('Ok'),
                                                         ),
                                                       ],
                                                     );
@@ -1155,10 +1154,10 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                             width: 163.0,
                                             height: 37.0,
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     24.0, 0.0, 24.0, 0.0),
                                             iconPadding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 0.0),
                                             color: FlutterFlowTheme.of(context)
                                                 .warning,
@@ -1167,10 +1166,10 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                                     .titleSmall
                                                     .override(
                                                       fontFamily: 'Readex Pro',
-                                                      color: Color(0xFF020000),
+                                                      color: const Color(0xFF020000),
                                                     ),
                                             elevation: 3.0,
-                                            borderSide: BorderSide(
+                                            borderSide: const BorderSide(
                                               color: Colors.transparent,
                                               width: 1.0,
                                             ),

@@ -3,20 +3,18 @@ import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'tarife_detay_model.dart';
 export 'tarife_detay_model.dart';
 
 class TarifeDetayWidget extends StatefulWidget {
   const TarifeDetayWidget({
-    Key? key,
+    super.key,
     this.tarife,
-  }) : super(key: key);
+  });
 
   final dynamic tarife;
 
@@ -125,7 +123,7 @@ class _TarifeDetayWidgetState extends State<TarifeDetayWidget> {
               ),
               actions: [
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
                   child: InkWell(
                     splashColor: Colors.transparent,
                     focusColor: Colors.transparent,
@@ -158,7 +156,7 @@ class _TarifeDetayWidgetState extends State<TarifeDetayWidget> {
                           context: context,
                           builder: (alertDialogContext) {
                             return AlertDialog(
-                              title: Text('Hata'),
+                              title: const Text('Hata'),
                               content: Text(SettingsGroup.aboneTarifeUpdateCall
                                   .message(
                                     (_model.apiResultgar?.jsonBody ?? ''),
@@ -168,7 +166,7 @@ class _TarifeDetayWidgetState extends State<TarifeDetayWidget> {
                                 TextButton(
                                   onPressed: () =>
                                       Navigator.pop(alertDialogContext),
-                                  child: Text('Ok'),
+                                  child: const Text('Ok'),
                                 ),
                               ],
                             );
@@ -178,7 +176,7 @@ class _TarifeDetayWidgetState extends State<TarifeDetayWidget> {
 
                       setState(() {});
                     },
-                    child: Icon(
+                    child: const Icon(
                       Icons.save_sharp,
                       color: Color(0xFF020000),
                       size: 42.0,
@@ -198,14 +196,14 @@ class _TarifeDetayWidgetState extends State<TarifeDetayWidget> {
                   Expanded(
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 1.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 1.0, 0.0, 0.0),
                       child: Container(
                         width: double.infinity,
                         height: double.infinity,
                         decoration: BoxDecoration(
                           color:
                               FlutterFlowTheme.of(context).secondaryBackground,
-                          boxShadow: [
+                          boxShadow: const [
                             BoxShadow(
                               blurRadius: 3.0,
                               color: Color(0x33000000),
@@ -218,7 +216,7 @@ class _TarifeDetayWidgetState extends State<TarifeDetayWidget> {
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 16.0, 16.0, 16.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -244,7 +242,7 @@ class _TarifeDetayWidgetState extends State<TarifeDetayWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           16.0, 0.0, 0.0, 0.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
@@ -253,7 +251,7 @@ class _TarifeDetayWidgetState extends State<TarifeDetayWidget> {
                                         crossAxisAlignment:
                                             CrossAxisAlignment.start,
                                         children: [
-                                          Container(
+                                          SizedBox(
                                             width: 200.0,
                                             child: TextFormField(
                                               controller:
@@ -332,7 +330,7 @@ class _TarifeDetayWidgetState extends State<TarifeDetayWidget> {
                                           ),
                                           Container(
                                             width: 200.0,
-                                            decoration: BoxDecoration(),
+                                            decoration: const BoxDecoration(),
                                           ),
                                         ],
                                       ),
@@ -341,7 +339,7 @@ class _TarifeDetayWidgetState extends State<TarifeDetayWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -353,7 +351,7 @@ class _TarifeDetayWidgetState extends State<TarifeDetayWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium,
                                     ),
-                                    Container(
+                                    SizedBox(
                                       width: 200.0,
                                       child: TextFormField(
                                         controller: _model.txtIdController,
@@ -425,7 +423,7 @@ class _TarifeDetayWidgetState extends State<TarifeDetayWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -480,14 +478,14 @@ class _TarifeDetayWidgetState extends State<TarifeDetayWidget> {
                                           ) as List)
                                                   .map<String>(
                                                       (s) => s.toString())
-                                                  .toList()!),
+                                                  .toList()),
                                           optionLabels: (getJsonField(
                                             txtOtoparkGetALLResponse.jsonBody,
                                             r'''$.data[:].OtoparkAdi''',
                                             true,
                                           ) as List)
                                               .map<String>((s) => s.toString())
-                                              .toList()!,
+                                              .toList(),
                                           onChanged: (val) => setState(() =>
                                               _model.txtOtoparkValue = val),
                                           width: 200.0,
@@ -512,7 +510,7 @@ class _TarifeDetayWidgetState extends State<TarifeDetayWidget> {
                                           borderWidth: 2.0,
                                           borderRadius: 8.0,
                                           margin:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 4.0, 16.0, 4.0),
                                           hidesUnderline: true,
                                           isSearchable: false,
@@ -524,7 +522,7 @@ class _TarifeDetayWidgetState extends State<TarifeDetayWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -579,14 +577,14 @@ class _TarifeDetayWidgetState extends State<TarifeDetayWidget> {
                                           ) as List)
                                                   .map<String>(
                                                       (s) => s.toString())
-                                                  .toList()!),
+                                                  .toList()),
                                           optionLabels: (getJsonField(
                                             txtAractipiGetALLResponse.jsonBody,
                                             r'''$.data[:].AracTipi''',
                                             true,
                                           ) as List)
                                               .map<String>((s) => s.toString())
-                                              .toList()!,
+                                              .toList(),
                                           onChanged: (val) => setState(() =>
                                               _model.txtAractipiValue = val),
                                           width: 200.0,
@@ -611,7 +609,7 @@ class _TarifeDetayWidgetState extends State<TarifeDetayWidget> {
                                           borderWidth: 2.0,
                                           borderRadius: 8.0,
                                           margin:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 4.0, 16.0, 4.0),
                                           hidesUnderline: true,
                                           isSearchable: false,
@@ -623,7 +621,7 @@ class _TarifeDetayWidgetState extends State<TarifeDetayWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -635,7 +633,7 @@ class _TarifeDetayWidgetState extends State<TarifeDetayWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium,
                                     ),
-                                    Container(
+                                    SizedBox(
                                       width: 200.0,
                                       child: TextFormField(
                                         controller:
@@ -709,7 +707,7 @@ class _TarifeDetayWidgetState extends State<TarifeDetayWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -721,7 +719,7 @@ class _TarifeDetayWidgetState extends State<TarifeDetayWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium,
                                     ),
-                                    Container(
+                                    SizedBox(
                                       width: 200.0,
                                       child: TextFormField(
                                         controller:
@@ -795,7 +793,7 @@ class _TarifeDetayWidgetState extends State<TarifeDetayWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -807,7 +805,7 @@ class _TarifeDetayWidgetState extends State<TarifeDetayWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium,
                                     ),
-                                    Container(
+                                    SizedBox(
                                       width: 200.0,
                                       child: TextFormField(
                                         controller:

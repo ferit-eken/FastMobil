@@ -1,19 +1,9 @@
 import '/backend/api_requests/api_calls.dart';
-import '/flutter_flow/flutter_flow_animations.dart';
-import '/flutter_flow/flutter_flow_icon_button.dart';
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/portal/poral_menu/side_menu/side_menu_widget.dart';
 import 'dart:async';
 import 'portal_mainpage_widget.dart' show PortalMainpageWidget;
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:percent_indicator/percent_indicator.dart';
-import 'package:provider/provider.dart';
 
 class PortalMainpageModel extends FlutterFlowModel<PortalMainpageWidget> {
   ///  State fields for stateful widgets in this page.
@@ -25,10 +15,12 @@ class PortalMainpageModel extends FlutterFlowModel<PortalMainpageWidget> {
 
   /// Initialization and disposal methods.
 
+  @override
   void initState(BuildContext context) {
     sideMenuModel = createModel(context, () => SideMenuModel());
   }
 
+  @override
   void dispose() {
     unfocusNode.dispose();
     sideMenuModel.dispose();
@@ -44,7 +36,7 @@ class PortalMainpageModel extends FlutterFlowModel<PortalMainpageWidget> {
   }) async {
     final stopwatch = Stopwatch()..start();
     while (true) {
-      await Future.delayed(Duration(milliseconds: 50));
+      await Future.delayed(const Duration(milliseconds: 50));
       final timeElapsed = stopwatch.elapsedMilliseconds;
       final requestComplete = apiRequestCompleter?.isCompleted ?? false;
       if (timeElapsed > maxWait || (requestComplete && timeElapsed > minWait)) {
